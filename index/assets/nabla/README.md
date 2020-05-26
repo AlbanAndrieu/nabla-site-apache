@@ -5,5 +5,7 @@ The [nabla symbol](https://en.wikipedia.org/wiki/Nabla_symbol) is available in s
 Color is blue 00aad4ff with text Latin Modern Mono Caps
 
 ![nabla-logo](http://albandrieu.com/nabla/index/assets/nabla/nabla-2.png)
+
 ![nabla-logo-text](http://albandrieu.com/nabla/index/assets/nabla/nabla-3.png)
+
 ![nabla-logo-icon](http://albandrieu.com/nabla/index/assets/nabla/nabla-3.png)
