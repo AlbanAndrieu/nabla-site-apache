@@ -1,0 +1,164 @@
+{
+  "children": [
+  {
+    "children": [
+    {
+      "children": [
+      {
+        "children": [
+        {
+          "name": "Central",
+          "comment": "ignoring me",
+          "end": "nowhere",
+          "type": "url",
+          "url": "https://www.politiet.no/en/om/organisasjonen/police-districts/oslo-politidistrikt/"
+        },
+        {
+          "name": "Greenland Police Station",
+          "comment": "ignoring me",
+          "end": "nowhere",
+          "type": "url",
+          "url": "https://www.politiet.no/en/om/organisasjonen/police-districts/oslo-politidistrikt/gronland-politistasjon/"
+        },
+        {
+          "name": "Oslo Airport Police Station",
+          "comment": "ignoring me",
+          "end": "nowhere",
+          "type": "url",
+          "url": "https://www.politiet.no/en/om/organisasjonen/police-districts/oslo-politidistrikt/"
+        },
+        {
+          "name": "Majorstuen Police Station",
+          "comment": "ignoring me",
+          "end": "nowhere",
+          "type": "url",
+          "url": "https://www.politiet.no/en/om/organisasjonen/police-districts/oslo-politidistrikt/majorstuen-politistasjon//"
+        }],
+      "name": "Police",
+      "type": "folder"
+      },
+      {
+        "name": "Oslo District Court (Tingret)",
+        "comment": "asking ransome, refusing appealing, ignoring me",
+        "end": "2 fake trials",
+        "type": "url",
+        "url": "https://www.domstol.no/en/Enkelt-domstol/Oslo-District-Court/"
+      }],
+      "name": "Authorities",
+      "type": "folder"
+    },
+    {
+      "children": [
+      {
+        "name": "Christian A. Kramer",
+        "email": "ck@frykmankramer.no",
+        "comment": "did not ask to judge abuse/kidnapping/custody , refusing appealing, ignoring me",
+        "end": "30000 euro lost for 2 fakes trials",
+        "type": "url",
+        "url": "http://www.frykmankramer.no/~frykmank/about-us"
+      }],
+      "name": "Lawyers",
+      "type": "folder"
+    }],
+    "name": "Norway",
+    "type": "folder"
+  },
+  {
+    "children": [
+      {
+        "children": [
+        {
+          "children": [
+          {
+            "name": "Asnieres-sur-Seine",
+            "comment": "ignoring me, the first year, but registered the abduction after complaining to IGN",
+            "end": "nowhere",
+            "type": "url",
+            "url": "https://TODO"
+          },
+          {
+            "name": "Nanterre",
+            "comment": "Registered quickly the abuse and registered (NRE) that the mother is not sowing up with kid",
+            "end": "nowhere",
+            "type": "url",
+            "url": "https://TODO"
+          }
+          ],
+          "name": "Police",
+          "type": "folder"
+        }],
+        "name": "Auhtorities",
+        "type": "folder"
+      }
+    ],
+    "name": "France",
+    "type": "folder"
+  },
+  {
+    "children": [
+    {
+      "children": [
+      {
+        "children": [
+        {
+          "children": [
+          {
+            "name": "TODO",
+            "comment": "Never gathered any evidences in Norways, ignored French evidences",
+            "end": "abduction trial, asked ransom and refused appealing",
+            "type": "url",
+            "url": "https://TODO"
+          }],
+          "name": "Norwegian Hague Convention",
+          "type": "folder"
+        }],
+        "name": "Norway",
+        "type": "folder"
+      },
+      {
+        "children": [
+        {
+          "children": [
+          {
+            "name": "Bureau d entraide civile internationale",
+            "email": "entraide-civile-internationale@justice.gouv.f",
+            "comment": "BDIP/38DE2016 NORVEGE : No power",
+            "end": "nowhere",
+            "type": "url",
+            "url": "https://TODO"
+          }],
+          "name": "French Hague Convention",
+          "type": "folder"
+        }],
+        "name": "France",
+        "type": "folder"
+      }],
+      "name": "Hague Convention",
+      "type": "folder"
+    },
+
+    {
+       "children": [
+       {
+         "children": [
+         {
+             "name": "Conseil Europeen",
+             "email": "TODO",
+             "comment": "Answered quickly that Norway is not under their responsability",
+             "end": "nowhere",
+             "type": "url",
+             "url": "https://TODO"
+         }],
+         "name": "France",
+         "type": "folder"
+       }],
+       "name": "European council",
+       "type": "folder"
+     }
+
+    ],
+    "name": "International",
+    "type": "folder"
+  }
+  ]
+}
