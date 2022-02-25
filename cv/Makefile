@@ -1,5 +1,5 @@
 TEX = pdflatex
-TEX_OPTS = -interaction=nonstopmode -file-line-error
+TEX_OPTS = -shell-escape -interaction=nonstopmode -file-line-error
 #TEX_OPTS = -synctex=1 -interaction=nonstopmode -file-line-error
 BIB = bibtex
 OPEN = xdg-open
