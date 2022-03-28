@@ -460,7 +460,16 @@
       "end": "psychological support",
       "type": "url",
       "url": "https://www.justice-familiale.fr/"
-    }
+    },
+    {
+      "name": "Exclusion parentale",
+      "email": "sosexclusionparentale@gmail.com",
+      "comment": "association, mythe grec de Médée",
+      "end": "psychological support",
+      "type": "url",
+      "url": "https://www.facebook.com/sosexclusionparentale/"
+    },
+    
     ],
     "name": "Associations",
     "type": "folder"
