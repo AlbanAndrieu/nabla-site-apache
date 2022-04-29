@@ -132,6 +132,7 @@ LoadModule version_module libexec/apache24/mod_version.so
 #LoadModule proxy_http_module libexec/apache24/mod_proxy_http.so
 #LoadModule proxy_fcgi_module libexec/apache24/mod_proxy_fcgi.so
 #LoadModule proxy_scgi_module libexec/apache24/mod_proxy_scgi.so
+#LoadModule proxy_uwsgi_module libexec/apache24/mod_proxy_uwsgi.so
 #LoadModule proxy_fdpass_module libexec/apache24/mod_proxy_fdpass.so
 #LoadModule proxy_wstunnel_module libexec/apache24/mod_proxy_wstunnel.so
 #LoadModule proxy_ajp_module libexec/apache24/mod_proxy_ajp.so
@@ -148,6 +149,7 @@ LoadModule version_module libexec/apache24/mod_version.so
 #LoadModule dialup_module libexec/apache24/mod_dialup.so
 #LoadModule http2_module libexec/apache24/mod_http2.so
 #LoadModule proxy_http2_module libexec/apache24/mod_proxy_http2.so
+#LoadModule md_module libexec/apache24/mod_md.so
 #LoadModule lbmethod_byrequests_module libexec/apache24/mod_lbmethod_byrequests.so
 #LoadModule lbmethod_bytraffic_module libexec/apache24/mod_lbmethod_bytraffic.so
 #LoadModule lbmethod_bybusyness_module libexec/apache24/mod_lbmethod_bybusyness.so
