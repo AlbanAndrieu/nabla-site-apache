@@ -1,0 +1,18 @@
+# robots.txt file of https://albandrieu.com/
+
+# www.robotstxt.org/
+# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
+
+User-agent: *
+# deny dynamic URLs which contain a hash link
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+# deny dynamic URLs which contain a '?'
+Disallow: /*?*
+
+# sitemap index
+Sitemap: https://albandrieu.com/sitemap-albandrieu-com.xml
+# curl https://www.google.com/ping??sitemap=https://albandrieu.com/sitemap-albandrieu-com.xml
