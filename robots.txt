@@ -13,6 +13,40 @@ Disallow: /*/publication/pdf/*
 # deny dynamic URLs which contain a '?'
 Disallow: /*?*
 
+User-Agent: MJ12bot
+Crawl-Delay: 5
+
+# https://netfuture.ch/2023/07/blocking-ai-crawlers-robots-txt-chatgpt/
+# Used for many other (non-commercial) purposes as well
+User-agent: CCBot
+Disallow: /
+
+# https://platform.openai.com/docs/gptbot
+User-agent: GPTBot
+Disallow: /
+
+# https://platform.openai.com/docs/plugins/bot
+User-agent: ChatGPT-User
+Disallow:
+
+# https://blog.google/technology/ai/an-update-on-web-publisher-controls/
+User-agent: Google-Extended
+Disallow: /
+
+# Speech synthesis only?
+User-agent: FacebookBot
+Disallow: /
+
+# Multi-purpose, commercial uses; including LLMs
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
 # sitemap index
 Sitemap: https://albandrieu.com/sitemap-albandrieu-com.xml
 # curl https://www.google.com/ping??sitemap=https://albandrieu.com/sitemap-albandrieu-com.xml
