@@ -3,8 +3,12 @@
 # www.robotstxt.org/
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
-User-agent: *
-# deny dynamic URLs which contain a hash link
+# If you wish to crawl this website, please obtain explicit permission first.
+# Contact us via email at contact@jusmundi.com for authorization.
+
+# Google and Brave
+User-agent: Googlebot
+Allow: /
 Disallow: /*/document/h/*
 Disallow: /*/decision/pdf/*
 Disallow: /*/opinion/pdf/*
@@ -13,39 +17,178 @@ Disallow: /*/publication/pdf/*
 # deny dynamic URLs which contain a '?'
 Disallow: /*?*
 
-User-Agent: MJ12bot
-Crawl-Delay: 5
+User-agent: Google Mobile
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
 
-# https://netfuture.ch/2023/07/blocking-ai-crawlers-robots-txt-chatgpt/
-# Used for many other (non-commercial) purposes as well
-User-agent: CCBot
+User-agent: Google Smartphone
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# MSN
+User-agent: msnbot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+User-agent: msnbot-media
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# BING & Ecosia
+User-agent: bingbot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Yahoo
+User-agent: Yahoo! Slurp
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+User-agent: Slurp
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Qwant
+User-agent: Qwantify
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# rambler.ru
+User-agent: StackRambler
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Apple
+User-agent: Applebot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Seznam.cz
+# https://napoveda.seznam.cz/en/seznambot-crawler/
+User-agent: SeznamBot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+User-agent: FreshBot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+Crawl-delay: 5
+
+# Sogou.com
+User-agent: Sogou web spider
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+
+# cocolyze
+User-agent: cocolyzebot
+Allow: /
+Disallow: /*/document/h/*
+Disallow: /*/decision/pdf/*
+Disallow: /*/opinion/pdf/*
+Disallow: /*/other/pdf/*
+Disallow: /*/publication/pdf/*
+Disallow: /*?*
+Crawl-delay: 5
+
+# Block all not included
+User-agent: *
 Disallow: /
-
-# https://platform.openai.com/docs/gptbot
-User-agent: GPTBot
-Disallow: /
-
-# https://platform.openai.com/docs/plugins/bot
-User-agent: ChatGPT-User
-Disallow:
-
-# https://blog.google/technology/ai/an-update-on-web-publisher-controls/
-User-agent: Google-Extended
-Disallow: /
-
-# Speech synthesis only?
-User-agent: FacebookBot
-Disallow: /
-
-# Multi-purpose, commercial uses; including LLMs
-User-agent: Omgilibot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
+Disallow: /cdn-cgi/
 
 # sitemap index
 Sitemap: https://albandrieu.com/sitemap-albandrieu-com.xml

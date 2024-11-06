@@ -524,6 +524,7 @@ AddDefaultCharset utf-8
     RewriteCond %{SCRIPT_FILENAME} -d [OR]
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
+    RewriteRule ^\.well-known/traffic-advice$ - [T=application/trafficadvice+json,END]
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -702,7 +703,7 @@ ServerSignature Off
 #
 # https://httpd.apache.org/docs/current/mod/core.html#servertokens
 
-#ServerTokens Prod
+ServerTokens Prod
 
 
 # ######################################################################
