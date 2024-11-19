@@ -57,7 +57,7 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
 
 .form-signin {
@@ -462,7 +462,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
       <div class="row">
         <main class="form-signin">
 	 	 <form method="POST" action="/handler">
-	 	  <h2 class="h3 mb-3 fw-normal">Turnstile &dash; Dummy Login Demo</h2>
+	 	  <h2 class="h3 mb-3 fw-normal">Turnstile &dash; Login</h2>
 	    
 	 	  <div class="form-floating">
 	 	    <input type="text" id="user" class="form-control">
@@ -475,7 +475,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 	    
 	 	  <div class="checkbox mb-3">
 	 	    <!-- The following line controls and configures the Turnstile widget. -->
-	 	    <div class="cf-turnstile" data-sitekey="0x4AAAAAAABU6iWSRkSavdni" data-theme="light"></div>
+	 	    <div class="cf-turnstile" data-sitekey="0x4AAAAAAABU6iWSRkSavdni" data-callback="javascriptCallback" data-theme="light"></div>
 	 	    <!-- end. -->
 	 	  </div>
 	 	  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
