@@ -15,12 +15,12 @@ jobs:
       - name: Scan log
         run: texloganalyser -w ./cv/cv-aandrieu-XX-XX-2021.log
       - name: Upload pdf
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv-aandrieu-XX-XX-2021.pdf
           path: ./cv/cv-aandrieu-XX-XX-2021.pdf
       - name: Upload log
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv-aandrieu-XX-XX-2021.log
           path: ./cv/cv-aandrieu-XX-XX-2021.log
