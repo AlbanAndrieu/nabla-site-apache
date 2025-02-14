@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   build-template:
     name: Build template
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Install TeX Live
         run: sudo apt update && sudo apt install texlive-full fonts-font-awesome
