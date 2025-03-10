@@ -59,7 +59,7 @@
   f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
   </script>
   <!-- End VWO Async SmartCode -->
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
   <script>
@@ -79,14 +79,14 @@
     })
   </script>
   <!-- End VWO PostHog -->
-  
+
   <!-- Start Heap -->
   <script type="text/javascript">
     window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
     heap.load("724068705");
   </script>
   <!-- End Heap -->
-  
+
   <!-- Cloudflare -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -138,14 +138,14 @@
     <!--<div style="background:transparent !important" class="jumbotron">-->
     <div class="jumbotron">
     <!--<div style="background-image: url(assets/flag-french-norway-simple.png); background-size: 100%; background-size: cover; height: 100%; opacity: 0.5;" class="jumbotron">-->
-      <h1 class="display-4"><img class="col align-self-center" src="assets/sos-papa-1.png"></h1>
+      <img class="img-fluid d-block mx-auto py-2" src="assets/miss-and-love-you-quote.jpeg" width="240" alt="A heartfelt quote expressing feelings of missing and loving someone" /></h1>
       <div class="row align-items-end">
         <div class="col-md-auto ">
           <p class="lead">🗺 🇫🇷 France 🛫 🇳🇴 Norway 🚢 🇩🇪 Germany.</p>
         </div>
         <!--
           <div class="col-md-3 ">
-          <img class="img-fluid d-block mx-auto py-2" width="120" src="assets/flag-french-norway-simple.png">
+          <img class="img-fluid d-block mx-auto py-2" width="120" src="assets/flag-french-norway-simple.png" alt="" aria-hidden="true"/>
         </div>
         -->
       </div>
@@ -155,15 +155,15 @@
         <small class="text-muted">or somewhere else.</small>
       </p>
 <p class="card-text" translate="yes" lang="fr">
-Ce site s’adresse, sans distinction de nationalité "ni de sexe", aux parents étrangers et autochtones mis en difficulté et discriminés par le cadre légal européen (France, Norvège, Allemagne) qui, contrairement à ce qui est ennoncé, ne reconnaît pas encore le partage de l’autorité parentale pre et post-séparation (Norvège) ni un droit de visite réalist et effectif (Norvège, Allemagne, France), et ne pénalise pas l’enlèvement parental, les non représentation d'enfant (Norvège, Allemagne), mais plutôt l’encourage (Norvège), en en faisant paradoxalement un avantage pour le parent kidnappeur pour l’obtention de l’autorité parentale (Norvège), pension alimentaire et de la garde des enfants avec (Norvège, Allemagne, France) et sans jugement (Norvège), (sous couvert du bien-être de l'enfant).</br>
+Ce site s'adresse, sans distinction de nationalité "ni de sexe", aux parents étrangers et autochtones mis en difficulté et discriminés par le cadre légal européen (France, Norvège, Allemagne) qui, contrairement à ce qui est ennoncé, ne reconnaît pas encore le partage de l'autorité parentale pre et post-séparation (Norvège) ni un droit de visite réalist et effectif (Norvège, Allemagne, France), et ne pénalise pas l'enlèvement parental, les non représentation d'enfant (Norvège, Allemagne), mais plutôt l'encourage (Norvège), en en faisant paradoxalement un avantage pour le parent kidnappeur pour l'obtention de l'autorité parentale (Norvège), pension alimentaire et de la garde des enfants avec (Norvège, Allemagne, France) et sans jugement (Norvège), (sous couvert du bien-être de l'enfant).</br>
 </br>
-Cette pénible et presque incroyable réalité a pour effet, en Norvège, Allemagne, de permettre à un parent, en toute impunité et avec la bénédiction et la protection des juges, écoles, services sociaux, d’enlever les enfants et de les couper de tout contact avec l’autre parent jusqu’à leur majorité (et même au delà, en conséquence de l’aliénation parentale subie par l’enfant) en refusant les contacts et les visites, faisant de ceux-ci des orphelins « de droit et de fait », et privant l’autre parent de tous ses droits.</br>
+Cette pénible et presque incroyable réalité a pour effet, en Norvège, Allemagne, de permettre à un parent, en toute impunité et avec la bénédiction et la protection des juges, écoles, services sociaux, d'enlever les enfants et de les couper de tout contact avec l'autre parent jusqu'à leur majorité (et même au delà, en conséquence de l'aliénation parentale subie par l'enfant) en refusant les contacts et les visites, faisant de ceux-ci des orphelins « de droit et de fait », et privant l'autre parent de tous ses droits.</br>
 </br>
-Elle a aussi pour conséquence, dans le cas d’enfants binationaux, de priver les enfants de la moitié de leur identité culturelle, leur famille et du bilinguisme de leurs premières années, de l'amour des deux parents, pourtant prometteurs pour leur avenir, dans un monde de plus en plus internationalisé.</br>
+Elle a aussi pour conséquence, dans le cas d'enfants binationaux, de priver les enfants de la moitié de leur identité culturelle, leur famille et du bilinguisme de leurs premières années, de l'amour des deux parents, pourtant prometteurs pour leur avenir, dans un monde de plus en plus internationalisé.</br>
 </br>
-Ce site s’adresse également à toute personne sympathisante ou/et susceptible d’apporter aide et informations.</br>
+Ce site s'adresse également à toute personne sympathisante ou/et susceptible d'apporter aide et informations.</br>
 </br>
-Quel genre d’informations sont susceptibles d’être utiles et dans quels domaines ?</br>
+Quel genre d'informations sont susceptibles d'être utiles et dans quels domaines ?</br>
 </br>
 <ul>
 <li>dans les domaines juridiques et psycho-sociologiques ;</li>
@@ -174,27 +174,27 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
 <li>les conventions internationales</li>
 
-<li>le syndrome d’aliénation parentale (SAP) ;</li>
+<li>le syndrome d'aliénation parentale (SAP) ;</li>
 
 <li>la présentation de cette problématique dans les médias, associations, le cinéma, etc. (articles, références bibliographiques et multi-média, liens internet, etc.).</li>
 
-<li>la mise en relation des parents en difficulté (sous couvert d’anonymat, par l’utilisation d’un pseudo qui protège la confidentialité), échange des expériences et des informations, assistance et entraide.</li>
+<li>la mise en relation des parents en difficulté (sous couvert d'anonymat, par l'utilisation d'un pseudo qui protège la confidentialité), échange des expériences et des informations, assistance et entraide.</li>
 
 <li>la présentation des revendications de base suivantes :</li>
 
 </ul>
 <ol>
-<li>Faire remplir par la Norvège la base de donnée de la <a href="https://www.hcch.net/fr/instruments/conventions/full-text/?cid=24">Convention de La Haye sur les aspects civils des déplacements illicites d’enfants</a>, en particulier la définition de déplacement, démenagement de l'enfant (7 mois étant considéré comme des vacances pour la Norvège), residence habituelle critère d'enlèvement.</li>
+<li>Faire remplir par la Norvège la base de donnée de la <a href="https://www.hcch.net/fr/instruments/conventions/full-text/?cid=24">Convention de La Haye sur les aspects civils des déplacements illicites d'enfants</a>, en particulier la définition de déplacement, démenagement de l'enfant (7 mois étant considéré comme des vacances pour la Norvège), residence habituelle critère d'enlèvement.</li>
 
 <li>Faire respecter par la Norvège la <a href="https://www.hcch.net/fr/instruments/conventions/full-text/?cid=70">Convention de La Haye concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants</a>, en particulier coopération en matière de responsabilité parentale et de mesures de protection des enfants.</li>
 
-<li>Partage de l’autorité parentale après séparation et/ou divorce. En Norvège, une femme peut s'incrire avec l'autorité parentale seule, annihilant de facto tout droit du père sur son sol et dans les autres pays.</li>
+<li>Partage de l'autorité parentale après séparation et/ou divorce. En Norvège, une femme peut s'incrire avec l'autorité parentale seule, annihilant de facto tout droit du père sur son sol et dans les autres pays.</li>
 
 <li>Inscription dans la loi Norvège et Allemande des moyens cohércisifs et systematique (France) pour forcer un parent à réspecter un droit de visite pour les parents séparés et divorcés — à terme, de la garde partagée — sans distinction du sexe du parent.</li>
 
 <li>Empêcher toute inscription, radiation d'un enfant dans une école sans l'accord explicite des deux parents.</li>
 
-<li>Prise en compte du Syndrome d’Aliénation Parentale (SAP) par les tribunaux.</li>
+<li>Prise en compte du Syndrome d'Aliénation Parentale (SAP) par les tribunaux.</li>
 
 <li>Reconnaissance légale du droit des enfants binationaux à recevoir une double éducation culturelle et linguistique, correspondant à celle de leurs deux parents.</li>
 
@@ -218,30 +218,30 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
   <div class="py-3 bg-light" style="">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 p-3" style="">
+        <div class="col-md-4 p-3">
           <div class="card box-shadow">
-            <img class="card-img-top" src="assets/child-abuse.jpg">
+            <img class="card-img-top" src="assets/child-abuse.jpg" alt="Illustration representing child abduction as abuse" />
             <div class="card-body">
-              <h5 class=""><b>Abduction is <a href="https://en.wikipedia.org/wiki/Child_abduction" target="_blank" style="">Child Abuse</a></b></h5>
+              <h5><b>Abduction is <a href="https://en.wikipedia.org/wiki/Child_abduction" target="_blank">Child Abuse</a></b></h5>
               <p class="card-text">Why a child could not see her daddy?</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 p-3" style="">
+        <div class="col-md-4 p-3">
           <div class="card box-shadow">
-            <img class="card-img-top" src="assets/alone-1.jpg">
+            <img class="card-img-top" src="assets/alone-1.jpg" alt="Image depicting loneliness and separation" />
             <div class="card-body">
-              <h5 class=""><b>In my position? <a href="mailto:alban.andrieu@free.fr" style="">Contact me</a></b></h5>
+              <h5 class=""><b>In my position? <a href="mailto:alban.andrieu@free.fr">Contact me</a></b></h5>
               <p class="card-text">Your child has been abducted in Norway ans/or in Germany. Contact me!</p>
               <p class="card-text">We can share experience, how can a father fight to get contact in each country.</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 p-3" style="">
+        <div class="col-md-4 p-3">
           <div class="card box-shadow">
-            <img class="card-img-top" src="assets/passport-fr-bababou-4.png">
+            <img class="card-img-top" src="assets/passport-fr-bababou-4.png" alt="French passport illustration" />
             <div class="card-body">
               <h5 class=""><b>Eleonore, 14CV32249 is your ID!</b></h5>
               <p class="card-text">Your mother has changed your name on other ID's.</p>
@@ -254,11 +254,11 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
       </div>
       <div class="row">
-        <div class="col-md-4 p-3" style="">
+        <div class="col-md-4 p-3">
           <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-norway-location-1.svg">
+            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-norway-location-1.svg" alt="Map showing location in Norway" />
             <div class="card-body">
-              <h5 class=""><b>I found my Baby <a href="https://goo.gl/maps/6cqFXgi9ZAxntvVW9" target="_blank" style="">here</a>...</b></h5>
+              <h5 class=""><b>I found my Baby <a href="https://goo.gl/maps/6cqFXgi9ZAxntvVW9" target="_blank">here</a>...</b></h5>
               <p class="card-text"><a href="https://tortberg.kanvas.no/" target="_blank" style="">Tørtberg Kanvas-barnehage</a>, is where my daughter is kept <b>prisoner</b></p>
               <p class="card-text"><span title="Elin Kindem">People</span> there are <b>unreachable</b>. Why norway is not willing to cooperate?</p>
 
@@ -276,7 +276,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
         <div class="col-md-4 p-3" style="">
           <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-norway-simple.png">
+            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-norway-simple.png" alt="Combined French and Norwegian flags" />
             <div class="card-body">
               <h5 class=""><b>Looking for Norwegian Translator</b></h5>
               <p class="card-text">Norwegian authorities are not willing to communicate. In English and even less in French!!!</p>
@@ -324,7 +324,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
         <div class="col-md-4 p-3" style="">
           <div class="card box-shadow">
-            <img class="card-img-top" src="assets/hide-and-sick-quote.jpg">
+            <img class="card-img-top" src="assets/hide-and-sick-quote.jpg" alt="Quote about hide and seek game" />
             <div class="card-body">
               <h5 class=""><b>Playing hide and seek, since 2015</b></h5>
               <p class="card-text">Every time I found you. You move, and hide again!</p>
@@ -336,7 +336,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
         <div class="col-md-4 p-3" style="">
           <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-germany-location-1.svg">
+            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-germany-location-1.svg" alt="Map showing location in Germany" />
             <div class="card-body">
               <h5 class=""><b>I now search my Baby around <a href="https://goo.gl/maps/xx84vB1JkaUxVAhw5" target="_blank" style="">Francfort</a>...</b></h5>
               <p class="card-text">Do you know german institution?</p>
@@ -349,7 +349,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
         <div class="col-md-4 p-3" style="">
           <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-germany.svg">
+            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-germany.svg" alt="Combined French and German flags" />
             <div class="card-body">
               <h5 class=""><b>Looking for German Translator</b></h5>
               <p class="card-text">German authorities are not willing to communicate. In English and even less in French!!!</p>
@@ -360,7 +360,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
 
         <div class="col-md-4 p-3" style="">
           <div class="card box-shadow">
-            <img class="card-img-top" src="assets/patience-vertue-quote.jpg">
+            <img class="card-img-top" src="assets/patience-vertue-quote.jpg" alt="Quote about patience being a virtue" />
             <div class="card-body">
               <h5 class=""><b>Bababou, you have to come by yourself! <a href="mailto:alban.andrieu@free.fr" style="">Contact me</a></b></h5>
               <p class="card-text">L'inaction engendre le doute et la peur. L'action engendre la confiance et le courage.</p>
@@ -377,7 +377,7 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
     <div class="row">
       <div class="col-md-4 p-3" style="">
         <div class="card box-shadow">
-          <img class="img-fluid d-block mx-auto py-2"  src="assets/miss-and-love-you-quote.jpeg" width="240">
+          <img class="img-fluid d-block mx-auto py-2" src="assets/miss-and-love-you-quote.jpeg" width="240" alt="A heartfelt quote expressing feelings of missing and loving someone" />
           <div class="card-body">
             <h5 class=""><b>Daddy love you more than yesterday and less than tomorrow</b></h5>
             <p class="card-text">Forever...</p>
@@ -391,8 +391,8 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
       <div class="row">
         <div class="col-md-12" style="">
           <div class="row">
-            <div class="col-md-2" style=""><img class="img-fluid d-block my-4" src="assets/logo-labyrinth-simple.png" ></div>
-            <div class="col-md-3 bg-warning" style="">
+            <div class="col-md-2" style=""><img class="img-fluid d-block my-4" src="assets/logo-labyrinth-simple.png" alt="Labyrinth illustration representing the difficult journey" /></div>
+            <div class="col-md-3 bg-warning">
               <h2 class=""><br>People&nbsp;<br>
                 <font color="#6c757d"><span style="font-size: 25.6px;">I contacted</span></font>
               </h2>
@@ -472,13 +472,13 @@ Quel genre d’informations sont susceptibles d’être utiles et dans quels dom
                 <div class="col-md-4">
                   <h1>Links</h1>
                 </div>
-                <div class="col-md-4"><a href="http://paternet.fr/tag/combat-des-peres//" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/auction-law-svgrepo-com.svg" width="70"></a></div>
-                <div class="col-md-4"><a href="http://www.sospapa.net/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/sos-warning-svgrepo-com.svg" width="100"></a></div>
+                <div class="col-md-4"><a href="http://paternet.fr/tag/combat-des-peres//" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/auction-law-svgrepo-com.svg" width="70" alt="Paternet - Father's rights organization" /></a></div>
+                <div class="col-md-4"><a href="http://www.sospapa.net/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/sos-warning-svgrepo-com.svg" width="100" alt="SOS Papa organization"></a></div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
-                <div class="col-md-4"><a href="http://sos-parents-japan.org/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/japan-kanji-svgrepo-com.svg" width="70"></a></div>
+                <div class="col-md-4"><a href="http://sos-parents-japan.org/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/japan-kanji-svgrepo-com.svg" width="70" alt="SOS Parents Japan organization" /></a></div>
               </div>
             </div>
           </div>
