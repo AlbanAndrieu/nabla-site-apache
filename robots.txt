@@ -4,7 +4,10 @@
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 # If you wish to crawl this website, please obtain explicit permission first.
-# Contact us via email at contact@jusmundi.com for authorization.
+# Contact us via email at alban.andrieu@free.fr for authorization.
+
+User-agent: 008
+Disallow: /
 
 # Google and Brave
 User-agent: Googlebot
@@ -19,119 +22,88 @@ Disallow: /*?*
 
 User-agent: Google Mobile
 Allow: /
-Disallow: /*?*
 
 User-agent: Google Smartphone
 Allow: /
-Disallow: /*?*
 
 # MSN
 User-agent: msnbot
 Allow: /
-Disallow: /*?*
 
 User-agent: msnbot-media
 Allow: /
-Disallow: /*?*
 
 # BING & Ecosia
 User-agent: bingbot
 Allow: /
-Disallow: /*?*
 
 # Yahoo
 User-agent: Yahoo! Slurp
 Allow: /
-Disallow: /*?*
 
 User-agent: Slurp
 Allow: /
-Disallow: /*?*
 
 # Qwant
 User-agent: Qwantify
 Allow: /
-Disallow: /*?*
 
 # rambler.ru
 User-agent: StackRambler
 Allow: /
-Disallow: /*?*
 
 # Yandex
 User-agent: Yandex
 Allow: /
-Disallow: /*?*
 
 # Apple
 User-agent: Applebot
 Allow: /
-Disallow: /*?*
 
 # DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
-Disallow: /*?*
 
 # Seznam.cz
 # https://napoveda.seznam.cz/en/seznambot-crawler/
 User-agent: SeznamBot
 Allow: /
-Disallow: /*?*
 
 User-agent: FreshBot
 Allow: /
-Disallow: /*?*
 Crawl-delay: 10
 
 # Sogou.com
 User-agent: Sogou web spider
 Allow: /
-Disallow: /*?*
 
 # Baidu
 User-agent: Baiduspider
 Allow: /
-Disallow: /*?*
 
 # cocolyze
 User-agent: cocolyzebot
 Allow: /
-Disallow: /*?*
 Crawl-delay: 10
 
 # Semrush
 User-agent: SemrushBot
 Allow: /
-Disallow: /*?*
 Crawl-delay: 10
 
 # Semrush On Page SEO
 User-agent: SemrushBot-SI
 Allow: /
-Disallow: /*?*
 Crawl-delay: 10
 
 # Semrush audit
 User-agent: SiteAuditBot
 Allow: /
-Disallow: /*?*
 Crawl-delay: 10
 
 # Screaming Frog
 User-agent: Screaming Frog SEO Spider
 Allow: /
-Disallow: /*?*
-Crawl-delay: 10
-
-# Allow all execpt
-User-agent: *
-Disallow: /*?*
-Disallow: /cdn-cgi/
-Disallow: /wp-admin/
-Disallow: /login/
-Disallow: /api/
-Disallow: /test/
 Crawl-delay: 10
 
 # AI bots
@@ -182,7 +154,12 @@ User-agent: VelenPublicWebCrawler
 User-agent: Webzio-Extended
 User-agent: YouBot
 Allow: /nabla/index.html
+Crawl-delay: 10
+
+# Other User-agent : Allow all execpt
+User-agent: *
 Disallow: /*?*
+
 Disallow: /cdn-cgi/
 Disallow: /wp-admin/
 Disallow: /login/
@@ -190,7 +167,14 @@ Disallow: /api/
 Disallow: /test/
 Crawl-delay: 10
 
-Crawl-delay: 600
+# Disallow technical signup pages
+Allow: /login/$
+Allow: /signup/$
+Disallow: /login/*
+Disallow: /signup/*
+
+Disallow: /*/?*
+Crawl-delay: 20
 
 # sitemap index
 Sitemap: https://albandrieu.com/sitemap-albandrieu-com.xml
