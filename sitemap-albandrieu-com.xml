@@ -13,15 +13,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://home.albandrieu.com/nabla/</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://home.albandrieu.com/nabla/index/index.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://home.albandrieu.com/nabla/cv/cv-aandrieu-XX-XX-2021.pdf</loc>
+    <loc>https://nabla.albandrieu.com/nabla/cv/cv-aandrieu-XX-XX-2021.pdf</loc>
     <changefreq>monthly</changefreq>
   </url>
   
