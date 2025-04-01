@@ -158,11 +158,11 @@ Crawl-delay: 10
 
 # Other User-agent : Allow all execpt
 User-agent: *
+allow: /
 Disallow: /*?*
 
 Disallow: /cdn-cgi/
 Disallow: /wp-admin/
-Disallow: /login/
 Disallow: /api/
 Disallow: /test/
 Crawl-delay: 10
