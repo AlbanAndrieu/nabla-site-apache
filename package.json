@@ -22,6 +22,7 @@
     "start": "python -m http.server 8001"
   },
   "dependencies": {
-    "webdriver-manager": "^13.0.2"
+    "webdriver-manager": "^13.0.2",
+    "crypto": "^1.0.1"
   }
 }

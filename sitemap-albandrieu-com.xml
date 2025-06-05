@@ -24,6 +24,10 @@
     <loc>https://nabla.albandrieu.com/nabla/ciso.html</loc>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/nabla/index/index.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
   <!--
   <url>
     <loc>https://example.albandrieu.com/nabla/</loc>
