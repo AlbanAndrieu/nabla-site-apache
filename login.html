@@ -17,7 +17,7 @@
   
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>  
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <div class="">
@@ -49,6 +49,13 @@
         </main>
       </div>
       <div class="row">
+        <main class="pre-clearance-demo">
+          <h2>Pre-clearance Demo</h2>
+          <button id="fetchBtn">Fetch Data</button>
+          <div id="response"></div>
+      </main>
+      </div>
+      <div class="row">
         <div class="col-md-6">
           <p class="text-left">Alban Andrieu - please visit me <a href="index/index.html" target="_blank"><u>here</u></a><br>or <b>e-mail me</b>:&nbsp;<a href="mailto:alban.andrieu@free.fr">alban.andrieu@free.fr</a></p>
         </div>
@@ -66,5 +73,23 @@
       </div>
     </div>
   </div>
+  
+<script>
+  const button = document.getElementById('fetchBtn');
+  const responseDiv = document.getElementById('response');
+  button.addEventListener('click', async () => {
+  try {
+    let result = await fetch('/v1/nabla-api');
+    if (result.ok) {
+      let data = await result.json();
+      responseDiv.textContent = JSON.stringify(data);
+    } else {
+      responseDiv.textContent = 'Error fetching data';
+    }
+  } catch (error) {
+    responseDiv.textContent = 'Network error';
+  }
+});
+</script>  
 </body>
 </html>
