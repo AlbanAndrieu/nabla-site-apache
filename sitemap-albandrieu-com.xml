@@ -28,18 +28,8 @@
     <loc>https://nabla.albandrieu.com/nabla/index/index.html</loc>
     <changefreq>monthly</changefreq>
   </url>
-  <!--
   <url>
-    <loc>https://example.albandrieu.com/nabla/</loc>
+    <loc>https://status.albandrieu.com/</loc>
     <changefreq>monthly</changefreq>
   </url>
-  <url>
-    <loc>https://famp.albandrieu.com/nabla/index/index.html</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://statuspage.betteruptime.com</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  -->
 </urlset>
