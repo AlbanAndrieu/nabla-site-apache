@@ -24,6 +24,7 @@
   },
   "scripts": {
     "postinstall": "copyfiles -f ./node_modules/d3/d3.min.js ./index/dist/scripts/d3 && copyfiles -f ./app/scripts/arf.js ./dist/scripts/ && copyfiles -f ./app/resources/*.json ./dist/resources && copyfiles -f ./index.html ./dist/ && copyfiles -f ./wireframe.css ./dist/",
+    "lint": "eslint --format gitlab .",
     "start": "python -m http.server 8001"
   },
   "dependencies": {
