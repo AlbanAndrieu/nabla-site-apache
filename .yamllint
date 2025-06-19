@@ -28,6 +28,7 @@ ignore: |
   .git/
   .tox
   .cache
+  .node_cache/
   roles/
   .ansible-lint
   .github/

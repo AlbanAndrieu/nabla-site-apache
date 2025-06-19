@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 .direnv/
 .venv/
+.ansible/
 
 webalizer
 html/download
@@ -61,4 +62,3 @@ typings/
 
 # dotenv environment variables file
 .env
-

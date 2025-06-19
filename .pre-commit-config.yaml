@@ -2,10 +2,10 @@
 ---
 fail_fast: true
 minimum_pre_commit_version: 3.7.1
-exclude: 'docs/_build/'
+exclude: "docs/_build/"
 ci:
   # format compatible with commitlint
-  autoupdate_commit_msg: 'chore: pre-commit autoupdate'
+  autoupdate_commit_msg: "chore: pre-commit autoupdate"
   autoupdate_schedule: monthly
   autofix_commit_msg: |
     chore: auto fixes from pre-commit.com hooks
@@ -21,7 +21,7 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-added-large-files
-        args: ['--maxkb=123']
+        args: ["--maxkb=123"]
         exclude: >
           (?x)^(
             .pnp.cjs|
@@ -95,6 +95,7 @@ repos:
             docker/.*|
             docker-compose/.*|
             megalinter-reports/.*|
+            .node_cache/.*|
           )$
   - repo: https://github.com/doublify/pre-commit-hindent.git
     rev: b3680b6ebf9f7cf29b19307f246adef66756feef
