@@ -29,6 +29,8 @@ ignore: |
   .tox
   .cache
   .node_cache/
+  node_modules/
+  bababou/node_modules/
   roles/
   .ansible-lint
   .github/
