@@ -1,35 +1,36 @@
 {
-  "name": "nabla-site-apache",
-  "version": "1.0.0",
-  "description": "Nabla apache site",
-  "main": "index.html",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlbanAndrieu/nabla-site-apache.git"
-  },
-  "author": "Alban Andrieu (aandrieu)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AlbanAndrieu/nabla-site-apache/issues"
-  },
-  "homepage": "https://github.com/lockfale/ARF#readme",
-  "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "copyfiles": "1.0.0",
-    "d3": "3.5.16",
-    "eslint": "^9.28.0",
-    "eslint-formatter-gitlab": "^6.0.1",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.0"
-  },
-  "scripts": {
-    "postinstall": "copyfiles -f ./node_modules/d3/d3.min.js ./index/dist/scripts/d3 && copyfiles -f ./app/scripts/arf.js ./dist/scripts/ && copyfiles -f ./app/resources/*.json ./dist/resources && copyfiles -f ./index.html ./dist/ && copyfiles -f ./wireframe.css ./dist/",
-    "lint": "eslint --format gitlab .",
-    "start": "python -m http.server 8001"
-  },
-  "dependencies": {
-    "@datadog/browser-rum": "^6.12.1",
-    "crypto": "^1.0.1",
-    "webdriver-manager": "^13.0.2"
-  }
+	"name": "nabla-site-apache",
+	"version": "1.0.0",
+	"description": "Nabla apache site",
+	"main": "index.html",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AlbanAndrieu/nabla-site-apache.git"
+	},
+	"author": "Alban Andrieu (aandrieu)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AlbanAndrieu/nabla-site-apache/issues"
+	},
+	"homepage": "https://github.com/lockfale/ARF#readme",
+	"devDependencies": {
+		"@eslint/js": "^9.28.0",
+		"copyfiles": "1.0.0",
+		"d3": "3.5.16",
+		"eslint": "^9.28.0",
+		"eslint-formatter-gitlab": "^6.0.1",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.34.0"
+	},
+	"scripts": {
+		"postinstall": "copyfiles -f ./node_modules/d3/d3.min.js ./index/dist/scripts/d3 && copyfiles -f ./app/scripts/arf.js ./dist/scripts/ && copyfiles -f ./app/resources/*.json ./dist/resources && copyfiles -f ./index.html ./dist/ && copyfiles -f ./wireframe.css ./dist/",
+		"lint": "eslint --format gitlab .",
+		"start": "python -m http.server 8001"
+	},
+	"dependencies": {
+		"@datadog/browser-rum": "^6.12.1",
+		"@vercel/analytics": "^1.5.0",
+		"crypto": "^1.0.1",
+		"webdriver-manager": "^13.0.2"
+	}
 }
