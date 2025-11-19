@@ -1,4 +1,5 @@
 <!-- markdown-link-check-disable-next-line -->
+
 # [![Nabla](https://bababou.albandrieu.com/nabla/index/assets/nabla/nabla-4.png)](https://github.com/AlbanAndrieu/nabla-site-apache) nabla-site-apache
 
 [![License: APACHE](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -7,6 +8,13 @@ Default nabla files for apache
 
 ```bash
 npm run start
+```
+
+For vercel
+
+```bash
+pnpm create next-app@latest
+pnpm install
 ```
 
 ```bash
@@ -31,6 +39,6 @@ For pull requests, editor preferences are available in the [editor config](.edit
 
 [Apache v2](http://www.apache.org/licenses/LICENSE-2.0.html)
 
----
+______________________________________________________________________
 
 Alban Andrieu [linkedin](https://fr.linkedin.com/in/nabla/)
