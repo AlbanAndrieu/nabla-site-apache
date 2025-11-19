@@ -123,6 +123,7 @@ repos:
             Pipfile.lock|
             yarn.lock|
             sbom.json|
+            pnpm-lock.yaml|
           )$
       # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key
@@ -338,6 +339,10 @@ repos:
         types_or: [yaml, html, scss]
         additional_dependencies:
           - prettier@3.4.2
+        exclude: >
+          (?x)^(
+            pnpm-lock.yaml|
+          )$
 
   ### Data & Config Validation ###
   - repo: https://github.com/python-jsonschema/check-jsonschema
@@ -390,6 +395,18 @@ repos:
       - id: yamllint
         name: "📜 yamllint - Lint Yaml"
         args: [--format, parsable, --strict]
+        exclude: >
+          (?x)^(
+            .pnp.cjs|
+            package-lock.json|
+            bababou-app/package-lock.json|
+            npm-shrinkwrap.json|
+            poetry.lock|
+            Pipfile.lock|
+            yarn.lock|
+            sbom.json|
+            pnpm-lock.yaml|
+          )$
 
   # ---------------------------------------------------------------------------- #
   #                            📝 Commit Message Hooks                           #
