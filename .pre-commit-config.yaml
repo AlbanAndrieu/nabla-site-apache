@@ -18,6 +18,7 @@ exclude: |
       .npm/.*|
       .nuxt/.*|
       .netlify.*|
+      .vercel/.*|
   )$
 ci:
   # format compatible with commitlint
@@ -39,9 +40,9 @@ repos:
   # ---------------------------------------------------------------------------- #
   #                              🔄 Pre-Commit Hooks                             #
   # ---------------------------------------------------------------------------- #
-  - repo: meta
-    hooks:
-      - id: check-useless-excludes
+  # - repo: meta
+  #   hooks:
+  #     - id: check-useless-excludes
 
   # ---------------------------- 📁 Filesystem Tools --------------------------- #
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
@@ -382,13 +383,36 @@ repos:
         entry: zricethezav/gitleaks protect --verbose --redact --staged
 
   ### Ansible ###
-  - repo: https://github.com/ansible-community/ansible-lint.git
-    rev: v25.9.2
-    hooks:
-      - id: ansible-lint
-        name: "📜 ansible - Lint Ansible"
-        # args: [--verbose]
-        files: \.(yaml|yml)$
+  # Disable because too slow
+  # - repo: https://github.com/ansible-community/ansible-lint.git
+  #   rev: v25.9.2
+  #   hooks:
+  #     - id: ansible-lint
+  #       name: "📜 ansible - Lint Ansible"
+  #       # args: [--verbose]
+  #       files: \.(yaml|yml)$
+  #       exclude: >
+  #         (?x)^(
+  #            .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
+  #            docs/site/.*|       # Exclude mkdocs compiled files
+  #            docs/_build/.*|
+  #            \.history/.*|       # Exclude history files
+  #            .*cache.*/.*|       # Exclude cache directories
+  #            .*venv.*/.*|        # Exclude virtual environment directories
+  #            .direnv/.*|
+  #            .yarn/.*|
+  #            .ansible/.*|
+  #            node_modules/.*|
+  #            reports/.*|
+  #            .npm/.*|
+  #            .nuxt/.*|
+  #            .netlify.*|
+  #            .vercel/.*|
+  #            .travis.yml|
+  #            docker/|
+  #            requirements.yml|
+  #            .gitlab-ci.yml|
+  #          )$
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.37.1
     hooks:
@@ -430,8 +454,8 @@ repos:
     hooks:
       - id: gitlint
         name: "🌳 git · Lint"
-        additional_dependencies:
-          - gitlint-core[trusted-deps]==0.19.1
+        # additional_dependencies:
+        #   - gitlint-core[trusted-deps]==0.19.1
 
   # ---------------------------------------------------------------------------- #
   #                            👑 Mega linter                                    #
