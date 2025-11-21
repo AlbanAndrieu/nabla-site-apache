@@ -32,11 +32,11 @@
 		"start": "python -m http.server 8001"
 	},
 	"dependencies": {
-		"@datadog/browser-rum": "^6.24.0",
+		"@datadog/browser-rum": "^6.24.1",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
 		"crypto": "^1.0.1",
-		"vercel": "^48.10.4",
+		"vercel": "^48.10.6",
 		"webdriver-manager": "^13.0.2"
 	}
 }

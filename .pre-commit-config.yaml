@@ -449,13 +449,11 @@ repos:
       - id: commitizen-branch
         stages: [pre-push]
 
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
-    hooks:
-      - id: gitlint
-        name: "🌳 git · Lint"
-        # additional_dependencies:
-        #   - gitlint-core[trusted-deps]==0.19.1
+  # - repo: https://github.com/jorisroovers/gitlint
+  #   rev: v0.19.1
+  #   hooks:
+  #     - id: gitlint
+  #       name: "🌳 git · Lint"
 
   # ---------------------------------------------------------------------------- #
   #                            👑 Mega linter                                    #
