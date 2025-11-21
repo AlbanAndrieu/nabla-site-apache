@@ -10,7 +10,15 @@ Default nabla files for apache
 npm run start
 ```
 
-For vercel
+For vercel [php](https://github.com/vercel-community/php)
+
+```bash
+php -S localhost:8000 api/index.php
+```
+
+TODO https://github.com/contributte/vercel-examples/tree/master/php-framework-symfony-microservice
+
+For vercel next.js
 
 ```bash
 pnpm create next-app@latest
