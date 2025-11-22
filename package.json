@@ -38,7 +38,7 @@
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
 		"crypto": "^1.0.1",
-		"vercel": "^48.10.4",
+		"vercel": "^48.10.9",
 		"webdriver-manager": "^12.1.9"
 	}
 }
