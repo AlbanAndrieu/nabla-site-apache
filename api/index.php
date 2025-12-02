@@ -1,3 +1,10 @@
 <?php
-phpinfo();
-var_dump(opcache_get_status());
+
+function Redirect($url, $permanent = false)
+{
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+
+    exit();
+}
+
+Redirect('index/index.html', false);
