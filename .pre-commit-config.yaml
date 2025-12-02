@@ -1,7 +1,7 @@
 # vi: ft=yaml.ansible.jinja2
 ---
 # fail_fast: true
-minimum_pre_commit_version: 4.2.0
+minimum_pre_commit_version: 4.3.0
 exclude: |
   (?x)^(
       .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
@@ -90,6 +90,11 @@ repos:
       # --------------------------- 🔍 Code Quality Tools -------------------------- #
       - id: check-json
         name: "📁 filesystem/📝 json · Check json"
+        exclude: >
+          (?x)^(
+            ^.vscode/.*|
+            .devcontainer/devcontainer.json|
+          )$
       - id: check-toml
         name: "📁 filesystem/📜 toml - Check toml"
       - id: check-xml
@@ -97,6 +102,10 @@ repos:
       - id: check-yaml
         name: "📁 filesystem/📜 yaml - Check yaml"
         args: [--allow-multiple-documents]
+        exclude: >
+          (?x)^(
+            .gitlab-ci.yml|
+          )$
       - id: sort-simple-yaml
         name: "🔀 sort/📜 yaml - Sort yaml"
       - id: file-contents-sorter
@@ -131,7 +140,7 @@ repos:
         name: "🔒 security · Detect private keys"
 
   - repo: https://github.com/pre-commit/pre-commit.git
-    rev: v4.3.0
+    rev: v4.4.0
     hooks:
       - id: validate_manifest
         name: "🤖 manifest · Validate manifest scripts"
@@ -152,12 +161,12 @@ repos:
 
   ### Python Tools ###
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.21.0
+    rev: v3.21.2
     hooks:
       - id: pyupgrade
         name: "🐍 python · Py Upgrade"
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.0
+    rev: v0.14.6
     hooks:
       - id: ruff-format
         name: "🐍 python · Format with Ruff"
@@ -187,7 +196,7 @@ repos:
   # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.5.27
+    rev: 0.9.11
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -244,6 +253,11 @@ repos:
       - id: bashate
         name: "🐚 shell · Check shell script code style"
         args: [-i, "E003,E006"]
+        exclude: >
+          (?x)^(
+              trunk|
+              scripts/run-python.sh|
+          )$
 
   ### Makefile ###
   - repo: https://github.com/mrtazz/checkmake.git
@@ -254,7 +268,7 @@ repos:
 
   ### SQL ###
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 3.4.2
+    rev: 4.0.0a2
     hooks:
       - id: sqlfluff-fix
         name: "📊 SQL · Attempts to fix rule violations."
@@ -280,34 +294,39 @@ repos:
       #   name: "📓 notebook · Type-check cells"
 
   ### Markdown ###
-  - repo: https://github.com/hukkin/mdformat
-    rev: 0.7.22
-    hooks:
-      - id: mdformat
-        name: "📝 markdown · Format markdown"
-        additional_dependencies:
-          - mdformat-gfm # GitHub-Flavored Markdown support
-          - mdformat-ruff # Python code formatting
-          - mdformat-frontmatter # YAML frontmatter support
-          - ruff # Required for mdformat-ruff
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.12.0
-    hooks:
-      - id: markdownlint
-        name: "📝 markdown · Lint markdown"
-        exclude: >
-          (?x)^(
-              CHANGELOG.md|
-              README.md|
-          )$
+  # - repo: https://github.com/hukkin/mdformat
+  #   rev: 1.0.0
+  #   hooks:
+  #     - id: mdformat
+  #       name: "📝 markdown · Format markdown"
+  #       additional_dependencies:
+  #         - mdformat-gfm # GitHub-Flavored Markdown support
+  #         - mdformat-ruff # Python code formatting
+  #         - mdformat-frontmatter # YAML frontmatter support
+  #         - ruff # Required for mdformat-ruff
+  # - repo: https://github.com/markdownlint/markdownlint
+  #   rev: v0.12.0
+  #   hooks:
+  #     - id: markdownlint
+  #       name: "📝 markdown · Lint markdown"
+  #       exclude: >
+  #         (?x)^(
+  #             CHANGELOG.md|
+  #             README.md|
+  #         )$
 
   ### Javascript & Web Tools ###
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v2.2.6"
+    rev: "v2.3.6"
     hooks:
       - id: biome-check
         name: "🟨 javascript · Lint, format, and safe fixes with Biome"
         additional_dependencies: ["@biomejs/biome@1.9.4"]
+        exclude: >
+          (?x)^(
+              trivy-sbom.json|
+              bababou-app/public/.*|
+          )$
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
     rev: v1.1.2
@@ -324,12 +343,12 @@ repos:
         args: [--maxdepth, "3", -i]
 
   ### PNG Images ###
-  # - repo: https://github.com/shssoichiro/oxipng
-  #   rev: v9.1.5
-  #   hooks:
-  #     - id: oxipng
-  #       name: "🖼️ images · Optimize PNG files"
-  #       args: ["-o", "4", "--strip", "safe", "--alpha"]
+  - repo: https://github.com/shssoichiro/oxipng
+    rev: v9.1.5
+    hooks:
+      - id: oxipng
+        name: "🖼️ images · Optimize PNG files"
+        args: ["-o", "4", "--strip", "safe", "--alpha"]
 
   ### Additional File Types ###
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -347,7 +366,7 @@ repos:
 
   ### Data & Config Validation ###
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.34.1
+    rev: 0.35.0
     hooks:
       - id: check-github-workflows
         name: "🧩 github-actions · Validate gh workflow files"
@@ -364,7 +383,7 @@ repos:
   # ----------------------------- 🔒 Security Tools ---------------------------- #
 
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.8.6
+    rev: 1.9.1
     hooks:
       - id: bandit
         name: "🔒 security · Detect security issues"
@@ -376,7 +395,7 @@ repos:
       - id: encryption-check
         name: "🔒 security · Detect encryption"
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.28.0
+    rev: v8.29.1
     hooks:
       - id: gitleaks-docker
         name: "🔒 🐳 security · Detect hardcoded secrets"
@@ -411,6 +430,7 @@ repos:
   #            .travis.yml|
   #            docker/|
   #            requirements.yml|
+  #           playbooks/group_vars/all/vault.yml|
   #            .gitlab-ci.yml|
   #          )$
   - repo: https://github.com/adrienverge/yamllint.git
@@ -440,7 +460,7 @@ repos:
 
   ### Commit Message Standards ###
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.9.1
+    rev: v4.10.0
     hooks:
       - id: commitizen
         name: "🌳 git · Validate commit message"
