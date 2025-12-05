@@ -7,6 +7,8 @@
 Default nabla files for apache
 
 ```bash
+npm run start-python
+# Cloudflare wrangler 
 npm run start
 ```
 
@@ -16,14 +18,7 @@ For vercel [php](https://github.com/vercel-community/php)
 php -S localhost:8000 api/index.php
 ```
 
-TODO https://github.com/contributte/vercel-examples/tree/master/php-framework-symfony-microservice
-
-For vercel next.js
-
-```bash
-pnpm create next-app@latest
-pnpm install
-```
+[php-framework-symfony-microservice](https://github.com/contributte/vercel-examples/tree/master/php-framework-symfony-microservice)
 
 ```bash
 # Python 2
