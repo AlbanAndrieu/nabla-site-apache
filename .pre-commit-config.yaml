@@ -1,5 +1,3 @@
-# vi: ft=yaml.ansible.jinja2
----
 # fail_fast: true
 minimum_pre_commit_version: 4.5.0
 exclude: |
@@ -43,8 +41,12 @@ repos:
   # - repo: meta
   #   hooks:
   #     - id: check-useless-excludes
+  - repo: https://gitlab.com/vojko.pribudic.foss/pre-commit-update
+    rev: v0.9.0
+    hooks:
+      - id: pre-commit-update
 
-  # ---------------------------- 📁 Filesystem Tools --------------------------- #
+    # ---------------------------- 📁 Filesystem Tools --------------------------- #
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
     rev: v6.0.0
     hooks:
@@ -87,7 +89,7 @@ repos:
       - id: name-tests-test
         name: "📁 filesystem/📝 names · Check tests names"
 
-      # --------------------------- 🔍 Code Quality Tools -------------------------- #
+        # --------------------------- 🔍 Code Quality Tools -------------------------- #
       - id: check-json
         name: "📁 filesystem/📝 json · Check json"
         exclude: >
@@ -112,14 +114,14 @@ repos:
         name: "🔀 sort/📜 file · Sort contents"
       - id: requirements-txt-fixer
         name: "🔀 sort/🐍 json · Sort requirements"
-      # ------------------------------- 🌳 Git Tools ------------------------------- #
+        # ------------------------------- 🌳 Git Tools ------------------------------- #
       - id: check-merge-conflict
         name: "🌳 git · Detect conflict markers"
       - id: forbid-new-submodules
         name: "🌳 git · Prevent submodule creation"
-      # - id: no-commit-to-branch
-      #   name: "🌳 git · Protect main branches"
-      #   args: [--branch, main, --branch, master, --branch, release/*]
+        # - id: no-commit-to-branch
+        #   name: "🌳 git · Protect main branches"
+        #   args: [--branch, main, --branch, master, --branch, release/*]
       - id: check-added-large-files
         name: "🌳 git · Block large file commits"
         args: [--maxkb=123]
@@ -135,7 +137,7 @@ repos:
             sbom.json|
             pnpm-lock.yaml|
           )$
-      # ----------------------------- 🔒 Security Tools ---------------------------- #
+        # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key
         name: "🔒 security · Detect private keys"
 
@@ -157,9 +159,9 @@ repos:
       - id: add-trailing-comma
         name: "🤖 comma · Add trailing comma"
 
-  # --------------------------- 🔍 Code Quality Tools -------------------------- #
+    # --------------------------- 🔍 Code Quality Tools -------------------------- #
 
-  ### Python Tools ###
+    ### Python Tools ###
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.21.2
     hooks:
@@ -179,11 +181,11 @@ repos:
         name: "🐍 python · Check with Ruff"
         args: [--fix]
 
-  # - repo: https://github.com/RobertCraigie/pyright-python
-  #   rev: v1.1.406
-  #   hooks:
-  #     - id: pyright
-  #       name: "🐍 python · Check types"
+    # - repo: https://github.com/RobertCraigie/pyright-python
+    #   rev: v1.1.406
+    #   hooks:
+    #     - id: pyright
+    #       name: "🐍 python · Check types"
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.24.1
@@ -192,8 +194,8 @@ repos:
         name: "🐍 python · Validate pyproject.toml"
         additional_dependencies: ["validate-pyproject-schema-store[all]"]
 
-  # ----------------------------- ⚡️ uv Build Tools ---------------------------- #
-  # This helps ensure cross-compatibility with people who don't wish to use uv
+    # ----------------------------- ⚡️ uv Build Tools ---------------------------- #
+    # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
     rev: 0.9.15
@@ -226,7 +228,7 @@ repos:
           - "-o"
           - ".config/requirements-lock.txt"
 
-  ### Shell ###
+    ### Shell ###
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.12.0-2
     hooks:
@@ -235,7 +237,7 @@ repos:
       - id: shfmt-docker # Docker image (requires Docker to run)
         name: "🐚 🐳 shell · Format shell scripts"
   - repo: https://github.com/detailyang/pre-commit-shell
-    rev: 1.0.5
+    rev: v1.0.6
     hooks:
       - id: shell-lint
         name: "🐚 shell · Lint shell scripts"
@@ -259,23 +261,23 @@ repos:
               scripts/run-python.sh|
           )$
 
-  ### Makefile ###
+    ### Makefile ###
   - repo: https://github.com/mrtazz/checkmake.git
     rev: 0.2.2
     hooks:
       - id: checkmake
         name: "🐮 Makefile · Lint Makefile"
 
-  ### SQL ###
+    ### SQL ###
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 4.0.0a2
+    rev: 3.5.0
     hooks:
       - id: sqlfluff-fix
         name: "📊 SQL · Attempts to fix rule violations."
       - id: sqlfluff-lint
         name: "📊 SQL · Lint SQL code files"
 
-  ### Notebooks ###
+    ### Notebooks ###
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.9.1
     hooks:
@@ -290,8 +292,20 @@ repos:
           - mdformat-ruff
           - mdformat-frontmatter
           - ruff
-      # - id: nbqa-mypy
-      #   name: "📓 notebook · Type-check cells"
+        # - id: nbqa-mypy
+        #   name: "📓 notebook · Type-check cells"
+
+    ### Markdown ###
+    # - repo: https://github.com/hukkin/mdformat
+    #   rev: 1.0.0
+    #   hooks:
+    #     - id: mdformat
+    #       name: "📝 markdown · Format markdown"
+    #       additional_dependencies:
+    #         - mdformat-gfm # GitHub-Flavored Markdown support
+    #         - mdformat-ruff # Python code formatting
+    #         - mdformat-frontmatter # YAML frontmatter support
+    #         - ruff # Required for mdformat-ruff
 
   ### Markdown ###
   # - repo: https://github.com/hukkin/mdformat
@@ -305,7 +319,7 @@ repos:
   #         - mdformat-frontmatter # YAML frontmatter support
   #         - ruff # Required for mdformat-ruff
   # - repo: https://github.com/markdownlint/markdownlint
-  #   rev: v0.12.0
+  #   rev: v0.15.0
   #   hooks:
   #     - id: markdownlint
   #       name: "📝 markdown · Lint markdown"
@@ -342,17 +356,17 @@ repos:
         name: "📝 markdown · Toc markdown"
         args: [--maxdepth, "3", -i]
 
-  ### PNG Images ###
-  # - repo: https://github.com/shssoichiro/oxipng
-  #   rev: v9.1.5
-  #   hooks:
-  #     - id: oxipng
-  #       name: "🖼️ images · Optimize PNG files"
-  #       args: ["-o", "4", "--strip", "safe", "--alpha"]
+    ### PNG Images ###
+    # - repo: https://github.com/shssoichiro/oxipng
+    #   rev: v9.1.5
+    #   hooks:
+    #     - id: oxipng
+    #       name: "🖼️ images · Optimize PNG files"
+    #       args: ["-o", "4", "--strip", "safe", "--alpha"]
 
-  ### Additional File Types ###
+    ### Additional File Types ###
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+    rev: v3.1.0
     hooks:
       - id: prettier
         name: "✨ misc-files · Format misc web files"
@@ -364,7 +378,7 @@ repos:
             pnpm-lock.yaml|
           )$
 
-  ### Data & Config Validation ###
+    ### Data & Config Validation ###
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.35.0
     hooks:
@@ -380,7 +394,7 @@ repos:
       - id: hadolint-docker
         name: "🐳 hadolint · Validate Dockerfile"
 
-  # ----------------------------- 🔒 Security Tools ---------------------------- #
+    # ----------------------------- 🔒 Security Tools ---------------------------- #
 
   - repo: https://github.com/PyCQA/bandit
     rev: 1.9.2
@@ -452,13 +466,13 @@ repos:
             pnpm-lock.yaml|
           )$
 
-  # ---------------------------------------------------------------------------- #
-  #                            📝 Commit Message Hooks                           #
-  # ---------------------------------------------------------------------------- #
-  #
-  # --------------------------- ✍️ Git Commit Quality -------------------------- #
+    # ---------------------------------------------------------------------------- #
+    #                            📝 Commit Message Hooks                           #
+    # ---------------------------------------------------------------------------- #
+    #
+    # --------------------------- ✍️ Git Commit Quality -------------------------- #
 
-  ### Commit Message Standards ###
+    ### Commit Message Standards ###
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.10.0
     hooks:
@@ -469,35 +483,35 @@ repos:
       - id: commitizen-branch
         stages: [pre-push]
 
-  # - repo: https://github.com/jorisroovers/gitlint
-  #   rev: v0.19.1
-  #   hooks:
-  #     - id: gitlint
-  #       name: "🌳 git · Lint"
+    # - repo: https://github.com/jorisroovers/gitlint
+    #   rev: v0.19.1
+    #   hooks:
+    #     - id: gitlint
+    #       name: "🌳 git · Lint"
 
-  # ---------------------------------------------------------------------------- #
-  #                            👑 Mega linter                                    #
-  # ---------------------------------------------------------------------------- #
+    # ---------------------------------------------------------------------------- #
+    #                            👑 Mega linter                                    #
+    # ---------------------------------------------------------------------------- #
 
-  # - repo: https://github.com/oxsecurity/megalinter
-  #   rev: v9.0.1
-  #   hooks:
-  #     - id: megalinter-incremental  # Faster, less thorough
-  #       name: "👑 🐳 megalinter - All in linter"
-  #       stages:
-  #         - pre-commit
-  #       args:
-  #         - mega-linter-runner
-  #         - --containername
-  #         - "megalinter-incremental"
-  #         - --remove-container
-  #         # - --fix
-  #         # - --env
-  #         # - "'APPLY_FIXES=all'"
-  #         - --env
-  #         - "'CLEAR_REPORT_FOLDER=true'"
-  #         - --env
-  #         - "'LOG_LEVEL=warning'"
-  #         - --filesonly
-  #         - --flavor
-  #         - "python"
+    # - repo: https://github.com/oxsecurity/megalinter
+    #   rev: v9.0.1
+    #   hooks:
+    #     - id: megalinter-incremental  # Faster, less thorough
+    #       name: "👑 🐳 megalinter - All in linter"
+    #       stages:
+    #         - pre-commit
+    #       args:
+    #         - mega-linter-runner
+    #         - --containername
+    #         - "megalinter-incremental"
+    #         - --remove-container
+    #         # - --fix
+    #         # - --env
+    #         # - "'APPLY_FIXES=all'"
+    #         - --env
+    #         - "'CLEAR_REPORT_FOLDER=true'"
+    #         - --env
+    #         - "'LOG_LEVEL=warning'"
+    #         - --filesonly
+    #         - --flavor
+    #         - "python"
