@@ -1,7 +1,7 @@
 # vi: ft=yaml.ansible.jinja2
 ---
 # fail_fast: true
-minimum_pre_commit_version: 4.3.0
+minimum_pre_commit_version: 4.5.0
 exclude: |
   (?x)^(
       .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
@@ -140,7 +140,7 @@ repos:
         name: "🔒 security · Detect private keys"
 
   - repo: https://github.com/pre-commit/pre-commit.git
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: validate_manifest
         name: "🤖 manifest · Validate manifest scripts"
@@ -166,7 +166,7 @@ repos:
       - id: pyupgrade
         name: "🐍 python · Py Upgrade"
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.6
+    rev: v0.14.8
     hooks:
       - id: ruff-format
         name: "🐍 python · Format with Ruff"
@@ -196,7 +196,7 @@ repos:
   # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.11
+    rev: 0.9.15
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -317,7 +317,7 @@ repos:
 
   ### Javascript & Web Tools ###
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v2.3.6"
+    rev: "v2.3.8"
     hooks:
       - id: biome-check
         name: "🟨 javascript · Lint, format, and safe fixes with Biome"
@@ -343,12 +343,12 @@ repos:
         args: [--maxdepth, "3", -i]
 
   ### PNG Images ###
-  - repo: https://github.com/shssoichiro/oxipng
-    rev: v9.1.5
-    hooks:
-      - id: oxipng
-        name: "🖼️ images · Optimize PNG files"
-        args: ["-o", "4", "--strip", "safe", "--alpha"]
+  # - repo: https://github.com/shssoichiro/oxipng
+  #   rev: v9.1.5
+  #   hooks:
+  #     - id: oxipng
+  #       name: "🖼️ images · Optimize PNG files"
+  #       args: ["-o", "4", "--strip", "safe", "--alpha"]
 
   ### Additional File Types ###
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -383,7 +383,7 @@ repos:
   # ----------------------------- 🔒 Security Tools ---------------------------- #
 
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.9.1
+    rev: 1.9.2
     hooks:
       - id: bandit
         name: "🔒 security · Detect security issues"
@@ -395,7 +395,7 @@ repos:
       - id: encryption-check
         name: "🔒 security · Detect encryption"
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.29.1
+    rev: v8.30.0
     hooks:
       - id: gitleaks-docker
         name: "🔒 🐳 security · Detect hardcoded secrets"
