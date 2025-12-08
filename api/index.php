@@ -7,4 +7,4 @@ function Redirect($url, $permanent = false)
     exit();
 }
 
-Redirect('index/index.html', false);
+Redirect('404.html', false);
