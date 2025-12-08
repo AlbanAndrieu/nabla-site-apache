@@ -1,0 +1,13 @@
+{
+  "prompts": [],
+  "consistency": {
+    "english": {
+      "localLanguage": "english",
+      "commitFix": "fix(server): change variable 'port' to uppercase 'PORT'",
+      "commitFeat": "feat(server): allow server to listen on environment variable port",
+      "commitFixOmitScope": "fix: change variable 'port' to uppercase 'PORT'",
+      "commitFeatOmitScope": "feat: allow server to listen on environment variable port",
+      "commitDescription": "Fixes variable naming and adds environment variable support."
+    }
+  }
+}

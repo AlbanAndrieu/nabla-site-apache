@@ -198,7 +198,7 @@ repos:
     # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.15
+    rev: 0.9.16
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -307,29 +307,29 @@ repos:
     #         - mdformat-frontmatter # YAML frontmatter support
     #         - ruff # Required for mdformat-ruff
 
-  ### Markdown ###
-  # - repo: https://github.com/hukkin/mdformat
-  #   rev: 1.0.0
-  #   hooks:
-  #     - id: mdformat
-  #       name: "📝 markdown · Format markdown"
-  #       additional_dependencies:
-  #         - mdformat-gfm # GitHub-Flavored Markdown support
-  #         - mdformat-ruff # Python code formatting
-  #         - mdformat-frontmatter # YAML frontmatter support
-  #         - ruff # Required for mdformat-ruff
-  # - repo: https://github.com/markdownlint/markdownlint
-  #   rev: v0.15.0
-  #   hooks:
-  #     - id: markdownlint
-  #       name: "📝 markdown · Lint markdown"
-  #       exclude: >
-  #         (?x)^(
-  #             CHANGELOG.md|
-  #             README.md|
-  #         )$
+    ### Markdown ###
+    # - repo: https://github.com/hukkin/mdformat
+    #   rev: 1.0.0
+    #   hooks:
+    #     - id: mdformat
+    #       name: "📝 markdown · Format markdown"
+    #       additional_dependencies:
+    #         - mdformat-gfm # GitHub-Flavored Markdown support
+    #         - mdformat-ruff # Python code formatting
+    #         - mdformat-frontmatter # YAML frontmatter support
+    #         - ruff # Required for mdformat-ruff
+    # - repo: https://github.com/markdownlint/markdownlint
+    #   rev: v0.15.0
+    #   hooks:
+    #     - id: markdownlint
+    #       name: "📝 markdown · Lint markdown"
+    #       exclude: >
+    #         (?x)^(
+    #             CHANGELOG.md|
+    #             README.md|
+    #         )$
 
-  ### Javascript & Web Tools ###
+    ### Javascript & Web Tools ###
   - repo: https://github.com/biomejs/pre-commit
     rev: "v2.3.8"
     hooks:
@@ -415,38 +415,38 @@ repos:
         name: "🔒 🐳 security · Detect hardcoded secrets"
         entry: zricethezav/gitleaks protect --verbose --redact --staged
 
-  ### Ansible ###
-  # Disable because too slow
-  # - repo: https://github.com/ansible-community/ansible-lint.git
-  #   rev: v25.9.2
-  #   hooks:
-  #     - id: ansible-lint
-  #       name: "📜 ansible - Lint Ansible"
-  #       # args: [--verbose]
-  #       files: \.(yaml|yml)$
-  #       exclude: >
-  #         (?x)^(
-  #            .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
-  #            docs/site/.*|       # Exclude mkdocs compiled files
-  #            docs/_build/.*|
-  #            \.history/.*|       # Exclude history files
-  #            .*cache.*/.*|       # Exclude cache directories
-  #            .*venv.*/.*|        # Exclude virtual environment directories
-  #            .direnv/.*|
-  #            .yarn/.*|
-  #            .ansible/.*|
-  #            node_modules/.*|
-  #            reports/.*|
-  #            .npm/.*|
-  #            .nuxt/.*|
-  #            .netlify.*|
-  #            .vercel/.*|
-  #            .travis.yml|
-  #            docker/|
-  #            requirements.yml|
-  #           playbooks/group_vars/all/vault.yml|
-  #            .gitlab-ci.yml|
-  #          )$
+    ### Ansible ###
+    # Disable because too slow
+    # - repo: https://github.com/ansible-community/ansible-lint.git
+    #   rev: v25.9.2
+    #   hooks:
+    #     - id: ansible-lint
+    #       name: "📜 ansible - Lint Ansible"
+    #       # args: [--verbose]
+    #       files: \.(yaml|yml)$
+    #       exclude: >
+    #         (?x)^(
+    #            .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
+    #            docs/site/.*|       # Exclude mkdocs compiled files
+    #            docs/_build/.*|
+    #            \.history/.*|       # Exclude history files
+    #            .*cache.*/.*|       # Exclude cache directories
+    #            .*venv.*/.*|        # Exclude virtual environment directories
+    #            .direnv/.*|
+    #            .yarn/.*|
+    #            .ansible/.*|
+    #            node_modules/.*|
+    #            reports/.*|
+    #            .npm/.*|
+    #            .nuxt/.*|
+    #            .netlify.*|
+    #            .vercel/.*|
+    #            .travis.yml|
+    #            docker/|
+    #            requirements.yml|
+    #           playbooks/group_vars/all/vault.yml|
+    #            .gitlab-ci.yml|
+    #          )$
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.37.1
     hooks:
