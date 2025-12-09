@@ -136,6 +136,7 @@ repos:
             yarn.lock|
             sbom.json|
             pnpm-lock.yaml|
+            public/wireframe.css|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key
