@@ -2,5 +2,10 @@
 /*
 !api
 !public
+!my-app
+!cv
+!html
 !vercel.json
 !*.html
+index.cgi
+index.pl
