@@ -199,7 +199,7 @@ repos:
     # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.16
+    rev: 0.9.17
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -474,45 +474,45 @@ repos:
     # --------------------------- ✍️ Git Commit Quality -------------------------- #
 
     ### Commit Message Standards ###
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.0
-    hooks:
-      - id: commitizen
-        name: "🌳 git · Validate commit message"
-        stages: [commit-msg]
-        additional_dependencies: [cz-conventional-gitmoji]
-      - id: commitizen-branch
-        stages: [pre-push]
+  # - repo: https://github.com/commitizen-tools/commitizen
+  #   rev: v4.10.0
+  #   hooks:
+  #     - id: commitizen
+  #       name: "🌳 git · Validate commit message"
+  #       stages: [commit-msg]
+  #       additional_dependencies: [cz-conventional-gitmoji]
+  #     - id: commitizen-branch
+  #       stages: [pre-push]
 
-    # - repo: https://github.com/jorisroovers/gitlint
-    #   rev: v0.19.1
-    #   hooks:
-    #     - id: gitlint
-    #       name: "🌳 git · Lint"
+  # - repo: https://github.com/jorisroovers/gitlint
+  #   rev: v0.19.1
+  #   hooks:
+  #     - id: gitlint
+  #       name: "🌳 git · Lint"
 
-    # ---------------------------------------------------------------------------- #
-    #                            👑 Mega linter                                    #
-    # ---------------------------------------------------------------------------- #
+  # ---------------------------------------------------------------------------- #
+  #                            👑 Mega linter                                    #
+  # ---------------------------------------------------------------------------- #
 
-    # - repo: https://github.com/oxsecurity/megalinter
-    #   rev: v9.0.1
-    #   hooks:
-    #     - id: megalinter-incremental  # Faster, less thorough
-    #       name: "👑 🐳 megalinter - All in linter"
-    #       stages:
-    #         - pre-commit
-    #       args:
-    #         - mega-linter-runner
-    #         - --containername
-    #         - "megalinter-incremental"
-    #         - --remove-container
-    #         # - --fix
-    #         # - --env
-    #         # - "'APPLY_FIXES=all'"
-    #         - --env
-    #         - "'CLEAR_REPORT_FOLDER=true'"
-    #         - --env
-    #         - "'LOG_LEVEL=warning'"
-    #         - --filesonly
-    #         - --flavor
-    #         - "python"
+  # - repo: https://github.com/oxsecurity/megalinter
+  #   rev: v9.0.1
+  #   hooks:
+  #     - id: megalinter-incremental  # Faster, less thorough
+  #       name: "👑 🐳 megalinter - All in linter"
+  #       stages:
+  #         - pre-commit
+  #       args:
+  #         - mega-linter-runner
+  #         - --containername
+  #         - "megalinter-incremental"
+  #         - --remove-container
+  #         # - --fix
+  #         # - --env
+  #         # - "'APPLY_FIXES=all'"
+  #         - --env
+  #         - "'CLEAR_REPORT_FOLDER=true'"
+  #         - --env
+  #         - "'LOG_LEVEL=warning'"
+  #         - --filesonly
+  #         - --flavor
+  #         - "python"

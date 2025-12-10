@@ -1,14 +1,23 @@
 <!-- markdown-link-check-disable-next-line -->
+---
+layout: default
+---
+
+Text can be **bold**, _italic_, or ~~strikethrough~~.
+
+
 
 # [![Nabla](https://bababou.albandrieu.com/nabla/index/assets/nabla/nabla-4.png)](https://github.com/AlbanAndrieu/nabla-site-apache) nabla-site-apache
 
 [![License: APACHE](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
+[CHANGELOG](./CHANGELOG.html).
+
 Default nabla files for apache
 
 ```bash
 npm run start-python
-# Cloudflare wrangler 
+# Cloudflare wrangler
 npm run start
 ```
 
