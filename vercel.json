@@ -3,7 +3,7 @@
 	"functions": {
 		"api/**/*.php": {
 			"runtime": "vercel-php@0.7.4",
-			"excludeFiles": "{.next,*.cache,.node_cache,.cursor,.ansible,node_modules,.venv,.direnv,public,reports/my-app,index/freebox/*.bmp}/**"
+			"excludeFiles": "{.next,*.cache,.node_cache,.cursor,.ansible,node_modules,.venv,.direnv,public,reports/2025/*,reports/2026/*,index/*.bmp}/**"
 		}
 	},
 	"routes": [

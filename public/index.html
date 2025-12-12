@@ -1,144 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
 <meta http-equiv="REFRESH" content="0;url=/sample/index.html">
 -->
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- PAGE settings -->
+    <link rel="icon" href="assets/nabla/nabla-4.png" />
+    <title>INDEX for albandrieu.com</title>
+    <meta name="description" content="Index for albandrieu.com" />
+    <meta name="keywords" content="alban andrieu" />
+    <meta name="author" content="alban.andrieu@free.fr" />
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- CSS dependencies -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="wireframe.css" />
+    <link rel="stylesheet" href="arf.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- PAGE settings -->
-  <link rel="icon" href="index/assets/nabla/nabla-4.png">
-  <title>Missing Child - Abducted daughter by ger mother and moved from France to Norway then Germany</title>
-  <meta name="description" content="My daughter was kidnapped by her Mother Rachael Brooke and moved from France to Norway the Germany.">
-  <meta name="keywords" content="Father alban andrieu the mother brooke rachael child abuse abduction kidnapping france norway germany">
-  <meta name="author" content="alban.andrieu@free.fr">
-  <meta name="image" content="https://bababou.albandrieu.com/nabla/assets/miss-and-love-you-quote.jpeg" />
+    <!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
+    <script>
+      /*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
+      (() => {
+        const e = document.currentScript;
+        if (
+          (!e || e.src || (e.type && "module" === e.type.toLowerCase())) &&
+          !1 === /^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname)
+        )
+          return void console.warn(
+            "[Obs.js] Skipping: must be an inline, classic <script> in <head>.",
+            e ? (e.src ? "src=" + e.src : "type=" + e.type) : "type=module",
+          );
+        const t = document.documentElement,
+          { connection: i } = navigator;
+        window.obs = window.obs || {};
+        const a =
+            !0 === ((window.obs && window.obs.config) || {}).observeChanges,
+          o = () => {
+            const e = window.obs || {},
+              i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
+            e.connectionCapability =
+              "low" === e.rttCategory && null != i && i >= 8
+                ? "strong"
+                : "high" === e.rttCategory || (null != i && i <= 5)
+                  ? "weak"
+                  : "moderate";
+            const a =
+              !0 === e.dataSaver ||
+              !0 === e.batteryLow ||
+              !0 === e.batteryCritical;
+            e.conservationPreference = a ? "conserve" : "neutral";
+            const o =
+              "weak" === e.connectionCapability ||
+              !0 === e.dataSaver ||
+              !0 === e.batteryCritical;
+            (e.deliveryMode =
+              "strong" !== e.connectionCapability || o || a
+                ? o
+                  ? "lite"
+                  : "cautious"
+                : "rich"),
+              (e.canShowRichMedia = "lite" !== e.deliveryMode),
+              (e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
+              ["strong", "moderate", "weak"].forEach((e) => {
+                t.classList.remove(`has-connection-capability-${e}`);
+              }),
+              t.classList.add(
+                `has-connection-capability-${e.connectionCapability}`,
+              ),
+              ["conserve", "neutral"].forEach((e) => {
+                t.classList.remove(`has-conservation-preference-${e}`);
+              }),
+              t.classList.add(
+                `has-conservation-preference-${e.conservationPreference}`,
+              ),
+              ["rich", "cautious", "lite"].forEach((e) => {
+                t.classList.remove(`has-delivery-mode-${e}`);
+              }),
+              t.classList.add(`has-delivery-mode-${e.deliveryMode}`);
+          },
+          n = () => {
+            if (!i) return;
+            const { saveData: e, rtt: a, downlink: n } = i;
+            (window.obs.dataSaver = !!e),
+              t.classList.toggle("has-data-saver", !!e);
+            const s = ((e) =>
+              Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+            null != s && (window.obs.rttBucket = s);
+            const r = ((e) =>
+              Number.isFinite(e)
+                ? e < 75
+                  ? "low"
+                  : e <= 275
+                    ? "medium"
+                    : "high"
+                : null)(a);
+            r &&
+              ((window.obs.rttCategory = r),
+              ["low", "medium", "high"].forEach((e) =>
+                t.classList.remove(`has-latency-${e}`),
+              ),
+              t.classList.add(`has-latency-${r}`));
+            const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
+            var l;
+            if (null != c) {
+              window.obs.downlinkBucket = c;
+              const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
+              (window.obs.downlinkCategory = e),
+                ["low", "medium", "high"].forEach((e) =>
+                  t.classList.remove(`has-bandwidth-${e}`),
+                ),
+                t.classList.add(`has-bandwidth-${e}`);
+            }
+            "downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
+          };
+        n(),
+          a &&
+            i &&
+            "function" == typeof i.addEventListener &&
+            i.addEventListener("change", n);
+        const s = (e) => {
+          if (!e) return;
+          const { level: i, charging: a } = e,
+            n = Number.isFinite(i) ? i <= 0.05 : null;
+          window.obs.batteryCritical = n;
+          const s = Number.isFinite(i) ? i <= 0.2 : null;
+          (window.obs.batteryLow = s),
+            ["critical", "low"].forEach((e) =>
+              t.classList.remove(`has-battery-${e}`),
+            ),
+            s && t.classList.add("has-battery-low"),
+            n && t.classList.add("has-battery-critical");
+          const r = !!a;
+          (window.obs.batteryCharging = r),
+            t.classList.toggle("has-battery-charging", r),
+            o();
+        };
+        if (
+          ("getBattery" in navigator &&
+            navigator
+              .getBattery()
+              .then((e) => {
+                s(e),
+                  a &&
+                    "function" == typeof e.addEventListener &&
+                    (e.addEventListener("levelchange", () => s(e)),
+                    e.addEventListener("chargingchange", () => s(e)));
+              })
+              .catch(() => {}),
+          "deviceMemory" in navigator)
+        ) {
+          const e = Number(navigator.deviceMemory),
+            i = Number.isFinite(e) ? e : null;
+          window.obs.ramBucket = i;
+          const a =
+            ((r = i),
+            Number.isFinite(r)
+              ? r <= 1
+                ? "very-low"
+                : r <= 2
+                  ? "low"
+                  : r <= 4
+                    ? "medium"
+                    : "high"
+              : null);
+          a &&
+            ((window.obs.ramCategory = a),
+            ["very-low", "low", "medium", "high"].forEach((e) =>
+              t.classList.remove(`has-ram-${e}`),
+            ),
+            t.classList.add(`has-ram-${a}`));
+        }
+        var r;
+        if ("hardwareConcurrency" in navigator) {
+          const e = Number(navigator.hardwareConcurrency),
+            i = Number.isFinite(e) ? e : null;
+          window.obs.cpuBucket = i;
+          const a = ((e) =>
+            Number.isFinite(e)
+              ? e <= 2
+                ? "low"
+                : e <= 5
+                  ? "medium"
+                  : "high"
+              : null)(i);
+          a &&
+            ((window.obs.cpuCategory = a),
+            ["low", "medium", "high"].forEach((e) =>
+              t.classList.remove(`has-cpu-${e}`),
+            ),
+            t.classList.add(`has-cpu-${a}`));
+        }
+        (() => {
+          const e = window.obs || {},
+            i = e.ramCategory,
+            a = e.cpuCategory;
+          let o = "moderate";
+          ("high" !== i && "medium" !== i) || "high" !== a
+            ? ("very-low" === i || "low" === i || "low" === a) && (o = "weak")
+            : (o = "strong"),
+            (e.deviceCapability = o),
+            ["strong", "moderate", "weak"].forEach((e) => {
+              t.classList.remove(`has-device-capability-${e}`);
+            }),
+            t.classList.add(`has-device-capability-${o}`);
+        })();
+      })();
+      //# sourceURL=obs.inline.js
+    </script>
 
-  <!-- facebook open graph tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bababou.albandrieu.com" />
-  <meta property="og:title" content="Alban Andrieu" />
-  <meta property="og:description" content="My daughter was kidnapped by her Mother Rachael Brooke and moved from France to Norway the Germany." />
-  <meta property="og:image" content="https://bababou.albandrieu.com/nabla/assets/miss-and-love-you-quote.jpeg" />
+    <script type="text/javascript" src="d3.v3.min.js"></script>
 
-  <!-- twitter card tags additive with the og: tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:domain" value="albandrieu.com" />
-  <meta name="twitter:title" value="Alban Andrieu" />
-  <meta name="twitter:description" value="My daughter was kidnapped by her Mother Rachael Brooke and moved from France to Norway the Germany." />
-  <meta name="twitter:image" content="https://bababou.albandrieu.com/nabla/assets/miss-and-love-you-quote.jpeg" />
-  <meta name="twitter:url" value="https://bababou.albandrieu.com" />
-  <meta name="twitter:label1" value="Abduction" />
-  <meta name="twitter:data1" value="June 6, 2015" />
-  <meta name="twitter:label2" value="Missing child" />
-  <meta name="referrer" content="always" />
+    <!-- Start VWO Async SmartCode -->
+    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script type="text/javascript" id="vwoCode">
+      window._vwo_code ||
+        (function () {
+          var account_id = 1040791,
+            version = 2.1,
+            settings_tolerance = 2000,
+            hide_element = "body",
+            hide_element_style =
+              "opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;",
+            /* DO NOT EDIT BELOW THIS LINE */
+            f = false,
+            w = window,
+            d = document,
+            v = d.querySelector("#vwoCode"),
+            cK = "_vwo_" + account_id + "_settings",
+            cc = {};
+          try {
+            var c = JSON.parse(
+              localStorage.getItem("_vwo_" + account_id + "_config"),
+            );
+            cc = c && typeof c === "object" ? c : {};
+          } catch (e) {}
+          var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
+          code = {
+            nonce: v && v.nonce,
+            use_existing_jquery: function () {
+              return typeof use_existing_jquery !== "undefined"
+                ? use_existing_jquery
+                : undefined;
+            },
+            library_tolerance: function () {
+              return typeof library_tolerance !== "undefined"
+                ? library_tolerance
+                : undefined;
+            },
+            settings_tolerance: function () {
+              return cc.sT || settings_tolerance;
+            },
+            hide_element_style: function () {
+              return "{" + (cc.hES || hide_element_style) + "}";
+            },
+            hide_element: function () {
+              if (performance.getEntriesByName("first-contentful-paint")[0]) {
+                return "";
+              }
+              return typeof cc.hE === "string" ? cc.hE : hide_element;
+            },
+            getVersion: function () {
+              return version;
+            },
+            finish: function (e) {
+              if (!f) {
+                f = true;
+                var t = d.getElementById("_vis_opt_path_hides");
+                if (t) t.parentNode.removeChild(t);
+                if (e)
+                  new Image().src =
+                    "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
+                    account_id +
+                    e;
+              }
+            },
+            finished: function () {
+              return f;
+            },
+            addScript: function (e) {
+              var t = d.createElement("script");
+              t.type = "text/javascript";
+              if (e.src) {
+                t.src = e.src;
+              } else {
+                t.text = e.text;
+              }
+              v && t.setAttribute("nonce", v.nonce);
+              d.getElementsByTagName("head")[0].appendChild(t);
+            },
+            load: function (e, t) {
+              var n = this.getSettings(),
+                i = d.createElement("script"),
+                r = this;
+              t = t || {};
+              if (n) {
+                i.textContent = n;
+                d.getElementsByTagName("head")[0].appendChild(i);
+                if (!w.VWO || VWO.caE) {
+                  stT.removeItem(cK);
+                  r.load(e);
+                }
+              } else {
+                var o = new XMLHttpRequest();
+                o.open("GET", e, true);
+                o.withCredentials = !t.dSC;
+                o.responseType = t.responseType || "text";
+                o.onload = function () {
+                  if (t.onloadCb) {
+                    return t.onloadCb(o, e);
+                  }
+                  if (o.status === 200 || o.status === 304) {
+                    _vwo_code.addScript({ text: o.responseText });
+                  } else {
+                    _vwo_code.finish("&e=loading_failure:" + e);
+                  }
+                };
+                o.onerror = function () {
+                  if (t.onerrorCb) {
+                    return t.onerrorCb(e);
+                  }
+                  _vwo_code.finish("&e=loading_failure:" + e);
+                };
+                o.send();
+              }
+            },
+            getSettings: function () {
+              try {
+                var e = stT.getItem(cK);
+                if (!e) {
+                  return;
+                }
+                e = JSON.parse(e);
+                if (Date.now() > e.e) {
+                  stT.removeItem(cK);
+                  return;
+                }
+                return e.s;
+              } catch (e) {
+                return;
+              }
+            },
+            init: function () {
+              if (d.URL.indexOf("__vwo_disable__") > -1) return;
+              var e = this.settings_tolerance();
+              w._vwo_settings_timer = setTimeout(function () {
+                _vwo_code.finish();
+                stT.removeItem(cK);
+              }, e);
+              var t;
+              if (this.hide_element() !== "body") {
+                t = d.createElement("style");
+                var n = this.hide_element(),
+                  i = n ? n + this.hide_element_style() : "",
+                  r = d.getElementsByTagName("head")[0];
+                t.setAttribute("id", "_vis_opt_path_hides");
+                v && t.setAttribute("nonce", v.nonce);
+                t.setAttribute("type", "text/css");
+                if (t.styleSheet) t.styleSheet.cssText = i;
+                else t.appendChild(d.createTextNode(i));
+                r.appendChild(t);
+              } else {
+                t = d.getElementsByTagName("head")[0];
+                var i = d.createElement("div");
+                i.style.cssText =
+                  "z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;";
+                i.setAttribute("id", "_vis_opt_path_hides");
+                i.classList.add("_vis_hide_layer");
+                t.parentNode.insertBefore(i, t.nextSibling);
+              }
+              var o = window._vis_opt_url || d.URL,
+                s =
+                  "https://dev.visualwebsiteoptimizer.com/j.php?a=" +
+                  account_id +
+                  "&u=" +
+                  encodeURIComponent(o) +
+                  "&vn=" +
+                  version;
+              if (w.location.search.indexOf("_vwo_xhr") !== -1) {
+                this.addScript({ src: s });
+              } else {
+                this.load(s + "&x=true");
+              }
+            },
+          };
+          w._vwo_code = code;
+          code.init();
+        })();
+    </script>
+    <!-- End VWO Async SmartCode -->
 
-  <!-- CSS dependencies -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="wireframe.css">
-  <link rel="stylesheet" href="arf.css">
-
-  <!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
-  <script>
-    /*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
-    ;(()=>{const e=document.currentScript;if((!e||e.src||e.type&&"module"===e.type.toLowerCase())&&!1===/^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname))return void console.warn("[Obs.js] Skipping: must be an inline, classic <script> in <head>.",e?e.src?"src="+e.src:"type="+e.type:"type=module");const t=document.documentElement,{connection:i}=navigator;window.obs=window.obs||{};const a=!0===(window.obs&&window.obs.config||{}).observeChanges,o=()=>{const e=window.obs||{},i="number"==typeof e.downlinkBucket?e.downlinkBucket:null;e.connectionCapability="low"===e.rttCategory&&null!=i&&i>=8?"strong":"high"===e.rttCategory||null!=i&&i<=5?"weak":"moderate";const a=!0===e.dataSaver||!0===e.batteryLow||!0===e.batteryCritical;e.conservationPreference=a?"conserve":"neutral";const o="weak"===e.connectionCapability||!0===e.dataSaver||!0===e.batteryCritical;e.deliveryMode="strong"!==e.connectionCapability||o||a?o?"lite":"cautious":"rich",e.canShowRichMedia="lite"!==e.deliveryMode,e.shouldAvoidRichMedia="lite"===e.deliveryMode,["strong","moderate","weak"].forEach(e=>{t.classList.remove(`has-connection-capability-${e}`)}),t.classList.add(`has-connection-capability-${e.connectionCapability}`),["conserve","neutral"].forEach(e=>{t.classList.remove(`has-conservation-preference-${e}`)}),t.classList.add(`has-conservation-preference-${e.conservationPreference}`),["rich","cautious","lite"].forEach(e=>{t.classList.remove(`has-delivery-mode-${e}`)}),t.classList.add(`has-delivery-mode-${e.deliveryMode}`)},n=()=>{if(!i)return;const{saveData:e,rtt:a,downlink:n}=i;window.obs.dataSaver=!!e,t.classList.toggle("has-data-saver",!!e);const s=(e=>Number.isFinite(e)?25*Math.ceil(e/25):null)(a);null!=s&&(window.obs.rttBucket=s);const r=(e=>Number.isFinite(e)?e<75?"low":e<=275?"medium":"high":null)(a);r&&(window.obs.rttCategory=r,["low","medium","high"].forEach(e=>t.classList.remove(`has-latency-${e}`)),t.classList.add(`has-latency-${r}`));const c=(l=n,Number.isFinite(l)?Math.ceil(l):null);var l;if(null!=c){window.obs.downlinkBucket=c;const e=c<=5?"low":c>=8?"high":"medium";window.obs.downlinkCategory=e,["low","medium","high"].forEach(e=>t.classList.remove(`has-bandwidth-${e}`)),t.classList.add(`has-bandwidth-${e}`)}"downlinkMax"in i&&(window.obs.downlinkMax=i.downlinkMax),o()};n(),a&&i&&"function"==typeof i.addEventListener&&i.addEventListener("change",n);const s=e=>{if(!e)return;const{level:i,charging:a}=e,n=Number.isFinite(i)?i<=.05:null;window.obs.batteryCritical=n;const s=Number.isFinite(i)?i<=.2:null;window.obs.batteryLow=s,["critical","low"].forEach(e=>t.classList.remove(`has-battery-${e}`)),s&&t.classList.add("has-battery-low"),n&&t.classList.add("has-battery-critical");const r=!!a;window.obs.batteryCharging=r,t.classList.toggle("has-battery-charging",r),o()};if("getBattery"in navigator&&navigator.getBattery().then(e=>{s(e),a&&"function"==typeof e.addEventListener&&(e.addEventListener("levelchange",()=>s(e)),e.addEventListener("chargingchange",()=>s(e)))}).catch(()=>{}),"deviceMemory"in navigator){const e=Number(navigator.deviceMemory),i=Number.isFinite(e)?e:null;window.obs.ramBucket=i;const a=(r=i,Number.isFinite(r)?r<=1?"very-low":r<=2?"low":r<=4?"medium":"high":null);a&&(window.obs.ramCategory=a,["very-low","low","medium","high"].forEach(e=>t.classList.remove(`has-ram-${e}`)),t.classList.add(`has-ram-${a}`))}var r;if("hardwareConcurrency"in navigator){const e=Number(navigator.hardwareConcurrency),i=Number.isFinite(e)?e:null;window.obs.cpuBucket=i;const a=(e=>Number.isFinite(e)?e<=2?"low":e<=5?"medium":"high":null)(i);a&&(window.obs.cpuCategory=a,["low","medium","high"].forEach(e=>t.classList.remove(`has-cpu-${e}`)),t.classList.add(`has-cpu-${a}`))}(()=>{const e=window.obs||{},i=e.ramCategory,a=e.cpuCategory;let o="moderate";"high"!==i&&"medium"!==i||"high"!==a?("very-low"===i||"low"===i||"low"===a)&&(o="weak"):o="strong",e.deviceCapability=o,["strong","moderate","weak"].forEach(e=>{t.classList.remove(`has-device-capability-${e}`)}),t.classList.add(`has-device-capability-${o}`)})()})();
-    //# sourceURL=obs.inline.js
-  </script>
-
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <script type="text/javascript" src="d3.v3.min.js"></script>
-  <!-- mixpanel -->
-  <script type="text/javascript">
-    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
-  </script>
-
-  <!-- Start VWO Async SmartCode -->
-  <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-  <script type="text/javascript" data-cfasync="false" id="vwoCode">
-  window._vwo_code || (function() {
-  var account_id=1040791,
-  version=2.1,
-  settings_tolerance=2000,
-  hide_element='body',
-  hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
-  /* DO NOT EDIT BELOW THIS LINE */
-  f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
-  </script>
-  <!-- End VWO Async SmartCode -->
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-W7XNV7K6');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RHL13BHK6K');
-  </script>
-
-  <!-- Start PostHog -->
-  <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48', {
-        api_host: 'https://eu.i.posthog.com',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
-    })
-  </script>
-  <!-- End VWO PostHog -->
-
-  <!-- Start Heap prod -->
-  <script type="text/javascript">
-  window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
-  heap.load("1210018410");
-  </script>
-  <!-- End Heap prod -->
-
-  <!-- Start Datadog RUM -->
-  <script>
-    (function(h,o,u,n,d) {
-      h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
-      d=o.createElement(u);d.async=1;d.src=n
-      n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
-    })(window,document,'script','https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js','DD_RUM')
-    window.DD_RUM.onReady(function() {
-      window.DD_RUM.init({
-        clientToken: 'pub550f242796dac3c13b730eb727658279',
-        applicationId: '7308f250-2cea-49a1-b308-9a55f64375d7',
-        // `site` refers to the Datadog site parameter of your organization
-        // see https://docs.datadoghq.com/getting_started/site/
-        site: 'datadoghq.eu',
-        service: 'bababou',
-        env: 'prod',
-        // Specify a version number to identify the deployed version of your application in Datadog
-        version: '1.0.0',
-        sessionSampleRate: 100,
-        sessionReplaySampleRate: 20,
-        defaultPrivacyLevel: 'allow',
+    <!-- Start PostHog -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r,
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
+                    " ",
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48", {
+        api_host: "https://eu.i.posthog.com",
+        person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
       });
-    })
-  </script>
-  <!-- End Datadog RUM -->
+    </script>
+    <!-- End VWO PostHog -->
 
-  <!-- Cloudflare -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Start Heap dev -->
+    <script type="text/javascript">
+      (window.heapReadyCb = window.heapReadyCb || []),
+        (window.heap = window.heap || []),
+        (heap.load = function (e, t) {
+          (window.heap.envId = e),
+            (window.heap.clientConfig = t = t || {}),
+            (window.heap.clientConfig.shouldFetchServerConfig = !1);
+          var a = document.createElement("script");
+          (a.type = "text/javascript"),
+            (a.async = !0),
+            (a.src =
+              "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
+          var r = document.getElementsByTagName("script")[0];
+          r.parentNode.insertBefore(a, r);
+          var n = [
+              "init",
+              "startTracking",
+              "stopTracking",
+              "track",
+              "resetIdentity",
+              "identify",
+              "getSessionId",
+              "getUserId",
+              "getIdentity",
+              "addUserProperties",
+              "addEventProperties",
+              "removeEventProperty",
+              "clearEventProperties",
+              "addAccountProperties",
+              "addAdapter",
+              "addTransformer",
+              "addTransformerFn",
+              "onReady",
+              "addPageviewProperties",
+              "removePageviewProperty",
+              "clearPageviewProperties",
+              "trackPageview",
+            ],
+            i = function (e) {
+              return function () {
+                var t = Array.prototype.slice.call(arguments, 0);
+                window.heapReadyCb.push({
+                  name: e,
+                  fn: function () {
+                    heap[e] && heap[e].apply(heap, t);
+                  },
+                });
+              };
+            };
+          for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
+        });
+      heap.load("724068705");
+    </script>
+    <!-- End Heap dev -->
 
-  <link rel="alternate" hreflang="en" href="https://bababou.albandrieu.com/en/..."/>
-  <link rel="alternate" hreflang="fr" href="https://bababou.albandrieu.com/fr/..."/>
-  <link rel="alternate" hreflang="x-default" href="https://bababou.albandrieu.com/nabla/"/>
-  <link rel="canonical" href="https://bababou.albandrieu.com/nabla/..."/>
-  <style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+<<<<<<< HEAD
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -185,424 +568,1487 @@
         <div class="col-md-7 py-4">
           <h4>About</h4>
           <p class="text-info">INDEX for albandrieu.com</p>
+=======
+      gtag("config", "G-RHL13BHK6K");
+    </script>
+    <!-- Vercel Web Analytics -->
+    <script defer src="https://cdn.vercel.sh/analytics"></script>
+  </head>
+  <body>
+    <div class="collapse bg-dark" id="navbarHeader" style="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 py-4">
+            <h4>About</h4>
+            <p class="text-info">INDEX for albandrieu.com</p>
+          </div>
+>>>>>>> 9203a09 (Move index directory to public)
         </div>
       </div>
     </div>
-  </div>
-  <div class="py-4">
-    <div class="container">
-    <!--<div style="background:transparent !important" class="jumbotron">-->
-    <div class="jumbotron">
-      <!--<img class="img-fluid d-block mx-auto py-2" src="assets/miss-and-love-you-quote.jpeg" width="240" alt="A heartfelt quote expressing feelings of missing and loving someone" /></h1>-->
-
-      <h1><p class="lead">For father who cannot see their child because Mother took your child and moving from country to country to escape from justice.</p>
-      </h1>
-      <div class="row align-items-end">
-        <div class="col-md-auto ">
-          <p class="lead">🗺 🇫🇷 France 🛫 🇳🇴 Norway 🚢 🇩🇪 Germany.</p>
-        </div>
-        <!--
-          <div class="col-md-3 ">
-          <img class="img-fluid d-block mx-auto py-2" width="120" src="assets/flag-french-norway-simple.png" alt="" aria-hidden="true"/>
-        </div>
-        -->
-      </div>
-      <p>
-        Afer a few years to find out that my daughter was abducted in Norway (2015), a few trials, once I was close to reach out the Norwegian administration, her mother moved to Germany (2022). So now I have to start all over but in Germany...
-        <small class="text-muted">or somewhere else.</small>
-      </p>
-      <p class="card-text" translate="yes" lang="en">
-        This site is addressed, without distinction of nationality "nor gender", to foreign and native parents who are put in difficulty and discriminated against by the European legal framework (France, Norway, Germany) which, contrary to what is stated, does not yet recognize the sharing of parental authority pre and post-separation (Norway) nor a realistic and effective right of visitation (Norway, Germany, France), and does not penalize parental abduction, non-representation of children (Norway, Germany), but rather encourages it (Norway), paradoxically making it an advantage for the kidnapping parent to obtain parental authority (Norway), child support and custody of children with (Norway, Germany, France) and without judgment (Norway), (under the guise of the child's well-being).<br>
-        <br>
-        This painful and almost incredible reality has the effect, in Norway, Germany, of allowing a parent, with complete impunity and with the blessing and protection of judges, schools, social services, to abduct children and cut them off from all contact with the other parent until their majority (and even beyond, as a consequence of the parental alienation suffered by the child) by refusing contacts and visits, making them "de jure and de facto" orphans, and depriving the other parent of all their rights.<br>
-        <br>
-        It also has the consequence, in the case of binational children, of depriving children of half of their cultural identity, their family and the bilingualism of their early years, of the love of both parents, which are nevertheless promising for their future, in an increasingly internationalized world.<br>
-        <br>
-        This site is also addressed to any sympathetic person and/or likely to provide help and information.<br>
-        <br>
-        What kind of information might be useful and in what areas?<br>
-        <br>
-        <ul>
-          <li>in legal and psycho-sociological fields;</li>
-
-          <li>family law;</li>
-
-          <li>case law for French, Norwegian, German, and Foreign nationals;</li>
-
-          <li>international conventions</li>
-
-          <li>parental alienation syndrome (PAS);</li>
-
-          <li>the presentation of this issue in the media, associations, cinema, etc. (articles, bibliographic and multi-media references, internet links, etc.).</li>
-
-          <li>connecting parents in difficulty (under the guise of anonymity, by using a pseudonym that protects confidentiality), sharing experiences and information, assistance and mutual aid.</li>
-
-          <li>the presentation of the following basic demands:</li>
-
-        </ul>
-        <ol>
-          <li>Make Norway fill in the database of the <a href="https://www.hcch.net/fr/instruments/conventions/full-text/?cid=24">Hague Convention on the Civil Aspects of International Child Abduction</a>, in particular the definition of displacement, child relocation (7 months being considered as vacation by Norway), habitual residence criterion for abduction.</li>
-
-          <li>Make Norway respect the <a href="https://www.hcch.net/fr/instruments/conventions/full-text/?cid=70">Hague Convention concerning jurisdiction, applicable law, recognition, enforcement and co-operation in respect of parental responsibility and measures for the protection of children</a>, in particular cooperation in matters of parental responsibility and measures for the protection of children.</li>
-
-          <li>Sharing of parental authority after separation and/or divorce. In Norway, a woman can register with sole parental authority, effectively annihilating all rights of the father on its soil and in other countries.</li>
-
-          <li>Inscription in Norwegian and German law of coercive and systematic means (France) to force a parent to respect a right of visitation for separated and divorced parents — ultimately, shared custody — without distinction of the parent's gender.</li>
-
-          <li>Prevent any registration, removal of a child from a school without the explicit agreement of both parents.</li>
-
-          <li>Taking into account of Parental Alienation Syndrome (PAS) by courts.</li>
-
-          <li>Legal recognition of the right of binational children to receive a double cultural and linguistic education, corresponding to that of their two parents.</li>
-
-          <li>Taking into account of the "superior well-being of the child" by courts without distinction of the parents' gender.</li>
-
-          <li>Equal treatment, in fact, of foreign parents before European courts.</li>
-        </ol>
-      </p>
-      <div class="row align-items-end">
-        <div class="col-md-auto ">
-                    ...
+    <div class="py-4">
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-4">
+            <img class="col align-self-center" src="assets/nabla/nabla-3.svg" />
+          </h1>
+          <div class="row align-items-end">
+            <div class="col-md-auto">
+              <p class="lead">Welcome to Alban Andrieu's index page.</p>
+            </div>
+            <div class="col-md-6">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                width="120"
+                src="https://avatars1.githubusercontent.com/u/7859836"
+              />
+            </div>
+          </div>
+          <hr class="my-4" />
+          <p>
+            <i class="fa fa-info-circle d-inline text-warning"></i
+            >&nbsp;Additional information about Configuration, Reporting and
+            Scripts can be found.
+          </p>
+          <a
+            class="btn btn-primary btn-lg"
+            href="https://github.com/AlbanAndrieu"
+            target="_blank"
+            role="button"
+            >On <b class="text-uppercase">Github</b></a
+          >
         </div>
       </div>
-      <hr class="my-4">
-      <p><i class="fa fa-info-circle d-inline text-warning"></i>&nbsp;Willing to contribute? We are...</p>
-      <a class="btn btn-primary btn-lg" href="https://github.com/AlbanAndrieu/nabla-site-apache" target="_blank" role="button">On <b class="text-uppercase">Github</b></a>
     </div>
 
-    </div>
-  </div>
-  <div class="py-3 bg-light" style="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="assets/child-abuse.jpg" alt="Illustration representing child abduction as abuse" />
-            <div class="card-body">
-              <h5><b>Abduction is <a href="https://en.wikipedia.org/wiki/Child_abduction" target="_blank">Child Abuse</a></b></h5>
-              <p class="card-text">Why a child could not see her daddy?</p>
+    <div class="py-3 bg-light" style="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img class="card-img-top" src="assets/jenkins-basic.jpg" />
+              <div class="card-body">
+                <h5 class="">
+                  <b
+                    >Nabla
+                    <a href="https://jenkins.io/" target="_blank" style=""
+                      >Jenkins</a
+                    ></b
+                  >
+                </h5>
+                <p class="card-text">Jenkins <b>Freestyle</b> jobs</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      <a
+                        href="http://albandrieu.com/jenkins"
+                        target="_blank"
+                        style=""
+                        >Jenkins</a
+                      >
+                    </button>
+                    <div class="btn-group btn-group-sm" style="">
+                      <button
+                        class="btn dropdown-toggle btn-light"
+                        data-toggle="dropdown"
+                        contenteditable="true"
+                      >
+                        Tools&nbsp;
+                      </button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="http://albandrieu.com/jenkins/pluginusage"
+                          target="_blank"
+                          >Plugin Usage</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          href="http://albandrieu.com/jenkins/script"
+                          target="_blank"
+                          >Script Console</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          href="http://albandrieu.com/jenkins/computer"
+                          target="_blank"
+                          >Slave Nodes</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
+                          target="_blank"
+                          >Sonar</a
+                        >
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      <a href="/01_nabla/index.html">Report</a>
+                    </button>
+                    <div class="btn-group btn-group-sm" style="">
+                      <button
+                        class="btn dropdown-toggle btn-success"
+                        data-toggle="dropdown"
+                      >
+                        Download&nbsp;
+                      </button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          download
+                          href="/cv/cv-aandrieu-XX-XX-2021.tex"
+                          >*.tex</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          download
+                          href="/cv/cv-aandrieu-XX-XX-2021.pdf"
+                          >*.pdf</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          download
+                          href="/01_nabla/index.html"
+                          >*.html</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <!--
+                      <a class="dropdown-item" download href="/01_nabla/nabla_report.txt">*.txt</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" download href="/01_nabla/nabla_report.zip">*.zip</a>
+                      <div class="dropdown-divider"></div>
+                      -->
+                        <a
+                          class="dropdown-item"
+                          download
+                          href="http://albandrieu.com/jenkins/jnlpJars/jenkins-cli.jar"
+                          >Jenkins CLI</a
+                        >
+                      </div>
+                    </div>
+                    <div class="btn-group"></div>
+                  </div>
+                  <div class="btn-group"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="assets/alone-1.jpg" alt="Image depicting loneliness and separation" />
-            <div class="card-body">
-              <h5 class=""><b>In my position? <a href="mailto:alban.andrieu@free.fr">Contact me</a></b></h5>
-              <p class="card-text">Your child has been abducted in Norway ans/or in Germany. Contact me!</p>
-              <p class="card-text">We can share experience, how can a father fight to get contact in each country.</p>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img class="card-img-top" src="assets/jenkins-docker.png" />
+              <div class="card-body" style="">
+                <h5 class="">
+                  <b
+                    >Pipeline Nabla
+                    <a href="https://jenkins.io/" target="_blank" style=""
+                      >Jenkins</a
+                    ></b
+                  >
+                </h5>
+                <p class="card-text">Jenkins <b>Pipeline</b> jobs</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      style=""
+                    >
+                      <a href="http://albandrieu.com/jenkins/" target="_blank"
+                        >Jenkins</a
+                      >
+                    </button>
+                    <div class="btn-group btn-group-sm">
+                      <button
+                        class="btn dropdown-toggle btn-light"
+                        data-toggle="dropdown"
+                        contenteditable="true"
+                      >
+                        Tools&nbsp;
+                      </button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="http://jenkins.albandrieu.com/script"
+                          target="_blank"
+                          >Script Console</a
+                        >
+                        <div class="dropdown-divider"></div>
+                        <a
+                          class="dropdown-item"
+                          href="http://jenkins.albandrieu.com/computer"
+                          target="_blank"
+                          >Slave Nodes</a
+                        >
+                      </div>
+                    </div>
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        <a>Report</a>
+                      </button>
+                      <div class="btn-group btn-group-sm" style="">
+                        <button
+                          class="btn dropdown-toggle btn-success"
+                          data-toggle="dropdown"
+                        >
+                          Download&nbsp;
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" download href="#">*.csv</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" download href="#">*.html</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" download href="#">*.json</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" download href="#">*.txt</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" download href="#">*.zip</a>
+                          <div class="dropdown-divider"></div>
+                          <a
+                            class="dropdown-item"
+                            download
+                            href="http://albandrieu.com/jenkins/jnlpJars/jenkins-cli.jar"
+                            >Jenkins CLI</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-group"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="assets/passport-fr-bababou-4.png" alt="French passport illustration" />
-            <div class="card-body">
-              <h5 class=""><b>Eleonore, 14CV32249 is your ID!</b></h5>
-              <p class="card-text">Your mother has changed your name on other ID's.</p>
-              <p class="card-text">She changed your country.</p>
-              <p class="card-text">Ask for your French passport, she was not able to change that...</p>
-              <p class="card-text">Your family is in France.</p>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                src="assets/logo-freenas.jpg"
+                width="140"
+              />
+              <div class="card-body">
+                <h5 class="">
+                  <b
+                    >Nabla
+                    <a href="https://www.freenas.org/" target="_blank" style=""
+                      >FreeNAS</a
+                    ></b
+                  >
+                </h5>
+                <p class="card-text">
+                  FreeNAS <b>® © 2020 - iXsystems, Inc</b>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      style=""
+                    >
+                      <a
+                        href="https://albandrieu.com:7000/ui/dashboard"
+                        target="_blank"
+                        style=""
+                        >HTTPS UI</a
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                      style=""
+                    >
+                      <a
+                        href="https://albandrieu.com:81/"
+                        target="_blank"
+                        style=""
+                        >HTTP UI</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                src="assets/logo-iocage-simple.png"
+                width="100"
+              />
+              <div class="card-body">
+                <h5 class="">
+                  <b
+                    >Nabla
+                    <a href="https://www.freenas.org/" target="_blank" style=""
+                      >FreeNAS</a
+                    >
+                    Iocage</b
+                  >
+                </h5>
+                <p class="card-text">
+                  Freenas <b>Iocage</b>
+                  <a href="https://www.freenas.org/plugins/" target="_blank"
+                    >Plugins</a
+                  > 
+                </p>
+                <div class="btn-group-vertical btn-group-sm" style="">
+                  <button
+                    class="btn dropdown-toggle btn-light"
+                    data-toggle="dropdown"
+                    contenteditable="true"
+                  >
+                    Internal&nbsp;
+                  </button>
+                  <div class="dropdown-menu">
+                    <a
+                      class="dropdown-item"
+                      href="https://albandrieu.com:7000/ui/plugins"
+                      target="_blank"
+                      >Plugins</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.58:32400/web"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-plexmedia-simple.jpeg"
+                        width="100"
+                      />Plex</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.24:8181"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-tautulli-simple.png"
+                        width="100"
+                      />Tautulli</a
+                    >
 
-      </div>
-      <div class="row">
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-norway-location-1.svg" alt="Map showing location in Norway" />
-            <div class="card-body">
-              <h5 class=""><b>I found my Baby <a href="https://goo.gl/maps/6cqFXgi9ZAxntvVW9" target="_blank">here</a>...</b></h5>
-              <p class="card-text"><a href="https://tortberg.kanvas.no/" target="_blank" style="">Tørtberg Kanvas-barnehage</a>, is where my daughter is kept <b>prisoner</b></p>
-              <p class="card-text"><span title="Elin Kindem">People</span> there are <b>unreachable</b>. Why norway is not willing to cooperate?</p>
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.24:7878"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-radarr-simple.png"
+                        width="100"
+                      />Radarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.24:8989"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-sonarr-simple.jpeg"
+                        width="100"
+                      />Sonarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.24:8683"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-lidarr-simple.png"
+                        width="100"
+                      />Lidarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.24:9001"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-organizr-simple.jpeg"
+                        width="100"
+                      />Organizr</a
+                    >
 
-              <!--
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.66:9117"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-jackett-simple.png"
+                        width="100"
+                      />Jackett</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.67:8080"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-sabnzbd-simple.jpeg"
+                        width="100"
+                      />Sabnzbd</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.70:9091"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-transmission-simple.jpeg"
+                        width="100"
+                      />Transmission</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://192.168.1.69:8112"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-deluge-simple.png"
+                        width="100"
+                      />Deluge</a
+                    >
+                  </div>
+                </div>
+                <div class="btn-group-vertical btn-group-sm" style="">
+                  <button
+                    class="btn dropdown-toggle btn-light"
+                    data-toggle="dropdown"
+                    contenteditable="true"
+                  >
+                    External&nbsp;
+                  </button>
+                  <div class="dropdown-menu">
+                    <a
+                      class="dropdown-item"
+                      href="https://albandrieu.com:7000/ui/plugins"
+                      target="_blank"
+                      >Plugins</a
+                    >
+                    <!--<div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.58:32400/web" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-plexmedia-simple.jpeg" width="100">Plex</a>-->
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:8181"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-tautulli-simple.png"
+                        width="100"
+                      />Tautulli</a
+                    >
+
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:7878"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-radarr-simple.png"
+                        width="100"
+                      />Radarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:8989"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-sonarr-simple.jpeg"
+                        width="100"
+                      />Sonarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:8683"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-lidarr-simple.png"
+                        width="100"
+                      />Lidarr</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:9001"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-organizr-simple.jpeg"
+                        width="100"
+                      />Organizr</a
+                    >
+
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:9117"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-jackett-simple.png"
+                        width="100"
+                      />Jackett</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:8090"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-sabnzbd-simple.jpeg"
+                        width="100"
+                      />Sabnzbd</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:9091"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-transmission-simple.jpeg"
+                        width="100"
+                      />Transmission</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      class="dropdown-item"
+                      href="http://albandrieu.com:8112"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-deluge-simple.png"
+                        width="100"
+                      />Deluge</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                src="assets/logo-devops.png"
+                width="160"
+              />
+              <div class="card-body">
+                <h5 class="">
+                  <b
+                    >Nabla
+                    <a href="https://www.freenas.org/" target="_blank" style=""
+                      >FreeNAS&nbsp;</a
+                    ><a href="https://ubuntu.com/" target="_blank" style=""
+                      >Ubuntu&nbsp</a
+                    ></b
+                  >
+                </h5>
+                <p class="card-text">DevOps <b>Tools</b></p>
+                <div class="col-md-4" style="">
+                  <p class="card-text">FreeNAS</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <a
+                        class="dropdown-item"
+                        href="https://albandrieu.com:7000/ui/plugins"
+                        target="_blank"
+                        >Plugins</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.62:80/jenkins/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-jenkins-simple.png"
+                          width="100"
+                        />Jenkins</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.24:8081/nexus/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-nexus-simple.png"
+                          width="100"
+                        />Nexus</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.61:80"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-apache-simple.jpeg"
+                          width="100"
+                        />Apache</a
+                      >
+                      <!--
+                    http://192.168.1.61/server-status
+                    http://192.168.1.61/server-info
+                    -->
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.61:7075"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-apache-simple.jpeg"
+                          width="100"
+                        />Apache Debug</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.61:5678/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-bower-simple.svg"
+                          width="100"
+                        />Bower</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://192.168.1.61:10000/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-webmin-simple.png"
+                          width="100"
+                        />Webmin</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.61:7075/download/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-apache-simple.jpeg"
+                          width="100"
+                        />Download</a
+                      >
+                    </div>
+                  </div>
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      External&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://albandrieu.com/jenkins/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-jenkins-simple.png"
+                          width="100"
+                        />Jenkins</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://nexus.albandrieu.com/nexus/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-nexus-simple.png"
+                          width="100"
+                        />Nexus</a
+                      >
+                      <!--<div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:80" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-apache-simple.jpeg" width="100">Apache</a>-->
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://albandrieu.com:5678/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-bower-simple.svg"
+                          width="100"
+                        />Bower</a
+                      >
+                      <!--TO reduce attack <div class="dropdown-divider"></div><a class="dropdown-item" href="https://albandrieu.com:10000/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-webmin-simple.png" width="100">Webmin</a>-->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="">
+                  <p class="card-text">Ubuntu</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:8686/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-jenkins-simple.png"
+                          width="100"
+                        />Jenkins</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:8087"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-deptrack-simple.jpeg"
+                          width="100"
+                        />Dependency Track</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:8081/nexus/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-nexus-simple.png"
+                          width="100"
+                        />Nexus</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:7075/index/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-apache-simple.jpeg"
+                          width="100"
+                        />Apache</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://172.17.0.57:10000/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-webmin-simple.png"
+                          width="100"
+                        />Webmin</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:6532/harbor/projects"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-harbor-simple.jpeg"
+                          width="100"
+                        />Harbor</a
+                      >
+                    </div>
+                  </div>
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      External&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <!--
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com/jenkins/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-jenkins-simple.png" width="100">Jenkins</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="https://nexus.albandrieu.com/nexus/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-nexus-simple.png" width="100">Nexus</a>
+                    -->
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://albandrieu.com:80"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-apache-simple.jpeg"
+                          width="100"
+                        />Apache</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                src="assets/logo-monitoring-simple.jpg"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="">
+                  <b
+                    >Nabla
+                    <a href="https://ubuntu.com/" target="_blank" style=""
+                      >Ubuntu</a
+                    ></b
+                  >
+                </h5>
+                <p class="card-text">DevOps <b>Monitoring</b></p>
+                <div class="col-md-4" style="">
+                  <p class="card-text">FreeNAS</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://192.168.1.61:10000/webalizer/view_log.cgi/%252Fvar%252Flog%252Fhttpd%252Dalbandrieu%252Ecom%252Daccess%252Elog/index.html"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-awstats-simple.jpg"
+                          width="100"
+                        />Awstats</a
+                      >
+                    </div>
+                  </div>
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      External&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://albandrieu.com/nabla/webalizer/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-awstats-simple.jpg"
+                          width="100"
+                        />Awstats</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="">
+                  <p class="card-text">LiveBox</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://192.168.1.1/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-livebox-simple.jpg"
+                          width="100"
+                        />LiveBox</a
+                      >
+                    </div>
+                  </div>
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      External&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://82.124.241.189:10007/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-livebox-simple.jpg"
+                          width="100"
+                        />LiveBox</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="">
+                  <p class="card-text">Ubuntu</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:9091/targets"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-prometheus-simple.png"
+                          width="100"
+                        />Prometheus</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:9200/_cat/nodes?v&pretty"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-elasticsearch-simple.png"
+                          width="100"
+                        />Elasticsearch</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:5001/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-elastichq-simple.png"
+                          width="100"
+                        />Elasticsearch-HQ</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:7777/containers/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-cadvisor-simple.jpeg"
+                          width="100"
+                        />Cadvisor</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:5601/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-kibana-simple.png"
+                          width="100"
+                        />Kibana</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="http://172.17.0.57:3000/login"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-grafana-simple.jpeg"
+                          width="100"
+                        />Grafana</a
+                      >
+                    </div>
+                  </div>
+                  <!--
+                <div class="btn-group-vertical btn-group-sm" style="">
+                  <button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">External&nbsp;</button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com/nabla/webalizer/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-awstats-simple.jpg" width="100">Awstats</a>
+                  </div>
+                </div>
+                --></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3" style="">
+            <div class="card box-shadow">
+              <img
+                class="img-fluid d-block mx-auto py-2"
+                src="assets/logo-gaming-simple.png"
+                width="140"
+              />
+              <div class="card-body">
+                <h5 class=""><b>Nabla Gaming</b></h5>
+                <div class="col-md-4" style="">
+                  <p class="card-text">Ubuntu</p>
+                </div>
+                <div class="col-md-4" style="">
+                  <div class="btn-group-vertical btn-group-sm" style="">
+                    <button
+                      class="btn dropdown-toggle btn-light"
+                      data-toggle="dropdown"
+                      contenteditable="true"
+                    >
+                      Internal&nbsp;
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://lutris.net/user/AlbanAndrieu/library/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-lutris-simple.png"
+                          width="100"
+                        />Lutris</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item"
+                        href="https://store.steampowered.com/"
+                        target="_blank"
+                        ><img
+                          class="img-fluid d-block mx-auto my-1"
+                          src="assets/logo-steam-simple.png"
+                          width="100"
+                        />Steam</a
+                      >
+                    </div>
+                  </div>
+                  <!--
               <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-secondary" style=""><a href="https://albandrieu.com:7000/ui/dashboard" target="_blank" style="">HTTPS UI</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" style=""><a href="https://albandrieu.com:81/" target="_blank" style="">HTTP UI</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style=""><a href="https://lutris.net/" target="_blank" style="">Lutris</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style=""><a href="https://store.steampowered.com/" target="_blank" style="">Steam</a></button>
                 </div>
               </div>
               -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 p-3" style=""></div>
+            <div class="col-md-4 p-3" style=""></div>
+            <div class="col-md-4 p-3" style=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5 border bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="">
+              <div class="row">
+                <div class="col-md-2" style="">
+                  <img
+                    class="img-fluid d-block my-4"
+                    src="assets/logo-hacker-simple.png"
+                  />
+                </div>
+                <div class="col-md-3 bg-warning" style="">
+                  <h2 class="">
+                    <br />SVG Spider&nbsp;<br />
+                    <font color="#6c757d"
+                      ><span style="font-size: 25.6px">Site Link</span></font
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-7" style="">
+                  <div id="body">
+                    <div id="header">
+                      OSINT Framework
+                      <hr />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4 p-3" style="">
-          <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-norway-simple.png" alt="Combined French and Norwegian flags" />
-            <div class="card-body">
-              <h5 class=""><b>Looking for Norwegian Translator</b></h5>
-              <p class="card-text">Norwegian authorities are not willing to communicate. In English and even less in French!!!</p>
-              <p class="card-text">Speaking Norwegian/Swedish, please <a href="mailto:alban.andrieu@free.fr" style="">contact me</a></p>
-              <!--
-              <div class="btn-group-vertical btn-group-sm" style="">
-                <button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">Internal&nbsp;</button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="https://albandrieu.com:7000/ui/plugins" target="_blank">Plugins</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.58:32400/web" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-plexmedia-simple.jpeg" width="100">Plex</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.24:8181" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-tautulli-simple.png" width="100">Tautulli</a>
-
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.24:7878" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-radarr-simple.png" width="100">Radarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.24:8989" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-sonarr-simple.jpeg" width="100">Sonarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.24:8683" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-lidarr-simple.png" width="100">Lidarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.24:9001" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-organizr-simple.jpeg" width="100">Organizr</a>
-
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.66:9117" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-jackett-simple.png" width="100">Jackett</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.67:8080" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-sabnzbd-simple.jpeg" width="100">Sabnzbd</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.70:9091" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-transmission-simple.jpeg" width="100">Transmission</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.69:8112" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-deluge-simple.png" width="100">Deluge</a>
+      </div>
+      <div class="py-5 border bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="">
+              <div class="row">
+                <div class="col-md-2" style="">
+                  <img
+                    class="img-fluid d-block my-4"
+                    src="assets/logo-kali-linux-simple.png"
+                  />
+                </div>
+                <div class="col-md-3 bg-warning" style="">
+                  <h2 class="">
+                    <br />Kali Linux&nbsp;<br />
+                    <font color="#6c757d"
+                      ><span style="font-size: 25.6px">Site Link</span></font
+                    >
+                  </h2>
+                </div>
+                <div class="col-md-7" style="">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <i class="fa mr-2 fa-clipboard text-dark"></i>
+                      <span style="font-size: 1rem"
+                        >Kali Linux
+                        <b style=""
+                          ><b
+                            ><a
+                              href="https://www.kali-linux.fr/"
+                              target="_blank"
+                              >[click]</a
+                            ></b
+                          ></b
+                        ></span
+                      >
+                    </li>
+                    <!--
+                <li class="list-group-item"><i class="fa mr-2 fa-cogs text-success"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> ONLINE</b> nodes assigned to Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-exclamation-triangle text-danger"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> OFFLINE</b> nodes assigned to&nbsp;Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-linux text-body"></i>ALL<b style="">&nbsp;<b><a href="index.html" target="_blank">[click]</a></b> UNIX/LINUX</b> nodes assigned to Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-windows text-muted"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> WINDOWS</b> nodes assigned to Jenkins Instance</li>
+                -->
+                  </ul>
                 </div>
               </div>
-              <div class="btn-group-vertical btn-group-sm" style="">
-                <button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">External&nbsp;</button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="https://albandrieu.com:7000/ui/plugins" target="_blank">Plugins</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:8181" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-tautulli-simple.png" width="100">Tautulli</a>
-
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:7878" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-radarr-simple.png" width="100">Radarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:8989" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-sonarr-simple.jpeg" width="100">Sonarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:8683" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-lidarr-simple.png" width="100">Lidarr</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:9001" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-organizr-simple.jpeg" width="100">Organizr</a>
-
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:9117" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-jackett-simple.png" width="100">Jackett</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:8090" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-sabnzbd-simple.jpeg" width="100">Sabnzbd</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:9091" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-transmission-simple.jpeg" width="100">Transmission</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:8112" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-deluge-simple.png" width="100">Deluge</a>
-                </div>
-              </div>
-              -->
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="col-md-4 p-3" style="">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="assets/hide-and-sick-quote.jpg" alt="Quote about hide and seek game" />
-            <div class="card-body">
-              <h5 class=""><b>Playing hide and seek, since 2015</b></h5>
-              <p class="card-text">Every time I found you. You move, and hide again!</p>
-          </div>
-        </div>
-
-        </div>
+    <div class="py-5 border bg-light">
+      <div class="container">
         <div class="row">
-
-        <div class="col-md-4 p-3" style="">
-          <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-germany-location-1.svg" alt="Map showing location in Germany" />
-            <div class="card-body">
-              <h5 class=""><b>I now search my Baby around <a href="https://goo.gl/maps/xx84vB1JkaUxVAhw5" target="_blank" style="">Francfort</a>...</b></h5>
-              <p class="card-text">Do you know german institution?</p>
-              <!--
-              <p class="card-text"><span title="Elin Kindem">People</span> there are <b>unreachable</b>. Why norway is not willing to cooperate?</p>
-              -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 p-3" style="">
-          <div class="card box-shadow">
-            <img class="img-fluid d-block mx-auto py-2"  src="assets/flag-french-germany.svg" alt="Combined French and German flags" />
-            <div class="card-body">
-              <h5 class=""><b>Looking for German Translator</b></h5>
-              <p class="card-text">German authorities are not willing to communicate. In English and even less in French!!!</p>
-              <p class="card-text">Speaking German, please <a href="mailto:alban.andrieu@free.fr" style="">contact me</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 p-3" style="">
-          <div class="card box-shadow">
-            <img class="card-img-top" src="assets/patience-vertue-quote.jpg" alt="Quote about patience being a virtue" />
-            <div class="card-body">
-              <h5 class=""><b>Bababou, you have to come by yourself! <a href="mailto:alban.andrieu@free.fr" style="">Contact me</a></b></h5>
-              <p class="card-text">Inaction breeds doubt and fear. Action breeds confidence and courage.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 p-3" style=""></div>
-        <div class="col-md-4 p-3" style=""></div>
-        <div class="col-md-4 p-3" style=""></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4 p-3" style="">
-        <div class="card box-shadow">
-          <img class="img-fluid d-block mx-auto py-2" src="assets/miss-and-love-you-quote.jpeg" width="240" alt="A heartfelt quote expressing feelings of missing and loving someone" />
-          <div class="card-body">
-            <h5 class=""><b>Daddy love you more than yesterday and less than tomorrow</b></h5>
-            <p class="card-text">Forever...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="py-5 border bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12" style="">
-          <div class="row">
-            <div class="col-md-2" style=""><img class="img-fluid d-block my-4" src="assets/logo-labyrinth-simple.png" alt="Labyrinth illustration representing the difficult journey" /></div>
-            <div class="col-md-3 bg-warning">
-              <h2 class=""><br>People&nbsp;<br>
-                <font color="#6c757d"><span style="font-size: 25.6px;">I contacted</span></font>
-              </h2>
-            </div>
-            <div class="col-md-7" style="">
-              <div id="body">
-                <div id="header">
-                I tried
-                  <hr/>
-                </div>
+          <div class="col-md-12" style="">
+            <div class="row">
+              <div class="col-md-2" style="">
+                <img
+                  class="img-fluid d-block my-4"
+                  src="assets/big-icon-jenkins.png"
+                  height="120"
+                />
+              </div>
+              <div class="col-md-3 bg-warning" style="">
+                <h2 class="">
+                  <br />Overall Summary Reports&nbsp;<br />
+                  <font color="#6c757d"
+                    ><span style="font-size: 25.6px">Jenkins Nodes</span></font
+                  >
+                </h2>
+              </div>
+              <div class="col-md-7" style="">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="fa mr-2 fa-clipboard text-dark"></i>
+                    <span style="font-size: 1rem"
+                      >ALL
+                      <b style=""
+                        ><b
+                          ><a href="summary_onoff/index.html" target="_blank"
+                            >[click]</a
+                          ></b
+                        >
+                        ONLINE / OFFLINE</b
+                      >
+                      nodes assigned to Jenkins Instances</span
+                    >
+                  </li>
+                  <!-- <li class="list-group-item"><i class="fa mr-2 fa-cogs text-success"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> ONLINE</b> nodes assigned to Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-exclamation-triangle text-danger"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> OFFLINE</b> nodes assigned to&nbsp;Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-linux text-body"></i>ALL<b style="">&nbsp;<b><a href="index.html" target="_blank">[click]</a></b> UNIX/LINUX</b> nodes assigned to Jenkins Instances</li>
+                <li class="list-group-item"><i class="fa mr-2 fa-windows text-muted"></i>ALL <b><b><a href="index.html" target="_blank">[click]</a></b> WINDOWS</b> nodes assigned to Jenkins Instance</li> -->
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!--
-  <div class="py-5 border bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12" style="">
-          <div class="row">
-            <div class="col-md-2" style=""><img class="img-fluid d-block my-4" src="index/assets/big-icon-jenkins.png" height="120"></div>
-            <div class="col-md-3 bg-warning" style="">
-              <h2 class=""><br>Overall Summary Reports&nbsp;<br>
-                <font color="#6c757d"><span style="font-size: 25.6px;">Jenkins Nodes</span></font>
-              </h2>
-            </div>
-            <div class="col-md-7" style="">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fa mr-2 fa-clipboard text-dark"></i><span style="font-size: 1rem;">ALL <b style=""><b><a href="summary_onoff/index.html" target="_blank">[click]</a></b> ONLINE / OFFLINE</b> nodes assigned to Jenkins Instances</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-    <!--
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-4">
-                  <h1>Build</h1>
-                </div>
-                <div class="col-md-4"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-jira-simple.png" width="50"></div>
-                <div class="col-md-4"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-bitbucket-simple.png" width="50"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-confluence-simple.png" style="" width="50"></div>
-                <div class="col-md-4"><a href="https://start.atlassian.com/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-atlassian-simple.png" style="" width="50"></a></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-4"><a href="https://sonarcloud.io/organizations/albanandrieu-github/projects" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="index/assets/logo-sonar.png" width="150"></a></div>
-                <div class="col-md-4"><a href="http://albandrieu.com:8081/nexus/index.html#welcome" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-nexus.png" width="100"></a></div>
-                <div class="col-md-4"><a href="http://albandrieu.com/jenkins/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-jenkins.png" width="70"></a></div>
-                <div class="col-md-4"><img class="img-fluid d-block mx-auto py-1" src="index/assets/logo-aspera.jpg" width="120"></div>
-
-                <div class="col-md-4"><a href="http://86.242.254.92:5678/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="index/assets/logo-bower-simple.svg" width="70"></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        -->
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-4">
-                  <h1>Links</h1>
-                </div>
-                <div class="col-md-4"><a href="http://paternet.fr/tag/combat-des-peres//" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/auction-law-svgrepo-com.svg" width="70" alt="Paternet - Father's rights organization" /></a></div>
-                <div class="col-md-4"><a href="http://www.sospapa.net/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/sos-warning-svgrepo-com.svg" width="100" alt="SOS Papa organization"></a></div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-4"><a href="http://sos-parents-japan.org/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/japan-kanji-svgrepo-com.svg" width="70" alt="SOS Parents Japan organization" /></a></div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="text-left">Alban Andrieu - please visit me <a href="index/index.html" target="_blank"><u>here</u></a><br>or <b>e-mail me</b>:&nbsp;<a href="mailto:alban.andrieu@free.fr">alban.andrieu@free.fr</a></p>
-        </div>
-        <div class="col-md-6">
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
           <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h1>Build</h1>
+                  </div>
+                  <div class="col-md-4">
+                    <img
+                      class="img-fluid d-block mx-auto py-2"
+                      src="assets/logo-jira-simple.png"
+                      width="50"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <img
+                      class="img-fluid d-block mx-auto py-2"
+                      src="assets/logo-bitbucket-simple.png"
+                      width="50"
+                    />
+                  </div>
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4">
+                    <img
+                      class="img-fluid d-block mx-auto py-2"
+                      src="assets/logo-confluence-simple.png"
+                      style=""
+                      width="50"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <a href="https://start.atlassian.com/" target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-atlassian-simple.png"
+                        style=""
+                        width="50"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <a
+                      href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-sonar.png"
+                        width="150"
+                    /></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://nexus.albandrieu.com/nexus/index.html#welcome"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-nexus.png"
+                        width="100"
+                    /></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="http://albandrieu.com/jenkins/" target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-jenkins.png"
+                        width="70"
+                    /></a>
+                  </div>
+                  <div class="col-md-4">
+                    <img
+                      class="img-fluid d-block mx-auto py-1"
+                      src="assets/logo-aspera.jpg"
+                      width="120"
+                    />
+                  </div>
+
+                  <div class="col-md-4">
+                    <a href="http://86.242.254.92:5678/" target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-bower-simple.svg"
+                        width="70"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h1>Tools</h1>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://86.242.254.92:7000/ui/sessions/signin"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-freenas-community-simple.jpeg"
+                        width="70"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <a
+                      href="https://travis-ci.org/AlbanAndrieu/"
+                      target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto my-1"
+                        src="assets/logo-travis-ci-simple.jpg"
+                        width="100"
+                    /></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="https://github.com/AlbanAndrieu/" target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-github-simple.png"
+                        width="50"
+                    /></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="https://hub.docker.com/u/nabla" target="_blank"
+                      ><img
+                        class="img-fluid d-block mx-auto py-2"
+                        src="assets/logo-docker-hub-simple.jpg"
+                        width="100"
+                    /></a>
+                  </div>
+                  <!--https://my.noip.com>
+                <!--<div class="col-md-4"><a href="http://86.242.254.92:5678/" target="_blank"><img class="img-fluid d-block mx-auto py-2" src="assets/logo-bower-simple.svg" width="70"></a></div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-left">
+              DevSecOps - please visit my <b>profile </b>on
+              <a href="http://www.linkedin.com/in/nabla" target="_blank"
+                ><u>LinkedIn</u></a
+              ><br />or <b>e-mail me</b>:&nbsp;<a
+                href="mailto:alban.andrieu@free.fr"
+                >alban.andrieu@free.fr</a
+              >
+            </p>
+          </div>
+          <div class="col-md-6">
             <div class="col-md-12">
               <div class="col-md-12">
-                <p class="float-right lead my-4 mt-3">
-                  <a href="#">Back to top</a>
-                </p>
+                <div class="col-md-12">
+                  <p class="float-right lead my-4 mt-3">
+                    <a href="#">Back to top</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="arf.js"></script>
-  <script src="index.js"></script>
+    <script src="arf.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Axeptio: change clientId to be your site's PROJECT ID -->
-  <script>
-  window.axeptioSettings = {
-    clientId: "63ff48361876ce66c29dddcd",
-    cookiesVersion: "nabla-en",
-  };
-
-  (function(d, s) {
-    var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-    e.async = true; e.src = "//static.axept.io/sdk.js";
-    t.parentNode.insertBefore(e, t);
-  })(document, "script");
-  </script>
-  <!-- End Axeptio cookies -->
-
-  <script src="https://uptime.betterstack.com/widgets/announcement.js" data-id="150620" async="async" type="text/javascript"></script>
-
-  <!-- Start Intercom -->
-  <script>
-    window.intercomSettings = {
-      api_base: "https://api-iam.intercom.io",
-      app_id: "todo",
-    };
-  </script>
-
-
-  <script>
-    // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/todo'
-    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/todo';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-  </script>
-  <!-- End Intercom -->
-
-</body>
+    <a href="https://stackexchange.com/users/4652074/albanandrieu"
+      ><img
+        src="https://stackexchange.com/users/flair/4652074.png"
+        width="208"
+        height="58"
+        alt="profile for AlbanAndrieu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+        title="profile for AlbanAndrieu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+    /></a>
+  </body>
 </html>

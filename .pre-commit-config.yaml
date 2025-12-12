@@ -169,7 +169,7 @@ repos:
       - id: pyupgrade
         name: "🐍 python · Py Upgrade"
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.8
+    rev: v0.14.9
     hooks:
       - id: ruff-format
         name: "🐍 python · Format with Ruff"
@@ -474,45 +474,45 @@ repos:
     # --------------------------- ✍️ Git Commit Quality -------------------------- #
 
     ### Commit Message Standards ###
-  # - repo: https://github.com/commitizen-tools/commitizen
-  #   rev: v4.10.0
-  #   hooks:
-  #     - id: commitizen
-  #       name: "🌳 git · Validate commit message"
-  #       stages: [commit-msg]
-  #       additional_dependencies: [cz-conventional-gitmoji]
-  #     - id: commitizen-branch
-  #       stages: [pre-push]
+    # - repo: https://github.com/commitizen-tools/commitizen
+    #   rev: v4.10.0
+    #   hooks:
+    #     - id: commitizen
+    #       name: "🌳 git · Validate commit message"
+    #       stages: [commit-msg]
+    #       additional_dependencies: [cz-conventional-gitmoji]
+    #     - id: commitizen-branch
+    #       stages: [pre-push]
 
-  # - repo: https://github.com/jorisroovers/gitlint
-  #   rev: v0.19.1
-  #   hooks:
-  #     - id: gitlint
-  #       name: "🌳 git · Lint"
+    # - repo: https://github.com/jorisroovers/gitlint
+    #   rev: v0.19.1
+    #   hooks:
+    #     - id: gitlint
+    #       name: "🌳 git · Lint"
 
-  # ---------------------------------------------------------------------------- #
-  #                            👑 Mega linter                                    #
-  # ---------------------------------------------------------------------------- #
+    # ---------------------------------------------------------------------------- #
+    #                            👑 Mega linter                                    #
+    # ---------------------------------------------------------------------------- #
 
-  # - repo: https://github.com/oxsecurity/megalinter
-  #   rev: v9.0.1
-  #   hooks:
-  #     - id: megalinter-incremental  # Faster, less thorough
-  #       name: "👑 🐳 megalinter - All in linter"
-  #       stages:
-  #         - pre-commit
-  #       args:
-  #         - mega-linter-runner
-  #         - --containername
-  #         - "megalinter-incremental"
-  #         - --remove-container
-  #         # - --fix
-  #         # - --env
-  #         # - "'APPLY_FIXES=all'"
-  #         - --env
-  #         - "'CLEAR_REPORT_FOLDER=true'"
-  #         - --env
-  #         - "'LOG_LEVEL=warning'"
-  #         - --filesonly
-  #         - --flavor
-  #         - "python"
+    # - repo: https://github.com/oxsecurity/megalinter
+    #   rev: v9.0.1
+    #   hooks:
+    #     - id: megalinter-incremental  # Faster, less thorough
+    #       name: "👑 🐳 megalinter - All in linter"
+    #       stages:
+    #         - pre-commit
+    #       args:
+    #         - mega-linter-runner
+    #         - --containername
+    #         - "megalinter-incremental"
+    #         - --remove-container
+    #         # - --fix
+    #         # - --env
+    #         # - "'APPLY_FIXES=all'"
+    #         - --env
+    #         - "'CLEAR_REPORT_FOLDER=true'"
+    #         - --env
+    #         - "'LOG_LEVEL=warning'"
+    #         - --filesonly
+    #         - --flavor
+    #         - "python"

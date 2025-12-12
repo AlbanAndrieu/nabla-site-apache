@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "bababou",
+	"name": "nabla",
 	"compatibility_date": "2025-06-05",
 	"assets": {
 		"directory": "./public"
