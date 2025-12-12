@@ -4,23 +4,23 @@ on: [push, pull_request]
 jobs:
   build-template:
     name: Build template
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Install TeX Live
         run: sudo apt update && sudo apt install texlive-full fonts-font-awesome
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build pdf
-        run: latexmk -pdflua ./cv/cv-aandrieu-XX-XX-2021.tex
+        run: latexmk -pdflua ./cv/cv-aandrieu-XX-XX-2026.tex
       - name: Scan log
-        run: texloganalyser -w ./cv/cv-aandrieu-XX-XX-2021.log
+        run: texloganalyser -w ./cv/cv-aandrieu-XX-XX-2026.log
       - name: Upload pdf
         uses: actions/upload-artifact@v4
         with:
-          name: cv-aandrieu-XX-XX-2021.pdf
-          path: ./cv/cv-aandrieu-XX-XX-2021.pdf
+          name: cv-aandrieu-XX-XX-2026.pdf
+          path: ./cv/cv-aandrieu-XX-XX-2026.pdf
       - name: Upload log
         uses: actions/upload-artifact@v4
         with:
-          name: cv-aandrieu-XX-XX-2021.log
-          path: ./cv/cv-aandrieu-XX-XX-2021.log
+          name: cv-aandrieu-XX-XX-2026.log
+          path: ./cv/cv-aandrieu-XX-XX-2026.log

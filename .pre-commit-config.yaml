@@ -137,6 +137,7 @@ repos:
             sbom.json|
             pnpm-lock.yaml|
             public/wireframe.css|
+            cv/cv-aandrieu-XX-XX-.*|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key

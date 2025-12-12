@@ -6,7 +6,7 @@ OPEN = xdg-open
 MAX_TRY = 5
 
 ### Main LaTeX file
-MAIN = cv-aandrieu-XX-XX-2021.tex
+MAIN = cv-aandrieu-XX-XX-2026.tex
 
 ### Files that are included (producing .aux file)
 INCLUDED_FILES =
@@ -23,7 +23,6 @@ SOURCES = \
 
 ### Files that are not  included/input but should be in the distribution
 EXTRA_DIST = \
-#	CHANGELOG.md \
 	Makefile \
 	alban-andrieu-19-12-2017.png
 
@@ -49,7 +48,7 @@ NEED_RUN_MSG_REGEX=\(Rerun to get citations correct\)
 #NEED_RUN_MSG_REGEX:=$(NEED_RUN_MSG_REGEX)\|\(Label(s) may have changed, Rerun to get cross-reference right.\))
 #NEED_RUN_MSG_REGEX:=$(NEED_RUN_MSG_REGEX)\|\(Package rerunfilecheck Warning: File .* has changed.\))
 
-.PHONY: all pdf view clean clean-all
+.PHONY: all pdf view clean clean-all test dist
 .SUFFIX: .tex .aux .bbl .pdf .done
 
 all: pdf
