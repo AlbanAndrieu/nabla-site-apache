@@ -1,4 +1,4 @@
-# robots.txt file of https://albandrieu.com/
+# robots.txt file of https://nabla.albandrieu.com/
 
 # www.robotstxt.org/
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
@@ -177,5 +177,5 @@ Disallow: /*/?*
 Crawl-delay: 20
 
 # sitemap index
-Sitemap: https://albandrieu.com/sitemap-albandrieu-com.xml
-# curl https://www.google.com/ping??sitemap=https://albandrieu.com/sitemap-albandrieu-com.xml
+Sitemap: https://nabla.albandrieu.com/sitemap-albandrieu-com.xml
+# curl https://www.google.com/ping??sitemap=https://nabla.albandrieu.com/sitemap-albandrieu-com.xml
