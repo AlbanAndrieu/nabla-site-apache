@@ -996,4 +996,3 @@ FileETag None
     Header unset Server
     Header unset X-Powered-By
 </IfModule>
-

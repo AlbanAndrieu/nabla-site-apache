@@ -2014,6 +2014,23 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Axeptio: change clientId to be your site's PROJECT ID -->
+    <script>
+      window.axeptioSettings = {
+        clientId: "63ff48361876ce66c29dddcd",
+        cookiesVersion: "nabla-en",
+      };
+
+      (function (d, s) {
+        var t = d.getElementsByTagName(s)[0],
+          e = d.createElement(s);
+        e.async = true;
+        e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
+      })(document, "script");
+    </script>
+    <!-- End Axeptio cookies -->
+
     <a href="https://stackexchange.com/users/4652074/albanandrieu"
       ><img
         src="https://stackexchange.com/users/flair/4652074.png"
