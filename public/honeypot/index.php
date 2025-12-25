@@ -33,7 +33,7 @@ namespace Hp;
 //  instructions, search for:  *** DISCONNECT INSTRUCTIONS ***
 //
 //  Generated On: Tue, 25 Feb 2025 09:35:35 -0500
-//  For Domain: bababou.albandrieu.com
+//  For Domain: nabla.albandrieu.com
 //
 //
 
@@ -542,7 +542,7 @@ class Script
         $factory->setStaticData([
             'doctype' => '<!DOCTYPE html>',
             'head1'   => '<html><head>',
-            'head2'   => '<title>season palatial bababou.albandrieu.com understanding attendance</title></head>',
+            'head2'   => '<title>season palatial nabla.albandrieu.com understanding attendance</title></head>',
             'top'     => '<body><div align="center">',
             'bottom'  => '</div></body></html>',
         ]);

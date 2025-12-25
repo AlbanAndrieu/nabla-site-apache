@@ -1,4 +1,4 @@
 Contact: mailto:alban.andrieu@free.fr
 Expires: 2026-10-12T00:00:00Z
-Canonical: https://bababou.albandrieu.com/nabla/security.txt
+Canonical: https://nabla.albandrieu.com/security.txt
 Preferred-Languages: en,fr
