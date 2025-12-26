@@ -10,7 +10,7 @@
 		{ "src": "/api/(.*)", "dest": "/api/api/$1" },
 		{ "src": "/ini/(.*)", "dest": "/api/ini/$1" },
 		{ "src": "/ext/(.*)", "dest": "/api/ext/$1" },
-		{ "src": "index/honeypot/(.*)", "dest": "/api/login/$1" },
+		{ "src": "/honeypot/(.*)", "dest": "/api/login/$1" },
 		{ "src": "/(.*)", "dest": "/api/$1" }
 	],
 	"env": {
