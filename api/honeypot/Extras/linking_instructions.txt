@@ -5,7 +5,7 @@ The Project Honey Pot website button is included in this folder. Use the linking
 code below so you'll get credit for people who sign up for Project Honey Pot
 after being referred from your site:
 
-<a href="http://www.projecthoneypot.org?rf=126602">
+<a href="http://www.projecthoneypot.org?rf=126603">
 <img src="{url_of_img}" height="31px" width="88px"
 alt="Stop Spam Harvesters, Join Project Honey Pot"></a>
 

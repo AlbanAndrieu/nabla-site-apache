@@ -20,7 +20,7 @@ STEP 1: LOCATE THE SCRIPT
 	Locate the copy of the script included in the downloaded file. In
 	your case, the script is named:
 
-	iatrogenic.php
+	keywaspish.php
 
 STEP 2: COPY IT TO THE CORRECT LOCATION
 
@@ -44,7 +44,7 @@ STEP 3: SET THE PERMISSIONS
 	permissions must be set correctly. On Unix/Linux systems you
 	can set the scripts' permissions with the following command:
 
-	chmod 644 iatrogenic.php
+	chmod 644 keywaspish.php
 
 STEP 4: INSTALL PHP
 
@@ -66,7 +66,7 @@ STEP 5: VISIT THE SCRIPT
         followed by the path to the script. For example, if you installed
         your script inside 'folder1/folder2/', access the script like so:
 
-	http://nabla.albandrieu.com/folder1/folder2/iatrogenic.php
+	http://nabla.albandrieu.com/folder1/folder2/keywaspish.php
 
 	If installed correctly, you will see instructions on how to
 	finalize the installation.
