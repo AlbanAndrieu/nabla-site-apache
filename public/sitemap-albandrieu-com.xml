@@ -5,6 +5,10 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://nabla.albandrieu.com/truenas.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://nabla.albandrieu.com/privacypolicy.html</loc>
     <changefreq>monthly</changefreq>
   </url>
