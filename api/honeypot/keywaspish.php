@@ -174,7 +174,7 @@ trait AliasingTrait
     public function getAliases($search): array
     {
         $aliases = $this->searchAliases($search, $this->aliases);
-
+    
         return !empty($aliases) ? $aliases : [$search];
     }
 
@@ -554,7 +554,7 @@ class Script
                 $display = 'style="display:' . ['none',' none'][random_int(0,1)] . '"';
                 $style = $style ?? random_int(0,5);
                 $props[] = "href=\"mailto:$email\"";
-
+        
                 $wrap = function($value, $style) use($display){
                     switch($style){
                         case 2: return "<!-- $value -->";
@@ -565,16 +565,16 @@ class Script
                         default: return $value;
                     }
                 };
-
+        
                 switch($style){
                     case 0: $value = ''; break;
                     case 3: $value = $wrap($email, 2); break;
                     case 1: $props[] = $display; break;
                 }
-
+        
                 $props = implode(' ', $props);
                 $link = "<a $props>$value</a>";
-
+        
                 return $wrap($link, $style);
             }
         ]);
@@ -686,3 +686,4 @@ class Script
 }
 
 Script::run(__REQUEST_HOST, __REQUEST_PORT, __REQUEST_SCRIPT, __DIR__ . '/phpot_settings.php');
+
