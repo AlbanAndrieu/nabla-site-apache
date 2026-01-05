@@ -27,7 +27,7 @@
 		"eslint": "^9.7.0",
 		"@vitejs/plugin-vue": "^5.2.4",
 		"vite": "^6.3.5",
-		"vitest": "^2.0.3"
+		"vitest": "^4.0.16"
 	},
 	"publishConfig": {
 		"access": "restricted",
