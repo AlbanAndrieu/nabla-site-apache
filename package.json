@@ -28,6 +28,7 @@
 		"start-python": "python -m http.server 8001"
 	},
 	"dependencies": {
+		"@astrojs/vercel": "^9.0.2",
 		"@datadog/browser-rum": "^6.24.1",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",

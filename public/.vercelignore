@@ -1,0 +1,8 @@
+# Ignore everything (folders and files) on root only
+/*
+!assets
+!public
+!dist
+!html
+!vercel.json
+!*.html

@@ -9,6 +9,8 @@ yarn-error.log*
 .ansible/
 .vercel/
 .wrangler/
+.nuxt/
+.output/
 
 webalizer
 html/download

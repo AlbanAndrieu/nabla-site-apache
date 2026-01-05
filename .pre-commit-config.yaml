@@ -129,7 +129,7 @@ repos:
           (?x)^(
             .pnp.cjs|
             package-lock.json|
-            bababou-app/package-lock.json|
+            my-app/package-lock.json|
             npm-shrinkwrap.json|
             poetry.lock|
             Pipfile.lock|
@@ -138,6 +138,7 @@ repos:
             pnpm-lock.yaml|
             public/wireframe.css|
             cv/cv-aandrieu-XX-XX-.*|
+            vue-client/package-lock.json|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key
