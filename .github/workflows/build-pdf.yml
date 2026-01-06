@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build pdf
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2021.tex
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026.tex
       - name: Scan log
         run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026.log
       - name: Upload pdf
