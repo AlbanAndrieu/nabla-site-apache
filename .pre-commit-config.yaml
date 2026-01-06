@@ -139,6 +139,8 @@ repos:
             public/wireframe.css|
             cv/cv-aandrieu-XX-XX-.*|
             vue-client/package-lock.json|
+            public/assets/fontawesome-free-7.1.0-web/.*|
+            public/assets/fontawesome/.*|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
       - id: detect-private-key
@@ -342,7 +344,10 @@ repos:
         exclude: >
           (?x)^(
               trivy-sbom.json|
-              bababou-app/public/.*|
+              my-app/public/.*|
+              public/assets/fontawesome-free-7.1.0-web/.*|
+              public/assets/fontawesome/.*|
+              public/assets/.*|
           )$
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
@@ -411,6 +416,11 @@ repos:
     hooks:
       - id: encryption-check
         name: "🔒 security · Detect encryption"
+        exclude: >
+          (?x)^(
+            public/assets/fontawesome-free-7.1.0-web/.*|
+          )$
+
   - repo: https://github.com/zricethezav/gitleaks
     rev: v8.30.0
     hooks:
