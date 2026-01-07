@@ -271,10 +271,10 @@ repos:
         args: [-i, "E003,E006"]
         exclude: >
           (?x)^(
-              trunk|
-              scripts/run-python.sh|
-              scripts/run-wicked.sh|
-              .envrc|
+            trunk|
+            scripts/run-python.sh|
+            scripts/run-wicked.sh|
+            .envrc|
           )$
 
     ### Makefile ###
@@ -360,7 +360,9 @@ repos:
               public/assets/fontawesome/.*|
               public/assets/.*|
               public/arf.js|
+              public/index.js|
               public/d3.v3.min.js|
+              api/hello.js|
           )$
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
@@ -377,6 +379,7 @@ repos:
           (?x)^(
             public/monitoring_report.html|
             public/chkrootkit-report.html|
+            public/maldet-report.html|
           )$
       - id: markdown-toc
         name: "📝 markdown · Toc markdown"
@@ -402,6 +405,7 @@ repos:
         exclude: >
           (?x)^(
             pnpm-lock.yaml|
+            public/login.html|
             public/cv/index.html|
             public/monitoring_report.html|
             api/honeypot/.*|
