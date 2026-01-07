@@ -20,7 +20,7 @@
 # LoadFile	C:/path/libxml2.dll
 # LoadModule	proxy_html_module	modules/mod_proxy_html.so
 # LoadModule	xml2enc_module		modules/mod_xml2enc.so
-# 
+#
 # All knowledge of HTML links has been removed from the mod_proxy_html
 # code itself, and is instead read from httpd.conf (or included file)
 # at server startup.  So you MUST declare it.  This will normally be

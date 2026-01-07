@@ -7,7 +7,7 @@
 # use only name-based virtual hosts so the server doesn't need to worry about
 # IP addresses. This is indicated by the asterisks in the directives below.
 #
-# Please see the documentation at 
+# Please see the documentation at
 # <URL:http://httpd.apache.org/docs/2.4/vhosts/>
 # for further details before you try to setup virtual hosts.
 #
@@ -36,6 +36,3 @@
     ErrorLog "/var/log/dummy-host2.example.com-error_log"
     CustomLog "/var/log/dummy-host2.example.com-access_log" common
 </VirtualHost>
-
-
-

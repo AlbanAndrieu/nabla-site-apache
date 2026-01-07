@@ -9,7 +9,7 @@
 #
 UserDir public_html
 
-UserDir disabled root toor daemon operator bin tty kmem games news ntpd man sshd smmsp mailnull bind unbound proxy _pflogd _dhcp uucp pop auditdistd www hast nobody 
+UserDir disabled root toor daemon operator bin tty kmem games news ntpd man sshd smmsp mailnull bind unbound proxy _pflogd _dhcp uucp pop auditdistd www hast nobody
 
 #
 # Control access to UserDir directories.  The following is an example
@@ -20,4 +20,3 @@ UserDir disabled root toor daemon operator bin tty kmem games news ntpd man sshd
     Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
     Require method GET POST OPTIONS
 </Directory>
-

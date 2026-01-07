@@ -7,7 +7,7 @@
 # use only name-based virtual hosts so the server doesn't need to worry about
 # IP addresses. This is indicated by the asterisks in the directives below.
 #
-# Please see the documentation at 
+# Please see the documentation at
 # <URL:http://httpd.apache.org/docs/2.4/vhosts/>
 # for further details before you try to setup virtual hosts.
 #
@@ -29,7 +29,7 @@
     #CustomLog "/var/log/albandrieu.com-access_log" common
     ErrorLog /dev/stderr
     CustomLog /dev/stdout combined
-    CustomLog "|/usr/bin/nc -u 10.20.0.24 12203" graylog_access    
+    CustomLog "|/usr/bin/nc -u 10.20.0.24 12203" graylog_access
 
     RewriteEngine on
     RewriteCond %{SERVER_NAME} =www.albandrieu.com [OR]
@@ -46,5 +46,3 @@
 #    ErrorLog "/var/log/dummy-host.example.com-error_log"
 #    CustomLog "/var/log/dummy-host.example.com-access_log" common
 #</VirtualHost>
-
-

@@ -87,16 +87,16 @@ PYTHON_PYLINT_DISABLE_ERRORS: true
 PYTHON_PYRIGHT_DISABLE_ERRORS: true
 YAML_V8R_FILE_NAMES_REGEX:
   [
-    '.codeclimate.yml',
-    '.dive.yaml',
-    '.gitlab-ci.yml',
-    '.mega-linter.yml',
-    '.checkov.yml',
-    'terraform/nomad/jobs/files/alertmanager/alertmanager.yml',
-    'terraform/nomad/jobs/files/prometheus/prom-nomad-rules.yml',
+    ".codeclimate.yml",
+    ".dive.yaml",
+    ".gitlab-ci.yml",
+    ".mega-linter.yml",
+    ".checkov.yml",
+    "terraform/nomad/jobs/files/alertmanager/alertmanager.yml",
+    "terraform/nomad/jobs/files/prometheus/prom-nomad-rules.yml",
   ]
 EXCLUDED_DIRECTORIES:
-  ['.github', '.gitlab-ci', 'node_modules', '.venv', '.direnv', '.mypy_cache']
+  [".github", ".gitlab-ci", "node_modules", ".venv", ".direnv", ".mypy_cache"]
 SHOW_ELAPSED_TIME: true
 EMAIL_REPORTER_EMAIL: alban.andrieu@free.fr
 JSON_REPORTER: true

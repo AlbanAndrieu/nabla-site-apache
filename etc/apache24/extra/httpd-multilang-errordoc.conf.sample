@@ -6,7 +6,7 @@
 #                   mod_include, mod_negotiation
 #
 # We use Alias to redirect any /error/HTTP_<error>.html.var response to
-# our collection of by-error message multi-language collections.  We use 
+# our collection of by-error message multi-language collections.  We use
 # includes to substitute the appropriate text.
 #
 # You can modify the messages' appearance without changing any of the
@@ -15,7 +15,7 @@
 #   Alias /error/include/ "/your/include/path/"
 #
 # which allows you to create your own set of files by starting with the
-# /usr/local/www/apache24/error/include/ files and copying them to /your/include/path/, 
+# /usr/local/www/apache24/error/include/ files and copying them to /your/include/path/,
 # even on a per-VirtualHost basis.  The default include files will display
 # your Apache version number and your ServerAdmin email address regardless
 # of the setting of ServerSignature.
@@ -49,4 +49,3 @@ ErrorDocument 501 /error/HTTP_NOT_IMPLEMENTED.html.var
 ErrorDocument 502 /error/HTTP_BAD_GATEWAY.html.var
 ErrorDocument 503 /error/HTTP_SERVICE_UNAVAILABLE.html.var
 ErrorDocument 506 /error/HTTP_VARIANT_ALSO_VARIES.html.var
-

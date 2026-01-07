@@ -8,7 +8,6 @@
 # begins with a three digit number followed by '_'
 # and ending in '.conf' e.g. '080_mod_php.conf'
 #
-# Maintainers can also include instructions how to 
+# Maintainers can also include instructions how to
 # use the module (instead pkg-message).
 #
-

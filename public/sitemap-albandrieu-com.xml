@@ -9,15 +9,15 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nabla.albandrieu.com/privacypolicy.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/privacypolicy.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nabla.albandrieu.com/termesofservice.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/termesofservice.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nabla.albandrieu.com/monitoring_report.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/monitoring_report.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <!--
@@ -27,7 +27,23 @@
   </url>
   -->
   <url>
-    <loc>https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2021.pdf</loc>
+    <loc>https://nabla.albandrieu.com/cv/index.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/ciso.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/dist/index.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>

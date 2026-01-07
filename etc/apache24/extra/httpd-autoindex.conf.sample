@@ -81,7 +81,7 @@ DefaultIcon /icons/unknown.gif
 # default, and append to directory listings.
 #
 # HeaderName is the name of a file which should be prepended to
-# directory indexes. 
+# directory indexes.
 ReadmeName README.html
 HeaderName HEADER.html
 
@@ -90,4 +90,3 @@ HeaderName HEADER.html
 # and not include in the listing.  Shell-style wildcarding is permitted.
 #
 IndexIgnore .??* *~ *# HEADER* README* RCS CVS *,v *,t *.bak *.orig
-

@@ -53,6 +53,10 @@ repos:
       - id: trailing-whitespace
         name: "📁 filesystem/⚙️ exec · Remove trailing whitespace"
         args: [--markdown-linebreak-ext=md]
+        exclude: >
+          (?x)^(
+              api/honeypot/|
+          )$
       - id: fix-byte-order-marker
         name: "📁 filesystem/⚙️ exec · Verify byte order"
       - id: mixed-line-ending
@@ -203,7 +207,7 @@ repos:
     # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.21
+    rev: 0.9.22
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -360,6 +364,10 @@ repos:
       - id: htmlhint
         name: "📝 html · Hint html"
         args: [--config, .htmlhintrc]
+        exclude: >
+          (?x)^(
+            public/monitoring_report.html|
+          )$        
       - id: markdown-toc
         name: "📝 markdown · Toc markdown"
         args: [--maxdepth, "3", -i]
