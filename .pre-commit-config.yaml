@@ -55,7 +55,7 @@ repos:
         args: [--markdown-linebreak-ext=md]
         exclude: >
           (?x)^(
-              api/honeypot/|
+              api/honeypot/.*|
           )$
       - id: fix-byte-order-marker
         name: "📁 filesystem/⚙️ exec · Verify byte order"
@@ -64,6 +64,10 @@ repos:
         args: [--fix=lf]
       - id: end-of-file-fixer
         name: "📁 filesystem/⚙️ exec · Verify end of file"
+        exclude: >
+          (?x)^(
+              api/honeypot/.*|
+          )$
       - id: check-executables-have-shebangs
         name: "📁 filesystem/⚙️ exec · Verify shebang preset"
         # exclude: >
@@ -256,6 +260,7 @@ repos:
             hooks|
             tests/.*|
             .envrc|
+            scripts/run-wicked.sh|
           )$
 
   - repo: https://github.com/openstack/bashate
@@ -268,6 +273,8 @@ repos:
           (?x)^(
               trunk|
               scripts/run-python.sh|
+              scripts/run-wicked.sh|
+              .envrc|
           )$
 
     ### Makefile ###
@@ -352,6 +359,8 @@ repos:
               public/assets/fontawesome-free-7.1.0-web/.*|
               public/assets/fontawesome/.*|
               public/assets/.*|
+              public/arf.js|
+              public/d3.v3.min.js|
           )$
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
@@ -367,7 +376,8 @@ repos:
         exclude: >
           (?x)^(
             public/monitoring_report.html|
-          )$        
+            public/chkrootkit-report.html|
+          )$
       - id: markdown-toc
         name: "📝 markdown · Toc markdown"
         args: [--maxdepth, "3", -i]
@@ -392,6 +402,11 @@ repos:
         exclude: >
           (?x)^(
             pnpm-lock.yaml|
+            public/cv/index.html|
+            public/monitoring_report.html|
+            api/honeypot/.*|
+            public/assets/fontawesome-free-7.1.0-web/.*|
+            public/assets/fontawesome/.*|
           )$
 
     ### Data & Config Validation ###
@@ -494,15 +509,15 @@ repos:
     # --------------------------- ✍️ Git Commit Quality -------------------------- #
 
     ### Commit Message Standards ###
-    # - repo: https://github.com/commitizen-tools/commitizen
-    #   rev: v4.10.0
-    #   hooks:
-    #     - id: commitizen
-    #       name: "🌳 git · Validate commit message"
-    #       stages: [commit-msg]
-    #       additional_dependencies: [cz-conventional-gitmoji]
-    #     - id: commitizen-branch
-    #       stages: [pre-push]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.11.1
+    hooks:
+      - id: commitizen
+        name: "🌳 git · Validate commit message"
+        stages: [commit-msg]
+        additional_dependencies: [cz-conventional-gitmoji]
+      - id: commitizen-branch
+        stages: [pre-push]
 
     # - repo: https://github.com/jorisroovers/gitlint
     #   rev: v0.19.1
