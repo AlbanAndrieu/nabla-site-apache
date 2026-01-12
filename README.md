@@ -34,6 +34,15 @@ For vercel [php](https://github.com/vercel-community/php)
 php -S localhost:8000 api/index.php
 ```
 
+For Apache
+
+```bash
+aa-teardown
+sudo service apache2 restart
+sudo service php8.4-fpm restart
+tail -f /var/log/apache2/error.log
+```
+
 [php-framework-symfony-microservice](https://github.com/contributte/vercel-examples/tree/master/php-framework-symfony-microservice)
 
 ```bash
