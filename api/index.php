@@ -7,5 +7,6 @@ function Redirect($url, $permanent = false)
     exit();
 }
 
-Redirect('test.php', false);
+Redirect('index.html', false);
+# Redirect('test.php', false);
 # Redirect('404.html', false);
