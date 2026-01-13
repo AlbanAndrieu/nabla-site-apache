@@ -12,7 +12,7 @@ exclude: |
       .yarn/.*|
       .ansible/.*|
       node_modules/.*|
-      reports/.*|
+      public/reports/.*|
       .npm/.*|
       .nuxt/.*|
       .netlify.*|
@@ -377,9 +377,9 @@ repos:
         args: [--config, .htmlhintrc]
         exclude: >
           (?x)^(
-            public/monitoring_report.html|
-            public/chkrootkit-report.html|
-            public/maldet-report.html|
+            public/reports/monitoring_report.html|
+            public/reports/chkrootkit-report.html|
+            public/reports/maldet-report.html|
           )$
       - id: markdown-toc
         name: "📝 markdown · Toc markdown"
@@ -407,7 +407,7 @@ repos:
             pnpm-lock.yaml|
             public/login.html|
             public/cv/index.html|
-            public/monitoring_report.html|
+            public/reports/monitoring_report.html|
             api/honeypot/.*|
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
@@ -488,7 +488,7 @@ repos:
     #            .gitlab-ci.yml|
     #          )$
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.37.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
         name: "📜 yamllint - Lint Yaml"
@@ -505,53 +505,3 @@ repos:
             sbom.json|
             pnpm-lock.yaml|
           )$
-
-    # ---------------------------------------------------------------------------- #
-    #                            📝 Commit Message Hooks                           #
-    # ---------------------------------------------------------------------------- #
-    #
-    # --------------------------- ✍️ Git Commit Quality -------------------------- #
-
-    ### Commit Message Standards ###
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.11.2
-    hooks:
-      - id: commitizen
-        name: "🌳 git · Validate commit message"
-        stages: [commit-msg]
-        additional_dependencies: [cz-conventional-gitmoji]
-      - id: commitizen-branch
-        stages: [pre-push]
-
-    # - repo: https://github.com/jorisroovers/gitlint
-    #   rev: v0.19.1
-    #   hooks:
-    #     - id: gitlint
-    #       name: "🌳 git · Lint"
-
-    # ---------------------------------------------------------------------------- #
-    #                            👑 Mega linter                                    #
-    # ---------------------------------------------------------------------------- #
-
-    # - repo: https://github.com/oxsecurity/megalinter
-    #   rev: v9.0.1
-    #   hooks:
-    #     - id: megalinter-incremental  # Faster, less thorough
-    #       name: "👑 🐳 megalinter - All in linter"
-    #       stages:
-    #         - pre-commit
-    #       args:
-    #         - mega-linter-runner
-    #         - --containername
-    #         - "megalinter-incremental"
-    #         - --remove-container
-    #         # - --fix
-    #         # - --env
-    #         # - "'APPLY_FIXES=all'"
-    #         - --env
-    #         - "'CLEAR_REPORT_FOLDER=true'"
-    #         - --env
-    #         - "'LOG_LEVEL=warning'"
-    #         - --filesonly
-    #         - --flavor
-    #         - "python"
