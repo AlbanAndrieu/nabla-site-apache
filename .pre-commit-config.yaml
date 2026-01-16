@@ -1,5 +1,5 @@
 # fail_fast: true
-minimum_pre_commit_version: 4.5.0
+minimum_pre_commit_version: 4.2.0
 exclude: |
   (?x)^(
       .*\{\{.*\}\}.*|     # Exclude any files with cookiecutter variables
@@ -12,7 +12,7 @@ exclude: |
       .yarn/.*|
       .ansible/.*|
       node_modules/.*|
-      public/reports/.*|
+      reports/.*|
       .npm/.*|
       .nuxt/.*|
       .netlify.*|
@@ -32,15 +32,25 @@ ci:
     - schemas
   submodules: true
 default_install_hook_types:
-  - pre-commit
+  - pre-commit # gitleak
+    # make sure you include `prepare-commit-msg` in `default_install_hook_types`
+    # prepare-commit-msg made by oco
+    # - prepare-commit-msg
   - commit-msg
+  - pre-push
+
+default_stages:
+  - pre-commit
+
 repos:
   # ---------------------------------------------------------------------------- #
   #                              🔄 Pre-Commit Hooks                             #
   # ---------------------------------------------------------------------------- #
   # - repo: meta
   #   hooks:
+  #     - id: check-hooks-apply
   #     - id: check-useless-excludes
+
   - repo: https://gitlab.com/vojko.pribudic.foss/pre-commit-update
     rev: v0.9.0
     hooks:
@@ -96,7 +106,10 @@ repos:
         name: "📁 filesystem/📝 docstring · Validate docstring first"
       - id: name-tests-test
         name: "📁 filesystem/📝 names · Check tests names"
-
+        exclude: >
+          (?x)^(
+              tests/.*|
+          )$
         # --------------------------- 🔍 Code Quality Tools -------------------------- #
       - id: check-json
         name: "📁 filesystem/📝 json · Check json"
@@ -181,7 +194,7 @@ repos:
       - id: pyupgrade
         name: "🐍 python · Py Upgrade"
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.11
+    rev: v0.14.13
     hooks:
       - id: ruff-format
         name: "🐍 python · Format with Ruff"
@@ -211,7 +224,7 @@ repos:
     # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.24
+    rev: 0.9.26
     hooks:
       - id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
@@ -257,8 +270,11 @@ repos:
         args: [-x]
         exclude: >
           (?x)^(
+            mvnw|
+            biscuitcutter.sh|
             hooks|
             tests/.*|
+            docs/Makefile|
             .envrc|
             scripts/run-wicked.sh|
           )$
@@ -286,7 +302,7 @@ repos:
 
     ### SQL ###
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 3.5.0
+    rev: 4.0.0
     hooks:
       - id: sqlfluff-fix
         name: "📊 SQL · Attempts to fix rule violations."
@@ -312,6 +328,7 @@ repos:
         #   name: "📓 notebook · Type-check cells"
 
     ### Markdown ###
+    # mdformat --check README.md CHANGELOG.md
     # - repo: https://github.com/hukkin/mdformat
     #   rev: 1.0.0
     #   hooks:
@@ -322,18 +339,8 @@ repos:
     #         - mdformat-ruff # Python code formatting
     #         - mdformat-frontmatter # YAML frontmatter support
     #         - ruff # Required for mdformat-ruff
-
-    ### Markdown ###
-    # - repo: https://github.com/hukkin/mdformat
-    #   rev: 1.0.0
-    #   hooks:
-    #     - id: mdformat
-    #       name: "📝 markdown · Format markdown"
-    #       additional_dependencies:
-    #         - mdformat-gfm # GitHub-Flavored Markdown support
-    #         - mdformat-ruff # Python code formatting
-    #         - mdformat-frontmatter # YAML frontmatter support
-    #         - ruff # Required for mdformat-ruff
+    # NOK with ruby 3.4.7
+    # gem install mdl
     # - repo: https://github.com/markdownlint/markdownlint
     #   rev: v0.15.0
     #   hooks:
@@ -377,9 +384,7 @@ repos:
         args: [--config, .htmlhintrc]
         exclude: >
           (?x)^(
-            public/reports/monitoring_report.html|
-            public/reports/chkrootkit-report.html|
-            public/reports/maldet-report.html|
+            public/reports/.*|
           )$
       - id: markdown-toc
         name: "📝 markdown · Toc markdown"
@@ -404,13 +409,16 @@ repos:
           - prettier@3.4.2
         exclude: >
           (?x)^(
+            trivy-sbom.json|
+            my-app/public/.*|
             pnpm-lock.yaml|
             public/login.html|
             public/cv/index.html|
-            public/reports/monitoring_report.html|
+            public/reports/.*|
             api/honeypot/.*|
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
+            .pre-commit-config.yaml|
           )$
 
     ### Data & Config Validation ###
@@ -423,11 +431,26 @@ repos:
       - id: check-taskfile
         name: "✅ taskfile · Validate Task configuration"
 
+    # ----------------------------- 🔒 Deployment Tools ---------------------------- #
   - repo: https://github.com/hadolint/hadolint
     rev: v2.14.0
     hooks:
       - id: hadolint-docker
         name: "🐳 hadolint · Validate Dockerfile"
+
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.30
+    hooks:
+      - id: helmlint
+        name: "☸️ helmlint · Validate Helm Charts"
+    # -   repo: https://github.com/norwoodj/helm-docs
+    #     rev: '19.0614'
+    #     hooks:
+    #     -   id: helm-docs
+    #         args:
+    #         -   --chart-search-root=charts/helm-sample/charts
+    #         files: (README\.md\.gotmpl|(Chart|requirements|values)\.yaml)$
+    #         name: "☸️ helm docs · Generate Helm Charts documentation"
 
     # ----------------------------- 🔒 Security Tools ---------------------------- #
 
@@ -437,6 +460,17 @@ repos:
       - id: bandit
         name: "🔒 security · Detect security issues"
         args: [-c, .bandit.yml]
+        exclude: >
+          (?x)^(
+            noxfile.py|
+            versioneer.py|
+            hooks/_version.py|
+            hooks/tests/|
+            ccds/hook_utils/configure_vcs.py|
+            ccds/hook_utils/configure_gh.py|
+            ccds/hook_utils/configure_ssh.py|
+            ccds/hook_utils/custom_config.py|
+          )$
 
   - repo: https://github.com/IamTheFij/ansible-pre-commit
     rev: v1.0.1
@@ -505,3 +539,67 @@ repos:
             sbom.json|
             pnpm-lock.yaml|
           )$
+
+    # ---------------------------------------------------------------------------- #
+    #                            📝 Commit Message Hooks                           #
+    # ---------------------------------------------------------------------------- #
+    #
+    # --------------------------- ✍️ Git Commit Quality -------------------------- #
+
+    ### Commit Message Standards ###
+  # - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+  #   rev: v9.23.0
+  #   hooks:
+  #     - id: commitlint
+  #       stages: [commit-msg]
+  #       additional_dependencies:
+  #         - "@commitlint/config-conventional"
+  #         - conventional-changelog-conventionalcommits
+  
+  # - repo: https://github.com/commitizen-tools/commitizen
+  #   rev: v4.11.2
+  #   hooks:
+  #     - id: commitizen
+  #       name: "🌳 git · Validate commit message"
+  #       # stages: [commit-msg]
+  #       stages: [pre-push]
+  #       additional_dependencies: [cz-conventional-gitmoji]
+  #     - id: commitizen-branch
+  #       # stages: [pre-push]
+  #       stages: [post-commit]
+
+  # - repo: https://github.com/jorisroovers/gitlint
+  #   rev: v0.19.1
+  #   hooks:
+  #     - id: gitlint
+  #       name: "🌳 git · Lint"
+  #     - id: gitlint-ci
+  #       name: "🌳 git · Lint in CI"
+  #       args: [--debug, --commits, mybranch] # enable debug mode, lint all commits in mybranch
+
+    # ---------------------------------------------------------------------------- #
+    #                            👑 Mega linter                                    #
+    # ---------------------------------------------------------------------------- #
+
+    # - repo: https://github.com/oxsecurity/megalinter
+    #   rev: v9.0.1
+    #   hooks:
+    #     - id: megalinter-incremental  # Faster, less thorough
+    #       name: "👑 🐳 megalinter - All in linter"
+    #       stages:
+    #         - pre-commit
+    #       args:
+    #         - mega-linter-runner
+    #         - --containername
+    #         - "megalinter-incremental"
+    #         - --remove-container
+    #         # - --fix
+    #         # - --env
+    #         # - "'APPLY_FIXES=all'"
+    #         - --env
+    #         - "'CLEAR_REPORT_FOLDER=true'"
+    #         - --env
+    #         - "'LOG_LEVEL=warning'"
+    #         - --filesonly
+    #         - --flavor
+    #         - "python"
