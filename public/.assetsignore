@@ -2,3 +2,8 @@ _worker.js
 _routes.json
 _redirects
 _headers
+node_modules/
+.vercel
+assets/fontawesome-free-7.1.0-web/
+others/
+2025/
