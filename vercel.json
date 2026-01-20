@@ -1,5 +1,11 @@
 {
+	"$schema": "https://openapi.vercel.sh/vercel.json",
 	"version": 2,
+	"outputDirectory": "public",
+	"github": {
+		"silent": true,
+		"autoJobCancelation": true
+	},	
 	"functions": {
 		"api/**/*.php": {
 			"runtime": "vercel-php@0.7.4",
