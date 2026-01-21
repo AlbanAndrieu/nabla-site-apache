@@ -2,7 +2,7 @@
 	"name": "nabla-site-apache",
 	"version": "1.0.0",
 	"private": true,
-	"description": "Nabla apache site",
+	"description": "Simple HTML project for Nabla company promoting Alban Andrieu as an experienced DevSecOps",
 	"main": "index.html",
 	"repository": {
 		"type": "git",

@@ -13,6 +13,10 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [CHANGELOG](./CHANGELOG.html).
 
+## Project Goal
+
+This is a simple HTML project for Nabla company that promotes Alban Andrieu as an experienced DevSecOps professional.
+
 Default nabla files for apache
 
 ```bash
