@@ -9,6 +9,21 @@
   --bg-light: #f9fafb;
   --bg-white: #ffffff;
   --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-hover-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-dark: #f9fafb;
+    --text-light: #d1d5db;
+    --bg-light: #1f2937;
+    --bg-white: #111827;
+    --border-color: #374151;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-hover-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 * {
@@ -184,17 +199,17 @@ body {
 }
 
 .service-card {
-  background: white;
+  background: var(--bg-white);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px var(--shadow-color);
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px var(--shadow-hover-color);
 }
 
 .service-icon {
@@ -232,10 +247,10 @@ body {
 }
 
 .skill-category {
-  background: white;
+  background: var(--bg-white);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .skill-category h4 {
@@ -315,10 +330,16 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--text-dark);
+  background: #0f172a;
   color: white;
   padding: 2rem;
   text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: #020617;
+  }
 }
 
 .footer-links {
@@ -395,6 +416,12 @@ body {
   display: block;
   filter: grayscale(50%);
   transition: filter 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tool-item img {
+    filter: grayscale(50%) brightness(0.9);
+  }
 }
 
 .tool-item:hover img {
