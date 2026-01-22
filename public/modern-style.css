@@ -428,6 +428,12 @@ body {
   filter: grayscale(0%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .tool-item:hover img {
+    filter: grayscale(0%) brightness(0.9);
+  }
+}
+
 .tool-item h4 {
   font-size: 1rem;
   color: var(--text-dark);
