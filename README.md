@@ -32,6 +32,8 @@ vercel --prod
 For vercel [php](https://github.com/vercel-community/php)
 
 ```bash
+composer install --ignore-platform-req=ext-mbstring
+
 php -S localhost:8000 api/index.php
 ```
 

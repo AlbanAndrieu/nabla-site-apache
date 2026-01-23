@@ -1,6 +1,25 @@
 {
 	"require": {
-		"lexik/jwt-authentication-bundle": "^3.2",
-		"symfony/http-client": "^8.0"
-	}
+		"php": ">=8.4",
+		"yiisoft/yii2": "~2.0.45"
+	},
+	"config": {
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true
+		},
+		"process-timeout": 1800,
+		"fxp-asset": {
+			"enabled": false
+		}
+	},
+	"scripts": {
+		"dev": "@php yii serve --port=8083",
+		"kill": "killall -9 php8.2 || killall -9 php8.3 || killall -9 php8.5"
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
 }
