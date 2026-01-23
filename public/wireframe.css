@@ -36,13 +36,11 @@
 	--breakpoint-md: 768px;
 	--breakpoint-lg: 992px;
 	--breakpoint-xl: 1200px;
-	--font-family-sans-serif:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
-	--font-family-monospace:
-		SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-		monospace;
+	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -79,9 +77,9 @@ section {
 
 body {
 	margin: 0;
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	font-size: 1rem;
 	font-weight: 200;
 	line-height: 1.5;
@@ -213,9 +211,8 @@ pre,
 code,
 kbd,
 samp {
-	font-family:
-		SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-		monospace;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
 	font-size: 1em;
 }
 
@@ -397,9 +394,9 @@ h6,
 .h5,
 .h6 {
 	margin-bottom: 0.75rem;
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	font-weight: 200;
 	line-height: 1.2;
 	color: inherit;
@@ -1749,9 +1746,7 @@ pre code {
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	transition:
-		border-color 0.15s ease-in-out,
-		box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media screen and (prefers-reduced-motion: reduce) {
 	.form-control {
@@ -1767,9 +1762,8 @@ pre code {
 	background-color: #fff;
 	border-color: white;
 	outline: 0;
-	box-shadow:
-		inset 0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem
+		rgba(205, 205, 205, 0.25);
 }
 .form-control::placeholder {
 	color: #6c757d;
@@ -2003,9 +1997,7 @@ textarea.form-control {
 	.custom-control-input:valid:focus
 	~ .custom-control-label::before,
 .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label,
@@ -2122,9 +2114,7 @@ textarea.form-control {
 	.custom-control-input:invalid:focus
 	~ .custom-control-label::before,
 .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label,
@@ -2216,11 +2206,8 @@ textarea.form-control {
 	font-size: 1rem;
 	line-height: 1.5;
 	border-radius: 0.25rem;
-	transition:
-		color 0.15s ease-in-out,
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
-		box-shadow 0.15s ease-in-out;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media screen and (prefers-reduced-motion: reduce) {
 	.btn {
@@ -2250,9 +2237,8 @@ textarea.form-control {
 }
 .btn:not(:disabled):not(.disabled):active:focus,
 .btn:not(:disabled):not(.disabled).active:focus {
-	box-shadow:
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25),
-		inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	box-shadow: 0 0 0 0.2rem rgba(205, 205, 205, 0.25), inset 0 3px 5px
+		rgba(0, 0, 0, 0.125);
 }
 
 a.btn.disabled,
@@ -2264,9 +2250,8 @@ fieldset:disabled a.btn {
 	color: #212529;
 	background-color: #cdcdcd;
 	border-color: #cdcdcd;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-primary:hover {
 	color: #212529;
@@ -2275,10 +2260,8 @@ fieldset:disabled a.btn {
 }
 .btn-primary:focus,
 .btn-primary.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(205, 205, 205, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(205, 205, 205, 0.5);
 }
 .btn-primary.disabled,
 .btn-primary:disabled {
@@ -2296,18 +2279,16 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(205, 205, 205, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(205, 205, 205, 0.5);
 }
 
 .btn-secondary {
 	color: #212529;
 	background-color: #b0b0b0;
 	border-color: #b0b0b0;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-secondary:hover {
 	color: #212529;
@@ -2316,10 +2297,8 @@ fieldset:disabled a.btn {
 }
 .btn-secondary:focus,
 .btn-secondary.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(176, 176, 176, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(176, 176, 176, 0.5);
 }
 .btn-secondary.disabled,
 .btn-secondary:disabled {
@@ -2337,18 +2316,16 @@ fieldset:disabled a.btn {
 .btn-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(176, 176, 176, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(176, 176, 176, 0.5);
 }
 
 .btn-success {
 	color: #fff;
 	background-color: #28a745;
 	border-color: #28a745;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-success:hover {
 	color: #fff;
@@ -2357,10 +2334,8 @@ fieldset:disabled a.btn {
 }
 .btn-success:focus,
 .btn-success.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
 }
 .btn-success.disabled,
 .btn-success:disabled {
@@ -2378,18 +2353,16 @@ fieldset:disabled a.btn {
 .btn-success:not(:disabled):not(.disabled):active:focus,
 .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(40, 167, 69, 0.5);
 }
 
 .btn-info {
 	color: #fff;
 	background-color: #8e8e8e;
 	border-color: #8e8e8e;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-info:hover {
 	color: #fff;
@@ -2398,10 +2371,8 @@ fieldset:disabled a.btn {
 }
 .btn-info:focus,
 .btn-info.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(142, 142, 142, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(142, 142, 142, 0.5);
 }
 .btn-info.disabled,
 .btn-info:disabled {
@@ -2419,18 +2390,16 @@ fieldset:disabled a.btn {
 .btn-info:not(:disabled):not(.disabled):active:focus,
 .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(142, 142, 142, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(142, 142, 142, 0.5);
 }
 
 .btn-warning {
 	color: #212529;
 	background-color: #ffc107;
 	border-color: #ffc107;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-warning:hover {
 	color: #212529;
@@ -2439,10 +2408,8 @@ fieldset:disabled a.btn {
 }
 .btn-warning:focus,
 .btn-warning.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
 }
 .btn-warning.disabled,
 .btn-warning:disabled {
@@ -2460,18 +2427,16 @@ fieldset:disabled a.btn {
 .btn-warning:not(:disabled):not(.disabled):active:focus,
 .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(255, 193, 7, 0.5);
 }
 
 .btn-danger {
 	color: #fff;
 	background-color: #dc3545;
 	border-color: #dc3545;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-danger:hover {
 	color: #fff;
@@ -2480,10 +2445,8 @@ fieldset:disabled a.btn {
 }
 .btn-danger:focus,
 .btn-danger.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
 }
 .btn-danger.disabled,
 .btn-danger:disabled {
@@ -2501,18 +2464,16 @@ fieldset:disabled a.btn {
 .btn-danger:not(:disabled):not(.disabled):active:focus,
 .btn-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-danger.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(220, 53, 69, 0.5);
 }
 
 .btn-light {
 	color: #212529;
 	background-color: #eaeaea;
 	border-color: #eaeaea;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-light:hover {
 	color: #212529;
@@ -2521,10 +2482,8 @@ fieldset:disabled a.btn {
 }
 .btn-light:focus,
 .btn-light.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(234, 234, 234, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(234, 234, 234, 0.5);
 }
 .btn-light.disabled,
 .btn-light:disabled {
@@ -2542,18 +2501,16 @@ fieldset:disabled a.btn {
 .btn-light:not(:disabled):not(.disabled):active:focus,
 .btn-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-light.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(234, 234, 234, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(234, 234, 234, 0.5);
 }
 
 .btn-dark {
 	color: #fff;
 	background-color: #555555;
 	border-color: #555555;
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075);
 }
 .btn-dark:hover {
 	color: #fff;
@@ -2562,10 +2519,8 @@ fieldset:disabled a.btn {
 }
 .btn-dark:focus,
 .btn-dark.focus {
-	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.15),
-		0 1px 1px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(85, 85, 85, 0.5);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px
+		rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(85, 85, 85, 0.5);
 }
 .btn-dark.disabled,
 .btn-dark:disabled {
@@ -2583,9 +2538,8 @@ fieldset:disabled a.btn {
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .btn-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-dark.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(85, 85, 85, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(85, 85, 85, 0.5);
 }
 
 .btn-outline-primary {
@@ -2618,9 +2572,8 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(205, 205, 205, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(205, 205, 205, 0.5);
 }
 
 .btn-outline-secondary {
@@ -2653,9 +2606,8 @@ fieldset:disabled a.btn {
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-secondary.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(176, 176, 176, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(176, 176, 176, 0.5);
 }
 
 .btn-outline-success {
@@ -2688,9 +2640,8 @@ fieldset:disabled a.btn {
 .btn-outline-success:not(:disabled):not(.disabled):active:focus,
 .btn-outline-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-success.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(40, 167, 69, 0.5);
 }
 
 .btn-outline-info {
@@ -2723,9 +2674,8 @@ fieldset:disabled a.btn {
 .btn-outline-info:not(:disabled):not(.disabled):active:focus,
 .btn-outline-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-info.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(142, 142, 142, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(142, 142, 142, 0.5);
 }
 
 .btn-outline-warning {
@@ -2758,9 +2708,8 @@ fieldset:disabled a.btn {
 .btn-outline-warning:not(:disabled):not(.disabled):active:focus,
 .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-warning.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(255, 193, 7, 0.5);
 }
 
 .btn-outline-danger {
@@ -2793,9 +2742,8 @@ fieldset:disabled a.btn {
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
 .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-danger.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(220, 53, 69, 0.5);
 }
 
 .btn-outline-light {
@@ -2828,9 +2776,8 @@ fieldset:disabled a.btn {
 .btn-outline-light:not(:disabled):not(.disabled):active:focus,
 .btn-outline-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-light.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(234, 234, 234, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(234, 234, 234, 0.5);
 }
 
 .btn-outline-dark {
@@ -2863,9 +2810,8 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus,
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-dark.dropdown-toggle:focus {
-	box-shadow:
-		inset 0 3px 5px rgba(0, 0, 0, 0.125),
-		0 0 0 0.2rem rgba(85, 85, 85, 0.5);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem
+		rgba(85, 85, 85, 0.5);
 }
 
 .btn-link {
@@ -3467,9 +3413,7 @@ input[type="button"].btn-block {
 	box-shadow: none;
 }
 .custom-control-input:focus ~ .custom-control-label::before {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(205, 205, 205, 0.25);
 }
 .custom-control-input:active ~ .custom-control-label::before {
 	color: #fff;
@@ -3588,9 +3532,8 @@ input[type="button"].btn-block {
 .custom-select:focus {
 	border-color: white;
 	outline: 0;
-	box-shadow:
-		inset 0 1px 2px rgba(0, 0, 0, 0.075),
-		0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem
+		rgba(255, 255, 255, 0.5);
 }
 .custom-select:focus::-ms-value {
 	color: #495057;
@@ -3696,19 +3639,13 @@ input[type="button"].btn-block {
 	outline: none;
 }
 .custom-range:focus::-webkit-slider-thumb {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(205, 205, 205, 0.25);
 }
 .custom-range:focus::-moz-range-thumb {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(205, 205, 205, 0.25);
 }
 .custom-range:focus::-ms-thumb {
-	box-shadow:
-		0 0 0 1px white,
-		0 0 0 0.2rem rgba(205, 205, 205, 0.25);
+	box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(205, 205, 205, 0.25);
 }
 .custom-range::-moz-focus-outer {
 	border: 0;
@@ -3721,9 +3658,7 @@ input[type="button"].btn-block {
 	border: 0;
 	border-radius: 1rem;
 	box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-	transition:
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
@@ -3752,9 +3687,7 @@ input[type="button"].btn-block {
 	border: 0;
 	border-radius: 1rem;
 	box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-	transition:
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
@@ -3786,9 +3719,7 @@ input[type="button"].btn-block {
 	border: 0;
 	border-radius: 1rem;
 	box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-	transition:
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	appearance: none;
 }
@@ -3823,9 +3754,7 @@ input[type="button"].btn-block {
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-	transition:
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 }
 @media screen and (prefers-reduced-motion: reduce) {
@@ -5327,9 +5256,9 @@ button.close {
 	z-index: 1070;
 	display: block;
 	margin: 0;
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	font-style: normal;
 	font-weight: 200;
 	line-height: 1.5;
@@ -5443,9 +5372,9 @@ button.close {
 	z-index: 1060;
 	display: block;
 	max-width: 276px;
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	font-style: normal;
 	font-weight: 200;
 	line-height: 1.5;
@@ -8354,9 +8283,8 @@ button.bg-dark:focus {
 }
 
 .text-monospace {
-	font-family:
-		SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-		monospace;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
 }
 
 .text-justify {

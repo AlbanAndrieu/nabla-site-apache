@@ -165,9 +165,7 @@ html[data-theme="dark"] {
 body {
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Override container backgrounds */
@@ -184,10 +182,7 @@ body {
 	color: var(--text-primary);
 	border-color: var(--border-color);
 	box-shadow: 0 2px 4px var(--shadow-color);
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease,
-		box-shadow 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -247,9 +242,7 @@ a:focus {
 /* Alerts - Keep Bootstrap colors but adjust for theme */
 .alert {
 	border-width: 1px;
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .alert-info {
@@ -306,9 +299,7 @@ select {
 	background-color: var(--bg-secondary);
 	color: var(--text-primary);
 	border-color: var(--border-color);
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 input:focus,
