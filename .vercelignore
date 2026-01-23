@@ -1,5 +1,7 @@
 # Ignore everything (folders and files) on root only
 /*
+# vercel do not like .python-version
+.python-version
 !api
 !public
 !my-app
@@ -9,3 +11,7 @@
 !*.html
 index.cgi
 index.pl
+!README.md
+packages/*/test/**
+./public/assets/fontawesome-free-7.1.0-web/*
+./public/others/*
