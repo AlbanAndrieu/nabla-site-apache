@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h3> Fast Api Test </h3>
+  <div>
+    <h3>Fast Api Test</h3>
 
-        {{ notes }}
-    </div>
+    {{ notes }}
+  </div>
 </template>
 
 <script>

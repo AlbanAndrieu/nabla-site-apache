@@ -1,11 +1,8 @@
-<!-- markdown-link-check-disable-next-line -->
----
-layout: default
----
+## <!-- markdown-link-check-disable-next-line -->
+
+## layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-
 
 # [![Nabla](https://nabla.albandrieu.com/assets/nabla/nabla-4.png)](https://github.com/AlbanAndrieu/nabla-site-apache) nabla-site-apache
 
@@ -71,6 +68,6 @@ For pull requests, editor preferences are available in the [editor config](.edit
 
 [Apache v2](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-______________________________________________________________________
+---
 
 Alban Andrieu [linkedin](https://fr.linkedin.com/in/nabla/)

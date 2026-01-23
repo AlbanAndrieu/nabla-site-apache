@@ -1,9 +1,8 @@
-
 <template>
-	<div class="note">
-		<h1>{{ note.title }}</h1>
-		<p>{{ note.content }}</p>
-	</div>
+  <div class="note">
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.content }}</p>
+  </div>
 </template>
 
 <script>

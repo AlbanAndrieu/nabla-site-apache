@@ -146,7 +146,7 @@ dt {
 }
 
 dd {
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 	margin-left: 0;
 }
 
@@ -176,11 +176,11 @@ sup {
 }
 
 sub {
-	bottom: -.25em;
+	bottom: -0.25em;
 }
 
 sup {
-	top: -.5em;
+	top: -0.5em;
 }
 
 a {
@@ -333,7 +333,7 @@ legend {
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 	font-size: 1.5rem;
 	line-height: inherit;
 	color: inherit;
@@ -1919,7 +1919,7 @@ textarea.form-control {
 	display: none;
 	max-width: 100%;
 	padding: 0.25rem 0.5rem;
-	margin-top: .1rem;
+	margin-top: 0.1rem;
 	font-size: 0.875rem;
 	line-height: 1.5;
 	color: #fff;
@@ -2036,7 +2036,7 @@ textarea.form-control {
 	display: none;
 	max-width: 100%;
 	padding: 0.25rem 0.5rem;
-	margin-top: .1rem;
+	margin-top: 0.1rem;
 	font-size: 0.875rem;
 	line-height: 1.5;
 	color: #fff;
@@ -5212,10 +5212,10 @@ button.close {
 	border-top: 1px solid #e9ecef;
 }
 .modal-footer > :not(:first-child) {
-	margin-left: .25rem;
+	margin-left: 0.25rem;
 }
 .modal-footer > :not(:last-child) {
-	margin-right: .25rem;
+	margin-right: 0.25rem;
 }
 
 .modal-scrollbar-measure {
@@ -5626,7 +5626,7 @@ button.close {
 
 .carousel-fade .carousel-item {
 	opacity: 0;
-	transition-duration: .6s;
+	transition-duration: 0.6s;
 	transition-property: opacity;
 }
 
