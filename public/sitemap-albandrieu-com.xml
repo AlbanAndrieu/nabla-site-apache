@@ -11,22 +11,26 @@
   <url>
     <loc>https://nabla.albandrieu.com/nabla.html</loc>
     <changefreq>monthly</changefreq>
-  </url>
+  </url>  
   <url>
-    <loc>https://nabla.albandrieu.com/policy/privacypolicy.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/privacy_policy.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nabla.albandrieu.com/policy/termesofservice.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/service_terms.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nabla.albandrieu.com/policy/monitoring_report.html</loc>
+    <loc>https://nabla.albandrieu.com/policy/gnu_general_public_license.txt</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nabla.albandrieu.com/reports/monitoring_report.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   <!--
   <url>
-    <loc>https://nabla.albandrieu.com/chkrootkit-report.html</loc>
+    <loc>https://nabla.albandrieu.com/reports/chkrootkit-report.html</loc>
     <changefreq>monthly</changefreq>
   </url>
   -->

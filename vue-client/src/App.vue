@@ -3,20 +3,20 @@
 // Path: vue-client/src/App.vue
 <template>
   <div id="app">
-    <h1 class="main">Notes</h1>
-    <table class="table" border="black">
-      <thead>
-        <tr>
-          <th>ID</th>
+    <h1 class="main">Notes</_h1>
+    <_table class="table" _border="black">
+      <_thead>
+        <_tr>
+          <_th>ID</th>
           <th>Title</th>
           <th>Description</th>
           <th>Completed</th>
           <th>Created Date</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="note in notes" :key="note.id">
-          <td>{note.id }</td>
+      <_tbody>
+        <tr _v-for="note in notes" :_key="note.id">
+          <_td>{note.id }</td>
           <td>{note.title }</td>
           <td>{note.description }</td>
           <td>{note.completed }</td>
@@ -24,10 +24,10 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</template>
+  </_div>
+</_template>
 
-<script>
+<_script>
 import Api from "./Api";
 
 export default {

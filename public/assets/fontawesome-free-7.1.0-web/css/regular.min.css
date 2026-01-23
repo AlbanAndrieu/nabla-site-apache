@@ -5,24 +5,24 @@
  */
 :host,
 :root {
-  --fa-family-classic: "Font Awesome 7 Free";
-  --fa-font-regular: normal 400 1em / 1 var(--fa-family-classic);
-  --fa-style-family-classic: var(--fa-family-classic);
+	--fa-family-classic: "Font Awesome 7 Free";
+	--fa-font-regular: normal 400 1em / 1 var(--fa-family-classic);
+	--fa-style-family-classic: var(--fa-family-classic);
 }
 @font-face {
-  font-family: "Font Awesome 7 Free";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(../webfonts/fa-regular-400.woff2);
+	font-family: "Font Awesome 7 Free";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url(../webfonts/fa-regular-400.woff2);
 }
 .far {
-  --fa-style: 400;
+	--fa-style: 400;
 }
 .fa-classic,
 .far {
-  --fa-family: var(--fa-family-classic);
+	--fa-family: var(--fa-family-classic);
 }
 .fa-regular {
-  --fa-style: 400;
+	--fa-style: 400;
 }

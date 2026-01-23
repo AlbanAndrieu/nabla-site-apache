@@ -1,0 +1,536 @@
+/**
+ * Theme Support CSS - Dark/Light Mode with Responsive Design Enhancements
+ * Implements browser preference detection and manual theme toggle
+ */
+
+/* ============================================
+   CSS Custom Properties for Light Mode (Default)
+   ============================================ */
+:root {
+	/* Light Mode Colors */
+	--bg-primary: #ffffff;
+	--bg-secondary: #f8f9fa;
+	--bg-card: #ffffff;
+	--text-primary: #333333;
+	--text-secondary: #6c757d;
+	--text-muted: #868e96;
+	--border-color: #dee2e6;
+	--shadow-color: rgba(0, 0, 0, 0.1);
+	--shadow-hover: rgba(0, 0, 0, 0.15);
+
+	/* Interactive Elements */
+	--link-color: #007bff;
+	--link-hover: #0056b3;
+	--button-bg: #007bff;
+	--button-hover: #0056b3;
+	--button-text: #ffffff;
+
+	/* Alert/Card Backgrounds */
+	--alert-info-bg: #d1ecf1;
+	--alert-info-border: #bee5eb;
+	--alert-info-text: #0c5460;
+	--alert-success-bg: #d4edda;
+	--alert-success-border: #c3e6cb;
+	--alert-success-text: #155724;
+	--alert-warning-bg: #fff3cd;
+	--alert-warning-border: #ffeaa7;
+	--alert-warning-text: #856404;
+
+	/* Navigation */
+	--nav-bg: #343a40;
+	--nav-text: #ffffff;
+
+	/* Theme Toggle Button */
+	--toggle-bg: #343a40;
+	--toggle-text: #ffffff;
+	--toggle-border: #495057;
+}
+
+/* ============================================
+   Dark Mode Colors (User Preference)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-primary: #1a1a1a;
+		--bg-secondary: #2d2d2d;
+		--bg-card: #252525;
+		--text-primary: #e4e4e4;
+		--text-secondary: #b8b8b8;
+		--text-muted: #8e8e8e;
+		--border-color: #404040;
+		--shadow-color: rgba(0, 0, 0, 0.3);
+		--shadow-hover: rgba(0, 0, 0, 0.5);
+
+		--link-color: #66b3ff;
+		--link-hover: #99ccff;
+		--button-bg: #0d6efd;
+		--button-hover: #0a58ca;
+		--button-text: #ffffff;
+
+		--alert-info-bg: #1a3a47;
+		--alert-info-border: #2c5f75;
+		--alert-info-text: #9cd9f0;
+		--alert-success-bg: #1a3d2e;
+		--alert-success-border: #2d5f47;
+		--alert-success-text: #9ce0bd;
+		--alert-warning-bg: #4d3d1a;
+		--alert-warning-border: #6b5423;
+		--alert-warning-text: #f4d58d;
+
+		--nav-bg: #1a1a1a;
+		--nav-text: #e4e4e4;
+
+		--toggle-bg: #e4e4e4;
+		--toggle-text: #1a1a1a;
+		--toggle-border: #b8b8b8;
+	}
+}
+
+/* ============================================
+   Manual Theme Override Classes
+   ============================================ */
+html[data-theme="light"] {
+	--bg-primary: #ffffff;
+	--bg-secondary: #f8f9fa;
+	--bg-card: #ffffff;
+	--text-primary: #333333;
+	--text-secondary: #6c757d;
+	--text-muted: #868e96;
+	--border-color: #dee2e6;
+	--shadow-color: rgba(0, 0, 0, 0.1);
+	--shadow-hover: rgba(0, 0, 0, 0.15);
+
+	--link-color: #007bff;
+	--link-hover: #0056b3;
+	--button-bg: #007bff;
+	--button-hover: #0056b3;
+	--button-text: #ffffff;
+
+	--alert-info-bg: #d1ecf1;
+	--alert-info-border: #bee5eb;
+	--alert-info-text: #0c5460;
+	--alert-success-bg: #d4edda;
+	--alert-success-border: #c3e6cb;
+	--alert-success-text: #155724;
+	--alert-warning-bg: #fff3cd;
+	--alert-warning-border: #ffeaa7;
+	--alert-warning-text: #856404;
+
+	--nav-bg: #343a40;
+	--nav-text: #ffffff;
+
+	--toggle-bg: #343a40;
+	--toggle-text: #ffffff;
+	--toggle-border: #495057;
+}
+
+html[data-theme="dark"] {
+	--bg-primary: #1a1a1a;
+	--bg-secondary: #2d2d2d;
+	--bg-card: #252525;
+	--text-primary: #e4e4e4;
+	--text-secondary: #b8b8b8;
+	--text-muted: #8e8e8e;
+	--border-color: #404040;
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--shadow-hover: rgba(0, 0, 0, 0.5);
+
+	--link-color: #66b3ff;
+	--link-hover: #99ccff;
+	--button-bg: #0d6efd;
+	--button-hover: #0a58ca;
+	--button-text: #ffffff;
+
+	--alert-info-bg: #1a3a47;
+	--alert-info-border: #2c5f75;
+	--alert-info-text: #9cd9f0;
+	--alert-success-bg: #1a3d2e;
+	--alert-success-border: #2d5f47;
+	--alert-success-text: #9ce0bd;
+	--alert-warning-bg: #4d3d1a;
+	--alert-warning-border: #6b5423;
+	--alert-warning-text: #f4d58d;
+
+	--nav-bg: #1a1a1a;
+	--nav-text: #e4e4e4;
+
+	--toggle-bg: #e4e4e4;
+	--toggle-text: #1a1a1a;
+	--toggle-border: #b8b8b8;
+}
+
+/* ============================================
+   Apply Theme Variables to Elements
+   ============================================ */
+body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Override container backgrounds */
+.container,
+.py-5,
+.py-4 {
+	background-color: transparent;
+}
+
+/* Cards and Containers */
+.card,
+.jumbotron {
+	background-color: var(--bg-card);
+	color: var(--text-primary);
+	border-color: var(--border-color);
+	box-shadow: 0 2px 4px var(--shadow-color);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.card-body {
+	background-color: transparent;
+}
+
+/* Special sections - override Bootstrap primary/light/dark backgrounds */
+.bg-primary {
+	background-color: var(--button-bg);
+}
+
+.bg-light {
+	background-color: var(--bg-secondary);
+}
+
+.bg-dark {
+	background-color: var(--nav-bg);
+}
+
+/* Text Elements */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lead,
+.text-dark,
+li,
+span,
+div,
+blockquote {
+	color: var(--text-primary);
+}
+
+.text-muted,
+small {
+	color: var(--text-muted);
+}
+
+/* Links */
+a {
+	color: var(--link-color);
+	transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+	color: var(--link-hover);
+}
+
+/* Alerts - Keep Bootstrap colors but adjust for theme */
+.alert {
+	border-width: 1px;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+.alert-info {
+	background-color: var(--alert-info-bg);
+	border-color: var(--alert-info-border);
+	color: var(--alert-info-text);
+}
+
+.alert-info * {
+	color: var(--alert-info-text);
+}
+
+.alert-success {
+	background-color: var(--alert-success-bg);
+	border-color: var(--alert-success-border);
+	color: var(--alert-success-text);
+}
+
+.alert-success * {
+	color: var(--alert-success-text);
+}
+
+.alert-warning {
+	background-color: var(--alert-warning-bg);
+	border-color: var(--alert-warning-border);
+	color: var(--alert-warning-text);
+}
+
+.alert-warning * {
+	color: var(--alert-warning-text);
+}
+
+/* Navigation */
+.collapse.bg-dark,
+.navbar {
+	background-color: var(--nav-bg);
+	color: var(--nav-text);
+}
+
+/* Borders */
+hr,
+.border,
+.border-top,
+.border-bottom,
+.border-left,
+.border-right {
+	border-color: var(--border-color);
+}
+
+/* Forms and Inputs */
+input,
+textarea,
+select {
+	background-color: var(--bg-secondary);
+	color: var(--text-primary);
+	border-color: var(--border-color);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	background-color: var(--bg-card);
+	border-color: var(--link-color);
+}
+
+/* ============================================
+   Theme Toggle Button Styles
+   ============================================ */
+.theme-toggle {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	background-color: var(--toggle-bg);
+	color: var(--toggle-text);
+	border: 2px solid var(--toggle-border);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 1.5rem;
+	box-shadow: 0 2px 8px var(--shadow-color);
+	transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+.theme-toggle:focus {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+/* ============================================
+   Responsive Design Enhancements
+   ============================================ */
+
+/* Mobile First - Base styles for mobile */
+@media (max-width: 575.98px) {
+	/* Reduce padding on mobile */
+	.py-5 {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.py-4 {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	/* Adjust font sizes */
+	.display-3 {
+		font-size: 2rem;
+	}
+
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.lead {
+		font-size: 1rem;
+	}
+
+	/* Theme toggle positioning on mobile */
+	.theme-toggle {
+		top: 10px;
+		right: 10px;
+		width: 45px;
+		height: 45px;
+		font-size: 1.25rem;
+	}
+
+	/* Card adjustments */
+	.card {
+		margin-bottom: 1rem;
+	}
+
+	.card-body {
+		padding: 1rem;
+	}
+
+	/* Improve touch targets */
+	a,
+	button {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.display-3 {
+		font-size: 2.5rem;
+	}
+
+	.theme-toggle {
+		width: 48px;
+		height: 48px;
+		font-size: 1.4rem;
+	}
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+	/* Ensure proper spacing on larger screens */
+	.container {
+		max-width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+/* ============================================
+   Image Responsiveness
+   ============================================ */
+img {
+	max-width: 100%;
+	height: auto;
+	transition: opacity 0.3s ease;
+}
+
+/* ============================================
+   Accessibility Improvements
+   ============================================ */
+/* Skip to main content link */
+.skip-to-main {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: var(--button-bg);
+	color: var(--button-text);
+	padding: 8px;
+	text-decoration: none;
+	z-index: 100;
+}
+
+.skip-to-main:focus {
+	top: 0;
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms;
+		animation-iteration-count: 1;
+		transition-duration: 0.01ms;
+		scroll-behavior: auto;
+	}
+
+	.theme-toggle:hover {
+		transform: none;
+	}
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+	.theme-toggle {
+		display: none;
+	}
+
+	body {
+		background-color: white;
+		color: black;
+	}
+
+	a {
+		color: black;
+		text-decoration: underline;
+	}
+}
+
+/* ============================================
+   High Contrast Mode Support
+   ============================================ */
+@media (prefers-contrast: high) {
+	body {
+		border: 2px solid var(--text-primary);
+	}
+
+	.card,
+	.alert {
+		border-width: 2px;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
