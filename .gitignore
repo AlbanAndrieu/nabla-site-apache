@@ -67,3 +67,7 @@ typings/
 # dotenv environment variables file
 .env
 .vercel
+
+# Backup files
+*.backup
+*-old.html
