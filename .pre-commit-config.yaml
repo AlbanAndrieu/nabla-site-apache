@@ -370,6 +370,7 @@ repos:
               public/index.js|
               public/d3.v3.min.js|
               api/hello.js|
+              vue-client/.*|
           )$
 
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
