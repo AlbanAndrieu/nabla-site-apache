@@ -34,7 +34,7 @@
 		"@vercel/analytics": "^1.6.1",
 		"@vercel/speed-insights": "^1.2.0",
 		"crypto": "^1.0.1",
-		"lodash-es": "^4.17.22",
+		"lodash-es": "^4.17.23",
 		"vercel": "^50.4.10",
 		"webdriver-manager": "^12.1.9"
 	},
