@@ -601,66 +601,8 @@
       <script defer src="https://cdn.vercel.sh/analytics"></script>
       <!-- Vercel Speed Insights -->
       <script defer src="https://cdn.vercel.sh/speed-insights"></script>
-
-      <!-- Google Translate -->
-      <script type="text/javascript" src="/google-translate-config.js"></script>
-      <script
-        type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-      ></script>
-      <!-- End Google Translate -->
     </head>
     <body>
-      <!-- Google Translate Widget -->
-      <div class="google-translate-widget">
-        <div id="google_translate_element"></div>
-      </div>
-      <!-- End Google Translate Widget -->
-
-      <style>
-        .google-translate-widget {
-          position: fixed;
-          top: 10px;
-          right: 10px;
-          z-index: 9999;
-          background: white;
-          padding: 5px;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-      </style>
-
-      <!-- Hero Section -->
-      <section class="hero-section" id="home">
-        <div class="hero-content">
-          <img
-            src="https://avatars1.githubusercontent.com/u/7859836"
-            alt="Alban Andrieu"
-            class="profile-image"
-          />
-          <h1 class="hero-title">Alban Andrieu</h1>
-          <p class="hero-subtitle">Independent DevSecOps Professional</p>
-          <p class="hero-description">
-            Transforming businesses through expert DevOps, Security, and Cloud
-            solutions. With years of experience in enterprise environments, I
-            help organizations build secure, scalable, and efficient technology
-            infrastructures.
-          </p>
-          <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">
-              <i class="fas fa-envelope"></i> Get in Touch
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nabla"
-              target="_blank"
-              class="btn btn-secondary"
-            >
-              <i class="fab fa-linkedin"></i> View LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- Services Section -->
       <section class="services-section" id="services">
         <h2 class="section-title">Services I Offer</h2>
@@ -672,36 +614,14 @@
             <div class="service-icon">
               <i class="fas fa-infinity"></i>
             </div>
-            <h3>DevOps Transformation</h3>
-            <p>
-              End-to-end DevOps implementation including CI/CD pipelines,
-              automation, and process optimization to accelerate your software
-              delivery.
-            </p>
-          </div>
+            <h3>Optimized custom search</h3>
+            <p>Custom search used by home made IA.</p>
 
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-shield-halved"></i>
-            </div>
-            <h3>Security Integration</h3>
-            <p>
-              Embedding security practices into your development lifecycle with
-              automated security testing, vulnerability management, and
-              compliance.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <h3>Cloud Architecture</h3>
-            <p>
-              Design and implementation of scalable cloud infrastructures on
-              AWS, Azure, and GCP with focus on cost optimization and
-              reliability.
-            </p>
+            <script
+              async
+              src="https://cse.google.com/cse.js?cx=8090719dd778f44d0"
+            ></script>
+            <div class="gcse-search"></div>
           </div>
 
           <div class="service-card">
@@ -714,119 +634,48 @@
               tools to manage infrastructure efficiently and consistently.
             </p>
           </div>
-
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-diagram-project"></i>
-            </div>
-            <h3>Container Orchestration</h3>
-            <p>
-              Kubernetes and Docker expertise for containerizing applications
-              and managing complex microservices architectures.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Monitoring & Observability</h3>
-            <p>
-              Setting up comprehensive monitoring solutions with tools like
-              Prometheus, Grafana, and ELK stack for full system visibility.
-            </p>
-          </div>
         </div>
       </section>
 
-      <!-- Skills Section -->
-      <section class="skills-section" id="skills">
-        <h2 class="section-title">Technical Expertise</h2>
+      <!-- Tools Section -->
+      <section class="tools-section" id="tools">
+        <h2 class="section-title">Tools & Platforms</h2>
         <p class="section-subtitle">
-          A comprehensive skill set built over years of hands-on experience
+          Familiar with a wide range of industry-standard tools
         </p>
-        <div class="skills-container">
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h4><i class="fas fa-code"></i> DevOps & CI/CD</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Jenkins</span>
-                <span class="skill-tag">GitLab CI</span>
-                <span class="skill-tag">GitHub Actions</span>
-                <span class="skill-tag">Azure DevOps</span>
-                <span class="skill-tag">CircleCI</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-cloud"></i> Cloud Platforms</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Azure</span>
-                <span class="skill-tag">Google Cloud</span>
-                <span class="skill-tag">Cloudflare</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-cube"></i> Containers & Orchestration</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">Helm</span>
-                <span class="skill-tag">Docker Compose</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-file-code"></i> Infrastructure as Code</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Terraform</span>
-                <span class="skill-tag">Ansible</span>
-                <span class="skill-tag">CloudFormation</span>
-                <span class="skill-tag">Pulumi</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-shield"></i> Security & Compliance</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">SonarQube</span>
-                <span class="skill-tag">OWASP</span>
-                <span class="skill-tag">Vault</span>
-                <span class="skill-tag">Aqua Security</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-chart-area"></i> Monitoring & Logging</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Prometheus</span>
-                <span class="skill-tag">Grafana</span>
-                <span class="skill-tag">ELK Stack</span>
-                <span class="skill-tag">Datadog</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-code-branch"></i> Version Control</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">GitLab</span>
-                <span class="skill-tag">Bitbucket</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-laptop-code"></i> Programming</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Bash</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Go</span>
-              </div>
-            </div>
+        <div class="tools-grid">
+          <div class="tool-item">
+            <a href="https://github.com/AlbanAndrieu" target="_blank">
+              <img src="assets/logo-github-simple.png" alt="GitHub" />
+              <h4>GitHub</h4>
+            </a>
+          </div>
+          <div class="tool-item">
+            <a
+              href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
+              target="_blank"
+            >
+              <img src="assets/logo-sonar.png" alt="SonarCloud" />
+              <h4>SonarCloud</h4>
+            </a>
+          </div>
+          <div class="tool-item">
+            <a href="https://hub.docker.com/u/nabla" target="_blank">
+              <img src="assets/logo-docker-hub-simple.jpg" alt="Docker Hub" />
+              <h4>Docker Hub</h4>
+            </a>
+          </div>
+          <div class="tool-item">
+            <img src="assets/big-icon-jenkins.png" alt="Jenkins" />
+            <h4>Jenkins</h4>
+          </div>
+          <div class="tool-item">
+            <img src="assets/logo-nexus.png" alt="Nexus" />
+            <h4>Nexus</h4>
+          </div>
+          <div class="tool-item">
+            <img src="assets/logo-angular-simple.png" alt="Angular" />
+            <h4>Angular</h4>
           </div>
         </div>
       </section>
