@@ -484,3 +484,42 @@ html {
 		opacity: 0.5;
 	}
 }
+
+/* Print Styles for PDF Export */
+@media print {
+	/* Hide non-essential elements */
+	.hero-section::before,
+	.cta-buttons,
+	.social-links,
+	.footer-links,
+	button {
+		display: none !important;
+	}
+
+	/* Reset backgrounds and colors for print */
+	body {
+		background: white !important;
+		color: black !important;
+	}
+
+	.hero-section {
+		background: white !important;
+		color: black !important;
+		min-height: auto !important;
+		padding: 20pt 0 !important;
+	}
+
+	.services-section,
+	.skills-section,
+	.tools-section,
+	.contact-section {
+		background: white !important;
+		page-break-inside: avoid;
+	}
+
+	.service-card,
+	.skill-category {
+		box-shadow: none !important;
+		border: 1px solid #ddd !important;
+	}
+}

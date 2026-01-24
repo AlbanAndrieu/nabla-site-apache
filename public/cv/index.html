@@ -555,8 +555,16 @@
     <script defer src="https://cdn.vercel.sh/analytics"></script>
     <!-- Vercel Speed Insights -->
     <script defer src="https://cdn.vercel.sh/speed-insights"></script>
+
+    <!-- Print Styles for PDF Export -->
+    <link rel="stylesheet" href="../print.css" />
   </head>
   <body>
+    <!-- Print Button (hidden when printing) -->
+    <button class="print-button" onclick="window.print()">
+      <i class="fa fa-print"></i> Print / Save as PDF
+    </button>
+
     <div class="collapse bg-dark" id="navbarHeader" style="">
       <div class="container">
         <div class="row">

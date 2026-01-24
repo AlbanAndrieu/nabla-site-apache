@@ -601,8 +601,16 @@
       <script defer src="https://cdn.vercel.sh/analytics"></script>
       <!-- Vercel Speed Insights -->
       <script defer src="https://cdn.vercel.sh/speed-insights"></script>
+
+      <!-- Print Styles for PDF Export -->
+      <link rel="stylesheet" href="print.css" />
     </head>
     <body>
+      <!-- Print Button (hidden when printing) -->
+      <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print"></i> Print / Save as PDF
+      </button>
+
       <!-- Services Section -->
       <section class="services-section" id="services">
         <h2 class="section-title">Services I Offer</h2>
