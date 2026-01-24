@@ -109,12 +109,16 @@
 		text-decoration: underline;
 	}
 
-	a[href]:after {
+	/* Show URLs for important external links only */
+	a[href^="http"]:not([href*="localhost"]):not([href*="#"]):after,
+	a[href^="mailto:"]:after {
 		content: " (" attr(href) ")";
 		font-size: 90%;
 		color: #666;
+		word-break: break-all;
 	}
 
+	/* Don't show URLs for internal links, anchors, or javascript */
 	a[href^="#"]:after,
 	a[href^="javascript:"]:after,
 	a[href=""]:after {
