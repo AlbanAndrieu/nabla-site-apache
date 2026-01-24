@@ -9,11 +9,24 @@
     <!-- PAGE settings -->
     <link rel="icon" href="../assets/nabla/nabla-4.png" />
     <title>INDEX for albandrieu.com</title>
-    <meta name="description" content="Index for albandrieu.com's CV" />
-    <meta name="keywords" content="alban andrieu" />
-    <meta name="author" content="alban.andrieu@free.fr" />
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Alban Andrieu - Experienced DevSecOps Engineer, CI/CD Expert, and Cloud Infrastructure Specialist. View my professional CV and credentials." />
+    <meta name="keywords" content="Alban Andrieu, DevSecOps, CI/CD, Cloud Infrastructure, Software Engineer, Resume, CV" />
+    <meta name="author" content="Alban Andrieu" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://albandrieu.com/cv/" />
+    <meta property="og:title" content="Alban Andrieu - DevSecOps Engineer CV" />
+    <meta property="og:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
+    <meta property="og:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://albandrieu.com/cv/" />
+    <meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
+    <meta property="twitter:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
+    <meta property="twitter:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
     <!-- CSS dependencies -->
     <link
       rel="stylesheet"
@@ -21,6 +34,79 @@
       type="text/css"
     />
     <link rel="stylesheet" href="../wireframe.css" />
+    
+    <!-- Custom CV Styles -->
+    <style>
+      /* Modern CV Styling */
+      .cv-card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      
+      .cv-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      
+      .cv-card .card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 2rem;
+      }
+      
+      .cv-section {
+        margin-bottom: 1.5rem;
+      }
+      
+      .cv-section h3 {
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .cv-section .border-bottom {
+        border-color: #e2e8f0 !important;
+      }
+      
+      .list-group-item {
+        border-left: 3px solid transparent;
+        transition: all 0.2s ease;
+      }
+      
+      .list-group-item:hover {
+        border-left-color: #667eea;
+        background-color: #f8f9fa;
+      }
+      
+      .badge-pill {
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      footer {
+        border-top: 1px solid #e2e8f0;
+      }
+      
+      /* Accessibility improvements */
+      a:focus, button:focus {
+        outline: 2px solid #667eea;
+        outline-offset: 2px;
+      }
+      
+      /* Print styles for CV */
+      @media print {
+        .cv-card {
+          box-shadow: none;
+          page-break-inside: avoid;
+        }
+        
+        footer, nav, script {
+          display: none;
+        }
+      }
+    </style>
 
     <script
       src="https://example.com/fontawesome/v7.0.1/js/fontawesome.js"
@@ -555,6 +641,49 @@
     <script defer src="https://cdn.vercel.sh/analytics"></script>
     <!-- Vercel Speed Insights -->
     <script defer src="https://cdn.vercel.sh/speed-insights"></script>
+    
+    <!-- JSON-LD Structured Data for SEO and Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alban Andrieu",
+      "jobTitle": "DevSecOps Engineer",
+      "description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
+      "url": "https://albandrieu.com",
+      "email": "alban.andrieu@free.fr",
+      "sameAs": [
+        "https://www.linkedin.com/in/nabla/",
+        "https://twitter.com/AlbanAndrieu",
+        "https://github.com/AlbanAndrieu"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Various Educational Institutions"
+      },
+      "knowsAbout": [
+        "DevSecOps",
+        "CI/CD",
+        "Cloud Infrastructure",
+        "Software Engineering",
+        "DevOps",
+        "Security",
+        "Automation"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "LinkedIn Professional Profile",
+          "url": "https://www.linkedin.com/in/nabla/"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Professional CV",
+          "url": "https://albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div class="collapse bg-dark" id="navbarHeader" style="">
@@ -568,194 +697,202 @@
       </div>
     </div>
 
-    <div class="py-3 bg-light" style="">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 p-3" style="">
-            <div class="card box-shadow">
-              <img
-                class="img-fluid d-block mx-auto py-2"
-                src="../assets/nabla/nabla-4.svg"
-                width="140"
-              />
-              <div class="card-body">
-                <h5 class=""><b>Alban Andrieu's C.V</b></h5>
+    <main role="main">
+      <section class="py-3 bg-light" itemscope itemtype="https://schema.org/Person">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <article class="cv-card card box-shadow">
+                <header class="card-header bg-primary text-white">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                      <img
+                        class="img-fluid rounded-circle"
+                        src="../assets/nabla/nabla-4.svg"
+                        alt="Alban Andrieu Profile"
+                        width="120"
+                        itemprop="image"
+                      />
+                    </div>
+                    <div class="col-md-10">
+                      <h1 class="display-4 mb-2" itemprop="name">Alban Andrieu</h1>
+                      <h2 class="h4 mb-2" itemprop="jobTitle">DevSecOps Engineer</h2>
+                      <p class="lead mb-0" itemprop="description">
+                        Experienced professional specializing in CI/CD, Cloud Infrastructure, and Software Development
+                      </p>
+                    </div>
+                  </div>
+                </header>
 
-                <p class="card-text">
-                  <i class="fa mr-2 fa-clipboard text-dark"></i> LinkedIn C.V
-                  <a href="https://www.linkedin.com/in/nabla/" target="_blank"
-                    >[External]</a
-                  >
-                  <a
-                    href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf"
-                    target="_blank"
-                    >[pdf]</a
-                  >
-                </p>
+                <div class="card-body">
+                  <section class="cv-section mb-4">
+                    <h3 class="h5 border-bottom pb-2 mb-3">
+                      <i class="fa fa-user text-primary mr-2"></i>Contact Information
+                    </h3>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <strong>Email:</strong>
+                          <a href="mailto:alban.andrieu@free.fr" itemprop="email">alban.andrieu@free.fr</a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <strong>Website:</strong>
+                          <a href="https://albandrieu.com" target="_blank" rel="noopener" itemprop="url">albandrieu.com</a>
+                        </p>
+                      </div>
+                    </div>
+                  </section>
 
-                <p class="card-text">
-                  <i class="fa mr-2 fa-clipboard text-dark"></i> Flow C.V
-                  <a
-                    href="https://flowcv.com/resume/cojup4q8oq92/"
-                    target="_blank"
-                    >[External]</a
-                  >
-                </p>
+                  <section class="cv-section mb-4">
+                    <h3 class="h5 border-bottom pb-2 mb-3">
+                      <i class="fa fa-file-text text-primary mr-2"></i>Professional Profiles & CV Documents
+                    </h3>
+                    
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fa fa-linkedin text-primary mr-2"></i>
+                          <strong>LinkedIn Profile</strong>
+                          <p class="mb-0 text-muted small">Complete professional history and network</p>
+                        </div>
+                        <div>
+                          <a href="https://www.linkedin.com/in/nabla/" 
+                             class="btn btn-sm btn-outline-primary mr-2" 
+                             target="_blank" 
+                             rel="noopener"
+                             itemprop="sameAs">View Online</a>
+                          <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf" 
+                             class="btn btn-sm btn-primary" 
+                             target="_blank"
+                             download>Download PDF</a>
+                        </div>
+                      </div>
 
-                <p class="card-text">
-                  <i class="fa mr-2 fa-clipboard text-dark"></i> Latext C.V
-                  <a href="./cv-aandrieu-XX-XX-2026.pdf" target="_blank"
-                    >[pdf]</a
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 p-3" style=""></div>
-            <div class="col-md-4 p-3" style=""></div>
-            <div class="col-md-4 p-3" style=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12" style="">
-            <div class="row">
-              <div class="col-md-2" style="">
-                <img
-                  class="img-fluid d-block my-4"
-                  src="../assets/logo-linkedin.jpg"
-                />
-              </div>
-              <div class="col-md-3 bg-warning" style="">
-                <h2 class=""><br />LinkedIn&nbsp;<br /></h2>
-              </div>
-              <div class="col-md-7" style="">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <i class="fa mr-2 fa-clipboard text-dark"></i>
-                    <span style="font-size: 1rem"
-                      >LinkedIn
-                      <b
-                        ><b
-                          ><a
-                            href="https://www.linkedin.com/in/nabla/"
-                            target="_blank"
-                            >[click]</a
-                          ></b
-                        ></b
-                      ></span
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
+                          <strong>FlowCV Profile</strong>
+                          <p class="mb-0 text-muted small">Interactive modern CV format</p>
+                        </div>
+                        <div>
+                          <a href="https://flowcv.com/resume/cojup4q8oq92/" 
+                             class="btn btn-sm btn-outline-primary" 
+                             target="_blank" 
+                             rel="noopener">View Online</a>
+                        </div>
+                      </div>
 
-    <div class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-md-4"></div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
+                          <strong>LaTeX CV</strong>
+                          <p class="mb-0 text-muted small">Traditional formatted resume</p>
+                        </div>
+                        <div>
+                          <a href="./cv-aandrieu-XX-XX-2026.pdf" 
+                             class="btn btn-sm btn-primary" 
+                             target="_blank"
+                             download>Download PDF</a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="cv-section mb-4">
+                    <h3 class="h5 border-bottom pb-2 mb-3">
+                      <i class="fa fa-code text-primary mr-2"></i>Key Skills & Expertise
+                    </h3>
+                    <div class="row">
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">DevSecOps</span>
+                      </div>
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">CI/CD</span>
+                      </div>
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">Cloud Infrastructure</span>
+                      </div>
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Automation</span>
+                      </div>
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Security</span>
+                      </div>
+                      <div class="col-md-4 mb-2">
+                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Software Engineering</span>
+                      </div>
+                    </div>
+                  </section>
                 </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-4 bg-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading"><i class="fa fa-info-circle mr-2"></i>About This CV</h4>
+                <p class="mb-0">
+                  This page is optimized for search engines and web crawlers with structured data markup.
+                  For the best viewing experience and detailed information, please visit the LinkedIn profile
+                  or download the PDF versions above.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
-    <div class="">
+    <footer class="bg-light py-4">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <p class="text-left">
-              DevSecOps - please visit my <b>profile </b>on
-              <a href="http://www.linkedin.com/in/nabla" target="_blank"
-                ><u>LinkedIn</u></a
-              ><br />or <b>e-mail me</b>:&nbsp;<a
-                href="mailto:alban.andrieu@free.fr"
-                >alban.andrieu@free.fr</a
-              >
+            <p class="text-muted mb-2">
+              <strong>Alban Andrieu</strong> - DevSecOps Engineer
+            </p>
+            <p class="text-muted">
+              <i class="fa fa-envelope mr-2"></i>
+              <a href="mailto:alban.andrieu@free.fr">alban.andrieu@free.fr</a>
+            </p>
+            <p class="text-muted">
+              <i class="fa fa-linkedin mr-2"></i>
+              <a href="https://www.linkedin.com/in/nabla/" target="_blank" rel="noopener">LinkedIn Profile</a>
             </p>
           </div>
           <div class="col-md-6">
-            <div
-              class="bottom-links flex justify-between"
-              data-v-2b83e220=""
-              data-v-ee1b2f33=""
-            >
-              <ul
-                class="flex items-center justify-center link-list"
-                data-v-ee1b2f33=""
-              >
-                <li class="link-item" data-v-ee1b2f33="">
-                  <a
-                    href="https://nabla.albandrieu.com/policy/service_terms.html"
-                    rel="noopener noreferrer"
-                    data-v-ee1b2f33=""
-                    ><span
-                      class="span txt-white paragraph-s font-normal"
-                      data-v-ee1b2f33=""
-                      >Terms of Use
-                      <!----></span
-                    ></a
-                  >
+            <nav class="footer-nav" aria-label="Footer navigation">
+              <ul class="list-inline text-md-right">
+                <li class="list-inline-item">
+                  <a href="https://nabla.albandrieu.com/policy/service_terms.html" 
+                     rel="noopener noreferrer"
+                     class="text-muted">Terms of Use</a>
                 </li>
-                <li class="link-item" data-v-ee1b2f33="">
-                  <a
-                    href="javascript:openAxeptioCookies()"
-                    rel="noopener noreferrer"
-                    data-v-ee1b2f33=""
-                    ><span
-                      class="span txt-white paragraph-s font-normal"
-                      data-v-ee1b2f33=""
-                      >Cookies
-                      <!----></span
-                    ></a
-                  >
+                <li class="list-inline-item">
+                  <a href="javascript:openAxeptioCookies()" 
+                     rel="noopener noreferrer"
+                     class="text-muted">Cookies</a>
                 </li>
-                <li class="link-item" data-v-ee1b2f33="">
-                  <a
-                    href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-                    rel="noopener noreferrer"
-                    data-v-ee1b2f33=""
-                    ><span
-                      class="span txt-white paragraph-s font-normal"
-                      data-v-ee1b2f33=""
-                      >Privacy Policy
-                      <!----></span
-                    ></a
-                  >
+                <li class="list-inline-item">
+                  <a href="https://nabla.albandrieu.com/policy/privacy_policy.html" 
+                     rel="noopener noreferrer"
+                     class="text-muted">Privacy Policy</a>
                 </li>
               </ul>
-              <!--
-              <ul class="flex justify-center social-media-icons" data-v-ee1b2f33="">
-		        <li data-v-ee1b2f33=""><a href="https://www.linkedin.com/nabla/" rel="noopener noreferrer" aria-label="Open Linkedin" data-v-ee1b2f33=""><div class="l set-width icon-container flex justify-center items-center flex-shrink-0" data-testid="global-linkedin" data-v-ee1b2f33="" data-v-2856a5f9=""><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" role="img" icon-only="false" class="icon rotate-0 fill-white" data-v-2856a5f9=""><title>Linkedin icon</title> &gt; <path d="M13.4482 31.4705V15.9922H8.30353V31.4705H13.4482ZM10.8765 13.8777C12.6706 13.8777 13.7873 12.6891 13.7873 11.2038C13.7538 9.68504 12.6706 8.52948 10.9106 8.52948C9.15079 8.52948 8 9.68507 8 11.2038C8 12.6892 9.11643 13.8777 10.8429 13.8777H10.8764H10.8765ZM16.2958 31.4705H21.4404V22.8267C21.4404 22.3641 21.4739 21.902 21.6097 21.5713C21.9816 20.647 22.8281 19.6897 24.2493 19.6897C26.111 19.6897 26.8557 21.1091 26.8557 23.1899V31.4704H32.0001V22.5953C32.0001 17.841 29.462 15.6289 26.0771 15.6289C23.3017 15.6289 22.0832 17.1802 21.4062 18.2368H21.4406V15.9919H16.2959C16.3634 17.4443 16.2959 31.4702 16.2959 31.4702L16.2958 31.4705Z"></path></svg></div></a></li>
-		        <li data-v-ee1b2f33=""><a href="https://twitter.com/AlbanAndrieu" rel="noopener noreferrer" aria-label="Open X" data-v-ee1b2f33=""><div class="l set-width icon-container flex justify-center items-center flex-shrink-0" data-testid="global-x" data-v-ee1b2f33="" data-v-2856a5f9=""><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" icon-only="false" class="icon rotate-0 fill-white" data-v-2856a5f9=""><title>X icon</title><path d="M22.8542 17.7031L34.0223 5H31.3755L21.6786 16.0297L13.9333 5H5L16.7123 21.6791L5 35H7.64675L17.8874 23.3523L26.0667 35H35L22.8535 17.7031H22.8542ZM19.2292 21.8258L18.0424 20.165L8.6003 6.94953H12.6655L20.285 17.615L21.4716 19.2758L31.3767 33.1391H27.312L19.2292 21.8265V21.8258Z"></path></svg></div></a></li>
-		      </ul>
-		      -->
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <div class="col-md-12">
-                <div class="col-md-12">
-                  <p class="float-right lead my-4 mt-3">
-                    <a href="#">Back to top</a>
-                  </p>
-                </div>
-              </div>
-            </div>
+            </nav>
+            <p class="text-md-right mt-3">
+              <a href="#" class="btn btn-sm btn-outline-secondary">Back to top</a>
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
 
     <script src="arf.js"></script>
 
