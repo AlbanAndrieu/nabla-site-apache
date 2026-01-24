@@ -555,6 +555,74 @@
     <script defer src="https://cdn.vercel.sh/analytics"></script>
     <!-- Vercel Speed Insights -->
     <script defer src="https://cdn.vercel.sh/speed-insights"></script>
+
+    <!-- Dark Mode Support -->
+    <style>
+      /* Light mode (default) */
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --secondary-bg: #f8f9fa;
+        --border-color: #dee2e6;
+        --link-color: #007bff;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #1a1a1a;
+          --text-color: #e0e0e0;
+          --secondary-bg: #2d2d2d;
+          --border-color: #404040;
+          --link-color: #66b3ff;
+        }
+
+        .bg-light {
+          background-color: var(--secondary-bg) !important;
+        }
+
+        .bg-white {
+          background-color: var(--bg-color) !important;
+        }
+
+        .text-dark {
+          color: var(--text-color) !important;
+        }
+
+        .border {
+          border-color: var(--border-color) !important;
+        }
+
+        a {
+          color: var(--link-color);
+        }
+
+        .card {
+          background-color: var(--secondary-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+        }
+
+        .navbar-light {
+          background-color: var(--secondary-bg) !important;
+        }
+
+        .navbar-light .navbar-brand,
+        .navbar-light .navbar-nav .nav-link {
+          color: var(--text-color) !important;
+        }
+
+        /* Adjust images in dark mode */
+        img {
+          opacity: 0.9;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="collapse bg-dark" id="navbarHeader" style="">
