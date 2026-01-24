@@ -611,8 +611,16 @@
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
       ></script>
       <!-- End Google Translate -->
+
+      <!-- Print Styles for PDF Export -->
+      <link rel="stylesheet" href="print.css" />
     </head>
     <body>
+      <!-- Print Button (hidden when printing) -->
+      <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print"></i> Print / Save as PDF
+      </button>
+
       <!-- Google Translate Widget -->
       <div class="google-translate-widget">
         <div id="google_translate_element"></div>
