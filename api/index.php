@@ -10,9 +10,3 @@ function Redirect($url, $permanent = false)
 Redirect('index.html', false);
 # Redirect('test.php', false);
 # Redirect('404.html', false);
-
-/**
- * Here is the serverless function entry
- * for deployment with Vercel.
- */
-require __DIR__.'/../public/index.php';

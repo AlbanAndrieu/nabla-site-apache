@@ -13,5 +13,4 @@ index.cgi
 index.pl
 !README.md
 packages/*/test/**
-./public/assets/fontawesome-free-7.1.0-web/*
 ./public/others/*
