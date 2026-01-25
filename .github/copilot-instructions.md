@@ -151,6 +151,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 
 - **Update Sitemap**: When adding/removing/moving pages, update `public/sitemap-albandrieu-com.xml`
 - **Sitemap Format**: Follow XML sitemap protocol (http://www.sitemaps.org/schemas/sitemap/0.9)
+  - Note: The xmlns namespace URL uses `http://` as per official specification, even for HTTPS sites
 - **Include All Pages**: List all public HTML pages
 - **Change Frequency**: Set appropriate `<changefreq>` (always, hourly, daily, weekly, monthly, yearly, never)
 - **Priority**: Use `<priority>` (0.0-1.0) to indicate relative importance (optional)
