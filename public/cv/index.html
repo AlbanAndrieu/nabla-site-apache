@@ -27,6 +27,10 @@
     <meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
     <meta property="twitter:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
     <meta property="twitter:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
+    
+    <!-- Resume Schema Reference for Machine-Readable Tools -->
+    <link rel="alternate" type="application/json" href="./schema.json" title="Resume Schema (JSONResume format)" />
+    
     <!-- CSS dependencies -->
     <link
       rel="stylesheet"
@@ -653,7 +657,7 @@
       "name": "Alban Andrieu",
       "jobTitle": "DevSecOps Engineer",
       "description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
-      "url": "https://albandrieu.com",
+      "url": "https://nabla.albandrieu.com/cv/",
       "email": "alban.andrieu@free.fr",
       "sameAs": [
         "https://www.linkedin.com/in/nabla/",
@@ -674,6 +678,28 @@
           "@type": "EducationalOccupationalCredential",
           "name": "LinkedIn Professional Profile",
           "url": "https://www.linkedin.com/in/nabla/"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "DigitalDocument",
+          "name": "LaTeX Resume PDF",
+          "description": "Traditional formatted resume in PDF format",
+          "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
+          "encodingFormat": "application/pdf"
+        },
+        {
+          "@type": "DigitalDocument",
+          "name": "LinkedIn Resume PDF",
+          "description": "LinkedIn profile exported as PDF",
+          "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
+          "encodingFormat": "application/pdf"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Online CV Landing Page",
+          "description": "Interactive web-based CV and professional profile",
+          "url": "https://nabla.albandrieu.com/cv/index.html"
         }
       ]
     }
