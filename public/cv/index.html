@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- PAGE settings -->
     <title>INDEX for albandrieu.com</title>
-    <meta name="description" content="Alban Andrieu - Experienced DevSecOps Engineer, CI/CD Expert, and Cloud Infrastructure Specialist. View my professional CV and credentials." />
-    <meta name="keywords" content="Alban Andrieu, DevSecOps, CI/CD, Cloud Infrastructure, Software Engineer, Resume, CV" />
+    <meta name="description"
+      content="Alban Andrieu - Experienced DevSecOps Engineer, CI/CD Expert, and Cloud Infrastructure Specialist. View my professional CV and credentials." />
+    <meta name="keywords"
+      content="Alban Andrieu, DevSecOps, CI/CD, Cloud Infrastructure, Software Engineer, Resume, CV" />
     <meta name="author" content="Alban Andrieu" />
     <meta name="robots" content="index, follow" />
 
@@ -17,14 +19,16 @@
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://albandrieu.com/cv/" />
     <meta property="og:title" content="Alban Andrieu - DevSecOps Engineer CV" />
-    <meta property="og:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
+    <meta property="og:description"
+      content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
     <meta property="og:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="https://albandrieu.com/cv/" />
     <meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
-    <meta property="twitter:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
+    <meta property="twitter:description"
+      content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
     <meta property="twitter:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
 
     <!-- Favicon -->
@@ -37,21 +41,13 @@
     <link rel="alternate" type="application/json" href="./schema.json" title="Resume Schema (JSONResume format)" />
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+      type="text/css" />
 
-    <script
-      src="https://kit.fontawesome.com/7002f056a1.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/7002f056a1.js" crossorigin="anonymous"></script>
 
-    <script
-      src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
-      data-auto-replace-svg="nest"
-    ></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+      data-auto-replace-svg="nest"></script>
     <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
     <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
 
@@ -124,7 +120,8 @@
       }
 
       /* Accessibility improvements */
-      a:focus, button:focus {
+      a:focus,
+      button:focus {
         outline: 2px solid #667eea;
         outline-offset: 2px;
       }
@@ -136,7 +133,8 @@
           page-break-inside: avoid;
         }
 
-        footer, nav {
+        footer,
+        nav {
           display: none;
         }
       }
@@ -159,7 +157,7 @@
           { connection: i } = navigator;
         window.obs = window.obs || {};
         const a =
-            !0 === ((window.obs && window.obs.config) || {}).observeChanges,
+          !0 === ((window.obs && window.obs.config) || {}).observeChanges,
           o = () => {
             const e = window.obs || {},
               i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
@@ -221,10 +219,10 @@
                 : null)(a);
             r &&
               ((window.obs.rttCategory = r),
-              ["low", "medium", "high"].forEach((e) =>
-                t.classList.remove(`has-latency-${e}`),
-              ),
-              t.classList.add(`has-latency-${r}`));
+                ["low", "medium", "high"].forEach((e) =>
+                  t.classList.remove(`has-latency-${e}`),
+                ),
+                t.classList.add(`has-latency-${r}`));
             const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
             var l;
             if (null != c) {
@@ -241,9 +239,9 @@
           };
         (n(),
           a &&
-            i &&
-            "function" == typeof i.addEventListener &&
-            i.addEventListener("change", n));
+          i &&
+          "function" == typeof i.addEventListener &&
+          i.addEventListener("change", n));
         const s = (e) => {
           if (!e) return;
           const { level: i, charging: a } = e,
@@ -268,33 +266,33 @@
               .then((e) => {
                 (s(e),
                   a &&
-                    "function" == typeof e.addEventListener &&
-                    (e.addEventListener("levelchange", () => s(e)),
+                  "function" == typeof e.addEventListener &&
+                  (e.addEventListener("levelchange", () => s(e)),
                     e.addEventListener("chargingchange", () => s(e))));
               })
-              .catch(() => {}),
-          "deviceMemory" in navigator)
+              .catch(() => { }),
+            "deviceMemory" in navigator)
         ) {
           const e = Number(navigator.deviceMemory),
             i = Number.isFinite(e) ? e : null;
           window.obs.ramBucket = i;
           const a =
             ((r = i),
-            Number.isFinite(r)
-              ? r <= 1
-                ? "very-low"
-                : r <= 2
-                  ? "low"
-                  : r <= 4
-                    ? "medium"
-                    : "high"
-              : null);
+              Number.isFinite(r)
+                ? r <= 1
+                  ? "very-low"
+                  : r <= 2
+                    ? "low"
+                    : r <= 4
+                      ? "medium"
+                      : "high"
+                : null);
           a &&
             ((window.obs.ramCategory = a),
-            ["very-low", "low", "medium", "high"].forEach((e) =>
-              t.classList.remove(`has-ram-${e}`),
-            ),
-            t.classList.add(`has-ram-${a}`));
+              ["very-low", "low", "medium", "high"].forEach((e) =>
+                t.classList.remove(`has-ram-${e}`),
+              ),
+              t.classList.add(`has-ram-${a}`));
         }
         var r;
         if ("hardwareConcurrency" in navigator) {
@@ -311,10 +309,10 @@
               : null)(i);
           a &&
             ((window.obs.cpuCategory = a),
-            ["low", "medium", "high"].forEach((e) =>
-              t.classList.remove(`has-cpu-${e}`),
-            ),
-            t.classList.add(`has-cpu-${a}`));
+              ["low", "medium", "high"].forEach((e) =>
+                t.classList.remove(`has-cpu-${e}`),
+              ),
+              t.classList.add(`has-cpu-${a}`));
         }
         (() => {
           const e = window.obs || {},
@@ -359,7 +357,7 @@
               localStorage.getItem("_vwo_" + account_id + "_config"),
             );
             cc = c && typeof c === "object" ? c : {};
-          } catch (e) {}
+          } catch (e) { }
           var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
           code = {
             nonce: v && v.nonce,
@@ -521,28 +519,28 @@
         var o, n, p, r;
         e.__SV ||
           ((window.posthog = e),
-          (e._i = []),
-          (e.init = function (i, s, a) {
-            function g(t, e) {
-              var o = e.split(".");
-              (2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                (t[e] = function () {
-                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                }));
-            }
-            (((p = t.createElement("script")).type = "text/javascript"),
-              (p.crossOrigin = "anonymous"),
-              (p.async = !0),
-              (p.src =
-                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-                "/static/array.js"),
-              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-                p,
-                r,
-              ));
-            var u = e;
-            for (
-              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+            (e._i = []),
+            (e.init = function (i, s, a) {
+              function g(t, e) {
+                var o = e.split(".");
+                (2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                  (t[e] = function () {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                  }));
+              }
+              (((p = t.createElement("script")).type = "text/javascript"),
+                (p.crossOrigin = "anonymous"),
+                (p.async = !0),
+                (p.src =
+                  s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                  "/static/array.js"),
+                (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                  p,
+                  r,
+                ));
+              var u = e;
+              for (
+                void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
                 u.people = u.people || [],
                 u.toString = function (t) {
                   var e = "posthog";
@@ -556,17 +554,17 @@
                   return u.toString(1) + ".people (stub)";
                 },
                 o =
-                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
-                    " ",
-                  ),
+                "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
+                  " ",
+                ),
                 n = 0;
-              n < o.length;
-              n++
-            )
-              g(u, o[n]);
-            e._i.push([i, s, a]);
-          }),
-          (e.__SV = 1));
+                n < o.length;
+                n++
+              )
+                g(u, o[n]);
+              e._i.push([i, s, a]);
+            }),
+            (e.__SV = 1));
       })(document, window.posthog || []);
       posthog.init("phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48", {
         api_host: "https://eu.i.posthog.com",
@@ -575,31 +573,22 @@
     </script>
     <!-- End VWO PostHog -->
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript
-        ><iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-          height="0"
-          width="0"
-          style="display: none; visibility: hidden"
-        ></iframe
-      ></noscript>
-      <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6" height="0" width="0"
+        style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-      <!-- Google tag (gtag.js) -->
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-      ></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag("config", "G-RHL13BHK6K");
-      </script>
+      gtag("config", "G-RHL13BHK6K");
+    </script>
 
     <!-- Start Heap dev -->
     <script type="text/javascript">
@@ -617,29 +606,29 @@
           var r = document.getElementsByTagName("script")[0];
           r.parentNode.insertBefore(a, r);
           var n = [
-              "init",
-              "startTracking",
-              "stopTracking",
-              "track",
-              "resetIdentity",
-              "identify",
-              "getSessionId",
-              "getUserId",
-              "getIdentity",
-              "addUserProperties",
-              "addEventProperties",
-              "removeEventProperty",
-              "clearEventProperties",
-              "addAccountProperties",
-              "addAdapter",
-              "addTransformer",
-              "addTransformerFn",
-              "onReady",
-              "addPageviewProperties",
-              "removePageviewProperty",
-              "clearPageviewProperties",
-              "trackPageview",
-            ],
+            "init",
+            "startTracking",
+            "stopTracking",
+            "track",
+            "resetIdentity",
+            "identify",
+            "getSessionId",
+            "getUserId",
+            "getIdentity",
+            "addUserProperties",
+            "addEventProperties",
+            "removeEventProperty",
+            "clearEventProperties",
+            "addAccountProperties",
+            "addAdapter",
+            "addTransformer",
+            "addTransformerFn",
+            "onReady",
+            "addPageviewProperties",
+            "removePageviewProperty",
+            "clearPageviewProperties",
+            "trackPageview",
+          ],
             i = function (e) {
               return function () {
                 var t = Array.prototype.slice.call(arguments, 0);
@@ -657,194 +646,173 @@
     </script>
     <!-- End Heap dev -->
 
-      <!-- Start Datadog RUM -->
-      <script>
-        (function (h, o, u, n, d) {
-          h = h[d] = h[d] || {
-            q: [],
-            onReady: function (c) {
-              h.q.push(c);
-            },
-          };
-          d = o.createElement(u);
-          d.async = 1;
-          d.src = n;
-          n = o.getElementsByTagName(u)[0];
-          n.parentNode.insertBefore(d, n);
-        })(
-          window,
-          document,
-          "script",
-          "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
-          "DD_RUM"
-        );
-        window.DD_RUM.onReady(function () {
-          window.DD_RUM.init({
-            clientToken: "pub550f242796dac3c13b730eb727658279",
-            applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
-            // `site` refers to the Datadog site parameter of your organization
-            // see https://docs.datadoghq.com/getting_started/site/
-            site: "datadoghq.eu",
-            service: "bababou",
-            env: "prod",
-            // Specify a version number to identify the deployed version of your application in Datadog
-            version: "1.0.0",
-            sessionSampleRate: 100,
-            sessionReplaySampleRate: 20,
-            defaultPrivacyLevel: "allow",
-          });
+    <!-- Start Datadog RUM -->
+    <script>
+      (function (h, o, u, n, d) {
+        h = h[d] = h[d] || {
+          q: [],
+          onReady: function (c) {
+            h.q.push(c);
+          },
+        };
+        d = o.createElement(u);
+        d.async = 1;
+        d.src = n;
+        n = o.getElementsByTagName(u)[0];
+        n.parentNode.insertBefore(d, n);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
+        "DD_RUM"
+      );
+      window.DD_RUM.onReady(function () {
+        window.DD_RUM.init({
+          clientToken: "pub550f242796dac3c13b730eb727658279",
+          applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: "datadoghq.eu",
+          service: "bababou",
+          env: "prod",
+          // Specify a version number to identify the deployed version of your application in Datadog
+          version: "1.0.0",
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          defaultPrivacyLevel: "allow",
         });
-      </script>
-      <!-- End Datadog RUM -->
+      });
+    </script>
+    <!-- End Datadog RUM -->
 
-      <!-- Cloudflare -->
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
-        integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
-        integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
+    <!-- Cloudflare -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+      integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <link
-        rel="alternate"
-        hreflang="x-default"
-        href="https://nabla.albandrieu.com/"
-      />
-      <link rel="canonical" href="https://nabla.albandrieu.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://nabla.albandrieu.com/" />
+    <link rel="canonical" href="https://nabla.albandrieu.com/" />
     <!-- Ahrefs Web Analytics -->
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="tg3zLMS/bebJFl0LxctiCw"
-      async
-    ></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
 
     <!-- Vercel Web Analytics -->
-      <script>
-        window.va =
-          window.va ||
-          function () {
-            (window.vaq = window.vaq || []).push(arguments);
-          };
-      </script>
-      <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <!-- Vercel Speed Insights -->
-      <script>
-        window.si =
-          window.si ||
-          function () {
-            (window.siq = window.siq || []).push(arguments);
-          };
-      </script>
-      <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 
-      <!-- Google Translate -->
-      <script type="text/javascript" src="/google-translate-config.js"></script>
-      <script
-        type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-      ></script>
-      <!-- End Google Translate -->
+    <!-- Google Translate -->
+    <script type="text/javascript" src="/google-translate-config.js"></script>
+    <script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- End Google Translate -->
 
     <!-- JSON-LD Structured Data for SEO and Crawlers -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Alban Andrieu",
-      "jobTitle": "DevSecOps Engineer",
-      "description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
-      "url": "https://nabla.albandrieu.com/cv/",
-      "email": "alban.andrieu@free.fr",
-      "sameAs": [
-        "https://www.linkedin.com/in/nabla/",
-        "https://twitter.com/AlbanAndrieu",
-        "https://github.com/AlbanAndrieu"
-      ],
-      "knowsAbout": [
-        "DevSecOps",
-        "CI/CD",
-        "Cloud Infrastructure",
-        "Software Engineering",
-        "DevOps",
-        "Security",
-        "Automation"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "LinkedIn Professional Profile",
-          "url": "https://www.linkedin.com/in/nabla/"
-        }
-      ],
-      "subjectOf": [
-        {
-          "@type": "DigitalDocument",
-          "name": "LaTeX Resume PDF",
-          "description": "Traditional formatted resume in PDF format",
-          "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "DigitalDocument",
-          "name": "LinkedIn Resume PDF",
-          "description": "LinkedIn profile exported as PDF",
-          "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
-          "encodingFormat": "application/pdf"
-        },
-        {
-          "@type": "WebPage",
-          "name": "Online CV Landing Page",
-          "description": "Interactive web-based CV and professional profile",
-          "url": "https://nabla.albandrieu.com/cv/index.html"
-        }
-      ]
-    }
-    </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alban Andrieu",
+        "jobTitle": "DevSecOps Engineer",
+        "description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
+        "url": "https://nabla.albandrieu.com/cv/",
+        "email": "alban.andrieu@free.fr",
+        "sameAs": [
+          "https://www.linkedin.com/in/nabla/",
+          "https://twitter.com/AlbanAndrieu",
+          "https://github.com/AlbanAndrieu"
+        ],
+        "knowsAbout": [
+          "DevSecOps",
+          "CI/CD",
+          "Cloud Infrastructure",
+          "Software Engineering",
+          "DevOps",
+          "Security",
+          "Automation"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "LinkedIn Professional Profile",
+            "url": "https://www.linkedin.com/in/nabla/"
+          }
+        ],
+        "subjectOf": [
+          {
+            "@type": "DigitalDocument",
+            "name": "LaTeX Resume PDF",
+            "description": "Traditional formatted resume in PDF format",
+            "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
+            "encodingFormat": "application/pdf"
+          },
+          {
+            "@type": "DigitalDocument",
+            "name": "LinkedIn Resume PDF",
+            "description": "LinkedIn profile exported as PDF",
+            "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
+            "encodingFormat": "application/pdf"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Online CV Landing Page",
+            "description": "Interactive web-based CV and professional profile",
+            "url": "https://nabla.albandrieu.com/cv/index.html"
+          }
+        ]
+      }
+      </script>
 
   </head>
+
   <body>
     <!-- Print Button (hidden when printing) -->
     <button class="print-button" onclick="window.print()">
       <i class="fas fa-print"></i> Print / Save as PDF
     </button>
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript
-        ><iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-          height="0"
-          width="0"
-          style="display: none; visibility: hidden"
-        ></iframe
-      ></noscript>
-      <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6" height="0" width="0"
+        style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-      <!-- Google Translate Widget -->
-      <div class="google-translate-widget">
-        <div id="google_translate_element"></div>
-      </div>
-      <!-- End Google Translate Widget -->
+    <!-- Google Translate Widget -->
+    <div class="google-translate-widget">
+      <div id="google_translate_element"></div>
+    </div>
+    <!-- End Google Translate Widget -->
 
-      <style>
-        .google-translate-widget {
-          position: fixed;
-          top: 10px;
-          right: 10px;
-          z-index: 9999;
-          background: white;
-          padding: 5px;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-      </style>
+    <!-- Custom style -->
+    <style>
+      .google-translate-widget {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: white;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
 
     <div class="collapse bg-dark" id="navbarHeader" style="">
       <div class="container">
@@ -857,58 +825,23 @@
       </div>
     </div>
 
-    <div class="py-3 bg-light" style="">
+    <div class="py-3 bg-light" >
       <div class="container">
         <div class="row">
           <div class="col-md-4 p-3" style="">
             <div class="card box-shadow">
-              <img
-                class="img-fluid d-block mx-auto py-2"
-                src="../assets/nabla/nabla-4.svg"
-                width="140"
-              />
+              <img class="img-fluid d-block mx-auto py-2" src="../assets/nabla/nabla-4.svg" width="140" />
               <div class="card-body">
                 <h5 class=""><b>Alban Andrieu's C.V</b></h5>
 
-                <h6 class="mt-3"><b>HTML Versions (Choose by Detail Level):</b></h6>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
 
-                <p class="card-text">
-                  <i class="fa mr-2 fa-file-text text-success"></i> Small C.V
-                  <a href="./cv-small.html" target="_blank"
-                    >[Quick Overview]</a
-                  >
-                </p>
-
-                <p class="card-text">
-                  <i class="fa mr-2 fa-file-text text-primary"></i> Medium C.V
-                  <a href="./cv-medium.html" target="_blank"
-                    >[Standard Detail]</a
-                  >
-                </p>
-
-                <p class="card-text">
-                  <i class="fa mr-2 fa-file-text text-info"></i> Full C.V
-                  <a href="./cv-full.html" target="_blank"
-                    >[Complete Detail]</a
-                  >
-                </p>
-
-                <hr />
-
-                <h6 class="mt-3"><b>External CV Versions:</b></h6>
-
-                <p class="card-text">
-                  <i class="fa mr-2 fa-clipboard text-dark"></i> LinkedIn C.V
-                  <a href="https://www.linkedin.com/in/nabla/" target="_blank"
-                    >[External]</a
-                  >
-                  <a
-                    href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf"
-                    target="_blank"
-                    >[pdf]</a
-                  >
-                </p>
-    <main role="main">
+    <!-- Main content area -->
+    <main id="main-content" role="main">
       <section class="py-3 bg-light" itemscope itemtype="https://schema.org/Person">
         <div class="container">
           <div class="row">
@@ -917,19 +850,15 @@
                 <header class="card-header bg-primary text-white">
                   <div class="row align-items-center">
                     <div class="col-md-2 text-center">
-                      <img
-                        class="img-fluid rounded-circle"
-                        src="../assets/nabla/nabla-4.svg"
-                        alt="Alban Andrieu Profile"
-                        width="120"
-                        itemprop="image"
-                      />
+                      <img class="img-fluid rounded-circle" src="../assets/nabla/nabla-4.svg"
+                        alt="Alban Andrieu Profile" width="120" itemprop="image" />
                     </div>
                     <div class="col-md-10">
                       <h1 class="display-4 mb-2" itemprop="name">Alban Andrieu</h1>
                       <h2 class="h4 mb-2" itemprop="jobTitle">DevSecOps Engineer</h2>
                       <p class="lead mb-0" itemprop="description">
-                        Experienced professional specializing in CI/CD, Cloud Infrastructure, and Software Development
+                        Experienced professional specializing in CI/CD, Cloud Infrastructure, and Software
+                        Development
                       </p>
                     </div>
                   </div>
@@ -950,7 +879,8 @@
                       <div class="col-md-6">
                         <p>
                           <strong>Website:</strong>
-                          <a href="https://albandrieu.com" target="_blank" rel="noopener" itemprop="url">albandrieu.com</a>
+                          <a href="https://albandrieu.com" target="_blank" rel="noopener"
+                            itemprop="url">albandrieu.com</a>
                         </p>
                       </div>
                     </div>
@@ -970,17 +900,15 @@
                         </div>
                         <div>
                           <a href="https://www.linkedin.com/in/nabla/"
-                             class="btn btn-sm btn-outline-primary mr-2"
-                             target="_blank"
-                             rel="noopener"
-                             itemprop="sameAs">View Online</a>
+                            class="btn btn-sm btn-outline-primary mr-2" target="_blank" rel="noopener"
+                            itemprop="sameAs">View Online</a>
                           <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf"
-                             class="btn btn-sm btn-primary"
-                             target="_blank"
-                             download>Download PDF</a>
+                            class="btn btn-sm btn-primary" target="_blank" download>Download PDF</a>
                         </div>
                       </div>
-
+                    </div>
+                    
+                    <div class="list-group list-group-flush">
                       <div class="list-group-item d-flex justify-content-between align-items-center">
                         <div>
                           <i class="fa fa-file-pdf-o text-danger mr-2"></i>
@@ -989,9 +917,8 @@
                         </div>
                         <div>
                           <a href="https://flowcv.com/resume/cojup4q8oq92/"
-                             class="btn btn-sm btn-outline-primary"
-                             target="_blank"
-                             rel="noopener">View Online</a>
+                            class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View
+                            Online</a>
                         </div>
                       </div>
 
@@ -999,15 +926,42 @@
                         <div>
                           <i class="fa fa-file-pdf-o text-danger mr-2"></i>
                           <strong>LaTeX CV</strong>
-                          <p class="mb-0 text-muted small">Traditional formatted resume</p>
+                          <p class="mb-0 text-muted small">Traditional formatted LaTeX resume</p>
                         </div>
                         <div>
-                          <a href="./cv-aandrieu-XX-XX-2026.pdf"
-                             class="btn btn-sm btn-primary"
-                             target="_blank"
-                             download>Download PDF</a>
+                          <a href="./cv-aandrieu-XX-XX-2026.pdf" class="btn btn-sm btn-primary"
+                            target="_blank" download>Download PDF</a>
                         </div>
                       </div>
+                            
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <!--<h4 class="mt-3"><b>HTML Versions (Choose by Detail Level):</b></h4>-->
+
+                        <div>
+                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
+                          <strong>(Choose by Detail Level) C.V:</strong>
+                          <p class="mb-0 text-muted small">Traditional formatted HTML resume</p>
+                        </div>
+                        
+                        <p class="card-text">
+                          <i class="fa mr-2 fa-file-text text-success"></i> Small C.V
+                          <a href="./cv-small.html" target="_blank">[Quick Overview]</a>
+                        </p>
+
+                        <p class="card-text">
+                          <i class="fa mr-2 fa-file-text text-primary"></i> Medium C.V
+                          <a href="./cv-medium.html" target="_blank">[Standard Detail]</a>
+                        </p>
+
+                        <p class="card-text">
+                          <i class="fa mr-2 fa-file-text text-info"></i> Full C.V
+                          <a href="./cv-full.html" target="_blank">[Complete Detail]</a>
+                        </p>
+
+                        <hr />
+
+                      </div>      
+                       
                     </div>
                   </section>
 
@@ -1017,22 +971,27 @@
                     </h3>
                     <div class="row">
                       <div class="col-md-4 mb-2">
-                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">DevSecOps</span>
+                        <span class="badge badge-primary badge-pill p-2"
+                          itemprop="knowsAbout">DevSecOps</span>
                       </div>
                       <div class="col-md-4 mb-2">
                         <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">CI/CD</span>
                       </div>
                       <div class="col-md-4 mb-2">
-                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">Cloud Infrastructure</span>
+                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">Cloud
+                          Infrastructure</span>
                       </div>
                       <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Automation</span>
+                        <span class="badge badge-secondary badge-pill p-2"
+                          itemprop="knowsAbout">Automation</span>
                       </div>
                       <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Security</span>
+                        <span class="badge badge-secondary badge-pill p-2"
+                          itemprop="knowsAbout">Security</span>
                       </div>
                       <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Software Engineering</span>
+                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Software
+                          Engineering</span>
                       </div>
                     </div>
                   </section>
@@ -1081,19 +1040,16 @@
             <nav class="footer-nav" aria-label="Footer navigation">
               <ul class="list-inline text-md-right">
                 <li class="list-inline-item">
-                  <a href="https://nabla.albandrieu.com/policy/service_terms.html"
-                     rel="noopener noreferrer"
-                     class="text-muted">Terms of Use</a>
+                  <a href="https://nabla.albandrieu.com/policy/service_terms.html" rel="noopener noreferrer"
+                    class="text-muted">Terms of Use</a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript:openAxeptioCookies()"
-                     rel="noopener noreferrer"
-                     class="text-muted">Cookies</a>
+                  <a href="javascript:openAxeptioCookies()" rel="noopener noreferrer"
+                    class="text-muted">Cookies</a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-                     rel="noopener noreferrer"
-                     class="text-muted">Privacy Policy</a>
+                  <a href="https://nabla.albandrieu.com/policy/privacy_policy.html" rel="noopener noreferrer"
+                    class="text-muted">Privacy Policy</a>
                 </li>
               </ul>
             </nav>
@@ -1104,63 +1060,59 @@
         </div>
       </div>
     </footer>
+    <!-- End footer section -->
+
+    <div style="display: none;"><a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561">north-puny</a></div>
 
     <script src="../arf.js"></script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
-
-      <!-- Smooth Scroll Script -->
-      <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          });
+    <!-- Smooth Scroll Script -->
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
         });
+      });
 
-        // Add animation on scroll
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.animation = "fadeInUp 0.6s ease forwards";
-            }
-          });
-        }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+          }
+        });
+      }, observerOptions);
 
-        // Observe all service cards, skill categories, and tool items
-        document
-          .querySelectorAll(".service-card, .skill-category, .tool-item")
-          .forEach((el) => {
-            observer.observe(el);
-          });
-      </script>
+      // Observe all service cards, skill categories, and tool items
+      document
+        .querySelectorAll(".service-card, .skill-category, .tool-item")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+    </script>
 
     <!-- Axeptio: change clientId to be your site's PROJECT ID -->
     <script>

@@ -31,8 +31,6 @@
 		"@astrojs/vercel": "^9.0.2",
 		"@commitlint/config-conventional": "^20.3.1",
 		"@datadog/browser-rum": "^6.24.1",
-		"@vercel/analytics": "^1.6.1",
-		"@vercel/speed-insights": "^1.2.0",
 		"crypto": "^1.0.1",
 		"lodash-es": "^4.17.23",
 		"vercel": "^50.5.0",

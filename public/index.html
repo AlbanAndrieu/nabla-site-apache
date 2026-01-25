@@ -3,1410 +3,1557 @@
 <meta http-equiv="REFRESH" content="0;url=/sample/index.html">
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- PAGE settings -->
-    <title>Alban Andrieu - Independent DevSecOps Professional</title>
-    <meta
-      name="description"
-      content="Alban Andrieu - Independent DevSecOps Professional offering expert consulting in DevOps, Security, and Cloud Technologies"
-    />
-    <meta
-      name="keywords"
-      content="DevSecOps, DevOps Consultant, Cloud Architecture, CI/CD, Security, Independent Consultant, Alban Andrieu"
-    />
-    <meta name="author" content="Alban Andrieu" />
-    <meta name="robots" content="noindex, nofollow" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://albandrieu.com/cv/" />
-    <meta property="og:title" content="Alban Andrieu - DevSecOps Engineer CV" />
-    <meta
-      property="og:description"
-      content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development"
-    />
-    <meta
-      property="og:image"
-      content="https://albandrieu.com/assets/nabla/nabla-4.png"
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://albandrieu.com/cv/" />
-    <meta
-      property="twitter:title"
-      content="Alban Andrieu - DevSecOps Engineer CV"
-    />
-    <meta
-      property="twitter:description"
-      content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development"
-    />
-    <meta
-      property="twitter:image"
-      content="https://albandrieu.com/assets/nabla/nabla-4.png"
-    />
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/nabla/nabla-4.png" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="modern-style.css" />
-
-    <!-- Font Awesome -->
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
-      type="text/css"
-    />
-
-    <script
-      src="https://kit.fontawesome.com/7002f056a1.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
-      data-auto-replace-svg="nest"
-    ></script>
-    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
-    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
-
-    <!-- our project is using icons from Solid, Sharp Thin, Sharp Duotone Thin + Brands -->
-    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-    <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
-    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
-
-    <!-- Theme toggle script - load early to prevent flash -->
-    <script src="theme-toggle.js"></script>
-
-    <link rel="stylesheet" href="wireframe.css" />
-    <link rel="stylesheet" href="arf.css" />
-    <link rel="stylesheet" href="theme.css" />
-    <!-- Print Styles for PDF Export -->
-    <link rel="stylesheet" href="print.css" />
-
-    <!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
-    <script>
-      /*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
-      (() => {
-        const e = document.currentScript;
-        if (
-          (!e || e.src || (e.type && "module" === e.type.toLowerCase())) &&
-          !1 === /^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname)
-        )
-          return void console.warn(
-            "[Obs.js] Skipping: must be an inline, classic <script> in <head>.",
-            e ? (e.src ? "src=" + e.src : "type=" + e.type) : "type=module",
-          );
-        const t = document.documentElement,
-          { connection: i } = navigator;
-        window.obs = window.obs || {};
-        const a =
-            !0 === ((window.obs && window.obs.config) || {}).observeChanges,
-          o = () => {
-            const e = window.obs || {},
-              i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
-            e.connectionCapability =
-              "low" === e.rttCategory && null != i && i >= 8
-                ? "strong"
-                : "high" === e.rttCategory || (null != i && i <= 5)
-                  ? "weak"
-                  : "moderate";
-            const a =
-              !0 === e.dataSaver ||
-              !0 === e.batteryLow ||
-              !0 === e.batteryCritical;
-            e.conservationPreference = a ? "conserve" : "neutral";
-            const o =
-              "weak" === e.connectionCapability ||
-              !0 === e.dataSaver ||
-              !0 === e.batteryCritical;
-            (e.deliveryMode =
-              "strong" !== e.connectionCapability || o || a
-                ? o
-                  ? "lite"
-                  : "cautious"
-                : "rich"),
-              (e.canShowRichMedia = "lite" !== e.deliveryMode),
-              (e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
-              ["strong", "moderate", "weak"].forEach((e) => {
-                t.classList.remove(`has-connection-capability-${e}`);
-              }),
-              t.classList.add(
-                `has-connection-capability-${e.connectionCapability}`,
-              ),
-              ["conserve", "neutral"].forEach((e) => {
-                t.classList.remove(`has-conservation-preference-${e}`);
-              }),
-              t.classList.add(
-                `has-conservation-preference-${e.conservationPreference}`,
-              ),
-              ["rich", "cautious", "lite"].forEach((e) => {
-                t.classList.remove(`has-delivery-mode-${e}`);
-              }),
-              t.classList.add(`has-delivery-mode-${e.deliveryMode}`);
-          },
-          n = () => {
-            if (!i) return;
-            const { saveData: e, rtt: a, downlink: n } = i;
-            (window.obs.dataSaver = !!e),
-              t.classList.toggle("has-data-saver", !!e);
-            const s = ((e) =>
-              Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
-            null != s && (window.obs.rttBucket = s);
-            const r = ((e) =>
-              Number.isFinite(e)
-                ? e < 75
-                  ? "low"
-                  : e <= 275
-                    ? "medium"
-                    : "high"
-                : null)(a);
-            r &&
-              ((window.obs.rttCategory = r),
-              ["low", "medium", "high"].forEach((e) =>
-                t.classList.remove(`has-latency-${e}`),
-              ),
-              t.classList.add(`has-latency-${r}`));
-            const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
-            var l;
-            if (null != c) {
-              window.obs.downlinkBucket = c;
-              const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
-              (window.obs.downlinkCategory = e),
-                ["low", "medium", "high"].forEach((e) =>
-                  t.classList.remove(`has-bandwidth-${e}`),
-                ),
-                t.classList.add(`has-bandwidth-${e}`);
-            }
-            "downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
-          };
-        n(),
-          a &&
-            i &&
-            "function" == typeof i.addEventListener &&
-            i.addEventListener("change", n);
-        const s = (e) => {
-          if (!e) return;
-          const { level: i, charging: a } = e,
-            n = Number.isFinite(i) ? i <= 0.05 : null;
-          window.obs.batteryCritical = n;
-          const s = Number.isFinite(i) ? i <= 0.2 : null;
-          (window.obs.batteryLow = s),
-            ["critical", "low"].forEach((e) =>
-              t.classList.remove(`has-battery-${e}`),
-            ),
-            s && t.classList.add("has-battery-low"),
-            n && t.classList.add("has-battery-critical");
-          const r = !!a;
-          (window.obs.batteryCharging = r),
-            t.classList.toggle("has-battery-charging", r),
-            o();
-        };
-        if (
-          ("getBattery" in navigator &&
-            navigator
-              .getBattery()
-              .then((e) => {
-                s(e),
-                  a &&
-                    "function" == typeof e.addEventListener &&
-                    (e.addEventListener("levelchange", () => s(e)),
-                    e.addEventListener("chargingchange", () => s(e)));
-              })
-              .catch(() => {}),
-          "deviceMemory" in navigator)
-        ) {
-          const e = Number(navigator.deviceMemory),
-            i = Number.isFinite(e) ? e : null;
-          window.obs.ramBucket = i;
-          const a =
-            ((r = i),
-            Number.isFinite(r)
-              ? r <= 1
-                ? "very-low"
-                : r <= 2
-                  ? "low"
-                  : r <= 4
-                    ? "medium"
-                    : "high"
-              : null);
-          a &&
-            ((window.obs.ramCategory = a),
-            ["very-low", "low", "medium", "high"].forEach((e) =>
-              t.classList.remove(`has-ram-${e}`),
-            ),
-            t.classList.add(`has-ram-${a}`));
-        }
-        var r;
-        if ("hardwareConcurrency" in navigator) {
-          const e = Number(navigator.hardwareConcurrency),
-            i = Number.isFinite(e) ? e : null;
-          window.obs.cpuBucket = i;
-          const a = ((e) =>
-            Number.isFinite(e)
-              ? e <= 2
-                ? "low"
-                : e <= 5
-                  ? "medium"
-                  : "high"
-              : null)(i);
-          a &&
-            ((window.obs.cpuCategory = a),
-            ["low", "medium", "high"].forEach((e) =>
-              t.classList.remove(`has-cpu-${e}`),
-            ),
-            t.classList.add(`has-cpu-${a}`));
-        }
-        (() => {
-          const e = window.obs || {},
-            i = e.ramCategory,
-            a = e.cpuCategory;
-          let o = "moderate";
-          ("high" !== i && "medium" !== i) || "high" !== a
-            ? ("very-low" === i || "low" === i || "low" === a) && (o = "weak")
-            : (o = "strong"),
-            (e.deviceCapability = o),
-            ["strong", "moderate", "weak"].forEach((e) => {
-              t.classList.remove(`has-device-capability-${e}`);
-            }),
-            t.classList.add(`has-device-capability-${o}`);
-        })();
-      })();
-      //# sourceURL=obs.inline.js
-    </script>
-
-    <script type="text/javascript" src="d3.v3.min.js"></script>
-
-    <!-- Start VWO Async SmartCode -->
-    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-    <script type="text/javascript" id="vwoCode">
-      window._vwo_code ||
-        (function () {
-          var account_id = 1040791,
-            version = 2.1,
-            settings_tolerance = 2000,
-            hide_element = "body",
-            hide_element_style =
-              "opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;",
-            /* DO NOT EDIT BELOW THIS LINE */
-            f = false,
-            w = window,
-            d = document,
-            v = d.querySelector("#vwoCode"),
-            cK = "_vwo_" + account_id + "_settings",
-            cc = {};
-          try {
-            var c = JSON.parse(
-              localStorage.getItem("_vwo_" + account_id + "_config"),
-            );
-            cc = c && typeof c === "object" ? c : {};
-          } catch (e) {}
-          var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
-          code = {
-            nonce: v && v.nonce,
-            use_existing_jquery: function () {
-              return typeof use_existing_jquery !== "undefined"
-                ? use_existing_jquery
-                : undefined;
-            },
-            library_tolerance: function () {
-              return typeof library_tolerance !== "undefined"
-                ? library_tolerance
-                : undefined;
-            },
-            settings_tolerance: function () {
-              return cc.sT || settings_tolerance;
-            },
-            hide_element_style: function () {
-              return "{" + (cc.hES || hide_element_style) + "}";
-            },
-            hide_element: function () {
-              if (performance.getEntriesByName("first-contentful-paint")[0]) {
-                return "";
-              }
-              return typeof cc.hE === "string" ? cc.hE : hide_element;
-            },
-            getVersion: function () {
-              return version;
-            },
-            finish: function (e) {
-              if (!f) {
-                f = true;
-                var t = d.getElementById("_vis_opt_path_hides");
-                if (t) t.parentNode.removeChild(t);
-                if (e)
-                  new Image().src =
-                    "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
-                    account_id +
-                    e;
-              }
-            },
-            finished: function () {
-              return f;
-            },
-            addScript: function (e) {
-              var t = d.createElement("script");
-              t.type = "text/javascript";
-              if (e.src) {
-                t.src = e.src;
-              } else {
-                t.text = e.text;
-              }
-              v && t.setAttribute("nonce", v.nonce);
-              d.getElementsByTagName("head")[0].appendChild(t);
-            },
-            load: function (e, t) {
-              var n = this.getSettings(),
-                i = d.createElement("script"),
-                r = this;
-              t = t || {};
-              if (n) {
-                i.textContent = n;
-                d.getElementsByTagName("head")[0].appendChild(i);
-                if (!w.VWO || VWO.caE) {
-                  stT.removeItem(cK);
-                  r.load(e);
-                }
-              } else {
-                var o = new XMLHttpRequest();
-                o.open("GET", e, true);
-                o.withCredentials = !t.dSC;
-                o.responseType = t.responseType || "text";
-                o.onload = function () {
-                  if (t.onloadCb) {
-                    return t.onloadCb(o, e);
-                  }
-                  if (o.status === 200 || o.status === 304) {
-                    _vwo_code.addScript({ text: o.responseText });
-                  } else {
-                    _vwo_code.finish("&e=loading_failure:" + e);
-                  }
-                };
-                o.onerror = function () {
-                  if (t.onerrorCb) {
-                    return t.onerrorCb(e);
-                  }
-                  _vwo_code.finish("&e=loading_failure:" + e);
-                };
-                o.send();
-              }
-            },
-            getSettings: function () {
-              try {
-                var e = stT.getItem(cK);
-                if (!e) {
-                  return;
-                }
-                e = JSON.parse(e);
-                if (Date.now() > e.e) {
-                  stT.removeItem(cK);
-                  return;
-                }
-                return e.s;
-              } catch (e) {
-                return;
-              }
-            },
-            init: function () {
-              if (d.URL.indexOf("__vwo_disable__") > -1) return;
-              var e = this.settings_tolerance();
-              w._vwo_settings_timer = setTimeout(function () {
-                _vwo_code.finish();
-                stT.removeItem(cK);
-              }, e);
-              var t;
-              if (this.hide_element() !== "body") {
-                t = d.createElement("style");
-                var n = this.hide_element(),
-                  i = n ? n + this.hide_element_style() : "",
-                  r = d.getElementsByTagName("head")[0];
-                t.setAttribute("id", "_vis_opt_path_hides");
-                v && t.setAttribute("nonce", v.nonce);
-                t.setAttribute("type", "text/css");
-                if (t.styleSheet) t.styleSheet.cssText = i;
-                else t.appendChild(d.createTextNode(i));
-                r.appendChild(t);
-              } else {
-                t = d.getElementsByTagName("head")[0];
-                var i = d.createElement("div");
-                i.style.cssText =
-                  "z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;";
-                i.setAttribute("id", "_vis_opt_path_hides");
-                i.classList.add("_vis_hide_layer");
-                t.parentNode.insertBefore(i, t.nextSibling);
-              }
-              var o = window._vis_opt_url || d.URL,
-                s =
-                  "https://dev.visualwebsiteoptimizer.com/j.php?a=" +
-                  account_id +
-                  "&u=" +
-                  encodeURIComponent(o) +
-                  "&vn=" +
-                  version;
-              if (w.location.search.indexOf("_vwo_xhr") !== -1) {
-                this.addScript({ src: s });
-              } else {
-                this.load(s + "&x=true");
-              }
-            },
-          };
-          w._vwo_code = code;
-          code.init();
-        })();
-    </script>
-    <!-- End VWO Async SmartCode -->
-
-    <!-- Start PostHog -->
-    <script>
-      !(function (t, e) {
-        var o, n, p, r;
-        e.__SV ||
-          ((window.posthog = e),
-          (e._i = []),
-          (e.init = function (i, s, a) {
-            function g(t, e) {
-              var o = e.split(".");
-              2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                (t[e] = function () {
-                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                });
-            }
-            ((p = t.createElement("script")).type = "text/javascript"),
-              (p.crossOrigin = "anonymous"),
-              (p.async = !0),
-              (p.src =
-                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-                "/static/array.js"),
-              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-                p,
-                r,
-              );
-            var u = e;
-            for (
-              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                u.people = u.people || [],
-                u.toString = function (t) {
-                  var e = "posthog";
-                  return (
-                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-                  );
-                },
-                u.people.toString = function () {
-                  return u.toString(1) + ".people (stub)";
-                },
-                o =
-                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
-                    " ",
-                  ),
-                n = 0;
-              n < o.length;
-              n++
-            )
-              g(u, o[n]);
-            e._i.push([i, s, a]);
-          }),
-          (e.__SV = 1));
-      })(document, window.posthog || []);
-      posthog.init("phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48", {
-        api_host: "https://eu.i.posthog.com",
-        person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-      });
-    </script>
-    <!-- End VWO PostHog -->
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-RHL13BHK6K");
-    </script>
-
-    <!-- Start Heap dev -->
-    <script type="text/javascript">
-      (window.heapReadyCb = window.heapReadyCb || []),
-        (window.heap = window.heap || []),
-        (heap.load = function (e, t) {
-          (window.heap.envId = e),
-            (window.heap.clientConfig = t = t || {}),
-            (window.heap.clientConfig.shouldFetchServerConfig = !1);
-          var a = document.createElement("script");
-          (a.type = "text/javascript"),
-            (a.async = !0),
-            (a.src =
-              "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
-          var r = document.getElementsByTagName("script")[0];
-          r.parentNode.insertBefore(a, r);
-          var n = [
-              "init",
-              "startTracking",
-              "stopTracking",
-              "track",
-              "resetIdentity",
-              "identify",
-              "getSessionId",
-              "getUserId",
-              "getIdentity",
-              "addUserProperties",
-              "addEventProperties",
-              "removeEventProperty",
-              "clearEventProperties",
-              "addAccountProperties",
-              "addAdapter",
-              "addTransformer",
-              "addTransformerFn",
-              "onReady",
-              "addPageviewProperties",
-              "removePageviewProperty",
-              "clearPageviewProperties",
-              "trackPageview",
-            ],
-            i = function (e) {
-              return function () {
-                var t = Array.prototype.slice.call(arguments, 0);
-                window.heapReadyCb.push({
-                  name: e,
-                  fn: function () {
-                    heap[e] && heap[e].apply(heap, t);
-                  },
-                });
-              };
-            };
-          for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
-        });
-      heap.load("724068705");
-    </script>
-    <!-- End Heap dev -->
-
-    <!-- Start Datadog RUM -->
-    <script>
-      (function (h, o, u, n, d) {
-        h = h[d] = h[d] || {
-          q: [],
-          onReady: function (c) {
-            h.q.push(c);
-          },
-        };
-        d = o.createElement(u);
-        d.async = 1;
-        d.src = n;
-        n = o.getElementsByTagName(u)[0];
-        n.parentNode.insertBefore(d, n);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
-        "DD_RUM",
-      );
-      window.DD_RUM.onReady(function () {
-        window.DD_RUM.init({
-          clientToken: "pub550f242796dac3c13b730eb727658279",
-          applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
-          // `site` refers to the Datadog site parameter of your organization
-          // see https://docs.datadoghq.com/getting_started/site/
-          site: "datadoghq.eu",
-          service: "bababou",
-          env: "prod",
-          // Specify a version number to identify the deployed version of your application in Datadog
-          version: "1.0.0",
-          sessionSampleRate: 100,
-          sessionReplaySampleRate: 20,
-          defaultPrivacyLevel: "allow",
-        });
-      });
-    </script>
-    <!-- End Datadog RUM -->
-
-    <!-- Cloudflare -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
-      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
-      integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://nabla.albandrieu.com/"
-    />
-    <link rel="canonical" href="https://nabla.albandrieu.com/" />
-
-    <!-- Ahrefs Web Analytics -->
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="tg3zLMS/bebJFl0LxctiCw"
-      async
-    ></script>
-
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va =
-        window.va ||
-        function () {
-          (window.vaq = window.vaq || []).push(arguments);
-        };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Vercel Speed Insights -->
-    <script>
-      window.si =
-        window.si ||
-        function () {
-          (window.siq = window.siq || []).push(arguments);
-        };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
-
-    <!-- Google Translate -->
-    <script type="text/javascript" src="/google-translate-config.js"></script>
-    <script
-      type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-    <!-- End Google Translate -->
-
-    <!-- JSON-LD Structured Data for SEO and Crawlers -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Alban Andrieu",
-        "jobTitle": "DevSecOps Engineer",
-        "description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
-        "url": "https://nabla.albandrieu.com/cv/",
-        "email": "alban.andrieu@free.fr",
-        "sameAs": [
-          "https://www.linkedin.com/in/nabla/",
-          "https://twitter.com/AlbanAndrieu",
-          "https://github.com/AlbanAndrieu"
-        ],
-        "knowsAbout": [
-          "DevSecOps",
-          "CI/CD",
-          "Cloud Infrastructure",
-          "Software Engineering",
-          "DevOps",
-          "Security",
-          "Automation"
-        ],
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "LinkedIn Professional Profile",
-            "url": "https://www.linkedin.com/in/nabla/"
-          }
-        ],
-        "subjectOf": [
-          {
-            "@type": "DigitalDocument",
-            "name": "LaTeX Resume PDF",
-            "description": "Traditional formatted resume in PDF format",
-            "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
-            "encodingFormat": "application/pdf"
-          },
-          {
-            "@type": "DigitalDocument",
-            "name": "LinkedIn Resume PDF",
-            "description": "LinkedIn profile exported as PDF",
-            "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
-            "encodingFormat": "application/pdf"
-          },
-          {
-            "@type": "WebPage",
-            "name": "Online CV Landing Page",
-            "description": "Interactive web-based CV and professional profile",
-            "url": "https://nabla.albandrieu.com/cv/index.html"
-          }
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Print Button (hidden when printing) -->
-    <button class="print-button" onclick="window.print()">
-      <i class="fas fa-print"></i> Print / Save as PDF
-    </button>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Google Translate Widget -->
-    <div class="google-translate-widget">
-      <div id="google_translate_element"></div>
-    </div>
-    <!-- End Google Translate Widget -->
-
-    <style>
-      .google-translate-widget {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 9999;
-        background: white;
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-    </style>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="hero-content">
-        <img
-          src="https://avatars1.githubusercontent.com/u/7859836"
-          alt="Alban Andrieu"
-          class="profile-image"
-        />
-        <h1 class="hero-title">Alban Andrieu</h1>
-        <p class="hero-subtitle">
-          DevSecOps Cloud Architect | Independent Consultant
-        </p>
-        <p class="hero-description">
-          Currently architecting secure cloud solutions at Jus Mundi. With 20+
-          years of experience in enterprise environments, I specialize in
-          transforming businesses through DevOps automation, cloud security, and
-          infrastructure as code.
-          <br />
-          <br />
-          Open to challenges around AI Integration, MLOps, and Security.
-        </p>
-        <div class="cta-buttons">
-          <a href="#contact" class="btn btn-primary">
-            <i class="fas fa-envelope"></i> Get in Touch
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nabla"
-            target="_blank"
-            class="btn btn-secondary"
-          >
-            <i class="fab fa-linkedin"></i> View LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-      <h2 class="section-title">Services I Offer</h2>
-      <p class="section-subtitle">
-        Comprehensive DevSecOps solutions tailored to your business needs
-      </p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-halved"></i>
-          </div>
-          <h3>Security Integration</h3>
-          <p>
-            Embedding security practices into your development lifecycle with
-            automated security testing, vulnerability management, and
-            compliance.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>IA Integration</h3>
-          <p>
-            Setting up IA across Business, using OpenAI with tools like FastAPI
-            MCP, LangFuse, n8n or Hosted custom LLM Model for full cost control.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <h3>Cloud Architecture</h3>
-          <p>
-            Design and implementation of scalable cloud infrastructures on AWS,
-            Azure, and OVHCloud with focus on cost optimization and reliability.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-infinity"></i>
-          </div>
-          <h3>DevOps Transformation</h3>
-          <p>
-            End-to-end DevOps implementation including CI/CD pipelines,
-            automation, and process optimization to accelerate your software
-            delivery.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-robot"></i>
-          </div>
-          <h3>Infrastructure as Code</h3>
-          <p>
-            Implementing IaC solutions using Terraform, Ansible, and other tools
-            to manage infrastructure efficiently and consistently.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-diagram-project"></i>
-          </div>
-          <h3>Container Orchestration</h3>
-          <p>
-            Kubernetes and Docker expertise for containerizing applications and
-            managing complex microservices architectures.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Monitoring & Observability</h3>
-          <p>
-            Setting up comprehensive monitoring solutions with tools like
-            Prometheus, Grafana, Loki or ELK stack for full system visibility.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-      <h2 class="section-title">Technical Expertise</h2>
-      <p class="section-subtitle">
-        A comprehensive skill set built over 20 years of hands-on experience
-      </p>
-      <div class="skills-container">
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h4><i class="fas fa-code"></i> DevOps & CI/CD</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">GitLab CI</span>
-              <span class="skill-tag">GitHub Actions</span>
-              <span class="skill-tag">Jenkins</span>
-              <span class="skill-tag">ArgoCD</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-cloud"></i> Cloud Platforms</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Azure</span>
-              <span class="skill-tag">Cloudflare</span>
-              <span class="skill-tag">OpenStack</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-cube"></i> Containers & Orchestration</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">Kubernetes</span>
-              <span class="skill-tag">Helm</span>
-              <span class="skill-tag">Docker Compose</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-file-code"></i> Infrastructure as Code</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Terraform</span>
-              <span class="skill-tag">Ansible</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-shield"></i> Security & Compliance</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">WAF, Hardening</span>
-              <span class="skill-tag">SIEM, EDR, XDR</span>
-              <span class="skill-tag">OWASP</span>
-              <span class="skill-tag">HashiCorp Vault</span>
-              <span class="skill-tag">ISO 27001 / 42001, SOC 2 Type I</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-chart-area"></i> Monitoring & Logging</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Prometheus</span>
-              <span class="skill-tag">Grafana</span>
-              <span class="skill-tag">Loki</span>
-              <span class="skill-tag">Datadog Tracing</span>
-              <span class="skill-tag">LangFuse</span>
-              <span class="skill-tag">Weight and Biases</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-code-branch"></i> Version Control</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">GitLab</span>
-              <span class="skill-tag">Bitbucket</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-database"></i> Database</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">PostgresSQL</span>
-              <span class="skill-tag">ElasticSearch</span>
-              <span class="skill-tag">VictoriaMetrics</span>
-              <span class="skill-tag">InfluxDB</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h4><i class="fas fa-laptop-code"></i> Programming</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Bash</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">C++</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience-section" id="experience">
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">
-        20+ years of experience delivering enterprise solutions
-      </p>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>DevSecOps Cloud Architect</h3>
-              <span class="timeline-company">Jus Mundi</span>
-              <span class="timeline-date">March 2022 - Present</span>
-            </div>
-            <p class="timeline-description">
-              Leading DevSecOps initiatives and cloud architecture for a global
-              legal technology platform. Implementing secure, scalable
-              infrastructure on AWS with focus on automation, security
-              compliance (ISO 27001, SOC 2), and operational excellence.
-            </p>
-            <div class="timeline-achievements">
-              <span class="achievement-tag">AWS Cloud Architecture</span>
-              <span class="achievement-tag">Security Compliance</span>
-              <span class="achievement-tag">Infrastructure as Code</span>
-              <span class="achievement-tag">CI/CD Automation</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>DevSecOps Engineer</h3>
-              <span class="timeline-company">Various Enterprise Clients</span>
-              <span class="timeline-date">2015 - 2022</span>
-            </div>
-            <p class="timeline-description">
-              Provided expert consulting services to Fortune 500 companies,
-              implementing DevSecOps practices, CI/CD pipelines, and cloud
-              migrations. Specialized in Jenkins automation, Docker
-              containerization, and Kubernetes orchestration.
-            </p>
-            <div class="timeline-achievements">
-              <span class="achievement-tag">Jenkins CI/CD</span>
-              <span class="achievement-tag">Docker & Kubernetes</span>
-              <span class="achievement-tag">GitLab & GitHub Actions</span>
-              <span class="achievement-tag">Security Hardening</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Senior Software Engineer</h3>
-              <span class="timeline-company">Financial Services Sector</span>
-              <span class="timeline-date">2005 - 2015</span>
-            </div>
-            <p class="timeline-description">
-              Full-stack software development and DevOps transformation in
-              banking and financial services. Led migration from monolithic to
-              microservices architecture, implementing automated testing and
-              continuous deployment practices.
-            </p>
-            <div class="timeline-achievements">
-              <span class="achievement-tag">Java Enterprise</span>
-              <span class="achievement-tag">Python Development</span>
-              <span class="achievement-tag">Microservices</span>
-              <span class="achievement-tag">Agile Methodologies</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Certifications Section -->
-    <section class="education-section" id="education">
-      <h2 class="section-title">Education & Certifications</h2>
-      <div class="education-grid">
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>Engineering Degree</h3>
-          <p class="education-institution">
-            Computer Science & Software Engineering
-          </p>
-          <p class="education-details">
-            Strong foundation in software engineering, algorithms, and system
-            design
-          </p>
-        </div>
-
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <h3>ISO 27001 Lead Implementer</h3>
-          <p class="education-institution">Information Security Management</p>
-          <p class="education-details">
-            Expert in implementing and maintaining ISO 27001 compliant security
-            frameworks
-          </p>
-        </div>
-
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <h3>SOC 2 Type I</h3>
-          <p class="education-institution">Security & Compliance</p>
-          <p class="education-details">
-            Certification in SOC 2 compliance and security controls
-            implementation
-          </p>
-        </div>
-
-        <div class="education-card">
-          <div class="education-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <h3>Cloud Certifications</h3>
-          <p class="education-institution">AWS, Azure, Kubernetes</p>
-          <p class="education-details">
-            Multiple cloud platform and orchestration certifications
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Open Source Contributions Section -->
-    <section class="opensource-section" id="opensource">
-      <h2 class="section-title">Open Source Contributions</h2>
-      <p class="section-subtitle">
-        Active contributor to the DevSecOps community
-      </p>
-      <div class="opensource-grid">
-        <div class="opensource-card">
-          <div class="opensource-icon">
-            <i class="fab fa-github"></i>
-          </div>
-          <h3>Ansible Roles & Playbooks</h3>
-          <p>
-            Extensive collection of Ansible automation including roles for
-            Jenkins, Docker, Eclipse, and complete development environment
-            setup. Used by teams worldwide.
-          </p>
-          <a
-            href="https://github.com/AlbanAndrieu"
-            target="_blank"
-            class="opensource-link"
-          >
-            View on GitHub <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-        <div class="opensource-card">
-          <div class="opensource-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Nabla DevSecOps Platform</h3>
-          <p>
-            Comprehensive DevSecOps platform combining CI/CD, security scanning,
-            infrastructure automation, and monitoring tools in a unified
-            solution.
-          </p>
-          <a
-            href="https://nabla.albandrieu.com"
-            target="_blank"
-            class="opensource-link"
-          >
-            Learn More <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-        <div class="opensource-card">
-          <div class="opensource-icon">
-            <i class="fab fa-docker"></i>
-          </div>
-          <h3>Docker Images</h3>
-          <p>
-            Optimized and security-hardened Docker images for development and
-            production environments, available on Docker Hub.
-          </p>
-          <a
-            href="https://hub.docker.com/u/nabla"
-            target="_blank"
-            class="opensource-link"
-          >
-            View on Docker Hub <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="contact-container">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-subtitle">
-          Ready to transform your DevOps practices? Get in touch to discuss your
-          project.
-        </p>
-
-        <div class="contact-methods">
-          <a href="mailto:alban.andrieu@free.fr" class="contact-method">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-info">
-              <h4>Email</h4>
-              <p>alban.andrieu@free.fr</p>
-            </div>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/nabla"
-            target="_blank"
-            class="contact-method"
-          >
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
-            <div class="contact-info">
-              <h4>LinkedIn</h4>
-              <p>Connect with me</p>
-            </div>
-          </a>
-
-          <a
-            href="https://calendly.com/alban-andrieu"
-            target="_blank"
-            class="contact-method"
-          >
-            <div class="contact-icon">
-              <i class="fa fa-calendar-plus"></i>
-            </div>
-            <div class="contact-info">
-              <h4>Calendly</h4>
-              <p>Have a call</p>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/AlbanAndrieu"
-            target="_blank"
-            class="contact-method"
-          >
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <div class="contact-info">
-              <h4>GitHub</h4>
-              <p>View my work</p>
-            </div>
-          </a>
-        </div>
-
-        <div style="margin-top: 3rem">
-          <img
-            src="assets/nabla/nabla-4.svg"
-            alt="Nabla Logo"
-            style="width: 120px; opacity: 0.6"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="social-links">
-        <a
-          href="https://www.linkedin.com/in/nabla"
-          target="_blank"
-          class="social-link"
-          aria-label="LinkedIn"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-
-        <a
-          href="https://calendly.com/alban-andrieu"
-          target="_blank"
-          class="social-link"
-          aria-label="Calendly"
-        >
-          <i class="fa fa-calendar-plus"></i>
-        </a>
-
-        <a
-          href="https://github.com/AlbanAndrieu"
-          target="_blank"
-          class="social-link"
-          aria-label="GitHub"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-        <a
-          href="https://hub.docker.com/u/nabla"
-          target="_blank"
-          class="social-link"
-          aria-label="Docker Hub"
-        >
-          <i class="fab fa-docker"></i>
-        </a>
-        <a
-          href="https://stackexchange.com/users/4652074/albanandrieu"
-          target="_blank"
-          class="social-link"
-          aria-label="Stack Exchange"
-        >
-          <i class="fab fa-stack-exchange"></i>
-        </a>
-      </div>
-
-      <div class="footer-links">
-        <a href="https://nabla.albandrieu.com/policy/service_terms.html"
-          >Terms of Use</a
-        >
-        <a
-          href="javascript:openAxeptioCookies()"
-          rel="noopener noreferrer"
-          class="text-muted"
-          >Cookies</a
-        >
-        <a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-          >Privacy Policy</a
-        >
-      </div>
-
-      <p style="margin-top: 1rem; opacity: 0.7">
-        © 2025 Alban Andrieu. Independent DevSecOps Professional.
-      </p>
-    </footer>
-
-    <!-- Smooth Scroll Script -->
-    <script>
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      // Add animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.animation = "fadeInUp 0.6s ease forwards";
-          }
-        });
-      }, observerOptions);
-
-      // Observe all service cards, skill categories, and tool items
-      document
-        .querySelectorAll(".service-card, .skill-category, .tool-item")
-        .forEach((el) => {
-          observer.observe(el);
-        });
-    </script>
-
-    <!-- Axeptio: change clientId to be your site's PROJECT ID -->
-    <script>
-      window.axeptioSettings = {
-        clientId: "63ff48361876ce66c29dddcd",
-        cookiesVersion: "nabla-en",
-      };
-
-      (function (d, s) {
-        var t = d.getElementsByTagName(s)[0],
-          e = d.createElement(s);
-        e.async = true;
-        e.src = "//static.axept.io/sdk.js";
-        t.parentNode.insertBefore(e, t);
-      })(document, "script");
-    </script>
-    <!-- End Axeptio cookies -->
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- PAGE settings -->
+		<title>Alban Andrieu - Independent DevSecOps Professional</title>
+		<meta
+			name="description"
+			content="Alban Andrieu - Independent DevSecOps Professional offering expert consulting in DevOps, Security, and Cloud Technologies"
+		/>
+		<meta
+			name="keywords"
+			content="DevSecOps, DevOps Consultant, Cloud Architecture, CI/CD, Security, Independent Consultant, Alban Andrieu"
+		/>
+		<meta name="author" content="Alban Andrieu" />
+		<meta name="robots" content="noindex, nofollow" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="profile" />
+		<meta property="og:url" content="https://albandrieu.com/cv/" />
+		<meta property="og:title" content="Alban Andrieu - DevSecOps Engineer CV" />
+		<meta
+			property="og:description"
+			content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development"
+		/>
+		<meta
+			property="og:image"
+			content="https://albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:url" content="https://albandrieu.com/cv/" />
+		<meta
+			property="twitter:title"
+			content="Alban Andrieu - DevSecOps Engineer CV"
+		/>
+		<meta
+			property="twitter:description"
+			content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development"
+		/>
+		<meta
+			property="twitter:image"
+			content="https://albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<!-- Favicon -->
+		<link rel="icon" href="assets/nabla/nabla-4.png" />
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="modern-style.css" />
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+			type="text/css"
+		/>
+
+		<script
+			src="https://kit.fontawesome.com/7002f056a1.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script
+			src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+			data-auto-replace-svg="nest"
+		></script>
+		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+
+		<!-- our project is using icons from Solid, Sharp Thin, Sharp Duotone Thin + Brands -->
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<!-- Theme toggle script - load early to prevent flash -->
+		<script src="theme-toggle.js"></script>
+
+		<link rel="stylesheet" href="wireframe.css" />
+		<link rel="stylesheet" href="arf.css" />
+		<link rel="stylesheet" href="theme.css" />
+		<!-- Print Styles for PDF Export -->
+		<link rel="stylesheet" href="print.css" />
+
+		<!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
+		<script>
+			/*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
+			(() => {
+				const e = document.currentScript;
+				if (
+					(!e || e.src || (e.type && "module" === e.type.toLowerCase())) &&
+					!1 === /^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname)
+				)
+					return void console.warn(
+						"[Obs.js] Skipping: must be an inline, classic <script> in <head>.",
+						e ? (e.src ? "src=" + e.src : "type=" + e.type) : "type=module",
+					);
+				const t = document.documentElement,
+					{ connection: i } = navigator;
+				window.obs = window.obs || {};
+				const a =
+						!0 === ((window.obs && window.obs.config) || {}).observeChanges,
+					o = () => {
+						const e = window.obs || {},
+							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
+						e.connectionCapability =
+							"low" === e.rttCategory && null != i && i >= 8
+								? "strong"
+								: "high" === e.rttCategory || (null != i && i <= 5)
+									? "weak"
+									: "moderate";
+						const a =
+							!0 === e.dataSaver ||
+							!0 === e.batteryLow ||
+							!0 === e.batteryCritical;
+						e.conservationPreference = a ? "conserve" : "neutral";
+						const o =
+							"weak" === e.connectionCapability ||
+							!0 === e.dataSaver ||
+							!0 === e.batteryCritical;
+						((e.deliveryMode =
+							"strong" !== e.connectionCapability || o || a
+								? o
+									? "lite"
+									: "cautious"
+								: "rich"),
+							(e.canShowRichMedia = "lite" !== e.deliveryMode),
+							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
+							["strong", "moderate", "weak"].forEach((e) => {
+								t.classList.remove(`has-connection-capability-${e}`);
+							}),
+							t.classList.add(
+								`has-connection-capability-${e.connectionCapability}`,
+							),
+							["conserve", "neutral"].forEach((e) => {
+								t.classList.remove(`has-conservation-preference-${e}`);
+							}),
+							t.classList.add(
+								`has-conservation-preference-${e.conservationPreference}`,
+							),
+							["rich", "cautious", "lite"].forEach((e) => {
+								t.classList.remove(`has-delivery-mode-${e}`);
+							}),
+							t.classList.add(`has-delivery-mode-${e.deliveryMode}`));
+					},
+					n = () => {
+						if (!i) return;
+						const { saveData: e, rtt: a, downlink: n } = i;
+						((window.obs.dataSaver = !!e),
+							t.classList.toggle("has-data-saver", !!e));
+						const s = ((e) =>
+							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+						null != s && (window.obs.rttBucket = s);
+						const r = ((e) =>
+							Number.isFinite(e)
+								? e < 75
+									? "low"
+									: e <= 275
+										? "medium"
+										: "high"
+								: null)(a);
+						r &&
+							((window.obs.rttCategory = r),
+							["low", "medium", "high"].forEach((e) =>
+								t.classList.remove(`has-latency-${e}`),
+							),
+							t.classList.add(`has-latency-${r}`));
+						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
+						var l;
+						if (null != c) {
+							window.obs.downlinkBucket = c;
+							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
+							((window.obs.downlinkCategory = e),
+								["low", "medium", "high"].forEach((e) =>
+									t.classList.remove(`has-bandwidth-${e}`),
+								),
+								t.classList.add(`has-bandwidth-${e}`));
+						}
+						("downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax),
+							o());
+					};
+				(n(),
+					a &&
+						i &&
+						"function" == typeof i.addEventListener &&
+						i.addEventListener("change", n));
+				const s = (e) => {
+					if (!e) return;
+					const { level: i, charging: a } = e,
+						n = Number.isFinite(i) ? i <= 0.05 : null;
+					window.obs.batteryCritical = n;
+					const s = Number.isFinite(i) ? i <= 0.2 : null;
+					((window.obs.batteryLow = s),
+						["critical", "low"].forEach((e) =>
+							t.classList.remove(`has-battery-${e}`),
+						),
+						s && t.classList.add("has-battery-low"),
+						n && t.classList.add("has-battery-critical"));
+					const r = !!a;
+					((window.obs.batteryCharging = r),
+						t.classList.toggle("has-battery-charging", r),
+						o());
+				};
+				if (
+					("getBattery" in navigator &&
+						navigator
+							.getBattery()
+							.then((e) => {
+								(s(e),
+									a &&
+										"function" == typeof e.addEventListener &&
+										(e.addEventListener("levelchange", () => s(e)),
+										e.addEventListener("chargingchange", () => s(e))));
+							})
+							.catch(() => {}),
+					"deviceMemory" in navigator)
+				) {
+					const e = Number(navigator.deviceMemory),
+						i = Number.isFinite(e) ? e : null;
+					window.obs.ramBucket = i;
+					const a =
+						((r = i),
+						Number.isFinite(r)
+							? r <= 1
+								? "very-low"
+								: r <= 2
+									? "low"
+									: r <= 4
+										? "medium"
+										: "high"
+							: null);
+					a &&
+						((window.obs.ramCategory = a),
+						["very-low", "low", "medium", "high"].forEach((e) =>
+							t.classList.remove(`has-ram-${e}`),
+						),
+						t.classList.add(`has-ram-${a}`));
+				}
+				var r;
+				if ("hardwareConcurrency" in navigator) {
+					const e = Number(navigator.hardwareConcurrency),
+						i = Number.isFinite(e) ? e : null;
+					window.obs.cpuBucket = i;
+					const a = ((e) =>
+						Number.isFinite(e)
+							? e <= 2
+								? "low"
+								: e <= 5
+									? "medium"
+									: "high"
+							: null)(i);
+					a &&
+						((window.obs.cpuCategory = a),
+						["low", "medium", "high"].forEach((e) =>
+							t.classList.remove(`has-cpu-${e}`),
+						),
+						t.classList.add(`has-cpu-${a}`));
+				}
+				(() => {
+					const e = window.obs || {},
+						i = e.ramCategory,
+						a = e.cpuCategory;
+					let o = "moderate";
+					(("high" !== i && "medium" !== i) || "high" !== a
+						? ("very-low" === i || "low" === i || "low" === a) && (o = "weak")
+						: (o = "strong"),
+						(e.deviceCapability = o),
+						["strong", "moderate", "weak"].forEach((e) => {
+							t.classList.remove(`has-device-capability-${e}`);
+						}),
+						t.classList.add(`has-device-capability-${o}`));
+				})();
+			})();
+			//# sourceURL=obs.inline.js
+		</script>
+
+		<script
+			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+			async
+			defer
+		></script>
+		<script type="text/javascript" src="d3.v3.min.js"></script>
+		<!-- mixpanel -->
+		<script type="text/javascript">
+			(function (f, b) {
+				if (!b.__SV) {
+					var e, g, i, h;
+					window.mixpanel = b;
+					b._i = [];
+					b.init = function (e, f, c) {
+						function g(a, d) {
+							var b = d.split(".");
+							2 == b.length && ((a = a[b[0]]), (d = b[1]));
+							a[d] = function () {
+								a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
+							};
+						}
+						var a = b;
+						"undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel");
+						a.people = a.people || [];
+						a.toString = function (a) {
+							var d = "mixpanel";
+							"mixpanel" !== c && (d += "." + c);
+							a || (d += " (stub)");
+							return d;
+						};
+						a.people.toString = function () {
+							return a.toString(1) + ".people (stub)";
+						};
+						i =
+							"disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(
+								" ",
+							);
+						for (h = 0; h < i.length; h++) g(a, i[h]);
+						var j = "set set_once union unset remove delete".split(" ");
+						a.get_group = function () {
+							function b(c) {
+								d[c] = function () {
+									call2_args = arguments;
+									call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+									a.push([e, call2]);
+								};
+							}
+							for (
+								var d = {},
+									e = ["get_group"].concat(
+										Array.prototype.slice.call(arguments, 0),
+									),
+									c = 0;
+								c < j.length;
+								c++
+							)
+								b(j[c]);
+							return d;
+						};
+						b._i.push([e, f, c]);
+					};
+					b.__SV = 1.2;
+					e = f.createElement("script");
+					e.type = "text/javascript";
+					e.async = !0;
+					e.src =
+						"undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+							? MIXPANEL_CUSTOM_LIB_URL
+							: "file:" === f.location.protocol &&
+								  "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+								? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
+								: "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+					g = f.getElementsByTagName("script")[0];
+					g.parentNode.insertBefore(e, g);
+				}
+			})(document, window.mixpanel || []);
+		</script>
+
+		<!-- Start VWO Async SmartCode -->
+		<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+		<script type="text/javascript" id="vwoCode">
+			window._vwo_code ||
+				(function () {
+					var account_id = 1040791,
+						version = 2.1,
+						settings_tolerance = 2000,
+						hide_element = "body",
+						hide_element_style =
+							"opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;",
+						/* DO NOT EDIT BELOW THIS LINE */
+						f = false,
+						w = window,
+						d = document,
+						v = d.querySelector("#vwoCode"),
+						cK = "_vwo_" + account_id + "_settings",
+						cc = {};
+					try {
+						var c = JSON.parse(
+							localStorage.getItem("_vwo_" + account_id + "_config"),
+						);
+						cc = c && typeof c === "object" ? c : {};
+					} catch (e) {}
+					var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
+					code = {
+						nonce: v && v.nonce,
+						use_existing_jquery: function () {
+							return typeof use_existing_jquery !== "undefined"
+								? use_existing_jquery
+								: undefined;
+						},
+						library_tolerance: function () {
+							return typeof library_tolerance !== "undefined"
+								? library_tolerance
+								: undefined;
+						},
+						settings_tolerance: function () {
+							return cc.sT || settings_tolerance;
+						},
+						hide_element_style: function () {
+							return "{" + (cc.hES || hide_element_style) + "}";
+						},
+						hide_element: function () {
+							if (performance.getEntriesByName("first-contentful-paint")[0]) {
+								return "";
+							}
+							return typeof cc.hE === "string" ? cc.hE : hide_element;
+						},
+						getVersion: function () {
+							return version;
+						},
+						finish: function (e) {
+							if (!f) {
+								f = true;
+								var t = d.getElementById("_vis_opt_path_hides");
+								if (t) t.parentNode.removeChild(t);
+								if (e)
+									new Image().src =
+										"https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
+										account_id +
+										e;
+							}
+						},
+						finished: function () {
+							return f;
+						},
+						addScript: function (e) {
+							var t = d.createElement("script");
+							t.type = "text/javascript";
+							if (e.src) {
+								t.src = e.src;
+							} else {
+								t.text = e.text;
+							}
+							v && t.setAttribute("nonce", v.nonce);
+							d.getElementsByTagName("head")[0].appendChild(t);
+						},
+						load: function (e, t) {
+							var n = this.getSettings(),
+								i = d.createElement("script"),
+								r = this;
+							t = t || {};
+							if (n) {
+								i.textContent = n;
+								d.getElementsByTagName("head")[0].appendChild(i);
+								if (!w.VWO || VWO.caE) {
+									stT.removeItem(cK);
+									r.load(e);
+								}
+							} else {
+								var o = new XMLHttpRequest();
+								o.open("GET", e, true);
+								o.withCredentials = !t.dSC;
+								o.responseType = t.responseType || "text";
+								o.onload = function () {
+									if (t.onloadCb) {
+										return t.onloadCb(o, e);
+									}
+									if (o.status === 200 || o.status === 304) {
+										_vwo_code.addScript({ text: o.responseText });
+									} else {
+										_vwo_code.finish("&e=loading_failure:" + e);
+									}
+								};
+								o.onerror = function () {
+									if (t.onerrorCb) {
+										return t.onerrorCb(e);
+									}
+									_vwo_code.finish("&e=loading_failure:" + e);
+								};
+								o.send();
+							}
+						},
+						getSettings: function () {
+							try {
+								var e = stT.getItem(cK);
+								if (!e) {
+									return;
+								}
+								e = JSON.parse(e);
+								if (Date.now() > e.e) {
+									stT.removeItem(cK);
+									return;
+								}
+								return e.s;
+							} catch (e) {
+								return;
+							}
+						},
+						init: function () {
+							if (d.URL.indexOf("__vwo_disable__") > -1) return;
+							var e = this.settings_tolerance();
+							w._vwo_settings_timer = setTimeout(function () {
+								_vwo_code.finish();
+								stT.removeItem(cK);
+							}, e);
+							var t;
+							if (this.hide_element() !== "body") {
+								t = d.createElement("style");
+								var n = this.hide_element(),
+									i = n ? n + this.hide_element_style() : "",
+									r = d.getElementsByTagName("head")[0];
+								t.setAttribute("id", "_vis_opt_path_hides");
+								v && t.setAttribute("nonce", v.nonce);
+								t.setAttribute("type", "text/css");
+								if (t.styleSheet) t.styleSheet.cssText = i;
+								else t.appendChild(d.createTextNode(i));
+								r.appendChild(t);
+							} else {
+								t = d.getElementsByTagName("head")[0];
+								var i = d.createElement("div");
+								i.style.cssText =
+									"z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;";
+								i.setAttribute("id", "_vis_opt_path_hides");
+								i.classList.add("_vis_hide_layer");
+								t.parentNode.insertBefore(i, t.nextSibling);
+							}
+							var o = window._vis_opt_url || d.URL,
+								s =
+									"https://dev.visualwebsiteoptimizer.com/j.php?a=" +
+									account_id +
+									"&u=" +
+									encodeURIComponent(o) +
+									"&vn=" +
+									version;
+							if (w.location.search.indexOf("_vwo_xhr") !== -1) {
+								this.addScript({ src: s });
+							} else {
+								this.load(s + "&x=true");
+							}
+						},
+					};
+					w._vwo_code = code;
+					code.init();
+				})();
+		</script>
+		<!-- End VWO Async SmartCode -->
+
+		<!-- Start PostHog -->
+		<script>
+			!(function (t, e) {
+				var o, n, p, r;
+				e.__SV ||
+					((window.posthog = e),
+					(e._i = []),
+					(e.init = function (i, s, a) {
+						function g(t, e) {
+							var o = e.split(".");
+							(2 == o.length && ((t = t[o[0]]), (e = o[1])),
+								(t[e] = function () {
+									t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+								}));
+						}
+						(((p = t.createElement("script")).type = "text/javascript"),
+							(p.crossOrigin = "anonymous"),
+							(p.async = !0),
+							(p.src =
+								s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+								"/static/array.js"),
+							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+								p,
+								r,
+							));
+						var u = e;
+						for (
+							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+								u.people = u.people || [],
+								u.toString = function (t) {
+									var e = "posthog";
+									return (
+										"posthog" !== a && (e += "." + a),
+										t || (e += " (stub)"),
+										e
+									);
+								},
+								u.people.toString = function () {
+									return u.toString(1) + ".people (stub)";
+								},
+								o =
+									"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
+										" ",
+									),
+								n = 0;
+							n < o.length;
+							n++
+						)
+							g(u, o[n]);
+						e._i.push([i, s, a]);
+					}),
+					(e.__SV = 1));
+			})(document, window.posthog || []);
+			posthog.init("phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48", {
+				api_host: "https://eu.i.posthog.com",
+				person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+			});
+		</script>
+		<!-- End VWO PostHog -->
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-RHL13BHK6K");
+		</script>
+
+		<!-- Start Heap dev -->
+		<script type="text/javascript">
+			((window.heapReadyCb = window.heapReadyCb || []),
+				(window.heap = window.heap || []),
+				(heap.load = function (e, t) {
+					((window.heap.envId = e),
+						(window.heap.clientConfig = t = t || {}),
+						(window.heap.clientConfig.shouldFetchServerConfig = !1));
+					var a = document.createElement("script");
+					((a.type = "text/javascript"),
+						(a.async = !0),
+						(a.src =
+							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js"));
+					var r = document.getElementsByTagName("script")[0];
+					r.parentNode.insertBefore(a, r);
+					var n = [
+							"init",
+							"startTracking",
+							"stopTracking",
+							"track",
+							"resetIdentity",
+							"identify",
+							"getSessionId",
+							"getUserId",
+							"getIdentity",
+							"addUserProperties",
+							"addEventProperties",
+							"removeEventProperty",
+							"clearEventProperties",
+							"addAccountProperties",
+							"addAdapter",
+							"addTransformer",
+							"addTransformerFn",
+							"onReady",
+							"addPageviewProperties",
+							"removePageviewProperty",
+							"clearPageviewProperties",
+							"trackPageview",
+						],
+						i = function (e) {
+							return function () {
+								var t = Array.prototype.slice.call(arguments, 0);
+								window.heapReadyCb.push({
+									name: e,
+									fn: function () {
+										heap[e] && heap[e].apply(heap, t);
+									},
+								});
+							};
+						};
+					for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
+				}));
+			heap.load("724068705");
+		</script>
+		<!-- End Heap dev -->
+
+		<!-- Start Datadog RUM -->
+		<script>
+			(function (h, o, u, n, d) {
+				h = h[d] = h[d] || {
+					q: [],
+					onReady: function (c) {
+						h.q.push(c);
+					},
+				};
+				d = o.createElement(u);
+				d.async = 1;
+				d.src = n;
+				n = o.getElementsByTagName(u)[0];
+				n.parentNode.insertBefore(d, n);
+			})(
+				window,
+				document,
+				"script",
+				"https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
+				"DD_RUM",
+			);
+			window.DD_RUM.onReady(function () {
+				window.DD_RUM.init({
+					clientToken: "pub550f242796dac3c13b730eb727658279",
+					applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
+					// `site` refers to the Datadog site parameter of your organization
+					// see https://docs.datadoghq.com/getting_started/site/
+					site: "datadoghq.eu",
+					service: "bababou",
+					env: "prod",
+					// Specify a version number to identify the deployed version of your application in Datadog
+					version: "1.0.0",
+					sessionSampleRate: 100,
+					sessionReplaySampleRate: 20,
+					defaultPrivacyLevel: "allow",
+				});
+			});
+		</script>
+		<!-- End Datadog RUM -->
+
+		<!-- Cloudflare -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+			integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+			integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<link
+			rel="alternate"
+			hreflang="x-default"
+			href="https://nabla.albandrieu.com/"
+		/>
+		<link rel="canonical" href="https://nabla.albandrieu.com/" />
+
+		<!-- Ahrefs Web Analytics -->
+		<script
+			src="https://analytics.ahrefs.com/analytics.js"
+			data-key="tg3zLMS/bebJFl0LxctiCw"
+			async
+		></script>
+
+		<!-- Vercel Web Analytics -->
+		<script>
+			window.va =
+				window.va ||
+				function () {
+					(window.vaq = window.vaq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
+		<!-- Vercel Speed Insights -->
+		<script>
+			window.si =
+				window.si ||
+				function () {
+					(window.siq = window.siq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/speed-insights/script.js"></script>
+
+		<!-- Google Translate -->
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
+		<!-- End Google Translate -->
+
+		<!-- JSON-LD Structured Data for SEO and Crawlers -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Alban Andrieu",
+				"jobTitle": "DevSecOps Engineer",
+				"description": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development",
+				"url": "https://nabla.albandrieu.com/cv/",
+				"email": "alban.andrieu@free.fr",
+				"sameAs": [
+					"https://www.linkedin.com/in/nabla/",
+					"https://twitter.com/AlbanAndrieu",
+					"https://github.com/AlbanAndrieu"
+				],
+				"knowsAbout": [
+					"DevSecOps",
+					"CI/CD",
+					"Cloud Infrastructure",
+					"Software Engineering",
+					"DevOps",
+					"Security",
+					"Automation"
+				],
+				"hasCredential": [
+					{
+						"@type": "EducationalOccupationalCredential",
+						"name": "LinkedIn Professional Profile",
+						"url": "https://www.linkedin.com/in/nabla/"
+					}
+				],
+				"subjectOf": [
+					{
+						"@type": "DigitalDocument",
+						"name": "LaTeX Resume PDF",
+						"description": "Traditional formatted resume in PDF format",
+						"url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
+						"encodingFormat": "application/pdf"
+					},
+					{
+						"@type": "DigitalDocument",
+						"name": "LinkedIn Resume PDF",
+						"description": "LinkedIn profile exported as PDF",
+						"url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
+						"encodingFormat": "application/pdf"
+					},
+					{
+						"@type": "WebPage",
+						"name": "Online CV Landing Page",
+						"description": "Interactive web-based CV and professional profile",
+						"url": "https://nabla.albandrieu.com/cv/index.html"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<!-- Print Button (hidden when printing) -->
+		<button class="print-button" onclick="window.print()">
+			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<!-- Google Translate Widget -->
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
+		<!-- End Google Translate Widget -->
+
+		<!-- Custom style -->
+		<style>
+			.google-translate-widget {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				z-index: 9999;
+				background: white;
+				padding: 5px;
+				border-radius: 5px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			}
+		</style>
+
+		<!-- Main content area -->
+		<main id="main-content" role="main">
+			<!-- Hero Section -->
+			<section class="hero-section" id="home">
+				<div class="hero-content">
+					<img
+						src="https://avatars1.githubusercontent.com/u/7859836"
+						alt="Alban Andrieu"
+						class="profile-image"
+					/>
+					<h1 class="hero-title">Alban Andrieu</h1>
+					<p class="hero-subtitle">
+						DevSecOps Cloud Architect | Independent Consultant
+					</p>
+					<p class="hero-description">
+						Currently architecting secure cloud solutions at Jus Mundi. With 20+
+						years of experience in enterprise environments, I specialize in
+						transforming businesses through DevOps automation, cloud security,
+						and infrastructure as code.
+						<br />
+						<br />
+						Open to challenges around AI Integration, MLOps, and Security.
+					</p>
+					<div class="cta-buttons">
+						<a href="#contact" class="btn btn-primary">
+							<i class="fas fa-envelope"></i> Get in Touch
+						</a>
+						<a
+							href="https://www.linkedin.com/in/nabla"
+							target="_blank"
+							class="btn btn-secondary"
+						>
+							<i class="fab fa-linkedin"></i> View LinkedIn
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Services Section -->
+			<section class="services-section" id="services">
+				<h2 class="section-title">Services I Offer</h2>
+				<p class="section-subtitle">
+					Comprehensive DevSecOps solutions tailored to your business needs
+				</p>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-shield-halved"></i>
+						</div>
+						<h3>Security Integration</h3>
+						<p>
+							Embedding security practices into your development lifecycle with
+							automated security testing, vulnerability management, and
+							compliance.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-brain"></i>
+						</div>
+						<h3>IA Integration</h3>
+						<p>
+							Setting up IA across Business, using OpenAI with tools like
+							FastAPI MCP, LangFuse, n8n or Hosted custom LLM Model for full
+							cost control.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-cloud"></i>
+						</div>
+						<h3>Cloud Architecture</h3>
+						<p>
+							Design and implementation of scalable cloud infrastructures on
+							AWS, Azure, and OVHCloud with focus on cost optimization and
+							reliability.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-infinity"></i>
+						</div>
+						<h3>DevOps Transformation</h3>
+						<p>
+							End-to-end DevOps implementation including CI/CD pipelines,
+							automation, and process optimization to accelerate your software
+							delivery.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-robot"></i>
+						</div>
+						<h3>Infrastructure as Code</h3>
+						<p>
+							Implementing IaC solutions using Terraform, Ansible, and other
+							tools to manage infrastructure efficiently and consistently.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-diagram-project"></i>
+						</div>
+						<h3>Container Orchestration</h3>
+						<p>
+							Kubernetes and Docker expertise for containerizing applications
+							and managing complex microservices architectures.
+						</p>
+					</div>
+
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-chart-line"></i>
+						</div>
+						<h3>Monitoring & Observability</h3>
+						<p>
+							Setting up comprehensive monitoring solutions with tools like
+							Prometheus, Grafana, Loki or ELK stack for full system visibility.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Skills Section -->
+			<section class="skills-section" id="skills">
+				<h2 class="section-title">Technical Expertise</h2>
+				<p class="section-subtitle">
+					A comprehensive skill set built over 20 years of hands-on experience
+				</p>
+				<div class="skills-container">
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h4><i class="fas fa-code"></i> DevOps & CI/CD</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">GitLab CI</span>
+								<span class="skill-tag">GitHub Actions</span>
+								<span class="skill-tag">Jenkins</span>
+								<span class="skill-tag">ArgoCD</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-cloud"></i> Cloud Platforms</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">AWS</span>
+								<span class="skill-tag">Azure</span>
+								<span class="skill-tag">Cloudflare</span>
+								<span class="skill-tag">OpenStack</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-cube"></i> Containers & Orchestration</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Docker</span>
+								<span class="skill-tag">Kubernetes</span>
+								<span class="skill-tag">Helm</span>
+								<span class="skill-tag">Docker Compose</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-file-code"></i> Infrastructure as Code</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Terraform</span>
+								<span class="skill-tag">Ansible</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-shield"></i> Security & Compliance</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">WAF, Hardening</span>
+								<span class="skill-tag">SIEM, EDR, XDR</span>
+								<span class="skill-tag">OWASP</span>
+								<span class="skill-tag">HashiCorp Vault</span>
+								<span class="skill-tag">ISO 27001 / 42001, SOC 2 Type I</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-chart-area"></i> Monitoring & Logging</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Prometheus</span>
+								<span class="skill-tag">Grafana</span>
+								<span class="skill-tag">Loki</span>
+								<span class="skill-tag">Datadog Tracing</span>
+								<span class="skill-tag">LangFuse</span>
+								<span class="skill-tag">Weight and Biases</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-code-branch"></i> Version Control</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Git</span>
+								<span class="skill-tag">GitHub</span>
+								<span class="skill-tag">GitLab</span>
+								<span class="skill-tag">Bitbucket</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-database"></i> Database</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">PostgresSQL</span>
+								<span class="skill-tag">ElasticSearch</span>
+								<span class="skill-tag">VictoriaMetrics</span>
+								<span class="skill-tag">InfluxDB</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4><i class="fas fa-laptop-code"></i> Programming</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Python</span>
+								<span class="skill-tag">Bash</span>
+								<span class="skill-tag">JavaScript</span>
+								<span class="skill-tag">Java</span>
+								<span class="skill-tag">C++</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Experience Section -->
+			<section class="experience-section" id="experience">
+				<h2 class="section-title">Professional Experience</h2>
+				<p class="section-subtitle">
+					20+ years of experience delivering enterprise solutions
+				</p>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<div class="timeline-header">
+								<h3>DevSecOps Cloud Architect</h3>
+								<span class="timeline-company">Jus Mundi</span>
+								<span class="timeline-date">March 2022 - Present</span>
+							</div>
+							<p class="timeline-description">
+								Leading DevSecOps initiatives and cloud architecture for a
+								global legal technology platform. Implementing secure, scalable
+								infrastructure on AWS with focus on automation, security
+								compliance (ISO 27001, SOC 2), and operational excellence.
+							</p>
+							<div class="timeline-achievements">
+								<span class="achievement-tag">AWS Cloud Architecture</span>
+								<span class="achievement-tag">Security Compliance</span>
+								<span class="achievement-tag">Infrastructure as Code</span>
+								<span class="achievement-tag">CI/CD Automation</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<div class="timeline-header">
+								<h3>DevSecOps Engineer</h3>
+								<span class="timeline-company">Various Enterprise Clients</span>
+								<span class="timeline-date">2015 - 2022</span>
+							</div>
+							<p class="timeline-description">
+								Provided expert consulting services to Fortune 500 companies,
+								implementing DevSecOps practices, CI/CD pipelines, and cloud
+								migrations. Specialized in Jenkins automation, Docker
+								containerization, and Kubernetes orchestration.
+							</p>
+							<div class="timeline-achievements">
+								<span class="achievement-tag">Jenkins CI/CD</span>
+								<span class="achievement-tag">Docker & Kubernetes</span>
+								<span class="achievement-tag">GitLab & GitHub Actions</span>
+								<span class="achievement-tag">Security Hardening</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<div class="timeline-header">
+								<h3>Senior Software Engineer</h3>
+								<span class="timeline-company">Financial Services Sector</span>
+								<span class="timeline-date">2005 - 2015</span>
+							</div>
+							<p class="timeline-description">
+								Full-stack software development and DevOps transformation in
+								banking and financial services. Led migration from monolithic to
+								microservices architecture, implementing automated testing and
+								continuous deployment practices.
+							</p>
+							<div class="timeline-achievements">
+								<span class="achievement-tag">Java Enterprise</span>
+								<span class="achievement-tag">Python Development</span>
+								<span class="achievement-tag">Microservices</span>
+								<span class="achievement-tag">Agile Methodologies</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Education & Certifications Section -->
+			<section class="education-section" id="education">
+				<h2 class="section-title">Education & Certifications</h2>
+				<div class="education-grid">
+					<div class="education-card">
+						<div class="education-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<h3>Engineering Degree</h3>
+						<p class="education-institution">
+							Computer Science & Software Engineering
+						</p>
+						<p class="education-details">
+							Strong foundation in software engineering, algorithms, and system
+							design
+						</p>
+					</div>
+
+					<div class="education-card">
+						<div class="education-icon">
+							<i class="fas fa-certificate"></i>
+						</div>
+						<h3>ISO 27001 Lead Implementer</h3>
+						<p class="education-institution">Information Security Management</p>
+						<p class="education-details">
+							Expert in implementing and maintaining ISO 27001 compliant
+							security frameworks
+						</p>
+					</div>
+
+					<div class="education-card">
+						<div class="education-icon">
+							<i class="fas fa-certificate"></i>
+						</div>
+						<h3>SOC 2 Type I</h3>
+						<p class="education-institution">Security & Compliance</p>
+						<p class="education-details">
+							Certification in SOC 2 compliance and security controls
+							implementation
+						</p>
+					</div>
+
+					<div class="education-card">
+						<div class="education-icon">
+							<i class="fas fa-certificate"></i>
+						</div>
+						<h3>Cloud Certifications</h3>
+						<p class="education-institution">AWS, Azure, Kubernetes</p>
+						<p class="education-details">
+							Multiple cloud platform and orchestration certifications
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Open Source Contributions Section -->
+			<section class="opensource-section" id="opensource">
+				<h2 class="section-title">Open Source Contributions</h2>
+				<p class="section-subtitle">
+					Active contributor to the DevSecOps community
+				</p>
+				<div class="opensource-grid">
+					<div class="opensource-card">
+						<div class="opensource-icon">
+							<i class="fab fa-github"></i>
+						</div>
+						<h3>Ansible Roles & Playbooks</h3>
+						<p>
+							Extensive collection of Ansible automation including roles for
+							Jenkins, Docker, Eclipse, and complete development environment
+							setup. Used by teams worldwide.
+						</p>
+						<a
+							href="https://github.com/AlbanAndrieu"
+							target="_blank"
+							class="opensource-link"
+						>
+							View on GitHub <i class="fas fa-external-link-alt"></i>
+						</a>
+					</div>
+
+					<div class="opensource-card">
+						<div class="opensource-icon">
+							<i class="fas fa-code"></i>
+						</div>
+						<h3>Nabla DevSecOps Platform</h3>
+						<p>
+							Comprehensive DevSecOps platform combining CI/CD, security
+							scanning, infrastructure automation, and monitoring tools in a
+							unified solution.
+						</p>
+						<a
+							href="https://nabla.albandrieu.com"
+							target="_blank"
+							class="opensource-link"
+						>
+							Learn More <i class="fas fa-external-link-alt"></i>
+						</a>
+					</div>
+
+					<div class="opensource-card">
+						<div class="opensource-icon">
+							<i class="fab fa-docker"></i>
+						</div>
+						<h3>Docker Images</h3>
+						<p>
+							Optimized and security-hardened Docker images for development and
+							production environments, available on Docker Hub.
+						</p>
+						<a
+							href="https://hub.docker.com/u/nabla"
+							target="_blank"
+							class="opensource-link"
+						>
+							View on Docker Hub <i class="fas fa-external-link-alt"></i>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Contact Section -->
+		<section class="contact-section" id="contact">
+			<div class="contact-container">
+				<h2 class="section-title">Let's Work Together</h2>
+				<p class="section-subtitle">
+					Ready to transform your DevOps practices? Get in touch to discuss your
+					project.
+				</p>
+
+				<div class="contact-methods">
+					<a href="mailto:alban.andrieu@free.fr" class="contact-method">
+						<div class="contact-icon">
+							<i class="fas fa-envelope"></i>
+						</div>
+						<div class="contact-info">
+							<h4>Email</h4>
+							<p>alban.andrieu@free.fr</p>
+						</div>
+					</a>
+
+					<a
+						href="https://www.linkedin.com/in/nabla"
+						target="_blank"
+						class="contact-method"
+					>
+						<div class="contact-icon">
+							<i class="fab fa-linkedin"></i>
+						</div>
+						<div class="contact-info">
+							<h4>LinkedIn</h4>
+							<p>Connect with me</p>
+						</div>
+					</a>
+
+					<a
+						href="https://calendly.com/alban-andrieu"
+						target="_blank"
+						class="contact-method"
+					>
+						<div class="contact-icon">
+							<i class="fa fa-calendar-plus"></i>
+						</div>
+						<div class="contact-info">
+							<h4>Calendly</h4>
+							<p>Have a call</p>
+						</div>
+					</a>
+
+					<a
+						href="https://github.com/AlbanAndrieu"
+						target="_blank"
+						class="contact-method"
+					>
+						<div class="contact-icon">
+							<i class="fab fa-github"></i>
+						</div>
+						<div class="contact-info">
+							<h4>GitHub</h4>
+							<p>View my work</p>
+						</div>
+					</a>
+				</div>
+
+				<div style="margin-top: 3rem">
+					<img
+						src="assets/nabla/nabla-4.svg"
+						alt="Nabla Logo"
+						style="width: 120px; opacity: 0.6"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					class="social-link"
+					aria-label="LinkedIn"
+				>
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					class="social-link"
+					aria-label="Calendly"
+				>
+					<i class="fa fa-calendar-plus"></i>
+				</a>
+
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					class="social-link"
+					aria-label="GitHub"
+				>
+					<i class="fab fa-github"></i>
+				</a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					class="social-link"
+					aria-label="Docker Hub"
+				>
+					<i class="fab fa-docker"></i>
+				</a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					class="social-link"
+					aria-label="Stack Exchange"
+				>
+					<i class="fab fa-stack-exchange"></i>
+				</a>
+			</div>
+
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
+					>Terms of Use</a
+				>
+				<a
+					href="javascript:openAxeptioCookies()"
+					rel="noopener noreferrer"
+					class="text-muted"
+					>Cookies</a
+				>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
+					>Privacy Policy</a
+				>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="#" class="btn btn-sm btn-outline-secondary">Back to top</a>
+			</p>
+
+			<p style="margin-top: 1rem; opacity: 0.7">
+				© 2025 Alban Andrieu. Independent DevSecOps Professional.
+			</p>
+		</footer>
+		<!-- End footer section -->
+
+		<div style="display: none">
+			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561"
+				>north-puny</a
+			>
+		</div>
+
+		<!-- Smooth Scroll Script -->
+		<script>
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute("href"));
+					if (target) {
+						target.scrollIntoView({
+							behavior: "smooth",
+							block: "start",
+						});
+					}
+				});
+			});
+
+			// Add animation on scroll
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: "0px 0px -50px 0px",
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+					}
+				});
+			}, observerOptions);
+
+			// Observe all service cards, skill categories, and tool items
+			document
+				.querySelectorAll(".service-card, .skill-category, .tool-item")
+				.forEach((el) => {
+					observer.observe(el);
+				});
+		</script>
+
+		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
+		<script>
+			window.axeptioSettings = {
+				clientId: "63ff48361876ce66c29dddcd",
+				cookiesVersion: "nabla-en",
+			};
+
+			(function (d, s) {
+				var t = d.getElementsByTagName(s)[0],
+					e = d.createElement(s);
+				e.async = true;
+				e.src = "//static.axept.io/sdk.js";
+				t.parentNode.insertBefore(e, t);
+			})(document, "script");
+		</script>
+		<!-- End Axeptio cookies -->
+
+		<script
+			src="https://uptime.betterstack.com/widgets/announcement.js"
+			data-id="150620"
+			async="async"
+			type="text/javascript"
+		></script>
+
+		<!-- Start Intercom -->
+		<script>
+			window.intercomSettings = {
+				api_base: "https://api-iam.intercom.io",
+				app_id: "todo",
+			};
+		</script>
+
+		<script>
+			// We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/todo'
+			(function () {
+				var w = window;
+				var ic = w.Intercom;
+				if (typeof ic === "function") {
+					ic("reattach_activator");
+					ic("update", w.intercomSettings);
+				} else {
+					var d = document;
+					var i = function () {
+						i.c(arguments);
+					};
+					i.q = [];
+					i.c = function (args) {
+						i.q.push(args);
+					};
+					w.Intercom = i;
+					var l = function () {
+						var s = d.createElement("script");
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = "https://widget.intercom.io/widget/todo";
+						var x = d.getElementsByTagName("script")[0];
+						x.parentNode.insertBefore(s, x);
+					};
+					if (document.readyState === "complete") {
+						l();
+					} else if (w.attachEvent) {
+						w.attachEvent("onload", l);
+					} else {
+						w.addEventListener("load", l, false);
+					}
+				}
+			})();
+		</script>
+		<!-- End Intercom -->
+	</body>
 </html>
