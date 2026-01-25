@@ -1,44 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--
 <meta http-equiv="REFRESH" content="0;url=/sample/index.html">
 -->
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- PAGE settings -->
-    <link rel="icon" href="../assets/nabla/nabla-4.png" />
     <title>INDEX for albandrieu.com</title>
     <meta name="description" content="Alban Andrieu - Experienced DevSecOps Engineer, CI/CD Expert, and Cloud Infrastructure Specialist. View my professional CV and credentials." />
     <meta name="keywords" content="Alban Andrieu, DevSecOps, CI/CD, Cloud Infrastructure, Software Engineer, Resume, CV" />
     <meta name="author" content="Alban Andrieu" />
     <meta name="robots" content="index, follow" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://albandrieu.com/cv/" />
     <meta property="og:title" content="Alban Andrieu - DevSecOps Engineer CV" />
     <meta property="og:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
     <meta property="og:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="https://albandrieu.com/cv/" />
     <meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
     <meta property="twitter:description" content="Experienced DevSecOps Engineer specializing in CI/CD, Cloud Infrastructure, and Software Development" />
     <meta property="twitter:image" content="https://albandrieu.com/assets/nabla/nabla-4.png" />
-    
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/nabla/nabla-4.png" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../modern-style.css" />
+
     <!-- Resume Schema Reference for Machine-Readable Tools -->
     <link rel="alternate" type="application/json" href="./schema.json" title="Resume Schema (JSONResume format)" />
-    
-    <!-- CSS dependencies -->
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
       type="text/css"
     />
+
+    <script
+      src="https://kit.fontawesome.com/7002f056a1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+      data-auto-replace-svg="nest"
+    ></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+
+    <!-- our project is using icons from Solid, Sharp Thin, Sharp Duotone Thin + Brands -->
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+    <!-- Theme toggle script - load early to prevent flash -->
+    <script src="../theme-toggle.js"></script>
+
     <link rel="stylesheet" href="../wireframe.css" />
-    
+    <link rel="stylesheet" href="../arf.css" />
+    <link rel="stylesheet" href="../theme.css" />
+    <!-- Print Styles for PDF Export -->
+    <link rel="stylesheet" href="../print.css" />
+
     <!-- Custom CV Styles -->
     <style>
       /* Modern CV Styling */
@@ -47,77 +77,70 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-      
+
       .cv-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
       }
-      
+
       .cv-card .card-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border: none;
         padding: 2rem;
       }
-      
+
       .cv-section {
         margin-bottom: 1.5rem;
       }
-      
+
       .cv-section h3 {
         color: #667eea;
         font-weight: 600;
         margin-bottom: 1rem;
       }
-      
+
       .cv-section .border-bottom {
         border-color: #e2e8f0 !important;
       }
-      
+
       .list-group-item {
         border-left: 3px solid transparent;
         transition: all 0.2s ease;
       }
-      
+
       .list-group-item:hover {
         border-left-color: #667eea;
         background-color: #f8f9fa;
       }
-      
+
       .badge-pill {
         font-weight: 500;
         font-size: 0.875rem;
         padding: 0.5rem 1rem;
       }
-      
+
       footer {
         border-top: 1px solid #e2e8f0;
       }
-      
+
       /* Accessibility improvements */
       a:focus, button:focus {
         outline: 2px solid #667eea;
         outline-offset: 2px;
       }
-      
+
       /* Print styles for CV */
       @media print {
         .cv-card {
           box-shadow: none;
           page-break-inside: avoid;
         }
-        
+
         footer, nav {
           display: none;
         }
       }
     </style>
-
-    <script
-      src="https://example.com/fontawesome/v7.0.1/js/fontawesome.js"
-      data-auto-replace-svg="nest"
-    ></script>
-    <script src="https://example.com/fontawesome/v7.0.1/js/solid.js"></script>
-    <script src="https://example.com/fontawesome/v7.0.1/js/brands.js"></script>
 
     <!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
     <script>
@@ -552,6 +575,32 @@
     </script>
     <!-- End VWO PostHog -->
 
+      <!-- Google Tag Manager (noscript) -->
+      <noscript
+        ><iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
+          height="0"
+          width="0"
+          style="display: none; visibility: hidden"
+        ></iframe
+      ></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-RHL13BHK6K");
+      </script>
+
     <!-- Start Heap dev -->
     <script type="text/javascript">
       ((window.heapReadyCb = window.heapReadyCb || []),
@@ -608,32 +657,68 @@
     </script>
     <!-- End Heap dev -->
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+      <!-- Start Datadog RUM -->
+      <script>
+        (function (h, o, u, n, d) {
+          h = h[d] = h[d] || {
+            q: [],
+            onReady: function (c) {
+              h.q.push(c);
+            },
+          };
+          d = o.createElement(u);
+          d.async = 1;
+          d.src = n;
+          n = o.getElementsByTagName(u)[0];
+          n.parentNode.insertBefore(d, n);
+        })(
+          window,
+          document,
+          "script",
+          "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
+          "DD_RUM"
+        );
+        window.DD_RUM.onReady(function () {
+          window.DD_RUM.init({
+            clientToken: "pub550f242796dac3c13b730eb727658279",
+            applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
+            // `site` refers to the Datadog site parameter of your organization
+            // see https://docs.datadoghq.com/getting_started/site/
+            site: "datadoghq.eu",
+            service: "bababou",
+            env: "prod",
+            // Specify a version number to identify the deployed version of your application in Datadog
+            version: "1.0.0",
+            sessionSampleRate: 100,
+            sessionReplaySampleRate: 20,
+            defaultPrivacyLevel: "allow",
+          });
+        });
+      </script>
+      <!-- End Datadog RUM -->
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      <!-- Cloudflare -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+        integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+        integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
 
-      gtag("config", "G-RHL13BHK6K");
-    </script>
-
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://nabla.albandrieu.com/"
+      />
+      <link rel="canonical" href="https://nabla.albandrieu.com/" />
     <!-- Ahrefs Web Analytics -->
     <script
       src="https://analytics.ahrefs.com/analytics.js"
@@ -642,13 +727,32 @@
     ></script>
 
     <!-- Vercel Web Analytics -->
-    <script defer src="https://cdn.vercel.sh/analytics"></script>
+      <script>
+        window.va =
+          window.va ||
+          function () {
+            (window.vaq = window.vaq || []).push(arguments);
+          };
+      </script>
+      <script defer src="/_vercel/insights/script.js"></script>
     <!-- Vercel Speed Insights -->
-    <script defer src="https://cdn.vercel.sh/speed-insights"></script>
+      <script>
+        window.si =
+          window.si ||
+          function () {
+            (window.siq = window.siq || []).push(arguments);
+          };
+      </script>
+      <script defer src="/_vercel/speed-insights/script.js"></script>
 
-    <!-- Print Styles for PDF Export -->
-    <link rel="stylesheet" href="../print.css" />
-    
+      <!-- Google Translate -->
+      <script type="text/javascript" src="/google-translate-config.js"></script>
+      <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+      ></script>
+      <!-- End Google Translate -->
+
     <!-- JSON-LD Structured Data for SEO and Crawlers -->
     <script type="application/ld+json">
     {
@@ -705,79 +809,42 @@
     }
     </script>
 
-    <!-- Dark Mode Support -->
-    <style>
-      /* Light mode (default) */
-      :root {
-        --bg-color: #ffffff;
-        --text-color: #333333;
-        --secondary-bg: #f8f9fa;
-        --border-color: #dee2e6;
-        --link-color: #007bff;
-      }
-
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-      }
-
-      /* Dark mode */
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-color: #1a1a1a;
-          --text-color: #e0e0e0;
-          --secondary-bg: #2d2d2d;
-          --border-color: #404040;
-          --link-color: #66b3ff;
-        }
-
-        .bg-light {
-          background-color: var(--secondary-bg) !important;
-        }
-
-        .bg-white {
-          background-color: var(--bg-color) !important;
-        }
-
-        .text-dark {
-          color: var(--text-color) !important;
-        }
-
-        .border {
-          border-color: var(--border-color) !important;
-        }
-
-        a {
-          color: var(--link-color);
-        }
-
-        .card {
-          background-color: var(--secondary-bg);
-          color: var(--text-color);
-          border-color: var(--border-color);
-        }
-
-        .navbar-light {
-          background-color: var(--secondary-bg) !important;
-        }
-
-        .navbar-light .navbar-brand,
-        .navbar-light .navbar-nav .nav-link {
-          color: var(--text-color) !important;
-        }
-
-        /* Adjust images in dark mode */
-        img {
-          opacity: 0.9;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- Print Button (hidden when printing) -->
     <button class="print-button" onclick="window.print()">
       <i class="fas fa-print"></i> Print / Save as PDF
     </button>
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript
+        ><iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
+          height="0"
+          width="0"
+          style="display: none; visibility: hidden"
+        ></iframe
+      ></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+      <!-- Google Translate Widget -->
+      <div class="google-translate-widget">
+        <div id="google_translate_element"></div>
+      </div>
+      <!-- End Google Translate Widget -->
+
+      <style>
+        .google-translate-widget {
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          z-index: 9999;
+          background: white;
+          padding: 5px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+      </style>
 
     <div class="collapse bg-dark" id="navbarHeader" style="">
       <div class="container">
@@ -893,7 +960,7 @@
                     <h3 class="h5 border-bottom pb-2 mb-3">
                       <i class="fa fa-file-text text-primary mr-2"></i>Professional Profiles & CV Documents
                     </h3>
-                    
+
                     <div class="list-group list-group-flush">
                       <div class="list-group-item d-flex justify-content-between align-items-center">
                         <div>
@@ -902,13 +969,13 @@
                           <p class="mb-0 text-muted small">Complete professional history and network</p>
                         </div>
                         <div>
-                          <a href="https://www.linkedin.com/in/nabla/" 
-                             class="btn btn-sm btn-outline-primary mr-2" 
-                             target="_blank" 
+                          <a href="https://www.linkedin.com/in/nabla/"
+                             class="btn btn-sm btn-outline-primary mr-2"
+                             target="_blank"
                              rel="noopener"
                              itemprop="sameAs">View Online</a>
-                          <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf" 
-                             class="btn btn-sm btn-primary" 
+                          <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf"
+                             class="btn btn-sm btn-primary"
                              target="_blank"
                              download>Download PDF</a>
                         </div>
@@ -921,9 +988,9 @@
                           <p class="mb-0 text-muted small">Interactive modern CV format</p>
                         </div>
                         <div>
-                          <a href="https://flowcv.com/resume/cojup4q8oq92/" 
-                             class="btn btn-sm btn-outline-primary" 
-                             target="_blank" 
+                          <a href="https://flowcv.com/resume/cojup4q8oq92/"
+                             class="btn btn-sm btn-outline-primary"
+                             target="_blank"
                              rel="noopener">View Online</a>
                         </div>
                       </div>
@@ -935,8 +1002,8 @@
                           <p class="mb-0 text-muted small">Traditional formatted resume</p>
                         </div>
                         <div>
-                          <a href="./cv-aandrieu-XX-XX-2026.pdf" 
-                             class="btn btn-sm btn-primary" 
+                          <a href="./cv-aandrieu-XX-XX-2026.pdf"
+                             class="btn btn-sm btn-primary"
                              target="_blank"
                              download>Download PDF</a>
                         </div>
@@ -1014,17 +1081,17 @@
             <nav class="footer-nav" aria-label="Footer navigation">
               <ul class="list-inline text-md-right">
                 <li class="list-inline-item">
-                  <a href="https://nabla.albandrieu.com/policy/service_terms.html" 
+                  <a href="https://nabla.albandrieu.com/policy/service_terms.html"
                      rel="noopener noreferrer"
                      class="text-muted">Terms of Use</a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="javascript:openAxeptioCookies()" 
+                  <a href="javascript:openAxeptioCookies()"
                      rel="noopener noreferrer"
                      class="text-muted">Cookies</a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://nabla.albandrieu.com/policy/privacy_policy.html" 
+                  <a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
                      rel="noopener noreferrer"
                      class="text-muted">Privacy Policy</a>
                 </li>
@@ -1038,7 +1105,7 @@
       </div>
     </footer>
 
-    <script src="arf.js"></script>
+    <script src="../arf.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -1055,6 +1122,45 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+
+
+      <!-- Smooth Scroll Script -->
+      <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+            }
+          });
+        }, observerOptions);
+
+        // Observe all service cards, skill categories, and tool items
+        document
+          .querySelectorAll(".service-card, .skill-category, .tool-item")
+          .forEach((el) => {
+            observer.observe(el);
+          });
+      </script>
 
     <!-- Axeptio: change clientId to be your site's PROJECT ID -->
     <script>

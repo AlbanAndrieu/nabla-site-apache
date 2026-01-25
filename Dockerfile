@@ -59,7 +59,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR ${APP_BASE_DIR}
 
-COPY composer.json composer.json composer.lock ${APP_BASE_DIR}
+COPY composer.json composer.json composer.lock ${APP_BASE_DIR}/
 COPY ./api ${APP_BASE_DIR}
 
 # Create env files to make composer install work
