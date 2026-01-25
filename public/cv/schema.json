@@ -134,7 +134,7 @@
     "version": "v1.0.0",
     "lastModified": "2026-01-24",
     "schema": "JSONResume",
-    "note": "This schema is compatible with resume tools like @xitanggg/open-resume and @amruthpillai/reactive-resume"
+    "note": "This schema is compatible with resume tools like @xitanggg/open-resume and @amruthpillai/reactive-resume. The 'resumes' section is a custom extension for machine-extraction tools."
   },
   "resumes": {
     "latex": {
