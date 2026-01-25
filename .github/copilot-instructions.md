@@ -80,7 +80,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 **REQUIRED**: Maintain print styles in `public/print.css`.
 
 - **Print Media Query**: Use `@media print` for print-specific styles
-- **Print Stylesheet**: Link print stylesheet: `<link rel="stylesheet" href="print.css" media="print" />`
+- **Print Stylesheet**: Link print stylesheet: `<link rel="stylesheet" href="public/print.css" media="print" />`
 - **Print Optimization**:
   - Hide unnecessary elements (navigation, footers, ads) using `display: none`
   - Remove background colors/images to save ink
@@ -150,7 +150,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 **REQUIRED**: Keep `public/sitemap-albandrieu-com.xml` up to date.
 
 - **Update Sitemap**: When adding/removing/moving pages, update `public/sitemap-albandrieu-com.xml`
-- **Sitemap Format**: Follow XML sitemap protocol (sitemaps.org/schemas/sitemap/0.9)
+- **Sitemap Format**: Follow XML sitemap protocol (http://www.sitemaps.org/schemas/sitemap/0.9)
 - **Include All Pages**: List all public HTML pages
 - **Change Frequency**: Set appropriate `<changefreq>` (always, hourly, daily, weekly, monthly, yearly, never)
 - **Priority**: Use `<priority>` (0.0-1.0) to indicate relative importance (optional)
