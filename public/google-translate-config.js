@@ -2,7 +2,7 @@
  * Google Translate configuration
  * Shared configuration for all pages to ensure consistency
  */
-function _googleTranslateElementInit() {
+function googleTranslateElementInit() {
 	new google.translate.TranslateElement(
 		{
 			pageLanguage: "en",
