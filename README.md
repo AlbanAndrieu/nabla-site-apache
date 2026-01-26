@@ -16,6 +16,18 @@ This is a simple HTML project for Nabla company that promotes Alban Andrieu as a
 
 Default nabla files for apache
 
+## Monorepo Structure
+
+This repository contains multiple deployable projects:
+
+1. **Root Project** - PHP API + Static HTML site
+2. **my-app/** - Next.js application (separate Vercel deployment)
+3. **vue-client/** - Vue/Vite application (separate Vercel deployment)
+
+## Deployment
+
+### Root Project (PHP + Static Site)
+
 ```bash
 npm run start-python
 # Cloudflare wrangler
@@ -36,6 +48,28 @@ composer install --ignore-platform-req=ext-mbstring
 
 php -S localhost:8000 api/index.php
 ```
+
+### Subprojects (my-app and vue-client)
+
+Each subproject has its own `vercel.json` configuration and should be deployed as separate Vercel projects:
+
+**my-app (Next.js):**
+```bash
+cd my-app
+vercel link  # First time only
+vercel       # Preview deployment
+vercel --prod  # Production deployment
+```
+
+**vue-client (Vue/Vite):**
+```bash
+cd vue-client
+vercel link  # First time only
+vercel       # Preview deployment
+vercel --prod  # Production deployment
+```
+
+See individual README files in each subproject directory for more details.
 
 For Apache
 
