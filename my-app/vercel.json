@@ -1,0 +1,9 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"regions": ["fra1"],
+	"github": {
+		"silent": true,
+		"autoJobCancelation": true
+	}
+}
