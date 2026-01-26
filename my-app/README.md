@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Vercel Configuration
+
+This directory includes a `vercel.json` file that configures the deployment for this Next.js application. The configuration ensures that:
+
+- The Next.js build output is placed in the default `.next` directory (not overridden by the root project's `outputDirectory` setting)
+- The `routes-manifest.json` and other build artifacts are generated in the correct location (`.next/routes-manifest.json`)
+- The deployment uses the Frankfurt (fra1) region
+- GitHub integration is configured with silent mode and auto job cancellation
+
+This configuration is necessary because this Next.js app is located in a subdirectory of a larger project that has its own Vercel configuration at the root level.
