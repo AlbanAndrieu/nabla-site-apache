@@ -4,6 +4,6 @@
 	"regions": ["fra1"],
 	"github": {
 		"silent": true,
-		"autoJobCancelation": true
+		"autoJobCancellation": true
 	}
 }
