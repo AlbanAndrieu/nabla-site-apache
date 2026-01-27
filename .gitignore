@@ -69,6 +69,11 @@ typings/
 .env
 .vercel
 
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
 # Backup files
 *.backup
 *-old.html
