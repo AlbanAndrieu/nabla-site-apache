@@ -12,6 +12,7 @@ yarn-error.log*
 .nuxt/
 .output/
 
+vendor/
 webalizer
 html/download
 

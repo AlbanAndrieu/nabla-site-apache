@@ -1,5 +1,5 @@
 body {
-	background-color: #ffffff;
+	background-color: #050505;
 	font-size: 14px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -24,7 +24,7 @@ body {
 	right: 0;
 	width: 330px;
 	font-size: 11px;
-	color: #000;
+	color: #8d0808;
 }
 
 .node {
@@ -33,7 +33,7 @@ body {
 
 .node circle {
 	cursor: pointer;
-	fill: #fff;
+	fill: #c90a0a;
 	stroke: steelblue;
 	stroke-width: 1.5px;
 }
@@ -45,6 +45,6 @@ body {
 
 path.link {
 	fill: none;
-	stroke: #ccc;
+	stroke: #d40a0a;
 	stroke-width: 1px;
 }

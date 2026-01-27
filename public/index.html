@@ -62,11 +62,6 @@
 		/>
 
 		<script
-			src="https://kit.fontawesome.com/7002f056a1.js"
-			crossorigin="anonymous"
-		></script>
-
-		<script
 			src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
 			data-auto-replace-svg="nest"
 		></script>
@@ -123,7 +118,7 @@
 							"weak" === e.connectionCapability ||
 							!0 === e.dataSaver ||
 							!0 === e.batteryCritical;
-						((e.deliveryMode =
+						(e.deliveryMode =
 							"strong" !== e.connectionCapability || o || a
 								? o
 									? "lite"
@@ -146,13 +141,13 @@
 							["rich", "cautious", "lite"].forEach((e) => {
 								t.classList.remove(`has-delivery-mode-${e}`);
 							}),
-							t.classList.add(`has-delivery-mode-${e.deliveryMode}`));
+							t.classList.add(`has-delivery-mode-${e.deliveryMode}`);
 					},
 					n = () => {
 						if (!i) return;
 						const { saveData: e, rtt: a, downlink: n } = i;
-						((window.obs.dataSaver = !!e),
-							t.classList.toggle("has-data-saver", !!e));
+						(window.obs.dataSaver = !!e),
+							t.classList.toggle("has-data-saver", !!e);
 						const s = ((e) =>
 							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
 						null != s && (window.obs.rttBucket = s);
@@ -175,47 +170,46 @@
 						if (null != c) {
 							window.obs.downlinkBucket = c;
 							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
-							((window.obs.downlinkCategory = e),
+							(window.obs.downlinkCategory = e),
 								["low", "medium", "high"].forEach((e) =>
 									t.classList.remove(`has-bandwidth-${e}`),
 								),
-								t.classList.add(`has-bandwidth-${e}`));
+								t.classList.add(`has-bandwidth-${e}`);
 						}
-						("downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax),
-							o());
+						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
 					};
-				(n(),
+				n(),
 					a &&
 						i &&
 						"function" == typeof i.addEventListener &&
-						i.addEventListener("change", n));
+						i.addEventListener("change", n);
 				const s = (e) => {
 					if (!e) return;
 					const { level: i, charging: a } = e,
 						n = Number.isFinite(i) ? i <= 0.05 : null;
 					window.obs.batteryCritical = n;
 					const s = Number.isFinite(i) ? i <= 0.2 : null;
-					((window.obs.batteryLow = s),
+					(window.obs.batteryLow = s),
 						["critical", "low"].forEach((e) =>
 							t.classList.remove(`has-battery-${e}`),
 						),
 						s && t.classList.add("has-battery-low"),
-						n && t.classList.add("has-battery-critical"));
+						n && t.classList.add("has-battery-critical");
 					const r = !!a;
-					((window.obs.batteryCharging = r),
+					(window.obs.batteryCharging = r),
 						t.classList.toggle("has-battery-charging", r),
-						o());
+						o();
 				};
 				if (
 					("getBattery" in navigator &&
 						navigator
 							.getBattery()
 							.then((e) => {
-								(s(e),
+								s(e),
 									a &&
 										"function" == typeof e.addEventListener &&
 										(e.addEventListener("levelchange", () => s(e)),
-										e.addEventListener("chargingchange", () => s(e))));
+										e.addEventListener("chargingchange", () => s(e)));
 							})
 							.catch(() => {}),
 					"deviceMemory" in navigator)
@@ -266,14 +260,14 @@
 						i = e.ramCategory,
 						a = e.cpuCategory;
 					let o = "moderate";
-					(("high" !== i && "medium" !== i) || "high" !== a
+					("high" !== i && "medium" !== i) || "high" !== a
 						? ("very-low" === i || "low" === i || "low" === a) && (o = "weak")
 						: (o = "strong"),
 						(e.deviceCapability = o),
 						["strong", "moderate", "weak"].forEach((e) => {
 							t.classList.remove(`has-device-capability-${e}`);
 						}),
-						t.classList.add(`has-device-capability-${o}`));
+						t.classList.add(`has-device-capability-${o}`);
 				})();
 			})();
 			//# sourceURL=obs.inline.js
@@ -546,12 +540,12 @@
 					(e.init = function (i, s, a) {
 						function g(t, e) {
 							var o = e.split(".");
-							(2 == o.length && ((t = t[o[0]]), (e = o[1])),
+							2 == o.length && ((t = t[o[0]]), (e = o[1])),
 								(t[e] = function () {
 									t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-								}));
+								});
 						}
-						(((p = t.createElement("script")).type = "text/javascript"),
+						((p = t.createElement("script")).type = "text/javascript"),
 							(p.crossOrigin = "anonymous"),
 							(p.async = !0),
 							(p.src =
@@ -560,7 +554,7 @@
 							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
 								p,
 								r,
-							));
+							);
 						var u = e;
 						for (
 							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
@@ -568,9 +562,7 @@
 								u.toString = function (t) {
 									var e = "posthog";
 									return (
-										"posthog" !== a && (e += "." + a),
-										t || (e += " (stub)"),
-										e
+										"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
 									);
 								},
 								u.people.toString = function () {
@@ -624,17 +616,17 @@
 
 		<!-- Start Heap dev -->
 		<script type="text/javascript">
-			((window.heapReadyCb = window.heapReadyCb || []),
+			(window.heapReadyCb = window.heapReadyCb || []),
 				(window.heap = window.heap || []),
 				(heap.load = function (e, t) {
-					((window.heap.envId = e),
+					(window.heap.envId = e),
 						(window.heap.clientConfig = t = t || {}),
-						(window.heap.clientConfig.shouldFetchServerConfig = !1));
+						(window.heap.clientConfig.shouldFetchServerConfig = !1);
 					var a = document.createElement("script");
-					((a.type = "text/javascript"),
+					(a.type = "text/javascript"),
 						(a.async = !0),
 						(a.src =
-							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js"));
+							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
 					var r = document.getElementsByTagName("script")[0];
 					r.parentNode.insertBefore(a, r);
 					var n = [
@@ -673,7 +665,7 @@
 							};
 						};
 					for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
-				}));
+				});
 			heap.load("724068705");
 		</script>
 		<!-- End Heap dev -->
