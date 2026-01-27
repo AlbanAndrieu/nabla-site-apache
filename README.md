@@ -94,6 +94,52 @@ python -m http.server 8001
 
 [terraform-s3-static-website-hosting](https://www.alexhyett.com/terraform-s3-static-website-hosting)
 
+## Testing
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end testing. The test suite includes:
+
+- **Homepage Tests**: Validates meta tags, Open Graph tags, and page structure
+- **Accessibility Tests**: Checks WCAG compliance, keyboard navigation, and theme support
+- **Responsive Design Tests**: Ensures proper mobile, tablet, and desktop layouts
+- **Navigation Tests**: Verifies internal/external links and navigation structure
+
+### Running Tests Locally
+
+```bash
+# Install dependencies (includes Playwright)
+npm install
+
+# Install Playwright browsers (first time only)
+npx playwright install
+
+# Run all tests
+npm test
+
+# Run tests in headed mode (see browser)
+npm run test:headed
+
+# Run tests in interactive UI mode
+npm run test:ui
+
+# Debug tests
+npm run test:debug
+
+# View test report
+npm run test:report
+```
+
+### CI/CD Integration
+
+Tests run automatically on GitHub Actions for all push and pull request events. The workflow:
+
+1. Sets up Node.js environment
+2. Installs dependencies
+3. Installs Playwright browsers
+4. Runs the test suite
+5. Uploads test reports and traces as artifacts
+
+See `.github/workflows/playwright.yml` for the complete workflow configuration.
+
 # Contributing
 
 The [issue tracker](https://github.com/AlbanAndrieu/nabla-site-apache/issues) is the preferred channel for bug reports, features requests and submitting pull requests.

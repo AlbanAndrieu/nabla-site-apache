@@ -25,7 +25,12 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
-		"start-python": "python -m http.server 8001"
+		"start-python": "python -m http.server 8001",
+		"test": "playwright test",
+		"test:headed": "playwright test --headed",
+		"test:ui": "playwright test --ui",
+		"test:report": "playwright show-report",
+		"test:debug": "playwright test --debug"
 	},
 	"dependencies": {
 		"@astrojs/vercel": "^9.0.2",
@@ -38,11 +43,13 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.1",
+		"@playwright/test": "^1.58.0",
 		"copyfiles": "2.4.1",
 		"d3": "7.9.0",
 		"eslint": "^9.39.1",
 		"eslint-formatter-gitlab": "^6.0.1",
 		"opencommit": "^3.2.10",
+		"playwright": "^1.58.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.47.0",
 		"wrangler": "^4.53.0"
