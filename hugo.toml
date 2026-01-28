@@ -1,0 +1,22 @@
+baseURL = 'https://nabla.albandrieu.com/'
+languageCode = 'en'
+title = 'Alban Andrieu - Independent DevSecOps Professional'
+theme = ''
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = 'Alban Andrieu - Independent DevSecOps Professional offering expert consulting in DevOps, Security, and Cloud Technologies'
+  author = 'Alban Andrieu'
+  keywords = ['DevSecOps', 'DevOps Consultant', 'Cloud Architecture', 'CI/CD', 'Security', 'Independent Consultant', 'Alban Andrieu']
+
+[outputs]
+  home = ['HTML']
+  page = ['HTML']
+
+# Build configuration
+[build]
+  writeStats = false

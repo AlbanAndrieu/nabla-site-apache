@@ -12,34 +12,73 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ## Project Goal
 
-This is a simple HTML project for Nabla company that promotes Alban Andrieu as an experienced DevSecOps professional.
+This is a Hugo-powered website for Nabla company that promotes Alban Andrieu as an experienced DevSecOps professional.
 
-Default nabla files for apache
+The site is built with [Hugo](https://gohugo.io/), a fast and modern static site generator.
 
 ## Monorepo Structure
 
 This repository contains multiple deployable projects:
 
-1. **Root Project** - PHP API + Static HTML site
+1. **Root Project** - Hugo static site + PHP API
 2. **my-app/** - Next.js application (separate Vercel deployment)
 3. **vue-client/** - Vue/Vite application (separate Vercel deployment)
 
-## Deployment
+## Development
 
-### Root Project (PHP + Static Site)
+### Building the Hugo Site
 
 ```bash
+# Install Hugo (if not already installed)
+# See https://gohugo.io/installation/
+
+# Build the site
+hugo
+
+# Build with minification (production)
+hugo --minify
+
+# Start development server with live reload
+hugo server
+
+# Start dev server with drafts
+hugo server -D
+```
+
+### Local Development
+
+```bash
+# Start Hugo development server (recommended)
+hugo server
+
+# Or use Python simple server (serves the built site)
 npm run start-python
-# Cloudflare wrangler
+
+# Or use Cloudflare wrangler
 npm run start
 ```
 
-For vercel
+## Deployment
 
-```
+### Root Project (Hugo + PHP API)
+
+The site is automatically deployed to Vercel on push to main/master branch via GitHub Actions.
+
+For manual deployment:
+
+```bash
+# Build the Hugo site first
+hugo --minify
+
+# Deploy to Vercel
 vercel deploy
 vercel --prod
 ```
+
+The `vercel.json` configuration includes:
+- Automatic Hugo build command
+- Hugo extended version 0.140.2
+- PHP API support via vercel-php runtime
 
 For vercel [php](https://github.com/vercel-community/php)
 

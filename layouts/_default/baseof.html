@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- PAGE settings -->
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <meta name="keywords" content="{{ if .Params.keywords }}{{ delimit .Params.keywords ", " }}{{ else }}{{ delimit .Site.Params.keywords ", " }}{{ end }}" />
+    <meta name="author" content="{{ .Site.Params.author }}" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <meta property="og:image" content="{{ .Site.BaseURL }}assets/nabla/nabla-4.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="{{ .Permalink }}" />
+    <meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+    <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <meta property="twitter:image" content="{{ .Site.BaseURL }}assets/nabla/nabla-4.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ "assets/nabla/nabla-4.png" | relURL }}" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "modern-style.css" | relURL }}" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css" type="text/css" />
+
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js" data-auto-replace-svg="nest"></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+
+    <link href="{{ "assets/fontawesome/css/fontawesome.css" | relURL }}" rel="stylesheet" />
+    <link href="{{ "assets/fontawesome/css/brands.css" | relURL }}" rel="stylesheet" />
+    <link href="{{ "assets/fontawesome/css/solid.css" | relURL }}" rel="stylesheet" />
+
+    <!-- Theme toggle script - load early to prevent flash -->
+    <script src="{{ "theme-toggle.js" | relURL }}"></script>
+
+    <link rel="stylesheet" href="{{ "wireframe.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "theme.css" | relURL }}" />
+    <!-- Print Styles for PDF Export -->
+    <link rel="stylesheet" href="{{ "print.css" | relURL }}" />
+
+    {{ block "head" . }}{{ end }}
+  </head>
+  <body>
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>
