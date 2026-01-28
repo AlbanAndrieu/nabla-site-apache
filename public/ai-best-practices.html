@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en" id="top">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- PAGE settings -->
+		<title>AI Best Practices - Alban Andrieu DevSecOps</title>
+		<meta
+			name="description"
+			content="Comprehensive guide to AI best practices, tools, and resources for developers and DevSecOps professionals. Includes workflow automation, LLM reasoning, model deployment, and more."
+		/>
+		<meta
+			name="keywords"
+			content="AI Best Practices, Machine Learning, LLM, Artificial Intelligence, OpenCommit, n8n Workflows, Opik, Nvidia Nemotron, MCP Servers, AI Tools, DevSecOps"
+		/>
+		<meta name="author" content="alban.andrieu@free.fr" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="article" />
+		<meta
+			property="og:url"
+			content="https://nabla.albandrieu.com/ai-best-practices.html"
+		/>
+		<meta
+			property="og:title"
+			content="AI Best Practices - Tools and Resources"
+		/>
+		<meta
+			property="og:description"
+			content="Explore curated AI best practices, tools, and resources for modern development workflows including automation, LLMs, and model deployment."
+		/>
+		<meta
+			property="og:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+		<meta property="og:site_name" content="Nabla - Alban Andrieu" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta
+			property="twitter:url"
+			content="https://nabla.albandrieu.com/ai-best-practices.html"
+		/>
+		<meta
+			property="twitter:title"
+			content="AI Best Practices - Tools and Resources"
+		/>
+		<meta
+			property="twitter:description"
+			content="Explore curated AI best practices, tools, and resources for modern development workflows"
+		/>
+		<meta
+			property="twitter:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<!-- Canonical URL -->
+		<link
+			rel="canonical"
+			href="https://nabla.albandrieu.com/ai-best-practices.html"
+		/>
+
+		<!-- Favicon -->
+		<link rel="icon" href="assets/nabla/nabla-4.png" />
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="modern-style.css" />
+		<!-- Print Styles for PDF Export -->
+		<link rel="stylesheet" href="print.css" />
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+			type="text/css"
+		/>
+		<script
+			src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+			data-auto-replace-svg="nest"
+		></script>
+		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<!-- Theme toggle script - load early to prevent flash -->
+		<script src="theme-toggle.js"></script>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+			integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- Google Translate -->
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
+
+		<!-- Vercel Analytics -->
+		<script>
+			window.va =
+				window.va ||
+				function () {
+					(window.vaq = window.vaq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
+		<script>
+			window.si =
+				window.si ||
+				function () {
+					(window.siq = window.siq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/speed-insights/script.js"></script>
+
+		<!-- JSON-LD Structured Data for SEO -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "AI Best Practices for Developers",
+				"author": {
+					"@type": "Person",
+					"name": "Alban Andrieu",
+					"url": "https://nabla.albandrieu.com"
+				},
+				"publisher": {
+					"@type": "Organization",
+					"name": "Nabla - Alban Andrieu",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+					}
+				},
+				"datePublished": "2026-01-28",
+				"dateModified": "2026-01-28",
+				"description": "Comprehensive guide to AI best practices, tools, and resources for developers and DevSecOps professionals",
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://nabla.albandrieu.com/ai-best-practices.html"
+				}
+			}
+		</script>
+
+		<style>
+			/* AI Best Practices Page Specific Styles */
+			:root {
+				--primary-color: #007bff;
+				--secondary-color: #6610f2;
+				--success-color: #28a745;
+				--info-color: #17a2b8;
+				--warning-color: #ffc107;
+				--danger-color: #dc3545;
+				--dark-color: #343a40;
+				--light-color: #f8f9fa;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					"Helvetica Neue", Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+			}
+
+			.google-translate-widget {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				z-index: 9999;
+				background: white;
+				padding: 5px;
+				border-radius: 5px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Hero Section */
+			.hero-section {
+				text-align: center;
+				padding: 4rem 2rem;
+				background: linear-gradient(
+					135deg,
+					var(--primary-color) 0%,
+					var(--secondary-color) 100%
+				);
+				color: white;
+			}
+
+			.hero-title {
+				font-size: 3rem;
+				font-weight: 700;
+				margin-bottom: 0.5rem;
+			}
+
+			.hero-subtitle {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+				opacity: 0.95;
+			}
+
+			.hero-description {
+				font-size: 1.1rem;
+				max-width: 800px;
+				margin: 0 auto 2rem;
+				line-height: 1.6;
+			}
+
+			/* Content Section */
+			.content-section {
+				padding: 4rem 2rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.section-title {
+				font-size: 2.5rem;
+				font-weight: 700;
+				text-align: center;
+				margin-bottom: 1rem;
+				color: var(--dark-color);
+			}
+
+			.section-subtitle {
+				text-align: center;
+				font-size: 1.2rem;
+				color: #666;
+				margin-bottom: 3rem;
+			}
+
+			/* Resource Grid */
+			.resource-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.resource-card {
+				background: white;
+				border-radius: 12px;
+				padding: 2rem;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+				border-left: 4px solid var(--primary-color);
+			}
+
+			.resource-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+			}
+
+			.resource-card h3 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+				color: var(--primary-color);
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.resource-card-icon {
+				font-size: 2rem;
+				color: var(--primary-color);
+			}
+
+			.resource-card p {
+				color: #666;
+				margin-bottom: 1rem;
+				line-height: 1.6;
+			}
+
+			.resource-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				color: var(--primary-color);
+				text-decoration: none;
+				font-weight: 600;
+				transition: color 0.3s ease;
+			}
+
+			.resource-link:hover {
+				color: var(--secondary-color);
+				text-decoration: underline;
+			}
+
+			.resource-link i {
+				font-size: 1rem;
+			}
+
+			/* Category Sections */
+			.category-section {
+				margin-bottom: 4rem;
+			}
+
+			.category-title {
+				font-size: 2rem;
+				font-weight: 700;
+				margin-bottom: 1.5rem;
+				color: var(--dark-color);
+				border-bottom: 3px solid var(--primary-color);
+				padding-bottom: 0.5rem;
+			}
+
+			/* Footer */
+			.footer {
+				background: var(--dark-color);
+				color: white;
+				padding: 3rem 2rem 2rem;
+				text-align: center;
+			}
+
+			.footer-links {
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+				margin-bottom: 1rem;
+				flex-wrap: wrap;
+			}
+
+			.footer-links a {
+				color: rgba(255, 255, 255, 0.8);
+				text-decoration: none;
+			}
+
+			.footer-links a:hover {
+				color: white;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.hero-title {
+					font-size: 2rem;
+				}
+
+				.hero-subtitle {
+					font-size: 1.2rem;
+				}
+
+				.section-title {
+					font-size: 2rem;
+				}
+
+				.resource-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			/* Intro Section */
+			.intro-section {
+				background: var(--light-color);
+				border-radius: 12px;
+				padding: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.intro-section p {
+				font-size: 1.1rem;
+				line-height: 1.8;
+				color: #555;
+				margin-bottom: 1rem;
+			}
+
+			.intro-section p:last-child {
+				margin-bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Print Button (hidden when printing) -->
+		<button class="print-button" onclick="window.print()">
+			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<!-- Google Translate Widget -->
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
+
+		<!-- Header / Hero Section -->
+		<header>
+			<section class="hero-section" id="home">
+				<div class="hero-content">
+					<h1 class="hero-title">
+						<i class="fas fa-brain"></i> AI Best Practices
+					</h1>
+					<p class="hero-subtitle">
+						Tools, Resources, and Guidelines for AI-Driven Development
+					</p>
+					<p class="hero-description">
+						A curated collection of essential AI tools, frameworks, and best
+						practices to enhance your development workflow. From automated
+						workflows to cutting-edge language models, discover the resources
+						that can transform your approach to AI development.
+					</p>
+				</div>
+			</section>
+		</header>
+
+		<!-- Main Content -->
+		<main id="main-content">
+			<section class="content-section">
+				<!-- Introduction -->
+				<article class="intro-section">
+					<p>
+						As artificial intelligence continues to revolutionize software
+						development, staying informed about the latest tools, frameworks,
+						and methodologies is crucial for developers and DevSecOps
+						professionals. This page brings together some of the most impactful
+						AI resources available today.
+					</p>
+					<p>
+						Whether you're automating workflows, working with large language
+						models, or deploying AI solutions, these carefully selected
+						resources will help you implement AI best practices in your
+						projects.
+					</p>
+				</article>
+
+				<!-- Workflow Automation & Tools -->
+				<section class="category-section">
+					<h2 class="category-title">
+						<i class="fas fa-robot"></i> Workflow Automation & AI Tools
+					</h2>
+					<div class="resource-grid">
+						<!-- n8n Workflows Collection -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-project-diagram resource-card-icon"></i>
+								n8n Workflows Collection
+							</h3>
+							<p>
+								Discover a comprehensive collection of over 4,000 automation
+								workflows for n8n, the free and open-source workflow automation
+								tool. These ready-to-use workflows can dramatically speed up
+								your automation projects and provide inspiration for custom
+								solutions.
+							</p>
+							<a
+								href="https://korben.info/n8n-workflows-collection-4000-automatisations-gith.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-external-link-alt"></i>
+								Explore n8n Workflows
+							</a>
+						</article>
+
+						<!-- OpenCommit -->
+						<article class="resource-card">
+							<h3>
+								<i class="fab fa-git-alt resource-card-icon"></i>
+								OpenCommit
+							</h3>
+							<p>
+								An AI-powered Git commit message generator that uses GPT models
+								to create meaningful, conventional commit messages automatically.
+								Save time and maintain consistent commit standards across your
+								projects with support for multiple languages and customizable
+								output formats.
+							</p>
+							<a
+								href="https://github.com/di-sukharev/opencommit"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fab fa-github"></i>
+								View on GitHub
+							</a>
+						</article>
+
+						<!-- Opik -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-chart-line resource-card-icon"></i>
+								Opik by Comet
+							</h3>
+							<p>
+								Opik is an open-source platform for evaluating, testing, and
+								monitoring LLM applications. It provides comprehensive tools for
+								tracking experiments, comparing model outputs, and ensuring your
+								AI applications perform reliably in production.
+							</p>
+							<a
+								href="https://www.comet.com/docs/opik/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-book"></i>
+								Read Documentation
+							</a>
+						</article>
+					</div>
+				</section>
+
+				<!-- AI Models & Frameworks -->
+				<section class="category-section">
+					<h2 class="category-title">
+						<i class="fas fa-microchip"></i> AI Models & Frameworks
+					</h2>
+					<div class="resource-grid">
+						<!-- Nvidia Nemotron -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-server resource-card-icon"></i>
+								Nvidia Nemotron 3 Nano
+							</h3>
+							<p>
+								Nvidia's Nemotron 3 Nano is a compact yet powerful open-source
+								AI model designed for edge deployment and resource-constrained
+								environments. Learn about this efficient model that brings
+								enterprise-grade AI capabilities to smaller form factors.
+							</p>
+							<a
+								href="https://korben.info/nvidia-nemotron-3-nano-modele-ia-open-source-2.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-external-link-alt"></i>
+								Learn More
+							</a>
+						</article>
+
+						<!-- Context7 -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-code resource-card-icon"></i>
+								Context7
+							</h3>
+							<p>
+								Context7 provides advanced context management for AI
+								applications, helping developers build more intelligent and
+								context-aware systems. Essential for creating sophisticated AI
+								solutions that understand and maintain context across
+								interactions.
+							</p>
+							<a
+								href="https://context7.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-globe"></i>
+								Visit Website
+							</a>
+						</article>
+
+						<!-- Awesome MCP Servers -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-list resource-card-icon"></i>
+								Awesome MCP Servers
+							</h3>
+							<p>
+								A curated list of Model Context Protocol (MCP) servers, tools,
+								and resources. This comprehensive collection helps developers
+								discover and integrate MCP servers for building powerful
+								AI-enhanced applications with standardized context sharing.
+							</p>
+							<a
+								href="https://github.com/punkpeye/awesome-mcp-servers"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fab fa-github"></i>
+								View Repository
+							</a>
+						</article>
+					</div>
+				</section>
+
+				<!-- Learning Resources -->
+				<section class="category-section">
+					<h2 class="category-title">
+						<i class="fas fa-graduation-cap"></i> Learning & Understanding
+					</h2>
+					<div class="resource-grid">
+						<!-- Visual Guide to Reasoning LLMs -->
+						<article class="resource-card">
+							<h3>
+								<i class="fas fa-brain resource-card-icon"></i>
+								Visual Guide to Reasoning LLMs
+							</h3>
+							<p>
+								An in-depth visual guide that demystifies how reasoning works in
+								Large Language Models. Perfect for developers and AI enthusiasts
+								who want to understand the inner workings of modern LLMs and how
+								they approach complex reasoning tasks.
+							</p>
+							<a
+								href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-reasoning-llms"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-newspaper"></i>
+								Read Article
+							</a>
+						</article>
+					</div>
+				</section>
+
+				<!-- Best Practices Section -->
+				<section class="category-section">
+					<h2 class="category-title">
+						<i class="fas fa-check-circle"></i> General Best Practices
+					</h2>
+					<article class="intro-section">
+						<h3 style="color: var(--primary-color); margin-bottom: 1rem">
+							Key Principles for AI Development
+						</h3>
+						<ul style="font-size: 1.1rem; line-height: 1.8; color: #555">
+							<li>
+								<strong>Start with Clear Objectives:</strong> Define what
+								success looks like before implementing AI solutions.
+							</li>
+							<li>
+								<strong>Monitor and Evaluate:</strong> Continuously track model
+								performance and iterate based on real-world results.
+							</li>
+							<li>
+								<strong>Consider Ethics and Bias:</strong> Regularly audit your
+								AI systems for fairness and unintended biases.
+							</li>
+							<li>
+								<strong>Automate Responsibly:</strong> Use automation tools like
+								n8n and OpenCommit to improve efficiency while maintaining code
+								quality.
+							</li>
+							<li>
+								<strong>Stay Updated:</strong> The AI landscape evolves rapidly;
+								keep learning and adapting your practices.
+							</li>
+							<li>
+								<strong>Test Thoroughly:</strong> Implement comprehensive
+								testing frameworks for AI components, especially when deploying
+								to production.
+							</li>
+							<li>
+								<strong>Document Everything:</strong> Maintain clear
+								documentation of model versions, training data, and deployment
+								configurations.
+							</li>
+						</ul>
+					</article>
+				</section>
+
+				<!-- Back to Home -->
+				<div style="text-align: center; margin-top: 3rem">
+					<a href="/" class="btn btn-primary btn-lg">
+						<i class="fas fa-home"></i> Back to Home
+					</a>
+					<a href="/contact.html" class="btn btn-outline-primary btn-lg">
+						<i class="fas fa-envelope"></i> Contact Me
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
+					>Terms of Use</a
+				>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer"
+					>Cookies</a
+				>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
+					>Privacy Policy</a
+				>
+			</div>
+
+			<p class="text-md-center mt-3">
+				<a
+					href="#top"
+					class="btn btn-sm btn-outline-light"
+					aria-label="Back to top of page"
+					>Back to top</a
+				>
+			</p>
+
+			<p style="margin-top: 1rem; opacity: 0.7">
+				© 2025 Alban Andrieu. Independent DevSecOps Professional.
+			</p>
+		</footer>
+
+		<!-- Smooth Scroll Script -->
+		<script>
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					const href = this.getAttribute("href");
+					if (href !== "#" && href.length > 1) {
+						e.preventDefault();
+						const target = document.querySelector(href);
+						if (target) {
+							target.scrollIntoView({
+								behavior: "smooth",
+								block: "start",
+							});
+						}
+					}
+				});
+			});
+
+			// Add animation on scroll
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: "0px 0px -50px 0px",
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.style.opacity = "1";
+						entry.target.style.transform = "translateY(0)";
+					}
+				});
+			}, observerOptions);
+
+			// Observe all cards
+			document.querySelectorAll(".resource-card").forEach((el) => {
+				el.style.opacity = "0";
+				el.style.transform = "translateY(20px)";
+				el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+				observer.observe(el);
+			});
+		</script>
+
+		<!-- Axeptio Cookies -->
+		<script>
+			window.axeptioSettings = {
+				clientId: "63ff48361876ce66c29dddcd",
+				cookiesVersion: "nabla-en",
+			};
+
+			(function (d, s) {
+				var t = d.getElementsByTagName(s)[0],
+					e = d.createElement(s);
+				e.async = true;
+				e.src = "//static.axept.io/sdk.js";
+				t.parentNode.insertBefore(e, t);
+			})(document, "script");
+		</script>
+	</body>
+</html>
