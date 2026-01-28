@@ -396,7 +396,7 @@
 	}
 }
 
-/* Print button styles - visible on screen only */
+/* Print and Markdown button styles - visible on screen only */
 @media screen {
 	.print-button {
 		position: fixed;
@@ -422,6 +422,33 @@
 	}
 
 	.print-button i {
+		margin-right: 8px;
+	}
+
+	.markdown-button {
+		position: fixed;
+		bottom: 80px;
+		right: 20px;
+		padding: 12px 24px;
+		background-color: #10b981;
+		color: white;
+		border: none;
+		border-radius: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+		z-index: 1000;
+		transition: all 0.3s ease;
+	}
+
+	.markdown-button:hover {
+		background-color: #059669;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+	}
+
+	.markdown-button i {
 		margin-right: 8px;
 	}
 
