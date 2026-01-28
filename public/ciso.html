@@ -69,9 +69,6 @@
 		></script>
 		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
 		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
-		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 		<!-- Theme toggle script - load early to prevent flash -->
 		<script src="theme-toggle.js"></script>
@@ -144,12 +141,13 @@
 			.google-translate-widget {
 				position: fixed;
 				top: 10px;
-				right: 10px;
+				right: 70px;
 				z-index: 9999;
-				background: white;
+				background: var(--bg-card);
 				padding: 5px;
 				border-radius: 5px;
 				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+				border: 1px solid var(--border-color);
 			}
 
 			.hero-section {
@@ -244,7 +242,7 @@
 			.metric-box h3 {
 				margin: 0;
 				font-size: 1.2rem;
-				color: var(--ciso-success);
+				color: #4caf50;
 			}
 
 			.metric-box p {
@@ -283,8 +281,8 @@
 
 			.print-button {
 				position: fixed;
-				bottom: 5rem;
-				right: 2rem;
+				bottom: 2rem;
+				right: 6rem;
 				background: var(--ciso-success);
 				color: white;
 				border: none;
@@ -363,7 +361,7 @@
 			<div class="container">
 				<h1><i class="fa-solid fa-shield-halved"></i> CISO Dashboard</h1>
 				<p>Real-time Threat Intelligence & Security Monitoring</p>
-				<p>Curated by <a href="contact.html" style="color: white; text-decoration: underline;">Alban Andrieu</a></p>
+				<p>Curated by <a href="contact.html" style="color: rgba(255, 255, 255, 0.95); text-decoration: underline; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);">Alban Andrieu</a></p>
 			</div>
 		</header>
 
@@ -377,7 +375,7 @@
 
 			<!-- Compliance Overview -->
 			<section class="dashboard-section">
-				<h2><i class="fa-solid fa-file-certificate"></i> Compliance & Risk Monitoring</h2>
+				<h2><i class="fa-solid fa-certificate"></i> Compliance & Risk Monitoring</h2>
 				<p>Track your organization's compliance posture:</p>
 				<ul>
 					<li>GDPR: <strong>95% Compliant</strong></li>
