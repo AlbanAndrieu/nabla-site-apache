@@ -111,11 +111,23 @@
 				background-color: #2980b9;
 			}
 		</style>
+
+		<!-- CV Markdown Export Script -->
+		<script src="../assets/js/cv-markdown-export.js"></script>
 	</head>
 	<body>
 		<!-- Print Button (hidden when printing) -->
 		<button class="print-button" onclick="window.print()">
 			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<!-- Markdown Download Button (hidden when printing) -->
+		<button
+			class="markdown-button"
+			onclick="downloadAsMarkdown()"
+			aria-label="Download CV as Markdown"
+		>
+			<i class="fas fa-download"></i> Download as Markdown
 		</button>
 
 		<div class="cv-container">
