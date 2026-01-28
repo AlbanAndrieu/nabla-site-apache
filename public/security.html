@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- PAGE settings -->
+    <title>Security Resources & Tools - DevSecOps Best Practices by Alban Andrieu</title>
+    <meta
+      name="description"
+      content="Comprehensive collection of security resources, tools, and best practices. OWASP Top Ten, personal security checklists, network scanning tools, CIS benchmarks, and SSH hardening guides."
+    />
+    <meta
+      name="keywords"
+      content="Security Resources, OWASP, DevSecOps, Security Tools, CIS Benchmarks, SSH Hardening, Network Security, Security Checklist, Vulnerability Scanning, Security Best Practices"
+    />
+    <meta name="author" content="alban.andrieu@free.fr" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://nabla.albandrieu.com/security.html"
+    />
+    <meta
+      property="og:title"
+      content="Security Resources & Tools - DevSecOps Best Practices"
+    />
+    <meta
+      property="og:description"
+      content="Comprehensive security resources including OWASP Top Ten, security tools, CIS benchmarks, and hardening guides."
+    />
+    <meta
+      property="og:image"
+      content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+    />
+    <meta property="og:site_name" content="Nabla - Alban Andrieu" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://nabla.albandrieu.com/security.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Security Resources & Tools - DevSecOps Best Practices"
+    />
+    <meta
+      property="twitter:description"
+      content="Comprehensive security resources and tools for DevSecOps professionals"
+    />
+    <meta
+      property="twitter:image"
+      content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nabla.albandrieu.com/security.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/nabla/nabla-4.png" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="modern-style.css" />
+    <link rel="stylesheet" href="wireframe.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <!-- Print Styles for PDF Export -->
+    <link rel="stylesheet" href="print.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
+      type="text/css"
+    />
+    <script
+      src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+      data-auto-replace-svg="nest"
+    ></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+    <script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+    <!-- Theme toggle script - load early to prevent flash -->
+    <script src="theme-toggle.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="/google-translate-config.js"></script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Security Resources & Tools",
+        "description": "Comprehensive collection of security resources, tools, and best practices for DevSecOps professionals",
+        "url": "https://nabla.albandrieu.com/security.html",
+        "author": {
+          "@type": "Person",
+          "name": "Alban Andrieu",
+          "email": "alban.andrieu@free.fr"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Nabla",
+          "url": "https://nabla.albandrieu.com"
+        }
+      }
+    </script>
+
+    <style>
+      /* Security Page Specific Styles */
+      :root {
+        --security-primary: #dc3545;
+        --security-secondary: #6c757d;
+        --security-success: #28a745;
+        --security-info: #17a2b8;
+        --security-warning: #ffc107;
+        --security-danger: #dc3545;
+      }
+
+      .google-translate-widget {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: white;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--security-danger) 0%,
+          var(--security-info) 100%
+        );
+        color: white;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .hero-section p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Security Resources Section */
+      .security-resources {
+        padding: 3rem 0;
+      }
+
+      .resource-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-card h3 {
+        color: var(--security-danger);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .resource-card .icon {
+        font-size: 2rem;
+        color: var(--security-info);
+        margin-bottom: 1rem;
+      }
+
+      .resource-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .resource-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .resource-list li:last-child {
+        border-bottom: none;
+      }
+
+      .resource-list a {
+        color: var(--security-info);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .resource-list a:hover {
+        color: var(--security-danger);
+        text-decoration: underline;
+      }
+
+      .resource-list i {
+        font-size: 1.2rem;
+      }
+
+      /* Category Badge */
+      .category-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--security-info);
+        color: white;
+        border-radius: 15px;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--security-danger);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background: var(--security-info);
+        color: white;
+      }
+
+      /* Print Button */
+      .print-button {
+        position: fixed;
+        bottom: 5rem;
+        right: 2rem;
+        background: var(--security-success);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+      }
+
+      .print-button:hover {
+        background: var(--security-info);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+
+        .hero-section p {
+          font-size: 1rem;
+        }
+
+        .resource-card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Google Translate Widget -->
+    <div class="google-translate-widget">
+      <div id="google_translate_element"></div>
+    </div>
+
+    <!-- Print Button (hidden when printing) -->
+    <button class="print-button" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="container">
+        <h1><i class="fa-solid fa-shield-halved"></i> Security Resources & Tools</h1>
+        <p>Comprehensive collection of security resources for DevSecOps professionals</p>
+        <p>Curated by <a href="contact.html" style="color: white; text-decoration: underline;">Alban Andrieu</a></p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="security-resources">
+      <div class="container">
+        
+        <!-- OWASP Resources -->
+        <section class="resource-card">
+          <span class="category-badge">Application Security</span>
+          <div class="icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>OWASP - Open Web Application Security Project</h3>
+          <p>The OWASP Foundation works to improve the security of software through its community-led open source software projects, hundreds of chapters worldwide, tens of thousands of members, and by hosting local and global conferences.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Top 10 - The most critical security risks to web applications
+              </a>
+            </li>
+            <li>
+              <a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Web Security Testing Guide (WSTG)
+              </a>
+            </li>
+            <li>
+              <a href="https://owasp.org/www-project-application-security-verification-standard/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Application Security Verification Standard (ASVS)
+              </a>
+            </li>
+            <li>
+              <a href="https://owasp.org/www-community/vulnerabilities/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Vulnerability Categories
+              </a>
+            </li>
+            <li>
+              <a href="https://owasp.org/www-project-api-security/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP API Security Top 10
+              </a>
+            </li>
+            <li>
+              <a href="https://owasp.org/www-project-mobile-top-10/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Mobile Top 10
+              </a>
+            </li>
+            <li>
+              <a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                OWASP Cheat Sheet Series
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Personal Security Checklist -->
+        <section class="resource-card">
+          <span class="category-badge">Personal Security</span>
+          <div class="icon">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h3>Personal Security Checklist</h3>
+          <p>A curated checklist of 300+ tips for protecting digital security and privacy in 2024. Comprehensive guide covering all aspects of personal cybersecurity.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://github.com/lissy93/personal-security-checklist" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                Personal Security Checklist by Lissy93
+              </a>
+            </li>
+            <li>
+              <a href="https://digital-defense.io/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Digital Defense - Interactive Security Guide
+              </a>
+            </li>
+            <li>
+              <a href="https://www.privacytools.io/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Privacy Tools - Encryption Against Global Mass Surveillance
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Network Security Tools -->
+        <section class="resource-card">
+          <span class="category-badge">Network Security</span>
+          <div class="icon">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3>Network Security & Scanning Tools</h3>
+          <p>Tools and resources for network security assessment, vulnerability scanning, and network diagram generation.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://www.it-connect.fr/tuto-scanopy-outil-creation-automatique-diagramme-reseau/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Scanopy - Automatic Network Diagram Creation Tool (French)
+              </a>
+            </li>
+            <li>
+              <a href="https://nmap.org/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Nmap - Network Mapper for Security Auditing
+              </a>
+            </li>
+            <li>
+              <a href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Wireshark - Network Protocol Analyzer
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/robertdavidgraham/masscan" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                Masscan - Fast TCP Port Scanner
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- System Hardening & CIS Benchmarks -->
+        <section class="resource-card">
+          <span class="category-badge">System Hardening</span>
+          <div class="icon">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3>System Hardening & CIS Benchmarks</h3>
+          <p>Best practices and benchmarks for hardening systems and improving security posture.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://blog.stephane-robert.info/docs/securiser/durcissement/cis-benchmarks/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                CIS Benchmarks Guide (French) - Security Configuration Benchmarks
+              </a>
+            </li>
+            <li>
+              <a href="https://www.cisecurity.org/cis-benchmarks/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                CIS Benchmarks Official Site
+              </a>
+            </li>
+            <li>
+              <a href="https://blog.stephane-robert.info/docs/securiser/durcissement/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                System Hardening Guides (French)
+              </a>
+            </li>
+            <li>
+              <a href="https://dev-sec.io/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                DevSec Hardening Framework
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- SSH Security -->
+        <section class="resource-card">
+          <span class="category-badge">SSH Security</span>
+          <div class="icon">
+            <i class="fa-solid fa-terminal"></i>
+          </div>
+          <h3>SSH Security & Hardening</h3>
+          <p>Comprehensive guides for securing SSH access and hardening SSH configurations.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://blog.stephane-robert.info/docs/securiser/durcissement/ssh/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                SSH Hardening Guide (French) - Complete SSH Security Tutorial
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ssh.com/academy/ssh/security" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                SSH.COM Security Guide
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mozilla/ssh_scan" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                SSH Scan by Mozilla - SSH Configuration Scanner
+              </a>
+            </li>
+            <li>
+              <a href="https://infosec.mozilla.org/guidelines/openssh" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Mozilla OpenSSH Security Guidelines
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Security Standards & Compliance -->
+        <section class="resource-card">
+          <span class="category-badge">Standards & Compliance</span>
+          <div class="icon">
+            <i class="fa-solid fa-file-certificate"></i>
+          </div>
+          <h3>Security Standards & Compliance</h3>
+          <p>Industry standards, compliance frameworks, and regulatory guidelines for security.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                NIST Cybersecurity Framework
+              </a>
+            </li>
+            <li>
+              <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                ISO/IEC 27001 - Information Security Management
+              </a>
+            </li>
+            <li>
+              <a href="https://www.pcisecuritystandards.org/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                PCI DSS - Payment Card Industry Data Security Standard
+              </a>
+            </li>
+            <li>
+              <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                GDPR - General Data Protection Regulation
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Vulnerability Management -->
+        <section class="resource-card">
+          <span class="category-badge">Vulnerability Management</span>
+          <div class="icon">
+            <i class="fa-solid fa-bug"></i>
+          </div>
+          <h3>Vulnerability Management & Scanning</h3>
+          <p>Tools and resources for identifying, assessing, and managing vulnerabilities.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                National Vulnerability Database (NVD)
+              </a>
+            </li>
+            <li>
+              <a href="https://cve.mitre.org/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                CVE - Common Vulnerabilities and Exposures
+              </a>
+            </li>
+            <li>
+              <a href="https://www.cisa.gov/known-exploited-vulnerabilities" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                CISA Known Exploited Vulnerabilities Catalog
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                Trivy - Comprehensive Security Scanner
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/zaproxy/zaproxy" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                OWASP ZAP - Web Application Security Scanner
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- DevSecOps Tools -->
+        <section class="resource-card">
+          <span class="category-badge">DevSecOps</span>
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>DevSecOps Tools & Practices</h3>
+          <p>Tools and practices for integrating security into the DevOps pipeline.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://github.com/cncf/tag-security" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                CNCF TAG Security
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/github/codeql" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                CodeQL - Semantic Code Analysis Engine
+              </a>
+            </li>
+            <li>
+              <a href="https://semgrep.dev/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Semgrep - Fast Static Analysis Tool
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                TruffleHog - Find Secrets in Your Code
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/bridgecrewio/checkov" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                Checkov - Infrastructure as Code Scanner
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Cloud Security -->
+        <section class="resource-card">
+          <span class="category-badge">Cloud Security</span>
+          <div class="icon">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3>Cloud Security Resources</h3>
+          <p>Best practices and tools for securing cloud infrastructure and services.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://www.cloudflare.com/learning/security/what-is-cloud-security/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Cloud Security Fundamentals
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/toniblyx/prowler" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                Prowler - AWS Security Assessment Tool
+              </a>
+            </li>
+            <li>
+              <a href="https://cloud.google.com/security/best-practices" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Google Cloud Security Best Practices
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.microsoft.com/en-us/azure/security/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Azure Security Documentation
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Security Learning Resources -->
+        <section class="resource-card">
+          <span class="category-badge">Learning & Training</span>
+          <div class="icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3>Security Learning Resources</h3>
+          <p>Platforms and resources for learning and improving security skills.</p>
+          <ul class="resource-list">
+            <li>
+              <a href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                TryHackMe - Hands-on Cyber Security Training
+              </a>
+            </li>
+            <li>
+              <a href="https://www.hackthebox.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Hack The Box - Penetration Testing Labs
+              </a>
+            </li>
+            <li>
+              <a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Web Security Academy by PortSwigger
+              </a>
+            </li>
+            <li>
+              <a href="https://www.offensive-security.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-external-link-alt"></i>
+                Offensive Security - Professional Security Training
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4" style="background-color: #f8f9fa; margin-top: 3rem;">
+      <div class="container">
+        <p class="mb-2">
+          &copy; 2024-2026 <a href="contact.html">Alban Andrieu</a> - DevSecOps Professional
+        </p>
+        <p class="mb-2">
+          <a href="index.html">Home</a> |
+          <a href="contact.html">Contact</a> |
+          <a href="cv/index.html">CV</a> |
+          <a href="policy/privacy_policy.html">Privacy Policy</a> |
+          <a href="ciso.html">CISO Dashboard</a>
+        </p>
+        <p class="text-muted small">
+          Last updated: <time datetime="2026-01-28">January 28, 2026</time>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Back to top of page">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.min.js"
+      integrity="sha512-1TK5EkM3S/pmOdAMlRjBH+Ja3EAWv5VdxgAV7qXJ8SgZaHvPxOAUAe7hPcPtQ5Gs+XLsUHMgJNhpBUYEOCfV1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
