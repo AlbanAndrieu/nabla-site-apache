@@ -1,6 +1,6 @@
 +++
 title = "Nabla DevSecOps"
-date = 2026-01-28
+date = "2026-01-28"
 draft = false
 description = "Nabla company promoting Alban Andrieu as an experienced DevSecOps professional"
 +++

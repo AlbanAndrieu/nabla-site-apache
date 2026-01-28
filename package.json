@@ -28,7 +28,7 @@
 		"start-python": "python -m http.server 8001",
 		"hugo:build": "hugo --minify",
 		"hugo:dev": "hugo server -D",
-		"hugo:clean": "rm -rf resources/_gen hugo_stats.json .hugo_build.lock",
+		"hugo:clean": "npx rimraf resources/_gen hugo_stats.json .hugo_build.lock",
 		"test": "playwright test",
 		"test:headed": "playwright test --headed",
 		"test:ui": "playwright test --ui",

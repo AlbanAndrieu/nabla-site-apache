@@ -86,8 +86,8 @@ npm test             # Run Playwright tests
 
 ```bash
 hugo                 # Build site to public/
-hugo server         # Start dev server (with drafts)
-hugo server -D      # Start dev server with drafts
+hugo server         # Start dev server (production mode, no drafts)
+hugo server -D      # Start dev server with drafts included
 hugo --minify       # Build with minification
 hugo new posts/my-post.md  # Create new content
 ```

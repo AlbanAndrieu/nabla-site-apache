@@ -22,7 +22,7 @@ Each content file should have front matter at the top:
 ```markdown
 +++
 title = "Page Title"
-date = 2026-01-28
+date = "2026-01-28"
 draft = false
 description = "Page description for SEO"
 +++
