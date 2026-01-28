@@ -1,0 +1,18 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"name": "nabla-site-apache-hugo",
+	"regions": ["fra1"],
+	"github": {
+		"silent": true,
+		"autoJobCancelation": true
+	},
+	"build": {
+		"env": {
+			"HUGO_VERSION": "0.140.2"
+		}
+	},
+	"outputDirectory": "public",
+	"framework": "hugo",
+	"buildCommand": "hugo --minify"
+}

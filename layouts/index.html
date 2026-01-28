@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="home">
+    <h1>{{ .Title }}</h1>
+    
+    {{ .Content }}
+    
+    <!-- List recent pages or posts if any -->
+    {{ $pages := where .Site.RegularPages "Type" "!=" "page" }}
+    {{ if $pages }}
+    <section class="recent-pages">
+        <h2>Recent Pages</h2>
+        <ul>
+        {{ range first 5 $pages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ if .Date }}
+                <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+                {{ end }}
+            </li>
+        {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+</div>
+{{ end }}
