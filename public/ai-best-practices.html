@@ -379,12 +379,16 @@
 	</head>
 	<body>
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
+		<button
+			class="print-button"
+			onclick="window.print()"
+			aria-label="Print page or save as PDF"
+		>
 			<i class="fas fa-print"></i> Print / Save as PDF
 		</button>
 
 		<!-- Google Translate Widget -->
-		<div class="google-translate-widget">
+		<div class="google-translate-widget" aria-label="Language translation options">
 			<div id="google_translate_element"></div>
 		</div>
 
@@ -697,7 +701,7 @@
 			</p>
 
 			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2025 Alban Andrieu. Independent DevSecOps Professional.
+				© 2026 Alban Andrieu. Independent DevSecOps Professional.
 			</p>
 		</footer>
 
@@ -706,6 +710,7 @@
 			// Smooth scrolling for anchor links
 			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 				anchor.addEventListener("click", function (e) {
+					if (!this.hasAttribute("href")) return;
 					const href = this.getAttribute("href");
 					if (href !== "#" && href.length > 1) {
 						e.preventDefault();
