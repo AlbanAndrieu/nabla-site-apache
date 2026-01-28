@@ -77,3 +77,8 @@ playwright/.cache/
 # Backup files
 *.backup
 *-old.html
+
+# Hugo
+/resources/_gen/
+hugo_stats.json
+.hugo_build.lock

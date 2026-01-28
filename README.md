@@ -16,6 +16,45 @@ This is a simple HTML project for Nabla company that promotes Alban Andrieu as a
 
 Default nabla files for apache
 
+## Hugo Migration in Progress
+
+This project is being prepared for migration from static HTML to Hugo static site generator.
+
+### Current Status
+- ✅ Hugo directory structure created (`content/`, `layouts/`, `static/`, `themes/`, `archetypes/`)
+- ✅ Hugo configuration file (`hugo.toml`) added
+- ✅ GitHub Actions workflow for Hugo build and Vercel deployment created
+- ⏳ Existing HTML files remain in `public/` directory and continue to work
+- ⏳ Hugo templates and content conversion pending
+
+### Hugo Setup
+See [HUGO_MIGRATION.md](./HUGO_MIGRATION.md) for detailed migration documentation.
+
+To build the site with Hugo:
+```bash
+# Install Hugo
+brew install hugo  # macOS
+# or
+sudo apt-get install hugo  # Ubuntu/Debian
+
+# Build the site
+hugo --minify
+
+# Run development server
+hugo server -D
+```
+
+### GitHub Actions
+The repository now includes a Hugo build and deployment workflow (`.github/workflows/hugo-deploy.yml`) that:
+1. Builds the Hugo site
+2. Uploads build artifacts
+3. Deploys to Vercel (on push to main/master branch)
+
+Required secrets for GitHub Actions:
+- `VERCEL_TOKEN`: Vercel authentication token
+- `VERCEL_ORG_ID`: Your Vercel organization ID
+- `VERCEL_PROJECT_ID`: Your Vercel project ID
+
 ## Monorepo Structure
 
 This repository contains multiple deployable projects:

@@ -1,0 +1,42 @@
+baseURL = 'https://nabla.albandrieu.com/'
+languageCode = 'en-us'
+title = 'Nabla DevSecOps'
+theme = ''
+
+# Build configuration
+[build]
+  writeStats = true
+
+# Output directories
+publishDir = 'public'
+
+# Disable features not needed yet
+disableKinds = ['taxonomy', 'term']
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Params for site metadata
+[params]
+  description = 'Nabla company promoting Alban Andrieu as an experienced DevSecOps professional'
+  author = 'Alban Andrieu'
+  email = 'alban.andrieu@free.fr'
+
+# Menu configuration (can be expanded later)
+[[menus.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Contact'
+  url = '/contact'
+  weight = 2
+
+[[menus.main]]
+  name = 'Security'
+  url = '/security'
+  weight = 3
