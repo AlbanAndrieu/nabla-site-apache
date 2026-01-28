@@ -60,7 +60,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npm run start-python',
+    command: 'hugo --minify && npm run start-python',
     url: 'http://localhost:8001',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
