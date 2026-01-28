@@ -321,6 +321,12 @@
 				color: white;
 			}
 
+			/* Footer Styles */
+			footer {
+				background-color: var(--bg-secondary);
+				margin-top: 3rem;
+			}
+
 			/* Responsive Design */
 			@media (max-width: 768px) {
 				.hero-section h1 {
@@ -342,6 +348,18 @@
 				.metric-box {
 					min-width: 100%;
 				}
+
+				.print-button {
+					bottom: 6rem;
+					right: 1rem;
+					font-size: 0.9rem;
+					padding: 0.6rem 1rem;
+				}
+
+				.back-to-top {
+					bottom: 1rem;
+					right: 1rem;
+				}
 			}
 		</style>
 	</head>
@@ -352,7 +370,7 @@
 		</div>
 
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
+		<button class="print-button" onclick="window.print()" aria-label="Print or save dashboard as PDF">
 			<i class="fa-solid fa-print"></i> Print / Save as PDF
 		</button>
 
@@ -407,7 +425,7 @@
 		</main>
 
 		<!-- Footer -->
-		<footer class="text-center py-4" style="background-color: var(--bg-secondary); margin-top: 3rem;">
+		<footer class="text-center py-4">
 			<div class="container">
 				<p class="mb-2">
 					&copy; 2024-2026 <a href="contact.html">Alban Andrieu</a> - DevSecOps Professional
