@@ -114,21 +114,47 @@
 
 		<!-- CV Markdown Export Script -->
 		<script src="../assets/js/cv-markdown-export.js"></script>
+		<!-- Print Menu Script -->
+		<script src="../assets/js/print-menu.js"></script>
 	</head>
 	<body>
-		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
-			<i class="fas fa-print"></i> Print / Save as PDF
-		</button>
-
-		<!-- Markdown Download Button (hidden when printing) -->
-		<button
-			class="markdown-button"
-			onclick="downloadAsMarkdown()"
-			aria-label="Download CV as Markdown"
-		>
-			<i class="fas fa-download"></i> Download as Markdown
-		</button>
+		<!-- Combined Print/Export Menu Button (hidden when printing) -->
+		<div class="print-menu-container">
+			<button
+				class="print-menu-button"
+				onclick="togglePrintMenu(event)"
+				aria-label="Print or Export Menu"
+				aria-haspopup="true"
+				aria-expanded="false"
+			>
+				<i class="fas fa-print"></i>
+				<span>Print / Save as PDF</span>
+				<i class="fas fa-chevron-up dropdown-arrow"></i>
+			</button>
+			<div
+				id="print-menu-dropdown"
+				class="print-menu-dropdown"
+				role="menu"
+				aria-label="Print and Export Options"
+			>
+				<button
+					class="primary-option"
+					onclick="handlePrintPDF()"
+					role="menuitem"
+				>
+					<i class="fas fa-file-pdf"></i>
+					<span>Print / Save as PDF</span>
+				</button>
+				<button
+					class="secondary-option"
+					onclick="handleExportMarkdown()"
+					role="menuitem"
+				>
+					<i class="fas fa-file-code"></i>
+					<span>Download as Markdown</span>
+				</button>
+			</div>
+		</div>
 
 		<div class="cv-container">
 			<div class="header">
