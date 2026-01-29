@@ -14,7 +14,7 @@ function htmlToMarkdown(container) {
 
 	// Remove unwanted elements (buttons, links that are not content)
 	const elementsToRemove = cvContent.querySelectorAll(
-		'.print-button, .markdown-button, .back-link'
+		'.print-button, .markdown-button, .print-menu-container, .back-link'
 	);
 	elementsToRemove.forEach((el) => el.remove());
 
