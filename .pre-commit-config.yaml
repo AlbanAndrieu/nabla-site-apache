@@ -224,7 +224,7 @@ repos:
     # This helps ensure cross-compatibility with people who don't wish to use uv
 -   repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.9.27
+    rev: 0.9.28
     hooks:
     -   id: uv-sync
         name: "⚡️ uv · Sync dependencies with uv"
