@@ -1,26 +1,38 @@
-name: Build template
+name: Build CV PDFs
 on: [push, pull_request]
 
 jobs:
-  build-template:
-    name: Build template
+  build-cv-pdfs:
+    name: Build CV PDFs (EN / FR)
     runs-on: ubuntu-24.04
     steps:
       - name: Install TeX Live
         run: sudo apt update && sudo apt install texlive-full fonts-font-awesome
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Build pdf
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026.tex
-      - name: Scan log
-        run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026.log
-      - name: Upload pdf
+      - name: Build PDF (English)
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026-en.tex
+      - name: Scan log (English)
+        run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026-en.log
+      - name: Build PDF (French)
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026-fr.tex
+      - name: Scan log (French)
+        run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026-fr.log
+
+      - name: Build PDF (Test)
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-test.tex -aux-directory=./public/cv
+
+      - name: Upload PDF artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cv-aandrieu-XX-XX-2026.pdf
-          path: ./public/cv/cv-aandrieu-XX-XX-2026.pdf
-      - name: Upload log
+          name: cv-pdfs
+          path: |
+            ./public/cv/cv-aandrieu-XX-XX-2026-en.pdf
+            ./public/cv/cv-aandrieu-XX-XX-2026-fr.pdf
+      - name: Upload log artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cv-aandrieu-XX-XX-2026.log
-          path: ./public/cv/cv-aandrieu-XX-XX-2026.log
+          name: cv-logs
+          path: |
+            ./public/cv/cv-aandrieu-XX-XX-2026-en.log
+            ./public/cv/cv-aandrieu-XX-XX-2026-fr.log

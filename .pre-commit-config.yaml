@@ -159,6 +159,7 @@ repos:
             pnpm-lock.yaml|
             public/wireframe.css|
             cv/cv-aandrieu-XX-XX-.*|
+            public/cv/fonts/segoeuib.ttf|
             vue-client/package-lock.json|
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
