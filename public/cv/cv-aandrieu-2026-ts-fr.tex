@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template — Version française
+% Version 1.0 (14/7/16)
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by
+% Vel (vel@LaTeXTemplates.com) and Harsh (harsh.gadgil@gmail.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+% Command for printing skill overview bubbles
+\newcommand\skills{
+~
+	\smartdiagram[bubble diagram]{
+        \textbf{Cloud}\\\textbf{Architect},
+        \textbf{CI/CD}\\\textbf{DevOps},
+        \textbf{~~~~~~~~Sécurité~~~~~~~~~},
+        \textbf{~~~~~~Conteneurs~~~~~~}\\\textbf{~~(Docker/K8s)~~},
+        \textbf{~~~~~Automatisation~~~~~}
+    }
+}
+
+% Barres de compétences (format: {libellé / niveau} ; un "/" par élément)
+\programming{{Python Shell Java C++ / 5}, {Sécurité Monitoring / 4}, {Docker Kubernetes SDLC / 5}}
+
+% Formation
+\education{
+\textbf{Diplôme d'Ingénieur, Informatique} \\
+EFREI - École d'Ingénieurs Généralistes \\
+1999 - 2004 | Paris, France
+
+\textbf{Baccalauréat} (Série scientifique, Mathématiques) \\
+1999 | France
+}
+
+%----------------------------------------------------------------------------------------
+%	 INFORMATIONS PERSONNELLES
+%----------------------------------------------------------------------------------------
+
+\cvname{Alban ANDRIEU}
+\cvjobtitle{Architecte Cloud DevSecOps}
+
+\cvlinkedin{/in/nabla}
+\cvgithub{} % laisser vide si non utilisé
+\cvnumberphone{+33 6 95 43 53 53}
+\cvsite{nabla.albandrieu.com}
+\cvmail{alban.andrieu@free.fr}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makeprofile % Afficher la barre latérale
+
+%----------------------------------------------------------------------------------------
+%	 EXPÉRIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Expérience}
+
+\begin{twenty}
+	\twentyitem
+		{2022 -}
+		{Présent}
+		{Architecte Cloud, Intégration (DevSecOps)}
+		{\href{https://jusmundi.com}{Jus Mundi}}
+		{Paris, France}
+		{\begin{itemize}
+		\item \textbf{Mission :} Transition IA et hébergement du site pour la plateforme droit international \& arbitrage (jusmundi.com)
+		\item \textbf{Sécurité infrastructure :} Analyse de vulnérabilités, gestion des secrets, contrôles d'accès
+		\item \textbf{Conteneurisation \& Kubernetes :} Images Docker, clusters K8s en production (réseau, stockage, supervision)
+		\item \textbf{CI/CD :} Standardisation des processus, indicateurs qualité, coordination inter-équipes avec Dev et Data Science
+		\item \textbf{Stack :} Microservices en Python, Go, Nuxt, PHP ; IA JusMundi et recherche optimisée pour le contenu juridique international
+		\item Continuité d'activité, exigences de sécurité élevées, accompagnement du déploiement IA (Engineering et Data Science)
+		\end{itemize}}
+	\\
+	\twentyitem
+		{2012 -}
+		{2022}
+		{Architecte Intégration Cloud}
+		{\href{https://finastra.com}{Finastra} (ex-Misys / Thomson Reuters)}
+		{Paris, France}
+		{\begin{itemize}
+		\item \textbf{Mission :} Transformation digitale et migration cloud — Trésorerie \& Marchés de capitaux (finastra.com)
+		\item Mise en place de l'intégration continue et de l'automatisation
+		\item Déploiement des pipelines Jenkins et Ansible ; réduction de 60\,\% des incidents d'intégration
+		\item Sécurité : SAST/DAST, Klocwork, Fuzzing, détection de secrets, gestion des vulnérabilités
+		\item Collaboration avec les équipes développement, QA et opérations pour les bonnes pratiques DevSecOps
+		\end{itemize}}
+	\\
+	\twentyitem
+		{2007 -}
+		{2012}
+		{Ingénieur Logiciel Senior}
+		{\href{https://finastra.com}{Finastra}}
+		{Paris, France}
+		{\begin{itemize}
+		\item \textbf{Mission :} Modules stock et comptabilité — Kondor+ Back-Office (K+TP)
+		\item Architecture 3 tiers : services métier C++, Java J2EE, middleware CORBA
+		\item Gestion des stocks en temps réel ; génération automatique des écritures bilancielles et hors bilan (conformité réglementaire)
+		\item Optimisation des performances pour le traitement à fort volume
+		\end{itemize}}
+	\\
+	\twentyitem
+		{2005 -}
+		{2010}
+		{Ingénieur Logiciel}
+		{Société Générale Corporate \& Investment Banking (via ESN)}
+		{Paris, France}
+		{\begin{itemize}
+		\item \textbf{Mission :} Systèmes d'information back-office (EOLE, GATE)
+		\item Développement et maintenance en C, PL/SQL, Java ; migration Oracle 8i vers 10g ; migration True64 vers Sun Solaris
+		\item Support niveau 2, gestion des incidents de production, analyse des besoins avec les analystes métier
+		\end{itemize}}
+\end{twenty}
+
+
+%----------------------------------------------------------------------------------------
+%	 LANGUES
+%----------------------------------------------------------------------------------------
+\section{Langues}
+
+\textbf{Français} — Langue maternelle | \textbf{Anglais} — Professionnel (TOEIC 750)
+
+%----------------------------------------------------------------------------------------
+%	 INFORMATIONS COMPLÉMENTAIRES
+%----------------------------------------------------------------------------------------
+\section{Informations complémentaires}
+
+Disponibilité : ouvert aux missions en conseil et en contrat. Autorisation de travail : France et UE. Expérience du télétravail et des équipes distribuées. Mobilité envisageable (ex. Francfort).
+
+%----------------------------------------------------------------------------------------
+%	 RÉSUMÉ PROFESSIONNEL
+%----------------------------------------------------------------------------------------
+
+
+\end{document}

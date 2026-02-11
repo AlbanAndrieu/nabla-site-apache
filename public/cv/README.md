@@ -3,5 +3,5 @@ make --debug clean pdf view
 ```
 
 ```
-htlatex cv-aandrieu-XX-XX-2026.tex html "" -dSomeDir "--interaction=nonstopmode -shell-escape"
+htlatex cv-aandrieu-2026-en.tex html "" -dSomeDir "--interaction=nonstopmode -shell-escape"
 ```

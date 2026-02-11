@@ -330,8 +330,6 @@
       //# sourceURL=obs.inline.js
     </script>
 
-    <script type="text/javascript" src="d3.v3.min.js"></script>
-
     <!-- Start VWO Async SmartCode -->
     <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
     <script type="text/javascript" id="vwoCode">
@@ -757,16 +755,23 @@
         "subjectOf": [
           {
             "@type": "DigitalDocument",
-            "name": "LaTeX Resume PDF",
+            "name": "LaTeX Resume French PDF",
             "description": "Traditional formatted French resume in PDF format",
-            "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-XX-XX-2026.pdf",
+            "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-2026-fr.pdf",
             "encodingFormat": "application/pdf"
           },
           {
             "@type": "DigitalDocument",
-            "name": "LinkedIn Resume PDF",
+            "name": "LaTeX Resume English PDF",
+            "description": "Traditional formatted English resume in PDF format",
+            "url": "https://nabla.albandrieu.com/cv/cv-aandrieu-2026-en.pdf",
+            "encodingFormat": "application/pdf"
+          },
+          {
+            "@type": "DigitalDocument",
+            "name": "LinkedIn Resume English PDF",
             "description": "LinkedIn profile exported as PDF",
-            "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01.pdf",
+            "url": "https://nabla.albandrieu.com/cv/linkedin/cv-aandrieu-linkedin-2026-01-01-en.pdf",
             "encodingFormat": "application/pdf"
           },
           {
@@ -774,6 +779,24 @@
             "name": "Online CV Landing Page",
             "description": "Interactive web-based CV and professional profile",
             "url": "https://nabla.albandrieu.com/cv/index.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Online Small CV Page",
+            "description": "Interactive web-based small CV page",
+            "url": "https://nabla.albandrieu.com/cv/cv-small-en.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Online Medium CV Page",
+            "description": "Interactive web-based medium CV page",
+            "url": "https://nabla.albandrieu.com/cv/cv-medium-en.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Online Large CV Page",
+            "description": "Interactive web-based large CV page",
+            "url": "https://nabla.albandrieu.com/cv/cv-large-en.html"
           }
         ]
       }
@@ -885,41 +908,15 @@
                           <a href="https://www.linkedin.com/in/nabla/"
                             class="btn btn-sm btn-outline-primary mr-2" target="_blank" rel="noopener"
                             itemprop="sameAs">View Online</a>
-                          <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01.pdf"
-                            class="btn btn-sm btn-primary" target="_blank" download>Download PDF</a>
                         </div>
                       </div>
                     </div>
 
                     <div class="list-group list-group-flush">
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
-                          <strong>FlowCV Profile</strong>
-                          <p class="mb-0 text-muted small">Interactive modern CV format</p>
-                        </div>
-                        <div>
-                          <a href="https://flowcv.com/resume/cojup4q8oq92/"
-                            class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View
-                            Online</a>
-                        </div>
-                      </div>
-
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
-                          <strong>LaTeX CV</strong>
-                          <p class="mb-0 text-muted small">Traditional formatted LaTeX resume</p>
-                        </div>
-                        <div>
-                          <a href="cv-aandrieu-XX-XX-2026.pdf" class="btn btn-sm btn-primary"
-                            target="_blank" download>Download PDF</a>
-                        </div>
-                      </div>
 
                       <div class="list-group-item d-flex flex-column">
                         <div>
-                          <i class="fa fa-file-pdf-o text-danger mr-2"></i>
+                          <i class="fa fa-file-pdf-o text-primary mr-2"></i>
                           <strong>(Choose by Detail Level) C.V:</strong>
                           <p class="mb-0 text-muted small">Traditional formatted HTML resume — English (EN) and French (FR)</p>
                         </div>
@@ -945,40 +942,59 @@
                           <a href="/cv/cv-large-fr.html" target="_blank">[FR – Détail complet]</a>
                         </p>
 
-                        <hr />
-
                       </div>
 
+
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fa fa-file-pdf-o text-primary mr-2"></i>
+                          <strong>LaTeX CV</strong>
+                          <p class="mb-0 text-muted small">Traditional formatted LaTeX resume</p>
+                        </div>
+                        <div>
+                          <p class="mb-0 text-muted small">Basic style</p>
+                          <a href="cv-aandrieu-2026-en.pdf" class="btn btn-sm btn-primary"
+                            target="_blank" download>Download English PDF</a>
+                            <a href="cv-aandrieu-2026-fr.pdf" class="btn btn-sm btn-primary"
+                            target="_blank" download>Download French PDF</a>
+                        </div>
+                        <div>
+                          <p class="mb-0 text-muted small">20 Seconds style</p>
+                            <a href="cv-aandrieu-2026-ts-en.pdf" class="btn btn-sm btn-primary"
+                              target="_blank" download>Download English PDF</a>
+                            <a href="cv-aandrieu-2026-ts-fr.pdf" class="btn btn-sm btn-primary"
+                              target="_blank" download>Download French PDF</a>
+                        </div>
+                      </div>
+
+
                     </div>
+
                   </section>
 
                   <section class="cv-section mb-4">
                     <h3 class="h5 border-bottom pb-2 mb-3">
-                      <i class="fa fa-code text-primary mr-2"></i>Key Skills & Expertise
+                      <i class="fa fa-code text-primary mr-2"></i>Old C.V
                     </h3>
-                    <div class="row">
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-primary badge-pill p-2"
-                          itemprop="knowsAbout">DevSecOps</span>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <div>
+                        <i class="fa fa-linkedin text-danger mr-2"></i>
+                        <strong>LinkedIn Profile</strong>
+                        <p class="mb-0 text-muted small">Complete professional history and network</p>
                       </div>
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">CI/CD</span>
+                      <div>
+                        <a href="./linkedin/cv-aandrieu-linkedin-2026-01-01-en.pdf"
+                          class="btn btn-sm btn-primary" target="_blank" download>Download English PDF</a>
                       </div>
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-primary badge-pill p-2" itemprop="knowsAbout">Cloud
-                          Infrastructure</span>
+                      <div>
+                        <i class="fa fa-file-pdf-o text-danger mr-2"></i>
+                        <strong>FlowCV Profile</strong>
+                        <p class="mb-0 text-muted small">Interactive modern CV format</p>
                       </div>
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2"
-                          itemprop="knowsAbout">Automation</span>
-                      </div>
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2"
-                          itemprop="knowsAbout">Security</span>
-                      </div>
-                      <div class="col-md-4 mb-2">
-                        <span class="badge badge-secondary badge-pill p-2" itemprop="knowsAbout">Software
-                          Engineering</span>
+                      <div>
+                        <a href="https://flowcv.com/resume/cojup4q8oq92/"
+                          class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View
+                          Online</a>
                       </div>
                     </div>
                   </section>

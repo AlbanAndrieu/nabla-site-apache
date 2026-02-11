@@ -1,8 +1,29 @@
-Add fontawsome
+# Static Directory
+
+This directory contains static assets that Hugo copies directly to the output without processing.
+
+## Usage
+
+Files in this directory are copied to the root of the generated site:
 
 ```
-npm install --save @fortawesome/fontawesome-svg-core
-npm install --save @fortawesome/free-solid-svg-icons
-npm install --save @fortawesome/free-regular-svg-icons
-npm install --save @fortawesome/free-brands-svg-icons
+static/
+├── css/
+├── js/
+├── images/
+└── favicon.ico
 ```
+
+Becomes:
+
+```
+public/
+├── css/
+├── js/
+├── images/
+└── favicon.ico
+```
+
+## Migration Note
+
+During migration, assets from `public/assets/` will be moved here to be managed by Hugo's build process.

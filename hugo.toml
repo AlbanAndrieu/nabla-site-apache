@@ -1,7 +1,7 @@
 baseURL = 'https://nabla.albandrieu.com/'
 languageCode = 'en-us'
 title = 'Nabla DevSecOps'
-theme = ''
+theme = 'ananke'
 
 # Build configuration
 [build]

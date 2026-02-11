@@ -1,17 +1,16 @@
-TEX = pdflatex
-TEX_OPTS = -shell-escape -interaction=nonstopmode -file-line-error
-#TEX_OPTS = -synctex=1 -interaction=nonstopmode -file-line-error
+# TEX = pdflatex
+# TEX_OPTS = -shell-escape -interaction=nonstopmode -file-line-error
+TEX = latexmk -pdflua
+TEX_OPTS = -pdflua
 BIB = bibtex
 OPEN = xdg-open
 MAX_TRY = 5
 
 ### Main LaTeX file
-MAIN = cv-aandrieu-XX-XX-2026.tex
+MAIN = cv-aandrieu-2026-en.tex
 
 ### Files that are included (producing .aux file)
 INCLUDED_FILES =
-#INCLUDED_FILES = \
-#	intro.tex
 
 ### Files that are included/input (not producing .aux file)
 OTHER_FILES =
@@ -45,10 +44,8 @@ DIRTY_FILES = \
 	$(MAIN:.tex=.toc)
 
 NEED_RUN_MSG_REGEX=\(Rerun to get citations correct\)
-#NEED_RUN_MSG_REGEX:=$(NEED_RUN_MSG_REGEX)\|\(Label(s) may have changed, Rerun to get cross-reference right.\))
-#NEED_RUN_MSG_REGEX:=$(NEED_RUN_MSG_REGEX)\|\(Package rerunfilecheck Warning: File .* has changed.\))
 
-.PHONY: all pdf view clean clean-all test dist
+.PHONY: all pdf view clean clean-all dist
 .SUFFIX: .tex .aux .bbl .pdf .done
 
 all: pdf
@@ -66,10 +63,6 @@ clean:
 clean-all: clean
 	rm -f $(PDF)
 
-#run_tex: $(MAIN)
-#	$(TEX) $(TEX_OPTS) "$<" \
-#	"$(<:.tex=.log); "
-
 run_tex: $(MAIN)
 	CPT=0; \
 	while \
@@ -79,17 +72,13 @@ run_tex: $(MAIN)
 		"$(<:.tex=.log)"; \
 	do CPT=$$((CPT+1)) ; done
 
-#.aux.bbl:
-#	$(BIB) "$<" || true # since chapterbib provokes error code return
-
+.PHONY: PDF
 $(PDF): $(MAIN:.tex=.done)
 
+## —— Build 🚀 —————————————————————————————————————————————————————————————————
+.PHONY: MAIN
 $(MAIN:.tex=.done): $(SOURCES) $(EXTRA_DIST)
 	make run_tex
-#	make $(INCLUDED_FILES:.tex=.bbl) $(MAIN:.tex=.bbl) $(MAIN:.tex=.ind) $(MAIN:.tex=.gls)
-#	make run_tex
-#	make $(INCLUDED_FILES:.tex=.bbl) $(MAIN:.tex=.bbl) $(MAIN:.tex=.ind) $(MAIN:.tex=.gls)
-#	make run_tex
 	touch "$@"
 
 $(DIST): $(SOURCES) $(EXTRA_DIST)

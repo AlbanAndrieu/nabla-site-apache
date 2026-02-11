@@ -11,28 +11,40 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build PDF (English)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026-en.tex
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-en.tex
       - name: Scan log (English)
-        run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026-en.log
+        run: texloganalyser -w ./public/cv/cv-aandrieu-2026-en.log
       - name: Build PDF (French)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-XX-XX-2026-fr.tex
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-fr.tex
       - name: Scan log (French)
-        run: texloganalyser -w ./public/cv/cv-aandrieu-XX-XX-2026-fr.log
+        run: texloganalyser -w ./public/cv/cv-aandrieu-2026-fr.log
 
-      - name: Build PDF (Test)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-test.tex -aux-directory=./public/cv
+      - name: Build 20 secs PDF (English)
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-en.tex -aux-directory=./public/cv
+      - name: Scan 20 secs PDF log (English)
+        run: texloganalyser -w ./public/cv/cv-aandrieu-2026-ts-en.log
+
+      - name: Build 20 secs PDF (French)
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-fr.tex -aux-directory=./public/cv
+      - name: Scan 20 secs PDF log (French)
+        run: texloganalyser -w ./public/cv/cv-aandrieu-2026-fr-en.log
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v4
         with:
           name: cv-pdfs
           path: |
-            ./public/cv/cv-aandrieu-XX-XX-2026-en.pdf
-            ./public/cv/cv-aandrieu-XX-XX-2026-fr.pdf
+            ./public/cv/cv-aandrieu-2026-en.pdf
+            ./public/cv/cv-aandrieu-2026-fr.pdf
+            ./public/cv/cv-aandrieu-2026-ts-en.pdf
+            ./public/cv/cv-aandrieu-2026-ts-fr.pdf
+
       - name: Upload log artifacts
         uses: actions/upload-artifact@v4
         with:
           name: cv-logs
           path: |
-            ./public/cv/cv-aandrieu-XX-XX-2026-en.log
-            ./public/cv/cv-aandrieu-XX-XX-2026-fr.log
+            ./public/cv/cv-aandrieu-2026-en.log
+            ./public/cv/cv-aandrieu-2026-fr.log
+            ./public/cv/cv-aandrieu-2026-ts-en.log
+            ./public/cv/cv-aandrieu-2026-ts-fr.log
