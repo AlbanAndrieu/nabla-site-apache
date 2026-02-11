@@ -139,7 +139,7 @@ npm run test:debug
 npm run test:report
 ```
 
-### CI/CD Integration
+### SDLC Integration
 
 Tests run automatically on GitHub Actions for all push and pull request events. The workflow:
 

@@ -184,7 +184,7 @@ This document summarizes the complete Hugo migration preparation implemented for
 
 The Hugo migration preparation is **100% complete**. The repository now has:
 - Complete Hugo structure
-- Automated CI/CD pipeline
+- Automated SDLC pipeline
 - Comprehensive documentation
 - Full backward compatibility
 - No security issues

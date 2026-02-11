@@ -153,29 +153,29 @@ In this post, we'll explore...
 1. **Use Semantic Markdown**:
    ```markdown
    # Heading 1 (only one per page, usually from front matter title)
-   
+
    ## Heading 2 (main sections)
-   
+
    ### Heading 3 (subsections)
-   
+
    **Bold text** for emphasis
-   
+
    *Italic text* for slight emphasis
-   
+
    [Link text](https://example.com)
-   
+
    ![Alt text](/images/image.jpg)
-   
+
    - Unordered list
    - Item 2
-   
+
    1. Ordered list
    2. Item 2
-   
+
    > Blockquote for citations
-   
+
    `Inline code`
-   
+
    ```code
    Code block
    ```
@@ -207,7 +207,7 @@ In this post, we'll explore...
 
 4. **Use Archetypes**:
    Create templates for consistent content structure.
-   
+
    `archetypes/blog.md`:
    ```yaml
    ---
@@ -220,14 +220,14 @@ In this post, we'll explore...
    categories: []
    image: ""
    ---
-   
+
    ## Introduction
-   
+
    ## Main Content
-   
+
    ## Conclusion
    ```
-   
+
    Create new content:
    ```bash
    hugo new blog/my-new-post.md --kind blog
@@ -248,11 +248,11 @@ Create a base template that all pages inherit from:
 </head>
 <body>
   {{ partial "header.html" . }}
-  
+
   <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
-  
+
   {{ partial "footer.html" . }}
   {{ partial "scripts.html" . }}
 </body>
@@ -276,15 +276,15 @@ Create a base template that all pages inherit from:
       </time>
     {{ end }}
   </header>
-  
+
   {{ if .Params.image }}
     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="featured-image">
   {{ end }}
-  
+
   <div class="content">
     {{ .Content }}
   </div>
-  
+
   {{ if .Params.tags }}
     <footer>
       <p>Tags:
@@ -306,7 +306,7 @@ Create a base template that all pages inherit from:
 <div class="content-list">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  
+
   {{ range .Pages }}
     <article class="summary">
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -367,7 +367,7 @@ Create a base template that all pages inherit from:
    {{ if .Params.author }}
      <p>By {{ .Params.author }}</p>
    {{ end }}
-   
+
    {{ with .Params.image }}
      <img src="{{ . }}" alt="{{ $.Title }}">
    {{ end }}
@@ -401,13 +401,13 @@ Create a base template that all pages inherit from:
    <nav role="navigation" aria-label="Main navigation">
    <main role="main" id="main-content">
    <footer role="contentinfo">
-   
+
    <!-- Skip link -->
    <a href="#main-content" class="skip-link">Skip to main content</a>
-   
+
    <!-- Alt text for images -->
    <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}">
-   
+
    <!-- ARIA labels -->
    <button aria-label="Toggle theme">🌓</button>
    ```
@@ -590,7 +590,7 @@ hugo --minify --gc --verbose
        <!-- Expensive operation -->
      {{ end }}
    {{ end }}
-   
+
    <!-- Good: Assign to variable, use once -->
    {{ $pages := .Site.RegularPages }}
    {{ range $pages }}
@@ -805,7 +805,7 @@ ls -la public/
 find public/ -type f | wc -l
 ```
 
-### CI/CD Pipeline
+### SDLC Pipeline
 
 See `.github/workflows/hugo-deploy.yml` for automated deployment:
 

@@ -6,7 +6,7 @@
 		"email": "alban.andrieu@free.fr",
 		"phone": "",
 		"url": "https://nabla.albandrieu.com",
-		"summary": "Experienced DevSecOps professional specializing in CI/CD, Cloud Infrastructure, and Software Development. Proven track record in implementing automation, security best practices, and modern development workflows across diverse enterprise environments.",
+		"summary": "Experienced DevSecOps professional specializing in SDLC, Cloud Infrastructure, and Software Development. Proven track record in implementing automation, security best practices, and modern development workflows across diverse enterprise environments.",
 		"location": {
 			"address": "",
 			"postalCode": "",
@@ -39,9 +39,9 @@
 			"url": "",
 			"startDate": "",
 			"endDate": "",
-			"summary": "Leading DevSecOps initiatives, implementing CI/CD pipelines, cloud infrastructure management, and security automation across enterprise environments.",
+			"summary": "Leading DevSecOps initiatives, implementing SDLC pipelines, cloud infrastructure management, and security automation across enterprise environments.",
 			"highlights": [
-				"Designed and implemented enterprise-scale CI/CD pipelines",
+				"Designed and implemented enterprise-scale SDLC pipelines",
 				"Automated infrastructure provisioning and configuration management",
 				"Implemented security scanning and compliance automation",
 				"Led cloud migration and modernization projects",
@@ -59,12 +59,31 @@
 			"name": "DevSecOps",
 			"level": "Expert",
 			"keywords": [
-				"CI/CD",
-				"Jenkins",
+				"SDLC",
+				"DevOps",
+				"DevSecOps",
+				"Jenkins CI",
 				"GitLab CI",
 				"GitHub Actions",
 				"Security Scanning",
-				"Compliance Automation"
+				"Compliance Automation",
+				"Java",
+				"C++",
+				"C",
+				"Perl",
+				"PL/SQL",
+				"Shell",
+				"Bash",
+				"Git",
+				"Software Architecture",
+				"System Administration",
+				"System Monitoring",
+				"System Logging",
+				"System Security",
+				"System Configuration",
+				"System Deployment",
+				"System Maintenance",
+				"System Optimization"
 			]
 		},
 		{
@@ -72,9 +91,17 @@
 			"level": "Expert",
 			"keywords": [
 				"AWS",
+				"EKS",
 				"Azure",
+				"AKS",
 				"GCP",
 				"Kubernetes",
+				"Rancher",
+				"OVH",
+				"Scaleway",
+				"Cloudflare",
+				"Cloudflare CDN",
+				"TrueNAS",
 				"Docker",
 				"Terraform",
 				"Infrastructure as Code"
@@ -97,8 +124,7 @@
 			"level": "Expert",
 			"keywords": [
 				"Ansible",
-				"Puppet",
-				"Chef",
+				"Terraform",
 				"Configuration Management",
 				"Scripting"
 			]

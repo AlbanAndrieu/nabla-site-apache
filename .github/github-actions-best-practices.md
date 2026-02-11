@@ -15,7 +15,7 @@ This document provides comprehensive guidelines for creating, maintaining, and o
 
 ## Overview
 
-GitHub Actions is our CI/CD platform for automating builds, tests, and deployments. This guide ensures workflows are:
+GitHub Actions is our SDLC platform for automating builds, tests, and deployments. This guide ensures workflows are:
 - **Secure**: Following security best practices
 - **Efficient**: Optimized for speed and cost
 - **Reliable**: Handling errors gracefully
@@ -312,7 +312,7 @@ jobs:
     steps:
       - name: Run tests
         run: npm test
-      
+
       - name: Upload coverage
         # Only upload coverage if tests passed
         if: success()
@@ -763,18 +763,18 @@ jobs:
       pull-requests: write  # For PR comments
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - run: npm ci
-      
+
       - name: Run ESLint
         run: npm run lint -- --format json --output-file eslint-report.json
         continue-on-error: true
-      
+
       - name: Annotate PR
         if: github.event_name == 'pull_request'
         uses: ataylorme/eslint-annotate-action@v2
@@ -801,20 +801,20 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - run: npm ci
-      
+
       - name: Install Playwright
         run: npx playwright install --with-deps
-      
+
       - name: Run tests
         run: npm run test:e2e
-      
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4

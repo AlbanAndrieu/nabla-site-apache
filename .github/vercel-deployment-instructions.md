@@ -1,6 +1,6 @@
 # Vercel Deployment Instructions
 
-This document provides comprehensive guidelines for deploying the Nabla site to Vercel, including both manual deployments and automated CI/CD workflows.
+This document provides comprehensive guidelines for deploying the Nabla site to Vercel, including both manual deployments and automated SDLC workflows.
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ This document provides comprehensive guidelines for deploying the Nabla site to 
 4. [Deployment Strategies](#deployment-strategies)
 5. [Environment Configuration](#environment-configuration)
 6. [Monorepo Deployments](#monorepo-deployments)
-7. [CI/CD Integration](#cicd-integration)
+7. [SDLC Integration](#cicd-integration)
 8. [Troubleshooting](#troubleshooting)
 9. [Best Practices](#best-practices)
 
@@ -95,7 +95,7 @@ For GitHub Actions integration, you need three values:
 2. Click "Create Token"
 3. Name: `GitHub Actions - Nabla Site`
 4. Scope: Select your team/account
-5. Expiration: Set appropriate duration (or no expiration for persistent CI/CD)
+5. Expiration: Set appropriate duration (or no expiration for persistent SDLC)
 6. Copy the token immediately (shown only once)
 
 #### VERCEL_ORG_ID and VERCEL_PROJECT_ID
@@ -123,7 +123,7 @@ vercel
 **Characteristics**:
 - Unique URL for each deployment
 - Perfect for testing changes
-- Automatically created by CI/CD on PRs
+- Automatically created by SDLC on PRs
 - No production traffic impact
 - Accessible to team members
 
@@ -266,7 +266,7 @@ vercel --prod --cwd ./vue-client
 4. **Shared Dependencies**: Use npm workspaces if needed
 5. **Root Directory**: Set the correct root directory in each project's settings
 
-## CI/CD Integration
+## SDLC Integration
 
 ### GitHub Actions Workflow
 
@@ -290,7 +290,7 @@ jobs:
   build:
     # 1. Build Hugo site
     # 2. Upload artifacts
-  
+
   deploy:
     # 1. Download artifacts
     # 2. Install Vercel CLI
@@ -450,11 +450,11 @@ vercel logs [deployment-url]
 
 1. **Never commit credentials**:
    - Add `.vercel` to `.gitignore` ✅ (already configured)
-   - Use GitHub secrets for CI/CD credentials
+   - Use GitHub secrets for SDLC credentials
    - Rotate tokens regularly
 
 2. **Use principle of least privilege**:
-   - Create separate tokens for CI/CD vs manual deployments
+   - Create separate tokens for SDLC vs manual deployments
    - Limit token scope to specific teams/projects
    - Set token expiration dates
 

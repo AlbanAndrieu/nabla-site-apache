@@ -25,7 +25,7 @@ test.describe("Homepage Tests", () => {
 		const keywords = page.locator('meta[name="keywords"]');
 		await expect(keywords).toHaveAttribute(
 			"content",
-			/DevSecOps, DevOps Consultant, Cloud Architecture, CI\/CD, Security, Independent Consultant, Alban Andrieu/,
+			/DevSecOps, DevOps Consultant, Cloud Architecture, SDLC, Security, Independent Consultant, Alban Andrieu/,
 		);
 
 		// Check author
@@ -51,7 +51,7 @@ test.describe("Homepage Tests", () => {
 		const ogDescription = page.locator('meta[property="og:description"]');
 		await expect(ogDescription).toHaveAttribute(
 			"content",
-			/Experienced DevSecOps Engineer specializing in CI\/CD, Cloud Infrastructure, and Software Development"/,
+			/Experienced DevSecOps Engineer specializing in SDLC, Cloud Infrastructure, and Software Development/,
 		);
 	});
 

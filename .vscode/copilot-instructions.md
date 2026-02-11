@@ -29,7 +29,7 @@ This is the nabla-site-nabla repository, a static website project for "nabla" cr
 - `my-app/` - Next.js application (separate package with its own package.json)
 - `api/` - API functions (contains `index.php`)
 - `scripts/` - Utility scripts (e.g., `run-wicked.sh`)
-- `.github/workflows/` - CI/CD workflows (OpenCommit action)
+- `.github/workflows/` - SDLC workflows (OpenCommit action)
 
 ### Configuration Files
 - `.mega-linter.yml` - MegaLinter configuration (comprehensive multi-language linter)
@@ -119,7 +119,7 @@ npm run deploy
 wrangler deploy
 ```
 
-## CI/CD & Validation
+## SDLC & Validation
 
 ### GitHub Workflows
 - `.github/workflows/opencommit.yml` - OpenCommit action for automated commit message generation (runs on all branches except main/master/dev/development/release)
@@ -214,7 +214,7 @@ When exploring the codebase:
 - API endpoints: Look in `api/` directory
 - Build configurations: Check root-level config files (package.json, vercel.json, wrangler.jsonc)
 - Linting configs: Check `.eslintrc`, `.mega-linter.yml`, `.pre-commit-config.yaml`
-- CI/CD: Check `.github/workflows/`
+- SDLC: Check `.github/workflows/`
 
 ## HTML/CSS Best Practices
 
@@ -601,7 +601,7 @@ When exploring the codebase:
 
 6. **Automated Sitemap Updates**
    - Consider adding a script to auto-generate sitemap from HTML files
-   - Add sitemap validation to pre-commit hooks or CI/CD pipeline
+   - Add sitemap validation to pre-commit hooks or SDLC pipeline
    - Document sitemap update process in CONTRIBUTING.md
 
 ### Open Graph Protocol
@@ -785,7 +785,7 @@ When exploring the codebase:
    - Review and update sitemap monthly
    - Check for broken links quarterly
    - Update dependencies regularly (npm, Python packages)
-   - Monitor Lighthouse scores in CI/CD
+   - Monitor Lighthouse scores in SDLC
    - Review robots.txt annually
 
 2. **Content Updates**
