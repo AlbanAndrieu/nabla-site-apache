@@ -1,5 +1,5 @@
 [[source]]
-url = "https://pypi.org/simple"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -8,6 +8,7 @@ name = "pypi"
 [dev-packages]
 ansible-lint = ">=25.8.2"
 gitlint = ">=0.19.1"
+Pillow = ">=12.1.1"
 
 [requires]
 python_version = "3.12"

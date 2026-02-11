@@ -14,6 +14,7 @@
 		/>
 		<meta name="author" content="alban.andrieu@free.fr" />
 		<meta name="robots" content="noindex, nofollow" />
+		<meta name="color-scheme" content="light dark" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="profile" />
@@ -59,6 +60,7 @@
 		/>
 
 		<link rel="stylesheet" href="../wireframe.css" />
+		<link rel="stylesheet" href="cv-theme.css" />
 
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="../print.css" />
@@ -67,44 +69,50 @@
 			body {
 				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 				line-height: 1.7;
-				color: #2c3e50;
+				color: var(--cv-text);
 				max-width: 1000px;
 				margin: 0 auto;
 				padding: 20px;
-				background-color: #ecf0f1;
+				background-color: var(--cv-bg-page);
+			}
+			body.cv-page-body a {
+				color: var(--cv-link);
+			}
+			body.cv-page-body a:hover {
+				color: var(--cv-link-hover);
 			}
 			.cv-container {
-				background-color: white;
+				background-color: var(--cv-bg-container);
 				padding: 50px;
-				box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+				box-shadow: 0 0 20px var(--cv-shadow);
 			}
 			h1 {
-				color: #2c3e50;
-				border-bottom: 4px solid #3498db;
+				color: var(--cv-heading);
+				border-bottom: 4px solid var(--cv-heading-accent);
 				padding-bottom: 15px;
 				margin-bottom: 25px;
 				font-size: 2.5em;
 			}
 			h2 {
-				color: #3498db;
+				color: var(--cv-heading-accent);
 				margin-top: 40px;
 				margin-bottom: 20px;
 				font-size: 1.6em;
-				border-left: 6px solid #3498db;
+				border-left: 6px solid var(--cv-heading-accent);
 				padding-left: 15px;
-				background-color: #f8f9fa;
+				background-color: var(--cv-bg-card);
 				padding-top: 10px;
 				padding-bottom: 10px;
 			}
 			h3 {
-				color: #2c3e50;
+				color: var(--cv-heading);
 				font-size: 1.2em;
 				margin-top: 20px;
 				margin-bottom: 12px;
 				font-weight: bold;
 			}
 			h4 {
-				color: #34495e;
+				color: var(--cv-text);
 				font-size: 1em;
 				margin-top: 15px;
 				margin-bottom: 8px;
@@ -113,11 +121,11 @@
 				text-align: center;
 				margin-bottom: 40px;
 				padding-bottom: 30px;
-				border-bottom: 2px solid #ecf0f1;
+				border-bottom: 2px solid var(--cv-border-light);
 			}
 			.title {
 				font-size: 1.5em;
-				color: #3498db;
+				color: var(--cv-heading-accent);
 				margin-top: 10px;
 				font-weight: bold;
 				text-transform: uppercase;
@@ -129,7 +137,7 @@
 				line-height: 2;
 			}
 			.contact a {
-				color: #3498db;
+				color: var(--cv-link);
 				text-decoration: none;
 			}
 			.contact a:hover {
@@ -141,27 +149,27 @@
 			.job-entry {
 				margin-bottom: 30px;
 				padding: 20px;
-				background-color: #f8f9fa;
-				border-left: 4px solid #3498db;
+				background-color: var(--cv-bg-card);
+				border-left: 4px solid var(--cv-heading-accent);
 				border-radius: 5px;
 			}
 			.job-header {
 				margin-bottom: 15px;
 				padding-bottom: 10px;
-				border-bottom: 1px solid #dfe6e9;
+				border-bottom: 1px solid var(--cv-border-light);
 			}
 			.company {
 				font-weight: bold;
 				font-size: 1.15em;
-				color: #2c3e50;
+				color: var(--cv-heading);
 			}
 			.location {
-				color: #7f8c8d;
+				color: var(--cv-text-secondary);
 				font-style: italic;
 				margin-top: 3px;
 			}
 			.period {
-				color: #3498db;
+				color: var(--cv-heading-accent);
 				font-weight: bold;
 				margin-top: 3px;
 			}
@@ -182,13 +190,13 @@
 				margin-top: 20px;
 			}
 			.skill-category {
-				background-color: #f8f9fa;
+				background-color: var(--cv-bg-card);
 				padding: 20px;
 				border-radius: 8px;
-				border-top: 3px solid #3498db;
+				border-top: 3px solid var(--cv-heading-accent);
 			}
 			.skill-category h4 {
-				color: #3498db;
+				color: var(--cv-heading-accent);
 				margin-top: 0;
 				margin-bottom: 12px;
 				font-size: 1.05em;
@@ -203,10 +211,10 @@
 				font-size: 0.95em;
 			}
 			.summary-box {
-				background-color: #e8f4f8;
+				background-color: var(--cv-bg-highlight);
 				padding: 25px;
 				border-radius: 8px;
-				border-left: 5px solid #3498db;
+				border-left: 5px solid var(--cv-heading-accent);
 				margin-bottom: 30px;
 			}
 			.summary-box p {
@@ -218,24 +226,24 @@
 				display: inline-block;
 				margin-top: 30px;
 				padding: 12px 25px;
-				background-color: #3498db;
-				color: white;
+				background-color: var(--cv-btn-bg);
+				color: var(--cv-btn-text);
 				text-decoration: none;
 				border-radius: 5px;
 				font-weight: bold;
 			}
 			.back-link:hover {
-				background-color: #2980b9;
+				background-color: var(--cv-btn-bg-hover);
 			}
 			.highlight {
-				background-color: #fff3cd;
+				background-color: var(--cv-bg-warning);
 				padding: 2px 5px;
 				border-radius: 3px;
 			}
 			.badge {
 				display: inline-block;
-				background-color: #3498db;
-				color: white;
+				background-color: var(--cv-btn-bg);
+				color: var(--cv-btn-text);
 				padding: 3px 8px;
 				border-radius: 3px;
 				font-size: 0.85em;
@@ -260,7 +268,7 @@
 		<!-- Print Menu Script -->
 		<script src="../assets/js/print-menu.js"></script>
 	</head>
-	<body>
+	<body class="cv-page-body">
 		<!-- Combined Print/Export Menu Button (hidden when printing) -->
 		<div class="print-menu-container">
 			<button

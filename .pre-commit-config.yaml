@@ -163,6 +163,7 @@ repos:
             vue-client/package-lock.json|
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
+            public/assets/.*.png|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
     -   id: detect-private-key
@@ -242,8 +243,9 @@ repos:
             hooks|
             tests/.*|
             docs/Makefile|
-            .envrc|
             scripts/run-wicked.sh|
+            scripts/convert-.*.sh|
+            .envrc|            
           )$
 
 -   repo: https://github.com/openstack/bashate
@@ -257,6 +259,7 @@ repos:
             trunk|
             scripts/run-python.sh|
             scripts/run-wicked.sh|
+            scripts/convert-.*.sh|            
             .envrc|
           )$
 

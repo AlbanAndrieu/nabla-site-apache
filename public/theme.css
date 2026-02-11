@@ -275,6 +275,13 @@ a:focus {
 	color: var(--alert-warning-text);
 }
 
+/* Contrast: dark text on yellow/white panels (accessibility) */
+.bg-warning h2,
+.bg-warning .text-light,
+.bg-white .text-light {
+	color: #212529 !important;
+}
+
 /* Navigation */
 .collapse.bg-dark,
 .navbar {
