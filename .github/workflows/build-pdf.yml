@@ -8,24 +8,28 @@ jobs:
     steps:
       - name: Install TeX Live
         run: sudo apt update && sudo apt install texlive-full fonts-font-awesome
+
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Build PDF (English)
         run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-en.tex
+
       - name: Scan log (English)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-en.log
+
       - name: Build PDF (French)
         run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-fr.tex
       - name: Scan log (French)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-fr.log
 
       - name: Build 20 secs PDF (English)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-en.tex -aux-directory=./public/cv
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-en.tex -aux-directory=./public/cv -output-directory=./public/cv
       - name: Scan 20 secs PDF log (English)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-ts-en.log
 
       - name: Build 20 secs PDF (French)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-fr.tex -aux-directory=./public/cv
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-ts-fr.tex -aux-directory=./public/cv -output-directory=./public/cv
       - name: Scan 20 secs PDF log (French)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-fr-en.log
 

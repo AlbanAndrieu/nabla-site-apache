@@ -3,7 +3,7 @@
  */
 
 @media print {
-	/* Page Setup */
+	/* Page Setup - no running header/footer; disable "Headers and footers" in print dialog for clean PDF */
 	@page {
 		size: A4;
 		margin: 1.5cm 1cm;
@@ -30,7 +30,7 @@
 		color: black !important;
 	}
 
-	/* Hide elements not needed in print */
+	/* Hide elements not needed in print (PDF) */
 	nav,
 	.navbar,
 	.nav,
@@ -43,6 +43,7 @@
 	.theme-toggle,
 	button,
 	.print-menu-container,
+	.back-link,
 	#navbarHeader,
 	.collapse,
 	[role="navigation"],
