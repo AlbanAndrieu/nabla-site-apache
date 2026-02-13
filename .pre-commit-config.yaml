@@ -164,6 +164,7 @@ repos:
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
             public/assets/.*.png|
+            public/other/.*.png|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
     -   id: detect-private-key

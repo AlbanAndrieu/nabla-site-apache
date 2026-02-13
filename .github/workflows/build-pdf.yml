@@ -13,13 +13,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build PDF (English)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-en.tex
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-en.tex -output-directory=./public/cv
 
       - name: Scan log (English)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-en.log
 
       - name: Build PDF (French)
-        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-fr.tex
+        run: latexmk -pdflua ./public/cv/cv-aandrieu-2026-fr.tex -output-directory=./public/cv
       - name: Scan log (French)
         run: texloganalyser -w ./public/cv/cv-aandrieu-2026-fr.log
 
