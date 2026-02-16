@@ -2,7 +2,7 @@
 <!--
 <meta http-equiv="REFRESH" content="0;url=/sample/index.html">
 -->
-<html lang="en" id="top">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,11 +19,15 @@
 			content="DevSecOps, DevOps Consultant, Cloud Architecture, SDLC, Security, Independent Consultant, Alban Andrieu"
 		/>
 		<meta name="author" content="Alban Andrieu" />
-		<meta name="robots" content="noindex, nofollow" />
+
+		<meta
+			name="image"
+			content="https://albandrieu.com/assets/nabla/nabla-4.png"
+		/>
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="profile" />
-		<meta property="og:url" content="https://albandrieu.com/cv/" />
+		<meta property="og:url" content="https://nabla.albandrieu.com/cv/" />
 		<meta
 			property="og:title"
 			content="Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer"
@@ -34,12 +38,12 @@
 		/>
 		<meta
 			property="og:image"
-			content="https://albandrieu.com/assets/nabla/nabla-4.png"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
 		/>
 
-		<!-- Twitter -->
+		<!-- twitter card tags additive with the og: tags -->
 		<meta property="twitter:card" content="summary" />
-		<meta property="twitter:url" content="https://albandrieu.com/cv/" />
+		<meta property="twitter:domain" content="dr-alban.com" />
 		<meta
 			property="twitter:title"
 			content="Alban Andrieu - DevSecOps Engineer CV"
@@ -50,8 +54,13 @@
 		/>
 		<meta
 			property="twitter:image"
-			content="https://albandrieu.com/assets/nabla/nabla-4.png"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
 		/>
+		<meta property="twitter:url" content="https://dr-alban.com" />
+		<meta name="twitter:label1" value="Cloud architect" />
+		<meta name="twitter:data1" value="AI architect" />
+		<meta name="twitter:label2" value="DevSecOps" />
+		<meta name="referrer" content="always" />
 
 		<!-- Favicon -->
 		<link rel="icon" href="assets/nabla/nabla-4.png" />
@@ -281,8 +290,7 @@
 		<script
 			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
 			async
-			defer
-		></script>
+			defer></script>
 
 		<!-- mixpanel -->
 		<script type="text/javascript">
@@ -593,16 +601,20 @@
 		</script>
 		<!-- End VWO PostHog -->
 
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-W7XNV7K6");
+		</script>
+		<!-- End Google Tag Manager -->
 
 		<!-- Google tag (gtag.js) -->
 		<script
@@ -829,7 +841,7 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body id="top">
 		<!-- Print Button (hidden when printing) -->
 		<button class="print-button" onclick="window.print()">
 			<i class="fas fa-print"></i> Print / Save as PDF
@@ -854,6 +866,33 @@
 
 		<!-- Custom style -->
 		<style>
+			.form-signin {
+				width: 100%;
+				max-width: 330px;
+				padding: 15px;
+				margin: auto;
+			}
+
+			.form-signin .checkbox {
+				font-weight: 400;
+			}
+
+			.form-signin .form-floating:focus-within {
+				z-index: 2;
+			}
+
+			.form-signin input[type="text"] {
+				margin-bottom: -1px;
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			.form-signin input[type="password"] {
+				margin-bottom: 10px;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+			}
+
 			.google-translate-widget {
 				position: fixed;
 				top: 10px;
@@ -1471,7 +1510,7 @@
 			</p>
 
 			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2025 Alban Andrieu. Independent DevSecOps Professional.
+				© 2026 Alban Andrieu. Independent DevSecOps Architect.
 			</p>
 		</footer>
 		<!-- End footer section -->
