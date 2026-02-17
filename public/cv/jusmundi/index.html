@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>
+			Jusmundi — 4 Years Key Achievements &amp; KPIs | Alban Andrieu
+		</title>
+		<meta
+			name="description"
+			content="Key KPIs and achievements at Jusmundi (2022–2025): Security (CVE reduction, Keycloak SSO, ISO, SOC), SEO improvements, SLA and platform reliability."
+		/>
+		<meta
+			name="keywords"
+			content="Alban Andrieu, Jusmundi, DevSecOps, Platform Engineering, Keycloak SSO, ISO 27001, SOC 2, Security, SLA, KPIs, CV"
+		/>
+		<meta name="author" content="Alban Andrieu" />
+		<meta name="robots" content="index, follow" />
+		<meta name="referrer" content="always" />
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:url"
+			content="https://nabla.albandrieu.com/cv/jusmundi/"
+		/>
+		<meta
+			property="og:title"
+			content="Jusmundi — 4 Years Key Achievements &amp; KPIs | Alban Andrieu"
+		/>
+		<meta
+			property="og:description"
+			content="Key KPIs and achievements at Jusmundi (2022–2025): Security (CVE reduction, Keycloak SSO, ISO, SOC), SEO improvements, SLA and platform reliability."
+		/>
+		<meta
+			property="og:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary" />
+		<meta
+			property="twitter:url"
+			content="https://nabla.albandrieu.com/cv/jusmundi/"
+		/>
+		<meta
+			property="twitter:title"
+			content="Jusmundi — 4 Years Achievements | Alban Andrieu"
+		/>
+		<meta
+			property="twitter:description"
+			content="Key KPIs and achievements at Jusmundi (2022–2025): Security, Keycloak SSO, ISO, SOC, SEO and SLA improvements."
+		/>
+		<meta
+			property="twitter:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<link rel="canonical" href="https://nabla.albandrieu.com/cv/jusmundi/" />
+		<link rel="icon" href="../../assets/nabla/nabla-4.png" />
+		<link rel="stylesheet" href="../../modern-style.css" />
+		<link rel="stylesheet" href="../../theme.css" />
+		<link rel="stylesheet" href="../cv-theme.css" />
+		<script src="../../theme-toggle.js"></script>
+		<link rel="stylesheet" href="../../wireframe.css" />
+		<link rel="stylesheet" href="../../print.css" />
+
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<style>
+			.jusmundi-page {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					"Helvetica Neue", Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--cv-text);
+				background-color: var(--bg-light, var(--cv-bg-page));
+			}
+			.jusmundi-page a {
+				color: var(--cv-link);
+			}
+			.jusmundi-page a:hover {
+				color: var(--cv-link-hover);
+			}
+			.jusmundi-page a:focus-visible,
+			.jusmundi-page button:focus-visible {
+				outline: 2px solid var(--cv-heading-accent);
+				outline-offset: 2px;
+			}
+			.jusmundi-hero {
+				background: linear-gradient(
+					135deg,
+					var(--cv-btn-bg) 0%,
+					var(--cv-heading-accent) 100%
+				);
+				color: #fff;
+				padding: 2.5rem 1.5rem;
+				text-align: center;
+				border-radius: 0.5rem;
+				margin-bottom: 2rem;
+			}
+			.jusmundi-hero h1 {
+				margin: 0 0 0.5rem;
+				font-size: 1.75rem;
+			}
+			.jusmundi-hero .subtitle {
+				opacity: 0.95;
+				font-size: 1rem;
+			}
+			.jusmundi-section {
+				margin-bottom: 2.5rem;
+			}
+			.jusmundi-section h2 {
+				color: var(--cv-heading-accent);
+				font-size: 1.35rem;
+				margin-bottom: 1rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid var(--cv-border-light);
+			}
+			.jusmundi-section h3 {
+				color: var(--cv-heading);
+				font-size: 1.1rem;
+				margin: 1.25rem 0 0.5rem;
+			}
+			.jusmundi-section-title {
+				text-align: center;
+				font-size: 1.75rem;
+				font-weight: 700;
+				margin-bottom: 0.5rem;
+				color: var(--cv-heading);
+			}
+			.jusmundi-section-subtitle {
+				text-align: center;
+				font-size: 1rem;
+				color: var(--cv-text-secondary);
+				margin-bottom: 1.5rem;
+			}
+			.kpi-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+				gap: 1.25rem;
+				margin: 1rem 0;
+			}
+			.kpi-card {
+				background: var(--cv-bg-card);
+				border: 1px solid var(--cv-border-light);
+				border-radius: 12px;
+				padding: 1.5rem 1rem;
+				text-align: center;
+				box-shadow: 0 2px 10px var(--cv-shadow);
+				transition:
+					transform 0.2s ease,
+					box-shadow 0.2s ease;
+			}
+			.kpi-card:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px var(--cv-shadow);
+			}
+			.kpi-card .value {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--cv-heading-accent);
+			}
+			.kpi-card .label {
+				font-size: 0.85rem;
+				color: var(--cv-text-secondary);
+				margin-top: 0.25rem;
+			}
+			.achievement-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.achievement-list li {
+				padding: 0.5rem 0 0.5rem 1.75rem;
+				position: relative;
+				border-bottom: 1px solid var(--cv-border-light);
+			}
+			.achievement-list li:last-child {
+				border-bottom: none;
+			}
+			.achievement-list li::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0.75rem;
+				width: 0.5rem;
+				height: 0.5rem;
+				background: var(--cv-heading-accent);
+				border-radius: 50%;
+			}
+			.badge-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin: 0.75rem 0;
+			}
+			.badge {
+				display: inline-block;
+				padding: 0.35rem 0.75rem;
+				font-size: 0.8rem;
+				font-weight: 600;
+				border-radius: 9999px;
+				background: var(--cv-bg-highlight);
+				color: var(--cv-heading-accent);
+				border: 1px solid var(--cv-border-light);
+			}
+			.back-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				padding: 0.5rem 0;
+				color: var(--cv-link);
+				text-decoration: none;
+			}
+			.back-link:hover {
+				color: var(--cv-link-hover);
+				text-decoration: underline;
+			}
+			.jusmundi-card {
+				background: var(--cv-bg-card);
+				padding: 1.75rem;
+				border-radius: 12px;
+				box-shadow: 0 2px 10px var(--cv-shadow);
+				transition:
+					transform 0.2s ease,
+					box-shadow 0.2s ease;
+				border: 1px solid var(--cv-border-light);
+			}
+			.jusmundi-card:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px var(--cv-shadow);
+			}
+			.jusmundi-card .jusmundi-card-icon {
+				font-size: 2rem;
+				color: var(--cv-heading-accent);
+				margin-bottom: 0.75rem;
+			}
+			.jusmundi-card h3 {
+				font-size: 1.25rem;
+				color: var(--cv-heading-accent);
+				margin-bottom: 0.5rem;
+			}
+			.jusmundi-card-subtitle {
+				font-size: 0.95rem;
+				color: var(--cv-text-secondary);
+				margin-bottom: 1rem;
+			}
+			.jusmundi-card-h4 {
+				font-size: 1.05rem;
+				color: var(--cv-heading);
+				margin: 1.25rem 0 0.5rem;
+				font-weight: 600;
+			}
+			.jusmundi-card-h4:first-of-type {
+				margin-top: 0.5rem;
+			}
+			.jusmundi-cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+			}
+			@media (max-width: 768px) {
+				.kpi-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+				.jusmundi-cards-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.google-translate-widget {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				z-index: 9999;
+				background: var(--bg-white, #fff);
+				padding: 5px;
+				border-radius: 5px;
+				box-shadow: 0 2px 10px var(--shadow-color, rgba(0, 0, 0, 0.15));
+			}
+			@media print {
+				.google-translate-widget,
+				.print-button {
+					display: none !important;
+				}
+			}
+			.skip-link {
+				position: absolute;
+				top: -100px;
+				left: 0.5rem;
+				padding: 0.5rem 1rem;
+				background: var(--cv-heading-accent);
+				color: #fff;
+				text-decoration: none;
+				font-weight: 600;
+				z-index: 10000;
+				border-radius: 0 0 4px 0;
+				transition: top 0.2s;
+			}
+			.skip-link:focus {
+				top: 0;
+				outline: 2px solid currentColor;
+				outline-offset: 2px;
+			}
+		</style>
+	</head>
+	<body class="jusmundi-page" id="top">
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<!-- Print / Save as PDF -->
+		<button
+			type="button"
+			class="print-button"
+			onclick="window.print()"
+			aria-label="Print or save as PDF"
+		>
+			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<!-- Google Translate Widget -->
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
+
+		<div class="container py-4">
+			<main id="main-content" role="main">
+				<nav aria-label="Breadcrumb">
+					<a
+						href="../index.html"
+						class="back-link"
+						aria-label="Back to CV index"
+					>
+						<span aria-hidden="true">←</span> Back to CV
+					</a>
+				</nav>
+
+				<header class="jusmundi-hero" role="banner">
+					<h1>Jusmundi — 4 Years in Review</h1>
+					<p class="subtitle">
+						Key KPIs &amp; Achievements (2022–2025) · Platform Engineering &amp;
+						DevSecOps
+					</p>
+				</header>
+
+				<section class="jusmundi-section" aria-labelledby="kpis-heading">
+					<h2 class="jusmundi-section-title" id="kpis-heading">
+						Key performance indicators
+					</h2>
+					<p class="jusmundi-section-subtitle">
+						Delivery, reliability, and impact (2022–2025)
+					</p>
+					<div class="kpi-grid">
+						<div class="kpi-card">
+							<span class="value">325+</span>
+							<span class="label">Tasks completed</span>
+						</div>
+						<div class="kpi-card">
+							<span class="value">99.9%+</span>
+							<span class="label">Platform uptime (SLA)</span>
+						</div>
+						<div class="kpi-card">
+							<span class="value">0</span>
+							<span class="label">Security breaches</span>
+						</div>
+						<div class="kpi-card">
+							<span class="value">~30 min</span>
+							<span class="label">MTTR (P1)</span>
+						</div>
+						<div class="kpi-card">
+							<span class="value">60%</span>
+							<span class="label">Alert noise reduction</span>
+						</div>
+						<div class="kpi-card">
+							<span class="value">€50K+</span>
+							<span class="label">Est. annual savings</span>
+						</div>
+					</div>
+				</section>
+
+				<h2 class="jusmundi-section-title" id="achievements-heading">
+					Achievements by area
+				</h2>
+				<p class="jusmundi-section-subtitle">
+					Security, reliability, and platform delivery (2022–2025)
+				</p>
+
+				<section class="jusmundi-section" aria-labelledby="security-heading">
+					<div class="jusmundi-card">
+						<div class="jusmundi-card-icon" aria-hidden="true">
+							<i class="fas fa-shield-halved"></i>
+						</div>
+						<h3 id="security-heading">Security &amp; compliance</h3>
+						<p class="jusmundi-card-subtitle">
+							Vulnerability management, IdP SSO, and certifications
+						</p>
+						<div class="badge-row">
+							<span class="badge">CVE &amp; vulnerability reduction</span>
+							<span class="badge">Keycloak IdP SSO</span>
+							<span class="badge">ISO 27001</span>
+							<span class="badge">ISO 42001</span>
+							<span class="badge">SOC2 Type II</span>
+							<span class="badge">TLS 1.3</span>
+						</div>
+						<h4 class="jusmundi-card-h4">Vulnerability &amp; CVE reduction</h4>
+						<ul class="achievement-list">
+							<li>
+								Vulnerability remediation target: &lt;7 days for critical CVEs;
+								container scan pass rate &gt;95%.
+							</li>
+							<li>
+								Vulnerability management: weekly vulnerability scanning and
+								remediation of critical vulnerabilities. Using OpenVAS, Trivy
+								and Semgrep.
+							</li>
+							<li>
+								Semgrep SAST, GitLeaks secret scanning, Mega-Linter and GitLab
+								Ultima Sec for code security.
+							</li>
+							<li>
+								Implement Cloudflare WAF and DDoS protection for the website,
+								rate limiting and bot detection.
+							</li>
+							<li>
+								Use Vault for secrets management, secret rotation, certificate
+								automation and in transit encryption for user documents
+							</li>
+						</ul>
+						<h4 class="jusmundi-card-h4">IdP SSO with Keycloak</h4>
+						<ul class="achievement-list">
+							<li>
+								Keycloak authentication modernisation: migrated from legacy auth
+								and upgraded through 4 major versions (v22 → v26).
+							</li>
+							<li>
+								SSO integration with Microsoft Entra ID and other internal
+								services; 2FA and brute-force protection enabled.
+							</li>
+							<li>
+								Keycloak in HA mode; token expiration and high-latency incidents
+								resolved in production, and across multiple regions.
+							</li>
+							<li>
+								Use of Keycloak in API Gateway mode for authentication and
+								authorization of microservices.
+							</li>
+						</ul>
+						<h4 class="jusmundi-card-h4">ISO, SOC &amp; compliance</h4>
+						<ul class="achievement-list">
+							<li>
+								ISO 27001 preparation and support; Server hardening and firewall
+								reviews.
+							</li>
+							<li>
+								Platform aligned with SOC II certifications achieved by
+								Jusmundi.
+							</li>
+							<li>
+								First IA Tech implementing and maintaining ISO 42001 compliant
+								security frameworks for IA.
+							</li>
+							<li>
+								Annual firewall reviews, access control, and EDR/XDR agents on
+								new servers.
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="seo-heading">
+					<div class="jusmundi-card">
+						<div class="jusmundi-card-icon" aria-hidden="true">
+							<i class="fas fa-search"></i>
+						</div>
+						<h3 id="seo-heading">SEO improvements</h3>
+						<ul class="achievement-list">
+							<li>
+								Anti-scraping and WAF implementation tuned to preserve SEO:
+								legitimate crawlers whitelisted (AhRefs, SemRush, Oncrawl,
+								Google Analytics, etc.).
+							</li>
+							<li>
+								WAF behaviour and SEO impact monitored throughout rollout; bot
+								traffic reduced by ~75% without impacting real users or search
+								visibility.
+							</li>
+							<li>
+								SEO drop issues investigated and addressed; since AI bots shift,
+								SEO has been stable and improved over the years.
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="sla-heading">
+					<div class="jusmundi-card">
+						<div class="jusmundi-card-icon" aria-hidden="true">
+							<i class="fas fa-chart-line"></i>
+						</div>
+						<h3 id="sla-heading">SLA &amp; reliability improvements</h3>
+						<p class="jusmundi-card-subtitle">
+							Uptime, alerting, and incident response
+						</p>
+						<ul class="achievement-list">
+							<li>
+								Alerts based on SLAs for critical services; SLO-based alerting
+								for availability monitoring.
+							</li>
+							<li>
+								Platform availability maintained at 99.9%+ for critical legal
+								research; target 99.9% uptime for core services.
+							</li>
+							<li>
+								MTTR reduced from hours to minutes (P1 ~30 min average) through
+								observability and runbooks.
+							</li>
+							<li>Alert noise reduced by ~60% via intelligent filtering.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="other-heading">
+					<div class="jusmundi-card">
+						<div class="jusmundi-card-icon" aria-hidden="true">
+							<i class="fas fa-server"></i>
+						</div>
+						<h3 id="other-heading">Platform &amp; infrastructure</h3>
+						<ul class="achievement-list">
+							<li>
+								Infrastructure v2 assessment, US hosting (DNS, Kubernetes,
+								network), cost optimisation and Kubernetes migration from Nomad
+								to Kubernetes.
+							</li>
+							<li>
+								Observability: Victoria Metrics, Loki, Grafana dashboards,
+								DataDog APM and tracing across services.
+							</li>
+							<li>
+								Network: Migration to Magic WAN, VPC peering and VPN and
+								Cloudflare WARP.
+							</li>
+							<li>
+								Database: PostgreSQL tuning, autovacuum and cache hit
+								improvements; 20+ critical disk-space incidents resolved.
+							</li>
+							<li>
+								Jus AI support: Elasticsearch clusters, GPU nodes, assistant and
+								document-classification services.
+							</li>
+							<li>
+								CI/CD: pipelines optimised, automated with templating, container
+								scanning, code linting; Infrastructure as Code (Terraform and
+								Ansible) with ~90% reduction in manual configuration errors.
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="documents-heading">
+					<h2 class="jusmundi-section-title" id="documents-heading">
+						Related documents
+					</h2>
+					<p class="jusmundi-section-subtitle">
+						Full reviews and task summaries (static HTML)
+					</p>
+					<div class="jusmundi-cards-grid">
+						<a
+							href="4-years-review-jusmundi.html"
+							class="jusmundi-card"
+							style="text-decoration: none; color: inherit"
+						>
+							<div class="jusmundi-card-icon" aria-hidden="true">
+								<i class="fas fa-building"></i>
+							</div>
+							<h3>JusMundi global achievements (2022–2025)</h3>
+							<p class="jusmundi-card-subtitle">
+								Company overview, funding, product launches (Jus Connect, Jus
+								AI), geographic expansion, AI achievements
+							</p>
+						</a>
+						<a
+							href="4-years-review-aandrieu.html"
+							class="jusmundi-card"
+							style="text-decoration: none; color: inherit"
+						>
+							<div class="jusmundi-card-icon" aria-hidden="true">
+								<i class="fas fa-user-tie"></i>
+							</div>
+							<h3>4-year performance summary — Alban Andrieu</h3>
+							<p class="jusmundi-card-subtitle">
+								325+ tasks, infrastructure, security, databases, CI/CD,
+								suggested KPIs and OKRs (2022–2025)
+							</p>
+						</a>
+						<a
+							href="yearly-review-2025-aandrieu.html"
+							class="jusmundi-card"
+							style="text-decoration: none; color: inherit"
+						>
+							<div class="jusmundi-card-icon" aria-hidden="true">
+								<i class="fas fa-calendar-check"></i>
+							</div>
+							<h3>Tasks completed in 2025</h3>
+							<p class="jusmundi-card-subtitle">
+								150+ tasks by category: security, WAF, Keycloak, infrastructure,
+								databases, Jus AI, observability, CI/CD
+							</p>
+						</a>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<!-- Footer (same as main landing page) -->
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+				>
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+				>
+					<i class="fa fa-calendar-plus"></i>
+				</a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+				>
+					<i class="fab fa-github"></i>
+				</a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+				>
+					<i class="fab fa-docker"></i>
+				</a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+				>
+					<i class="fab fa-stack-exchange"></i>
+				</a>
+			</div>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
+					>Terms of Use</a
+				>
+				<a
+					href="javascript:openAxeptioCookies()"
+					rel="noopener noreferrer"
+					class="text-muted"
+					>Cookies</a
+				>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
+					>Privacy Policy</a
+				>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="../index.html" class="btn btn-sm btn-outline-secondary"
+					>Return to CV</a
+				>
+				<a
+					href="#top"
+					class="btn btn-sm btn-outline-secondary ms-2"
+					aria-label="Back to top of page"
+					>Back to top</a
+				>
+			</p>
+			<p class="text-muted small mt-2">
+				Summary derived from Jusmundi 4-year review materials (2022–2025).
+			</p>
+			<p style="margin-top: 1rem; opacity: 0.7">
+				© 2026 Alban Andrieu. Independent DevSecOps Architect.
+			</p>
+		</footer>
+
+		<!-- Google Translate -->
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
+	</body>
+</html>

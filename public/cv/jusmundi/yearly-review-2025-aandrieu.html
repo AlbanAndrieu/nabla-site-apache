@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Alban Andrieu — Tasks Completed in 2025 | Jusmundi</title>
+		<meta
+			name="description"
+			content="Comprehensive summary of 150+ tasks completed in 2025: security, WAF, Keycloak, infrastructure, databases, Jus AI, observability, CI/CD at Jusmundi."
+		/>
+		<meta
+			name="keywords"
+			content="Alban Andrieu, Jusmundi, 2025 review, DevSecOps, WAF, Keycloak, platform engineering, CV"
+		/>
+		<meta name="author" content="Alban Andrieu" />
+		<meta name="robots" content="index, follow" />
+		<meta name="referrer" content="always" />
+		<meta name="color-scheme" content="light dark" />
+
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:url"
+			content="https://nabla.albandrieu.com/cv/jusmundi/yearly-review-2025-aandrieu.html"
+		/>
+		<meta
+			property="og:title"
+			content="Alban Andrieu — Tasks Completed in 2025"
+		/>
+		<meta
+			property="og:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<meta property="twitter:card" content="summary" />
+		<meta
+			property="twitter:url"
+			content="https://nabla.albandrieu.com/cv/jusmundi/yearly-review-2025-aandrieu.html"
+		/>
+		<meta
+			property="twitter:title"
+			content="Alban Andrieu — 2025 Tasks Summary"
+		/>
+		<meta
+			property="twitter:image"
+			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
+		/>
+
+		<link
+			rel="canonical"
+			href="https://nabla.albandrieu.com/cv/jusmundi/yearly-review-2025-aandrieu.html"
+		/>
+		<link rel="icon" href="../../assets/nabla/nabla-4.png" />
+		<link rel="stylesheet" href="../../modern-style.css" />
+		<link rel="stylesheet" href="../../theme.css" />
+		<link rel="stylesheet" href="../cv-theme.css" />
+		<script src="../../theme-toggle.js"></script>
+		<link rel="stylesheet" href="../../wireframe.css" />
+		<link rel="stylesheet" href="../../print.css" />
+
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<style>
+			.jusmundi-page {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					"Helvetica Neue", Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--cv-text);
+				background-color: var(--bg-light, var(--cv-bg-page));
+			}
+			.jusmundi-page a {
+				color: var(--cv-link);
+			}
+			.jusmundi-page a:hover {
+				color: var(--cv-link-hover);
+			}
+			.jusmundi-page a:focus-visible,
+			.jusmundi-page button:focus-visible {
+				outline: 2px solid var(--cv-heading-accent);
+				outline-offset: 2px;
+			}
+			.jusmundi-hero {
+				background: linear-gradient(
+					135deg,
+					var(--cv-btn-bg) 0%,
+					var(--cv-heading-accent) 100%
+				);
+				color: #fff;
+				padding: 2.5rem 1.5rem;
+				text-align: center;
+				border-radius: 0.5rem;
+				margin-bottom: 2rem;
+			}
+			.jusmundi-hero h1 {
+				margin: 0 0 0.5rem;
+				font-size: 1.75rem;
+			}
+			.jusmundi-hero .subtitle {
+				opacity: 0.95;
+				font-size: 1rem;
+			}
+			.jusmundi-section {
+				margin-bottom: 2.5rem;
+			}
+			.jusmundi-section h2 {
+				color: var(--cv-heading-accent);
+				font-size: 1.35rem;
+				margin-bottom: 1rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid var(--cv-border-light);
+			}
+			.jusmundi-section h3 {
+				color: var(--cv-heading);
+				font-size: 1.1rem;
+				margin: 1.25rem 0 0.5rem;
+			}
+			.back-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				padding: 0.5rem 0;
+				color: var(--cv-link);
+				text-decoration: none;
+			}
+			.back-link:hover {
+				color: var(--cv-link-hover);
+				text-decoration: underline;
+			}
+			.jusmundi-section ul {
+				padding-left: 1.5rem;
+				margin: 0.5rem 0;
+			}
+			.jusmundi-section li {
+				margin-bottom: 0.35rem;
+			}
+			.achievement-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.achievement-list li {
+				padding: 0.5rem 0 0.5rem 1.75rem;
+				position: relative;
+				border-bottom: 1px solid var(--cv-border-light);
+			}
+			.achievement-list li:last-child {
+				border-bottom: none;
+			}
+			.achievement-list li::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0.75rem;
+				width: 0.5rem;
+				height: 0.5rem;
+				background: var(--cv-heading-accent);
+				border-radius: 50%;
+			}
+			.summary-list {
+				list-style: none;
+				padding-left: 0;
+			}
+			.summary-list li {
+				padding-left: 1.5rem;
+				position: relative;
+				margin-bottom: 0.5rem;
+			}
+			.summary-list li::before {
+				content: "✓";
+				position: absolute;
+				left: 0;
+				color: var(--cv-heading-accent);
+				font-weight: bold;
+			}
+			.google-translate-widget {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				z-index: 9999;
+				background: var(--bg-white, #fff);
+				padding: 5px;
+				border-radius: 5px;
+				box-shadow: 0 2px 10px var(--shadow-color, rgba(0, 0, 0, 0.15));
+			}
+			@media print {
+				.google-translate-widget,
+				.print-button {
+					display: none !important;
+				}
+			}
+			.skip-link {
+				position: absolute;
+				top: -100px;
+				left: 0.5rem;
+				padding: 0.5rem 1rem;
+				background: var(--cv-heading-accent);
+				color: #fff;
+				text-decoration: none;
+				font-weight: 600;
+				z-index: 10000;
+				border-radius: 0 0 4px 0;
+				transition: top 0.2s;
+			}
+			.skip-link:focus {
+				top: 0;
+				outline: 2px solid currentColor;
+				outline-offset: 2px;
+			}
+		</style>
+	</head>
+	<body class="jusmundi-page" id="top">
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<button
+			type="button"
+			class="print-button"
+			onclick="window.print()"
+			aria-label="Print or save as PDF"
+		>
+			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
+
+		<div class="container py-4">
+			<main id="main-content" role="main">
+				<nav aria-label="Breadcrumb">
+					<a
+						href="index.html"
+						class="back-link"
+						aria-label="Back to Jusmundi index"
+						>← Back to Jusmundi</a
+					>
+					<span class="mx-2" aria-hidden="true">·</span>
+					<a
+						href="../index.html"
+						class="back-link"
+						aria-label="Back to CV index"
+						>CV index</a
+					>
+				</nav>
+
+				<header class="jusmundi-hero" role="banner">
+					<h1>Alban Andrieu's Tasks Completed in 2025</h1>
+					<p class="subtitle">
+						Based on Asana data — 150+ tasks across security, infrastructure,
+						databases, Jus AI, observability &amp; CI/CD
+					</p>
+				</header>
+
+				<section class="jusmundi-section" aria-labelledby="security-heading">
+					<h2 id="security-heading">
+						Security &amp; access management (35+ tasks)
+					</h2>
+					<h3>WAF &amp; anti-scraping protection</h3>
+					<ul class="achievement-list">
+						<li>
+							Prepared and executed comprehensive anti-scrape protection plan
+							using Cloudflare WAF
+						</li>
+						<li>
+							Monitored WAF behavior and SEO impact throughout implementation
+						</li>
+						<li>
+							Configured bot score rules and rate limiting to protect against
+							attacks
+						</li>
+						<li>
+							Whitelisted legitimate services (AhRefs, Oncrawl, SemRush) for SEO
+							crawling
+						</li>
+						<li>
+							Handled major incident: &ldquo;jusmundi attacked, front and back
+							down&rdquo; — implemented emergency WAF rules
+						</li>
+						<li>
+							Blocked malicious ASN (Alibaba CN Net) and Chinese bot traffic
+						</li>
+						<li>
+							Fine-tuned WAF core ruleset to reduce false positives while
+							maintaining security
+						</li>
+						<li>Fixed Web Cache Deception vulnerability (YWH-PGM12082-4)</li>
+						<li>
+							Sent WAF logs to DataDog via Cloudflare logpush for monitoring
+						</li>
+					</ul>
+					<h3>Access control &amp; authentication</h3>
+					<ul class="achievement-list">
+						<li>
+							<strong>Major Keycloak upgrades</strong>: Migrated to Keycloak
+							26.x with full compatibility checks
+						</li>
+						<li>Switched Keycloak admin to HTTPS for enhanced security</li>
+						<li>Updated 2FA and groups configuration in Keycloak</li>
+						<li>
+							Fixed multiple Keycloak token expiration issues affecting GitLab
+							and services
+						</li>
+						<li>
+							Resolved critical incident: &ldquo;High Latency in prod since
+							4:26am (Keycloak + authorization)&rdquo;
+						</li>
+						<li>
+							Managed academic institution IP whitelisting (SMU, CEU, Clifford
+							Chance, Gujarat University, etc.)
+						</li>
+					</ul>
+					<h3>Certificate management &amp; internal security</h3>
+					<ul class="achievement-list">
+						<li>Generated and deployed internal CA for Traefik</li>
+						<li>Created self-signed certificates with multiple alt names</li>
+						<li>Implemented RFC for automating certificates and CA</li>
+						<li>Managed certificate validation across services</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="infra-heading">
+					<h2 id="infra-heading">Infrastructure &amp; platform (40+ tasks)</h2>
+					<h3>US hosting initiative</h3>
+					<ul class="achievement-list">
+						<li>Created DNS entries (us.lexsportiva.tech)</li>
+						<li>Deployed network infrastructure for US hosting</li>
+						<li>Kubernetes cluster setup for US operations</li>
+					</ul>
+					<h3>Infrastructure optimization</h3>
+					<ul class="achievement-list">
+						<li>
+							<strong>Infrastructure v2 assessment</strong>: Mapped current
+							infrastructure, identified risks/bottlenecks, reviewed costs,
+							documented quick wins
+						</li>
+						<li>Removed unused resources across Scaleway and OVH</li>
+						<li>
+							Downsized Nomad Prod nodes from c2-30 to c2-60 for cost
+							optimization
+						</li>
+						<li>Listed and audited OVH and Scaleway inventories</li>
+						<li>Found jobs in Nomad where resources could be reduced</li>
+					</ul>
+					<h3>Disaster recovery &amp; incident response</h3>
+					<ul class="achievement-list">
+						<li>
+							Handled multiple critical disk space emergencies (pg-gra,
+							gra1nomadworkerprod nodes, gra9jusaiexpgpu1)
+						</li>
+						<li>Resolved hard drive failures on gra1nomadworkerprod1/2/3</li>
+						<li>
+							Fixed volume max claimed issue on workerprod7 causing shutdowns
+						</li>
+						<li>Updated Cinder to fix block storage issues</li>
+						<li>
+							Extended disk space on multiple nodes (pgwatch, jusmundise,
+							dev/uat nodes)
+						</li>
+					</ul>
+					<h3>Network &amp; VMs</h3>
+					<ul class="achievement-list">
+						<li>Enabled port 4500 for gra9jusaiexpgpu1 GPU node</li>
+						<li>Reworked Ansible project for streamlined VM configuration</li>
+						<li>Created system user accounts for team members</li>
+						<li>
+							Fixed bastion access issues, added Nomad client node to Prod
+							cluster
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="db-heading">
+					<h2 id="db-heading">Database management (25+ tasks)</h2>
+					<h3>PostgreSQL optimization</h3>
+					<ul class="achievement-list">
+						<li>
+							<strong>Autovacuum optimization</strong> to improve vacuum
+							performance
+						</li>
+						<li>
+							<strong>Cache hit ratio improvements</strong> for better query
+							performance
+						</li>
+						<li>Fixed PostgreSQL exporter on UAT and DEV</li>
+						<li>
+							Investigated and resolved PostgresHasTooManyRollbacks alerts
+						</li>
+						<li>Upgraded pgwatch for better monitoring</li>
+					</ul>
+					<h3>Database operations</h3>
+					<ul class="achievement-list">
+						<li>
+							<strong>ISO Prod DB scripts maintenance</strong>: Fixed failing
+							scripts, optimized materialized views refresh
+						</li>
+						<li>Restored missing foreign keys in non-Prod environments</li>
+						<li>
+							Created dedicated read-only DB users for all services (DEV, UAT,
+							Prod)
+						</li>
+						<li>
+							Handled &ldquo;No space left on device&rdquo; incident due to
+							materialized view refresh
+						</li>
+						<li>
+							Managed multiple database sync operations (UAT3/4, dev-dump jobs)
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="jusai-heading">
+					<h2 id="jusai-heading">Jus AI support (20+ tasks)</h2>
+					<ul class="achievement-list">
+						<li>
+							Set up, synced, and recreated Jus AI indexes (V2 and Document ES)
+						</li>
+						<li>Provided read-only access to Prod JM Document ES Cluster</li>
+						<li>
+							Created new Jus AI indexes for document embeddings, synced
+							regularly
+						</li>
+						<li>
+							Created backup strategy for UAT and DEV jusmundise Elasticsearch
+						</li>
+						<li>Managed GPU node (gra9jusaiexpgpu1) for Jus AI workloads</li>
+						<li>Set up Zabbix, syslog for new Jus AI ED node4</li>
+						<li>
+							Investigated and debugged assistant-sync-doc and
+							legal-research-assistant restart mechanism
+						</li>
+						<li>Upgraded Nomad Prod client to support AI workloads</li>
+					</ul>
+				</section>
+
+				<section
+					class="jusmundi-section"
+					aria-labelledby="observability-heading"
+				>
+					<h2 id="observability-heading">
+						Observability &amp; monitoring (25+ tasks)
+					</h2>
+					<h3>Logging infrastructure</h3>
+					<ul class="achievement-list">
+						<li>Implemented Loki log management across infrastructure</li>
+						<li>Configured logformat for HAProxy to send to Loki</li>
+						<li>
+							Fixed &ldquo;No logs in Loki before 30/08 after new loki
+							release&rdquo;
+						</li>
+						<li>
+							Sent PfSense's HAProxy logs to Loki, fixed Cloudflare logpush
+							(multiple times)
+						</li>
+						<li>Enabled alerts from logs in Loki</li>
+					</ul>
+					<h3>Metrics &amp; dashboards</h3>
+					<ul class="achievement-list">
+						<li>Upgraded VictoriaMetrics, fixed PostgreSQL exporter issues</li>
+						<li>Redeploy GitLab exporter after token expiration</li>
+						<li>Created metrics and basic dashboards for WAF monitoring</li>
+					</ul>
+					<h3>Distributed tracing</h3>
+					<ul class="achievement-list">
+						<li>Configured DataDog tracing in Keycloak and Traefik</li>
+						<li>Presented DataDog tracing to dev teams during Tech Day</li>
+						<li>
+							Fixed &ldquo;No more traces in Datadog for Nuxt Prod after a few
+							hours&rdquo;
+						</li>
+						<li>Implemented DataDog in Link project and Citation service</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="cicd-heading">
+					<h2 id="cicd-heading">CI/CD &amp; DevOps (30+ tasks)</h2>
+					<ul class="achievement-list">
+						<li>Optimized BO pipeline to reduce global execution time</li>
+						<li>
+							Fixed pipeline on main branch multiple times; resolved
+							&ldquo;Context canceled in CI pipeline&rdquo;
+						</li>
+						<li>
+							Fixed &ldquo;upload trivy fails always if docker build fails
+							once&rdquo;, pipeline for Legal Document Classifier, ECR image not
+							found (Trivy) failures
+						</li>
+						<li>
+							Updated Docker version in JM Ubuntu; fixed Docker build and push
+							failures to DockerHub
+						</li>
+						<li>Automated token renewal in GitLab for all Nomad jobs</li>
+						<li>Used env vault variables for jus-mundi deployment to UAT</li>
+						<li>
+							Fixed &ldquo;Deployment of services failing since recent vault
+							upgrade&rdquo;
+						</li>
+						<li>
+							Added basic pipeline, linter, Dockerfile, and job.nomad to new
+							repos
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="service-heading">
+					<h2 id="service-heading">
+						Service management &amp; support (20+ tasks)
+					</h2>
+					<ul class="achievement-list">
+						<li>
+							Added jusmundi-documents-api service; deployed Norma pipeline in
+							UAT
+						</li>
+						<li>
+							Created n8n job in hashistack (UAT and Prod); added legal document
+							classifier and load testing project + pipeline
+						</li>
+						<li>Set up Alert API with DataDog integration</li>
+						<li>Security update on n8n database; upgraded Temporal Service</li>
+						<li>
+							Fixed CC (Conflict Checker) instability on prod; &ldquo;back is
+							not working on uat and dev&rdquo;; Daily Jus down incidents;
+							citation service failures due to row security
+						</li>
+						<li>
+							Made dailyjus DEV ISO Prod for better testing; increased Temporal
+							DB retention; improved service instrumentation
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="dns-heading">
+					<h2 id="dns-heading">DNS, networking &amp; CDN (15+ tasks)</h2>
+					<ul class="achievement-list">
+						<li>
+							Created DNS entries for US hosting (us.lexsportiva.tech), status
+							page, jusmundi.com for LinkedIn
+						</li>
+						<li>
+							Configured hyperline Cloudflare setup; cleared CDN/Cloudflare
+							cache when needed
+						</li>
+						<li>Ensured e2e tests in lexsportiva aren't blocked by CF WAF</li>
+						<li>
+							Fixed cookies hitting header size limitation; managed Cloudflare
+							configuration; investigated network traffic peaks on PfSense
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="code-heading">
+					<h2 id="code-heading">
+						Code quality &amp; infrastructure as code (15+ tasks)
+					</h2>
+					<ul class="achievement-list">
+						<li>
+							Migrated GitLab to Infrastructure as Code; included important
+							infrastructure repos in GitLab Ultima Sec
+						</li>
+						<li>
+							Fixed GitLab runners unavailable issues; audited all open MRs in
+							tf-jusmundi repository
+						</li>
+						<li>
+							Cleaned code of jus-mundi repo; added NPM_TOKEN to Nuxt; fixed
+							pipeline NPM_TOKEN and Mega Linter Trivy issues
+						</li>
+						<li>Updated CI files across multiple projects</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="vuln-heading">
+					<h2 id="vuln-heading">
+						Security scanning &amp; vulnerability management (10+ tasks)
+					</h2>
+					<ul class="achievement-list">
+						<li>
+							Updated OpenVAS NVTs; integrated container scanning in pipelines
+						</li>
+						<li>
+							Vanta compliance: Set DMARC policy to &ldquo;Rejected&rdquo;
+						</li>
+						<li>
+							Installed EDR/XDR agents on new servers; addressed Web Cache
+							Deception vulnerability
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="doc-heading">
+					<h2 id="doc-heading">Documentation &amp; process (10+ tasks)</h2>
+					<ul class="achievement-list">
+						<li>Documented Jus AI indexing/sync/cluster access process</li>
+						<li>
+							Redacted architectural RFCs; created document listing requirements
+							for production deployment
+						</li>
+						<li>
+							Prepared RFC for anti-scrape protection, certificates and CA,
+							Cloudflare bots protection
+						</li>
+						<li>
+							Presented DataDog tracing at Tech Day; LogQL training for team;
+							documentation for quick wins
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="perf-heading">
+					<h2 id="perf-heading">Performance &amp; optimization (10+ tasks)</h2>
+					<ul class="achievement-list">
+						<li>
+							Fixed BO Apache status throwing 4XX errors; investigated SEO drop
+							and prod search failures
+						</li>
+						<li>
+							Reviewed prod performance; fixed search engine issues in UAT and
+							Prod; search preview issues for CAS Awards
+						</li>
+						<li>
+							Added workeruat6 node on UAT for load testing; created load
+							testing project and infrastructure; DVC + S3 bucket testing
+						</li>
+					</ul>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="key-heading">
+					<h2 id="key-heading">Key achievements summary</h2>
+					<ul class="summary-list">
+						<li>
+							<strong>150+ tasks completed</strong> across infrastructure,
+							security, databases, and DevOps
+						</li>
+						<li>
+							<strong>Zero-downtime migrations</strong>: Keycloak 26.x upgrade,
+							Kubernetes PoCs, US hosting setup
+						</li>
+						<li>
+							<strong>Cost optimization</strong>: Infrastructure audit, resource
+							downsizing, unused resource removal
+						</li>
+						<li>
+							<strong>Security hardening</strong>: WAF implementation, Keycloak
+							hardening, vulnerability management
+						</li>
+						<li>
+							<strong>Platform reliability</strong>: Resolved 20+ critical
+							production incidents with quick response times
+						</li>
+						<li>
+							<strong>AI platform support</strong>: Managed Elasticsearch
+							clusters, GPU nodes, and AI service deployments
+						</li>
+						<li>
+							<strong>Observability excellence</strong>: Loki logging,
+							VictoriaMetrics, DataDog tracing across all services
+						</li>
+						<li>
+							<strong>CI/CD improvements</strong>: Pipeline optimization,
+							automated deployments, container scanning
+						</li>
+					</ul>
+					<p>
+						<strong>Work distribution</strong>: Infrastructure &amp; operations
+						35%, Security &amp; compliance 25%, Database management 15%, CI/CD
+						&amp; DevOps 15%, Monitoring &amp; observability 10%.
+					</p>
+				</section>
+			</main>
+		</div>
+
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+					><i class="fab fa-linkedin-in"></i
+				></a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+					><i class="fa fa-calendar-plus"></i
+				></a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+					><i class="fab fa-github"></i
+				></a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+					><i class="fab fa-docker"></i
+				></a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+					><i class="fab fa-stack-exchange"></i
+				></a>
+			</div>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
+					>Terms of Use</a
+				>
+				<a
+					href="javascript:openAxeptioCookies()"
+					rel="noopener noreferrer"
+					class="text-muted"
+					>Cookies</a
+				>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
+					>Privacy Policy</a
+				>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="index.html" class="btn btn-sm btn-outline-secondary"
+					>Jusmundi index</a
+				>
+				<a href="../index.html" class="btn btn-sm btn-outline-secondary ms-2"
+					>CV index</a
+				>
+				<a
+					href="#top"
+					class="btn btn-sm btn-outline-secondary ms-2"
+					aria-label="Back to top of page"
+					>Back to top</a
+				>
+			</p>
+			<p class="text-muted small mt-2">Tasks completed in 2025 at Jusmundi.</p>
+			<p style="margin-top: 1rem; opacity: 0.7">
+				© 2026 Alban Andrieu. Independent DevSecOps Architect.
+			</p>
+		</footer>
+
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
+	</body>
+</html>

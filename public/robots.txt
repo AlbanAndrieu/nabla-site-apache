@@ -14,9 +14,7 @@ User-agent: Googlebot
 Allow: /
 Disallow: /*/document/h/*
 Disallow: /*/decision/pdf/*
-Disallow: /*/opinion/pdf/*
 Disallow: /*/other/pdf/*
-Disallow: /*/publication/pdf/*
 # deny dynamic URLs which contain a '?'
 Disallow: /*?*
 
@@ -177,5 +175,5 @@ Disallow: /*/?*
 Crawl-delay: 20
 
 # sitemap index
-Sitemap: https://nabla.albandrieu.com/sitemap-albandrieu-com.xml
-# curl https://www.google.com/ping??sitemap=https://nabla.albandrieu.com/sitemap-albandrieu-com.xml
+Sitemap: https://nabla.albandrieu.com/sitemap.xml
+# curl https://www.google.com/ping??sitemap=https://nabla.albandrieu.com/sitemap.xml

@@ -69,6 +69,31 @@ typings/
 .env
 .vercel
 
+# Build artifacts and generated files
+dist/
+.next/
+out/
+build/
+.turbo/
+.cache/
+.pnpm/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
 # Playwright
 playwright-report/
 test-results/

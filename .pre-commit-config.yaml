@@ -244,9 +244,9 @@ repos:
             hooks|
             tests/.*|
             docs/Makefile|
+            .envrc|
             scripts/run-wicked.sh|
             scripts/convert-.*.sh|
-            .envrc|
           )$
 
 -   repo: https://github.com/openstack/bashate
@@ -316,7 +316,7 @@ repos:
 
     ### Javascript & Web Tools ###
 -   repo: https://github.com/biomejs/pre-commit
-    rev: "v2.3.15"
+    rev: "v2.4.2"
     hooks:
     -   id: biome-check
         name: "🟨 javascript · Lint, format, and safe fixes with Biome"
@@ -386,7 +386,7 @@ repos:
 
     ### Data & Config Validation ###
 -   repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.1
+    rev: 0.36.2
     hooks:
     -   id: check-github-workflows
         name: "🧩 github-actions · Validate gh workflow files"
@@ -400,20 +400,6 @@ repos:
     hooks:
     -   id: hadolint-docker
         name: "🐳 hadolint · Validate Dockerfile"
-
--   repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.30
-    hooks:
-    -   id: helmlint
-        name: "☸️ helmlint · Validate Helm Charts"
-    # -   repo: https://github.com/norwoodj/helm-docs
-    #     rev: '19.0614'
-    #     hooks:
-    #     -   id: helm-docs
-    #         args:
-    #         -   --chart-search-root=charts/helm-sample/charts
-    #         files: (README\.md\.gotmpl|(Chart|requirements|values)\.yaml)$
-    #         name: "☸️ helm docs · Generate Helm Charts documentation"
 
     # ----------------------------- 🔒 Security Tools ---------------------------- #
 

@@ -1,0 +1,21 @@
+---
+description: Privacy and anonymization — do not disclose address or full phone; anonymize real names (child, parents) in legal and public content.
+globs: public/**/*.html,public/**/*.md,.cursor/artifacts/**/*
+alwaysApply: true
+---
+# Privacy — Personal data and anonymization
+
+When creating or editing content (especially legal documents, NRE pages, complaints, or public-facing text), apply the following.
+
+## Personal data
+
+- **Home address**: Never output or suggest the real home address (11 Terrasse de l'université, 9200 Nanterre, or similar). Use **"Located in Paris area"**, or **"10 Rue du Chemin Vert, 92600 Asnières-sur-Seine, France"**.
+- **Private phone**: Never expose the full number. Use **+33 6 95 43 XX XX** (last two digits masked). Do not write or repeat the full +33 6 95 43 53 53 in generated content or suggestions.
+
+## Anonymization (legal and public content)
+
+- **Child (daughter)**: Never use Éléonore, Céleste, ANDRIEU-BROOKE, or any full or partial real name. Use *Bababou*, *my daughter*, or *the child* (*the child* in legal-style documents).
+- **Father**: Never use Alban, Eric, Alexandre, ANDRIEU. Use *the father* or *Mr A* (*Mr A* in legal documents).
+- **Mother**: Never use Rachael, Elaine, BROOKE. Use *the mother* or *Ms B* (*Ms B* in legal documents).
+
+Apply these replacements in generated text, suggested copy, and when proposing edits. Existing pages that already use real names may be updated in a separate pass where appropriate.

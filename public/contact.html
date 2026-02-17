@@ -64,8 +64,7 @@
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="modern-style.css" />
-		<!--<link rel="stylesheet" href="wireframe.css" />
-		<link rel="stylesheet" href="theme.css" /> -->
+		<link rel="stylesheet" href="theme.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
 
@@ -245,6 +244,31 @@
 				text-align: center;
 				margin-bottom: 1rem;
 				color: var(--dark-color);
+			}
+
+			/* Theme-aware overrides so contact page respects theme-toggle */
+			html[data-theme="dark"] body {
+				color: var(--text-primary, #e4e4e4);
+			}
+			html[data-theme="dark"] .contact-card,
+			html[data-theme="dark"] .social-card {
+				background: var(--bg-card, #252525);
+				color: var(--text-primary, #e4e4e4);
+			}
+			html[data-theme="dark"] .section-title {
+				color: var(--text-primary, #e4e4e4);
+			}
+			html[data-theme="dark"] .section-subtitle {
+				color: var(--text-secondary, #b8b8b8);
+			}
+			html[data-theme="dark"] .contact-info-item {
+				background: var(--bg-secondary, #2d2d2d);
+			}
+			html[data-theme="dark"] .cv-section {
+				background: var(--bg-secondary, #2d2d2d);
+			}
+			html[data-theme="dark"] .google-translate-widget {
+				background: var(--bg-card, #252525);
 			}
 
 			.section-subtitle {
@@ -577,9 +601,7 @@
 						<ul class="contact-info-list">
 							<li class="contact-info-item">
 								<i class="fas fa-mobile-alt"></i>
-								<a href="tel:+33695435353" itemprop="telephone"
-									>+33 6 95 43 53 53</a
-								>
+								<span itemprop="telephone">+33 6 95 43 53 XX</span>
 							</li>
 						</ul>
 					</article>
@@ -870,7 +892,7 @@
 		</main>
 
 		<!-- Footer -->
-		<footer class="footer">
+		<footer class="footer" role="contentinfo">
 			<div class="social-links">
 				<a
 					href="https://www.linkedin.com/in/nabla"
@@ -934,16 +956,16 @@
 			<p class="text-md-center mt-3">
 				<a
 					href="#top"
-					class="btn btn-sm btn-outline-light"
+					class="btn btn-sm btn-outline-secondary"
 					aria-label="Back to top of page"
 					>Back to top</a
 				>
 			</p>
-
 			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2025 Alban Andrieu. Independent DevSecOps Professional.
+				© 2026 Alban Andrieu. Independent DevSecOps Architect.
 			</p>
 		</footer>
+		<!-- End footer section -->
 
 		<!-- Smooth Scroll Script -->
 		<script>

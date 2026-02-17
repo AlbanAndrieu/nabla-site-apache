@@ -818,25 +818,11 @@
         style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Google Translate Widget -->
+    <!-- Google Translate Widget (styled via theme.css .google-translate-widget) -->
     <div class="google-translate-widget">
       <div id="google_translate_element"></div>
     </div>
     <!-- End Google Translate Widget -->
-
-    <!-- Custom style -->
-    <style>
-      .google-translate-widget {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 9999;
-        background: var(--cv-bg-container);
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px var(--cv-shadow);
-      }
-    </style>
 
     <div class="collapse bg-dark" id="navbarHeader" style="">
       <div class="container">
@@ -931,59 +917,49 @@
                     </div>
 
                     <div class="list-group list-group-flush">
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                          <i class="fa fa-briefcase text-primary mr-2"></i>
-                          <strong>Jusmundi — 4 Years Achievements</strong>
-                          <p class="mb-0 text-muted small">Key KPIs, Security (CVE, Keycloak SSO, ISO, SOC), SEO &amp; SLA improvements (2022–2025)</p>
-                        </div>
-                        <div>
-                          <a href="/cv/jusmundi/index.html" class="btn btn-sm btn-outline-primary mr-2">View page</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="list-group list-group-flush">
 
                       <div class="list-group-item d-flex flex-column">
-                        <div>
+                        <div class="mb-2">
                           <i class="fa fa-file-pdf-o text-primary mr-2"></i>
                           <strong>(Choose by Detail Level) C.V:</strong>
                           <p class="mb-0 text-muted small">Traditional formatted HTML resume — English (EN), French (FR), German (DE), Norwegian (NO)</p>
                         </div>
 
-                        <p class="card-text mt-2">
-                          <i class="fa mr-2 fa-file-text text-success"></i> <strong>Small C.V</strong>
-                          <a href="/cv/cv-small-en.html" target="_blank">[EN – Quick Overview]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-small-fr.html" target="_blank">[FR – Aperçu rapide]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-small-de.html" target="_blank">[DE – Kurzüberblick]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-small-no.html" target="_blank">[NO – Kort oversikt]</a>
-                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <i class="fa mr-2 fa-file-text text-success"></i> <strong>Small C.V</strong>
+                          </div>
+                          <div>
+                            <a href="/cv/cv-small-en.html" class="btn btn-sm btn-outline-primary mr-2">View page (EN)</a>
+                            <a href="/cv/cv-small-fr.html" class="btn btn-sm btn-outline-primary mr-2">View page (FR)</a>
+                            <a href="/cv/cv-small-de.html" class="btn btn-sm btn-outline-primary mr-2">View page (DE)</a>
+                            <a href="/cv/cv-small-no.html" class="btn btn-sm btn-outline-primary mr-2">View page (NO)</a>
+                          </div>
+                        </div>
 
-                        <p class="card-text">
-                          <i class="fa mr-2 fa-file-text text-primary"></i> <strong>Medium C.V</strong>
-                          <a href="/cv/cv-medium-en.html" target="_blank">[EN – Standard Detail]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-medium-fr.html" target="_blank">[FR – Détail standard]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-medium-de.html" target="_blank">[DE – Standard]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-medium-no.html" target="_blank">[NO – Standard]</a>
-                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                          <div>
+                            <i class="fa mr-2 fa-file-text text-primary"></i> <strong>Medium C.V</strong>
+                          </div>
+                          <div>
+                            <a href="/cv/cv-medium-en.html" class="btn btn-sm btn-outline-primary mr-2">View page (EN)</a>
+                            <a href="/cv/cv-medium-fr.html" class="btn btn-sm btn-outline-primary mr-2">View page (FR)</a>
+                            <a href="/cv/cv-medium-de.html" class="btn btn-sm btn-outline-primary mr-2">View page (DE)</a>
+                            <a href="/cv/cv-medium-no.html" class="btn btn-sm btn-outline-primary mr-2">View page (NO)</a>
+                          </div>
+                        </div>
 
-                        <p class="card-text">
-                          <i class="fa mr-2 fa-file-text text-info"></i> <strong>Large C.V</strong>
-                          <a href="/cv/cv-large-en.html" target="_blank">[EN – Complete Detail]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-large-fr.html" target="_blank">[FR – Détail complet]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-large-de.html" target="_blank">[DE – Ausführlich]</a>
-                          <span class="text-muted">|</span>
-                          <a href="/cv/cv-large-no.html" target="_blank">[NO – Detaljert]</a>
-                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                          <div>
+                            <i class="fa mr-2 fa-file-text text-info"></i> <strong>Large C.V</strong>
+                          </div>
+                          <div>
+                            <a href="/cv/cv-large-en.html" class="btn btn-sm btn-outline-primary mr-2">View page (EN)</a>
+                            <a href="/cv/cv-large-fr.html" class="btn btn-sm btn-outline-primary mr-2">View page (FR)</a>
+                            <a href="/cv/cv-large-de.html" class="btn btn-sm btn-outline-primary mr-2">View page (DE)</a>
+                            <a href="/cv/cv-large-no.html" class="btn btn-sm btn-outline-primary mr-2">View page (NO)</a>
+                          </div>
+                        </div>
 
                       </div>
 
@@ -1021,6 +997,24 @@
 
                     </div>
 
+                  </section>
+
+                  <section class="cv-section mb-4">
+                    <h3 class="h5 border-bottom pb-2 mb-3">
+                      <i class="fa fa-bar-chart text-primary mr-2"></i>Data Driven figures
+                    </h3>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                          <i class="fa fa-briefcase text-primary mr-2"></i>
+                          <strong>Jusmundi — 4 Years Achievements</strong>
+                          <p class="mb-0 text-muted small">Key KPIs, Security (CVE, Keycloak SSO, ISO, SOC), SEO &amp; SLA improvements (2022–2025)</p>
+                        </div>
+                        <div>
+                          <a href="/cv/jusmundi/index.html" class="btn btn-sm btn-outline-primary mr-2">View page</a>
+                        </div>
+                      </div>
+                    </div>
                   </section>
 
                   <section class="cv-section mb-4">

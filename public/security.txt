@@ -2,3 +2,5 @@ Contact: mailto:alban.andrieu@free.fr
 Expires: 2026-10-12T00:00:00Z
 Canonical: https://nabla.albandrieu.com/security.txt
 Preferred-Languages: en,fr
+Acknowledgments: https://github.com/AlbanAndrieu/nabla-site-apache#readme
+Policy: https://nabla.albandrieu.com/policy/privacy.html

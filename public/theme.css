@@ -350,6 +350,29 @@ select:focus {
 }
 
 /* ============================================
+   Google Translate Widget
+   ============================================ */
+.google-translate-widget {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 9999;
+	width: fit-content;
+	max-width: 100%;
+	background: var(--bg-primary);
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Keep injected Google Translate content from stretching the widget */
+.google-translate-widget > div,
+.google-translate-widget iframe,
+.google-translate-widget .goog-te-combo {
+	max-width: 100%;
+}
+
+/* ============================================
    Responsive Design Enhancements
    ============================================ */
 

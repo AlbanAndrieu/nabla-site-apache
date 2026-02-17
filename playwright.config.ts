@@ -1,8 +1,13 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
- * Playwright configuration for nabla-site-apache
- * See https://playwright.dev/docs/test-configuration
+ * Read environment variables from file.
+ * https://github.com/motdotla/dotenv
+ */
+// require('dotenv').config();
+
+/**
+ * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
 	testDir: "./tests",
@@ -23,7 +28,7 @@ export default defineConfig({
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		baseURL: "http://localhost:8001",
+		baseURL: process.env.BASE_URL || "http://localhost:8787",
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: "on-first-retry",
 		/* Take screenshot on failure */

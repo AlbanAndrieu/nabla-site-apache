@@ -1,6 +1,7 @@
 {
 	"name": "nabla-site-apache",
 	"version": "1.0.0",
+	"type": "module",
 	"private": true,
 	"description": "Simple HTML project for Nabla company promoting Alban Andrieu as an experienced DevSecOps",
 	"main": "index.html",
@@ -13,7 +14,7 @@
 	"bugs": {
 		"url": "https://github.com/AlbanAndrieu/nabla-site-apache/issues"
 	},
-	"homepage": "https://github.com/lockfale/ARF#readme",
+	"homepage": "https://github.com/AlbanAndrieu/nabla-site-apache#readme",
 	"engines": {
 		"pnpm": "^10.22.0",
 		"node": ">=24.11.0",
@@ -22,6 +23,7 @@
 	"scripts": {
 		"postinstall": "copyfiles -f ./node_modules/d3/d3.min.js ./index/dist/scripts/d3 && copyfiles -f ./app/scripts/arf.js ./dist/scripts/ && copyfiles -f ./app/resources/*.json ./dist/resources && copyfiles -f ./index.html ./dist/ && copyfiles -f ./wireframe.css ./dist/",
 		"lint": "eslint --format gitlab .",
+		"audit": "npm audit --audit-level=moderate",
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
@@ -30,23 +32,23 @@
 		"hugo:dev": "hugo server -D",
 		"hugo:clean": "npx rimraf resources/_gen hugo_stats.json .hugo_build.lock",
 		"test": "playwright test",
-		"test:headed": "playwright test --headed",
 		"test:ui": "playwright test --ui",
-		"test:report": "playwright show-report",
-		"test:debug": "playwright test --debug"
+		"test:headed": "playwright test --headed",
+		"test:debug": "playwright test --debug",
+		"test:report": "playwright show-report"
 	},
 	"dependencies": {
 		"@astrojs/vercel": "^9.0.2",
-		"@commitlint/config-conventional": "^20.3.1",
 		"@datadog/browser-rum": "^6.24.1",
 		"crypto": "^1.0.1",
 		"lodash-es": "^4.17.23",
 		"stripe": "^20.2.0",
-		"vercel": "^50.5.0",
+		"vercel": "^50.18.0",
 		"webdriver-manager": "^12.1.9"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.1",
+		"@commitlint/config-conventional": "^20.3.1",
 		"@playwright/test": "^1.58.0",
 		"copyfiles": "2.4.1",
 		"d3": "7.9.0",
@@ -56,6 +58,6 @@
 		"playwright": "^1.58.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.47.0",
-		"wrangler": "^4.53.0"
+		"wrangler": "^4.59.1"
 	}
 }
