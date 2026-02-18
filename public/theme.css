@@ -523,8 +523,10 @@ button:focus-visible {
    Print Styles
    ============================================ */
 @media print {
-	.theme-toggle {
-		display: none;
+	.theme-toggle,
+	.google-translate-widget,
+	.print-button {
+		display: none !important;
 	}
 
 	body {

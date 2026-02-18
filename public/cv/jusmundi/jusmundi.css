@@ -1,0 +1,333 @@
+/**
+ * Jusmundi CV section — shared styles for index and review pages.
+ * Depends on: modern-style.css, theme.css, cv-theme.css (--cv-* variables).
+ * Google Translate widget and print hiding are in theme.css.
+ */
+
+.jusmundi-page {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	line-height: 1.6;
+	color: var(--cv-text);
+	background-color: var(--bg-light, var(--cv-bg-page));
+}
+
+.jusmundi-page a {
+	color: var(--cv-link);
+}
+
+.jusmundi-page a:hover {
+	color: var(--cv-link-hover);
+}
+
+.jusmundi-page a:focus-visible,
+.jusmundi-page button:focus-visible {
+	outline: 2px solid var(--cv-heading-accent);
+	outline-offset: 2px;
+}
+
+.jusmundi-hero {
+	background: linear-gradient(
+		135deg,
+		var(--cv-btn-bg) 0%,
+		var(--cv-heading-accent) 100%
+	);
+	color: #fff;
+	padding: 2.5rem 1.5rem;
+	text-align: center;
+	border-radius: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.jusmundi-hero h1 {
+	margin: 0 0 0.5rem;
+	font-size: 1.75rem;
+}
+
+.jusmundi-hero .subtitle {
+	opacity: 0.95;
+	font-size: 1rem;
+}
+
+.jusmundi-section {
+	margin-bottom: 2.5rem;
+}
+
+.jusmundi-section h2 {
+	color: var(--cv-heading-accent);
+	font-size: 1.35rem;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--cv-border-light);
+}
+
+.jusmundi-section h3 {
+	color: var(--cv-heading);
+	font-size: 1.1rem;
+	margin: 1.25rem 0 0.5rem;
+}
+
+.jusmundi-section-title {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	color: var(--cv-heading);
+}
+
+.jusmundi-section-subtitle {
+	text-align: center;
+	font-size: 1rem;
+	color: var(--cv-text-secondary);
+	margin-bottom: 1.5rem;
+}
+
+.jusmundi-section ul {
+	padding-left: 1.5rem;
+	margin: 0.5rem 0;
+}
+
+.jusmundi-section li {
+	margin-bottom: 0.35rem;
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+	padding: 0.5rem 0;
+	color: var(--cv-link);
+	text-decoration: none;
+}
+
+.back-link:hover {
+	color: var(--cv-link-hover);
+	text-decoration: underline;
+}
+
+/* KPI grid (index) */
+.kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: 1.25rem;
+	margin: 1rem 0;
+}
+
+.kpi-card {
+	background: var(--cv-bg-card);
+	border: 1px solid var(--cv-border-light);
+	border-radius: 12px;
+	padding: 1.5rem 1rem;
+	text-align: center;
+	box-shadow: 0 2px 10px var(--cv-shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px var(--cv-shadow);
+}
+
+.kpi-card .value {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--cv-heading-accent);
+}
+
+.kpi-card .label {
+	font-size: 0.85rem;
+	color: var(--cv-text-secondary);
+	margin-top: 0.25rem;
+}
+
+/* KPI table (review pages) */
+.kpi-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1rem 0;
+	font-size: 0.95rem;
+}
+
+.kpi-table th,
+.kpi-table td {
+	border: 1px solid var(--cv-border-light);
+	padding: 0.6rem 0.75rem;
+	text-align: left;
+}
+
+.kpi-table th {
+	background: var(--cv-bg-highlight);
+	color: var(--cv-heading-accent);
+	font-weight: 600;
+}
+
+.kpi-table tbody tr:nth-child(even) {
+	background: var(--cv-bg-card);
+}
+
+.scorecard-pre {
+	font-family: ui-monospace, monospace;
+	font-size: 0.85rem;
+	background: var(--cv-bg-card);
+	border: 1px solid var(--cv-border-light);
+	border-radius: 8px;
+	padding: 1rem;
+	overflow-x: auto;
+	white-space: pre;
+}
+
+/* Lists */
+.achievement-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.achievement-list li {
+	padding: 0.5rem 0 0.5rem 1.75rem;
+	position: relative;
+	border-bottom: 1px solid var(--cv-border-light);
+}
+
+.achievement-list li:last-child {
+	border-bottom: none;
+}
+
+.achievement-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.75rem;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: var(--cv-heading-accent);
+	border-radius: 50%;
+}
+
+.badge-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.75rem 0;
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.35rem 0.75rem;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border-radius: 9999px;
+	background: var(--cv-bg-highlight);
+	color: var(--cv-heading-accent);
+	border: 1px solid var(--cv-border-light);
+}
+
+.summary-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.summary-list li {
+	padding-left: 1.5rem;
+	position: relative;
+	margin-bottom: 0.5rem;
+}
+
+.summary-list li::before {
+	content: "✓";
+	position: absolute;
+	left: 0;
+	color: var(--cv-heading-accent);
+	font-weight: bold;
+}
+
+/* Cards grid */
+.jusmundi-card {
+	background: var(--cv-bg-card);
+	padding: 1.75rem;
+	border-radius: 12px;
+	box-shadow: 0 2px 10px var(--cv-shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	border: 1px solid var(--cv-border-light);
+}
+
+.jusmundi-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px var(--cv-shadow);
+}
+
+.jusmundi-card .jusmundi-card-icon {
+	font-size: 2rem;
+	color: var(--cv-heading-accent);
+	margin-bottom: 0.75rem;
+}
+
+.jusmundi-card h3 {
+	font-size: 1.25rem;
+	color: var(--cv-heading-accent);
+	margin-bottom: 0.5rem;
+}
+
+.jusmundi-card-subtitle {
+	font-size: 0.95rem;
+	color: var(--cv-text-secondary);
+	margin-bottom: 1rem;
+}
+
+.jusmundi-card-h4 {
+	font-size: 1.05rem;
+	color: var(--cv-heading);
+	margin: 1.25rem 0 0.5rem;
+	font-weight: 600;
+}
+
+.jusmundi-card-h4:first-of-type {
+	margin-top: 0.5rem;
+}
+
+.jusmundi-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Skip link (accessibility) */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: var(--cv-heading-accent);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	z-index: 10000;
+	border-radius: 0 0 4px 0;
+	transition: top 0.2s;
+}
+
+.skip-link:focus {
+	top: 0;
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+	.kpi-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.jusmundi-cards-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.kpi-table {
+		font-size: 0.8rem;
+	}
+
+	.kpi-table th,
+	.kpi-table td {
+		padding: 0.4rem;
+	}
+}
