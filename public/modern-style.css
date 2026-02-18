@@ -329,7 +329,7 @@ body {
 	opacity: 0.8;
 }
 
-/* Footer */
+/* Footer - uniform site footer (excludes C.V. pages) */
 .footer {
 	background: #0f172a;
 	color: white;
@@ -337,10 +337,23 @@ body {
 	text-align: center;
 }
 
+.footer-copyright {
+	margin-top: 1rem;
+	opacity: 0.7;
+}
+
 @media (prefers-color-scheme: dark) {
 	.footer {
 		background: #020617;
 	}
+}
+
+html[data-theme="dark"] .footer {
+	background: #020617;
+}
+
+html[data-theme="light"] .footer {
+	background: #0f172a;
 }
 
 .footer-links {

@@ -10,7 +10,7 @@ var tree = d3.layout.tree().size([height, width]);
 var diagonal = d3.svg.diagonal().projection((d) => [d.y, d.x]);
 
 var vis = d3
-	.select("#body")
+	.select("#arf-viz-body")
 	.append("svg:svg")
 	.attr("width", width + margin[1] + margin[3])
 	.attr("height", height + margin[0] + margin[2])

@@ -9,6 +9,7 @@ name = "pypi"
 ansible-lint = ">=25.8.2"
 gitlint = ">=0.19.1"
 Pillow = ">=12.1.1"
+mypy = ">=1.19.1"
 
 [requires]
 python_version = "3.12"

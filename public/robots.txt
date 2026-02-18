@@ -165,6 +165,15 @@ Disallow: /api/
 Disallow: /test/
 Crawl-delay: 10
 
+# Disallow Jusmundi review pages (noindex/nofollow, not for public indexing)
+Disallow: /cv/jusmundi/4-years-review-aandrieu.html
+Disallow: /cv/jusmundi/4-years-review-jusmundi.html
+Disallow: /cv/jusmundi/yearly-review-2025-aandrieu.html
+
+# Disallow test and login pages (noindex/nofollow)
+Disallow: /test.html
+Disallow: /login.html
+
 # Disallow technical signup pages
 Allow: /login/$
 Allow: /signup/$

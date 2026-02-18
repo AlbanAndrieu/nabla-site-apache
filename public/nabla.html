@@ -1,8 +1,5 @@
 <!doctype html>
-<!--
-<meta http-equiv="REFRESH" content="0;url=/sample/index.html">
--->
-<html lang="en" id="top">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,32 +25,28 @@
 			property="og:description"
 			content="Experienced DevSecOps Engineer specializing in SDLC, Cloud Infrastructure, and Software Development"
 		/>
-		<meta
-			property="og:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary" />
 		<meta property="twitter:url" content="https://albandrieu.com/cv/" />
-		<meta
-			property="twitter:title"
-			content="Alban Andrieu - DevSecOps Engineer CV"
-		/>
+		<meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
 		<meta
 			property="twitter:description"
 			content="Experienced DevSecOps Engineer specializing in SDLC, Cloud Infrastructure, and Software Development"
 		/>
-		<meta
-			property="twitter:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 
 		<!-- Favicon -->
 		<link rel="icon" href="assets/nabla/nabla-4.png" />
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="theme.css" />
+		<!-- Print Styles for PDF Export -->
+		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="wireframe.css" />
+		<link rel="stylesheet" href="arf.css" />
 
 		<!-- Font Awesome -->
 		<link
@@ -77,12 +70,6 @@
 		<!-- Theme toggle script - load early to prevent flash -->
 		<script src="theme-toggle.js"></script>
 
-		<link rel="stylesheet" href="wireframe.css" />
-		<link rel="stylesheet" href="arf.css" />
-		<link rel="stylesheet" href="theme.css" />
-		<!-- Print Styles for PDF Export -->
-		<link rel="stylesheet" href="print.css" />
-
 		<!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
 		<script>
 			/*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
@@ -99,8 +86,7 @@
 				const t = document.documentElement,
 					{ connection: i } = navigator;
 				window.obs = window.obs || {};
-				const a =
-						!0 === ((window.obs && window.obs.config) || {}).observeChanges,
+				const a = !0 === ((window.obs && window.obs.config) || {}).observeChanges,
 					o = () => {
 						const e = window.obs || {},
 							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
@@ -110,35 +96,20 @@
 								: "high" === e.rttCategory || (null != i && i <= 5)
 									? "weak"
 									: "moderate";
-						const a =
-							!0 === e.dataSaver ||
-							!0 === e.batteryLow ||
-							!0 === e.batteryCritical;
+						const a = !0 === e.dataSaver || !0 === e.batteryLow || !0 === e.batteryCritical;
 						e.conservationPreference = a ? "conserve" : "neutral";
-						const o =
-							"weak" === e.connectionCapability ||
-							!0 === e.dataSaver ||
-							!0 === e.batteryCritical;
-						(e.deliveryMode =
-							"strong" !== e.connectionCapability || o || a
-								? o
-									? "lite"
-									: "cautious"
-								: "rich"),
+						const o = "weak" === e.connectionCapability || !0 === e.dataSaver || !0 === e.batteryCritical;
+						(e.deliveryMode = "strong" !== e.connectionCapability || o || a ? (o ? "lite" : "cautious") : "rich"),
 							(e.canShowRichMedia = "lite" !== e.deliveryMode),
 							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
 							["strong", "moderate", "weak"].forEach((e) => {
 								t.classList.remove(`has-connection-capability-${e}`);
 							}),
-							t.classList.add(
-								`has-connection-capability-${e.connectionCapability}`,
-							),
+							t.classList.add(`has-connection-capability-${e.connectionCapability}`),
 							["conserve", "neutral"].forEach((e) => {
 								t.classList.remove(`has-conservation-preference-${e}`);
 							}),
-							t.classList.add(
-								`has-conservation-preference-${e.conservationPreference}`,
-							),
+							t.classList.add(`has-conservation-preference-${e.conservationPreference}`),
 							["rich", "cautious", "lite"].forEach((e) => {
 								t.classList.remove(`has-delivery-mode-${e}`);
 							}),
@@ -147,24 +118,13 @@
 					n = () => {
 						if (!i) return;
 						const { saveData: e, rtt: a, downlink: n } = i;
-						(window.obs.dataSaver = !!e),
-							t.classList.toggle("has-data-saver", !!e);
-						const s = ((e) =>
-							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+						(window.obs.dataSaver = !!e), t.classList.toggle("has-data-saver", !!e);
+						const s = ((e) => (Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null))(a);
 						null != s && (window.obs.rttBucket = s);
-						const r = ((e) =>
-							Number.isFinite(e)
-								? e < 75
-									? "low"
-									: e <= 275
-										? "medium"
-										: "high"
-								: null)(a);
+						const r = ((e) => (Number.isFinite(e) ? (e < 75 ? "low" : e <= 275 ? "medium" : "high") : null))(a);
 						r &&
 							((window.obs.rttCategory = r),
-							["low", "medium", "high"].forEach((e) =>
-								t.classList.remove(`has-latency-${e}`),
-							),
+							["low", "medium", "high"].forEach((e) => t.classList.remove(`has-latency-${e}`)),
 							t.classList.add(`has-latency-${r}`));
 						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
 						var l;
@@ -172,18 +132,12 @@
 							window.obs.downlinkBucket = c;
 							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
 							(window.obs.downlinkCategory = e),
-								["low", "medium", "high"].forEach((e) =>
-									t.classList.remove(`has-bandwidth-${e}`),
-								),
+								["low", "medium", "high"].forEach((e) => t.classList.remove(`has-bandwidth-${e}`)),
 								t.classList.add(`has-bandwidth-${e}`);
 						}
 						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
 					};
-				n(),
-					a &&
-						i &&
-						"function" == typeof i.addEventListener &&
-						i.addEventListener("change", n);
+				n(), a && i && "function" == typeof i.addEventListener && i.addEventListener("change", n);
 				const s = (e) => {
 					if (!e) return;
 					const { level: i, charging: a } = e,
@@ -191,15 +145,11 @@
 					window.obs.batteryCritical = n;
 					const s = Number.isFinite(i) ? i <= 0.2 : null;
 					(window.obs.batteryLow = s),
-						["critical", "low"].forEach((e) =>
-							t.classList.remove(`has-battery-${e}`),
-						),
+						["critical", "low"].forEach((e) => t.classList.remove(`has-battery-${e}`)),
 						s && t.classList.add("has-battery-low"),
 						n && t.classList.add("has-battery-critical");
 					const r = !!a;
-					(window.obs.batteryCharging = r),
-						t.classList.toggle("has-battery-charging", r),
-						o();
+					(window.obs.batteryCharging = r), t.classList.toggle("has-battery-charging", r), o();
 				};
 				if (
 					("getBattery" in navigator &&
@@ -209,8 +159,7 @@
 								s(e),
 									a &&
 										"function" == typeof e.addEventListener &&
-										(e.addEventListener("levelchange", () => s(e)),
-										e.addEventListener("chargingchange", () => s(e)));
+										(e.addEventListener("levelchange", () => s(e)), e.addEventListener("chargingchange", () => s(e)));
 							})
 							.catch(() => {}),
 					"deviceMemory" in navigator)
@@ -219,21 +168,10 @@
 						i = Number.isFinite(e) ? e : null;
 					window.obs.ramBucket = i;
 					const a =
-						((r = i),
-						Number.isFinite(r)
-							? r <= 1
-								? "very-low"
-								: r <= 2
-									? "low"
-									: r <= 4
-										? "medium"
-										: "high"
-							: null);
+						((r = i), Number.isFinite(r) ? (r <= 1 ? "very-low" : r <= 2 ? "low" : r <= 4 ? "medium" : "high") : null);
 					a &&
 						((window.obs.ramCategory = a),
-						["very-low", "low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-ram-${e}`),
-						),
+						["very-low", "low", "medium", "high"].forEach((e) => t.classList.remove(`has-ram-${e}`)),
 						t.classList.add(`has-ram-${a}`));
 				}
 				var r;
@@ -241,19 +179,10 @@
 					const e = Number(navigator.hardwareConcurrency),
 						i = Number.isFinite(e) ? e : null;
 					window.obs.cpuBucket = i;
-					const a = ((e) =>
-						Number.isFinite(e)
-							? e <= 2
-								? "low"
-								: e <= 5
-									? "medium"
-									: "high"
-							: null)(i);
+					const a = ((e) => (Number.isFinite(e) ? (e <= 2 ? "low" : e <= 5 ? "medium" : "high") : null))(i);
 					a &&
 						((window.obs.cpuCategory = a),
-						["low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-cpu-${e}`),
-						),
+						["low", "medium", "high"].forEach((e) => t.classList.remove(`has-cpu-${e}`)),
 						t.classList.add(`has-cpu-${a}`));
 				}
 				(() => {
@@ -293,23 +222,17 @@
 						cK = "_vwo_" + account_id + "_settings",
 						cc = {};
 					try {
-						var c = JSON.parse(
-							localStorage.getItem("_vwo_" + account_id + "_config"),
-						);
+						var c = JSON.parse(localStorage.getItem("_vwo_" + account_id + "_config"));
 						cc = c && typeof c === "object" ? c : {};
 					} catch (e) {}
 					var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
 					code = {
 						nonce: v && v.nonce,
 						use_existing_jquery: function () {
-							return typeof use_existing_jquery !== "undefined"
-								? use_existing_jquery
-								: undefined;
+							return typeof use_existing_jquery !== "undefined" ? use_existing_jquery : undefined;
 						},
 						library_tolerance: function () {
-							return typeof library_tolerance !== "undefined"
-								? library_tolerance
-								: undefined;
+							return typeof library_tolerance !== "undefined" ? library_tolerance : undefined;
 						},
 						settings_tolerance: function () {
 							return cc.sT || settings_tolerance;
@@ -331,11 +254,7 @@
 								f = true;
 								var t = d.getElementById("_vis_opt_path_hides");
 								if (t) t.parentNode.removeChild(t);
-								if (e)
-									new Image().src =
-										"https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
-										account_id +
-										e;
+								if (e) new Image().src = "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" + account_id + e;
 							}
 						},
 						finished: function () {
@@ -471,22 +390,15 @@
 						((p = t.createElement("script")).type = "text/javascript"),
 							(p.crossOrigin = "anonymous"),
 							(p.async = !0),
-							(p.src =
-								s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-								"/static/array.js"),
-							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-								p,
-								r,
-							);
+							(p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
+							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
 						var u = e;
 						for (
 							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
 								u.people = u.people || [],
 								u.toString = function (t) {
 									var e = "posthog";
-									return (
-										"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-									);
+									return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
 								},
 								u.people.toString = function () {
 									return u.toString(1) + ".people (stub)";
@@ -523,10 +435,7 @@
 		<!-- End Google Tag Manager (noscript) -->
 
 		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-		></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -548,8 +457,7 @@
 					var a = document.createElement("script");
 					(a.type = "text/javascript"),
 						(a.async = !0),
-						(a.src =
-							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
+						(a.src = "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
 					var r = document.getElementsByTagName("script")[0];
 					r.parentNode.insertBefore(a, r);
 					var n = [
@@ -607,13 +515,7 @@
 				d.src = n;
 				n = o.getElementsByTagName(u)[0];
 				n.parentNode.insertBefore(d, n);
-			})(
-				window,
-				document,
-				"script",
-				"https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
-				"DD_RUM",
-			);
+			})(window, document, "script", "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js", "DD_RUM");
 			window.DD_RUM.onReady(function () {
 				window.DD_RUM.init({
 					clientToken: "pub550f242796dac3c13b730eb727658279",
@@ -649,18 +551,11 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		<link
-			rel="alternate"
-			hreflang="x-default"
-			href="https://nabla.albandrieu.com/"
-		/>
+		<link rel="alternate" hreflang="x-default" href="https://nabla.albandrieu.com/" />
 		<link rel="canonical" href="https://nabla.albandrieu.com/" />
 		<!-- Ahrefs Web Analytics -->
-		<script
-			src="https://analytics.ahrefs.com/analytics.js"
-			data-key="tg3zLMS/bebJFl0LxctiCw"
-			async
-		></script>
+		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
+		#nosec allow:gitleaks
 
 		<!-- Vercel Web Analytics -->
 		<script>
@@ -746,11 +641,13 @@
 			}
 		</script>
 	</head>
-	<body>
+
+	<body id="top">
+		<!-- Skip to main content link for accessibility -->
+		<a href="#main-content" class="skip-to-main">Skip to main content</a>
+
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
-			<i class="fas fa-print"></i> Print / Save as PDF
-		</button>
+		<button class="print-button" onclick="window.print()"><i class="fas fa-print"></i> Print / Save as PDF</button>
 
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
@@ -770,205 +667,167 @@
 		<!-- End Google Translate Widget -->
 
 		<!-- Custom style -->
-		<style>
-			.google-translate-widget {
-				position: fixed;
-				top: 10px;
-				right: 10px;
-				z-index: 9999;
-				background: white;
-				padding: 5px;
-				border-radius: 5px;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-			}
-		</style>
+		<style></style>
 
-		<!-- Hero Section -->
-		<section class="hero-section" id="home">
-			<div class="hero-content">
-				<img
-					src="https://avatars1.githubusercontent.com/u/7859836"
-					alt="Alban Andrieu"
-					class="profile-image"
-				/>
-				<h1 class="hero-title">Alban Andrieu</h1>
-				<p class="hero-subtitle">
-					DevSecOps Cloud Architect | Independent Consultant
-				</p>
-				<p class="hero-description">
-					Currently architecting secure cloud solutions at
-					<a href="https://www.jusmundi.com" target="_blank">Jus Mundi</a>. With
-					20+ years of experience in enterprise environments, I specialize in
-					transforming businesses through DevOps automation, cloud security, and
-					infrastructure as code.
-					<br />
-					<br />
-					Open to challenges around AI Integration, MLOps, and Security.
-				</p>
-				<div class="cta-buttons">
-					<a href="#contact" class="btn btn-primary">
-						<i class="fas fa-envelope"></i> Get in Touch
-					</a>
-					<a
-						href="https://www.linkedin.com/in/nabla"
-						target="_blank"
-						class="btn btn-secondary"
-					>
-						<i class="fab fa-linkedin"></i> View LinkedIn
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- Services Section -->
-		<section class="services-section" id="services">
-			<h2 class="section-title">Services I Offer</h2>
-			<p class="section-subtitle">
-				Comprehensive DevSecOps solutions tailored to your business needs
-			</p>
-			<div class="services-grid">
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-infinity"></i>
-					</div>
-					<h3>Optimized custom search</h3>
-					<p>Custom search used by home made IA.</p>
-
-					<script
-						async
-						src="https://cse.google.com/cse.js?cx=8090719dd778f44d0"
-					></script>
-					<div class="gcse-search"></div>
-				</div>
-
-				<div class="service-card">
-					<div class="service-icon">
-						<i class="fas fa-robot"></i>
-					</div>
-					<h3>Infrastructure as Code</h3>
-					<p>
-						Implementing IaC solutions using Terraform, Ansible, and other tools
-						to manage infrastructure efficiently and consistently.
+		<!-- Main content area -->
+		<main id="main-content" role="main" class="mb-5">
+			<!-- Hero Section -->
+			<section class="hero-section" id="home">
+				<div class="hero-content">
+					<img src="https://avatars1.githubusercontent.com/u/7859836" alt="Alban Andrieu" class="profile-image" />
+					<h1 class="hero-title">Alban Andrieu</h1>
+					<p class="hero-subtitle">DevSecOps Cloud Architect | Independent Consultant</p>
+					<p class="hero-description">
+						Currently architecting secure cloud solutions at
+						<a href="https://www.jusmundi.com" target="_blank">Jus Mundi</a>. With 20+ years of experience in enterprise
+						environments, I specialize in transforming businesses through DevOps automation, cloud security, and
+						infrastructure as code.
+						<br />
+						<br />
+						Open to challenges around AI Integration, MLOps, and Security.
 					</p>
+					<div class="cta-buttons">
+						<a href="#contact" class="btn btn-primary"> <i class="fas fa-envelope"></i> Get in Touch </a>
+						<a href="https://www.linkedin.com/in/nabla" target="_blank" class="btn btn-secondary">
+							<i class="fab fa-linkedin"></i> View LinkedIn
+						</a>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<!-- Tools Section -->
-		<section class="tools-section" id="tools">
-			<h2 class="section-title">Tools & Platforms</h2>
-			<p class="section-subtitle">
-				Familiar with a wide range of industry-standard tools
-			</p>
-			<div class="tools-grid">
-				<div class="tool-item">
-					<a href="https://github.com/AlbanAndrieu" target="_blank">
-						<img src="assets/logo-github-simple.png" alt="GitHub" />
-						<h4>GitHub</h4>
-					</a>
-				</div>
-				<div class="tool-item">
-					<a
-						href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
-						target="_blank"
-					>
-						<img src="assets/logo-sonar.png" alt="SonarCloud" />
-						<h4>SonarCloud</h4>
-					</a>
-				</div>
-				<div class="tool-item">
-					<a href="https://hub.docker.com/u/nabla" target="_blank">
-						<img src="assets/logo-docker-hub-simple.png" alt="Docker Hub" />
-						<h4>Docker Hub</h4>
-					</a>
-				</div>
-				<div class="tool-item">
-					<img src="assets/big-icon-jenkins.png" alt="Jenkins" />
-					<h4>Jenkins</h4>
-				</div>
-				<div class="tool-item">
-					<img src="assets/logo-nexus.png" alt="Nexus" />
-					<h4>Nexus</h4>
-				</div>
-				<div class="tool-item">
-					<img src="assets/logo-angular-simple.png" alt="Angular" />
-					<h4>Angular</h4>
-				</div>
-			</div>
-		</section>
+			<!-- Services Section -->
+			<section class="services-section" id="services">
+				<h2 class="section-title">Services I Offer</h2>
+				<p class="section-subtitle">Comprehensive DevSecOps solutions tailored to your business needs</p>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-infinity"></i>
+						</div>
+						<h3>Optimized custom search</h3>
+						<p>Custom search used by home made IA.</p>
 
-		<!-- Contact Section -->
-		<section class="contact-section" id="contact">
-			<div class="contact-container">
-				<h2 class="section-title">Let's Work Together</h2>
-				<p class="section-subtitle">
-					Ready to transform your DevOps practices? Get in touch to discuss your
-					project.
-				</p>
+						<script async src="https://cse.google.com/cse.js?cx=8090719dd778f44d0"></script>
+						<div class="gcse-search"></div>
+					</div>
 
-				<div class="contact-methods">
-					<a href="mailto:alban.andrieu@free.fr" class="contact-method">
-						<div class="contact-icon">
-							<i class="fas fa-envelope"></i>
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-robot"></i>
 						</div>
-						<div class="contact-info">
-							<h4>Email</h4>
-							<p>alban.andrieu@free.fr</p>
-						</div>
-					</a>
+						<h3>Infrastructure as Code</h3>
+						<p>
+							Implementing IaC solutions using Terraform, Ansible, and other tools to manage infrastructure efficiently
+							and consistently.
+						</p>
+					</div>
+				</div>
+			</section>
 
-					<a
-						href="https://www.linkedin.com/in/nabla"
-						target="_blank"
-						class="contact-method"
-					>
-						<div class="contact-icon">
-							<i class="fab fa-linkedin"></i>
-						</div>
-						<div class="contact-info">
-							<h4>LinkedIn</h4>
-							<p>Connect with me</p>
-						</div>
-					</a>
-
-					<a
-						href="https://calendly.com/alban-andrieu"
-						target="_blank"
-						class="contact-method"
-					>
-						<div class="contact-icon">
-							<i class="fa fa-calendar-plus"></i>
-						</div>
-						<div class="contact-info">
-							<h4>Calendly</h4>
-							<p>Have a call</p>
-						</div>
-					</a>
-
-					<a
-						href="https://github.com/AlbanAndrieu"
-						target="_blank"
-						class="contact-method"
-					>
-						<div class="contact-icon">
-							<i class="fab fa-github"></i>
-						</div>
-						<div class="contact-info">
+			<!-- Tools Section -->
+			<section class="tools-section" id="tools">
+				<h2 class="section-title">Tools & Platforms</h2>
+				<p class="section-subtitle">Familiar with a wide range of industry-standard tools</p>
+				<div class="tools-grid">
+					<div class="tool-item">
+						<a href="https://github.com/AlbanAndrieu" target="_blank">
+							<img src="assets/logo-github-simple.png" alt="GitHub" />
 							<h4>GitHub</h4>
-							<p>View my work</p>
-						</div>
-					</a>
+						</a>
+					</div>
+					<div class="tool-item">
+						<a href="https://sonarcloud.io/organizations/albanandrieu-github/projects" target="_blank">
+							<img src="assets/logo-sonar.png" alt="SonarCloud" />
+							<h4>SonarCloud</h4>
+						</a>
+					</div>
+					<div class="tool-item">
+						<a href="https://hub.docker.com/u/nabla" target="_blank">
+							<img src="assets/logo-docker-hub-simple.png" alt="Docker Hub" />
+							<h4>Docker Hub</h4>
+						</a>
+					</div>
+					<div class="tool-item">
+						<img src="assets/big-icon-jenkins.png" alt="Jenkins" />
+						<h4>Jenkins</h4>
+					</div>
+					<div class="tool-item">
+						<img src="assets/logo-nexus.png" alt="Nexus" />
+						<h4>Nexus</h4>
+					</div>
 				</div>
+			</section>
 
-				<div style="margin-top: 3rem">
-					<img
-						src="assets/nabla/nabla-4.svg"
-						alt="Nabla Logo"
-						style="width: 120px; opacity: 0.6"
-					/>
+			<!-- Contact Section -->
+			<section class="contact-section" id="contact">
+				<div class="contact-container">
+					<h2 class="section-title">Let's Work Together</h2>
+					<p class="section-subtitle">
+						Ready to transform your DevOps practices? Get in touch to discuss your project.
+					</p>
+
+					<div class="contact-methods">
+						<a href="mailto:alban.andrieu@free.fr" class="contact-method">
+							<div class="contact-icon">
+								<i class="fas fa-envelope"></i>
+							</div>
+							<div class="contact-info">
+								<h4>Email</h4>
+								<p>alban.andrieu@free.fr</p>
+							</div>
+						</a>
+
+						<a href="https://www.linkedin.com/in/nabla" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fab fa-linkedin"></i>
+							</div>
+							<div class="contact-info">
+								<h4>LinkedIn</h4>
+								<p>Connect with me</p>
+							</div>
+						</a>
+
+						<a href="https://calendly.com/alban-andrieu" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fa fa-calendar-plus"></i>
+							</div>
+							<div class="contact-info">
+								<h4>Calendly</h4>
+								<p>Have a call</p>
+							</div>
+						</a>
+
+						<a href="https://github.com/AlbanAndrieu" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fab fa-github"></i>
+							</div>
+							<div class="contact-info">
+								<h4>GitHub</h4>
+								<p>View my work</p>
+							</div>
+						</a>
+					</div>
+
+					<div style="margin-top: 3rem">
+						<img src="assets/nabla/nabla-4.svg" alt="Nabla Logo" style="width: 120px; opacity: 0.6" />
+					</div>
+
+					<!-- Stack Exchange Badge -->
+					<div style="margin-top: 3rem; text-align: center">
+						<a href="https://stackexchange.com/users/4652074/albanandrieu" target="_blank" rel="noopener noreferrer">
+							<img
+								src="https://stackexchange.com/users/flair/4652074.png"
+								width="208"
+								height="58"
+								alt="Stack Exchange profile for AlbanAndrieu"
+								title="Stack Exchange profile for AlbanAndrieu"
+							/>
+						</a>
+					</div>
+					<!-- End of Stack Exchange Badge -->
 				</div>
-			</div>
-		</section>
+			</section>
+		</main>
 
 		<!-- Footer -->
 		<footer class="footer" role="contentinfo">
@@ -976,6 +835,7 @@
 				<a
 					href="https://www.linkedin.com/in/nabla"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="LinkedIn"
 				>
@@ -984,6 +844,7 @@
 				<a
 					href="https://calendly.com/alban-andrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Calendly"
 				>
@@ -992,6 +853,7 @@
 				<a
 					href="https://github.com/AlbanAndrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="GitHub"
 				>
@@ -1000,6 +862,7 @@
 				<a
 					href="https://hub.docker.com/u/nabla"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Docker Hub"
 				>
@@ -1008,46 +871,28 @@
 				<a
 					href="https://stackexchange.com/users/4652074/albanandrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Stack Exchange"
 				>
 					<i class="fab fa-stack-exchange"></i>
 				</a>
 			</div>
-
 			<div class="footer-links">
-				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
-					>Terms of Use</a
-				>
-				<a
-					href="javascript:openAxeptioCookies()"
-					rel="noopener noreferrer"
-					class="text-muted"
-					>Cookies</a
-				>
-				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-					>Privacy Policy</a
-				>
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
-				<a
-					href="#top"
-					class="btn btn-sm btn-outline-secondary"
-					aria-label="Back to top of page"
-					>Back to top</a
-				>
+				<a href="./index.html" class="btn btn-sm btn-outline-secondary">Return to main page</a>
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
-
-			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2026 Alban Andrieu. Independent DevSecOps Architect.
-			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 		<!-- End footer section -->
 
 		<div style="display: none">
-			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561"
-				>north-puny</a
-			>
+			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561">north-puny</a>
 		</div>
 
 		<!-- Smooth Scroll Script -->
@@ -1055,13 +900,16 @@
 			// Smooth scrolling for anchor links
 			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 				anchor.addEventListener("click", function (e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute("href"));
-					if (target) {
-						target.scrollIntoView({
-							behavior: "smooth",
-							block: "start",
-						});
+					const href = this.getAttribute("href");
+					if (href !== "#" && href.length > 1) {
+						e.preventDefault();
+						const target = document.querySelector(href);
+						if (target) {
+							target.scrollIntoView({
+								behavior: "smooth",
+								block: "start",
+							});
+						}
 					}
 				});
 			});
@@ -1075,35 +923,20 @@
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+						entry.target.style.opacity = "1";
+						entry.target.style.transform = "translateY(0)";
 					}
 				});
 			}, observerOptions);
 
-			// Observe all service cards, skill categories, and tool items
-			document
-				.querySelectorAll(".service-card, .skill-category, .tool-item")
-				.forEach((el) => {
-					observer.observe(el);
-				});
+			// Observe all cards
+			document.querySelectorAll(".contact-card, .social-card").forEach((el) => {
+				el.style.opacity = "0";
+				el.style.transform = "translateY(20px)";
+				el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+				observer.observe(el);
+			});
 		</script>
-
-		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
-		<script>
-			window.axeptioSettings = {
-				clientId: "63ff48361876ce66c29dddcd",
-				cookiesVersion: "nabla-en",
-			};
-
-			(function (d, s) {
-				var t = d.getElementsByTagName(s)[0],
-					e = d.createElement(s);
-				e.async = true;
-				e.src = "//static.axept.io/sdk.js";
-				t.parentNode.insertBefore(e, t);
-			})(document, "script");
-		</script>
-		<!-- End Axeptio cookies -->
 
 		<script
 			src="https://uptime.betterstack.com/widgets/announcement.js"
@@ -1158,13 +991,21 @@
 		</script>
 		<!-- End Intercom -->
 
-		<a href="https://stackexchange.com/users/4652074/albanandrieu"
-			><img
-				src="https://stackexchange.com/users/flair/4652074.png"
-				width="208"
-				height="58"
-				alt="profile for AlbanAndrieu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
-				title="profile for AlbanAndrieu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
-		/></a>
+		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
+		<script>
+			window.axeptioSettings = {
+				clientId: "63ff48361876ce66c29dddcd",
+				cookiesVersion: "nabla-en",
+			};
+
+			(function (d, s) {
+				var t = d.getElementsByTagName(s)[0],
+					e = d.createElement(s);
+				e.async = true;
+				e.src = "//static.axept.io/sdk.js";
+				t.parentNode.insertBefore(e, t);
+			})(document, "script");
+		</script>
+		<!-- End Axeptio cookies -->
 	</body>
 </html>

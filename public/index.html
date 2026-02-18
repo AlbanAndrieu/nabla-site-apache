@@ -7,9 +7,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- PAGE settings -->
-		<title>
-			Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer
-		</title>
+		<title>Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer</title>
 		<meta
 			name="description"
 			content="Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer offering expert consulting in DevOps, Security, and Cloud Technologies"
@@ -20,42 +18,27 @@
 		/>
 		<meta name="author" content="Alban Andrieu" />
 
-		<meta
-			name="image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta name="image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="profile" />
 		<meta property="og:url" content="https://nabla.albandrieu.com/cv/" />
-		<meta
-			property="og:title"
-			content="Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer"
-		/>
+		<meta property="og:title" content="Alban Andrieu - Independent Cloud Architect & DevSecOps Engineer" />
 		<meta
 			property="og:description"
 			content="Experienced DevSecOps Engineer specializing in SDLC, Cloud Infrastructure, and Software Development"
 		/>
-		<meta
-			property="og:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 
 		<!-- twitter card tags additive with the og: tags -->
 		<meta property="twitter:card" content="summary" />
 		<meta property="twitter:domain" content="dr-alban.com" />
-		<meta
-			property="twitter:title"
-			content="Alban Andrieu - DevSecOps Engineer CV"
-		/>
+		<meta property="twitter:title" content="Alban Andrieu - DevSecOps Engineer CV" />
 		<meta
 			property="twitter:description"
 			content="Experienced DevSecOps Engineer specializing in SDLC, Cloud Infrastructure, and Software Development"
 		/>
-		<meta
-			property="twitter:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 		<meta property="twitter:url" content="https://dr-alban.com" />
 		<meta name="twitter:label1" value="Cloud architect" />
 		<meta name="twitter:data1" value="AI architect" />
@@ -112,8 +95,7 @@
 				const t = document.documentElement,
 					{ connection: i } = navigator;
 				window.obs = window.obs || {};
-				const a =
-						!0 === ((window.obs && window.obs.config) || {}).observeChanges,
+				const a = !0 === ((window.obs && window.obs.config) || {}).observeChanges,
 					o = () => {
 						const e = window.obs || {},
 							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
@@ -123,35 +105,20 @@
 								: "high" === e.rttCategory || (null != i && i <= 5)
 									? "weak"
 									: "moderate";
-						const a =
-							!0 === e.dataSaver ||
-							!0 === e.batteryLow ||
-							!0 === e.batteryCritical;
+						const a = !0 === e.dataSaver || !0 === e.batteryLow || !0 === e.batteryCritical;
 						e.conservationPreference = a ? "conserve" : "neutral";
-						const o =
-							"weak" === e.connectionCapability ||
-							!0 === e.dataSaver ||
-							!0 === e.batteryCritical;
-						(e.deliveryMode =
-							"strong" !== e.connectionCapability || o || a
-								? o
-									? "lite"
-									: "cautious"
-								: "rich"),
+						const o = "weak" === e.connectionCapability || !0 === e.dataSaver || !0 === e.batteryCritical;
+						(e.deliveryMode = "strong" !== e.connectionCapability || o || a ? (o ? "lite" : "cautious") : "rich"),
 							(e.canShowRichMedia = "lite" !== e.deliveryMode),
 							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
 							["strong", "moderate", "weak"].forEach((e) => {
 								t.classList.remove(`has-connection-capability-${e}`);
 							}),
-							t.classList.add(
-								`has-connection-capability-${e.connectionCapability}`,
-							),
+							t.classList.add(`has-connection-capability-${e.connectionCapability}`),
 							["conserve", "neutral"].forEach((e) => {
 								t.classList.remove(`has-conservation-preference-${e}`);
 							}),
-							t.classList.add(
-								`has-conservation-preference-${e.conservationPreference}`,
-							),
+							t.classList.add(`has-conservation-preference-${e.conservationPreference}`),
 							["rich", "cautious", "lite"].forEach((e) => {
 								t.classList.remove(`has-delivery-mode-${e}`);
 							}),
@@ -160,24 +127,13 @@
 					n = () => {
 						if (!i) return;
 						const { saveData: e, rtt: a, downlink: n } = i;
-						(window.obs.dataSaver = !!e),
-							t.classList.toggle("has-data-saver", !!e);
-						const s = ((e) =>
-							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+						(window.obs.dataSaver = !!e), t.classList.toggle("has-data-saver", !!e);
+						const s = ((e) => (Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null))(a);
 						null != s && (window.obs.rttBucket = s);
-						const r = ((e) =>
-							Number.isFinite(e)
-								? e < 75
-									? "low"
-									: e <= 275
-										? "medium"
-										: "high"
-								: null)(a);
+						const r = ((e) => (Number.isFinite(e) ? (e < 75 ? "low" : e <= 275 ? "medium" : "high") : null))(a);
 						r &&
 							((window.obs.rttCategory = r),
-							["low", "medium", "high"].forEach((e) =>
-								t.classList.remove(`has-latency-${e}`),
-							),
+							["low", "medium", "high"].forEach((e) => t.classList.remove(`has-latency-${e}`)),
 							t.classList.add(`has-latency-${r}`));
 						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
 						var l;
@@ -185,18 +141,12 @@
 							window.obs.downlinkBucket = c;
 							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
 							(window.obs.downlinkCategory = e),
-								["low", "medium", "high"].forEach((e) =>
-									t.classList.remove(`has-bandwidth-${e}`),
-								),
+								["low", "medium", "high"].forEach((e) => t.classList.remove(`has-bandwidth-${e}`)),
 								t.classList.add(`has-bandwidth-${e}`);
 						}
 						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
 					};
-				n(),
-					a &&
-						i &&
-						"function" == typeof i.addEventListener &&
-						i.addEventListener("change", n);
+				n(), a && i && "function" == typeof i.addEventListener && i.addEventListener("change", n);
 				const s = (e) => {
 					if (!e) return;
 					const { level: i, charging: a } = e,
@@ -204,15 +154,11 @@
 					window.obs.batteryCritical = n;
 					const s = Number.isFinite(i) ? i <= 0.2 : null;
 					(window.obs.batteryLow = s),
-						["critical", "low"].forEach((e) =>
-							t.classList.remove(`has-battery-${e}`),
-						),
+						["critical", "low"].forEach((e) => t.classList.remove(`has-battery-${e}`)),
 						s && t.classList.add("has-battery-low"),
 						n && t.classList.add("has-battery-critical");
 					const r = !!a;
-					(window.obs.batteryCharging = r),
-						t.classList.toggle("has-battery-charging", r),
-						o();
+					(window.obs.batteryCharging = r), t.classList.toggle("has-battery-charging", r), o();
 				};
 				if (
 					("getBattery" in navigator &&
@@ -222,8 +168,7 @@
 								s(e),
 									a &&
 										"function" == typeof e.addEventListener &&
-										(e.addEventListener("levelchange", () => s(e)),
-										e.addEventListener("chargingchange", () => s(e)));
+										(e.addEventListener("levelchange", () => s(e)), e.addEventListener("chargingchange", () => s(e)));
 							})
 							.catch(() => {}),
 					"deviceMemory" in navigator)
@@ -232,21 +177,10 @@
 						i = Number.isFinite(e) ? e : null;
 					window.obs.ramBucket = i;
 					const a =
-						((r = i),
-						Number.isFinite(r)
-							? r <= 1
-								? "very-low"
-								: r <= 2
-									? "low"
-									: r <= 4
-										? "medium"
-										: "high"
-							: null);
+						((r = i), Number.isFinite(r) ? (r <= 1 ? "very-low" : r <= 2 ? "low" : r <= 4 ? "medium" : "high") : null);
 					a &&
 						((window.obs.ramCategory = a),
-						["very-low", "low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-ram-${e}`),
-						),
+						["very-low", "low", "medium", "high"].forEach((e) => t.classList.remove(`has-ram-${e}`)),
 						t.classList.add(`has-ram-${a}`));
 				}
 				var r;
@@ -254,19 +188,10 @@
 					const e = Number(navigator.hardwareConcurrency),
 						i = Number.isFinite(e) ? e : null;
 					window.obs.cpuBucket = i;
-					const a = ((e) =>
-						Number.isFinite(e)
-							? e <= 2
-								? "low"
-								: e <= 5
-									? "medium"
-									: "high"
-							: null)(i);
+					const a = ((e) => (Number.isFinite(e) ? (e <= 2 ? "low" : e <= 5 ? "medium" : "high") : null))(i);
 					a &&
 						((window.obs.cpuCategory = a),
-						["low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-cpu-${e}`),
-						),
+						["low", "medium", "high"].forEach((e) => t.classList.remove(`has-cpu-${e}`)),
 						t.classList.add(`has-cpu-${a}`));
 				}
 				(() => {
@@ -287,11 +212,7 @@
 			//# sourceURL=obs.inline.js
 		</script>
 
-		<script
-			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-			async
-			defer
-		></script>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 		<!-- mixpanel -->
 		<script type="text/javascript">
@@ -335,11 +256,7 @@
 								};
 							}
 							for (
-								var d = {},
-									e = ["get_group"].concat(
-										Array.prototype.slice.call(arguments, 0),
-									),
-									c = 0;
+								var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0;
 								c < j.length;
 								c++
 							)
@@ -355,8 +272,7 @@
 					e.src =
 						"undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
 							? MIXPANEL_CUSTOM_LIB_URL
-							: "file:" === f.location.protocol &&
-								  "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+							: "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
 								? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
 								: "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
 					g = f.getElementsByTagName("script")[0];
@@ -384,23 +300,17 @@
 						cK = "_vwo_" + account_id + "_settings",
 						cc = {};
 					try {
-						var c = JSON.parse(
-							localStorage.getItem("_vwo_" + account_id + "_config"),
-						);
+						var c = JSON.parse(localStorage.getItem("_vwo_" + account_id + "_config"));
 						cc = c && typeof c === "object" ? c : {};
 					} catch (e) {}
 					var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
 					code = {
 						nonce: v && v.nonce,
 						use_existing_jquery: function () {
-							return typeof use_existing_jquery !== "undefined"
-								? use_existing_jquery
-								: undefined;
+							return typeof use_existing_jquery !== "undefined" ? use_existing_jquery : undefined;
 						},
 						library_tolerance: function () {
-							return typeof library_tolerance !== "undefined"
-								? library_tolerance
-								: undefined;
+							return typeof library_tolerance !== "undefined" ? library_tolerance : undefined;
 						},
 						settings_tolerance: function () {
 							return cc.sT || settings_tolerance;
@@ -422,11 +332,7 @@
 								f = true;
 								var t = d.getElementById("_vis_opt_path_hides");
 								if (t) t.parentNode.removeChild(t);
-								if (e)
-									new Image().src =
-										"https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
-										account_id +
-										e;
+								if (e) new Image().src = "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" + account_id + e;
 							}
 						},
 						finished: function () {
@@ -562,22 +468,15 @@
 						((p = t.createElement("script")).type = "text/javascript"),
 							(p.crossOrigin = "anonymous"),
 							(p.async = !0),
-							(p.src =
-								s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-								"/static/array.js"),
-							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-								p,
-								r,
-							);
+							(p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
+							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
 						var u = e;
 						for (
 							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
 								u.people = u.people || [],
 								u.toString = function (t) {
 									var e = "posthog";
-									return (
-										"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-									);
+									return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
 								},
 								u.people.toString = function () {
 									return u.toString(1) + ".people (stub)";
@@ -618,10 +517,7 @@
 		<!-- End Google Tag Manager -->
 
 		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-		></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -643,8 +539,7 @@
 					var a = document.createElement("script");
 					(a.type = "text/javascript"),
 						(a.async = !0),
-						(a.src =
-							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
+						(a.src = "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
 					var r = document.getElementsByTagName("script")[0];
 					r.parentNode.insertBefore(a, r);
 					var n = [
@@ -702,13 +597,7 @@
 				d.src = n;
 				n = o.getElementsByTagName(u)[0];
 				n.parentNode.insertBefore(d, n);
-			})(
-				window,
-				document,
-				"script",
-				"https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js",
-				"DD_RUM",
-			);
+			})(window, document, "script", "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js", "DD_RUM");
 			window.DD_RUM.onReady(function () {
 				window.DD_RUM.init({
 					clientToken: "pub550f242796dac3c13b730eb727658279",
@@ -744,19 +633,11 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		<link
-			rel="alternate"
-			hreflang="x-default"
-			href="https://nabla.albandrieu.com/"
-		/>
+		<link rel="alternate" hreflang="x-default" href="https://nabla.albandrieu.com/" />
 		<link rel="canonical" href="https://nabla.albandrieu.com/" />
 
 		<!-- Ahrefs Web Analytics -->
-		<script
-			src="https://analytics.ahrefs.com/analytics.js"
-			data-key="tg3zLMS/bebJFl0LxctiCw"
-			async
-		></script>
+		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
 
 		<!-- Vercel Web Analytics -->
 		<script>
@@ -844,9 +725,7 @@
 	</head>
 	<body id="top">
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
-			<i class="fas fa-print"></i> Print / Save as PDF
-		</button>
+		<button class="print-button" onclick="window.print()"><i class="fas fa-print"></i> Print / Save as PDF</button>
 
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
@@ -911,33 +790,20 @@
 			<!-- Hero Section -->
 			<section class="hero-section" id="home">
 				<div class="hero-content">
-					<img
-						src="https://avatars1.githubusercontent.com/u/7859836"
-						alt="Alban Andrieu"
-						class="profile-image"
-					/>
+					<img src="https://avatars1.githubusercontent.com/u/7859836" alt="Alban Andrieu" class="profile-image" />
 					<h1 class="hero-title">Alban Andrieu</h1>
-					<p class="hero-subtitle">
-						DevSecOps Cloud Architect | Independent Consultant
-					</p>
+					<p class="hero-subtitle">DevSecOps Cloud Architect | Independent Consultant</p>
 					<p class="hero-description">
-						Currently architecting secure cloud solutions at Jus Mundi. With 20+
-						years of experience in enterprise environments, I specialize in
-						transforming businesses through DevOps automation, cloud security,
-						and infrastructure as code.
+						Currently architecting secure cloud solutions at Jus Mundi. With 20+ years of experience in enterprise
+						environments, I specialize in transforming businesses through DevOps automation, cloud security, and
+						infrastructure as code.
 						<br />
 						<br />
 						Open to challenges around AI Integration, MLOps, and Security.
 					</p>
 					<div class="cta-buttons">
-						<a href="#contact" class="btn btn-primary">
-							<i class="fas fa-envelope"></i> Get in Touch
-						</a>
-						<a
-							href="https://www.linkedin.com/in/nabla"
-							target="_blank"
-							class="btn btn-secondary"
-						>
+						<a href="#contact" class="btn btn-primary"> <i class="fas fa-envelope"></i> Get in Touch </a>
+						<a href="https://www.linkedin.com/in/nabla" target="_blank" class="btn btn-secondary">
 							<i class="fab fa-linkedin"></i> View LinkedIn
 						</a>
 					</div>
@@ -947,9 +813,7 @@
 			<!-- Services Section -->
 			<section class="services-section" id="services">
 				<h2 class="section-title">Services I Offer</h2>
-				<p class="section-subtitle">
-					Comprehensive DevSecOps solutions tailored to your business needs
-				</p>
+				<p class="section-subtitle">Comprehensive DevSecOps solutions tailored to your business needs</p>
 				<div class="services-grid">
 					<div class="service-card">
 						<div class="service-icon">
@@ -957,9 +821,8 @@
 						</div>
 						<h3>Security Integration</h3>
 						<p>
-							Embedding security practices into your development lifecycle with
-							automated security testing, vulnerability management, and
-							compliance.
+							Embedding security practices into your development lifecycle with automated security testing,
+							vulnerability management, and compliance.
 						</p>
 					</div>
 
@@ -969,9 +832,8 @@
 						</div>
 						<h3>IA Integration</h3>
 						<p>
-							Setting up IA across Business, using OpenAI with tools like
-							FastAPI MCP, LangFuse, n8n or Hosted custom LLM Model for full
-							cost control.
+							Setting up IA across Business, using OpenAI with tools like FastAPI MCP, LangFuse, n8n or Hosted custom
+							LLM Model for full cost control.
 						</p>
 					</div>
 
@@ -981,9 +843,8 @@
 						</div>
 						<h3>Cloud Architecture</h3>
 						<p>
-							Design and implementation of scalable cloud infrastructures on
-							AWS, Azure, and OVHCloud with focus on cost optimization and
-							reliability.
+							Design and implementation of scalable cloud infrastructures on AWS, Azure, and OVHCloud with focus on cost
+							optimization and reliability.
 						</p>
 					</div>
 
@@ -993,9 +854,8 @@
 						</div>
 						<h3>DevOps Transformation</h3>
 						<p>
-							End-to-end DevOps implementation including SDLC pipelines,
-							automation, and process optimization to accelerate your software
-							delivery.
+							End-to-end DevOps implementation including SDLC pipelines, automation, and process optimization to
+							accelerate your software delivery.
 						</p>
 					</div>
 
@@ -1005,8 +865,8 @@
 						</div>
 						<h3>Infrastructure as Code</h3>
 						<p>
-							Implementing IaC solutions using Terraform, Ansible, and ArgoCD to
-							manage infrastructure efficiently and consistently.
+							Implementing IaC solutions using Terraform, Ansible, and ArgoCD to manage infrastructure efficiently and
+							consistently.
 						</p>
 					</div>
 
@@ -1016,8 +876,8 @@
 						</div>
 						<h3>Container Orchestration</h3>
 						<p>
-							Kubernetes and Docker expertise for containerizing applications
-							and managing complex microservices architectures.
+							Kubernetes and Docker expertise for containerizing applications and managing complex microservices
+							architectures.
 						</p>
 					</div>
 
@@ -1027,9 +887,8 @@
 						</div>
 						<h3>Monitoring & Observability</h3>
 						<p>
-							Setting up comprehensive monitoring solutions with tools like
-							Prometheus, Grafana, Loki, OTEL or ELK stack for full system
-							visibility.
+							Setting up comprehensive monitoring solutions with tools like Prometheus, Grafana, Loki, OTEL or ELK stack
+							for full system visibility.
 						</p>
 					</div>
 				</div>
@@ -1038,24 +897,16 @@
 			<!-- Skills Section -->
 			<section class="skills-section" id="skills">
 				<h2 class="section-title">Technical Expertise</h2>
-				<p class="section-subtitle">
-					A comprehensive skill set built over 20 years of hands-on experience
-				</p>
+				<p class="section-subtitle">A comprehensive skill set built over 20 years of hands-on experience</p>
 				<div class="skills-container">
 					<div class="skills-grid">
 						<div class="skill-category">
 							<h4><i class="fas fa-shield"></i> Security & Compliance</h4>
 							<div class="skill-tags">
-								<span class="skill-tag"
-									>Cloudflare WAF, Warp, Zero Trust, VPC</span
-								>
-								<span class="skill-tag"
-									>SIEM, EDR, XDR, Linux Hardening, OpenVAS</span
-								>
+								<span class="skill-tag">Cloudflare WAF, Warp, Zero Trust, VPC</span>
+								<span class="skill-tag">SIEM, EDR, XDR, Linux Hardening, OpenVAS</span>
 								<span class="skill-tag">PFsense, Snort, PfBlocker</span>
-								<span class="skill-tag"
-									>OWASP Top ten, ZAProxy, SAST, DAST</span
-								>
+								<span class="skill-tag">OWASP Top ten, ZAProxy, SAST, DAST</span>
 								<span class="skill-tag">HashiCorp Vault</span>
 								<span class="skill-tag">ISO 27001 / 42001, SOC 2 Type II</span>
 							</div>
@@ -1159,9 +1010,7 @@
 			<!-- Experience Section -->
 			<section class="experience-section" id="experience">
 				<h2 class="section-title">Professional Experience</h2>
-				<p class="section-subtitle">
-					20+ years of experience delivering enterprise solutions
-				</p>
+				<p class="section-subtitle">20+ years of experience delivering enterprise solutions</p>
 				<div class="timeline">
 					<div class="timeline-item">
 						<div class="timeline-marker"></div>
@@ -1172,11 +1021,9 @@
 								<span class="timeline-date">March 2022 - Present</span>
 							</div>
 							<p class="timeline-description">
-								Leading DevSecOps initiatives and cloud architecture for a
-								international legal AI driven startup. Implementing secure,
-								scalable infrastructure on AWS / OVH with focus on automation,
-								security compliance (ISO 27001 / 42001, SOC 2, RGPD), and
-								operational excellence.
+								Leading DevSecOps initiatives and cloud architecture for a international legal AI driven startup.
+								Implementing secure, scalable infrastructure on AWS / OVH with focus on automation, security compliance
+								(ISO 27001 / 42001, SOC 2, RGPD), and operational excellence.
 							</p>
 							<div class="timeline-achievements">
 								<span class="achievement-tag">AWS Cloud Architecture</span>
@@ -1196,21 +1043,16 @@
 								<span class="timeline-date">2015 - 2022</span>
 							</div>
 							<p class="timeline-description">
-								Provided expert consulting services to Fortune 500 companies or
-								Startup, implementing DevSecOps practices, SDLC pipelines, and
-								cloud migrations. Specialized in SDLC, Security automation,
-								Docker containerization, and Kubernetes orchestration.
+								Provided expert consulting services to Fortune 500 companies or Startup, implementing DevSecOps
+								practices, SDLC pipelines, and cloud migrations. Specialized in SDLC, Security automation, Docker
+								containerization, and Kubernetes orchestration.
 							</p>
 							<div class="timeline-achievements">
 								<span class="achievement-tag">Security lead</span>
-								<span class="achievement-tag"
-									>C++, Java and Python development</span
-								>
+								<span class="achievement-tag">C++, Java and Python development</span>
 								<span class="achievement-tag">Docker & Kubernetes</span>
 								<span class="achievement-tag">Jenkins & GitHub Actions</span>
-								<span class="achievement-tag"
-									>OnPremise & Cloud administration</span
-								>
+								<span class="achievement-tag">OnPremise & Cloud administration</span>
 							</div>
 						</div>
 					</div>
@@ -1224,10 +1066,9 @@
 								<span class="timeline-date">2005 - 2015</span>
 							</div>
 							<p class="timeline-description">
-								Full-stack software development and DevOps transformation in
-								banking and financial services. Led migration from monolithic to
-								microservices architecture, implementing automated testing and
-								continuous deployment practices.
+								Full-stack software development and DevOps transformation in banking and financial services. Led
+								migration from monolithic to microservices architecture, implementing automated testing and continuous
+								deployment practices.
 							</p>
 							<div class="timeline-achievements">
 								<span class="achievement-tag">Java Enterprise</span>
@@ -1255,13 +1096,8 @@
 							<i class="fas fa-graduation-cap"></i>
 						</div>
 						<h3>Engineering Degree</h3>
-						<p class="education-institution">
-							Computer Science & Software Engineering
-						</p>
-						<p class="education-details">
-							Strong foundation in software engineering, algorithms, and system
-							design
-						</p>
+						<p class="education-institution">Computer Science & Software Engineering</p>
+						<p class="education-details">Strong foundation in software engineering, algorithms, and system design</p>
 					</div>
 
 					<div class="education-card">
@@ -1271,8 +1107,7 @@
 						<h3>ISO 27001 and RGPD compliance</h3>
 						<p class="education-institution">Information Security Management</p>
 						<p class="education-details">
-							Expert in implementing and maintaining ISO 27001 and RGPD
-							compliant security frameworks
+							Expert in implementing and maintaining ISO 27001 and RGPD compliant security frameworks
 						</p>
 					</div>
 
@@ -1283,8 +1118,7 @@
 						<h3>ISO 42001 Lead Implementer</h3>
 						<p class="education-institution">Security & Compliance</p>
 						<p class="education-details">
-							First IA Tech implementing and maintaining ISO 42001 compliant
-							security frameworks for IA
+							First IA Tech implementing and maintaining ISO 42001 compliant security frameworks for IA
 						</p>
 					</div>
 
@@ -1294,10 +1128,7 @@
 						</div>
 						<h3>SOC 2 Type II</h3>
 						<p class="education-institution">Security & Compliance</p>
-						<p class="education-details">
-							Certification in SOC 2 compliance and security controls
-							implementation
-						</p>
+						<p class="education-details">Certification in SOC 2 compliance and security controls implementation</p>
 					</div>
 
 					<div class="education-card">
@@ -1306,9 +1137,7 @@
 						</div>
 						<h3>Cloud Certifications</h3>
 						<p class="education-institution">AWS, Azure, Kubernetes</p>
-						<p class="education-details">
-							Multiple cloud platform and orchestration certifications
-						</p>
+						<p class="education-details">Multiple cloud platform and orchestration certifications</p>
 					</div>
 				</div>
 			</section>
@@ -1316,9 +1145,7 @@
 			<!-- Open Source Contributions Section -->
 			<section class="opensource-section" id="opensource">
 				<h2 class="section-title">Open Source Contributions</h2>
-				<p class="section-subtitle">
-					Active contributor to the DevSecOps community
-				</p>
+				<p class="section-subtitle">Active contributor to the DevSecOps community</p>
 				<div class="opensource-grid">
 					<div class="opensource-card">
 						<div class="opensource-icon">
@@ -1326,15 +1153,10 @@
 						</div>
 						<h3>Ansible Roles & Playbooks</h3>
 						<p>
-							Extensive collection of Ansible automation including roles for
-							Jenkins, Docker, Eclipse, and complete development environment
-							setup. Used by teams worldwide.
+							Extensive collection of Ansible automation including roles for Jenkins, Docker, Eclipse, and complete
+							development environment setup. Used by teams worldwide.
 						</p>
-						<a
-							href="https://github.com/AlbanAndrieu"
-							target="_blank"
-							class="opensource-link"
-						>
+						<a href="https://github.com/AlbanAndrieu" target="_blank" class="opensource-link">
 							View on GitHub <i class="fas fa-external-link-alt"></i>
 						</a>
 					</div>
@@ -1345,15 +1167,10 @@
 						</div>
 						<h3>Nabla DevSecOps Platform</h3>
 						<p>
-							Comprehensive DevSecOps platform combining SDLC, security
-							scanning, infrastructure automation, and monitoring tools in a
-							unified solution.
+							Comprehensive DevSecOps platform combining SDLC, security scanning, infrastructure automation, and
+							monitoring tools in a unified solution.
 						</p>
-						<a
-							href="https://nabla.albandrieu.com"
-							target="_blank"
-							class="opensource-link"
-						>
+						<a href="https://nabla.albandrieu.com" target="_blank" class="opensource-link">
 							Learn More <i class="fas fa-external-link-alt"></i>
 						</a>
 					</div>
@@ -1364,14 +1181,10 @@
 						</div>
 						<h3>Docker Images</h3>
 						<p>
-							Optimized and security-hardened Docker images for development and
-							production environments, available on Docker Hub.
+							Optimized and security-hardened Docker images for development and production environments, available on
+							Docker Hub.
 						</p>
-						<a
-							href="https://hub.docker.com/u/nabla"
-							target="_blank"
-							class="opensource-link"
-						>
+						<a href="https://hub.docker.com/u/nabla" target="_blank" class="opensource-link">
 							View on Docker Hub <i class="fas fa-external-link-alt"></i>
 						</a>
 					</div>
@@ -1383,10 +1196,7 @@
 		<section class="contact-section" id="contact">
 			<div class="contact-container">
 				<h2 class="section-title">Let's Work Together</h2>
-				<p class="section-subtitle">
-					Ready to transform your DevOps practices? Get in touch to discuss your
-					project.
-				</p>
+				<p class="section-subtitle">Ready to transform your DevOps practices? Get in touch to discuss your project.</p>
 
 				<div class="contact-methods">
 					<a href="mailto:alban.andrieu@free.fr" class="contact-method">
@@ -1399,11 +1209,7 @@
 						</div>
 					</a>
 
-					<a
-						href="https://www.linkedin.com/in/nabla"
-						target="_blank"
-						class="contact-method"
-					>
+					<a href="https://www.linkedin.com/in/nabla" target="_blank" class="contact-method">
 						<div class="contact-icon">
 							<i class="fab fa-linkedin"></i>
 						</div>
@@ -1413,11 +1219,7 @@
 						</div>
 					</a>
 
-					<a
-						href="https://calendly.com/alban-andrieu"
-						target="_blank"
-						class="contact-method"
-					>
+					<a href="https://calendly.com/alban-andrieu" target="_blank" class="contact-method">
 						<div class="contact-icon">
 							<i class="fa fa-calendar-plus"></i>
 						</div>
@@ -1427,11 +1229,7 @@
 						</div>
 					</a>
 
-					<a
-						href="https://github.com/AlbanAndrieu"
-						target="_blank"
-						class="contact-method"
-					>
+					<a href="https://github.com/AlbanAndrieu" target="_blank" class="contact-method">
 						<div class="contact-icon">
 							<i class="fab fa-github"></i>
 						</div>
@@ -1443,39 +1241,36 @@
 				</div>
 
 				<div style="margin-top: 3rem">
-					<img
-						src="assets/nabla/nabla-4.svg"
-						alt="Nabla Logo"
-						style="width: 120px; opacity: 0.6"
-					/>
+					<img src="assets/nabla/nabla-4.svg" alt="Nabla Logo" style="width: 120px; opacity: 0.6" />
 				</div>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer class="footer">
+		<footer class="footer" role="contentinfo">
 			<div class="social-links">
 				<a
 					href="https://www.linkedin.com/in/nabla"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="LinkedIn"
 				>
 					<i class="fab fa-linkedin-in"></i>
 				</a>
-
 				<a
 					href="https://calendly.com/alban-andrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Calendly"
 				>
 					<i class="fa fa-calendar-plus"></i>
 				</a>
-
 				<a
 					href="https://github.com/AlbanAndrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="GitHub"
 				>
@@ -1484,6 +1279,7 @@
 				<a
 					href="https://hub.docker.com/u/nabla"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Docker Hub"
 				>
@@ -1492,46 +1288,27 @@
 				<a
 					href="https://stackexchange.com/users/4652074/albanandrieu"
 					target="_blank"
+					rel="noopener noreferrer"
 					class="social-link"
 					aria-label="Stack Exchange"
 				>
 					<i class="fab fa-stack-exchange"></i>
 				</a>
 			</div>
-
 			<div class="footer-links">
-				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
-					>Terms of Use</a
-				>
-				<a
-					href="javascript:openAxeptioCookies()"
-					rel="noopener noreferrer"
-					class="text-muted"
-					>Cookies</a
-				>
-				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-					>Privacy Policy</a
-				>
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
-				<a
-					href="#top"
-					class="btn btn-sm btn-outline-secondary"
-					aria-label="Back to top of page"
-					>Back to top</a
-				>
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
-
-			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2026 Alban Andrieu. Independent DevSecOps Architect.
-			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 		<!-- End footer section -->
 
 		<div style="display: none">
-			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561"
-				>north-puny</a
-			>
+			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561">north-puny</a>
 		</div>
 
 		<!-- Smooth Scroll Script -->
@@ -1565,11 +1342,9 @@
 			}, observerOptions);
 
 			// Observe all service cards, skill categories, and tool items
-			document
-				.querySelectorAll(".service-card, .skill-category, .tool-item")
-				.forEach((el) => {
-					observer.observe(el);
-				});
+			document.querySelectorAll(".service-card, .skill-category, .tool-item").forEach((el) => {
+				observer.observe(el);
+			});
 		</script>
 
 		<!-- Axeptio: change clientId to be your site's PROJECT ID -->

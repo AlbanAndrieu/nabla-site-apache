@@ -15,10 +15,7 @@
 		/>
 		<meta name="theme-color" content="#1c1c1c" />
 		<meta name="website" content="www.gerardking.dev" />
-		<meta
-			name="donate"
-			content="Ethereum Address: 0xc637a25e49bb3814f26952fbe81ff18cf81aa1da"
-		/>
+		<meta name="donate" content="Ethereum Address: 0xc637a25e49bb3814f26952fbe81ff18cf81aa1da" />
 		<style>
 			body {
 				font-family: Arial, sans-serif;
@@ -110,11 +107,9 @@
 		<link rel="stylesheet" href="print.css" />
 	</head>
 
-	<body>
+	<body id="top">
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
-			🖨️ Print / Save as PDF
-		</button>
+		<button class="print-button" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
 		<header>
 			<div class="emoji">🛡️💀</div>
@@ -278,9 +273,7 @@
 				feedContainer.innerHTML = ""; // Clear container before loading new content
 				for (let feedUrl of rssFeeds) {
 					try {
-						const response = await fetch(
-							proxyUrl + encodeURIComponent(feedUrl),
-						);
+						const response = await fetch(proxyUrl + encodeURIComponent(feedUrl));
 						const data = await response.json();
 
 						if (data.items) {

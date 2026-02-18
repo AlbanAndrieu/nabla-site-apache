@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,8 +24,7 @@
 				const t = document.documentElement,
 					{ connection: i } = navigator;
 				window.obs = window.obs || {};
-				const a =
-						!0 === ((window.obs && window.obs.config) || {}).observeChanges,
+				const a = !0 === ((window.obs && window.obs.config) || {}).observeChanges,
 					o = () => {
 						const e = window.obs || {},
 							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
@@ -35,35 +34,20 @@
 								: "high" === e.rttCategory || (null != i && i <= 5)
 									? "weak"
 									: "moderate";
-						const a =
-							!0 === e.dataSaver ||
-							!0 === e.batteryLow ||
-							!0 === e.batteryCritical;
+						const a = !0 === e.dataSaver || !0 === e.batteryLow || !0 === e.batteryCritical;
 						e.conservationPreference = a ? "conserve" : "neutral";
-						const o =
-							"weak" === e.connectionCapability ||
-							!0 === e.dataSaver ||
-							!0 === e.batteryCritical;
-						(e.deliveryMode =
-							"strong" !== e.connectionCapability || o || a
-								? o
-									? "lite"
-									: "cautious"
-								: "rich"),
+						const o = "weak" === e.connectionCapability || !0 === e.dataSaver || !0 === e.batteryCritical;
+						(e.deliveryMode = "strong" !== e.connectionCapability || o || a ? (o ? "lite" : "cautious") : "rich"),
 							(e.canShowRichMedia = "lite" !== e.deliveryMode),
 							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
 							["strong", "moderate", "weak"].forEach((e) => {
 								t.classList.remove(`has-connection-capability-${e}`);
 							}),
-							t.classList.add(
-								`has-connection-capability-${e.connectionCapability}`,
-							),
+							t.classList.add(`has-connection-capability-${e.connectionCapability}`),
 							["conserve", "neutral"].forEach((e) => {
 								t.classList.remove(`has-conservation-preference-${e}`);
 							}),
-							t.classList.add(
-								`has-conservation-preference-${e.conservationPreference}`,
-							),
+							t.classList.add(`has-conservation-preference-${e.conservationPreference}`),
 							["rich", "cautious", "lite"].forEach((e) => {
 								t.classList.remove(`has-delivery-mode-${e}`);
 							}),
@@ -72,24 +56,13 @@
 					n = () => {
 						if (!i) return;
 						const { saveData: e, rtt: a, downlink: n } = i;
-						(window.obs.dataSaver = !!e),
-							t.classList.toggle("has-data-saver", !!e);
-						const s = ((e) =>
-							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+						(window.obs.dataSaver = !!e), t.classList.toggle("has-data-saver", !!e);
+						const s = ((e) => (Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null))(a);
 						null != s && (window.obs.rttBucket = s);
-						const r = ((e) =>
-							Number.isFinite(e)
-								? e < 75
-									? "low"
-									: e <= 275
-										? "medium"
-										: "high"
-								: null)(a);
+						const r = ((e) => (Number.isFinite(e) ? (e < 75 ? "low" : e <= 275 ? "medium" : "high") : null))(a);
 						r &&
 							((window.obs.rttCategory = r),
-							["low", "medium", "high"].forEach((e) =>
-								t.classList.remove(`has-latency-${e}`),
-							),
+							["low", "medium", "high"].forEach((e) => t.classList.remove(`has-latency-${e}`)),
 							t.classList.add(`has-latency-${r}`));
 						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
 						var l;
@@ -97,18 +70,12 @@
 							window.obs.downlinkBucket = c;
 							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
 							(window.obs.downlinkCategory = e),
-								["low", "medium", "high"].forEach((e) =>
-									t.classList.remove(`has-bandwidth-${e}`),
-								),
+								["low", "medium", "high"].forEach((e) => t.classList.remove(`has-bandwidth-${e}`)),
 								t.classList.add(`has-bandwidth-${e}`);
 						}
 						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
 					};
-				n(),
-					a &&
-						i &&
-						"function" == typeof i.addEventListener &&
-						i.addEventListener("change", n);
+				n(), a && i && "function" == typeof i.addEventListener && i.addEventListener("change", n);
 				const s = (e) => {
 					if (!e) return;
 					const { level: i, charging: a } = e,
@@ -116,15 +83,11 @@
 					window.obs.batteryCritical = n;
 					const s = Number.isFinite(i) ? i <= 0.2 : null;
 					(window.obs.batteryLow = s),
-						["critical", "low"].forEach((e) =>
-							t.classList.remove(`has-battery-${e}`),
-						),
+						["critical", "low"].forEach((e) => t.classList.remove(`has-battery-${e}`)),
 						s && t.classList.add("has-battery-low"),
 						n && t.classList.add("has-battery-critical");
 					const r = !!a;
-					(window.obs.batteryCharging = r),
-						t.classList.toggle("has-battery-charging", r),
-						o();
+					(window.obs.batteryCharging = r), t.classList.toggle("has-battery-charging", r), o();
 				};
 				if (
 					("getBattery" in navigator &&
@@ -134,8 +97,7 @@
 								s(e),
 									a &&
 										"function" == typeof e.addEventListener &&
-										(e.addEventListener("levelchange", () => s(e)),
-										e.addEventListener("chargingchange", () => s(e)));
+										(e.addEventListener("levelchange", () => s(e)), e.addEventListener("chargingchange", () => s(e)));
 							})
 							.catch(() => {}),
 					"deviceMemory" in navigator)
@@ -144,21 +106,10 @@
 						i = Number.isFinite(e) ? e : null;
 					window.obs.ramBucket = i;
 					const a =
-						((r = i),
-						Number.isFinite(r)
-							? r <= 1
-								? "very-low"
-								: r <= 2
-									? "low"
-									: r <= 4
-										? "medium"
-										: "high"
-							: null);
+						((r = i), Number.isFinite(r) ? (r <= 1 ? "very-low" : r <= 2 ? "low" : r <= 4 ? "medium" : "high") : null);
 					a &&
 						((window.obs.ramCategory = a),
-						["very-low", "low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-ram-${e}`),
-						),
+						["very-low", "low", "medium", "high"].forEach((e) => t.classList.remove(`has-ram-${e}`)),
 						t.classList.add(`has-ram-${a}`));
 				}
 				var r;
@@ -166,19 +117,10 @@
 					const e = Number(navigator.hardwareConcurrency),
 						i = Number.isFinite(e) ? e : null;
 					window.obs.cpuBucket = i;
-					const a = ((e) =>
-						Number.isFinite(e)
-							? e <= 2
-								? "low"
-								: e <= 5
-									? "medium"
-									: "high"
-							: null)(i);
+					const a = ((e) => (Number.isFinite(e) ? (e <= 2 ? "low" : e <= 5 ? "medium" : "high") : null))(i);
 					a &&
 						((window.obs.cpuCategory = a),
-						["low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-cpu-${e}`),
-						),
+						["low", "medium", "high"].forEach((e) => t.classList.remove(`has-cpu-${e}`)),
 						t.classList.add(`has-cpu-${a}`));
 				}
 				(() => {
@@ -200,20 +142,75 @@
 		</script>
 		<!-- Vercel Web Analytics -->
 		<script defer src="https://cdn.vercel.sh/analytics"></script>
+		<link rel="stylesheet" href="../modern-style.css" />
+		<script src="/assets/fontawesome-free-7.1.0-web/js/fontawesome.js" data-auto-replace-svg="nest"></script>
+		<script src="/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+		<script src="/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 	</head>
-	<body>
-		<h1>It works!</h1>
-		<p>This is the default web page for this server.</p>
-		<p>
-			The web server software is running but no content has been added, yet.
-		</p>
-		<img
-			src="website_under_construction_1895x685.png"
-			width="1895"
-			height="685"
-			alt="Under construction"
-		/>
-		<!--<img src="charlie.png" alt="Under construction" >-->
+	<body id="top">
+		<main id="main-content" role="main">
+			<h1>It works!</h1>
+			<p>This is the default web page for this server.</p>
+			<p>The web server software is running but no content has been added, yet.</p>
+			<img src="website_under_construction_1895x685.png" width="1895" height="685" alt="Under construction" />
+			<!--<img src="charlie.png" alt="Under construction" >-->
+		</main>
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+					><i class="fab fa-linkedin-in"></i
+				></a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+					><i class="fa fa-calendar-plus"></i
+				></a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+					><i class="fab fa-github"></i
+				></a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+					><i class="fab fa-docker"></i
+				></a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+					><i class="fab fa-stack-exchange"></i
+				></a>
+			</div>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
+			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
+		</footer>
 	</body>
 </html>
 <script>
@@ -229,13 +226,7 @@
 		a.async = 1;
 		a.src = g;
 		m.parentNode.insertBefore(a, m);
-	})(
-		window,
-		document,
-		"script",
-		"//www.google-analytics.com/analytics.js",
-		"ga",
-	);
+	})(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
 
 	ga("create", "UA-56011797-1", "auto");
 	ga("send", "pageview");

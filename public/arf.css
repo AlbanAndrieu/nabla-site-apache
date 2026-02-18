@@ -6,12 +6,12 @@ body {
 		"Segoe UI Symbol";
 }
 
-#body {
+#arf-viz-body {
 	margin: 0 auto;
 	position: relative;
 }
 
-#header {
+#arf-viz-header {
 	font-size: 40px;
 	font-weight: bold;
 	top: 20px;

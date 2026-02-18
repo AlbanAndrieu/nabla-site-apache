@@ -1,13 +1,11 @@
 <!doctype html>
-<html lang="en" id="top">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<!-- PAGE settings -->
-		<title>
-			CISO Dashboard - Real-time Security Intelligence by Alban Andrieu
-		</title>
+		<title>CISO Dashboard - Real-time Security Intelligence by Alban Andrieu</title>
 		<meta
 			name="description"
 			content="A CISO dashboard designed for real-time threat intelligence, security metrics, and compliance monitoring. Track security posture, incident response, and compliance status."
@@ -22,38 +20,23 @@
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://nabla.albandrieu.com/ciso.html" />
-		<meta
-			property="og:title"
-			content="CISO Dashboard - Real-time Security Intelligence"
-		/>
+		<meta property="og:title" content="CISO Dashboard - Real-time Security Intelligence" />
 		<meta
 			property="og:description"
 			content="Real-time threat intelligence dashboard for cybersecurity monitoring, compliance tracking, and security metrics."
 		/>
-		<meta
-			property="og:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 		<meta property="og:site_name" content="Nabla - Alban Andrieu" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta
-			property="twitter:url"
-			content="https://nabla.albandrieu.com/ciso.html"
-		/>
-		<meta
-			property="twitter:title"
-			content="CISO Dashboard - Real-time Security Intelligence"
-		/>
+		<meta property="twitter:url" content="https://nabla.albandrieu.com/ciso.html" />
+		<meta property="twitter:title" content="CISO Dashboard - Real-time Security Intelligence" />
 		<meta
 			property="twitter:description"
 			content="Real-time threat intelligence dashboard for cybersecurity professionals"
 		/>
-		<meta
-			property="twitter:image"
-			content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png"
-		/>
+		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href="https://nabla.albandrieu.com/ciso.html" />
@@ -164,11 +147,7 @@
 			.hero-section {
 				text-align: center;
 				padding: 3rem 2rem;
-				background: linear-gradient(
-					135deg,
-					var(--ciso-primary) 0%,
-					var(--ciso-secondary) 100%
-				);
+				background: linear-gradient(135deg, var(--ciso-primary) 0%, var(--ciso-secondary) 100%);
 				color: white;
 			}
 
@@ -380,18 +359,14 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body id="top">
 		<!-- Google Translate Widget -->
 		<div class="google-translate-widget">
 			<div id="google_translate_element"></div>
 		</div>
 
 		<!-- Print Button (hidden when printing) -->
-		<button
-			class="print-button"
-			onclick="window.print()"
-			aria-label="Print or save dashboard as PDF"
-		>
+		<button class="print-button" onclick="window.print()" aria-label="Print or save dashboard as PDF">
 			<i class="fa-solid fa-print"></i> Print / Save as PDF
 		</button>
 
@@ -419,9 +394,7 @@
 		<main class="dashboard-container">
 			<!-- Compliance Overview -->
 			<section class="dashboard-section">
-				<h2>
-					<i class="fa-solid fa-certificate"></i> Compliance & Risk Monitoring
-				</h2>
+				<h2><i class="fa-solid fa-certificate"></i> Compliance & Risk Monitoring</h2>
 				<p>Track your organization's compliance posture:</p>
 				<ul>
 					<li>GDPR: <strong>95% Compliant</strong></li>
@@ -511,30 +484,14 @@
 				</a>
 			</div>
 			<div class="footer-links">
-				<a href="https://nabla.albandrieu.com/policy/service_terms.html"
-					>Terms of Use</a
-				>
-				<a
-					href="javascript:openAxeptioCookies()"
-					rel="noopener noreferrer"
-					class="text-muted"
-					>Cookies</a
-				>
-				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html"
-					>Privacy Policy</a
-				>
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
-				<a
-					href="#top"
-					class="btn btn-sm btn-outline-secondary"
-					aria-label="Back to top of page"
-					>Back to top</a
-				>
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
-			<p style="margin-top: 1rem; opacity: 0.7">
-				© 2026 Alban Andrieu. Independent DevSecOps Architect.
-			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 		<!-- End footer section -->
 
@@ -547,8 +504,7 @@
 		></script>
 
 		<script>
-			const threatIntelligenceElement =
-				document.getElementById("threatIntelligence");
+			const threatIntelligenceElement = document.getElementById("threatIntelligence");
 			const rssFeeds = [
 				"https://www.us-cert.gov/ncas/alerts.xml",
 				"https://feeds.feedburner.com/symfony/blog",
@@ -694,9 +650,7 @@
 				threatIntelligenceElement.innerHTML = ""; // Clear before loading new data
 				for (let feedUrl of rssFeeds) {
 					try {
-						const response = await fetch(
-							proxyUrl + encodeURIComponent(feedUrl),
-						);
+						const response = await fetch(proxyUrl + encodeURIComponent(feedUrl));
 						const data = await response.json();
 						if (data.items) {
 							data.items.slice(0, 2).forEach((feed) => {

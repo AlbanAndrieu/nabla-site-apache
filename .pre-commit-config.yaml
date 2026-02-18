@@ -348,6 +348,7 @@ repos:
         exclude: >
           (?x)^(
             public/reports/.*|
+            public/checklist/.*|
           )$
     -   id: markdown-toc
         name: "📝 markdown · Toc markdown"
@@ -382,6 +383,7 @@ repos:
             public/assets/fontawesome-free-7.1.0-web/.*|
             public/assets/fontawesome/.*|
             .pre-commit-config.yaml|
+            public/checklist/.*|
           )$
 
     ### Data & Config Validation ###
@@ -436,7 +438,7 @@ repos:
     hooks:
     -   id: gitleaks-docker
         name: "🔒 🐳 security · Detect hardcoded secrets"
-        entry: zricethezav/gitleaks protect --verbose --redact --staged
+        entry: zricethezav/gitleaks protect --verbose --redact --staged --config .gitleaks.toml
 
     ### Ansible ###
     # Disable because too slow

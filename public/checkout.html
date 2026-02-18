@@ -1,25 +1,86 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
-		<title>Buy cool new product</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Buy cool new product | Alban Andrieu</title>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="modern-style.css" />
 		<script src="https://js.stripe.com/clover/stripe.js"></script>
+		<script src="/assets/fontawesome-free-7.1.0-web/js/fontawesome.js" data-auto-replace-svg="nest"></script>
+		<script src="/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+		<script src="/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 	</head>
-	<body>
-		<section>
-			<div class="product">
-				<img
-					src="https://i.imgur.com/EHyR2nP.png"
-					alt="The cover of Stubborn Attachments"
-				/>
-				<div class="description">
-					<h3>Stubborn Attachments</h3>
-					<h5>$20.00</h5>
+	<body id="top">
+		<main id="main-content" role="main">
+			<section>
+				<div class="product">
+					<img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+					<div class="description">
+						<h3>Stubborn Attachments</h3>
+						<h5>$20.00</h5>
+					</div>
 				</div>
+				<form action="/create-checkout-session" method="POST">
+					<button type="submit" id="checkout-button">Checkout</button>
+				</form>
+			</section>
+		</main>
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+					><i class="fab fa-linkedin-in"></i
+				></a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+					><i class="fa fa-calendar-plus"></i
+				></a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+					><i class="fab fa-github"></i
+				></a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+					><i class="fab fa-docker"></i
+				></a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+					><i class="fab fa-stack-exchange"></i
+				></a>
 			</div>
-			<form action="/create-checkout-session" method="POST">
-				<button type="submit" id="checkout-button">Checkout</button>
-			</form>
-		</section>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
+			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
+		</footer>
 	</body>
 </html>
