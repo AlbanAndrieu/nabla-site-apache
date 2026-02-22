@@ -197,7 +197,7 @@ repos:
     -   id: pyupgrade
         name: "🐍 python · Py Upgrade"
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.1
+    rev: v0.15.2
     hooks:
     -   id: ruff-format
         name: "🐍 python · Format with Ruff"
@@ -316,7 +316,7 @@ repos:
 
     ### Javascript & Web Tools ###
 -   repo: https://github.com/biomejs/pre-commit
-    rev: "v2.4.2"
+    rev: "v2.4.4"
     hooks:
     -   id: biome-check
         name: "🟨 javascript · Lint, format, and safe fixes with Biome"
@@ -438,7 +438,8 @@ repos:
     hooks:
     -   id: gitleaks-docker
         name: "🔒 🐳 security · Detect hardcoded secrets"
-        entry: zricethezav/gitleaks protect --verbose --redact --staged --config .gitleaks.toml
+        entry: zricethezav/gitleaks protect --verbose --redact --staged --config
+          .gitleaks.toml
 
     ### Ansible ###
     # Disable because too slow

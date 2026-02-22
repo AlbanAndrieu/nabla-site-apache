@@ -25,7 +25,7 @@
 			property="og:description"
 			content="Comprehensive security resources including OWASP Top Ten, security tools, CIS benchmarks, and hardening guides."
 		/>
-		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
+		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" />
 		<meta property="og:site_name" content="Nabla - Alban Andrieu" />
 
 		<!-- Twitter -->
@@ -36,13 +36,13 @@
 			property="twitter:description"
 			content="Comprehensive security resources and tools for DevSecOps professionals"
 		/>
-		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
+		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href="https://nabla.albandrieu.com/security.html" />
 
 		<!-- Favicon -->
-		<link rel="icon" href="assets/nabla/nabla-4.png" />
+		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="modern-style.css" />
@@ -50,6 +50,7 @@
 		<link rel="stylesheet" href="theme.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="arf.css" />
 
 		<!-- Font Awesome -->
 		<link
@@ -456,6 +457,12 @@
 								Masscan - Fast TCP Port Scanner
 							</a>
 						</li>
+						<li>
+							<a href="https://www.openvas.org/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								OpenVAS - Open Vulnerability Assessment Scanner (Greenbone)
+							</a>
+						</li>
 					</ul>
 				</section>
 
@@ -625,6 +632,24 @@
 					</ul>
 				</section>
 
+				<!-- Pentest-Tools.com -->
+				<section class="resource-card">
+					<span class="category-badge">Penetration Testing</span>
+					<div class="icon">
+						<i class="fa-solid fa-crosshairs"></i>
+					</div>
+					<h3>Pentest-Tools.com</h3>
+					<p>Online penetration testing and vulnerability scanning platform.</p>
+					<ul class="resource-list">
+						<li>
+							<a href="https://app.pentest-tools.com/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								Pentest-Tools.com App - Network &amp; Web Security Testing
+							</a>
+						</li>
+					</ul>
+				</section>
+
 				<!-- DevSecOps Tools -->
 				<section class="resource-card">
 					<span class="category-badge">DevSecOps</span>
@@ -634,6 +659,60 @@
 					<h3>DevSecOps Tools & Practices</h3>
 					<p>Tools and practices for integrating security into the DevOps pipeline.</p>
 					<ul class="resource-list">
+						<li>
+							<a href="https://github.com/oxsecurity/megalinter" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								MegaLinter - Multi-language linter (recommended; most tools below are included)
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								Trivy - Vulnerability &amp; misconfiguration scanner (containers, IaC, SBOM)
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/zricethezav/gitleaks" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								Gitleaks - Detect secrets in git repos and files
+							</a>
+						</li>
+						<li>
+							<a href="https://pre-commit.com/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								pre-commit - Git hooks (e.g. detect-private-key, encryption-check)
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/PyCQA/bandit" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								Bandit - Security linter for Python code
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/antonbabenko/pre-commit-terraform" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								pre-commit-terraform - Terraform/Terragrunt hooks (fmt, validate, docs, tflint, trivy)
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/bridgecrewio/checkov" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								Checkov - IaC &amp; container security (Terraform, K8s, Dockerfile, etc.)
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/Checkmarx/kics" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								KICS - Find security issues and misconfigurations in IaC
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/hadolint/hadolint" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								Hadolint - Linter for Dockerfiles
+							</a>
+						</li>
 						<li>
 							<a href="https://github.com/cncf/tag-security" target="_blank" rel="noopener noreferrer">
 								<i class="fa-brands fa-github"></i>
@@ -659,9 +738,9 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://github.com/bridgecrewio/checkov" target="_blank" rel="noopener noreferrer">
-								<i class="fa-brands fa-github"></i>
-								Checkov - Infrastructure as Code Scanner
+							<a href="https://www.gitguardian.com/lp/secrets-scanning" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								GitGuardian - Secrets scanning &amp; remediation
 							</a>
 						</li>
 					</ul>
@@ -743,7 +822,63 @@
 					</ul>
 				</section>
 			</div>
+
+			<section class="py-4" aria-labelledby="main-heading">
+				<div class="py-5 border bg-light">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="bg-light row align-items-upcenter">
+									<div class="col-md-2">
+										<img class="img-fluid d-block my-4" src="assets/logo-hacker-simple.png" alt="Hacker illustration" />
+									</div>
+									<div class="col-md-3 bg-warning">
+										<h2 class="text-dark"><br />SVG Spider&nbsp;<br /></h2>
+									</div>
+									<div class="col-md-7">
+										<div id="arf-viz-body" class="bg-light">
+											<div id="arf-viz-header" class="text-dark">
+												OSINT Framework
+												<hr />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="py-5 border bg-light">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-2">
+										<img class="img-fluid d-block my-4" src="assets/logo-kali-linux-simple.png" />
+									</div>
+									<div class="col-md-3 bg-warning">
+										<h2 class="text-dark"><br />Kali Linux&nbsp;<br /></h2>
+									</div>
+									<div class="col-md-7 bg-white">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item">
+												<i class="fa mr-2 fa-clipboard text-dark"></i>
+												Kali Linux
+												<b><a href="https://www.kali-linux.fr/" target="_blank">[click]</a></b>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
+
+		<script type="text/javascript" src="d3.v3.min.js"></script>
+		<script src="arf.js"></script>
 
 		<!-- Footer -->
 		<footer class="footer" role="contentinfo">
