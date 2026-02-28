@@ -8,6 +8,8 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [![License: APACHE](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S61UUL97)
+
 [CHANGELOG](./CHANGELOG.html).
 
 ## Project Goal
@@ -59,6 +61,20 @@ composer install --ignore-platform-req=ext-mbstring
 
 php -S localhost:8000 api/index.php
 ```
+
+### Stripe Checkout (optional)
+
+For the checkout flow (`public/checkout.html` → Stripe → `success.html` / `cancel.html`), run the Node server with env vars set:
+
+```bash
+# Create a Price in Stripe Dashboard, then:
+export STRIPE_SECRET_KEY=sk_test_...
+export STRIPE_PRICE_ID=price_...
+export DOMAIN=http://localhost:4242   # or your public URL
+npm run start:stripe
+```
+
+Then open `http://localhost:4242/checkout.html`. The server serves `public/` and redirects to Stripe Checkout on "Proceed to checkout".
 
 ### Subprojects (my-app and vue-client)
 

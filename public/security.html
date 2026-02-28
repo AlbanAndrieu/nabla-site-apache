@@ -48,6 +48,7 @@
 		<link rel="stylesheet" href="modern-style.css" />
 		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
+		<link rel="stylesheet" href="style.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
 		<link rel="stylesheet" href="arf.css" />
@@ -232,29 +233,6 @@
 				margin-bottom: 1rem;
 			}
 
-			/* Back to Top */
-			.back-to-top {
-				position: fixed;
-				bottom: 2rem;
-				right: 2rem;
-				background: var(--security-danger);
-				color: white;
-				width: 50px;
-				height: 50px;
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-decoration: none;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-				transition: background 0.3s ease;
-			}
-
-			.back-to-top:hover {
-				background: var(--security-info);
-				color: white;
-			}
-
 			/* Print Button */
 			.print-button {
 				position: fixed;
@@ -299,6 +277,40 @@
 
 		<!-- Print Button (hidden when printing) -->
 		<button class="print-button" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+
+		<!-- Coffee FAB - opens support modal (same behavior as blog.stephane-robert.info) -->
+		<button type="button" id="coffee-fab" class="coffee-fab" aria-label="Support this site" title="Support this site">
+			<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+		</button>
+
+		<!-- Back to top FAB (same as blog.stephane-robert.info) -->
+		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
+			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+		</a>
+
+		<!-- Support modal (coffee) -->
+		<div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title h5" id="coffeeModalLabel">Support this site</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="mb-2"><strong>Is this site useful to you?</strong></p>
+						<p class="text-muted small">
+							This site is maintained with free guides and no ads. A small support, even symbolic, helps keep these
+							resources free and the content growing. Thank you.
+						</p>
+						<p class="mb-0">
+							<a href="https://ko-fi.com/albandrieu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+								<i class="fa-solid fa-mug-hot me-1" aria-hidden="true"></i> Offer a coffee
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Hero Section -->
 		<header class="hero-section">
@@ -376,6 +388,16 @@
 							<a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener noreferrer">
 								<i class="fa-solid fa-external-link-alt"></i>
 								OWASP Cheat Sheet Series
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://pentest-testing-corp.medium.com/fix-security-misconfiguration-in-symfony-apps-be6ace002709"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								Fix Security Misconfiguration in Symfony Apps (Medium)
 							</a>
 						</li>
 					</ul>
@@ -507,6 +529,48 @@
 								DevSec Hardening Framework
 							</a>
 						</li>
+						<li>
+							<a href="https://www.open-scap.org/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								OpenSCAP - Security compliance and configuration assessment
+							</a>
+						</li>
+						<li>
+							<a href="https://cisofy.com/lynis/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								Lynis - Security auditing and hardening tool for Unix-based systems
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/dev-sec/ansible-collection-hardening"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-brands fa-github"></i>
+								Ansible Collection Hardening (dev-sec)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://medium.com/@anshumaansingh10jan/comprehensive-vm-hardening-guide-using-openscap-and-ansible-88bd93186ddd"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								VM Hardening with OpenSCAP &amp; Ansible (Medium)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://medium.com/aardvark-infinity/program-title-automated-system-hardening-and-security-audit-script-1e00eb5a577c"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								Automated System Hardening &amp; Security Audit Script (Medium)
+							</a>
+						</li>
 					</ul>
 				</section>
 
@@ -539,6 +603,12 @@
 							<a href="https://github.com/mozilla/ssh_scan" target="_blank" rel="noopener noreferrer">
 								<i class="fa-brands fa-github"></i>
 								SSH Scan by Mozilla - SSH Configuration Scanner
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/jtesta/ssh-audit" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								ssh-audit - SSH server &amp; client configuration auditor
 							</a>
 						</li>
 						<li>
@@ -632,6 +702,34 @@
 					</ul>
 				</section>
 
+				<!-- Vulnerability Scanning / DAST / SAST -->
+				<section class="resource-card">
+					<span class="category-badge">Vulnerability Scanning / DAST / SAST</span>
+					<div class="icon">
+						<i class="fa-solid fa-search"></i>
+					</div>
+					<h3>Vulnerability Scanning / DAST / SAST</h3>
+					<p>Multi-scanner and AI-powered static/dynamic analysis tools.</p>
+					<ul class="resource-list">
+						<li>
+							<a href="https://github.com/OSTEsayed/OSTE-Meta-Scan" target="_blank" rel="noopener noreferrer">
+								<i class="fa-brands fa-github"></i>
+								OSTE Meta Scan - Multi-scanner vulnerability tool
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://korben.info/theauditor-outil-securite-sast-ia.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								TheAuditor – AI-powered SAST Security Tool (korben.info)
+							</a>
+						</li>
+					</ul>
+				</section>
+
 				<!-- Pentest-Tools.com -->
 				<section class="resource-card">
 					<span class="category-badge">Penetration Testing</span>
@@ -650,6 +748,28 @@
 					</ul>
 				</section>
 
+				<!-- SIEM / Malware Detection -->
+				<section class="resource-card">
+					<span class="category-badge">SIEM / Malware Detection</span>
+					<div class="icon">
+						<i class="fa-solid fa-shield-virus"></i>
+					</div>
+					<h3>SIEM / Malware Detection</h3>
+					<p>Security monitoring and malware detection resources.</p>
+					<ul class="resource-list">
+						<li>
+							<a
+								href="https://documentation.wazuh.com/current/user-manual/capabilities/malware-detection/clam-av-logs-collection.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								Wazuh – ClamAV Malware Detection Logs
+							</a>
+						</li>
+					</ul>
+				</section>
+
 				<!-- DevSecOps Tools -->
 				<section class="resource-card">
 					<span class="category-badge">DevSecOps</span>
@@ -659,6 +779,26 @@
 					<h3>DevSecOps Tools & Practices</h3>
 					<p>Tools and practices for integrating security into the DevOps pipeline.</p>
 					<ul class="resource-list">
+						<li>
+							<a
+								href="https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-hashicorp-vault"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								FluxCD – Encrypting Secrets with HashiCorp Vault (SOPS)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://medium.com/@connect.hashblock/fastapi-security-without-slowness-b9893008216e"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								FastAPI Security Without Slowness (Medium)
+							</a>
+						</li>
 						<li>
 							<a href="https://github.com/oxsecurity/megalinter" target="_blank" rel="noopener noreferrer">
 								<i class="fa-brands fa-github"></i>
@@ -741,6 +881,50 @@
 							<a href="https://www.gitguardian.com/lp/secrets-scanning" target="_blank" rel="noopener noreferrer">
 								<i class="fa-solid fa-external-link-alt"></i>
 								GitGuardian - Secrets scanning &amp; remediation
+							</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Authentication & JWT -->
+				<section class="resource-card">
+					<span class="category-badge">Authentication &amp; JWT</span>
+					<div class="icon">
+						<i class="fa-solid fa-key"></i>
+					</div>
+					<h3>Authentication &amp; JWT</h3>
+					<p>Boilerplates and guides for secure authentication and JWT.</p>
+					<ul class="resource-list">
+						<li>
+							<a
+								href="https://python.plainenglish.io/%EF%B8%8F-fastapi-async-sqlalchemy-2-0-jwt-postgresql-your-modern-boilerplate-setup-76429dcb93da"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								FastAPI + Async SQLAlchemy 2.0 + JWT + PostgreSQL Boilerplate (Medium)
+							</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- App & Infrastructure Security -->
+				<section class="resource-card">
+					<span class="category-badge">App &amp; Infrastructure Security</span>
+					<div class="icon">
+						<i class="fa-solid fa-server"></i>
+					</div>
+					<h3>App &amp; Infrastructure Security</h3>
+					<p>Best practices for securing applications and infrastructure platforms.</p>
+					<ul class="resource-list">
+						<li>
+							<a
+								href="https://apps.truenas.com/getting-started/securing-apps/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								TrueNAS – Securing Apps
 							</a>
 						</li>
 					</ul>
@@ -948,5 +1132,13 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
+
+		<!-- Coffee FAB: open support modal -->
+		<script>
+			document.getElementById("coffee-fab").addEventListener("click", function () {
+				var modal = new bootstrap.Modal(document.getElementById("coffeeModal"));
+				modal.show();
+			});
+		</script>
 	</body>
 </html>

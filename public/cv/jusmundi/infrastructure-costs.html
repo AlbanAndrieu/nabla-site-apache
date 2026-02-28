@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>JusMundi — OVH Infrastructure Costs | Alban Andrieu</title>
+		<meta
+			name="description"
+			content="OVH infrastructure cost overview for JusMundi: servers, database, storage, GPU, load balancer. Monthly and annual breakdown."
+		/>
+		<meta name="keywords" content="Alban Andrieu, JusMundi, OVH, infrastructure costs, cloud, DevSecOps, CV" />
+		<meta name="author" content="Alban Andrieu" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="referrer" content="always" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://nabla.albandrieu.com/cv/jusmundi/infrastructure-costs.html" />
+		<meta property="og:title" content="JusMundi — OVH Infrastructure Costs | Alban Andrieu" />
+		<meta
+			property="og:description"
+			content="OVH infrastructure cost overview: servers, database, storage, GPU. Monthly and annual breakdown."
+		/>
+		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" />
+
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:url" content="https://nabla.albandrieu.com/cv/jusmundi/infrastructure-costs.html" />
+		<meta property="twitter:title" content="JusMundi — OVH Infrastructure Costs" />
+		<meta property="twitter:description" content="OVH infrastructure cost overview: servers, database, storage, GPU." />
+		<meta property="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" />
+
+		<link rel="canonical" href="https://nabla.albandrieu.com/cv/jusmundi/infrastructure-costs.html" />
+		<link rel="icon" href="../../assets/nabla/nabla-4.svg" />
+		<link rel="stylesheet" href="../../modern-style.css" />
+		<link rel="stylesheet" href="../../theme.css" />
+		<link rel="stylesheet" href="../cv-theme.css" />
+		<script src="../../theme-toggle.js"></script>
+		<link rel="stylesheet" href="../../wireframe.css" />
+		<link rel="stylesheet" href="../../print.css" />
+		<link rel="stylesheet" href="jusmundi.css" />
+
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<style>
+			.text-muted-status {
+				font-size: 0.9rem;
+				color: var(--cv-text-secondary);
+			}
+			#cost-by-category-table tfoot td {
+				font-weight: 600;
+				background: var(--cv-bg-highlight);
+			}
+			.sortable-col-header {
+				font: inherit;
+				font-weight: inherit;
+				color: inherit;
+				background: transparent;
+				border: none;
+				padding: 0;
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.25rem;
+			}
+			.sortable-col-header:hover {
+				text-decoration: underline;
+			}
+			.sortable-col-header .sort-icon {
+				font-size: 0.85em;
+				opacity: 0.9;
+			}
+		</style>
+	</head>
+	<body class="jusmundi-page" id="top">
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<button type="button" class="print-button" onclick="window.print()" aria-label="Print or save as PDF">
+			<i class="fas fa-print"></i> Print / Save as PDF
+		</button>
+
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
+
+		<div class="container py-4">
+			<main id="main-content" role="main">
+				<nav aria-label="Breadcrumb">
+					<a href="index.html" class="back-link" aria-label="Back to Jusmundi index">← Back to Jusmundi</a>
+					<span class="mx-2" aria-hidden="true">·</span>
+					<a href="../index.html" class="back-link" aria-label="Back to CV index">CV index</a>
+				</nav>
+
+				<header class="jusmundi-hero" role="banner">
+					<h1>JusMundi — OVH Infrastructure Costs</h1>
+					<p class="subtitle">Monthly cost overview (servers, database, storage, GPU)</p>
+				</header>
+
+				<section class="jusmundi-section" aria-labelledby="summary-heading">
+					<h2 id="summary-heading">Total summary</h2>
+					<p class="text-muted-status">Computed from the cost breakdown by category above.</p>
+					<table class="kpi-table" role="table" aria-label="Total cost summary">
+						<thead>
+							<tr>
+								<th scope="col"># Resources</th>
+								<th scope="col">Monthly cost</th>
+								<th scope="col">Annual cost</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="summary-resources">—</td>
+								<td id="summary-monthly">—</td>
+								<td id="summary-annual">—</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<p class="jusmundi-section-subtitle">
+					Almost half of the cost is OpenAI tokens, but not yet charged as Startup Program is ongoing.
+				</p>
+
+				<section class="jusmundi-section" aria-labelledby="category-heading">
+					<h2 id="category-heading">Cost breakdown by category</h2>
+					<table class="kpi-table" id="cost-by-category-table" role="table" aria-label="Cost by category">
+						<thead>
+							<tr>
+								<th scope="col">Category</th>
+								<th scope="col"># Items</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="category-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="category-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>OVH - Servers</strong></td>
+								<td>74</td>
+								<td>€8,105.96</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Database</strong></td>
+								<td>6</td>
+								<td>€1,326.94</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Storage</strong></td>
+								<td>5</td>
+								<td>€3,322.71</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Servers GPU</strong></td>
+								<td>1</td>
+								<td><strong>€2,512.37</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - Load balancer</td>
+								<td>1</td>
+								<td>€47.81</td>
+							</tr>
+							<tr>
+								<td>OVH - Gateway</td>
+								<td>1</td>
+								<td>€2.02</td>
+							</tr>
+							<tr>
+								<td><strong>Cloudflare</strong></td>
+								<td>1</td>
+								<td>€5,000.00</td>
+							</tr>
+							<tr>
+								<td><strong>Weights and Biases</strong></td>
+								<td>1</td>
+								<td>€400.00</td>
+							</tr>
+							<tr>
+								<td><strong>Datadog</strong></td>
+								<td>1</td>
+								<td>€1,200.00</td>
+							</tr>
+							<tr>
+								<td><strong>Azure</strong></td>
+								<td>1</td>
+								<td>
+									€45,583.41
+									<span class="text-muted-status"
+										>(Startup Program — no billing), Foundry model training (€29,248.41 + €16,335 per month)
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td><strong>AWS</strong></td>
+								<td>1</td>
+								<td>~€3,509</td>
+							</tr>
+							<tr>
+								<td><strong>OpenAI</strong></td>
+								<td>1</td>
+								<td>~€45,000.00</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr id="category-total-row">
+								<td><strong>Total</strong></td>
+								<td id="total-resources">—</td>
+								<td id="total-monthly">—</td>
+							</tr>
+						</tfoot>
+					</table>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="top10-heading">
+					<h2 id="top10-heading">Top 14 most expensive resources</h2>
+					<table class="kpi-table" id="top14-table" role="table" aria-label="Top 14 expensive resources">
+						<thead>
+							<tr>
+								<th scope="col">Resource</th>
+								<th scope="col">Type</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="top14-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="top14-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Azure</td>
+								<td>Cloud</td>
+								<td>€45,583.41 <span class="text-muted-status">(Startup Program — no billing)</span></td>
+							</tr>
+							<tr>
+								<td>OpenAI</td>
+								<td>AI / LLM</td>
+								<td><strong>€45,000.00</strong></td>
+							</tr>
+							<tr>
+								<td>Cloudflare</td>
+								<td>CDN / WAF</td>
+								<td><strong>€5,000.00</strong></td>
+							</tr>
+							<tr>
+								<td>AWS</td>
+								<td>Cloud</td>
+								<td>~€3,509</td>
+							</tr>
+							<tr>
+								<td>OVH - Additional disks</td>
+								<td>Storage</td>
+								<td><strong>€3,153.03</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - Servers GPU</td>
+								<td>GPU</td>
+								<td><strong>€2,512.37</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - ES Clusters Prod (×10 @ €270)</td>
+								<td>Prod search</td>
+								<td>€2,700.00</td>
+							</tr>
+							<tr>
+								<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
+								<td>Prod compute</td>
+								<td>€1,620.00</td>
+							</tr>
+							<tr>
+								<td>Datadog</td>
+								<td>APM / monitoring</td>
+								<td>€1,200.00</td>
+							</tr>
+							<tr>
+								<td>OVH - postgresql business DB (x3)</td>
+								<td>Managed DB</td>
+								<td>€998.35</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT Nomad Workers (various)</td>
+								<td>UAT compute</td>
+								<td>€861.00</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT ES Clusters (×3 @ €270)</td>
+								<td>UAT search</td>
+								<td>€810.00</td>
+							</tr>
+							<tr>
+								<td>GitLab Premium (26 users)</td>
+								<td>CI/CD</td>
+								<td>~€694 <span class="text-muted-status">(billed annually)</span></td>
+							</tr>
+							<tr>
+								<td>Weights and Biases</td>
+								<td>ML / experiment tracking</td>
+								<td>€400.00</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="platform-heading">
+					<h2 id="platform-heading">Platform team — specific infrastructure</h2>
+					<p class="text-muted-status">OVH and AWS only (no Datadog, GitLab, or other SaaS).</p>
+					<table
+						class="kpi-table"
+						id="platform-infra-table"
+						role="table"
+						aria-label="Platform team infrastructure cost (OVH and AWS)"
+					>
+						<thead>
+							<tr>
+								<th scope="col">Resource</th>
+								<th scope="col">Type</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="platform-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="platform-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>OVH - Server mgt - Platform (×2)</td>
+								<td>Management</td>
+								<td>€49.50</td>
+							</tr>
+							<tr>
+								<td>OVH - Server prod - VPN (×3)</td>
+								<td>VPN / routing</td>
+								<td>€25.29</td>
+							</tr>
+							<tr>
+								<td>OVH - Server mgt - Zabbix (×2)</td>
+								<td>Monitoring</td>
+								<td>€34.10</td>
+							</tr>
+							<tr>
+								<td>OVH - Server prod - Graylog (×4)</td>
+								<td>Logging</td>
+								<td>€96.80</td>
+							</tr>
+							<tr>
+								<td>OVH - Additional disks</td>
+								<td>Storage</td>
+								<td>€3,153.03</td>
+							</tr>
+							<tr>
+								<td>OVH - Servers GPU</td>
+								<td>GPU</td>
+								<td>€2,512.37</td>
+							</tr>
+							<tr>
+								<td>OVH - ES Clusters Prod (×10 @ €270)</td>
+								<td>Prod search</td>
+								<td>€2,700.00</td>
+							</tr>
+							<tr>
+								<td>OVH - postgresql-business-db1-30</td>
+								<td>Managed DB</td>
+								<td>€998.35</td>
+							</tr>
+							<tr>
+								<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
+								<td>Prod compute</td>
+								<td>€1,620.00</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT Nomad Workers (various)</td>
+								<td>UAT compute</td>
+								<td>€861.00</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT ES Clusters (×3 @ €270)</td>
+								<td>UAT search</td>
+								<td>€810.00</td>
+							</tr>
+							<tr>
+								<td>AWS</td>
+								<td>Cloud</td>
+								<td>~€3,509</td>
+							</tr>
+							<tr data-sort-exclude>
+								<td><strong>Platform sub-total</strong></td>
+								<td></td>
+								<td><strong>~€15,470/month</strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="jusmundi-section" aria-labelledby="documents-heading">
+					<h2 class="jusmundi-section-title" id="documents-heading">Related documents</h2>
+					<p class="jusmundi-section-subtitle">Jusmundi index and other pages</p>
+					<p>
+						<a href="index.html" class="back-link">← Back to Jusmundi index</a>
+						<span class="mx-2" aria-hidden="true">·</span>
+						<a href="structure.html" class="back-link">People &amp; structure</a>
+						<span class="mx-2" aria-hidden="true">·</span>
+						<a href="4-years-review-jusmundi.html" class="back-link">JusMundi global achievements</a>
+						<span class="mx-2" aria-hidden="true">·</span>
+						<a href="4-years-review-aandrieu.html" class="back-link">4-year summary — Alban Andrieu</a>
+					</p>
+				</section>
+			</main>
+		</div>
+
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+					><i class="fab fa-linkedin-in"></i
+				></a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+					><i class="fa fa-calendar-plus"></i
+				></a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+					><i class="fab fa-github"></i
+				></a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+					><i class="fab fa-docker"></i
+				></a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+					><i class="fab fa-stack-exchange"></i
+				></a>
+			</div>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="index.html" class="btn btn-sm btn-outline-secondary">Jusmundi index</a>
+				<a href="../index.html" class="btn btn-sm btn-outline-secondary ms-2">CV index</a>
+				<a href="#top" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Back to top of page">Back to top</a>
+			</p>
+			<p class="text-muted small mt-2">JusMundi OVH infrastructure cost overview. Based on internal cost file.</p>
+			<p style="margin-top: 1rem; opacity: 0.7">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
+		</footer>
+
+		<script>
+			(function () {
+				function parseEuroCost(text) {
+					if (!text || typeof text !== "string") return 0;
+					var match = text.trim().match(/~?€\s*([\d,]+(?:\.\d+)?)/);
+					return match ? parseFloat(match[1].replace(/,/g, "")) : 0;
+				}
+				function formatEuro(n) {
+					return "€" + Math.round(n).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+				}
+				function updateTotals() {
+					var table = document.getElementById("cost-by-category-table");
+					if (!table || !table.tBodies[0]) return;
+					var rows = table.tBodies[0].rows;
+					var totalItems = 0,
+						totalMonthly = 0;
+					for (var i = 0; i < rows.length; i++) {
+						var cells = rows[i].cells;
+						if (cells.length < 3) continue;
+						var items = parseInt(cells[1].textContent.trim(), 10);
+						if (!isNaN(items)) totalItems += items;
+						totalMonthly += parseEuroCost(cells[2].textContent);
+					}
+					var annual = totalMonthly * 12;
+					var resEl = document.getElementById("total-resources");
+					var monEl = document.getElementById("total-monthly");
+					var sumRes = document.getElementById("summary-resources");
+					var sumMon = document.getElementById("summary-monthly");
+					var sumAnn = document.getElementById("summary-annual");
+					if (resEl) resEl.textContent = totalItems;
+					if (monEl) monEl.textContent = formatEuro(totalMonthly);
+					if (sumRes) sumRes.textContent = totalItems;
+					if (sumMon) sumMon.textContent = formatEuro(totalMonthly);
+					if (sumAnn) sumAnn.textContent = "~" + formatEuro(annual);
+				}
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", updateTotals);
+				} else {
+					updateTotals();
+				}
+
+				(function () {
+					function parseEuroCost(text) {
+						if (!text || typeof text !== "string") return 0;
+						var match = text.trim().match(/~?€\s*([\d,]+(?:\.\d+)?)/);
+						return match ? parseFloat(match[1].replace(/,/g, "")) : 0;
+					}
+					function initSortableMonthlyCost(tableId, btnId, iconId, excludeSelector) {
+						var table = document.getElementById(tableId);
+						var btn = document.getElementById(btnId);
+						var icon = document.getElementById(iconId);
+						if (!table || !table.tBodies[0] || !btn || !icon) return;
+						var desc = true;
+						var costCol = 2;
+						function sortTable() {
+							var tbody = table.tBodies[0];
+							var rows = Array.prototype.slice.call(tbody.rows);
+							var excluded = excludeSelector
+								? rows.filter(function (r) {
+										return r.hasAttribute && r.hasAttribute("data-sort-exclude");
+									})
+								: [];
+							var toSort = excludeSelector
+								? rows.filter(function (r) {
+										return !r.hasAttribute || !r.hasAttribute("data-sort-exclude");
+									})
+								: rows;
+							toSort.sort(function (a, b) {
+								var costA = parseEuroCost(a.cells[costCol].textContent);
+								var costB = parseEuroCost(b.cells[costCol].textContent);
+								return desc ? costB - costA : costA - costB;
+							});
+							toSort.forEach(function (r) {
+								tbody.appendChild(r);
+							});
+							excluded.forEach(function (r) {
+								tbody.appendChild(r);
+							});
+							desc = !desc;
+							icon.textContent = desc ? "↓" : "↑";
+							btn.setAttribute(
+								"aria-label",
+								desc ? "Sort by monthly cost descending" : "Sort by monthly cost ascending",
+							);
+						}
+						btn.addEventListener("click", sortTable);
+					}
+					initSortableMonthlyCost("cost-by-category-table", "category-sort-btn", "category-sort-icon");
+					initSortableMonthlyCost("top14-table", "top14-sort-btn", "top14-sort-icon");
+					initSortableMonthlyCost(
+						"platform-infra-table",
+						"platform-sort-btn",
+						"platform-sort-icon",
+						"[data-sort-exclude]",
+					);
+				})();
+			})();
+		</script>
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
+	</body>
+</html>

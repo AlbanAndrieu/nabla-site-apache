@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Buy cool new product | Alban Andrieu</title>
+		<title>Checkout | Alban Andrieu</title>
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="modern-style.css" />
-		<script src="https://js.stripe.com/clover/stripe.js"></script>
+		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 		<script src="/assets/fontawesome-free-7.1.0-web/js/fontawesome.js" data-auto-replace-svg="nest"></script>
 		<script src="/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
 		<script src="/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
@@ -14,72 +14,31 @@
 		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
 		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 	</head>
-	<body id="top">
+	<body id="top" class="checkout-page">
 		<main id="main-content" role="main">
-			<section>
+			<section class="checkout-card">
 				<div class="product">
-					<img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+					<img src="https://nabla.albandrieu.com/assets/nabla/nabla-4.svg" alt="Nabla" width="64" height="64" />
 					<div class="description">
-						<h3>Stubborn Attachments</h3>
-						<h5>$20.00</h5>
+						<h2 class="checkout-title">Support this site</h2>
+						<p class="checkout-subtitle">One-time payment via Stripe. Secure checkout.</p>
 					</div>
 				</div>
-				<form action="/create-checkout-session" method="POST">
-					<button type="submit" id="checkout-button">Checkout</button>
+				<form action="/create-checkout-session" method="POST" class="checkout-form">
+					<button type="submit" id="checkout-button" class="checkout-button">
+						<i class="fa-solid fa-lock" aria-hidden="true"></i> Proceed to checkout
+					</button>
 				</form>
+				<p class="checkout-footer">
+					<a href="index.html">Back to site</a>
+				</p>
 			</section>
 		</main>
-		<footer class="footer" role="contentinfo">
-			<div class="social-links">
-				<a
-					href="https://www.linkedin.com/in/nabla"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="social-link"
-					aria-label="LinkedIn"
-					><i class="fab fa-linkedin-in"></i
-				></a>
-				<a
-					href="https://calendly.com/alban-andrieu"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="social-link"
-					aria-label="Calendly"
-					><i class="fa fa-calendar-plus"></i
-				></a>
-				<a
-					href="https://github.com/AlbanAndrieu"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="social-link"
-					aria-label="GitHub"
-					><i class="fab fa-github"></i
-				></a>
-				<a
-					href="https://hub.docker.com/u/nabla"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="social-link"
-					aria-label="Docker Hub"
-					><i class="fab fa-docker"></i
-				></a>
-				<a
-					href="https://stackexchange.com/users/4652074/albanandrieu"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="social-link"
-					aria-label="Stack Exchange"
-					><i class="fab fa-stack-exchange"></i
-				></a>
-			</div>
+		<footer class="footer checkout-footer-section" role="contentinfo">
 			<div class="footer-links">
 				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
-				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
 				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
-			<p class="text-md-center mt-3">
-				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
-			</p>
 			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 	</body>

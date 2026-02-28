@@ -36,7 +36,8 @@
 		"test:headed": "playwright test --headed",
 		"test:debug": "playwright test --debug",
 		"test:report": "playwright show-report",
-		"build:includes": "node scripts/build-html-includes.js"
+		"build:includes": "node scripts/build-html-includes.js",
+		"start:stripe": "node server.cjs"
 	},
 	"dependencies": {
 		"@astrojs/vercel": "^9.0.2",
@@ -44,6 +45,7 @@
 		"crypto": "^1.0.1",
 		"lodash-es": "^4.17.23",
 		"stripe": "^20.2.0",
+		"express": "^4.21.0",
 		"vercel": "^50.18.0",
 		"webdriver-manager": "^12.1.9"
 	},
