@@ -48,6 +48,7 @@
 		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 		<link rel="stylesheet" href="../modern-style.css" />
+		<link rel="stylesheet" href="../style.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="../print.css" />
 
@@ -236,5 +237,39 @@
 			</p>
 			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
+		<!-- Coffee FAB + Back to top FAB (no-print) -->
+		<button type="button" id="coffee-fab" class="coffee-fab" aria-label="Support this site" title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee.">
+			<span class="coffee-fab-inner">
+				<span class="steam" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</span>
+				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+			</span>
+		</button>
+		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
+			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+		</a>
+		<div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title h5" id="coffeeModalLabel">Support this site</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" data-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="mb-2"><strong>Is this site useful to you?</strong></p>
+						<p class="text-muted small">This site is maintained with free guides and no ads. A small support, even symbolic, helps keep these resources free and the content growing. Thank you.</p>
+						<p class="mb-0">
+							<a href="https://ko-fi.com/albandrieu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+								<i class="fa-solid fa-mug-hot me-1" aria-hidden="true"></i> Offer a coffee
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			(function(){var b=document.getElementById("coffee-fab"),m=document.getElementById("coffeeModal");if(!b||!m)return;b.addEventListener("click",function(){if(window.bootstrap&&bootstrap.Modal)new bootstrap.Modal(m).show();else if(window.jQuery&&m.id)jQuery(m).modal("show");else window.open("https://ko-fi.com/albandrieu","_blank");});})();
+		</script>
 	</body>
 </html>

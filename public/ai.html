@@ -46,6 +46,9 @@
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="wireframe.css" />
+		<link rel="stylesheet" href="theme.css" />
+		<link rel="stylesheet" href="style.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
 
@@ -147,10 +150,11 @@
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 				line-height: 1.6;
-				color: #333;
+				color: var(--text-primary);
+				background-color: var(--bg-primary);
 			}
 
-			/* Hero Section */
+			/* Hero Section - theme-aware */
 			.hero-section {
 				text-align: center;
 				padding: 4rem 2rem;
@@ -189,13 +193,13 @@
 				font-weight: 700;
 				text-align: center;
 				margin-bottom: 1rem;
-				color: var(--dark-color);
+				color: var(--text-primary);
 			}
 
 			.section-subtitle {
 				text-align: center;
 				font-size: 1.2rem;
-				color: #666;
+				color: var(--text-secondary);
 				margin-bottom: 3rem;
 			}
 
@@ -208,19 +212,20 @@
 			}
 
 			.resource-card {
-				background: white;
+				background: var(--bg-card);
 				border-radius: 12px;
 				padding: 2rem;
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				box-shadow: 0 4px 12px var(--shadow-color);
 				transition:
 					transform 0.3s ease,
 					box-shadow 0.3s ease;
+				border: 1px solid var(--border-color);
 				border-left: 4px solid var(--primary-color);
 			}
 
 			.resource-card:hover {
 				transform: translateY(-5px);
-				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+				box-shadow: 0 8px 24px var(--shadow-hover);
 			}
 
 			.resource-card h3 {
@@ -238,7 +243,7 @@
 			}
 
 			.resource-card p {
-				color: #666;
+				color: var(--text-secondary);
 				margin-bottom: 1rem;
 				line-height: 1.6;
 			}
@@ -247,14 +252,14 @@
 				display: inline-flex;
 				align-items: center;
 				gap: 0.5rem;
-				color: var(--primary-color);
+				color: var(--link-color);
 				text-decoration: none;
 				font-weight: 600;
 				transition: color 0.3s ease;
 			}
 
 			.resource-link:hover {
-				color: var(--secondary-color);
+				color: var(--link-hover);
 				text-decoration: underline;
 			}
 
@@ -271,15 +276,15 @@
 				font-size: 2rem;
 				font-weight: 700;
 				margin-bottom: 1.5rem;
-				color: var(--dark-color);
+				color: var(--text-primary);
 				border-bottom: 3px solid var(--primary-color);
 				padding-bottom: 0.5rem;
 			}
 
-			/* Footer */
+			/* Footer - theme-aware via modern-style.css */
 			.footer {
-				background: var(--dark-color);
-				color: white;
+				background: var(--nav-bg);
+				color: var(--nav-text);
 				padding: 3rem 2rem 2rem;
 				text-align: center;
 			}
@@ -299,6 +304,26 @@
 
 			.footer-links a:hover {
 				color: white;
+			}
+
+			/* Print Button - fixed position like security page */
+			.print-button {
+				position: fixed;
+				bottom: 5rem;
+				right: 2rem;
+				z-index: 999;
+				background: var(--success-color);
+				color: white;
+				border: none;
+				padding: 0.75rem 1.5rem;
+				border-radius: 25px;
+				cursor: pointer;
+				box-shadow: 0 2px 10px var(--shadow-color);
+				transition: background 0.3s ease;
+			}
+
+			.print-button:hover {
+				background: var(--info-color);
 			}
 
 			/* Responsive Design */
@@ -322,7 +347,7 @@
 
 			/* Intro Section */
 			.intro-section {
-				background: var(--light-color);
+				background: var(--bg-secondary);
 				border-radius: 12px;
 				padding: 2rem;
 				margin-bottom: 3rem;
@@ -331,7 +356,7 @@
 			.intro-section p {
 				font-size: 1.1rem;
 				line-height: 1.8;
-				color: #555;
+				color: var(--text-secondary);
 				margin-bottom: 1rem;
 			}
 
@@ -341,14 +366,53 @@
 		</style>
 	</head>
 	<body id="top">
+		<!-- Google Translate Widget (styled via theme.css) -->
+		<div class="google-translate-widget" aria-label="Language translation options">
+			<div id="google_translate_element"></div>
+		</div>
+
 		<!-- Print Button (hidden when printing) -->
 		<button class="print-button" onclick="window.print()" aria-label="Print page or save as PDF">
 			<i class="fas fa-print"></i> Print / Save as PDF
 		</button>
 
-		<!-- Google Translate Widget -->
-		<div class="google-translate-widget" aria-label="Language translation options">
-			<div id="google_translate_element"></div>
+		<!-- Coffee FAB - opens support modal -->
+		<button type="button" id="coffee-fab" class="coffee-fab" aria-label="Support this site" title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee.">
+			<span class="coffee-fab-inner">
+				<span class="steam" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</span>
+				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+			</span>
+		</button>
+
+		<!-- Back to top FAB -->
+		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
+			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+		</a>
+
+		<!-- Support modal (coffee) -->
+		<div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title h5" id="coffeeModalLabel">Support this site</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="mb-2"><strong>Is this site useful to you?</strong></p>
+						<p class="text-muted small">
+							This site is maintained with free guides and no ads. A small support, even symbolic, helps keep these
+							resources free and the content growing. Thank you.
+						</p>
+						<p class="mb-0">
+							<a href="https://ko-fi.com/albandrieu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+								<i class="fa-solid fa-mug-hot me-1" aria-hidden="true"></i> Offer a coffee
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Header / Hero Section -->
@@ -367,7 +431,7 @@
 		</header>
 
 		<!-- Main Content -->
-		<main id="main-content">
+		<main id="main-content" role="main">
 			<section class="content-section">
 				<!-- Introduction -->
 				<article class="intro-section">
@@ -554,7 +618,7 @@
 					<h2 class="category-title"><i class="fas fa-check-circle"></i> General Best Practices</h2>
 					<article class="intro-section">
 						<h3 style="color: var(--primary-color); margin-bottom: 1rem">Key Principles for AI Development</h3>
-						<ul style="font-size: 1.1rem; line-height: 1.8; color: #555">
+						<ul style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary)">
 							<li>
 								<strong>Start with Clear Objectives:</strong> Define what success looks like before implementing AI
 								solutions.
@@ -587,13 +651,6 @@
 					</article>
 				</section>
 
-				<!-- Back to Home -->
-				<div style="text-align: center; margin-top: 3rem">
-					<a href="/" class="btn btn-primary btn-lg"> <i class="fas fa-home"></i> Back to Home </a>
-					<a href="/contact.html" class="btn btn-outline-primary btn-lg">
-						<i class="fas fa-envelope"></i> Contact Me
-					</a>
-				</div>
 			</section>
 		</main>
 
@@ -652,6 +709,7 @@
 				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
+				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
 			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
@@ -716,6 +774,22 @@
 				e.src = "//static.axept.io/sdk.js";
 				t.parentNode.insertBefore(e, t);
 			})(document, "script");
+		</script>
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.min.js"
+			integrity="sha512-1TK5EkM3S/pmOdAMlRjBH+Ja3EAWv5VdxgAV7qXJ8SgZaHvPxOAUAe7hPcPtQ5Gs+XLsUHMgJNhpBUYEOCfV1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- Coffee FAB: open support modal -->
+		<script>
+			document.getElementById("coffee-fab").addEventListener("click", function () {
+				var modal = new bootstrap.Modal(document.getElementById("coffeeModal"));
+				modal.show();
+			});
 		</script>
 	</body>
 </html>

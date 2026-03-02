@@ -241,8 +241,8 @@ body.checkout-page main {
 #coffee-fab:hover {
 	background: var(--button-hover, #0056b3);
 	color: var(--button-text, #fff);
-	transform: scale(1.05);
 	box-shadow: 0 6px 16px var(--shadow-hover, rgba(0, 0, 0, 0.2));
+	animation: coffee-hover-wiggle 1s ease-in-out infinite;
 }
 #coffee-fab:focus {
 	outline: 2px solid var(--link-color);
@@ -250,6 +250,45 @@ body.checkout-page main {
 }
 #coffee-fab i {
 	font-size: 1.4rem;
+}
+/* Coffee FAB: steam + inner wrapper (reusable across pages) */
+.coffee-fab-inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#coffee-fab .steam {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	width: 24px;
+	height: 16px;
+	margin-left: -12px;
+	margin-bottom: 2px;
+	pointer-events: none;
+}
+#coffee-fab .steam span {
+	position: absolute;
+	bottom: 0;
+	width: 5px;
+	height: 6px;
+	background: rgba(255, 255, 255, 0.55);
+	border-radius: 50%;
+	animation: steam-rise 2.2s ease-in-out infinite;
+}
+#coffee-fab .steam span:nth-child(1) { left: 0; animation-delay: 0s; }
+#coffee-fab .steam span:nth-child(2) { left: 50%; margin-left: -2.5px; animation-delay: 0.35s; }
+#coffee-fab .steam span:nth-child(3) { right: 0; left: auto; animation-delay: 0.7s; }
+@keyframes steam-rise {
+	0% { opacity: 0; transform: translateY(0) scale(0.85); }
+	35% { opacity: 0.6; }
+	100% { opacity: 0; transform: translateY(-12px) scale(1.15); }
+}
+@keyframes coffee-hover-wiggle {
+	0%, 100% { transform: scale(1.05) rotate(0deg); }
+	25% { transform: scale(1.08) rotate(-5deg); }
+	75% { transform: scale(1.08) rotate(5deg); }
 }
 @media (max-width: 768px) {
 	#coffee-fab {
@@ -305,5 +344,13 @@ body.checkout-page main {
 	}
 	.back-to-top i {
 		font-size: 1.2rem;
+	}
+}
+
+@media print {
+	.back-to-top,
+	#coffee-fab,
+	#coffeeModal {
+		display: none !important;
 	}
 }

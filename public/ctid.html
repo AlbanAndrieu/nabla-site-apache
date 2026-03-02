@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>🛡️💀 Cybersecurity Threat Intelligence Dashboard 💀🛡️</title>
-		<meta name="author" content="Gerard King" />
+		<meta name="author" content="Alban Andrieu" />
 		<meta
 			name="description"
 			content="Cybersecurity Threat Intelligence Dashboard aggregating feeds from 108 sources, built for real-time monitoring and analysis."
@@ -103,16 +103,46 @@
 			}
 		</style>
 
-		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="theme.css" />
+		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="wireframe.css" />
+
+		<!-- Theme toggle script - load early to prevent flash -->
+		<script src="theme-toggle.js"></script>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+			integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- Font Awesome -->
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+		<!-- Google Translate -->
+		<script type="text/javascript" src="/google-translate-config.js"></script>
+		<script
+			type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+		></script>
 	</head>
 
 	<body id="top">
+		<!-- Google Translate Widget -->
+		<div class="google-translate-widget">
+			<div id="google_translate_element"></div>
+		</div>
 		<!-- Print Button (hidden when printing) -->
 		<button class="print-button" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
 		<header>
-			<div class="emoji">🛡️💀</div>
 			<h1>Cybersecurity Threat Intelligence Dashboard</h1>
 			<div class="emoji">💀🛡️</div>
 		</header>
@@ -121,10 +151,83 @@
 			<!-- RSS feed content will be dynamically loaded here -->
 		</div>
 
-		<footer>
-			<div>&copy; 2024 Gerard King | Aggregating 108 Cyber Threat Feeds</div>
+		<!-- Footer -->
+		<footer class="footer" role="contentinfo">
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/in/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="LinkedIn"
+				>
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+				<a
+					href="https://calendly.com/alban-andrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Calendly"
+				>
+					<i class="fa fa-calendar-plus"></i>
+				</a>
+				<a
+					href="https://github.com/AlbanAndrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="GitHub"
+				>
+					<i class="fab fa-github"></i>
+				</a>
+				<a
+					href="https://hub.docker.com/u/nabla"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Docker Hub"
+				>
+					<i class="fab fa-docker"></i>
+				</a>
+				<a
+					href="https://stackexchange.com/users/4652074/albanandrieu"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-link"
+					aria-label="Stack Exchange"
+				>
+					<i class="fab fa-stack-exchange"></i>
+				</a>
+			</div>
+			<div class="footer-links">
+				<a href="https://nabla.albandrieu.com/policy/service_terms.html">Terms of Use</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="https://nabla.albandrieu.com/policy/privacy_policy.html">Privacy Policy</a>
+			</div>
+			<p class="text-md-center mt-3">
+				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
+			</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect. Aggregating 108 Cyber Threat Feeds.</p>
 			<div class="emoji">🚨⚠️</div>
 		</footer>
+
+		<!-- Coffee FAB + Back to top FAB (no-print) -->
+		<button type="button" id="coffee-fab" class="coffee-fab" aria-label="Support this site" title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee.">
+			<span class="coffee-fab-inner">
+				<span class="steam" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</span>
+				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+			</span>
+		</button>
+		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
+			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+		</a>
+		<script>
+			(function(){var b=document.getElementById("coffee-fab");if(b)b.addEventListener("click",function(){window.open("https://ko-fi.com/albandrieu","_blank");});})();
+		</script>
 
 		<script>
 			const feedContainer = document.getElementById("feedContainer");
