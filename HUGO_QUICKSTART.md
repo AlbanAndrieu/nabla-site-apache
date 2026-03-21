@@ -121,7 +121,7 @@ nabla-site-apache/
 For questions or issues:
 - Review `HUGO_MIGRATION.md` for detailed information
 - Check Hugo documentation: https://gohugo.io/documentation/
-- Contact: alban.andrieu@free.fr
+- Contact: alban.andrieu@dr-alban.com
 
 ## Important Notes
 

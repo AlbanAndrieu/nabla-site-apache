@@ -136,7 +136,7 @@ Production deployments update your main site:
 vercel --prod
 
 # Your site will be available at configured domains:
-# https://nabla.albandrieu.com
+# https://dr-alban.com
 ```
 
 **Characteristics**:
@@ -530,7 +530,7 @@ vercel logs [deployment-url]
 
 For issues specific to this project:
 - **GitHub Issues**: Open an issue in this repository
-- **Email**: alban.andrieu@free.fr
+- **Email**: alban.andrieu@dr-alban.com
 
 For Vercel platform issues:
 - **Vercel Support**: https://vercel.com/support

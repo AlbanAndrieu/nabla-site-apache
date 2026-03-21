@@ -516,7 +516,7 @@ static/assets/js/
 
 `hugo.toml`:
 ```toml
-baseURL = 'https://nabla.albandrieu.com/'
+baseURL = 'https://dr-alban.com/'
 languageCode = 'en-us'
 title = 'Nabla DevSecOps'
 
@@ -891,4 +891,4 @@ type: "post"                     # Content type
 
 For issues specific to this project:
 - **GitHub Issues**: Open an issue in this repository
-- **Email**: alban.andrieu@free.fr
+- **Email**: alban.andrieu@dr-alban.com

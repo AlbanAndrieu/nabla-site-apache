@@ -66,7 +66,7 @@ STEP 5: VISIT THE SCRIPT
         followed by the path to the script. For example, if you installed
         your script inside 'folder1/folder2/', access the script like so:
 
-	http://nabla.albandrieu.com/folder1/folder2/keywaspish.php
+	http://dr-alban.com/folder1/folder2/keywaspish.php
 
 	If installed correctly, you will see instructions on how to
 	finalize the installation.

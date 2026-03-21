@@ -106,7 +106,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 - **Semantic HTML**: Use semantic elements for better content understanding
 - **Canonical URLs**: Specify canonical URL to avoid duplicate content
   ```html
-  <link rel="canonical" href="https://nabla.albandrieu.com/page.html" />
+  <link rel="canonical" href="https://dr-alban.com/page.html" />
   ```
 - **Structured Data**: Use JSON-LD for structured data when appropriate
   ```html
@@ -123,7 +123,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 - **Internal Linking**: Use descriptive anchor text for internal links
 - **Meta Author**: Include author information
   ```html
-  <meta name="author" content="alban.andrieu@free.fr" />
+  <meta name="author" content="alban.andrieu@dr-alban.com" />
   ```
 
 ### 7. Crawler Friendly
@@ -158,7 +158,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
 - **Last Modified**: Include `<lastmod>` with ISO 8601 date format when possible
 - **Submit to Search Engines**: After updates, ping search engines
   ```bash
-  curl "https://www.google.com/ping?sitemap=https://nabla.albandrieu.com/sitemap-albandrieu-com.xml"
+  curl "https://www.google.com/ping?sitemap=https://dr-alban.com/sitemap-albandrieu-com.xml"
   ```
 - **Sitemap in robots.txt**: Ensure sitemap URL is in robots.txt (already configured)
 
@@ -169,8 +169,8 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
   ```html
   <meta property="og:title" content="Page Title" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nabla.albandrieu.com/page.html" />
-  <meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
+  <meta property="og:url" content="https://dr-alban.com/page.html" />
+  <meta property="og:image" content="https://dr-alban.com/assets/nabla/nabla-4.png" />
   <meta property="og:description" content="Page description for social sharing" />
   <meta property="og:site_name" content="Nabla - Alban Andrieu" />
   ```
@@ -185,7 +185,7 @@ This is an HTML project for Nabla company that promotes DevSecOps expertise. All
   <meta name="twitter:site" content="@username" />
   <meta name="twitter:title" content="Page Title" />
   <meta name="twitter:description" content="Description" />
-  <meta name="twitter:image" content="https://nabla.albandrieu.com/image.png" />
+  <meta name="twitter:image" content="https://dr-alban.com/image.png" />
   ```
 - **Type-Specific Properties**: Use appropriate `og:type` (website, article, profile, etc.)
 - **Locale**: Specify content locale
@@ -300,4 +300,4 @@ When creating or modifying HTML pages, ensure:
 - [ ] Performance optimized (lazy loading, minification, CDN usage)
 
 ## Contact
-For questions or clarifications, contact: alban.andrieu@free.fr
+For questions or clarifications, contact: alban.andrieu@dr-alban.com

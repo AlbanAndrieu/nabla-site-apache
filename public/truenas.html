@@ -8,8 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- PAGE settings -->
 		<title>TrueNAS Infrastructure & Workstation Services | Nabla - Alban Andrieu</title>
-		<meta name="description" content="Self-hosted TrueNAS infrastructure with 40+ applications including Portainer, Grafana, n8n, Vaultwarden, and Ubuntu workstation services for DevSecOps." />
-		<meta name="keywords" content="truenas, self-hosted, homelab, portainer, grafana, kubernetes, docker, devsecops, alban andrieu, ubuntu, monitoring" />
+		<meta
+			name="description"
+			content="Self-hosted TrueNAS infrastructure with 40+ applications including Portainer, Grafana, n8n, Vaultwarden, and Ubuntu workstation services for DevSecOps."
+		/>
+		<meta
+			name="keywords"
+			content="truenas, self-hosted, homelab, portainer, grafana, kubernetes, docker, devsecops, alban andrieu, ubuntu, monitoring"
+		/>
 
 		<meta name="author" content="Alban Andrieu" />
 		<meta name="robots" content="noindex, nofollow" />
@@ -17,9 +23,12 @@
 		<!-- Open Graph Protocol -->
 		<meta property="og:title" content="TrueNAS Infrastructure & Services - Nabla" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://nabla.albandrieu.com/truenas.html" />
-		<meta property="og:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
-		<meta property="og:description" content="Self-hosted TrueNAS infrastructure with 40+ applications for DevSecOps and home automation" />
+		<meta property="og:url" content="https://dr-alban.com/truenas.html" />
+		<meta property="og:image" content="https://dr-alban.com/assets/nabla/nabla-4.png" />
+		<meta
+			property="og:description"
+			content="Self-hosted TrueNAS infrastructure with 40+ applications for DevSecOps and home automation"
+		/>
 		<meta property="og:site_name" content="Nabla - Alban Andrieu" />
 		<meta property="og:locale" content="en_US" />
 
@@ -27,10 +36,10 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="TrueNAS Infrastructure & Services" />
 		<meta name="twitter:description" content="Self-hosted applications running on TrueNAS and Ubuntu workstation" />
-		<meta name="twitter:image" content="https://nabla.albandrieu.com/assets/nabla/nabla-4.png" />
+		<meta name="twitter:image" content="https://dr-alban.com/assets/nabla/nabla-4.png" />
 
 		<!-- Canonical URL -->
-		<link rel="canonical" href="https://nabla.albandrieu.com/truenas.html" />
+		<link rel="canonical" href="https://dr-alban.com/truenas.html" />
 
 		<link rel="icon" href="assets/nabla/nabla-4.png" />
 
@@ -42,12 +51,12 @@
 		/>
 
 		<script
-			src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
+			src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/fontawesome.js"
 			data-auto-replace-svg="nest"
 		></script>
 
-		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
-		<script src="https://nabla.albandrieu.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
+		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
+		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
 
 		<!-- our project is using icons from Solid, Sharp Thin, Sharp Duotone Thin + Brands -->
 		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -79,8 +88,7 @@
 				const t = document.documentElement,
 					{ connection: i } = navigator;
 				window.obs = window.obs || {};
-				const a =
-						!0 === ((window.obs && window.obs.config) || {}).observeChanges,
+				const a = !0 === ((window.obs && window.obs.config) || {}).observeChanges,
 					o = () => {
 						const e = window.obs || {},
 							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
@@ -90,35 +98,20 @@
 								: "high" === e.rttCategory || (null != i && i <= 5)
 									? "weak"
 									: "moderate";
-						const a =
-							!0 === e.dataSaver ||
-							!0 === e.batteryLow ||
-							!0 === e.batteryCritical;
+						const a = !0 === e.dataSaver || !0 === e.batteryLow || !0 === e.batteryCritical;
 						e.conservationPreference = a ? "conserve" : "neutral";
-						const o =
-							"weak" === e.connectionCapability ||
-							!0 === e.dataSaver ||
-							!0 === e.batteryCritical;
-						(e.deliveryMode =
-							"strong" !== e.connectionCapability || o || a
-								? o
-									? "lite"
-									: "cautious"
-								: "rich"),
+						const o = "weak" === e.connectionCapability || !0 === e.dataSaver || !0 === e.batteryCritical;
+						(e.deliveryMode = "strong" !== e.connectionCapability || o || a ? (o ? "lite" : "cautious") : "rich"),
 							(e.canShowRichMedia = "lite" !== e.deliveryMode),
 							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
 							["strong", "moderate", "weak"].forEach((e) => {
 								t.classList.remove(`has-connection-capability-${e}`);
 							}),
-							t.classList.add(
-								`has-connection-capability-${e.connectionCapability}`,
-							),
+							t.classList.add(`has-connection-capability-${e.connectionCapability}`),
 							["conserve", "neutral"].forEach((e) => {
 								t.classList.remove(`has-conservation-preference-${e}`);
 							}),
-							t.classList.add(
-								`has-conservation-preference-${e.conservationPreference}`,
-							),
+							t.classList.add(`has-conservation-preference-${e.conservationPreference}`),
 							["rich", "cautious", "lite"].forEach((e) => {
 								t.classList.remove(`has-delivery-mode-${e}`);
 							}),
@@ -127,24 +120,13 @@
 					n = () => {
 						if (!i) return;
 						const { saveData: e, rtt: a, downlink: n } = i;
-						(window.obs.dataSaver = !!e),
-							t.classList.toggle("has-data-saver", !!e);
-						const s = ((e) =>
-							Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null)(a);
+						(window.obs.dataSaver = !!e), t.classList.toggle("has-data-saver", !!e);
+						const s = ((e) => (Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null))(a);
 						null != s && (window.obs.rttBucket = s);
-						const r = ((e) =>
-							Number.isFinite(e)
-								? e < 75
-									? "low"
-									: e <= 275
-										? "medium"
-										: "high"
-								: null)(a);
+						const r = ((e) => (Number.isFinite(e) ? (e < 75 ? "low" : e <= 275 ? "medium" : "high") : null))(a);
 						r &&
 							((window.obs.rttCategory = r),
-							["low", "medium", "high"].forEach((e) =>
-								t.classList.remove(`has-latency-${e}`),
-							),
+							["low", "medium", "high"].forEach((e) => t.classList.remove(`has-latency-${e}`)),
 							t.classList.add(`has-latency-${r}`));
 						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
 						var l;
@@ -152,18 +134,12 @@
 							window.obs.downlinkBucket = c;
 							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
 							(window.obs.downlinkCategory = e),
-								["low", "medium", "high"].forEach((e) =>
-									t.classList.remove(`has-bandwidth-${e}`),
-								),
+								["low", "medium", "high"].forEach((e) => t.classList.remove(`has-bandwidth-${e}`)),
 								t.classList.add(`has-bandwidth-${e}`);
 						}
 						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
 					};
-				n(),
-					a &&
-						i &&
-						"function" == typeof i.addEventListener &&
-						i.addEventListener("change", n);
+				n(), a && i && "function" == typeof i.addEventListener && i.addEventListener("change", n);
 				const s = (e) => {
 					if (!e) return;
 					const { level: i, charging: a } = e,
@@ -171,15 +147,11 @@
 					window.obs.batteryCritical = n;
 					const s = Number.isFinite(i) ? i <= 0.2 : null;
 					(window.obs.batteryLow = s),
-						["critical", "low"].forEach((e) =>
-							t.classList.remove(`has-battery-${e}`),
-						),
+						["critical", "low"].forEach((e) => t.classList.remove(`has-battery-${e}`)),
 						s && t.classList.add("has-battery-low"),
 						n && t.classList.add("has-battery-critical");
 					const r = !!a;
-					(window.obs.batteryCharging = r),
-						t.classList.toggle("has-battery-charging", r),
-						o();
+					(window.obs.batteryCharging = r), t.classList.toggle("has-battery-charging", r), o();
 				};
 				if (
 					("getBattery" in navigator &&
@@ -189,8 +161,7 @@
 								s(e),
 									a &&
 										"function" == typeof e.addEventListener &&
-										(e.addEventListener("levelchange", () => s(e)),
-										e.addEventListener("chargingchange", () => s(e)));
+										(e.addEventListener("levelchange", () => s(e)), e.addEventListener("chargingchange", () => s(e)));
 							})
 							.catch(() => {}),
 					"deviceMemory" in navigator)
@@ -199,21 +170,10 @@
 						i = Number.isFinite(e) ? e : null;
 					window.obs.ramBucket = i;
 					const a =
-						((r = i),
-						Number.isFinite(r)
-							? r <= 1
-								? "very-low"
-								: r <= 2
-									? "low"
-									: r <= 4
-										? "medium"
-										: "high"
-							: null);
+						((r = i), Number.isFinite(r) ? (r <= 1 ? "very-low" : r <= 2 ? "low" : r <= 4 ? "medium" : "high") : null);
 					a &&
 						((window.obs.ramCategory = a),
-						["very-low", "low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-ram-${e}`),
-						),
+						["very-low", "low", "medium", "high"].forEach((e) => t.classList.remove(`has-ram-${e}`)),
 						t.classList.add(`has-ram-${a}`));
 				}
 				var r;
@@ -221,19 +181,10 @@
 					const e = Number(navigator.hardwareConcurrency),
 						i = Number.isFinite(e) ? e : null;
 					window.obs.cpuBucket = i;
-					const a = ((e) =>
-						Number.isFinite(e)
-							? e <= 2
-								? "low"
-								: e <= 5
-									? "medium"
-									: "high"
-							: null)(i);
+					const a = ((e) => (Number.isFinite(e) ? (e <= 2 ? "low" : e <= 5 ? "medium" : "high") : null))(i);
 					a &&
 						((window.obs.cpuCategory = a),
-						["low", "medium", "high"].forEach((e) =>
-							t.classList.remove(`has-cpu-${e}`),
-						),
+						["low", "medium", "high"].forEach((e) => t.classList.remove(`has-cpu-${e}`)),
 						t.classList.add(`has-cpu-${a}`));
 				}
 				(() => {
@@ -273,23 +224,17 @@
 						cK = "_vwo_" + account_id + "_settings",
 						cc = {};
 					try {
-						var c = JSON.parse(
-							localStorage.getItem("_vwo_" + account_id + "_config"),
-						);
+						var c = JSON.parse(localStorage.getItem("_vwo_" + account_id + "_config"));
 						cc = c && typeof c === "object" ? c : {};
 					} catch (e) {}
 					var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
 					code = {
 						nonce: v && v.nonce,
 						use_existing_jquery: function () {
-							return typeof use_existing_jquery !== "undefined"
-								? use_existing_jquery
-								: undefined;
+							return typeof use_existing_jquery !== "undefined" ? use_existing_jquery : undefined;
 						},
 						library_tolerance: function () {
-							return typeof library_tolerance !== "undefined"
-								? library_tolerance
-								: undefined;
+							return typeof library_tolerance !== "undefined" ? library_tolerance : undefined;
 						},
 						settings_tolerance: function () {
 							return cc.sT || settings_tolerance;
@@ -311,11 +256,7 @@
 								f = true;
 								var t = d.getElementById("_vis_opt_path_hides");
 								if (t) t.parentNode.removeChild(t);
-								if (e)
-									new Image().src =
-										"https://dev.visualwebsiteoptimizer.com/ee.gif?a=" +
-										account_id +
-										e;
+								if (e) new Image().src = "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" + account_id + e;
 							}
 						},
 						finished: function () {
@@ -451,22 +392,15 @@
 						((p = t.createElement("script")).type = "text/javascript"),
 							(p.crossOrigin = "anonymous"),
 							(p.async = !0),
-							(p.src =
-								s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-								"/static/array.js"),
-							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-								p,
-								r,
-							);
+							(p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
+							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
 						var u = e;
 						for (
 							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
 								u.people = u.people || [],
 								u.toString = function (t) {
 									var e = "posthog";
-									return (
-										"posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-									);
+									return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
 								},
 								u.people.toString = function () {
 									return u.toString(1) + ".people (stub)";
@@ -503,10 +437,7 @@
 		<!-- End Google Tag Manager (noscript) -->
 
 		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-		></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -527,8 +458,7 @@
 					var a = document.createElement("script");
 					(a.type = "text/javascript"),
 						(a.async = !0),
-						(a.src =
-							"https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
+						(a.src = "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
 					var r = document.getElementsByTagName("script")[0];
 					r.parentNode.insertBefore(a, r);
 					var n = [
@@ -584,10 +514,7 @@
 		<!-- End Google Tag Manager (noscript) -->
 
 		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"
-		></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -599,11 +526,7 @@
 		</script>
 
 		<!-- Ahrefs Web Analytics -->
-		<script
-			src="https://analytics.ahrefs.com/analytics.js"
-			data-key="tg3zLMS/bebJFl0LxctiCw"
-			async
-		></script>
+		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
 
 		<!-- Vercel Web Analytics -->
 		<script>
@@ -626,9 +549,7 @@
 	</head>
 	<body>
 		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()">
-			<i class="fas fa-print"></i> Print / Save as PDF
-		</button>
+		<button class="print-button" onclick="window.print()"><i class="fas fa-print"></i> Print / Save as PDF</button>
 
 		<div class="collapse bg-dark" id="navbarHeader" style="">
 			<div class="container">
@@ -656,56 +577,28 @@
 							<img class="card-img-top" src="assets/jenkins-basic.jpg" alt="Jenkins CI/CD Platform" />
 							<div class="card-body">
 								<h5 class="">
-									<b
-										>Nabla
-										<a href="https://jenkins.io/" target="_blank" style=""
-											>Jenkins</a
-										></b
-									>
+									<b>Nabla <a href="https://jenkins.io/" target="_blank" style="">Jenkins</a></b>
 								</h5>
 								<p class="card-text">Jenkins <b>Freestyle</b> jobs</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<div
-										class="d-flex justify-content-between align-items-center"
-									>
-										<button
-											type="button"
-											class="btn btn-sm btn-outline-secondary"
-										>
-											<a
-												href="http://albandrieu.com/jenkins"
-												target="_blank"
-												style=""
-												>Jenkins</a
-											>
+									<div class="d-flex justify-content-between align-items-center">
+										<button type="button" class="btn btn-sm btn-outline-secondary">
+											<a href="http://albandrieu.com/jenkins" target="_blank" style="">Jenkins</a>
 										</button>
 										<div class="btn-group btn-group-sm" style="">
-											<button
-												class="btn dropdown-toggle btn-light"
-												data-toggle="dropdown"
-												contenteditable="true"
-											>
+											<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 												Tools&nbsp;
 											</button>
 											<div class="dropdown-menu">
-												<a
-													class="dropdown-item"
-													href="http://albandrieu.com/jenkins/pluginusage"
-													target="_blank"
+												<a class="dropdown-item" href="http://albandrieu.com/jenkins/pluginusage" target="_blank"
 													>Plugin Usage</a
 												>
 												<div class="dropdown-divider"></div>
-												<a
-													class="dropdown-item"
-													href="http://albandrieu.com/jenkins/script"
-													target="_blank"
+												<a class="dropdown-item" href="http://albandrieu.com/jenkins/script" target="_blank"
 													>Script Console</a
 												>
 												<div class="dropdown-divider"></div>
-												<a
-													class="dropdown-item"
-													href="http://albandrieu.com/jenkins/computer"
-													target="_blank"
+												<a class="dropdown-item" href="http://albandrieu.com/jenkins/computer" target="_blank"
 													>Slave Nodes</a
 												>
 												<div class="dropdown-divider"></div>
@@ -717,40 +610,17 @@
 												>
 											</div>
 										</div>
-										<button
-											type="button"
-											class="btn btn-sm btn-outline-secondary"
-										>
+										<button type="button" class="btn btn-sm btn-outline-secondary">
 											<a href="/01_nabla/index.html">Report</a>
 										</button>
 										<div class="btn-group btn-group-sm" style="">
-											<button
-												class="btn dropdown-toggle btn-success"
-												data-toggle="dropdown"
-											>
-												Download&nbsp;
-											</button>
+											<button class="btn dropdown-toggle btn-success" data-toggle="dropdown">Download&nbsp;</button>
 											<div class="dropdown-menu">
-												<a
-													class="dropdown-item"
-													download
-													href="/cv/cv-aandrieu-XX-XX-2021.tex"
-													>*.tex</a
-												>
+												<a class="dropdown-item" download href="/cv/cv-aandrieu-XX-XX-2021.tex">*.tex</a>
 												<div class="dropdown-divider"></div>
-												<a
-													class="dropdown-item"
-													download
-													href="/cv/cv-aandrieu-XX-XX-2021.pdf"
-													>*.pdf</a
-												>
+												<a class="dropdown-item" download href="/cv/cv-aandrieu-XX-XX-2021.pdf">*.pdf</a>
 												<div class="dropdown-divider"></div>
-												<a
-													class="dropdown-item"
-													download
-													href="/01_nabla/index.html"
-													>*.html</a
-												>
+												<a class="dropdown-item" download href="/01_nabla/index.html">*.html</a>
 												<div class="dropdown-divider"></div>
 												<!--
                       <a class="dropdown-item" download href="/01_nabla/nabla_report.txt">*.txt</a>
@@ -758,10 +628,7 @@
                       <a class="dropdown-item" download href="/01_nabla/nabla_report.zip">*.zip</a>
                       <div class="dropdown-divider"></div>
                       -->
-												<a
-													class="dropdown-item"
-													download
-													href="http://albandrieu.com/jenkins/jnlpJars/jenkins-cli.jar"
+												<a class="dropdown-item" download href="http://albandrieu.com/jenkins/jnlpJars/jenkins-cli.jar"
 													>Jenkins CLI</a
 												>
 											</div>
@@ -784,43 +651,16 @@
 							/>
 							<div class="card-body">
 								<h5 class="">
-									<b
-										>Nabla
-										<a href="https://www.freenas.org/" target="_blank"
-											>FreeNAS</a
-										></b
-									>
+									<b>Nabla <a href="https://www.freenas.org/" target="_blank">FreeNAS</a></b>
 								</h5>
-								<p class="card-text">
-									FreeNAS <b>® © 2020 - iXsystems, Inc</b>
-								</p>
+								<p class="card-text">FreeNAS <b>® © 2020 - iXsystems, Inc</b></p>
 								<div class="d-flex justify-content-between align-items-center">
-									<div
-										class="d-flex justify-content-between align-items-center"
-									>
-										<button
-											type="button"
-											class="btn btn-sm btn-outline-secondary"
-											style=""
-										>
-											<a
-												href="https://albandrieu.com:7000/ui/dashboard"
-												target="_blank"
-												style=""
-												>HTTPS UI</a
-											>
+									<div class="d-flex justify-content-between align-items-center">
+										<button type="button" class="btn btn-sm btn-outline-secondary" style="">
+											<a href="https://albandrieu.com:7000/ui/dashboard" target="_blank" style="">HTTPS UI</a>
 										</button>
-										<button
-											type="button"
-											class="btn btn-sm btn-outline-secondary"
-											style=""
-										>
-											<a
-												href="https://albandrieu.com:81/"
-												target="_blank"
-												style=""
-												>HTTP UI</a
-											>
+										<button type="button" class="btn btn-sm btn-outline-secondary" style="">
+											<a href="https://albandrieu.com:81/" target="_blank" style="">HTTP UI</a>
 										</button>
 									</div>
 								</div>
@@ -829,47 +669,26 @@
 					</div>
 					<div class="col-md-4 p-3">
 						<div class="card box-shadow">
-							<img
-								class="img-fluid d-block mx-auto py-2"
-								src="assets/logo-iocage-simple.png"
-								width="100"
-							/>
+							<img class="img-fluid d-block mx-auto py-2" src="assets/logo-iocage-simple.png" width="100" />
 							<div class="card-body">
 								<h5 class="">
 									<b
 										>Nabla
-										<a href="https://www.freenas.org/" target="_blank" style=""
-											>FreeNAS</a
-										>
+										<a href="https://www.freenas.org/" target="_blank" style="">FreeNAS</a>
 										Iocage</b
 									>
 								</h5>
 								<p class="card-text">
-									Freenas <b>Iocage</b>
-									<a href="https://www.freenas.org/plugins/" target="_blank"
-										>Plugins</a
-									> 
+									Freenas <b>Iocage</b> <a href="https://www.freenas.org/plugins/" target="_blank">Plugins</a> 
 								</p>
 								<div class="btn-group-vertical btn-group-sm" style="">
-									<button
-										class="btn dropdown-toggle btn-light"
-										data-toggle="dropdown"
-										contenteditable="true"
-									>
+									<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 										Internal&nbsp;
 									</button>
 									<div class="dropdown-menu">
-										<a
-											class="dropdown-item"
-											href="https://albandrieu.com:7000/ui/plugins"
-											target="_blank"
-											>Plugins</a
-										>
+										<a class="dropdown-item" href="https://albandrieu.com:7000/ui/plugins" target="_blank">Plugins</a>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.58:32400/web"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.58:32400/web" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-plexmedia-simple.jpeg"
@@ -877,10 +696,7 @@
 											/>Plex</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.24:8181"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.24:8181" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-tautulli-simple.png"
@@ -889,10 +705,7 @@
 										>
 
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.24:7878"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.24:7878" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-radarr-simple.png"
@@ -900,10 +713,7 @@
 											/>Radarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.24:8989"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.24:8989" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-sonarr-simple.jpeg"
@@ -911,10 +721,7 @@
 											/>Sonarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.24:8683"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.24:8683" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-lidarr-simple.png"
@@ -922,10 +729,7 @@
 											/>Lidarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.24:9001"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.24:9001" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-organizr-simple.jpeg"
@@ -934,10 +738,7 @@
 										>
 
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.66:9117"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.66:9117" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-jackett-simple.png"
@@ -945,10 +746,7 @@
 											/>Jackett</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.67:8080"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.67:8080" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-sabnzbd-simple.jpeg"
@@ -956,10 +754,7 @@
 											/>Sabnzbd</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.70:9091"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.70:9091" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-transmission-simple.jpeg"
@@ -967,10 +762,7 @@
 											/>Transmission</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://192.168.1.69:8112"
-											target="_blank"
+										<a class="dropdown-item" href="http://192.168.1.69:8112" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-deluge-simple.png"
@@ -980,26 +772,14 @@
 									</div>
 								</div>
 								<div class="btn-group-vertical btn-group-sm" style="">
-									<button
-										class="btn dropdown-toggle btn-light"
-										data-toggle="dropdown"
-										contenteditable="true"
-									>
+									<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 										External&nbsp;
 									</button>
 									<div class="dropdown-menu">
-										<a
-											class="dropdown-item"
-											href="https://albandrieu.com:7000/ui/plugins"
-											target="_blank"
-											>Plugins</a
-										>
+										<a class="dropdown-item" href="https://albandrieu.com:7000/ui/plugins" target="_blank">Plugins</a>
 										<!--<div class="dropdown-divider"></div><a class="dropdown-item" href="http://192.168.1.58:32400/web" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-plexmedia-simple.jpeg" width="100">Plex</a>-->
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:8181"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:8181" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-tautulli-simple.png"
@@ -1008,10 +788,7 @@
 										>
 
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:7878"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:7878" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-radarr-simple.png"
@@ -1019,10 +796,7 @@
 											/>Radarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:8989"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:8989" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-sonarr-simple.jpeg"
@@ -1030,10 +804,7 @@
 											/>Sonarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:8683"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:8683" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-lidarr-simple.png"
@@ -1041,10 +812,7 @@
 											/>Lidarr</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:9001"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:9001" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-organizr-simple.jpeg"
@@ -1053,10 +821,7 @@
 										>
 
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:9117"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:9117" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-jackett-simple.png"
@@ -1064,10 +829,7 @@
 											/>Jackett</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:8090"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:8090" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-sabnzbd-simple.jpeg"
@@ -1075,10 +837,7 @@
 											/>Sabnzbd</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:9091"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:9091" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-transmission-simple.jpeg"
@@ -1086,10 +845,7 @@
 											/>Transmission</a
 										>
 										<div class="dropdown-divider"></div>
-										<a
-											class="dropdown-item"
-											href="http://albandrieu.com:8112"
-											target="_blank"
+										<a class="dropdown-item" href="http://albandrieu.com:8112" target="_blank"
 											><img
 												class="img-fluid d-block mx-auto my-1"
 												src="assets/logo-deluge-simple.png"
@@ -1109,7 +865,12 @@
 								<h5 class="card-title"><b>AdGuard Home</b></h5>
 								<p class="card-text">Network-wide ad blocking</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://adguardhome.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://adguardhome.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-shield-alt" aria-hidden="true"></i> Open AdGuard
 									</a>
 									<small class="text-muted">Port: 30004</small>
@@ -1124,7 +885,12 @@
 								<h5 class="card-title"><b>Heimdall</b></h5>
 								<p class="card-text">Application dashboard</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://heimdall.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://heimdall.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-th-large" aria-hidden="true"></i> Open Heimdall
 									</a>
 									<small class="text-muted">Port: 30120</small>
@@ -1139,7 +905,12 @@
 								<h5 class="card-title"><b>Domain Watchdog</b></h5>
 								<p class="card-text">Domain monitoring service</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://domain-watchdog.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://domain-watchdog.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-search" aria-hidden="true"></i> Open Watchdog
 									</a>
 									<small class="text-muted">Port: 30317</small>
@@ -1154,7 +925,12 @@
 								<h5 class="card-title"><b>Prometheus</b></h5>
 								<p class="card-text">Monitoring and alerting</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://prometheus.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://prometheus.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-chart-line" aria-hidden="true"></i> Open Prometheus
 									</a>
 									<small class="text-muted">Port: 30104</small>
@@ -1169,7 +945,12 @@
 								<h5 class="card-title"><b>2FA Auth</b></h5>
 								<p class="card-text">Two-factor authentication</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://twofactor-auth.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://twofactor-auth.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-lock" aria-hidden="true"></i> Open 2FA
 									</a>
 									<small class="text-muted">Port: 30081</small>
@@ -1184,7 +965,12 @@
 								<h5 class="card-title"><b>PortTracker</b></h5>
 								<p class="card-text">Port tracking service</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://portracker.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://portracker.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-network-wired" aria-hidden="true"></i> Open PortTracker
 									</a>
 									<small class="text-muted">Port: 30233</small>
@@ -1199,7 +985,12 @@
 								<h5 class="card-title"><b>OpenSpeedTest</b></h5>
 								<p class="card-text">Network speed testing</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://open-speed-test.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://open-speed-test.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-tachometer-alt" aria-hidden="true"></i> Speed Test
 									</a>
 									<small class="text-muted">Port: 30117</small>
@@ -1214,7 +1005,12 @@
 								<h5 class="card-title"><b>Portainer</b></h5>
 								<p class="card-text">Container management</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://portainer.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://portainer.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-server" aria-hidden="true"></i> Open Portainer
 									</a>
 									<small class="text-muted">Port: 31015</small>
@@ -1229,7 +1025,12 @@
 								<h5 class="card-title"><b>Scrutiny</b></h5>
 								<p class="card-text">Hard drive health monitoring</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://scrutiny.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://scrutiny.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-hdd" aria-hidden="true"></i> Open Scrutiny
 									</a>
 									<small class="text-muted">Port: 31054</small>
@@ -1244,7 +1045,12 @@
 								<h5 class="card-title"><b>IT Tools</b></h5>
 								<p class="card-text">Developer utilities collection</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://it-tools.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://it-tools.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-tools" aria-hidden="true"></i> Open IT Tools
 									</a>
 									<small class="text-muted">Port: 30063</small>
@@ -1259,7 +1065,12 @@
 								<h5 class="card-title"><b>Uptime Kuma</b></h5>
 								<p class="card-text">Uptime monitoring</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://uptime-kuma.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://uptime-kuma.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-heartbeat" aria-hidden="true"></i> Open Kuma
 									</a>
 									<small class="text-muted">Port: 31050</small>
@@ -1274,7 +1085,12 @@
 								<h5 class="card-title"><b>Vaultwarden</b></h5>
 								<p class="card-text">Password manager</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://vaultwarden.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://vaultwarden.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-key" aria-hidden="true"></i> Open Vault
 									</a>
 									<small class="text-muted">Port: 30032</small>
@@ -1289,7 +1105,12 @@
 								<h5 class="card-title"><b>2FAuth</b></h5>
 								<p class="card-text">Two-factor codes manager</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://2fauth.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://2fauth.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-mobile-alt" aria-hidden="true"></i> Open 2FAuth
 									</a>
 									<small class="text-muted">Port: 30081</small>
@@ -1304,7 +1125,12 @@
 								<h5 class="card-title"><b>LocalAI</b></h5>
 								<p class="card-text">Local AI models</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://localai.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://localai.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-brain" aria-hidden="true"></i> Open LocalAI
 									</a>
 									<small class="text-muted">Port: 30286</small>
@@ -1319,7 +1145,12 @@
 								<h5 class="card-title"><b>Ollama</b></h5>
 								<p class="card-text">Large language models</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://ollama.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://ollama.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-robot" aria-hidden="true"></i> Open Ollama
 									</a>
 									<small class="text-muted">Port: 30068</small>
@@ -1334,7 +1165,12 @@
 								<h5 class="card-title"><b>n8n</b></h5>
 								<p class="card-text">Workflow automation</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://n8n.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://n8n.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-project-diagram" aria-hidden="true"></i> Open n8n
 									</a>
 									<small class="text-muted">Port: 30109</small>
@@ -1349,7 +1185,12 @@
 								<h5 class="card-title"><b>Grafana</b></h5>
 								<p class="card-text">Analytics and monitoring</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://grafana.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://grafana.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-chart-area" aria-hidden="true"></i> Open Grafana
 									</a>
 									<small class="text-muted">Port: 30037</small>
@@ -1364,7 +1205,12 @@
 								<h5 class="card-title"><b>Keycloak</b></h5>
 								<p class="card-text">Identity and access management</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://keycloak.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://keycloak.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-user-shield" aria-hidden="true"></i> Open Keycloak
 									</a>
 									<small class="text-muted">Port: 30238</small>
@@ -1379,7 +1225,12 @@
 								<h5 class="card-title"><b>ClamAV</b></h5>
 								<p class="card-text">Antivirus engine</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://clamav.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://clamav.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-virus-slash" aria-hidden="true"></i> Open ClamAV
 									</a>
 									<small class="text-muted">Port: 3310</small>
@@ -1394,7 +1245,12 @@
 								<h5 class="card-title"><b>Homarr</b></h5>
 								<p class="card-text">Homepage dashboard</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://homarr.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://homarr.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-home" aria-hidden="true"></i> Open Homarr
 									</a>
 									<small class="text-muted">Port: 30100</small>
@@ -1409,7 +1265,12 @@
 								<h5 class="card-title"><b>Gatus</b></h5>
 								<p class="card-text">Health dashboard</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://gatus.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://gatus.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-heart" aria-hidden="true"></i> Open Gatus
 									</a>
 									<small class="text-muted">Port: 30287</small>
@@ -1424,7 +1285,12 @@
 								<h5 class="card-title"><b>DDNS Updater</b></h5>
 								<p class="card-text">Dynamic DNS updates</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://ddns-updater.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://ddns-updater.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-sync-alt" aria-hidden="true"></i> Open DDNS
 									</a>
 									<small class="text-muted">Port: 30007</small>
@@ -1439,7 +1305,12 @@
 								<h5 class="card-title"><b>Paperless AI</b></h5>
 								<p class="card-text">Document management with AI</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://paperless-ai.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://paperless-ai.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-file-alt" aria-hidden="true"></i> Open Paperless AI
 									</a>
 									<small class="text-muted">Port: 30226</small>
@@ -1454,7 +1325,12 @@
 								<h5 class="card-title"><b>Transmission</b></h5>
 								<p class="card-text">BitTorrent client</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://transmission.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://transmission.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-download" aria-hidden="true"></i> Open Transmission
 									</a>
 									<small class="text-muted">Port: 30096</small>
@@ -1469,7 +1345,12 @@
 								<h5 class="card-title"><b>Sonarr</b></h5>
 								<p class="card-text">TV series management</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://sonarr.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://sonarr.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-tv" aria-hidden="true"></i> Open Sonarr
 									</a>
 									<small class="text-muted">Port: 30113</small>
@@ -1484,7 +1365,12 @@
 								<h5 class="card-title"><b>TrueNAS</b></h5>
 								<p class="card-text">Storage management UI</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://truenas.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://truenas.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-database" aria-hidden="true"></i> Open TrueNAS
 									</a>
 									<small class="text-muted">Port: 7000</small>
@@ -1499,7 +1385,12 @@
 								<h5 class="card-title"><b>Radarr</b></h5>
 								<p class="card-text">Movie collection manager</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://radarr.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://radarr.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-film" aria-hidden="true"></i> Open Radarr
 									</a>
 									<small class="text-muted">Port: 30025</small>
@@ -1514,7 +1405,12 @@
 								<h5 class="card-title"><b>pfSense</b></h5>
 								<p class="card-text">Firewall and router</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://pfsense.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://pfsense.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-fire" aria-hidden="true"></i> Open pfSense
 									</a>
 									<small class="text-muted">Port: 10443</small>
@@ -1529,7 +1425,12 @@
 								<h5 class="card-title"><b>Lidarr</b></h5>
 								<p class="card-text">Music collection manager</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://lidarr.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://lidarr.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-music" aria-hidden="true"></i> Open Lidarr
 									</a>
 									<small class="text-muted">Port: 30071</small>
@@ -1544,7 +1445,12 @@
 								<h5 class="card-title"><b>Prowlarr</b></h5>
 								<p class="card-text">Indexer manager</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://prowlarr.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://prowlarr.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-search-plus" aria-hidden="true"></i> Open Prowlarr
 									</a>
 									<small class="text-muted">Port: 30050</small>
@@ -1559,7 +1465,12 @@
 								<h5 class="card-title"><b>Paperless-ngx</b></h5>
 								<p class="card-text">Document management system</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://paperless-ngx.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://paperless-ngx.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-folder-open" aria-hidden="true"></i> Open Paperless
 									</a>
 									<small class="text-muted">Port: 30070</small>
@@ -1574,7 +1485,12 @@
 								<h5 class="card-title"><b>Netbootxyz</b></h5>
 								<p class="card-text">Network boot utility</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://netbootxyz.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://netbootxyz.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-boot" aria-hidden="true"></i> Open Netboot
 									</a>
 									<small class="text-muted">Port: 31010</small>
@@ -1589,7 +1505,12 @@
 								<h5 class="card-title"><b>Affine</b></h5>
 								<p class="card-text">Knowledge base and notes</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://affine.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://affine.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-book" aria-hidden="true"></i> Open Affine
 									</a>
 									<small class="text-muted">Port: 30169</small>
@@ -1604,7 +1525,12 @@
 								<h5 class="card-title"><b>ConvertX</b></h5>
 								<p class="card-text">File conversion service</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://convertx.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://convertx.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-exchange-alt" aria-hidden="true"></i> Open ConvertX
 									</a>
 									<small class="text-muted">Port: 30154</small>
@@ -1619,7 +1545,12 @@
 								<h5 class="card-title"><b>Bichon</b></h5>
 								<p class="card-text">Custom application</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://bichon.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://bichon.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-paw" aria-hidden="true"></i> Open Bichon
 									</a>
 									<small class="text-muted">Port: 30313</small>
@@ -1634,7 +1565,12 @@
 								<h5 class="card-title"><b>OpenArchiver</b></h5>
 								<p class="card-text">Archive management</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://openarchiver.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://openarchiver.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-archive" aria-hidden="true"></i> Open Archiver
 									</a>
 									<small class="text-muted">Port: 30288</small>
@@ -1649,7 +1585,12 @@
 								<h5 class="card-title"><b>pgAdmin</b></h5>
 								<p class="card-text">PostgreSQL administration</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://pgadmin.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://pgadmin.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-database" aria-hidden="true"></i> Open pgAdmin
 									</a>
 									<small class="text-muted">Port: 30056</small>
@@ -1664,7 +1605,12 @@
 								<h5 class="card-title"><b>PostgreSQL</b></h5>
 								<p class="card-text">Database server</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="tcp://postgres.albandrieu.com:5432" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">
+									<a
+										href="tcp://postgres.albandrieu.com:5432"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-secondary"
+									>
 										<i class="fas fa-server" aria-hidden="true"></i> Database
 									</a>
 									<small class="text-muted">Port: 5432</small>
@@ -1679,7 +1625,12 @@
 								<h5 class="card-title"><b>KaraKeep</b></h5>
 								<p class="card-text">Karaoke management</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://karakeep.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://karakeep.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-microphone" aria-hidden="true"></i> Open KaraKeep
 									</a>
 									<small class="text-muted">Port: 30147</small>
@@ -1694,15 +1645,18 @@
 								<h5 class="card-title"><b>SABnzbd</b></h5>
 								<p class="card-text">Usenet downloader</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="https://sabnzbd.albandrieu.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+									<a
+										href="https://sabnzbd.albandrieu.com"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-sm btn-outline-primary"
+									>
 										<i class="fas fa-cloud-download-alt" aria-hidden="true"></i> Open SABnzbd
 									</a>
 									<small class="text-muted">Port: 30011</small>
 								</div>
 							</div>
 						</div>
-					</div>
-
 					</div>
 				</div>
 			</div>
@@ -1720,12 +1674,7 @@
 				<div class="row">
 					<div class="col-md-4 p-3">
 						<div class="card box-shadow">
-							<img
-								class="img-fluid d-block mx-auto py-2"
-								src="assets/logo-devops.png"
-								width="160"
-								alt="DevOps Tools"
-							/>
+							<img class="img-fluid d-block mx-auto py-2" src="assets/logo-devops.png" width="160" alt="DevOps Tools" />
 							<div class="card-body">
 								<h5 class="">
 									<b>Nabla DevOps Tools</b>
@@ -1733,25 +1682,13 @@
 								<p class="card-text">Development and CI/CD tools on Ubuntu workstation</p>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
-											<a
-												class="dropdown-item"
-												href="https://albandrieu.com:7000/ui/plugins"
-												target="_blank"
-												>Plugins</a
-											>
+											<a class="dropdown-item" href="https://albandrieu.com:7000/ui/plugins" target="_blank">Plugins</a>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.62:80/jenkins/"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.62:80/jenkins/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-jenkins-simple.png"
@@ -1759,10 +1696,7 @@
 												/>Jenkins</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.24:8081/nexus/"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.24:8081/nexus/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-nexus-simple.png"
@@ -1770,10 +1704,7 @@
 												/>Nexus</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.61:80"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.61:80" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-apache-simple.jpeg"
@@ -1785,10 +1716,7 @@
                     http://192.168.1.61/server-info
                     -->
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.61:7075"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.61:7075" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-apache-simple.jpeg"
@@ -1796,10 +1724,7 @@
 												/>Apache Debug</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.61:5678/"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.61:5678/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-bower-simple.svg"
@@ -1807,10 +1732,7 @@
 												/>Bower</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://192.168.1.61:10000/"
-												target="_blank"
+											<a class="dropdown-item" href="https://192.168.1.61:10000/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-webmin-simple.png"
@@ -1818,10 +1740,7 @@
 												/>Webmin</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.61:7075/download/"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.61:7075/download/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-apache-simple.jpeg"
@@ -1831,19 +1750,12 @@
 										</div>
 									</div>
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											External&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://albandrieu.com/jenkins/"
-												target="_blank"
+											<a class="dropdown-item" href="http://albandrieu.com/jenkins/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-jenkins-simple.png"
@@ -1851,10 +1763,7 @@
 												/>Jenkins</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://nexus.albandrieu.com/nexus/"
-												target="_blank"
+											<a class="dropdown-item" href="https://nexus.albandrieu.com/nexus/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-nexus-simple.png"
@@ -1863,10 +1772,7 @@
 											>
 											<!--<div class="dropdown-divider"></div><a class="dropdown-item" href="http://albandrieu.com:80" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-apache-simple.jpeg" width="100">Apache</a>-->
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://albandrieu.com:5678/"
-												target="_blank"
+											<a class="dropdown-item" href="http://albandrieu.com:5678/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-bower-simple.svg"
@@ -1882,19 +1788,12 @@
 								</div>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:8686/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:8686/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-jenkins-simple.png"
@@ -1902,10 +1801,7 @@
 												/>Jenkins</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:8087"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:8087" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-deptrack-simple.jpeg"
@@ -1913,10 +1809,7 @@
 												/>Dependency Track</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:8081/nexus/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:8081/nexus/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-nexus-simple.png"
@@ -1924,10 +1817,7 @@
 												/>Nexus</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:7075/index/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:7075/index/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-apache-simple.jpeg"
@@ -1935,10 +1825,7 @@
 												/>Apache</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://172.17.0.57:10000/"
-												target="_blank"
+											<a class="dropdown-item" href="https://172.17.0.57:10000/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-webmin-simple.png"
@@ -1946,10 +1833,7 @@
 												/>Webmin</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:6532/harbor/projects"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:6532/harbor/projects" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-harbor-simple.jpeg"
@@ -1959,11 +1843,7 @@
 										</div>
 									</div>
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											External&nbsp;
 										</button>
 										<div class="dropdown-menu">
@@ -1972,10 +1852,7 @@
                     <div class="dropdown-divider"></div><a class="dropdown-item" href="https://nexus.albandrieu.com/nexus/" target="_blank"><img class="img-fluid d-block mx-auto my-1" src="assets/logo-nexus-simple.png" width="100">Nexus</a>
                     -->
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://albandrieu.com:80"
-												target="_blank"
+											<a class="dropdown-item" href="http://albandrieu.com:80" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-apache-simple.jpeg"
@@ -2003,11 +1880,7 @@
 								<p class="card-text">System and application monitoring on Ubuntu</p>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
@@ -2025,19 +1898,12 @@
 										</div>
 									</div>
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											External&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://albandrieu.com/nabla/webalizer/"
-												target="_blank"
+											<a class="dropdown-item" href="http://albandrieu.com/nabla/webalizer/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-awstats-simple.jpg"
@@ -2052,19 +1918,12 @@
 								</div>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://192.168.1.1/"
-												target="_blank"
+											<a class="dropdown-item" href="http://192.168.1.1/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-livebox-simple.jpg"
@@ -2074,19 +1933,12 @@
 										</div>
 									</div>
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											External&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://82.124.241.189:10007/"
-												target="_blank"
+											<a class="dropdown-item" href="https://82.124.241.189:10007/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-livebox-simple.jpg"
@@ -2101,19 +1953,12 @@
 								</div>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:9091/targets"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:9091/targets" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-prometheus-simple.png"
@@ -2121,10 +1966,7 @@
 												/>Prometheus</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:9200/_cat/nodes?v&pretty"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:9200/_cat/nodes?v&pretty" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-elasticsearch-simple.png"
@@ -2132,10 +1974,7 @@
 												/>Elasticsearch</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:5001/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:5001/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-elastichq-simple.png"
@@ -2143,10 +1982,7 @@
 												/>Elasticsearch-HQ</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:7777/containers/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:7777/containers/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-cadvisor-simple.jpeg"
@@ -2154,10 +1990,7 @@
 												/>Cadvisor</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:5601/"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:5601/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-kibana-simple.png"
@@ -2165,10 +1998,7 @@
 												/>Kibana</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="http://172.17.0.57:3000/login"
-												target="_blank"
+											<a class="dropdown-item" href="http://172.17.0.57:3000/login" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-grafana-simple.jpeg"
@@ -2201,19 +2031,12 @@
 								<p class="card-text">Gaming platforms and launchers</p>
 								<div class="col-md-4" style="">
 									<div class="btn-group-vertical btn-group-sm" style="">
-										<button
-											class="btn dropdown-toggle btn-light"
-											data-toggle="dropdown"
-											contenteditable="true"
-										>
+										<button class="btn dropdown-toggle btn-light" data-toggle="dropdown" contenteditable="true">
 											Internal&nbsp;
 										</button>
 										<div class="dropdown-menu">
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://lutris.net/user/AlbanAndrieu/library/"
-												target="_blank"
+											<a class="dropdown-item" href="https://lutris.net/user/AlbanAndrieu/library/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-lutris-simple.png"
@@ -2221,10 +2044,7 @@
 												/>Lutris</a
 											>
 											<div class="dropdown-divider"></div>
-											<a
-												class="dropdown-item"
-												href="https://store.steampowered.com/"
-												target="_blank"
+											<a class="dropdown-item" href="https://store.steampowered.com/" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto my-1"
 													src="assets/logo-steam-simple.png"
@@ -2254,11 +2074,7 @@
 				<div class="row">
 					<div class="col-md-4 p-3 bg-white">
 						<div class="card box-shadow">
-							<img
-								class="img-fluid d-block mx-auto py-2"
-								src="../assets/nabla/nabla-4.svg"
-								width="140"
-							/>
+							<img class="img-fluid d-block mx-auto py-2" src="../assets/nabla/nabla-4.svg" width="140" />
 							<div class="card-body">
 								<h5 class=""><b>Nabla Application</b></h5>
 							</div>
@@ -2275,11 +2091,7 @@
 						<div class="col-md-12">
 							<div class="bg-light row align-items-upcenter">
 								<div class="col-md-2">
-									<img
-										class="img-fluid d-block my-4"
-										src="assets/logo-hacker-simple.png"
-										alt="Hacker illustration"
-									/>
+									<img class="img-fluid d-block my-4" src="assets/logo-hacker-simple.png" alt="Hacker illustration" />
 								</div>
 								<div class="col-md-3 bg-warning">
 									<h2 class="text-light"><br />SVG Spider&nbsp;<br /></h2>
@@ -2304,17 +2116,12 @@
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-2">
-									<img
-										class="img-fluid d-block my-4"
-										src="assets/logo-kali-linux-simple.png"
-									/>
+									<img class="img-fluid d-block my-4" src="assets/logo-kali-linux-simple.png" />
 								</div>
 								<div class="col-md-3 bg-warning">
 									<h2 class="">
 										<br />Kali Linux&nbsp;<br />
-										<font color="#6c757d"
-											><span style="font-size: 25.6px">Site Link</span></font
-										>
+										<font color="#6c757d"><span style="font-size: 25.6px">Site Link</span></font>
 									</h2>
 								</div>
 								<div class="col-md-7" style="">
@@ -2324,13 +2131,7 @@
 											<span style="font-size: 1rem"
 												>Kali Linux
 												<b style=""
-													><b
-														><a
-															href="https://www.kali-linux.fr/"
-															target="_blank"
-															>[click]</a
-														></b
-													></b
+													><b><a href="https://www.kali-linux.fr/" target="_blank">[click]</a></b></b
 												></span
 											>
 										</li>
@@ -2356,20 +2157,12 @@
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-2">
-									<img
-										class="img-fluid d-block my-4"
-										src="assets/big-icon-jenkins.png"
-										height="120"
-									/>
+									<img class="img-fluid d-block my-4" src="assets/big-icon-jenkins.png" height="120" />
 								</div>
 								<div class="col-md-3 bg-warning">
 									<h2 class="py-3 bg-warning">
 										<br />Overall Summary Reports&nbsp;<br />
-										<font color="#6c757d"
-											><span style="font-size: 25.6px"
-												>Jenkins Nodes</span
-											></font
-										>
+										<font color="#6c757d"><span style="font-size: 25.6px">Jenkins Nodes</span></font>
 									</h2>
 								</div>
 								<div class="col-md-7 bg-white">
@@ -2379,12 +2172,7 @@
 											<span style="font-size: 1rem"
 												>ALL
 												<b
-													><b
-														><a href="summary_onoff/index.html" target="_blank"
-															>[click]</a
-														></b
-													>
-													ONLINE / OFFLINE</b
+													><b><a href="summary_onoff/index.html" target="_blank">[click]</a></b> ONLINE / OFFLINE</b
 												>
 												nodes assigned to Jenkins Instances</span
 											>
@@ -2414,18 +2202,10 @@
 											<h1>Build</h1>
 										</div>
 										<div class="col-md-4">
-											<img
-												class="img-fluid d-block mx-auto py-2"
-												src="assets/logo-jira-simple.png"
-												width="50"
-											/>
+											<img class="img-fluid d-block mx-auto py-2" src="assets/logo-jira-simple.png" width="50" />
 										</div>
 										<div class="col-md-4">
-											<img
-												class="img-fluid d-block mx-auto py-2"
-												src="assets/logo-bitbucket-simple.png"
-												width="50"
-											/>
+											<img class="img-fluid d-block mx-auto py-2" src="assets/logo-bitbucket-simple.png" width="50" />
 										</div>
 										<div class="col-md-4"></div>
 										<div class="col-md-4">
@@ -2450,47 +2230,27 @@
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-4">
-											<a
-												href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
-												target="_blank"
-												><img
-													class="img-fluid d-block mx-auto my-1"
-													src="assets/logo-sonar.png"
-													width="150"
+											<a href="https://sonarcloud.io/organizations/albanandrieu-github/projects" target="_blank"
+												><img class="img-fluid d-block mx-auto my-1" src="assets/logo-sonar.png" width="150"
 											/></a>
 										</div>
 										<div class="col-md-4">
-											<a
-												href="https://nexus.albandrieu.com/nexus/index.html#welcome"
-												target="_blank"
-												><img
-													class="img-fluid d-block mx-auto py-2"
-													src="assets/logo-nexus.png"
-													width="100"
+											<a href="https://nexus.albandrieu.com/nexus/index.html#welcome" target="_blank"
+												><img class="img-fluid d-block mx-auto py-2" src="assets/logo-nexus.png" width="100"
 											/></a>
 										</div>
 										<div class="col-md-4">
 											<a href="http://albandrieu.com/jenkins/" target="_blank"
-												><img
-													class="img-fluid d-block mx-auto py-2"
-													src="assets/logo-jenkins.png"
-													width="70"
+												><img class="img-fluid d-block mx-auto py-2" src="assets/logo-jenkins.png" width="70"
 											/></a>
 										</div>
 										<div class="col-md-4">
-											<img
-												class="img-fluid d-block mx-auto py-1"
-												src="assets/logo-aspera.jpg"
-												width="120"
-											/>
+											<img class="img-fluid d-block mx-auto py-1" src="assets/logo-aspera.jpg" width="120" />
 										</div>
 
 										<div class="col-md-4">
 											<a href="http://86.242.254.92:5678/" target="_blank"
-												><img
-													class="img-fluid d-block mx-auto py-2"
-													src="assets/logo-bower-simple.svg"
-													width="70"
+												><img class="img-fluid d-block mx-auto py-2" src="assets/logo-bower-simple.svg" width="70"
 											/></a>
 										</div>
 									</div>
@@ -2505,9 +2265,7 @@
 											<h1>Tools</h1>
 										</div>
 										<div class="col-md-4">
-											<a
-												href="https://86.242.254.92:7000/ui/sessions/signin"
-												target="_blank"
+											<a href="https://86.242.254.92:7000/ui/sessions/signin" target="_blank"
 												><img
 													class="img-fluid d-block mx-auto py-2"
 													src="assets/logo-freenas-community-simple.jpeg"
@@ -2519,21 +2277,13 @@
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-4">
-											<a
-												href="https://travis-ci.org/AlbanAndrieu/"
-												target="_blank"
-												><img
-													class="img-fluid d-block mx-auto my-1"
-													src="assets/logo-travis-ci-simple.jpg"
-													width="100"
+											<a href="https://travis-ci.org/AlbanAndrieu/" target="_blank"
+												><img class="img-fluid d-block mx-auto my-1" src="assets/logo-travis-ci-simple.jpg" width="100"
 											/></a>
 										</div>
 										<div class="col-md-4">
 											<a href="https://github.com/AlbanAndrieu/" target="_blank"
-												><img
-													class="img-fluid d-block mx-auto py-2"
-													src="assets/logo-github-simple.png"
-													width="50"
+												><img class="img-fluid d-block mx-auto py-2" src="assets/logo-github-simple.png" width="50"
 											/></a>
 										</div>
 										<div class="col-md-4">
@@ -2561,11 +2311,9 @@
 					<div class="col-md-6">
 						<p class="text-left">
 							DevSecOps - please visit my <b>profile </b>on
-							<a href="http://www.linkedin.com/in/nabla" target="_blank"
-								><u>LinkedIn</u></a
-							><br />or <b>e-mail me</b>:&nbsp;<a
-								href="mailto:alban.andrieu@free.fr"
-								>alban.andrieu@free.fr</a
+							<a href="http://www.linkedin.com/in/nabla" target="_blank"><u>LinkedIn</u></a
+							><br />or <b>e-mail me</b>:&nbsp;<a href="mailto:alban.andrieu@dr-alban.com"
+								>alban.andrieu@dr-alban.com</a
 							>
 						</p>
 					</div>
@@ -2575,9 +2323,7 @@
 								<div class="col-md-12">
 									<p class="float-right lead my-4 mt-3">
 										<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
-										<a href="#top" aria-label="Back to top of page"
-											>Back to top</a
-										>
+										<a href="#top" aria-label="Back to top of page">Back to top</a>
 									</p>
 								</div>
 							</div>
@@ -2587,11 +2333,7 @@
 			</div>
 		</div>
 
-		<a
-			href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561"
-			style="display: none"
-			>north-puny</a
-		>
+		<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561" style="display: none">north-puny</a>
 
 		<script type="text/javascript" src="d3.v3.min.js"></script>
 		<script src="arf.js"></script>
@@ -2643,11 +2385,9 @@
 			}, observerOptions);
 
 			// Observe all service cards, skill categories, and tool items
-			document
-				.querySelectorAll(".service-card, .skill-category, .tool-item")
-				.forEach((el) => {
-					observer.observe(el);
-				});
+			document.querySelectorAll(".service-card, .skill-category, .tool-item").forEach((el) => {
+				observer.observe(el);
+			});
 		</script>
 
 		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
