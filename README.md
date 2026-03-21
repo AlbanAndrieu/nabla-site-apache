@@ -62,19 +62,18 @@ composer install --ignore-platform-req=ext-mbstring
 php -S localhost:8000 api/index.php
 ```
 
-### Stripe Checkout (optional)
+### Stripe Checkout (current state)
 
-For the checkout flow (`public/checkout.html` → Stripe → `success.html` / `cancel.html`), run the Node server with env vars set:
+The checkout UI exists in:
 
-```bash
-# Create a Price in Stripe Dashboard, then:
-export STRIPE_SECRET_KEY=sk_test_...
-export STRIPE_PRICE_ID=price_...
-export DOMAIN=http://localhost:4242   # or your public URL
-npm run start:stripe
-```
+- `public/checkout.html` (POST form to `/create-checkout-session`)
+- `public/success.html` (successful payment landing page)
+- `public/cancel.html` (canceled checkout landing page)
 
-Then open `http://localhost:4242/checkout.html`. The server serves `public/` and redirects to Stripe Checkout on "Proceed to checkout".
+The server-side script configured by `npm run start:stripe` is currently `server.cjs` (from `package.json`), but that file is not present in this branch at the moment.
+Running the script currently fails with `MODULE_NOT_FOUND`.
+
+For full workflow details, endpoint contract, setup, and troubleshooting, see `docs/checkout-support-runbook.md`.
 
 ### Subprojects (my-app and vue-client)
 

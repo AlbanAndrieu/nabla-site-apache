@@ -12,6 +12,11 @@ This directory contains end-to-end tests using [Playwright](https://playwright.d
 - `responsive.spec.ts` - Tests for responsive design across different viewports
 - `navigation.spec.ts` - Tests for links, navigation, and routing
 
+## Known Coverage Gap
+
+Checkout pages (`/checkout.html`, `/success.html`, `/cancel.html`) are not covered by Playwright in this repository yet.
+The current Stripe server script (`npm run start:stripe`) points to `server.cjs`, which is missing on this branch, so end-to-end payment testing is currently blocked until that backend entry point exists.
+
 ## Running Tests
 
 ```bash
