@@ -74,6 +74,7 @@ COPY ./api ${APP_BASE_DIR}
 #   apt-get clean && rm -r /var/lib/apt/lists/* && \
 #   rm -Rf /root/.composer/auth.json ${APP_BASE_DIR}/auth.json ~/.cache/composer ~/.config/composer ${APP_BASE_DIR}/var/* .env
 
+# hadolint ignore=SC2115
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-scripts && \
   apt-get clean && rm -r /var/lib/apt/lists/* && \
   rm -Rf /root/.composer/auth.json ${APP_BASE_DIR}/auth.json ~/.cache/composer ~/.config/composer ${APP_BASE_DIR}/var/* .env

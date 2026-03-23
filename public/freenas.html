@@ -42,8 +42,7 @@
 		<!-- Favicon -->
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="landing-sections.css" />
 		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
 		<link rel="stylesheet" href="style.css" />
@@ -74,208 +73,29 @@
 		<!-- Theme toggle script - load early to prevent flash -->
 		<script src="theme-toggle.js"></script>
 
-		<!-- Google Translate -->
-		<script type="text/javascript" src="/google-translate-config.js"></script>
-		<script
-			type="text/javascript"
-			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-		></script>
+		<script src="/site-google-translate.js" defer></script>
 
-		<!-- Obs Optimization https://github.com/csswizardry/Obs.js -->
-		<script>
-			/*! Obs.js 0.2.1 | (c) Harry Roberts, csswizardry.com | MIT */
-			(() => {
-				const e = document.currentScript;
-				if (
-					(!e || e.src || (e.type && "module" === e.type.toLowerCase())) &&
-					!1 === /^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname)
-				)
-					return void console.warn(
-						"[Obs.js] Skipping: must be an inline, classic <script> in <head>.",
-						e ? (e.src ? "src=" + e.src : "type=" + e.type) : "type=module",
-					);
-				const t = document.documentElement,
-					{ connection: i } = navigator;
-				window.obs = window.obs || {};
-				const a = !0 === ((window.obs && window.obs.config) || {}).observeChanges,
-					o = () => {
-						const e = window.obs || {},
-							i = "number" == typeof e.downlinkBucket ? e.downlinkBucket : null;
-						e.connectionCapability =
-							"low" === e.rttCategory && null != i && i >= 8
-								? "strong"
-								: "high" === e.rttCategory || (null != i && i <= 5)
-									? "weak"
-									: "moderate";
-						const a = !0 === e.dataSaver || !0 === e.batteryLow || !0 === e.batteryCritical;
-						e.conservationPreference = a ? "conserve" : "neutral";
-						const o = "weak" === e.connectionCapability || !0 === e.dataSaver || !0 === e.batteryCritical;
-						(e.deliveryMode = "strong" !== e.connectionCapability || o || a ? (o ? "lite" : "cautious") : "rich"),
-							(e.canShowRichMedia = "lite" !== e.deliveryMode),
-							(e.shouldAvoidRichMedia = "lite" === e.deliveryMode),
-							["strong", "moderate", "weak"].forEach((e) => {
-								t.classList.remove(`has-connection-capability-${e}`);
-							}),
-							t.classList.add(`has-connection-capability-${e.connectionCapability}`),
-							["conserve", "neutral"].forEach((e) => {
-								t.classList.remove(`has-conservation-preference-${e}`);
-							}),
-							t.classList.add(`has-conservation-preference-${e.conservationPreference}`),
-							["rich", "cautious", "lite"].forEach((e) => {
-								t.classList.remove(`has-delivery-mode-${e}`);
-							}),
-							t.classList.add(`has-delivery-mode-${e.deliveryMode}`);
-					},
-					n = () => {
-						if (!i) return;
-						const { saveData: e, rtt: a, downlink: n } = i;
-						(window.obs.dataSaver = !!e), t.classList.toggle("has-data-saver", !!e);
-						const s = ((e) => (Number.isFinite(e) ? 25 * Math.ceil(e / 25) : null))(a);
-						null != s && (window.obs.rttBucket = s);
-						const r = ((e) => (Number.isFinite(e) ? (e < 75 ? "low" : e <= 275 ? "medium" : "high") : null))(a);
-						r &&
-							((window.obs.rttCategory = r),
-							["low", "medium", "high"].forEach((e) => t.classList.remove(`has-latency-${e}`)),
-							t.classList.add(`has-latency-${r}`));
-						const c = ((l = n), Number.isFinite(l) ? Math.ceil(l) : null);
-						var l;
-						if (null != c) {
-							window.obs.downlinkBucket = c;
-							const e = c <= 5 ? "low" : c >= 8 ? "high" : "medium";
-							(window.obs.downlinkCategory = e),
-								["low", "medium", "high"].forEach((e) => t.classList.remove(`has-bandwidth-${e}`)),
-								t.classList.add(`has-bandwidth-${e}`);
-						}
-						"downlinkMax" in i && (window.obs.downlinkMax = i.downlinkMax), o();
-					};
-				n(), a && i && "function" == typeof i.addEventListener && i.addEventListener("change", n);
-				const s = (e) => {
-					if (!e) return;
-					const { level: i, charging: a } = e,
-						n = Number.isFinite(i) ? i <= 0.05 : null;
-					window.obs.batteryCritical = n;
-					const s = Number.isFinite(i) ? i <= 0.2 : null;
-					(window.obs.batteryLow = s),
-						["critical", "low"].forEach((e) => t.classList.remove(`has-battery-${e}`)),
-						s && t.classList.add("has-battery-low"),
-						n && t.classList.add("has-battery-critical");
-					const r = !!a;
-					(window.obs.batteryCharging = r), t.classList.toggle("has-battery-charging", r), o();
-				};
-				if (
-					("getBattery" in navigator &&
-						navigator
-							.getBattery()
-							.then((e) => {
-								s(e),
-									a &&
-										"function" == typeof e.addEventListener &&
-										(e.addEventListener("levelchange", () => s(e)), e.addEventListener("chargingchange", () => s(e)));
-							})
-							.catch(() => {}),
-					"deviceMemory" in navigator)
-				) {
-					const e = Number(navigator.deviceMemory),
-						i = Number.isFinite(e) ? e : null;
-					window.obs.ramBucket = i;
-					const a =
-						((r = i), Number.isFinite(r) ? (r <= 1 ? "very-low" : r <= 2 ? "low" : r <= 4 ? "medium" : "high") : null);
-					a &&
-						((window.obs.ramCategory = a),
-						["very-low", "low", "medium", "high"].forEach((e) => t.classList.remove(`has-ram-${e}`)),
-						t.classList.add(`has-ram-${a}`));
-				}
-				var r;
-				if ("hardwareConcurrency" in navigator) {
-					const e = Number(navigator.hardwareConcurrency),
-						i = Number.isFinite(e) ? e : null;
-					window.obs.cpuBucket = i;
-					const a = ((e) => (Number.isFinite(e) ? (e <= 2 ? "low" : e <= 5 ? "medium" : "high") : null))(i);
-					a &&
-						((window.obs.cpuCategory = a),
-						["low", "medium", "high"].forEach((e) => t.classList.remove(`has-cpu-${e}`)),
-						t.classList.add(`has-cpu-${a}`));
-				}
-				(() => {
-					const e = window.obs || {},
-						i = e.ramCategory,
-						a = e.cpuCategory;
-					let o = "moderate";
-					("high" !== i && "medium" !== i) || "high" !== a
-						? ("very-low" === i || "low" === i || "low" === a) && (o = "weak")
-						: (o = "strong"),
-						(e.deviceCapability = o),
-						["strong", "moderate", "weak"].forEach((e) => {
-							t.classList.remove(`has-device-capability-${e}`);
-						}),
-						t.classList.add(`has-device-capability-${o}`);
-				})();
-			})();
-			//# sourceURL=obs.inline.js
-		</script>
+		<!-- Obs.js connection hints: obs-connection.js (https://github.com/csswizardry/Obs.js) -->
+		<script src="obs-connection.js"></script>
 
 		<script src="/site-analytics.js" data-analytics-mode="marketing"></script>
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-RHL13BHK6K");
-		</script>
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHL13BHK6K"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-RHL13BHK6K");
-		</script>
 
 		<!-- Ahrefs Web Analytics -->
 		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
 	</head>
 	<body id="top">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-W7XNV7K6"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+
 		<!-- Skip to main content link for accessibility -->
 		<a href="#main-content" class="skip-to-main">Skip to main content</a>
-
-		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()"><i class="fas fa-print"></i> Print / Save as PDF</button>
-
-		<!-- Google Translate Widget -->
-		<div class="google-translate-widget">
-			<div id="google_translate_element"></div>
-		</div>
 
 		<!-- Header / Hero Section -->
 		<header>
@@ -1230,9 +1050,9 @@
 			</div>
 
 			<div class="footer-links">
-				<a href="https://dr-alban.com/policy/service_terms.html">Terms of Use</a>
+				<a href="/policy/service_terms.html">Terms of Use</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer">Cookies</a>
-				<a href="https://dr-alban.com/policy/privacy_policy.html">Privacy Policy</a>
+				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 
 			<p class="text-md-center mt-3">
@@ -1243,66 +1063,21 @@
 		</footer>
 		<!-- End footer section -->
 
-		<!-- Coffee FAB - opens support modal (no-print) -->
-		<button
-			type="button"
-			id="coffee-fab"
-			class="coffee-fab"
-			aria-label="Support this site"
-			title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee."
-		>
-			<span class="coffee-fab-inner">
-				<span class="steam" aria-hidden="true"> <span></span><span></span><span></span> </span>
-				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
-			</span>
-		</button>
-		<!-- Back to top FAB (no-print) -->
-		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
-			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-		</a>
-		<!-- Support modal (coffee) -->
-		<div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h2 class="modal-title h5" id="coffeeModalLabel">Support this site</h2>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							data-dismiss="modal"
-							aria-label="Close"
-						></button>
-					</div>
-					<div class="modal-body">
-						<p class="mb-2"><strong>Is this site useful to you?</strong></p>
-						<p class="text-muted small">
-							This site is maintained with free guides and no ads. A small support, even symbolic, helps keep these
-							resources free and the content growing. Thank you.
-						</p>
-						<p class="mb-0">
-							<a href="https://ko-fi.com/albandrieu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-								<i class="fa-solid fa-mug-hot me-1" aria-hidden="true"></i> Offer a coffee
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script
-			src="/site-widgets.js"
-			defer
-			data-scroll-reveal=".contact-card,.social-card"
-			data-reveal-effect="opacity"
-			data-axeptio
-			data-intercom-app-id="todo"
-		></script>
-
 		<script
 			src="https://uptime.betterstack.com/widgets/announcement.js"
 			data-id="150620"
 			async="async"
 			type="text/javascript"
+		></script>
+
+		<script
+			src="./site-widgets.js"
+			defer
+			data-scroll-reveal=".contact-card,.social-card"
+			data-reveal-effect="opacity"
+			data-axeptio
+			data-print-pdf
+			data-coffee-fab
 		></script>
 	</body>
 </html>

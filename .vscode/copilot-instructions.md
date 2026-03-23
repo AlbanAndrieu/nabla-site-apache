@@ -585,8 +585,8 @@ When exploring the codebase:
 
 4. **Current Sitemap Pages**
    - `https://dr-alban.com/` (homepage - note: actual sitemap uses /index.html)
-   - `https://dr-alban.com/policy/privacy_policy.html`
-   - `https://dr-alban.com/policy/service_terms.html`
+   - `/policy/privacy_policy.html`
+   - `/policy/service_terms.html`
    - `https://dr-alban.com/policy/gnu_general_public_license.txt`
    - `https://status.albandrieu.com/` (external status page - note: typically external domains should not be in sitemap)
 

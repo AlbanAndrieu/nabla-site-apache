@@ -1,0 +1,76 @@
+---
+description: Page chrome — theme toggle, Google Translate, print, modern style, sections/cards, footer, back link, sitemap updates. Excludes 404.
+globs: public/**/*.html
+alwaysApply: false
+---
+
+# Page chrome and consistency (all pages except 404)
+
+When creating or editing HTML pages in `public/`, ensure the following. **Do not apply these requirements to `public/404.html`** (404 keeps its minimal, custom layout).
+
+## 1. Theme toggle
+
+- Include **theme toggle** on every content page:
+  - In `<head>`: `<script src="theme-toggle.js"></script>` (or `../theme-toggle.js` from `public/policy/`).
+  - Load early (e.g. after favicon) so the script can inject the theme button and prevent flash.
+- The script creates the button with id `theme-toggle-btn` automatically; no extra markup required.
+
+## 2. Google Translate widget
+
+- Include the **Google Translate** widget on every content page:
+  - In `<head>`: `<script src="/site-google-translate.js" defer></script>` (loads config and Google’s `element.js`; root-absolute path works from any directory depth).
+  - In `<body>`: a wrapper div with class `google-translate-widget` containing `<div id="google_translate_element"></div>`.
+  - Use the same fixed positioning styles as on `index.html` / `people-contacted.html` (top-right, z-index 9999).
+
+## 3. Print / Save as PDF (and Markdown when relevant)
+
+- Provide **Print / Save as PDF** via `site-widgets.js`, not inline buttons: on the deferred `site-widgets.js` tag add **`data-print-pdf`** (empty attribute is OK). The script injects `#nabla-print-pdf-btn` with class `print-button` and calls `window.print()`. Labels follow `document.documentElement.lang` (French vs English) unless overridden with `data-print-pdf-lang` or `data-print-pdf-label`.
+- **Back to top:** `site-widgets.js` injects **`#nabla-back-to-top`** with class **`back-to-top`** (styled in **`style.css`**, bottom-center pair with **`#coffee-fab`**). Disable with **`data-no-back-to-top`** if needed. Optional **`data-back-to-top-label`** / **`data-back-to-top-aria`**. Keep **`id="top"`** on `<body>` so scroll targets the page top.
+- Include **`print.css`** in `<head>` so on-screen button placement and print layout stay correct.
+- When the page is meant to be exported as markdown, keep structure and semantics suitable for that (headings, lists, clear sections).
+
+## 4. Modern style and layout
+
+- **Prefer the site’s default dark, modern style** for all content pages:
+  - Use **`class="page-dark"`** on `<body>` (e.g. `<body id="top" class="page-dark">`). This applies the shared dark background (#0f172a with blue gradients), nav, cards, and light-theme overrides defined in `theme.css`. The theme toggle (default: dark) still lets users switch to light or auto.
+  - Do **not** add page-specific inline styles that duplicate the page-dark look; add any new shared patterns to `theme.css` under `.page-dark` instead.
+- Use **landing-sections.css** (and existing wireframe/theme/print CSS as on other pages):
+  - `<link rel="stylesheet" href="landing-sections.css" />` (use `../landing-sections.css` from `public/policy/`, or `../../theme.css` etc. from deeper `ca/` paths).
+  - Keep `theme.css`, `wireframe.css`, `print.css` where already used so theme toggle and print work.
+- Use **section and card** structure when it fits the content:
+  - Wrap major content blocks in `<section class="py-4" aria-labelledby="…">` with a heading id for accessibility.
+  - Use Bootstrap-style cards where appropriate: `<div class="card …">`, `<div class="card-body">`, `card-text`, etc., consistent with `index.html` and `abduction-norway.html`.
+
+## 5. Footer consistency
+
+- **Footers must be consistent** across the site. Use the same structure and links as the homepage (`index.html`) or `people-contacted.html`:
+  - `<footer class="footer">` with:
+    - Social links (e.g. Calendly, GitHub).
+    - Footer links: Terms of Use, Cookies, Privacy Policy (paths adjusted for subdirectory when needed).
+    - Optional “Return to home” where relevant; **do not** duplicate “Back to top” in the footer — `site-widgets.js` injects `#nabla-back-to-top` (class `back-to-top`).
+    - Copyright line.
+- For pages in `public/policy/`, use relative links for Terms/Privacy (e.g. `service_terms.html`, `privacy_policy.html`) and the same social + return-home (optional) + copyright pattern.
+- Do not introduce a different footer layout or link set without aligning with this pattern.
+
+## 6. Link back to main page / home
+
+- Every non-homepage content page must have a **link back to the main page**:
+  - Pages in **`public/`** (root): use `<a href="index.html">… Back to home</a>` (or “Home”). Prefer a small nav block at the top, e.g. `<nav class="page-nav" aria-label="Breadcrumb">` with “Back to home” as on `people-contacted.html` and `for-fathers.html`.
+  - Pages in **`public/policy/`**: use `<a href="../index.html">… Back to home</a>` in the same way.
+- The **homepage** (`index.html`) does not need a “back to home” link. “Back to top” is provided by `site-widgets.js`, not footer markup.
+
+## 7. Sitemap
+
+- **Update the sitemap** whenever:
+  - A **new page** is added to the site (add a `<url>` entry with `<loc>`, `<lastmod>`, and optionally `<changefreq>` and `<priority>`).
+  - A page’s **content changes significantly** (update that entry’s `<lastmod>` to the current date in `YYYY-MM-DD` format).
+- Sitemap file: `public/sitemap.xml`. Follow the existing XML structure; `robots.txt` references it for crawlers.
+
+## Reference files
+
+- Theme + Translate + Print + **page-dark** + sections/cards + footer: `public/index.html`, `public/abduction-norway.html`, `public/people-contacted.html`, `public/for-fathers.html`.
+- Shared page-dark styles: `public/theme.css` (`.page-dark` section).
+- Back link pattern: `public/people-contacted.html` (nav with “Back to home”), `public/for-fathers.html`, `public/nre-fr.html` / `public/nre-en.html` (back link).
+- Footer markup: `public/index.html` (lines ~1375–1419), `public/people-contacted.html` (footer block).
+- **Exclusion**: `public/404.html` — no theme toggle, no Google Translate, no print button, no shared footer; it keeps its dedicated 404 layout and only a simple “Home” link.
+- Sitemap: `public/sitemap.xml`.

@@ -417,6 +417,14 @@
 		box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 		z-index: 1000;
 		transition: all 0.3s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.print-button__icon {
+		margin-right: 8px;
+		flex-shrink: 0;
 	}
 
 	.print-button:hover {
@@ -454,6 +462,17 @@
 
 	.markdown-button i {
 		margin-right: 8px;
+	}
+
+	/* Mobile: keep print button within viewport */
+	@media (max-width: 575.98px) {
+		.print-button {
+			bottom: 12px;
+			right: 12px;
+			padding: 10px 14px;
+			font-size: 13px;
+			max-width: calc(100vw - 24px);
+		}
 	}
 
 	/* Alternative inline print link style */

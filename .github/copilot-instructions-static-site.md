@@ -23,7 +23,7 @@ public/
 ├── theme.css                         # Theme and dark mode styles
 ├── theme-toggle.js                   # Dark/light mode toggle
 ├── google-translate-config.js        # Google Translate configuration
-├── modern-style.css                  # Modern styling
+├── landing-sections.css                  # Modern styling
 ├── print.css                         # Print-specific styles
 ├── robots.txt                        # Search engine crawler rules
 ├── sitemap-albandrieu-com.xml        # Site sitemap for SEO
@@ -176,7 +176,7 @@ All HTML pages should follow this structure:
 1. **wireframe.css** - Base layout, Bootstrap overrides, grid system
 2. **arf.css** - Application-specific styles
 3. **theme.css** - CSS custom properties (variables), dark mode
-4. **modern-style.css** - Modern styling enhancements
+4. **landing-sections.css** - Modern styling enhancements
 5. **print.css** - Print-specific styles
 
 ### CSS Custom Properties (Variables)

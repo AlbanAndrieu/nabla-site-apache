@@ -33,7 +33,7 @@ The repository layout looks like this (main items):
 ├── 📁 public/                        <- Static site root (served as web root)
 │   ├── 📄 index.html                 <- Homepage
 │   ├── 📄 contact.html, ai.html, security.html, ciso.html, login.html, ...
-│   ├── 📄 theme.css, modern-style.css, wireframe.css, print.css
+│   ├── 📄 theme.css, landing-sections.css, wireframe.css, print.css
 │   ├── 📄 theme-toggle.js, google-translate-config.js
 │   ├── 📁 assets/                    <- Fonts, images, icons (e.g. fontawesome, nabla)
 │   ├── 📁 cv/                        <- C.V. landing page + multi-language HTML/PDF
@@ -78,7 +78,7 @@ The repository layout looks like this (main items):
 
 ## Best practices for improving static HTML content
 
-- **Iterate on existing code**: Prefer reusing and extending current patterns (e.g. `public/theme.css`, `public/modern-style.css`, `theme-toggle.js`) instead of introducing new ones.
+- **Iterate on existing code**: Prefer reusing and extending current patterns (e.g. `public/theme.css`, `public/landing-sections.css`, `theme-toggle.js`) instead of introducing new ones.
 - **Avoid duplication**: Reuse shared CSS, scripts, and structure; check for similar markup before adding new blocks.
 - **Keep it simple**: Prefer small, clear changes; avoid new frameworks or patterns unless necessary.
 - **Scope changes**: Only modify code relevant to the task; leave unrelated files and logic untouched.

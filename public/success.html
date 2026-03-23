@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Payment successful | Alban Andrieu</title>
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="landing-sections.css" />
+		<link rel="stylesheet" href="checkout.css" />
 		<link rel="stylesheet" href="print.css" />
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 		<script src="/assets/fontawesome-free-7.1.0-web/js/fontawesome.js" data-auto-replace-svg="nest"></script>
@@ -35,26 +36,12 @@
 		</main>
 		<footer class="footer checkout-footer-section" role="contentinfo">
 			<div class="footer-links">
-				<a href="https://dr-alban.com/policy/service_terms.html">Terms of Use</a>
-				<a href="https://dr-alban.com/policy/privacy_policy.html">Privacy Policy</a>
+				<a href="/policy/service_terms.html">Terms of Use</a>
+				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
-		<button
-			type="button"
-			id="coffee-fab"
-			class="coffee-fab"
-			aria-label="Support this site"
-			title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee."
-		>
-			<span class="coffee-fab-inner">
-				<span class="steam" aria-hidden="true"> <span></span><span></span><span></span> </span>
-				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
-			</span>
-		</button>
-		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
-			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-		</a>
-		<script src="/site-widgets.js" defer></script>
+
+		<script src="/site-widgets.js" defer data-no-print-pdf data-coffee-fab></script>
 	</body>
 </html>

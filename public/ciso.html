@@ -45,7 +45,7 @@
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="modern-style.css" />
+		<link rel="stylesheet" href="landing-sections.css" />
 		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
 		<link rel="stylesheet" href="style.css" />
@@ -77,12 +77,7 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		<!-- Google Translate -->
-		<script type="text/javascript" src="/google-translate-config.js"></script>
-		<script
-			type="text/javascript"
-			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-		></script>
+		<script src="/site-google-translate.js" defer></script>
 
 		<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 
@@ -267,14 +262,10 @@
 				background: var(--ciso-primary);
 			}
 
+			/* Position/size from style.css (centered pair with #coffee-fab) */
 			.back-to-top {
-				position: fixed;
-				bottom: 2rem;
-				right: 2rem;
 				background: var(--ciso-secondary);
 				color: white;
-				width: 50px;
-				height: 50px;
 				border-radius: 50%;
 				display: flex;
 				align-items: center;
@@ -324,25 +315,10 @@
 					font-size: 0.9rem;
 					padding: 0.6rem 1rem;
 				}
-
-				.back-to-top {
-					bottom: 1rem;
-					right: 1rem;
-				}
 			}
 		</style>
 	</head>
 	<body id="top">
-		<!-- Google Translate Widget -->
-		<div class="google-translate-widget">
-			<div id="google_translate_element"></div>
-		</div>
-
-		<!-- Print Button (hidden when printing) -->
-		<button class="print-button" onclick="window.print()" aria-label="Print or save dashboard as PDF">
-			<i class="fa-solid fa-print"></i> Print / Save as PDF
-		</button>
-
 		<!-- Hero Section -->
 		<header class="hero-section">
 			<div class="container">
@@ -457,9 +433,9 @@
 				</a>
 			</div>
 			<div class="footer-links">
-				<a href="https://dr-alban.com/policy/service_terms.html">Terms of Use</a>
+				<a href="/policy/service_terms.html">Terms of Use</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
-				<a href="https://dr-alban.com/policy/privacy_policy.html">Privacy Policy</a>
+				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
 				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
@@ -470,52 +446,6 @@
 		</footer>
 		<!-- End footer section -->
 
-		<!-- Coffee FAB - opens support modal (no-print) -->
-		<button
-			type="button"
-			id="coffee-fab"
-			class="coffee-fab"
-			aria-label="Support this site"
-			title="Is this site useful to you? Less than 1% of readers support this site. A small support helps keep these resources free. Thank you. Offer a coffee."
-		>
-			<span class="coffee-fab-inner">
-				<span class="steam" aria-hidden="true"> <span></span><span></span><span></span> </span>
-				<i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
-			</span>
-		</button>
-		<!-- Back to top FAB (no-print) -->
-		<a href="#top" class="back-to-top" aria-label="Back to top of page" title="Back to top">
-			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-		</a>
-		<!-- Support modal (coffee) -->
-		<div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h2 class="modal-title h5" id="coffeeModalLabel">Support this site</h2>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							data-dismiss="modal"
-							aria-label="Close"
-						></button>
-					</div>
-					<div class="modal-body">
-						<p class="mb-2"><strong>Is this site useful to you?</strong></p>
-						<p class="text-muted small">
-							This site is maintained with free guides and no ads. A small support, even symbolic, helps keep these
-							resources free and the content growing. Thank you.
-						</p>
-						<p class="mb-0">
-							<a href="https://ko-fi.com/albandrieu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-								<i class="fa-solid fa-mug-hot me-1" aria-hidden="true"></i> Offer a coffee
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- Bootstrap JS -->
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.min.js"
@@ -524,7 +454,13 @@
 			referrerpolicy="no-referrer"
 		></script>
 
-		<script src="/site-widgets.js" defer></script>
+		<script
+			src="/site-widgets.js"
+			defer
+			data-print-pdf
+			data-print-pdf-aria="Print or save dashboard as PDF"
+			data-coffee-fab
+		></script>
 
 		<script>
 			const threatIntelligenceElement = document.getElementById("threatIntelligence");
