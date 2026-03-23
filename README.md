@@ -37,6 +37,11 @@ This repository contains multiple deployable projects:
 2. **my-app/** - Next.js application (separate Vercel deployment)
 3. **vue-client/** - Vue/Vite application (separate Vercel deployment)
 
+### CV Documentation
+
+For CV architecture, build workflow, and troubleshooting, see
+[`public/cv/README.md`](public/cv/README.md).
+
 ## Deployment
 
 ### Root Project (PHP + Static Site)
