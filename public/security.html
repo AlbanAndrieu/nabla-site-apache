@@ -88,23 +88,7 @@
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 		></script>
 
-		<!-- Vercel Analytics -->
-		<script>
-			window.va =
-				window.va ||
-				function () {
-					(window.vaq = window.vaq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/insights/script.js"></script>
-		<script>
-			window.si =
-				window.si ||
-				function () {
-					(window.siq = window.siq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/speed-insights/script.js"></script>
+		<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 
 		<!-- JSON-LD Structured Data for SEO -->
 		<script type="application/ld+json">
@@ -1143,12 +1127,6 @@
 			referrerpolicy="no-referrer"
 		></script>
 
-		<!-- Coffee FAB: open support modal -->
-		<script>
-			document.getElementById("coffee-fab").addEventListener("click", function () {
-				var modal = new bootstrap.Modal(document.getElementById("coffeeModal"));
-				modal.show();
-			});
-		</script>
+		<script src="/site-widgets.js" defer></script>
 	</body>
 </html>

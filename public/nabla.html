@@ -204,225 +204,7 @@
 			//# sourceURL=obs.inline.js
 		</script>
 
-		<!-- Start VWO Async SmartCode -->
-		<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-		<script type="text/javascript" id="vwoCode">
-			window._vwo_code ||
-				(function () {
-					var account_id = 1040791,
-						version = 2.1,
-						settings_tolerance = 2000,
-						hide_element = "body",
-						hide_element_style =
-							"opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;",
-						/* DO NOT EDIT BELOW THIS LINE */
-						f = false,
-						w = window,
-						d = document,
-						v = d.querySelector("#vwoCode"),
-						cK = "_vwo_" + account_id + "_settings",
-						cc = {};
-					try {
-						var c = JSON.parse(localStorage.getItem("_vwo_" + account_id + "_config"));
-						cc = c && typeof c === "object" ? c : {};
-					} catch (e) {}
-					var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
-					code = {
-						nonce: v && v.nonce,
-						use_existing_jquery: function () {
-							return typeof use_existing_jquery !== "undefined" ? use_existing_jquery : undefined;
-						},
-						library_tolerance: function () {
-							return typeof library_tolerance !== "undefined" ? library_tolerance : undefined;
-						},
-						settings_tolerance: function () {
-							return cc.sT || settings_tolerance;
-						},
-						hide_element_style: function () {
-							return "{" + (cc.hES || hide_element_style) + "}";
-						},
-						hide_element: function () {
-							if (performance.getEntriesByName("first-contentful-paint")[0]) {
-								return "";
-							}
-							return typeof cc.hE === "string" ? cc.hE : hide_element;
-						},
-						getVersion: function () {
-							return version;
-						},
-						finish: function (e) {
-							if (!f) {
-								f = true;
-								var t = d.getElementById("_vis_opt_path_hides");
-								if (t) t.parentNode.removeChild(t);
-								if (e) new Image().src = "https://dev.visualwebsiteoptimizer.com/ee.gif?a=" + account_id + e;
-							}
-						},
-						finished: function () {
-							return f;
-						},
-						addScript: function (e) {
-							var t = d.createElement("script");
-							t.type = "text/javascript";
-							if (e.src) {
-								t.src = e.src;
-							} else {
-								t.text = e.text;
-							}
-							v && t.setAttribute("nonce", v.nonce);
-							d.getElementsByTagName("head")[0].appendChild(t);
-						},
-						load: function (e, t) {
-							var n = this.getSettings(),
-								i = d.createElement("script"),
-								r = this;
-							t = t || {};
-							if (n) {
-								i.textContent = n;
-								d.getElementsByTagName("head")[0].appendChild(i);
-								if (!w.VWO || VWO.caE) {
-									stT.removeItem(cK);
-									r.load(e);
-								}
-							} else {
-								var o = new XMLHttpRequest();
-								o.open("GET", e, true);
-								o.withCredentials = !t.dSC;
-								o.responseType = t.responseType || "text";
-								o.onload = function () {
-									if (t.onloadCb) {
-										return t.onloadCb(o, e);
-									}
-									if (o.status === 200 || o.status === 304) {
-										_vwo_code.addScript({ text: o.responseText });
-									} else {
-										_vwo_code.finish("&e=loading_failure:" + e);
-									}
-								};
-								o.onerror = function () {
-									if (t.onerrorCb) {
-										return t.onerrorCb(e);
-									}
-									_vwo_code.finish("&e=loading_failure:" + e);
-								};
-								o.send();
-							}
-						},
-						getSettings: function () {
-							try {
-								var e = stT.getItem(cK);
-								if (!e) {
-									return;
-								}
-								e = JSON.parse(e);
-								if (Date.now() > e.e) {
-									stT.removeItem(cK);
-									return;
-								}
-								return e.s;
-							} catch (e) {
-								return;
-							}
-						},
-						init: function () {
-							if (d.URL.indexOf("__vwo_disable__") > -1) return;
-							var e = this.settings_tolerance();
-							w._vwo_settings_timer = setTimeout(function () {
-								_vwo_code.finish();
-								stT.removeItem(cK);
-							}, e);
-							var t;
-							if (this.hide_element() !== "body") {
-								t = d.createElement("style");
-								var n = this.hide_element(),
-									i = n ? n + this.hide_element_style() : "",
-									r = d.getElementsByTagName("head")[0];
-								t.setAttribute("id", "_vis_opt_path_hides");
-								v && t.setAttribute("nonce", v.nonce);
-								t.setAttribute("type", "text/css");
-								if (t.styleSheet) t.styleSheet.cssText = i;
-								else t.appendChild(d.createTextNode(i));
-								r.appendChild(t);
-							} else {
-								t = d.getElementsByTagName("head")[0];
-								var i = d.createElement("div");
-								i.style.cssText =
-									"z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;";
-								i.setAttribute("id", "_vis_opt_path_hides");
-								i.classList.add("_vis_hide_layer");
-								t.parentNode.insertBefore(i, t.nextSibling);
-							}
-							var o = window._vis_opt_url || d.URL,
-								s =
-									"https://dev.visualwebsiteoptimizer.com/j.php?a=" +
-									account_id +
-									"&u=" +
-									encodeURIComponent(o) +
-									"&vn=" +
-									version;
-							if (w.location.search.indexOf("_vwo_xhr") !== -1) {
-								this.addScript({ src: s });
-							} else {
-								this.load(s + "&x=true");
-							}
-						},
-					};
-					w._vwo_code = code;
-					code.init();
-				})();
-		</script>
-		<!-- End VWO Async SmartCode -->
-
-		<!-- Start PostHog -->
-		<script>
-			!(function (t, e) {
-				var o, n, p, r;
-				e.__SV ||
-					((window.posthog = e),
-					(e._i = []),
-					(e.init = function (i, s, a) {
-						function g(t, e) {
-							var o = e.split(".");
-							2 == o.length && ((t = t[o[0]]), (e = o[1])),
-								(t[e] = function () {
-									t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-								});
-						}
-						((p = t.createElement("script")).type = "text/javascript"),
-							(p.crossOrigin = "anonymous"),
-							(p.async = !0),
-							(p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
-							(r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
-						var u = e;
-						for (
-							void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-								u.people = u.people || [],
-								u.toString = function (t) {
-									var e = "posthog";
-									return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
-								},
-								u.people.toString = function () {
-									return u.toString(1) + ".people (stub)";
-								},
-								o =
-									"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(
-										" ",
-									),
-								n = 0;
-							n < o.length;
-							n++
-						)
-							g(u, o[n]);
-						e._i.push([i, s, a]);
-					}),
-					(e.__SV = 1));
-			})(document, window.posthog || []);
-			posthog.init("phc_IeJIEt7g86e7IWXUfcfXqhtSCxRq04PQDarTOJ9So48", {
-				api_host: "https://eu.i.posthog.com",
-				person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-			});
-		</script>
-		<!-- End VWO PostHog -->
+		<script src="/site-analytics.js" data-analytics-mode="full"></script>
 
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
@@ -447,95 +229,6 @@
 			gtag("config", "G-RHL13BHK6K");
 		</script>
 
-		<!-- Start Heap dev -->
-		<script type="text/javascript">
-			(window.heapReadyCb = window.heapReadyCb || []),
-				(window.heap = window.heap || []),
-				(heap.load = function (e, t) {
-					(window.heap.envId = e),
-						(window.heap.clientConfig = t = t || {}),
-						(window.heap.clientConfig.shouldFetchServerConfig = !1);
-					var a = document.createElement("script");
-					(a.type = "text/javascript"),
-						(a.async = !0),
-						(a.src = "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
-					var r = document.getElementsByTagName("script")[0];
-					r.parentNode.insertBefore(a, r);
-					var n = [
-							"init",
-							"startTracking",
-							"stopTracking",
-							"track",
-							"resetIdentity",
-							"identify",
-							"getSessionId",
-							"getUserId",
-							"getIdentity",
-							"addUserProperties",
-							"addEventProperties",
-							"removeEventProperty",
-							"clearEventProperties",
-							"addAccountProperties",
-							"addAdapter",
-							"addTransformer",
-							"addTransformerFn",
-							"onReady",
-							"addPageviewProperties",
-							"removePageviewProperty",
-							"clearPageviewProperties",
-							"trackPageview",
-						],
-						i = function (e) {
-							return function () {
-								var t = Array.prototype.slice.call(arguments, 0);
-								window.heapReadyCb.push({
-									name: e,
-									fn: function () {
-										heap[e] && heap[e].apply(heap, t);
-									},
-								});
-							};
-						};
-					for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
-				});
-			heap.load("724068705");
-		</script>
-		<!-- End Heap dev -->
-
-		<!-- Start Datadog RUM -->
-		<script>
-			(function (h, o, u, n, d) {
-				h = h[d] = h[d] || {
-					q: [],
-					onReady: function (c) {
-						h.q.push(c);
-					},
-				};
-				d = o.createElement(u);
-				d.async = 1;
-				d.src = n;
-				n = o.getElementsByTagName(u)[0];
-				n.parentNode.insertBefore(d, n);
-			})(window, document, "script", "https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js", "DD_RUM");
-			window.DD_RUM.onReady(function () {
-				window.DD_RUM.init({
-					clientToken: "pub550f242796dac3c13b730eb727658279",
-					applicationId: "7308f250-2cea-49a1-b308-9a55f64375d7",
-					// `site` refers to the Datadog site parameter of your organization
-					// see https://docs.datadoghq.com/getting_started/site/
-					site: "datadoghq.eu",
-					service: "bababou",
-					env: "prod",
-					// Specify a version number to identify the deployed version of your application in Datadog
-					version: "1.0.0",
-					sessionSampleRate: 100,
-					sessionReplaySampleRate: 20,
-					defaultPrivacyLevel: "allow",
-				});
-			});
-		</script>
-		<!-- End Datadog RUM -->
-
 		<!-- Cloudflare -->
 		<link
 			rel="stylesheet"
@@ -556,25 +249,6 @@
 		<link rel="canonical" href="https://dr-alban.com/" />
 		<!-- Ahrefs Web Analytics -->
 		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
-
-		<!-- Vercel Web Analytics -->
-		<script>
-			window.va =
-				window.va ||
-				function () {
-					(window.vaq = window.vaq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/insights/script.js"></script>
-		<!-- Vercel Speed Insights -->
-		<script>
-			window.si =
-				window.si ||
-				function () {
-					(window.siq = window.siq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/speed-insights/script.js"></script>
 
 		<!-- Google Translate -->
 		<script type="text/javascript" src="/google-translate-config.js"></script>
@@ -642,7 +316,7 @@
 		</script>
 	</head>
 
-	<body id="top">
+	<body id="top" class="page-nabla-best-practices">
 		<!-- Skip to main content link for accessibility -->
 		<a href="#main-content" class="skip-to-main">Skip to main content</a>
 
@@ -667,95 +341,245 @@
 		<!-- End Google Translate Widget -->
 
 		<!-- Custom style -->
-		<style></style>
+		<style>
+			.nabla-wip-callout {
+				display: flex;
+				gap: 0.75rem;
+				align-items: flex-start;
+				text-align: left;
+				margin: 1rem 0 1.25rem;
+				padding: 0.85rem 1rem;
+				border-radius: 8px;
+				border: 1px dashed var(--accent-color);
+				background: rgba(245, 158, 11, 0.12);
+				font-size: 0.95rem;
+				line-height: 1.5;
+				color: var(--text-dark);
+			}
+			.nabla-wip-callout__icon {
+				color: var(--accent-color);
+				margin-top: 0.12rem;
+				flex-shrink: 0;
+				font-size: 1.25rem;
+			}
+			.nabla-wip-callout strong {
+				display: block;
+				margin-bottom: 0.25rem;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+				font-size: 0.7rem;
+				color: var(--accent-color);
+			}
+		</style>
+
+		<!-- Hero Section -->
+		<section class="hero-section" id="home">
+			<div class="hero-content">
+				<img src="https://avatars1.githubusercontent.com/u/7859836" alt="Alban Andrieu" class="profile-image" />
+				<h1 class="hero-title">Alban Andrieu</h1>
+				<p class="hero-subtitle">DevSecOps Cloud Architect | Independent Consultant</p>
+				<p class="hero-description">
+					Currently architecting secure cloud solutions at
+					<a href="https://www.jusmundi.com" target="_blank">Jus Mundi</a>. With 20+ years of experience in enterprise
+					environments, I specialize in transforming businesses through DevOps automation, cloud security, and
+					infrastructure as code.
+					<br />
+					<br />
+					Open to challenges around AI Integration, MLOps, and Security.
+				</p>
+				<div class="cta-buttons">
+					<a href="#contact" class="btn btn-primary"> <i class="fas fa-envelope"></i> Get in Touch </a>
+					<a href="https://www.linkedin.com/in/nabla" target="_blank" class="btn btn-secondary">
+						<i class="fab fa-linkedin"></i> View LinkedIn
+					</a>
+				</div>
+			</div>
+		</section>
 
 		<!-- Main content area -->
 		<main id="main-content" role="main" class="mb-5">
-			<!-- Hero Section -->
-			<section class="hero-section" id="home">
-				<div class="hero-content">
-					<img src="https://avatars1.githubusercontent.com/u/7859836" alt="Alban Andrieu" class="profile-image" />
-					<h1 class="hero-title">Alban Andrieu</h1>
-					<p class="hero-subtitle">DevSecOps Cloud Architect | Independent Consultant</p>
-					<p class="hero-description">
-						Currently architecting secure cloud solutions at
-						<a href="https://www.jusmundi.com" target="_blank">Jus Mundi</a>. With 20+ years of experience in enterprise
-						environments, I specialize in transforming businesses through DevOps automation, cloud security, and
-						infrastructure as code.
-						<br />
-						<br />
-						Open to challenges around AI Integration, MLOps, and Security.
-					</p>
-					<div class="cta-buttons">
-						<a href="#contact" class="btn btn-primary"> <i class="fas fa-envelope"></i> Get in Touch </a>
-						<a href="https://www.linkedin.com/in/nabla" target="_blank" class="btn btn-secondary">
-							<i class="fab fa-linkedin"></i> View LinkedIn
-						</a>
-					</div>
-				</div>
-			</section>
+			<section class="content-section">
+				<!-- Tools Section -->
+				<section class="category-section nabla-platforms-section" aria-labelledby="nabla-platforms-heading">
+					<h2 id="nabla-platforms-heading" class="category-title">
+						<i class="fas fa-layer-group" aria-hidden="true"></i> Popular DevSecOps Platforms &amp; Tools
+					</h2>
 
-			<!-- Services Section -->
-			<section class="services-section" id="services">
-				<h2 class="section-title">Services I Offer</h2>
-				<p class="section-subtitle">Comprehensive DevSecOps solutions tailored to your business needs</p>
-				<div class="services-grid">
-					<div class="service-card">
-						<div class="service-icon">
-							<i class="fas fa-infinity"></i>
+					<div class="nabla-platforms-hero">
+						<div class="nabla-platforms-visual-wrap">
+							<span class="nabla-platforms-orbit" aria-hidden="true"></span>
+							<figure class="nabla-platforms-figure">
+								<img
+									src="assets/nabla/nabla-4.svg"
+									width="200"
+									height="200"
+									alt="Nabla site logo"
+									loading="lazy"
+									decoding="async"
+								/>
+								<figcaption class="nabla-platforms-caption">
+									A representative DevSecOps toolchain: plan, build, ship, run, harden, and observe— including security
+									as a first class citizen.
+								</figcaption>
+							</figure>
 						</div>
-						<h3>Optimized custom search</h3>
-						<p>Custom search used by home made IA.</p>
-
-						<script async src="https://cse.google.com/cse.js?cx=8090719dd778f44d0"></script>
-						<div class="gcse-search"></div>
-					</div>
-
-					<div class="service-card">
-						<div class="service-icon">
-							<i class="fas fa-robot"></i>
+						<div class="nabla-platforms-lede">
+							<h3>From collaborate to secure delivery</h3>
+							<p>
+								Illustrative map of common tools across delivery and operations—not exhaustive. Your stack should match
+								risk, compliance, and team skills.
+							</p>
 						</div>
-						<h3>Infrastructure as Code</h3>
-						<p>
-							Implementing IaC solutions using Terraform, Ansible, and other tools to manage infrastructure efficiently
-							and consistently.
-						</p>
 					</div>
-				</div>
-			</section>
 
-			<!-- Tools Section -->
-			<section class="tools-section" id="tools">
-				<h2 class="section-title">Tools & Platforms</h2>
-				<p class="section-subtitle">Familiar with a wide range of industry-standard tools</p>
-				<div class="tools-grid">
-					<div class="tool-item">
-						<a href="https://github.com/AlbanAndrieu" target="_blank">
-							<img src="assets/logo-github-simple.png" alt="GitHub" />
-							<h4>GitHub</h4>
-						</a>
+					<div class="nabla-platforms-matrix">
+						<div class="nabla-platform-pillar" style="--pillar-accent: #0d6efd">
+							<h3><i class="fas fa-users" aria-hidden="true"></i> Collaborate</h3>
+							<ul class="nabla-tool-tags">
+								<li>Git</li>
+								<li>GitHub</li>
+								<li>GitLab</li>
+								<li>Jira</li>
+								<li>Asana</li>
+								<!--
+								<li>Confluence</li>
+								<li>MS Teams</li>
+							  -->
+								<li>Slack</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #6f42c1">
+							<h3><i class="fas fa-cubes" aria-hidden="true"></i> Build</h3>
+							<ul class="nabla-tool-tags">
+								<li>Docker</li>
+								<li>Maven</li>
+								<li>Npm</li>
+								<li>UV</li>
+								<li>Harbor</li>
+								<li>Nexus</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #0dcaf0">
+							<h3><i class="fas fa-code-branch" aria-hidden="true"></i> Integrate &amp; deliver</h3>
+							<ul class="nabla-tool-tags">
+								<li>Jenkins</li>
+								<li>GitHub Actions</li>
+								<li>GitLab CI</li>
+								<li>Argo CD</li>
+								<li>Helm</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #198754">
+							<h3><i class="fas fa-server" aria-hidden="true"></i> Cloud &amp; runtime</h3>
+							<ul class="nabla-tool-tags">
+								<li>Kubernetes</li>
+								<li>EKS</li>
+								<li>AKS</li>
+								<li>Rancher</li>
+								<li>Nomad</li>
+								<li>AWS</li>
+								<li>Azure</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #fd7e14">
+							<h3><i class="fas fa-gears" aria-hidden="true"></i> Automate</h3>
+							<ul class="nabla-tool-tags">
+								<li>Terraform</li>
+								<li>Ansible</li>
+								<li>OpenPolicyAgent</li>
+								<!--<li>Kyverno</li>-->
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #d63384">
+							<h3><i class="fas fa-shield-halved" aria-hidden="true"></i> Secure &amp; observe</h3>
+							<ul class="nabla-tool-tags">
+								<li>SonarQube</li>
+								<li>Snyk</li>
+								<li>Trivy</li>
+								<li>Vault</li>
+								<li>Prometheus</li>
+								<li>Grafana</li>
+								<li>OpenTelemetry</li>
+								<li>Wazuh</li>
+								<li>Suricata</li>
+								<li>Falco</li>
+								<li>ELK</li>
+								<li>Datadog</li>
+							</ul>
+						</div>
 					</div>
-					<div class="tool-item">
-						<a href="https://sonarcloud.io/organizations/albanandrieu-github/projects" target="_blank">
-							<img src="assets/logo-sonar.png" alt="SonarCloud" />
-							<h4>SonarCloud</h4>
-						</a>
+
+					<h3 class="tools-grid-heading">Profiles &amp; registries in use</h3>
+					<div class="tools-grid">
+						<div class="tool-item">
+							<a href="https://github.com/AlbanAndrieu" target="_blank" rel="noopener noreferrer">
+								<img src="assets/logo-github-simple.png" alt="GitHub" />
+								<h4>GitHub</h4>
+							</a>
+						</div>
+						<div class="tool-item">
+							<a
+								href="https://sonarcloud.io/organizations/albanandrieu-github/projects"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img src="assets/logo-sonar.png" alt="SonarCloud" />
+								<h4>SonarCloud</h4>
+							</a>
+						</div>
+						<div class="tool-item">
+							<a href="https://hub.docker.com/u/nabla" target="_blank" rel="noopener noreferrer">
+								<img src="assets/logo-docker-hub-simple.png" alt="Docker Hub" />
+								<h4>Docker Hub</h4>
+							</a>
+						</div>
+						<div class="tool-item">
+							<a href="https://nexus.albandrieu.com/" target="_blank" rel="noopener noreferrer">
+								<img src="assets/logo-nexus.png" alt="Sonatype Nexus Repository" />
+								<h4>Nexus</h4>
+							</a>
+						</div>
 					</div>
-					<div class="tool-item">
-						<a href="https://hub.docker.com/u/nabla" target="_blank">
-							<img src="assets/logo-docker-hub-simple.png" alt="Docker Hub" />
-							<h4>Docker Hub</h4>
-						</a>
+				</section>
+
+				<!-- Services Section -->
+				<section class="category-section" id="services">
+					<h2 class="section-title"><i class="fas fa-robot"></i> Tools & Automation</h2>
+					<p class="section-subtitle">Comprehensive DevSecOps solutions tailored to your security checks needs</p>
+					<div class="services-grid">
+						<div class="service-card">
+							<div class="service-icon">
+								<i class="fas fa-infinity"></i>
+							</div>
+							<h3>Optimized custom search</h3>
+							<p>Custom search used by home made IA.</p>
+
+							<script async src="https://cse.google.com/cse.js?cx=8090719dd778f44d0"></script>
+							<div class="gcse-search"></div>
+						</div>
+
+						<div class="service-card">
+							<div class="service-icon">
+								<i class="fas fa-robot"></i>
+							</div>
+							<h3>Infrastructure as Code</h3>
+							<div class="nabla-wip-callout" role="status" aria-live="polite">
+								<span class="nabla-wip-callout__icon" aria-hidden="true">
+									<i class="fas fa-screwdriver-wrench"></i>
+								</span>
+								<div>
+									<strong>Under construction</strong>
+									This blurb is still in a feature branch: the full story is not merged yet and not quite ready for
+									production traffic. Watch this space after the next rollout.
+								</div>
+							</div>
+							<p>
+								Implementing IaC solutions using Terraform, Ansible, and other tools to manage infrastructure
+								efficiently and consistently.
+							</p>
+						</div>
 					</div>
-					<div class="tool-item">
-						<img src="assets/big-icon-jenkins.png" alt="Jenkins" />
-						<h4>Jenkins</h4>
-					</div>
-					<div class="tool-item">
-						<img src="assets/logo-nexus.png" alt="Nexus" />
-						<h4>Nexus</h4>
-					</div>
-				</div>
+				</section>
 			</section>
 
 			<!-- Contact Section -->
@@ -937,69 +761,18 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			(function () {
-				var btn = document.getElementById("coffee-fab");
-				var modalEl = document.getElementById("coffeeModal");
-				if (!btn || !modalEl) return;
-				btn.addEventListener("click", function () {
-					if (window.bootstrap && bootstrap.Modal) {
-						new bootstrap.Modal(modalEl).show();
-					} else if (window.jQuery && modalEl.id) {
-						jQuery(modalEl).modal("show");
-					} else {
-						window.open("https://ko-fi.com/albandrieu", "_blank");
-					}
-				});
-			})();
-		</script>
-
 		<div style="display: none">
 			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561">north-puny</a>
 		</div>
 
-		<!-- Smooth Scroll Script -->
-		<script>
-			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-				anchor.addEventListener("click", function (e) {
-					const href = this.getAttribute("href");
-					if (href !== "#" && href.length > 1) {
-						e.preventDefault();
-						const target = document.querySelector(href);
-						if (target) {
-							target.scrollIntoView({
-								behavior: "smooth",
-								block: "start",
-							});
-						}
-					}
-				});
-			});
-
-			// Add animation on scroll
-			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: "0px 0px -50px 0px",
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.style.opacity = "1";
-						entry.target.style.transform = "translateY(0)";
-					}
-				});
-			}, observerOptions);
-
-			// Observe all cards
-			document.querySelectorAll(".contact-card, .social-card").forEach((el) => {
-				el.style.opacity = "0";
-				el.style.transform = "translateY(20px)";
-				el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-				observer.observe(el);
-			});
-		</script>
+		<script
+			src="/site-widgets.js"
+			defer
+			data-scroll-reveal=".contact-card,.social-card"
+			data-reveal-effect="opacity"
+			data-axeptio
+			data-intercom-app-id="todo"
+		></script>
 
 		<script
 			src="https://uptime.betterstack.com/widgets/announcement.js"
@@ -1007,68 +780,5 @@
 			async="async"
 			type="text/javascript"
 		></script>
-
-		<!-- Start Intercom -->
-		<script>
-			window.intercomSettings = {
-				api_base: "https://api-iam.intercom.io",
-				app_id: "todo",
-			};
-		</script>
-
-		<script>
-			// We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/todo'
-			(function () {
-				var w = window;
-				var ic = w.Intercom;
-				if (typeof ic === "function") {
-					ic("reattach_activator");
-					ic("update", w.intercomSettings);
-				} else {
-					var d = document;
-					var i = function () {
-						i.c(arguments);
-					};
-					i.q = [];
-					i.c = function (args) {
-						i.q.push(args);
-					};
-					w.Intercom = i;
-					var l = function () {
-						var s = d.createElement("script");
-						s.type = "text/javascript";
-						s.async = true;
-						s.src = "https://widget.intercom.io/widget/todo";
-						var x = d.getElementsByTagName("script")[0];
-						x.parentNode.insertBefore(s, x);
-					};
-					if (document.readyState === "complete") {
-						l();
-					} else if (w.attachEvent) {
-						w.attachEvent("onload", l);
-					} else {
-						w.addEventListener("load", l, false);
-					}
-				}
-			})();
-		</script>
-		<!-- End Intercom -->
-
-		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
-		<script>
-			window.axeptioSettings = {
-				clientId: "63ff48361876ce66c29dddcd",
-				cookiesVersion: "nabla-en",
-			};
-
-			(function (d, s) {
-				var t = d.getElementsByTagName(s)[0],
-					e = d.createElement(s);
-				e.async = true;
-				e.src = "//static.axept.io/sdk.js";
-				t.parentNode.insertBefore(e, t);
-			})(document, "script");
-		</script>
-		<!-- End Axeptio cookies -->
 	</body>
 </html>

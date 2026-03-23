@@ -519,18 +519,7 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			(function () {
-				var b = document.getElementById("coffee-fab"),
-					m = document.getElementById("coffeeModal");
-				if (!b || !m) return;
-				b.addEventListener("click", function () {
-					if (window.bootstrap && bootstrap.Modal) new bootstrap.Modal(m).show();
-					else if (window.jQuery && m.id) jQuery(m).modal("show");
-					else window.open("https://ko-fi.com/albandrieu", "_blank");
-				});
-			})();
-		</script>
+		<script src="/site-widgets.js" defer></script>
 
 		<script>
 			(function () {

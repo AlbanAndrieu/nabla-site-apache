@@ -46,11 +46,11 @@
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="modern-style.css" />
-		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
 		<link rel="stylesheet" href="style.css" />
 		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="wireframe.css" />
 
 		<!-- Font Awesome -->
 		<link
@@ -87,23 +87,7 @@
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 		></script>
 
-		<!-- Vercel Analytics -->
-		<script>
-			window.va =
-				window.va ||
-				function () {
-					(window.vaq = window.vaq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/insights/script.js"></script>
-		<script>
-			window.si =
-				window.si ||
-				function () {
-					(window.siq = window.siq || []).push(arguments);
-				};
-		</script>
-		<script defer src="/_vercel/speed-insights/script.js"></script>
+		<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 
 		<!-- JSON-LD Structured Data for SEO -->
 		<script type="application/ld+json">
@@ -133,239 +117,8 @@
 				}
 			}
 		</script>
-
-		<style>
-			/* AI Best Practices Page Specific Styles */
-			:root {
-				--primary-color: #007bff;
-				--secondary-color: #6610f2;
-				--success-color: #28a745;
-				--info-color: #17a2b8;
-				--warning-color: #ffc107;
-				--danger-color: #dc3545;
-				--dark-color: #343a40;
-				--light-color: #f8f9fa;
-			}
-
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-				line-height: 1.6;
-				color: var(--text-primary);
-				background-color: var(--bg-primary);
-			}
-
-			/* Hero Section - theme-aware */
-			.hero-section {
-				text-align: center;
-				padding: 4rem 2rem;
-				background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-				color: white;
-			}
-
-			.hero-title {
-				font-size: 3rem;
-				font-weight: 700;
-				margin-bottom: 0.5rem;
-			}
-
-			.hero-subtitle {
-				font-size: 1.5rem;
-				margin-bottom: 1rem;
-				opacity: 0.95;
-			}
-
-			.hero-description {
-				font-size: 1.1rem;
-				max-width: 800px;
-				margin: 0 auto 2rem;
-				line-height: 1.6;
-			}
-
-			/* Content Section */
-			.content-section {
-				padding: 4rem 2rem;
-				max-width: 1200px;
-				margin: 0 auto;
-			}
-
-			.section-title {
-				font-size: 2.5rem;
-				font-weight: 700;
-				text-align: center;
-				margin-bottom: 1rem;
-				color: var(--text-primary);
-			}
-
-			.section-subtitle {
-				text-align: center;
-				font-size: 1.2rem;
-				color: var(--text-secondary);
-				margin-bottom: 3rem;
-			}
-
-			/* Resource Grid */
-			.resource-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-				gap: 2rem;
-				margin-bottom: 3rem;
-			}
-
-			.resource-card {
-				background: var(--bg-card);
-				border-radius: 12px;
-				padding: 2rem;
-				box-shadow: 0 4px 12px var(--shadow-color);
-				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
-				border: 1px solid var(--border-color);
-				border-left: 4px solid var(--primary-color);
-			}
-
-			.resource-card:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 8px 24px var(--shadow-hover);
-			}
-
-			.resource-card h3 {
-				font-size: 1.5rem;
-				margin-bottom: 1rem;
-				color: var(--primary-color);
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-			}
-
-			.resource-card-icon {
-				font-size: 2rem;
-				color: var(--primary-color);
-			}
-
-			.resource-card p {
-				color: var(--text-secondary);
-				margin-bottom: 1rem;
-				line-height: 1.6;
-			}
-
-			.resource-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-				color: var(--link-color);
-				text-decoration: none;
-				font-weight: 600;
-				transition: color 0.3s ease;
-			}
-
-			.resource-link:hover {
-				color: var(--link-hover);
-				text-decoration: underline;
-			}
-
-			.resource-link i {
-				font-size: 1rem;
-			}
-
-			/* Category Sections */
-			.category-section {
-				margin-bottom: 4rem;
-			}
-
-			.category-title {
-				font-size: 2rem;
-				font-weight: 700;
-				margin-bottom: 1.5rem;
-				color: var(--text-primary);
-				border-bottom: 3px solid var(--primary-color);
-				padding-bottom: 0.5rem;
-			}
-
-			/* Footer - theme-aware via modern-style.css */
-			.footer {
-				background: var(--nav-bg);
-				color: var(--nav-text);
-				padding: 3rem 2rem 2rem;
-				text-align: center;
-			}
-
-			.footer-links {
-				display: flex;
-				justify-content: center;
-				gap: 2rem;
-				margin-bottom: 1rem;
-				flex-wrap: wrap;
-			}
-
-			.footer-links a {
-				color: rgba(255, 255, 255, 0.8);
-				text-decoration: none;
-			}
-
-			.footer-links a:hover {
-				color: white;
-			}
-
-			/* Print Button - fixed position like security page */
-			.print-button {
-				position: fixed;
-				bottom: 5rem;
-				right: 2rem;
-				z-index: 999;
-				background: var(--success-color);
-				color: white;
-				border: none;
-				padding: 0.75rem 1.5rem;
-				border-radius: 25px;
-				cursor: pointer;
-				box-shadow: 0 2px 10px var(--shadow-color);
-				transition: background 0.3s ease;
-			}
-
-			.print-button:hover {
-				background: var(--info-color);
-			}
-
-			/* Responsive Design */
-			@media (max-width: 768px) {
-				.hero-title {
-					font-size: 2rem;
-				}
-
-				.hero-subtitle {
-					font-size: 1.2rem;
-				}
-
-				.section-title {
-					font-size: 2rem;
-				}
-
-				.resource-grid {
-					grid-template-columns: 1fr;
-				}
-			}
-
-			/* Intro Section */
-			.intro-section {
-				background: var(--bg-secondary);
-				border-radius: 12px;
-				padding: 2rem;
-				margin-bottom: 3rem;
-			}
-
-			.intro-section p {
-				font-size: 1.1rem;
-				line-height: 1.8;
-				color: var(--text-secondary);
-				margin-bottom: 1rem;
-			}
-
-			.intro-section p:last-child {
-				margin-bottom: 0;
-			}
-		</style>
 	</head>
-	<body id="top">
+	<body id="top" class="page-nabla-best-practices">
 		<!-- Google Translate Widget (styled via theme.css) -->
 		<div class="google-translate-widget" aria-label="Language translation options">
 			<div id="google_translate_element"></div>
@@ -435,7 +188,7 @@
 		</header>
 
 		<!-- Main Content -->
-		<main id="main-content" role="main">
+		<main id="main-content" role="main" class="mb-5">
 			<section class="content-section">
 				<!-- Introduction -->
 				<article class="intro-section">
@@ -621,8 +374,8 @@
 				<section class="category-section">
 					<h2 class="category-title"><i class="fas fa-check-circle"></i> General Best Practices</h2>
 					<article class="intro-section">
-						<h3 style="color: var(--primary-color); margin-bottom: 1rem">Key Principles for AI Development</h3>
-						<ul style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary)">
+						<h3 class="intro-section__heading">Key Principles for AI Development</h3>
+						<ul class="intro-section__list">
 							<li>
 								<strong>Start with Clear Objectives:</strong> Define what success looks like before implementing AI
 								solutions.
@@ -654,6 +407,188 @@
 						</ul>
 					</article>
 				</section>
+
+				<!-- Popular AI platforms & tools -->
+				<section class="category-section nabla-platforms-section" aria-labelledby="nabla-platforms-heading">
+					<h2 id="nabla-platforms-heading" class="category-title">
+						<i class="fas fa-layer-group" aria-hidden="true"></i> Popular AI Platforms &amp; Tools
+					</h2>
+
+					<div class="nabla-platforms-hero">
+						<div class="nabla-platforms-visual-wrap">
+							<span class="nabla-platforms-orbit" aria-hidden="true"></span>
+							<figure class="nabla-platforms-figure">
+								<img
+									src="assets/nabla/nabla-4.svg"
+									width="200"
+									height="200"
+									alt="Nabla site logo"
+									loading="lazy"
+									decoding="async"
+								/>
+								<figcaption class="nabla-platforms-caption">
+									A snapshot of the ecosystem teams use most often in 2025–2026.
+								</figcaption>
+							</figure>
+						</div>
+						<div class="nabla-platforms-lede">
+							<h3>From APIs to local models</h3>
+							<p>
+								AI Tools used: hosted LLMs, coding assistants, cloud ML platforms, retrieval stacks, orchestration, and
+								observability. Treat this as a compass—not an endorsement of any single vendor.
+							</p>
+						</div>
+					</div>
+
+					<div class="nabla-platforms-matrix">
+						<div class="nabla-platform-pillar" style="--pillar-accent: #0d6efd">
+							<h3><i class="fas fa-comments" aria-hidden="true"></i> LLM APIs &amp; chat</h3>
+							<ul class="nabla-tool-tags">
+								<li>OpenAI</li>
+								<!--
+								<li>Groq</li>
+								<li>Cohere</li>
+								<li>Anthropic (Claude)</li>
+								<li>Google Gemini</li>
+								<li>Mistral AI</li>
+						  	-->
+								<li>Azure OpenAI</li>
+								<li>OpenWebUI</li>
+								<li>LocalAI</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #6f42c1">
+							<h3><i class="fas fa-code" aria-hidden="true"></i> Coding assistants &amp; IDEs</h3>
+							<ul class="nabla-tool-tags">
+								<li>GitHub Copilot</li>
+								<li>Cursor</li>
+								<li>Amazon Q Developer</li>
+								<li>Dust</li>
+								<!--<li>Continue.dev</li>-->
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #0dcaf0">
+							<h3><i class="fas fa-cloud" aria-hidden="true"></i> Cloud ML &amp; notebooks</h3>
+							<ul class="nabla-tool-tags">
+								<li>Azure Machine Learning</li>
+								<li>Hugging Face</li>
+								<!--
+								<li>AWS SageMaker</li>
+								<li>Google Vertex AI</li>
+								-->
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #198754">
+							<h3><i class="fas fa-database" aria-hidden="true"></i> RAG, vectors &amp; frameworks</h3>
+							<ul class="nabla-tool-tags">
+								<li>LangChain</li>
+								<li>PGvector</li>
+								<li>ElasticSearch</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #fd7e14">
+							<h3><i class="fas fa-diagram-project" aria-hidden="true"></i> Agents &amp; automation</h3>
+							<ul class="nabla-tool-tags">
+								<li>n8n</li>
+								<li>LangGraph</li>
+								<li>Zapier . HubSpot</li>
+								<li>CrewAI</li>
+								<li>Temporal</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #d63384">
+							<h3><i class="fas fa-eye" aria-hidden="true"></i> Evals, traces &amp; monitoring</h3>
+							<ul class="nabla-tool-tags">
+								<!--<li>LangSmith</li>-->
+								<li>Weights &amp; Biases</li>
+								<li>LangFuse</li>
+								<li>OpenTelemetry</li>
+							</ul>
+						</div>
+						<div class="nabla-platform-pillar" style="--pillar-accent: #20c997">
+							<h3><i class="fas fa-microchip" aria-hidden="true"></i> Local &amp; open inference</h3>
+							<ul class="nabla-tool-tags">
+								<li>Ollama</li>
+								<li>LiteLLM</li>
+								<!--<li>vLLM</li>
+								<li>llama.cpp</li>-->
+								<li>LM Studio / AnythingsLLM</li>
+								<li>OpenRAG</li>
+								<li>OpenTerminal / Warp</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- Contact Section -->
+			<section class="contact-section" id="contact">
+				<div class="contact-container">
+					<h2 class="section-title">Let's Work Together</h2>
+					<p class="section-subtitle">
+						Ready to transform your DevOps practices? Get in touch to discuss your project.
+					</p>
+
+					<div class="contact-methods">
+						<a href="mailto:alban.andrieu@dr-alban.com" class="contact-method">
+							<div class="contact-icon">
+								<i class="fas fa-envelope"></i>
+							</div>
+							<div class="contact-info">
+								<h4>Email</h4>
+								<p>alban.andrieu@dr-alban.com</p>
+							</div>
+						</a>
+
+						<a href="https://www.linkedin.com/in/nabla" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fab fa-linkedin"></i>
+							</div>
+							<div class="contact-info">
+								<h4>LinkedIn</h4>
+								<p>Connect with me</p>
+							</div>
+						</a>
+
+						<a href="https://calendly.com/alban-andrieu" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fa fa-calendar-plus"></i>
+							</div>
+							<div class="contact-info">
+								<h4>Calendly</h4>
+								<p>Have a call</p>
+							</div>
+						</a>
+
+						<a href="https://github.com/AlbanAndrieu" target="_blank" class="contact-method">
+							<div class="contact-icon">
+								<i class="fab fa-github"></i>
+							</div>
+							<div class="contact-info">
+								<h4>GitHub</h4>
+								<p>View my work</p>
+							</div>
+						</a>
+					</div>
+
+					<div style="margin-top: 3rem">
+						<img src="assets/nabla/nabla-4.svg" alt="Nabla Logo" style="width: 120px; opacity: 0.6" />
+					</div>
+
+					<!-- Stack Exchange Badge -->
+					<div style="margin-top: 3rem; text-align: center">
+						<a href="https://stackexchange.com/users/4652074/albanandrieu" target="_blank" rel="noopener noreferrer">
+							<img
+								src="https://stackexchange.com/users/flair/4652074.png"
+								width="208"
+								height="58"
+								alt="Stack Exchange profile for AlbanAndrieu"
+								title="Stack Exchange profile for AlbanAndrieu"
+							/>
+						</a>
+					</div>
+					<!-- End of Stack Exchange Badge -->
+				</div>
 			</section>
 		</main>
 
@@ -719,66 +654,6 @@
 		</footer>
 		<!-- End footer section -->
 
-		<!-- Smooth Scroll Script -->
-		<script>
-			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-				anchor.addEventListener("click", function (e) {
-					if (!this.hasAttribute("href")) return;
-					const href = this.getAttribute("href");
-					if (href !== "#" && href.length > 1) {
-						e.preventDefault();
-						const target = document.querySelector(href);
-						if (target) {
-							target.scrollIntoView({
-								behavior: "smooth",
-								block: "start",
-							});
-						}
-					}
-				});
-			});
-
-			// Add animation on scroll
-			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: "0px 0px -50px 0px",
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.style.opacity = "1";
-						entry.target.style.transform = "translateY(0)";
-					}
-				});
-			}, observerOptions);
-
-			// Observe all cards
-			document.querySelectorAll(".resource-card").forEach((el) => {
-				el.style.opacity = "0";
-				el.style.transform = "translateY(20px)";
-				el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-				observer.observe(el);
-			});
-		</script>
-
-		<!-- Axeptio Cookies -->
-		<script>
-			window.axeptioSettings = {
-				clientId: "63ff48361876ce66c29dddcd",
-				cookiesVersion: "nabla-en",
-			};
-
-			(function (d, s) {
-				var t = d.getElementsByTagName(s)[0],
-					e = d.createElement(s);
-				e.async = true;
-				e.src = "//static.axept.io/sdk.js";
-				t.parentNode.insertBefore(e, t);
-			})(document, "script");
-		</script>
-
 		<!-- Bootstrap JS -->
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.min.js"
@@ -787,12 +662,12 @@
 			referrerpolicy="no-referrer"
 		></script>
 
-		<!-- Coffee FAB: open support modal -->
-		<script>
-			document.getElementById("coffee-fab").addEventListener("click", function () {
-				var modal = new bootstrap.Modal(document.getElementById("coffeeModal"));
-				modal.show();
-			});
-		</script>
+		<script
+			src="/site-widgets.js"
+			defer
+			data-scroll-reveal=".resource-card"
+			data-reveal-effect="opacity"
+			data-axeptio
+		></script>
 	</body>
 </html>

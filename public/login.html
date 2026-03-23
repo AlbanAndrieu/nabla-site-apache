@@ -45,24 +45,7 @@
 	    async
 	    defer></script>
 
-    <!-- Vercel Web Analytics -->
-    <script>
-		window.va =
-			window.va ||
-			function () {
-				(window.vaq = window.vaq || []).push(arguments);
-			};
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Vercel Speed Insights -->
-    <script>
-		window.si =
-			window.si ||
-			function () {
-				(window.siq = window.siq || []).push(arguments);
-			};
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 
 		<!-- Google Translate -->
 		<script type="text/javascript" src="/google-translate-config.js"></script>
@@ -247,75 +230,14 @@
       </div>
     </div>
     -->
-    <script>
-      (function () {
-        var btn = document.getElementById("coffee-fab");
-        var modalEl = document.getElementById("coffeeModal");
-        if (!btn || !modalEl) return;
-        btn.addEventListener("click", function () {
-          if (window.bootstrap && bootstrap.Modal) {
-            new bootstrap.Modal(modalEl).show();
-          } else if (window.jQuery && modalEl.id) {
-            jQuery(modalEl).modal("show");
-          } else {
-            window.open("https://ko-fi.com/albandrieu", "_blank");
-          }
-        });
-      })();
-    </script>
-
-		<!-- Smooth Scroll Script -->
-		<script>
-			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-				anchor.addEventListener("click", function (e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute("href"));
-					if (target) {
-						target.scrollIntoView({
-							behavior: "smooth",
-							block: "start",
-						});
-					}
-				});
-			});
-
-			// Add animation on scroll
-			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: "0px 0px -50px 0px",
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.style.animation = "fadeInUp 0.6s ease forwards";
-					}
-				});
-			}, observerOptions);
-
-			// Observe all service cards, skill categories, and tool items
-			document.querySelectorAll(".service-card, .skill-category, .tool-item").forEach((el) => {
-				observer.observe(el);
-			});
-		</script>
-
-		<!-- Axeptio: change clientId to be your site's PROJECT ID -->
-		<script>
-			window.axeptioSettings = {
-				clientId: "63ff48361876ce66c29dddcd",
-				cookiesVersion: "nabla-en",
-			};
-
-			(function (d, s) {
-				var t = d.getElementsByTagName(s)[0],
-					e = d.createElement(s);
-				e.async = true;
-				e.src = "//static.axept.io/sdk.js";
-				t.parentNode.insertBefore(e, t);
-			})(document, "script");
-		</script>
-		<!-- End Axeptio cookies -->
+		<script
+			src="/site-widgets.js"
+			defer
+			data-scroll-reveal=".service-card,.skill-category,.tool-item"
+			data-reveal-effect="animation"
+			data-reveal-animation="fadeInUp 0.6s ease forwards"
+			data-axeptio
+		></script>
 
 		<script
 			src="https://uptime.betterstack.com/widgets/announcement.js"

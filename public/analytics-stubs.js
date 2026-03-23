@@ -1,13 +1,10 @@
 /**
- * Stubs for Vercel Analytics and Speed Insights. Load before their script tags.
+ * @deprecated Use `<script src="/site-analytics.js" data-analytics-mode="vercel"></script>` in the document.
+ * Kept so old pages that still reference this file keep working (dynamic inject: no document.currentScript).
  */
-window.va =
-	window.va ||
-	(() => {
-		(window.vaq = window.vaq || []).push(arguments);
-	});
-window.si =
-	window.si ||
-	(() => {
-		(window.siq = window.siq || []).push(arguments);
-	});
+window.NABLA_ANALYTICS_MODE = "vercel";
+(() => {
+	var s = document.createElement("script");
+	s.src = "/site-analytics.js";
+	(document.head || document.documentElement).appendChild(s);
+})();

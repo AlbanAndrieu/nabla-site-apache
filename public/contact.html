@@ -85,11 +85,7 @@
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 		></script>
 
-		<!-- Vercel Analytics -->
-		<script src="analytics-stubs.js"></script>
-		<script defer src="/_vercel/insights/script.js"></script>
-		<script defer src="/_vercel/speed-insights/script.js"></script>
-
+		<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 		<!-- JSON-LD Structured Data for SEO -->
 		<script type="application/ld+json">
 			{
@@ -904,34 +900,16 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			(function () {
-				var btn = document.getElementById("coffee-fab");
-				var modalEl = document.getElementById("coffeeModal");
-				if (!btn || !modalEl) return;
-				btn.addEventListener("click", function () {
-					if (window.bootstrap && bootstrap.Modal) {
-						new bootstrap.Modal(modalEl).show();
-					} else if (window.jQuery && modalEl.id) {
-						jQuery(modalEl).modal("show");
-					} else {
-						window.open("https://ko-fi.com/albandrieu", "_blank");
-					}
-				});
-			})();
-		</script>
-
 		<div style="display: none">
 			<a href="https://www.pkts.ca:443/cgi-bin/corinthianenzyme.cgi?doc_id=2561">north-puny</a>
 		</div>
 
-		<script src="smooth-scroll.js"></script>
 		<script
 			src="https://uptime.betterstack.com/widgets/announcement.js"
 			data-id="150620"
 			async="async"
 			type="text/javascript"
 		></script>
-		<script src="third-party-widgets.js"></script>
+		<script src="/site-widgets.js" defer data-axeptio data-intercom-app-id="todo"></script>
 	</body>
 </html>
