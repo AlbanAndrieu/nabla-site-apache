@@ -13,7 +13,7 @@ When creating or editing HTML pages in `public/`, ensure the following. **Do not
 - Include **theme toggle** on every content page:
   - In `<head>`: `<script src="theme-toggle.js"></script>` (or `../theme-toggle.js` from `public/policy/`).
   - Load early (e.g. after favicon) so the script can inject the theme button and prevent flash.
-- The script creates the button with id `theme-toggle-btn` automatically; no extra markup required.
+- The script injects `#theme-toggle-root` (segmented light / dark / auto control); no extra markup required.
 
 ## 2. Google Translate widget
 
@@ -25,14 +25,14 @@ When creating or editing HTML pages in `public/`, ensure the following. **Do not
 ## 3. Print / Save as PDF (and Markdown when relevant)
 
 - Provide **Print / Save as PDF** via `site-widgets.js`, not inline buttons: on the deferred `site-widgets.js` tag add **`data-print-pdf`** (empty attribute is OK). The script injects `#nabla-print-pdf-btn` with class `print-button` and calls `window.print()`. Labels follow `document.documentElement.lang` (French vs English) unless overridden with `data-print-pdf-lang` or `data-print-pdf-label`.
-- **Back to top:** `site-widgets.js` injects **`#nabla-back-to-top`** with class **`back-to-top`** (styled in **`style.css`**, bottom-center pair with **`#coffee-fab`**). Disable with **`data-no-back-to-top`** if needed. Optional **`data-back-to-top-label`** / **`data-back-to-top-aria`**. Keep **`id="top"`** on `<body>` so scroll targets the page top.
+- **Back to top:** `site-widgets.js` injects **`#nabla-back-to-top`** with class **`back-to-top`** (styled in **`style.css`**, bottom-center pair with **`#coffee-fab`**). Disable with **`data-no-back-to-top`** if needed. Optional **`data-back-to-top-label`** / **`data-back-to-top-aria`**. Keep **`<a name="top"></a>`** immediately after `<body>` so `#top` and scroll targets the page top.
 - Include **`print.css`** in `<head>` so on-screen button placement and print layout stay correct.
 - When the page is meant to be exported as markdown, keep structure and semantics suitable for that (headings, lists, clear sections).
 
 ## 4. Modern style and layout
 
 - **Prefer the site’s default dark, modern style** for all content pages:
-  - Use **`class="page-dark"`** on `<body>` (e.g. `<body id="top" class="page-dark">`). This applies the shared dark background (#0f172a with blue gradients), nav, cards, and light-theme overrides defined in `theme.css`. The theme toggle (default: dark) still lets users switch to light or auto.
+  - Use **`class="page-dark"`** on `<body>` (e.g. `<body class="page-dark">` with `<a name="top"></a>` on the next line). This applies the shared dark background (#0f172a with blue gradients), nav, cards, and light-theme overrides defined in `theme.css`. The theme toggle (default: dark) still lets users switch to light or auto.
   - Do **not** add page-specific inline styles that duplicate the page-dark look; add any new shared patterns to `theme.css` under `.page-dark` instead.
 - Use **landing-sections.css** (and existing wireframe/theme/print CSS as on other pages):
   - `<link rel="stylesheet" href="landing-sections.css" />` (use `../landing-sections.css` from `public/policy/`, or `../../theme.css` etc. from deeper `ca/` paths).

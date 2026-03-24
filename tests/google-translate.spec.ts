@@ -4,9 +4,9 @@ test.describe("Google Translate Widget Tests", () => {
 	test("should have Google Translate widget container", async ({ page }) => {
 		await page.goto("/");
 
-		// Check for Google Translate widget container
 		const translateElement = page.locator("#google_translate_element");
-		await expect(translateElement).toBeVisible();
+		await expect(translateElement).toBeAttached();
+		await expect(page.locator(".google-translate-widget")).toBeVisible();
 	});
 
 	test("should load Google Translate scripts", async ({ page }) => {
@@ -45,29 +45,30 @@ test.describe("Google Translate Widget Tests", () => {
 		const translateElement = page.locator("#google_translate_element");
 
 		if ((await translateElement.count()) > 0) {
-			// Check if element is in viewport
+			const vw = page.viewportSize()?.width ?? 1280;
+			if (vw <= 575) {
+				await page.locator(".google-translate-widget__toggle").click();
+			}
+
 			await expect(translateElement).toBeInViewport();
 
-			// Check if it has proper styling (usually fixed/absolute position)
 			const position = await translateElement.evaluate((el) => {
 				return window.getComputedStyle(el).position;
 			});
 
-			// Translate widget should be positioned (not static)
 			expect(["fixed", "absolute", "relative", "sticky"]).toContain(position);
 		}
 	});
 
-	test("should be accessible on mobile", async ({ page, viewport }) => {
+	test("should be accessible on mobile", async ({ page }) => {
+		await page.setViewportSize({ width: 375, height: 667 });
 		await page.goto("/");
 
-		if (viewport && viewport.width < 768) {
-			const translateElement = page.locator("#google_translate_element");
+		const toggle = page.locator(".google-translate-widget__toggle");
+		await expect(toggle).toBeVisible();
 
-			if ((await translateElement.count()) > 0) {
-				// Widget should still be visible on mobile
-				await expect(translateElement).toBeInViewport();
-			}
-		}
+		await toggle.click();
+		const translateElement = page.locator("#google_translate_element");
+		await expect(translateElement).toBeVisible();
 	});
 });

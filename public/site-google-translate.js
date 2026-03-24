@@ -12,15 +12,53 @@
 
 	var INCLUDED_LANGS = "en,fr,no,de,es,it,pt,nl,sv,da,fi,pl,cs,ru,ar,ja,zh-CN";
 
+	var TOGGLE_SVG =
+		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+
+	function bindMobileToggle(wrap, toggle) {
+		function setOpen(open) {
+			wrap.classList.toggle("is-open", open);
+			toggle.setAttribute("aria-expanded", open ? "true" : "false");
+		}
+		toggle.addEventListener("click", function (e) {
+			e.stopPropagation();
+			setOpen(!wrap.classList.contains("is-open"));
+		});
+		document.addEventListener("click", function (e) {
+			var t = e.target;
+			if (t instanceof Node && !wrap.contains(t)) setOpen(false);
+		});
+		document.addEventListener("keydown", function (e) {
+			if (e.key === "Escape") setOpen(false);
+		});
+	}
+
 	function ensureMount() {
 		var el = document.getElementById("google_translate_element");
 		if (el) return el;
 		var wrap = document.createElement("div");
 		wrap.className = "google-translate-widget";
 		wrap.setAttribute("aria-label", "Language translation options");
+
+		var toggle = document.createElement("button");
+		toggle.type = "button";
+		toggle.className = "google-translate-widget__toggle";
+		toggle.setAttribute("aria-expanded", "false");
+		toggle.setAttribute("aria-controls", "google_translate_element");
+		toggle.setAttribute("aria-label", "Choose translation language");
+		toggle.innerHTML = TOGGLE_SVG;
+
+		var panel = document.createElement("div");
+		panel.className = "google-translate-widget__panel";
+
 		el = document.createElement("div");
 		el.id = "google_translate_element";
-		wrap.appendChild(el);
+		panel.appendChild(el);
+
+		wrap.appendChild(toggle);
+		wrap.appendChild(panel);
+		bindMobileToggle(wrap, toggle);
+
 		var body = document.body;
 		if (body) {
 			body.insertBefore(wrap, body.firstChild);

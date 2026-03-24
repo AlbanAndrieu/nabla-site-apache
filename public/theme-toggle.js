@@ -1,6 +1,5 @@
 /**
- * Theme Toggle Script - Dark/Light Mode Switcher
- * Handles theme detection, switching, and persistence
+ * Theme Toggle — light / dark / auto (Bootstrap-style segmented control)
  * @file Browser-side script for theme management
  */
 
@@ -8,7 +7,6 @@
 /* global gtag */
 
 (() => {
-	// Theme constants
 	const THEMES = {
 		LIGHT: "light",
 		DARK: "dark",
@@ -16,15 +14,14 @@
 	};
 
 	const STORAGE_KEY = "site-theme-preference";
-	const THEME_ICONS = {
-		[THEMES.LIGHT]: "☀️",
-		[THEMES.DARK]: "🌙",
-		[THEMES.AUTO]: "🌓",
-	};
+	const ROOT_ID = "theme-toggle-root";
 
-	/**
-	 * Get user's preferred color scheme from browser
-	 */
+	const MODE_META = [
+		{ theme: THEMES.LIGHT, label: "Light", short: "Light", icon: "☀️" },
+		{ theme: THEMES.DARK, label: "Dark", short: "Dark", icon: "🌙" },
+		{ theme: THEMES.AUTO, label: "Auto (system)", short: "Auto", icon: "🌓" },
+	];
+
 	function getSystemPreference() {
 		if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
 			return THEMES.DARK;
@@ -32,9 +29,6 @@
 		return THEMES.LIGHT;
 	}
 
-	/**
-	 * Get stored theme preference or default to auto
-	 */
 	function getStoredTheme() {
 		try {
 			const stored = localStorage.getItem(STORAGE_KEY);
@@ -47,9 +41,6 @@
 		}
 	}
 
-	/**
-	 * Store theme preference
-	 */
 	function storeTheme(theme) {
 		try {
 			localStorage.setItem(STORAGE_KEY, theme);
@@ -58,29 +49,25 @@
 		}
 	}
 
-	/**
-	 * Apply theme to document
-	 */
+	function updateToggleChrome(preference) {
+		const root = document.getElementById(ROOT_ID);
+		if (!root) return;
+
+		root.querySelectorAll(".theme-toggle__btn").forEach((btn) => {
+			const t = btn.getAttribute("data-theme");
+			const on = t === preference;
+			btn.setAttribute("aria-pressed", on ? "true" : "false");
+			btn.classList.toggle("is-active", on);
+		});
+	}
+
 	function applyTheme(theme) {
 		const effectiveTheme =
 			theme === THEMES.AUTO ? getSystemPreference() : theme;
 
-		// Set data attribute on html element
 		document.documentElement.setAttribute("data-theme", effectiveTheme);
+		updateToggleChrome(theme);
 
-		// Update button icon if it exists
-		const button = document.getElementById("theme-toggle-btn");
-		if (button) {
-			const nextTheme = getNextTheme(theme);
-			button.textContent = THEME_ICONS[nextTheme];
-			button.setAttribute(
-				"aria-label",
-				`Switch to ${nextTheme} theme (current: ${theme})`,
-			);
-			button.setAttribute("title", `Switch to ${nextTheme} theme`);
-		}
-
-		// Dispatch event for other scripts to react to theme changes
 		window.dispatchEvent(
 			new CustomEvent("themechange", {
 				detail: { theme: effectiveTheme, preference: theme },
@@ -88,9 +75,6 @@
 		);
 	}
 
-	/**
-	 * Get next theme in rotation: light -> dark -> auto -> light
-	 */
 	function getNextTheme(currentTheme) {
 		switch (currentTheme) {
 			case THEMES.LIGHT:
@@ -102,97 +86,90 @@
 		}
 	}
 
-	/**
-	 * Toggle theme
-	 */
-	function toggleTheme() {
-		const currentTheme = getStoredTheme();
-		const nextTheme = getNextTheme(currentTheme);
-		storeTheme(nextTheme);
-		applyTheme(nextTheme);
-
-		// Analytics tracking (if available)
+	function setTheme(theme) {
+		if (!Object.values(THEMES).includes(theme)) return;
+		storeTheme(theme);
+		applyTheme(theme);
 		if (typeof gtag === "function") {
 			gtag("event", "theme_toggle", {
 				event_category: "UI",
-				event_label: nextTheme,
+				event_label: theme,
 			});
 		}
 	}
 
-	/**
-	 * Create and inject theme toggle button
-	 */
+	function toggleTheme() {
+		const currentTheme = getStoredTheme();
+		const nextTheme = getNextTheme(currentTheme);
+		setTheme(nextTheme);
+	}
+
 	function createThemeToggle() {
-		// Check if button already exists
-		if (document.getElementById("theme-toggle-btn")) {
+		if (document.getElementById(ROOT_ID)) {
 			return;
 		}
 
-		const currentTheme = getStoredTheme();
-		const nextTheme = getNextTheme(currentTheme);
+		const preference = getStoredTheme();
 
-		const button = document.createElement("button");
-		button.id = "theme-toggle-btn";
-		button.className = "theme-toggle";
-		button.textContent = THEME_ICONS[nextTheme];
-		button.setAttribute(
-			"aria-label",
-			`Switch to ${nextTheme} theme (current: ${currentTheme})`,
-		);
-		button.setAttribute("title", `Switch to ${nextTheme} theme`);
-		button.setAttribute("type", "button");
+		const root = document.createElement("div");
+		root.id = ROOT_ID;
+		root.className = "theme-toggle";
+		root.setAttribute("role", "region");
+		root.setAttribute("aria-label", "Display theme");
 
-		button.addEventListener("click", toggleTheme);
+		const track = document.createElement("div");
+		track.className = "theme-toggle__track";
+		track.setAttribute("role", "group");
+		track.setAttribute("aria-label", "Color mode");
 
-		// Add keyboard support
-		button.addEventListener("keydown", (e) => {
-			if (e.key === "Enter" || e.key === " ") {
-				e.preventDefault();
-				toggleTheme();
-			}
-		});
+		for (const { theme, label, short, icon } of MODE_META) {
+			const btn = document.createElement("button");
+			btn.type = "button";
+			btn.className = "theme-toggle__btn";
+			btn.dataset.theme = theme;
+			btn.setAttribute("aria-label", label);
+			btn.setAttribute("title", label);
+			const span = document.createElement("span");
+			span.className = "theme-toggle__icon";
+			span.setAttribute("aria-hidden", "true");
+			span.textContent = icon;
+			btn.appendChild(span);
+			const text = document.createElement("span");
+			text.className = "theme-toggle__text";
+			text.textContent = short;
+			btn.appendChild(text);
+			btn.addEventListener("click", () => setTheme(theme));
+			track.appendChild(btn);
+		}
 
-		document.body.appendChild(button);
+		root.appendChild(track);
+		document.body.appendChild(root);
+		updateToggleChrome(preference);
 	}
 
-	/**
-	 * Listen for system theme changes
-	 */
 	function watchSystemTheme() {
 		if (!window.matchMedia) return;
 
 		const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-		// Modern browsers
+		const onChange = () => {
+			const storedTheme = getStoredTheme();
+			if (storedTheme === THEMES.AUTO) {
+				applyTheme(THEMES.AUTO);
+			}
+		};
+
 		if (darkModeQuery.addEventListener) {
-			darkModeQuery.addEventListener("change", () => {
-				const storedTheme = getStoredTheme();
-				if (storedTheme === THEMES.AUTO) {
-					applyTheme(THEMES.AUTO);
-				}
-			});
-		}
-		// Older browsers
-		else if (darkModeQuery.addListener) {
-			darkModeQuery.addListener(() => {
-				const storedTheme = getStoredTheme();
-				if (storedTheme === THEMES.AUTO) {
-					applyTheme(THEMES.AUTO);
-				}
-			});
+			darkModeQuery.addEventListener("change", onChange);
+		} else if (darkModeQuery.addListener) {
+			darkModeQuery.addListener(onChange);
 		}
 	}
 
-	/**
-	 * Initialize theme system
-	 */
 	function initTheme() {
-		// Apply theme as early as possible to prevent flash
 		const storedTheme = getStoredTheme();
 		applyTheme(storedTheme);
 
-		// Wait for DOM to be ready before creating button
 		if (document.readyState === "loading") {
 			document.addEventListener("DOMContentLoaded", () => {
 				createThemeToggle();
@@ -204,18 +181,11 @@
 		}
 	}
 
-	// Initialize immediately
 	initTheme();
 
-	// Expose API for programmatic control
 	window.themeToggle = {
 		toggle: toggleTheme,
-		set: (theme) => {
-			if (Object.values(THEMES).includes(theme)) {
-				storeTheme(theme);
-				applyTheme(theme);
-			}
-		},
+		set: setTheme,
 		get: getStoredTheme,
 		getEffective: () => {
 			const theme = getStoredTheme();

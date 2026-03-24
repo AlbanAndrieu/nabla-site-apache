@@ -30,13 +30,23 @@
 		color: black !important;
 	}
 
-	/* Hide elements not needed in print (PDF) */
+	/* Hide elements not needed in print (PDF) — site chrome only:
+	   use body > header/footer so nested <header>/<footer> in articles/blockquotes stay visible */
 	nav,
 	.navbar,
 	.nav,
 	.navigation,
 	header.navbar,
-	footer.footer,
+	body > header,
+	body > footer,
+	.skip-to-main,
+	.page-nav,
+	.hero-section,
+	.contact-section,
+	.google-translate-widget,
+	/* Axeptio cookie / CMP (overlay, trigger, SDK UI) */
+		[id^="axeptio"],
+	iframe[src*="axept.io"],
 	.btn,
 	.cta-buttons,
 	.social-links,
@@ -174,12 +184,10 @@
 		padding: 8pt;
 	}
 
-	/* Sections and Cards */
-	.hero-section,
+	/* Sections and Cards (hero/contact hidden above) */
 	.services-section,
 	.skills-section,
-	.tools-section,
-	.contact-section {
+	.tools-section {
 		page-break-inside: avoid;
 		padding: 0 !important;
 		margin-bottom: 20pt;
@@ -358,13 +366,6 @@
 	.bg-danger {
 		background-color: white !important;
 		color: #000 !important;
-	}
-
-	/* Footer info - keep only essential text */
-	.footer {
-		border-top: 1px solid #ddd;
-		padding-top: 10pt;
-		margin-top: 20pt;
 	}
 
 	/* Ensure good contrast */

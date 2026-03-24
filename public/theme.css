@@ -40,10 +40,12 @@
 	--nav-bg: #343a40;
 	--nav-text: #ffffff;
 
-	/* Theme Toggle Button */
+	/* Theme Toggle (segmented control) */
 	--toggle-bg: #343a40;
 	--toggle-text: #ffffff;
-	--toggle-border: #495057;
+	--toggle-border: #ced4da;
+	--toggle-track-bg: #e9ecef;
+	--toggle-segment-muted: #6c757d;
 
 	/* Landing / section accents (landing-sections, special-message, contact card) */
 	--primary-color: #2563eb;
@@ -87,7 +89,9 @@
 
 		--toggle-bg: #e4e4e4;
 		--toggle-text: #1a1a1a;
-		--toggle-border: #b8b8b8;
+		--toggle-border: #495057;
+		--toggle-track-bg: #2d3339;
+		--toggle-segment-muted: #adb5bd;
 	}
 }
 
@@ -126,7 +130,9 @@ html[data-theme="light"] {
 
 	--toggle-bg: #343a40;
 	--toggle-text: #ffffff;
-	--toggle-border: #495057;
+	--toggle-border: #ced4da;
+	--toggle-track-bg: #e9ecef;
+	--toggle-segment-muted: #6c757d;
 }
 
 html[data-theme="dark"] {
@@ -161,7 +167,9 @@ html[data-theme="dark"] {
 
 	--toggle-bg: #e4e4e4;
 	--toggle-text: #1a1a1a;
-	--toggle-border: #b8b8b8;
+	--toggle-border: #495057;
+	--toggle-track-bg: #2d3339;
+	--toggle-segment-muted: #adb5bd;
 }
 
 /* ============================================
@@ -327,36 +335,117 @@ select:focus {
 }
 
 /* ============================================
-   Theme Toggle Button Styles
+   Theme Toggle — Bootstrap-inspired segmented control
    ============================================ */
 .theme-toggle {
 	position: fixed;
-	top: 20px;
-	right: 20px;
+	top: 16px;
+	right: 16px;
 	z-index: 1000;
-	background-color: var(--toggle-bg);
-	color: var(--toggle-text);
-	border: 2px solid var(--toggle-border);
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
 	display: flex;
 	align-items: center;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+.theme-toggle > * {
+	pointer-events: auto;
+}
+
+/* Pill track: like .btn-group + subtle form-control border */
+.theme-toggle__track {
+	display: inline-flex;
+	align-items: stretch;
+	gap: 0;
+	padding: 3px;
+	border-radius: 50rem;
+	background-color: var(--toggle-track-bg);
+	border: 1px solid var(--toggle-border);
+	box-shadow: 0 0.125rem 0.25rem var(--shadow-color), inset 0 1px 0
+		rgba(255, 255, 255, 0.06);
+}
+
+.theme-toggle__btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
 	justify-content: center;
+	gap: 0.35rem;
+	min-width: 2.5rem;
+	min-height: 2.5rem;
+	padding: 0.35rem 0.55rem;
+	margin: 0;
+	border: none;
+	border-radius: 50rem;
+	background: transparent;
+	color: var(--toggle-segment-muted);
+	font-size: 0.8125rem;
+	font-weight: 500;
+	line-height: 1;
 	cursor: pointer;
-	font-size: 1.5rem;
-	box-shadow: 0 2px 8px var(--shadow-color);
-	transition: all 0.3s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
 }
 
-.theme-toggle:hover {
-	transform: scale(1.1);
-	box-shadow: 0 4px 12px var(--shadow-hover);
+.theme-toggle__icon {
+	font-size: 1.05rem;
+	line-height: 1;
 }
 
-.theme-toggle:focus {
-	outline: 2px solid var(--link-color);
-	outline-offset: 2px;
+.theme-toggle__text {
+	letter-spacing: 0.02em;
+}
+
+.theme-toggle__btn:hover:not(.is-active) {
+	color: var(--text-primary);
+	background-color: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="dark"] .theme-toggle__btn:hover:not(.is-active) {
+	background-color: rgba(255, 255, 255, 0.06);
+}
+
+.theme-toggle__btn.is-active {
+	background-color: var(--toggle-bg);
+	color: var(--toggle-text);
+	box-shadow: 0 0.125rem 0.35rem var(--shadow-color);
+}
+
+.theme-toggle__btn:focus {
+	outline: none;
+}
+
+.theme-toggle__btn:focus-visible {
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.35);
+}
+
+.theme-toggle__btn.is-active:focus-visible {
+	box-shadow: 0 0.125rem 0.35rem var(--shadow-color), 0 0 0 0.2rem
+		rgba(13, 110, 253, 0.35);
+}
+
+@media (max-width: 380px) {
+	.theme-toggle__text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.theme-toggle__btn {
+		min-width: 2.75rem;
+		padding: 0.4rem 0.5rem;
+	}
 }
 
 /* ============================================
@@ -377,11 +466,92 @@ select:focus {
 	box-shadow: 0 2px 5px var(--shadow-color);
 }
 
+/* Desktop: icon toggle hidden; panel is always visible */
+.google-translate-widget__toggle {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	box-shadow: 0 2px 5px var(--shadow-color);
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.google-translate-widget__toggle svg {
+	width: 22px;
+	height: 22px;
+	display: block;
+}
+
+.google-translate-widget__toggle:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+.google-translate-widget__toggle:focus {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+.google-translate-widget__panel {
+	display: block;
+}
+
+#google_translate_element {
+	position: relative;
+}
+
 /* Keep injected Google Translate content from stretching the widget */
-.google-translate-widget > div,
+.google-translate-widget__panel > div,
 .google-translate-widget iframe,
 .google-translate-widget .goog-te-combo {
 	max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+	.google-translate-widget {
+		padding: 0;
+		background: transparent;
+		box-shadow: none;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.google-translate-widget__toggle {
+		display: flex;
+	}
+
+	.google-translate-widget__panel {
+		display: none;
+		position: absolute;
+		top: calc(100% + 6px);
+		left: 0;
+		z-index: 10000;
+		min-width: min(260px, calc(100vw - 20px));
+		padding: 8px 10px;
+		background: var(--bg-primary);
+		border-radius: 8px;
+		box-shadow: 0 4px 16px var(--shadow-color);
+	}
+
+	.google-translate-widget.is-open .google-translate-widget__panel {
+		display: block;
+	}
+
+	.google-translate-widget .goog-te-combo {
+		font-size: 0.875rem;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
 }
 
 /* ============================================
@@ -450,11 +620,8 @@ body {
 
 	/* Theme toggle positioning on mobile */
 	.theme-toggle {
-		top: 10px;
-		right: 10px;
-		width: 45px;
-		height: 45px;
-		font-size: 1.25rem;
+		top: 8px;
+		right: 8px;
 	}
 
 	/* Card adjustments */
@@ -514,12 +681,6 @@ body {
 @media (min-width: 576px) and (max-width: 767.98px) {
 	.display-3 {
 		font-size: 2.5rem;
-	}
-
-	.theme-toggle {
-		width: 48px;
-		height: 48px;
-		font-size: 1.4rem;
 	}
 }
 
@@ -589,10 +750,6 @@ button:focus-visible {
 		animation-iteration-count: 1;
 		transition-duration: 0.01ms;
 		scroll-behavior: auto;
-	}
-
-	.theme-toggle:hover {
-		transform: none;
 	}
 }
 

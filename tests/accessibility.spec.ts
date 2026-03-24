@@ -47,25 +47,21 @@ test.describe("Accessibility Tests", () => {
 	test("should have theme toggle functionality", async ({ page }) => {
 		test.setTimeout(15000);
 		await page.goto("/");
-		const themeToggle = page.locator("#theme-toggle-btn");
-		const visible = await themeToggle
+		const themeRoot = page.locator("#theme-toggle-root");
+		const visible = await themeRoot
 			.waitFor({ state: "visible", timeout: 5000 })
 			.then(() => true)
 			.catch(() => false);
 		if (!visible) return;
-		const initialTheme = await page.locator("html").getAttribute("data-theme");
-		const initialAriaLabel = await themeToggle
-			.first()
-			.getAttribute("aria-label");
-		await page.evaluate(() =>
-			document.getElementById("theme-toggle-btn")?.click(),
-		);
-		await page.waitForTimeout(500);
-		const newTheme = await page.locator("html").getAttribute("data-theme");
-		const newAriaLabel = await themeToggle.first().getAttribute("aria-label");
-		const themeChanged = newTheme !== initialTheme;
-		const buttonUpdated = (newAriaLabel ?? "") !== (initialAriaLabel ?? "");
-		expect(themeChanged || buttonUpdated).toBeTruthy();
+		await page.evaluate(() => {
+			localStorage.setItem("site-theme-preference", "light");
+			window.themeToggle?.set("light");
+		});
+		const darkBtn = themeRoot.locator('button[data-theme="dark"]');
+		await darkBtn.click();
+		await page.waitForTimeout(300);
+		await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+		await expect(darkBtn).toHaveAttribute("aria-pressed", "true");
 	});
 
 	test("should have proper heading hierarchy", async ({ page }) => {

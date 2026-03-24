@@ -1,103 +1,76 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Theme Toggle Tests", () => {
-	test("should have theme toggle button", async ({ page }) => {
+	test("should have theme toggle control", async ({ page }) => {
 		await page.goto("/");
 
-		// Look for theme toggle button
-		const themeToggle = page.locator(
-			'button[aria-label*="theme" i], .theme-toggle, #theme-toggle',
+		const root = page.locator("#theme-toggle-root");
+		if ((await root.count()) > 0) {
+			await expect(root).toBeVisible();
+		}
+	});
+
+	test("should switch theme via segmented control", async ({ page }) => {
+		await page.goto("/");
+
+		const root = page.locator("#theme-toggle-root");
+		if ((await root.count()) === 0) return;
+
+		await page.evaluate(() => {
+			localStorage.setItem("site-theme-preference", "light");
+			window.themeToggle?.set("light");
+		});
+
+		const htmlElement = page.locator("html");
+		await expect(htmlElement).toHaveAttribute("data-theme", "light");
+
+		await root.locator('button[data-theme="dark"]').click();
+		await expect(htmlElement).toHaveAttribute("data-theme", "dark");
+
+		await root.locator('button[data-theme="light"]').click();
+		await expect(htmlElement).toHaveAttribute("data-theme", "light");
+	});
+
+	test("should persist theme preference", async ({ page }) => {
+		await page.goto("/");
+
+		const root = page.locator("#theme-toggle-root");
+		if ((await root.count()) === 0) return;
+
+		await root.locator('button[data-theme="dark"]').click();
+		const htmlElement = page.locator("html");
+		const darkTheme = await htmlElement.getAttribute("data-theme");
+
+		await page.reload();
+		const persistedTheme = await htmlElement.getAttribute("data-theme");
+		expect(persistedTheme).toBe(darkTheme);
+	});
+
+	test("should change theme CSS variables in dark mode", async ({ page }) => {
+		await page.goto("/");
+
+		const root = page.locator("#theme-toggle-root");
+		if ((await root.count()) === 0) return;
+
+		await page.evaluate(() => {
+			localStorage.setItem("site-theme-preference", "light");
+			window.themeToggle?.set("light");
+		});
+
+		const lightToken = await page.evaluate(() =>
+			getComputedStyle(document.documentElement)
+				.getPropertyValue("--bg-primary")
+				.trim(),
 		);
-		if ((await themeToggle.count()) > 0) {
-			await expect(themeToggle).toBeVisible();
-		}
-	});
 
-	test("should toggle between light and dark theme", async ({ page }) => {
-		await page.goto("/");
+		await root.locator('button[data-theme="dark"]').click();
 
-		const themeToggle = page
-			.locator('button[aria-label*="theme" i], .theme-toggle, #theme-toggle')
-			.first();
+		const darkToken = await page.evaluate(() =>
+			getComputedStyle(document.documentElement)
+				.getPropertyValue("--bg-primary")
+				.trim(),
+		);
 
-		// Check if theme toggle exists
-		if ((await themeToggle.count()) > 0) {
-			// Get initial theme
-			const htmlElement = page.locator("html");
-			const initialTheme = await htmlElement.getAttribute("data-theme");
-
-			// Click to toggle theme
-			await themeToggle.click();
-
-			// Wait for theme change
-			await page.waitForTimeout(300);
-
-			// Get new theme
-			const newTheme = await htmlElement.getAttribute("data-theme");
-
-			// Verify theme changed
-			expect(newTheme).not.toBe(initialTheme);
-
-			// Toggle back
-			await themeToggle.click();
-			await page.waitForTimeout(300);
-
-			// Verify we're back to original theme
-			const finalTheme = await htmlElement.getAttribute("data-theme");
-			expect(finalTheme).toBe(initialTheme);
-		}
-	});
-
-	test("should persist theme preference", async ({ page, context }) => {
-		await page.goto("/");
-
-		const themeToggle = page
-			.locator('button[aria-label*="theme" i], .theme-toggle, #theme-toggle')
-			.first();
-
-		if ((await themeToggle.count()) > 0) {
-			// Set to dark theme
-			await themeToggle.click();
-			await page.waitForTimeout(300);
-
-			const htmlElement = page.locator("html");
-			const darkTheme = await htmlElement.getAttribute("data-theme");
-
-			// Reload page
-			await page.reload();
-
-			// Check if theme persisted
-			const persistedTheme = await htmlElement.getAttribute("data-theme");
-			expect(persistedTheme).toBe(darkTheme);
-		}
-	});
-
-	test("should apply correct styles in dark mode", async ({ page }) => {
-		await page.goto("/");
-
-		const themeToggle = page
-			.locator('button[aria-label*="theme" i], .theme-toggle, #theme-toggle')
-			.first();
-
-		if ((await themeToggle.count()) > 0) {
-			const htmlElement = page.locator("html");
-
-			// Check initial background color
-			const initialBg = await page.evaluate(() => {
-				return window.getComputedStyle(document.body).backgroundColor;
-			});
-
-			// Toggle to dark mode
-			await themeToggle.click();
-			await page.waitForTimeout(300);
-
-			// Check if background changed
-			const darkBg = await page.evaluate(() => {
-				return window.getComputedStyle(document.body).backgroundColor;
-			});
-
-			// Background should be different
-			expect(darkBg).not.toBe(initialBg);
-		}
+		expect(lightToken).not.toBe(darkToken);
 	});
 });

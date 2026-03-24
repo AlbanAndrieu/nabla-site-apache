@@ -51,9 +51,8 @@
 		);
 	}
 
-	// ----- Theme (formerly theme-toggle.js) -----
+	// ----- Theme (aligned with theme-toggle.js) -----
 	(() => {
-		// Theme constants
 		const THEMES = {
 			LIGHT: "light",
 			DARK: "dark",
@@ -61,15 +60,14 @@
 		};
 
 		const STORAGE_KEY = "site-theme-preference";
-		const THEME_ICONS = {
-			[THEMES.LIGHT]: "☀️",
-			[THEMES.DARK]: "🌙",
-			[THEMES.AUTO]: "🌓",
-		};
+		const ROOT_ID = "theme-toggle-root";
 
-		/**
-		 * Get user's preferred color scheme from browser
-		 */
+		const MODE_META = [
+			{ theme: THEMES.LIGHT, label: "Light", short: "Light", icon: "☀️" },
+			{ theme: THEMES.DARK, label: "Dark", short: "Dark", icon: "🌙" },
+			{ theme: THEMES.AUTO, label: "Auto (system)", short: "Auto", icon: "🌓" },
+		];
+
 		function getSystemPreference() {
 			if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
 				return THEMES.DARK;
@@ -77,24 +75,18 @@
 			return THEMES.LIGHT;
 		}
 
-		/**
-		 * Get stored theme preference or default to dark
-		 */
 		function getStoredTheme() {
 			try {
 				const stored = localStorage.getItem(STORAGE_KEY);
 				return stored && Object.values(THEMES).includes(stored)
 					? stored
-					: THEMES.DARK;
+					: THEMES.AUTO;
 			} catch (e) {
 				console.warn("Unable to access localStorage:", e);
-				return THEMES.DARK;
+				return THEMES.AUTO;
 			}
 		}
 
-		/**
-		 * Store theme preference
-		 */
 		function storeTheme(theme) {
 			try {
 				localStorage.setItem(STORAGE_KEY, theme);
@@ -103,29 +95,25 @@
 			}
 		}
 
-		/**
-		 * Apply theme to document
-		 */
+		function updateToggleChrome(preference) {
+			const root = document.getElementById(ROOT_ID);
+			if (!root) return;
+
+			root.querySelectorAll(".theme-toggle__btn").forEach((btn) => {
+				const t = btn.getAttribute("data-theme");
+				const on = t === preference;
+				btn.setAttribute("aria-pressed", on ? "true" : "false");
+				btn.classList.toggle("is-active", on);
+			});
+		}
+
 		function applyTheme(theme) {
 			const effectiveTheme =
 				theme === THEMES.AUTO ? getSystemPreference() : theme;
 
-			// Set data attribute on html element
 			document.documentElement.setAttribute("data-theme", effectiveTheme);
+			updateToggleChrome(theme);
 
-			// Update button icon if it exists
-			const button = document.getElementById("theme-toggle-btn");
-			if (button) {
-				const nextTheme = getNextTheme(theme);
-				button.textContent = THEME_ICONS[nextTheme];
-				button.setAttribute(
-					"aria-label",
-					`Switch to ${nextTheme} theme (current: ${theme})`,
-				);
-				button.setAttribute("title", `Switch to ${nextTheme} theme`);
-			}
-
-			// Dispatch event for other scripts to react to theme changes
 			window.dispatchEvent(
 				new CustomEvent("themechange", {
 					detail: { theme: effectiveTheme, preference: theme },
@@ -133,9 +121,6 @@
 			);
 		}
 
-		/**
-		 * Get next theme in rotation: light -> dark -> auto -> light
-		 */
 		function getNextTheme(currentTheme) {
 			switch (currentTheme) {
 				case THEMES.LIGHT:
@@ -147,58 +132,65 @@
 			}
 		}
 
-		/**
-		 * Toggle theme
-		 */
-		function toggleTheme() {
-			const currentTheme = getStoredTheme();
-			const nextTheme = getNextTheme(currentTheme);
-			storeTheme(nextTheme);
-			applyTheme(nextTheme);
-
-			// Analytics tracking (if available)
+		function setTheme(theme) {
+			if (!Object.values(THEMES).includes(theme)) return;
+			storeTheme(theme);
+			applyTheme(theme);
 			if (typeof gtag === "function") {
 				gtag("event", "theme_toggle", {
 					event_category: "UI",
-					event_label: nextTheme,
+					event_label: theme,
 				});
 			}
 		}
 
-		/**
-		 * Create and inject theme toggle button
-		 */
+		function toggleTheme() {
+			const currentTheme = getStoredTheme();
+			const nextTheme = getNextTheme(currentTheme);
+			setTheme(nextTheme);
+		}
+
 		function createThemeToggle() {
-			// Check if button already exists
-			if (document.getElementById("theme-toggle-btn")) {
+			if (document.getElementById(ROOT_ID)) {
 				return;
 			}
 
-			const currentTheme = getStoredTheme();
-			const nextTheme = getNextTheme(currentTheme);
+			const preference = getStoredTheme();
 
-			const button = document.createElement("button");
-			button.id = "theme-toggle-btn";
-			button.className = "theme-toggle";
-			button.textContent = THEME_ICONS[nextTheme];
-			button.setAttribute(
-				"aria-label",
-				`Switch to ${nextTheme} theme (current: ${currentTheme})`,
-			);
-			button.setAttribute("title", `Switch to ${nextTheme} theme`);
-			button.setAttribute("type", "button");
+			const root = document.createElement("div");
+			root.id = ROOT_ID;
+			root.className = "theme-toggle";
+			root.setAttribute("role", "region");
+			root.setAttribute("aria-label", "Display theme");
 
-			button.addEventListener("click", toggleTheme);
+			const track = document.createElement("div");
+			track.className = "theme-toggle__track";
+			track.setAttribute("role", "group");
+			track.setAttribute("aria-label", "Color mode");
 
-			// Add keyboard support
-			button.addEventListener("keydown", (e) => {
-				if (e.key === "Enter" || e.key === " ") {
-					e.preventDefault();
-					toggleTheme();
-				}
-			});
+			for (const { theme, label, short, icon } of MODE_META) {
+				const btn = document.createElement("button");
+				btn.type = "button";
+				btn.className = "theme-toggle__btn";
+				btn.dataset.theme = theme;
+				btn.setAttribute("aria-label", label);
+				btn.setAttribute("title", label);
+				const span = document.createElement("span");
+				span.className = "theme-toggle__icon";
+				span.setAttribute("aria-hidden", "true");
+				span.textContent = icon;
+				btn.appendChild(span);
+				const text = document.createElement("span");
+				text.className = "theme-toggle__text";
+				text.textContent = short;
+				btn.appendChild(text);
+				btn.addEventListener("click", () => setTheme(theme));
+				track.appendChild(btn);
+			}
 
-			document.body.appendChild(button);
+			root.appendChild(track);
+			document.body.appendChild(root);
+			updateToggleChrome(preference);
 		}
 
 		/**
@@ -256,15 +248,9 @@
 		// Initialize immediately
 		initTheme();
 
-		// Expose API for programmatic control
 		window.themeToggle = {
 			toggle: toggleTheme,
-			set: (theme) => {
-				if (Object.values(THEMES).includes(theme)) {
-					storeTheme(theme);
-					applyTheme(theme);
-				}
-			},
+			set: setTheme,
 			get: getStoredTheme,
 			getEffective: () => {
 				const theme = getStoredTheme();
@@ -345,15 +331,53 @@
 		var INCLUDED_LANGS =
 			"en,fr,no,de,es,it,pt,nl,sv,da,fi,pl,cs,ru,ar,ja,zh-CN";
 
+		var TOGGLE_SVG =
+			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+
+		function bindMobileToggle(wrap, toggle) {
+			function setOpen(open) {
+				wrap.classList.toggle("is-open", open);
+				toggle.setAttribute("aria-expanded", open ? "true" : "false");
+			}
+			toggle.addEventListener("click", function (e) {
+				e.stopPropagation();
+				setOpen(!wrap.classList.contains("is-open"));
+			});
+			document.addEventListener("click", function (e) {
+				var t = e.target;
+				if (t instanceof Node && !wrap.contains(t)) setOpen(false);
+			});
+			document.addEventListener("keydown", function (e) {
+				if (e.key === "Escape") setOpen(false);
+			});
+		}
+
 		function ensureMount() {
 			var el = document.getElementById("google_translate_element");
 			if (el) return el;
 			var wrap = document.createElement("div");
 			wrap.className = "google-translate-widget";
 			wrap.setAttribute("aria-label", "Language translation options");
+
+			var toggle = document.createElement("button");
+			toggle.type = "button";
+			toggle.className = "google-translate-widget__toggle";
+			toggle.setAttribute("aria-expanded", "false");
+			toggle.setAttribute("aria-controls", "google_translate_element");
+			toggle.setAttribute("aria-label", "Choose translation language");
+			toggle.innerHTML = TOGGLE_SVG;
+
+			var panel = document.createElement("div");
+			panel.className = "google-translate-widget__panel";
+
 			el = document.createElement("div");
 			el.id = "google_translate_element";
-			wrap.appendChild(el);
+			panel.appendChild(el);
+
+			wrap.appendChild(toggle);
+			wrap.appendChild(panel);
+			bindMobileToggle(wrap, toggle);
+
 			var body = document.body;
 			if (body) {
 				body.insertBefore(wrap, body.firstChild);
@@ -431,14 +455,33 @@
 		".service-card, .skill-category, .tool-item, .contact-card, .social-card, .js-animate-on-scroll, [data-animate-on-scroll]";
 
 	function initSmoothScroll() {
-		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener("click", function (e) {
-				var href = this.getAttribute("href");
+		/* Delegation: catches footer / late links; one listener vs every anchor */
+		document.addEventListener(
+			"click",
+			function (e) {
+				if (e.defaultPrevented) return;
+				var anchor =
+					e.target &&
+					e.target.closest &&
+					e.target.closest('a[href^="#"]');
+				if (!anchor) return;
+				var href = anchor.getAttribute("href");
 				if (!href || href === "#" || href.length <= 1) return;
-				var target = document.querySelector(href);
+				/* #top targets <a name="top">; native hash + scrollingElement alone are unreliable */
+				var frag = href.slice(1);
+				if (/^top$/i.test(frag)) {
+					e.preventDefault();
+					scrollToTopOfPage();
+					return;
+				}
+				var target;
+				try {
+					target = document.querySelector(href);
+				} catch (err) {
+					return;
+				}
 				if (target) {
 					e.preventDefault();
-					/* scrollIntoView on document.body/html does not scroll the window reliably */
 					if (
 						target === document.body ||
 						target === document.documentElement
@@ -448,8 +491,9 @@
 						target.scrollIntoView({ behavior: "smooth", block: "start" });
 					}
 				}
-			});
-		});
+			},
+			false,
+		);
 	}
 
 	function initScrollReveal() {
@@ -693,6 +737,7 @@
 		btn.id = PRINT_PDF_BTN_ID;
 		btn.className = "print-button";
 		btn.setAttribute("aria-label", labels.aria);
+		btn.setAttribute("title", labels.text);
 		btn.innerHTML = PRINT_PDF_SVG;
 		var span = document.createElement("span");
 		span.className = "print-button__label";
@@ -731,12 +776,26 @@
 	}
 
 	function scrollToTopOfPage() {
-		var reduce =
-			window.matchMedia &&
-			window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-		var behavior = reduce ? "auto" : "smooth";
-		/* id="top" on <body> is common; body.scrollIntoView often no-ops for the viewport */
-		window.scrollTo({ top: 0, left: 0, behavior: behavior });
+		/* Instant + window + html + body + scrollingElement: fragment #top / overflow-x on
+		   html leave scrollingElement.scrollTo(smooth) ineffective in common WebKit/Chromium cases. */
+		try {
+			window.scrollTo(0, 0);
+		} catch (e) {
+			/* ignore */
+		}
+		if (document.documentElement) {
+			document.documentElement.scrollTop = 0;
+			document.documentElement.scrollLeft = 0;
+		}
+		if (document.body) {
+			document.body.scrollTop = 0;
+			document.body.scrollLeft = 0;
+		}
+		var se = document.scrollingElement;
+		if (se) {
+			se.scrollTop = 0;
+			se.scrollLeft = 0;
+		}
 	}
 
 	function removeLegacyBackToTopFabs() {
