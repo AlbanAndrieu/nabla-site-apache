@@ -6,8 +6,8 @@ BIB = bibtex
 OPEN = xdg-open
 MAX_TRY = 5
 
-### Main LaTeX file
-MAIN = cv-aandrieu-2026-en.tex
+### All standalone CV LaTeX sources in this directory
+TEX_MAIN := $(sort $(wildcard cv-aandrieu-*.tex))
 
 ### Files that are included (producing .aux file)
 INCLUDED_FILES =
@@ -15,10 +15,8 @@ INCLUDED_FILES =
 ### Files that are included/input (not producing .aux file)
 OTHER_FILES =
 
-SOURCES = \
-	$(MAIN) \
-	$(INCLUDED_FILES) \
-	$(OTHER_FILES)
+### Default PDF for view (after `make pdf`)
+VIEW_PDF = cv-aandrieu-2026-en.pdf
 
 ### Files that are not  included/input but should be in the distribution
 EXTRA_DIST = \
@@ -26,34 +24,25 @@ EXTRA_DIST = \
 	alban-andrieu-19-12-2017.png
 
 VERSION = $(shell git describe --always --dirty)
-DIST = $(MAIN:.tex=-$(VERSION).tar.gz)
+DIST = cv-src-$(VERSION).tar.gz
 
-PDF = $(MAIN:.tex=.pdf)
+PDFS = $(TEX_MAIN:.tex=.pdf)
+DONES = $(TEX_MAIN:.tex=.done)
 
-DIRTY_FILES = \
-	$(MAIN:.tex=.aux) \
-	$(INCLUDED_FILES:.tex=.aux) \
-	$(MAIN:.tex=.bbl) \
-	$(INCLUDED_FILES:.tex=.bbl) \
-	$(MAIN:.tex=.blg) \
-	$(INCLUDED_FILES:.tex=.blg) \
-	$(MAIN:.tex=.done) \
-	$(MAIN:.tex=.lof) \
-	$(MAIN:.tex=.lot) \
-	$(MAIN:.tex=.out) \
-	$(MAIN:.tex=.toc)
+# One line so checkmake does not treat tab-indented continuations as recipe lines.
+DIRTY_FILES := $(foreach m,$(TEX_MAIN),$(m:.tex=.aux) $(m:.tex=.bbl) $(m:.tex=.blg) $(m:.tex=.done) $(m:.tex=.lof) $(m:.tex=.lot) $(m:.tex=.out) $(m:.tex=.toc))
 
 NEED_RUN_MSG_REGEX=\(Rerun to get citations correct\)
 
-.PHONY: all pdf view clean clean-all dist
+.PHONY: all pdf view clean clean-all dist test $(PDFS)
 .SUFFIX: .tex .aux .bbl .pdf .done
 
 all: pdf
 
-pdf: $(PDF)
+pdf: $(PDFS)
 
-view: $(PDF)
-	$(OPEN) $(PDF)
+view: pdf
+	$(OPEN) '$(VIEW_PDF)'
 
 dist: $(DIST)
 
@@ -61,25 +50,17 @@ clean:
 	rm -f *~ */*~ $(DIRTY_FILES) $(DIST)
 
 clean-all: clean
-	rm -f $(PDF)
+	rm -f $(PDFS)
 
-run_tex: $(MAIN)
-	CPT=0; \
-	while \
-		[ $${CPT} -lt $(MAX_TRY) ] \
-		&& $(TEX) $(TEX_OPTS) "$<" \
-		&& grep -q "$(NEED_RUN_MSG_REGEX)" \
-		"$(<:.tex=.log)"; \
-	do CPT=$$((CPT+1)) ; done
-
-.PHONY: PDF
-$(PDF): $(MAIN:.tex=.done)
-
-## —— Build 🚀 —————————————————————————————————————————————————————————————————
-.PHONY: MAIN
-$(MAIN:.tex=.done): $(SOURCES) $(EXTRA_DIST)
-	make run_tex
+$(DONES): %.done: %.tex $(EXTRA_DIST)
+	CPT=0; while [ $$CPT -lt $(MAX_TRY) ] && $(TEX) $(TEX_OPTS) "$<" && grep -q "$(NEED_RUN_MSG_REGEX)" "$(<:.tex=.log)"; do CPT=$$((CPT+1)); done
 	touch "$@"
 
-$(DIST): $(SOURCES) $(EXTRA_DIST)
-	tar -czf "$@" $^
+$(PDFS): %.pdf: %.done
+
+## —— Build 🚀 —————————————————————————————————————————————————————————————————
+$(DIST): $(TEX_MAIN) $(EXTRA_DIST)
+	tar -czf "$@" $(TEX_MAIN) $(EXTRA_DIST)
+
+test: $(PDFS)
+	set -e; for p in $(PDFS); do test -f "$$p"; done

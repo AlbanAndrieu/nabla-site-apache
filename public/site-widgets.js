@@ -438,7 +438,15 @@
 				var target = document.querySelector(href);
 				if (target) {
 					e.preventDefault();
-					target.scrollIntoView({ behavior: "smooth", block: "start" });
+					/* scrollIntoView on document.body/html does not scroll the window reliably */
+					if (
+						target === document.body ||
+						target === document.documentElement
+					) {
+						scrollToTopOfPage();
+					} else {
+						target.scrollIntoView({ behavior: "smooth", block: "start" });
+					}
 				}
 			});
 		});
@@ -727,12 +735,8 @@
 			window.matchMedia &&
 			window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		var behavior = reduce ? "auto" : "smooth";
-		var topEl = document.getElementById("top");
-		if (topEl) {
-			topEl.scrollIntoView({ behavior: behavior, block: "start" });
-		} else {
-			window.scrollTo({ top: 0, behavior: behavior });
-		}
+		/* id="top" on <body> is common; body.scrollIntoView often no-ops for the viewport */
+		window.scrollTo({ top: 0, left: 0, behavior: behavior });
 	}
 
 	function removeLegacyBackToTopFabs() {

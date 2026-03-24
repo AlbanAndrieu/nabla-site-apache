@@ -703,16 +703,6 @@ html[data-theme="light"] .page-dark .legal-quote {
 	border-left-color: var(--bs-info);
 }
 
-.page-dark .timeline-item {
-	border-left-color: rgba(59, 130, 246, 0.9);
-}
-
-.timeline-item {
-	border-left: 3px solid var(--bs-primary, #0d6efd);
-	padding-left: 1rem;
-	margin-bottom: 1.25rem;
-}
-
 .cite-ref {
 	font-size: 0.9em;
 	color: var(--bs-secondary);

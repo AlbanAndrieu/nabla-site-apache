@@ -12,7 +12,7 @@
 		/>
 		<meta
 			name="keywords"
-			content="AI Best Practices, Machine Learning, LLM, Artificial Intelligence, OpenCommit, n8n Workflows, Opik, Nvidia Nemotron, MCP Servers, AI Tools, DevSecOps"
+			content="AI Best Practices, Machine Learning, LLM, Artificial Intelligence, OpenCommit, n8n Workflows, Opik, Nvidia Nemotron, MCP Servers, OpenShell, Open Terminal, AI Tools, DevSecOps"
 		/>
 		<meta name="author" content="alban.andrieu@dr-alban.com" />
 		<meta name="robots" content="index, follow" />
@@ -104,7 +104,7 @@
 					}
 				},
 				"datePublished": "2026-01-28",
-				"dateModified": "2026-01-28",
+				"dateModified": "2026-03-24",
 				"description": "Comprehensive guide to AI best practices, tools, and resources for developers and DevSecOps professionals",
 				"mainEntityOfPage": {
 					"@type": "WebPage",
@@ -132,9 +132,9 @@
 
 		<!-- Main Content -->
 		<main id="main-content" role="main" class="mb-5">
-			<section class="content-section">
+			<section class="content-section" aria-label="AI best practices overview and resources">
 				<!-- Introduction -->
-				<article class="intro-section">
+				<article id="introduction" class="intro-section">
 					<p>
 						As artificial intelligence continues to revolutionize software development, staying informed about the
 						latest tools, frameworks, and methodologies is crucial for developers and DevSecOps professionals. This page
@@ -147,8 +147,14 @@
 				</article>
 
 				<!-- Workflow Automation & Tools -->
-				<section class="category-section">
-					<h2 class="category-title"><i class="fas fa-robot"></i> Workflow Automation & AI Tools</h2>
+				<section
+					id="workflow-automation-ai-tools"
+					class="category-section"
+					aria-labelledby="workflow-automation-heading"
+				>
+					<h2 id="workflow-automation-heading" class="category-title">
+						<i class="fas fa-robot"></i> Workflow Automation & AI Tools
+					</h2>
 					<div class="resource-grid">
 						<!-- n8n Workflows Collection -->
 						<article class="resource-card">
@@ -215,12 +221,58 @@
 								Read Documentation
 							</a>
 						</article>
+
+						<!-- NVIDIA OpenShell -->
+						<article id="nvidia-openshell" class="resource-card">
+							<h3>
+								<i class="fas fa-shield-halved resource-card-icon"></i>
+								NVIDIA OpenShell
+							</h3>
+							<p>
+								A sandboxed runtime for autonomous AI agents: isolated containers, declarative YAML policies for
+								filesystem, network, process, and inference routing, plus credential providers so keys stay off the
+								sandbox filesystem. Useful when you need governed egress and a clear boundary around agent tooling.
+							</p>
+							<a
+								href="https://github.com/NVIDIA/OpenShell"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fab fa-github"></i>
+								View on GitHub
+							</a>
+						</article>
+
+						<!-- Open Terminal (open-webui) -->
+						<article id="open-terminal" class="resource-card">
+							<h3>
+								<i class="fas fa-terminal resource-card-icon"></i>
+								Open Terminal
+							</h3>
+							<p>
+								A lightweight, self-hosted terminal exposed over a simple REST API so AI agents and automation can run
+								commands, manage files, and execute code. Run it in Docker for isolation or on bare metal for full host
+								access during local development.
+							</p>
+							<a
+								href="https://github.com/open-webui/open-terminal"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fab fa-github"></i>
+								View on GitHub
+							</a>
+						</article>
 					</div>
 				</section>
 
 				<!-- AI Models & Frameworks -->
-				<section class="category-section">
-					<h2 class="category-title"><i class="fas fa-microchip"></i> AI Models & Frameworks</h2>
+				<section id="ai-models-frameworks" class="category-section" aria-labelledby="ai-models-frameworks-heading">
+					<h2 id="ai-models-frameworks-heading" class="category-title">
+						<i class="fas fa-microchip"></i> AI Models & Frameworks
+					</h2>
 					<div class="resource-grid">
 						<!-- Nvidia Nemotron -->
 						<article class="resource-card">
@@ -286,8 +338,10 @@
 				</section>
 
 				<!-- Learning Resources -->
-				<section class="category-section">
-					<h2 class="category-title"><i class="fas fa-graduation-cap"></i> Learning & Understanding</h2>
+				<section id="learning-understanding" class="category-section" aria-labelledby="learning-understanding-heading">
+					<h2 id="learning-understanding-heading" class="category-title">
+						<i class="fas fa-graduation-cap"></i> Learning & Understanding
+					</h2>
 					<div class="resource-grid">
 						<!-- Visual Guide to Reasoning LLMs -->
 						<article class="resource-card">
@@ -314,8 +368,10 @@
 				</section>
 
 				<!-- Best Practices Section -->
-				<section class="category-section">
-					<h2 class="category-title"><i class="fas fa-check-circle"></i> General Best Practices</h2>
+				<section id="general-best-practices" class="category-section" aria-labelledby="general-best-practices-heading">
+					<h2 id="general-best-practices-heading" class="category-title">
+						<i class="fas fa-check-circle"></i> General Best Practices
+					</h2>
 					<article class="intro-section">
 						<h3 class="intro-section__heading">Key Principles for AI Development</h3>
 						<ul class="intro-section__list">
@@ -352,7 +408,11 @@
 				</section>
 
 				<!-- Popular AI platforms & tools -->
-				<section class="category-section nabla-platforms-section" aria-labelledby="nabla-platforms-heading">
+				<section
+					id="popular-ai-platforms-tools"
+					class="category-section nabla-platforms-section"
+					aria-labelledby="nabla-platforms-heading"
+				>
 					<h2 id="nabla-platforms-heading" class="category-title">
 						<i class="fas fa-layer-group" aria-hidden="true"></i> Popular AI Platforms &amp; Tools
 					</h2>

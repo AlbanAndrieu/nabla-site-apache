@@ -201,6 +201,77 @@
 				font-size: 1.2rem;
 			}
 
+			/* Commercial vendor rows: logo aside + “sticker” crest */
+			.resource-list-link--commercial {
+				justify-content: space-between;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.resource-list-link__lead {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.5rem;
+				min-width: 0;
+				flex: 1 1 auto;
+			}
+
+			.resource-vendor-crest {
+				flex-shrink: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.3rem;
+				margin-left: 0.5rem;
+				padding: 0.45rem 0.6rem 0.35rem;
+				border-radius: 14px;
+				background: linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94));
+				border: 1px solid rgba(180, 83, 9, 0.22);
+				box-shadow:
+					0 5px 18px rgba(15, 23, 42, 0.07),
+					inset 0 1px 0 rgba(255, 255, 255, 0.95);
+				transform: rotate(-2.5deg);
+				transition:
+					transform 0.2s ease,
+					box-shadow 0.2s ease;
+			}
+
+			.resource-list a:hover .resource-vendor-crest {
+				transform: rotate(0deg) scale(1.04);
+				box-shadow:
+					0 8px 24px rgba(15, 23, 42, 0.11),
+					inset 0 1px 0 rgba(255, 255, 255, 0.95);
+			}
+
+			.resource-vendor-crest img {
+				display: block;
+				width: 38px;
+				height: 38px;
+				object-fit: contain;
+			}
+
+			.resource-vendor-crest__tag {
+				font-size: 0.58rem;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: #b45309;
+				line-height: 1;
+				white-space: nowrap;
+			}
+
+			@media (max-width: 520px) {
+				.resource-list-link--commercial {
+					flex-wrap: wrap;
+				}
+
+				.resource-vendor-crest {
+					margin-left: auto;
+					flex-direction: row;
+					transform: rotate(-1deg);
+				}
+			}
+
 			/* Category Badge */
 			.category-badge {
 				display: inline-block;
@@ -250,7 +321,7 @@
 
 	<body id="top">
 		<!-- Hero Section -->
-		<header class="hero-section">
+		<header class="hero-section" id="hero">
 			<div class="container">
 				<h1><i class="fa-solid fa-shield-halved"></i> Security Resources & Tools</h1>
 				<p>Comprehensive collection of security resources for DevSecOps professionals</p>
@@ -258,19 +329,25 @@
 					Curated by
 					<a href="contact.html" style="color: white; text-decoration: underline">Alban Andrieu</a>
 				</p>
+				<p>
+					<a href="#security-standards-compliance" style="color: white; text-decoration: underline"
+						>Security Standards &amp; Compliance</a
+					>
+					— NIST, ISO 27001, GDPR, and compliance tooling.
+				</p>
 			</div>
 		</header>
 
 		<!-- Main Content -->
-		<main class="security-resources">
+		<main id="main-content" class="security-resources" role="main">
 			<div class="container">
 				<!-- OWASP Resources -->
-				<section class="resource-card">
+				<section id="owasp-resources" class="resource-card" aria-labelledby="owasp-resources-heading">
 					<span class="category-badge">Application Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-shield-halved"></i>
 					</div>
-					<h3>OWASP - Open Web Application Security Project</h3>
+					<h3 id="owasp-resources-heading">OWASP - Open Web Application Security Project</h3>
 					<p>
 						The OWASP Foundation works to improve the security of software through its community-led open source
 						software projects, hundreds of chapters worldwide, tens of thousands of members, and by hosting local and
@@ -341,12 +418,16 @@
 				</section>
 
 				<!-- Personal Security Checklist -->
-				<section class="resource-card">
+				<section
+					id="personal-security-checklist"
+					class="resource-card"
+					aria-labelledby="personal-security-checklist-heading"
+				>
 					<span class="category-badge">Personal Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-user-shield"></i>
 					</div>
-					<h3>Personal Security Checklist</h3>
+					<h3 id="personal-security-checklist-heading">Personal Security Checklist</h3>
 					<p>
 						A curated checklist of 300+ tips for protecting digital security and privacy in 2024. Comprehensive guide
 						covering all aspects of personal cybersecurity.
@@ -378,12 +459,16 @@
 				</section>
 
 				<!-- Network Security Tools -->
-				<section class="resource-card">
+				<section
+					id="network-security-scanning"
+					class="resource-card"
+					aria-labelledby="network-security-scanning-heading"
+				>
 					<span class="category-badge">Network Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-network-wired"></i>
 					</div>
-					<h3>Network Security & Scanning Tools</h3>
+					<h3 id="network-security-scanning-heading">Network Security & Scanning Tools</h3>
 					<p>
 						Tools and resources for network security assessment, vulnerability scanning, and network diagram generation.
 					</p>
@@ -426,12 +511,12 @@
 				</section>
 
 				<!-- System Hardening & CIS Benchmarks -->
-				<section class="resource-card">
+				<section id="system-hardening-cis" class="resource-card" aria-labelledby="system-hardening-cis-heading">
 					<span class="category-badge">System Hardening</span>
 					<div class="icon">
 						<i class="fa-solid fa-server"></i>
 					</div>
-					<h3>System Hardening & CIS Benchmarks</h3>
+					<h3 id="system-hardening-cis-heading">System Hardening & CIS Benchmarks</h3>
 					<p>Best practices and benchmarks for hardening systems and improving security posture.</p>
 					<ul class="resource-list">
 						<li>
@@ -512,12 +597,12 @@
 				</section>
 
 				<!-- SSH Security -->
-				<section class="resource-card">
+				<section id="ssh-security-hardening" class="resource-card" aria-labelledby="ssh-security-hardening-heading">
 					<span class="category-badge">SSH Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-terminal"></i>
 					</div>
-					<h3>SSH Security & Hardening</h3>
+					<h3 id="ssh-security-hardening-heading">SSH Security & Hardening</h3>
 					<p>Comprehensive guides for securing SSH access and hardening SSH configurations.</p>
 					<ul class="resource-list">
 						<li>
@@ -554,16 +639,32 @@
 								Mozilla OpenSSH Security Guidelines
 							</a>
 						</li>
+						<li>
+							<a href="ai.html#nvidia-openshell">
+								<i class="fa-solid fa-brain"></i>
+								NVIDIA OpenShell — AI page (sandboxed agent runtime)
+							</a>
+						</li>
+						<li>
+							<a href="ai.html#open-terminal">
+								<i class="fa-solid fa-terminal"></i>
+								Open Terminal — AI page (self-hosted terminal API for agents)
+							</a>
+						</li>
 					</ul>
 				</section>
 
 				<!-- Security Standards & Compliance -->
-				<section class="resource-card">
+				<section
+					id="security-standards-compliance"
+					class="resource-card"
+					aria-labelledby="security-standards-compliance-heading"
+				>
 					<span class="category-badge">Standards & Compliance</span>
 					<div class="icon">
 						<i class="fa-solid fa-file-certificate"></i>
 					</div>
-					<h3>Security Standards & Compliance</h3>
+					<h3 id="security-standards-compliance-heading">Security Standards & Compliance</h3>
 					<p>Industry standards, compliance frameworks, and regulatory guidelines for security.</p>
 					<ul class="resource-list">
 						<li>
@@ -583,27 +684,69 @@
 							</a>
 						</li>
 						<li>
+							<a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								ISO/IEC 42001 - Artificial Intelligence Management System
+							</a>
+						</li>
+						<!--
+						<li>
 							<a href="https://www.pcisecuritystandards.org/" target="_blank" rel="noopener noreferrer">
 								<i class="fa-solid fa-external-link-alt"></i>
 								PCI DSS - Payment Card Industry Data Security Standard
 							</a>
 						</li>
+						-->
 						<li>
 							<a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">
 								<i class="fa-solid fa-external-link-alt"></i>
 								GDPR - General Data Protection Regulation
 							</a>
 						</li>
+						<li>
+							<a
+								href="https://drata.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-list-link--commercial"
+							>
+								<span class="resource-list-link__lead">
+									<i class="fa-solid fa-external-link-alt" aria-hidden="true"></i>
+									<span>Drata — Continuous compliance automation (SOC 2, ISO 27001, and more)</span>
+								</span>
+								<span class="resource-vendor-crest" title="Commercial SaaS (paid subscription)">
+									<img src="assets/vendors/drata-favicon.ico" alt="" width="38" height="38" decoding="async" />
+									<span class="resource-vendor-crest__tag">Commercial</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.vanta.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-list-link--commercial"
+							>
+								<span class="resource-list-link__lead">
+									<i class="fa-solid fa-external-link-alt" aria-hidden="true"></i>
+									<span>Vanta — Automated compliance, evidence collection, and trust management</span>
+								</span>
+								<span class="resource-vendor-crest" title="Commercial SaaS (paid subscription)">
+									<img src="assets/vendors/vanta-mark.png" alt="" width="38" height="38" decoding="async" />
+									<span class="resource-vendor-crest__tag">Commercial</span>
+								</span>
+							</a>
+						</li>
 					</ul>
 				</section>
 
 				<!-- Vulnerability Management -->
-				<section class="resource-card">
+				<section id="vulnerability-management" class="resource-card" aria-labelledby="vulnerability-management-heading">
 					<span class="category-badge">Vulnerability Management</span>
 					<div class="icon">
 						<i class="fa-solid fa-bug"></i>
 					</div>
-					<h3>Vulnerability Management & Scanning</h3>
+					<h3 id="vulnerability-management-heading">Vulnerability Management & Scanning</h3>
 					<p>Tools and resources for identifying, assessing, and managing vulnerabilities.</p>
 					<ul class="resource-list">
 						<li>
@@ -640,12 +783,16 @@
 				</section>
 
 				<!-- Vulnerability Scanning / DAST / SAST -->
-				<section class="resource-card">
+				<section
+					id="vulnerability-scanning-dast-sast"
+					class="resource-card"
+					aria-labelledby="vulnerability-scanning-dast-sast-heading"
+				>
 					<span class="category-badge">Vulnerability Scanning / DAST / SAST</span>
 					<div class="icon">
 						<i class="fa-solid fa-search"></i>
 					</div>
-					<h3>Vulnerability Scanning / DAST / SAST</h3>
+					<h3 id="vulnerability-scanning-dast-sast-heading">Vulnerability Scanning / DAST / SAST</h3>
 					<p>Multi-scanner and AI-powered static/dynamic analysis tools.</p>
 					<ul class="resource-list">
 						<li>
@@ -668,12 +815,12 @@
 				</section>
 
 				<!-- Pentest-Tools.com -->
-				<section class="resource-card">
+				<section id="pentest-tools" class="resource-card" aria-labelledby="pentest-tools-heading">
 					<span class="category-badge">Penetration Testing</span>
 					<div class="icon">
 						<i class="fa-solid fa-crosshairs"></i>
 					</div>
-					<h3>Pentest-Tools.com</h3>
+					<h3 id="pentest-tools-heading">Pentest-Tools.com</h3>
 					<p>Online penetration testing and vulnerability scanning platform.</p>
 					<ul class="resource-list">
 						<li>
@@ -686,12 +833,12 @@
 				</section>
 
 				<!-- SIEM / Malware Detection -->
-				<section class="resource-card">
+				<section id="siem-malware-detection" class="resource-card" aria-labelledby="siem-malware-detection-heading">
 					<span class="category-badge">SIEM / Malware Detection</span>
 					<div class="icon">
 						<i class="fa-solid fa-shield-virus"></i>
 					</div>
-					<h3>SIEM / Malware Detection</h3>
+					<h3 id="siem-malware-detection-heading">SIEM / Malware Detection</h3>
 					<p>Security monitoring and malware detection resources.</p>
 					<ul class="resource-list">
 						<li>
@@ -708,12 +855,12 @@
 				</section>
 
 				<!-- DevSecOps Tools -->
-				<section class="resource-card">
+				<section id="devsecops-tools" class="resource-card" aria-labelledby="devsecops-tools-heading">
 					<span class="category-badge">DevSecOps</span>
 					<div class="icon">
 						<i class="fa-solid fa-code"></i>
 					</div>
-					<h3>DevSecOps Tools & Practices</h3>
+					<h3 id="devsecops-tools-heading">DevSecOps Tools & Practices</h3>
 					<p>Tools and practices for integrating security into the DevOps pipeline.</p>
 					<ul class="resource-list">
 						<li>
@@ -824,12 +971,12 @@
 				</section>
 
 				<!-- Authentication & JWT -->
-				<section class="resource-card">
+				<section id="authentication-jwt" class="resource-card" aria-labelledby="authentication-jwt-heading">
 					<span class="category-badge">Authentication &amp; JWT</span>
 					<div class="icon">
 						<i class="fa-solid fa-key"></i>
 					</div>
-					<h3>Authentication &amp; JWT</h3>
+					<h3 id="authentication-jwt-heading">Authentication &amp; JWT</h3>
 					<p>Boilerplates and guides for secure authentication and JWT.</p>
 					<ul class="resource-list">
 						<li>
@@ -846,12 +993,16 @@
 				</section>
 
 				<!-- App & Infrastructure Security -->
-				<section class="resource-card">
+				<section
+					id="app-infrastructure-security"
+					class="resource-card"
+					aria-labelledby="app-infrastructure-security-heading"
+				>
 					<span class="category-badge">App &amp; Infrastructure Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-server"></i>
 					</div>
-					<h3>App &amp; Infrastructure Security</h3>
+					<h3 id="app-infrastructure-security-heading">App &amp; Infrastructure Security</h3>
 					<p>Best practices for securing applications and infrastructure platforms.</p>
 					<ul class="resource-list">
 						<li>
@@ -868,12 +1019,12 @@
 				</section>
 
 				<!-- Cloud Security -->
-				<section class="resource-card">
+				<section id="cloud-security-resources" class="resource-card" aria-labelledby="cloud-security-resources-heading">
 					<span class="category-badge">Cloud Security</span>
 					<div class="icon">
 						<i class="fa-solid fa-cloud"></i>
 					</div>
-					<h3>Cloud Security Resources</h3>
+					<h3 id="cloud-security-resources-heading">Cloud Security Resources</h3>
 					<p>Best practices and tools for securing cloud infrastructure and services.</p>
 					<ul class="resource-list">
 						<li>
@@ -908,12 +1059,16 @@
 				</section>
 
 				<!-- Security Learning Resources -->
-				<section class="resource-card">
+				<section
+					id="security-learning-resources"
+					class="resource-card"
+					aria-labelledby="security-learning-resources-heading"
+				>
 					<span class="category-badge">Learning & Training</span>
 					<div class="icon">
 						<i class="fa-solid fa-graduation-cap"></i>
 					</div>
-					<h3>Security Learning Resources</h3>
+					<h3 id="security-learning-resources-heading">Security Learning Resources</h3>
 					<p>Platforms and resources for learning and improving security skills.</p>
 					<ul class="resource-list">
 						<li>
@@ -944,7 +1099,7 @@
 				</section>
 			</div>
 
-			<section class="py-4" aria-labelledby="main-heading">
+			<section id="security-visualizations" class="py-4" aria-label="Interactive security visualizations">
 				<div class="py-5 border bg-light">
 					<div class="container">
 						<div class="row">

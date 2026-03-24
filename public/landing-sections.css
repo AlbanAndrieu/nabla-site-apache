@@ -508,13 +508,13 @@ html {
 	max-width: 900px;
 	margin: 0 auto;
 	position: relative;
-	padding-left: 50px;
+	padding-left: 5.5rem;
 }
 
 .timeline::before {
 	content: "";
 	position: absolute;
-	left: 20px;
+	left: 2.125rem;
 	top: 0;
 	bottom: 0;
 	width: 2px;
@@ -527,16 +527,41 @@ html {
 	padding-bottom: 2rem;
 }
 
-.timeline-marker {
+/* Icon + date on the spine (left); single vertical line via .timeline::before only */
+.timeline-node {
 	position: absolute;
-	left: -35px;
+	left: -5.5rem;
 	top: 0;
-	width: 12px;
-	height: 12px;
+	width: 4.25rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.35rem;
+	z-index: 1;
+}
+
+.timeline-node-icon {
+	width: 2.75rem;
+	height: 2.75rem;
 	border-radius: 50%;
 	background: var(--primary-color);
+	color: var(--bg-white);
 	border: 3px solid var(--bg-white);
-	box-shadow: 0 0 0 3px var(--primary-color);
+	box-shadow: 0 0 0 2px var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1rem;
+	flex-shrink: 0;
+}
+
+.timeline-node-date {
+	font-size: 0.72rem;
+	line-height: 1.25;
+	color: var(--text-light);
+	max-width: 100%;
+	font-weight: 600;
 }
 
 .timeline-content {
@@ -567,11 +592,6 @@ html {
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-right: 1rem;
-}
-
-.timeline-date {
-	color: var(--text-light);
-	font-size: 0.95rem;
 }
 
 .timeline-description {
@@ -717,15 +737,26 @@ html {
 /* Responsive Adjustments for New Sections */
 @media (max-width: 768px) {
 	.timeline {
-		padding-left: 30px;
+		padding-left: 4.25rem;
 	}
 
 	.timeline::before {
-		left: 10px;
+		left: 1.625rem;
 	}
 
-	.timeline-marker {
-		left: -25px;
+	.timeline-node {
+		left: -4.25rem;
+		width: 3.5rem;
+	}
+
+	.timeline-node-icon {
+		width: 2.35rem;
+		height: 2.35rem;
+		font-size: 0.95rem;
+	}
+
+	.timeline-node-date {
+		font-size: 0.65rem;
 	}
 
 	.timeline-content {
@@ -736,8 +767,7 @@ html {
 		font-size: 1.3rem;
 	}
 
-	.timeline-company,
-	.timeline-date {
+	.timeline-company {
 		display: block;
 		margin-bottom: 0.5rem;
 	}
