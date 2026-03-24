@@ -243,25 +243,6 @@
 				font-size: 0.9rem;
 			}
 
-			.print-button {
-				position: fixed;
-				bottom: 2rem;
-				right: 6rem;
-				background: var(--ciso-success);
-				color: white;
-				border: none;
-				padding: 0.75rem 1.5rem;
-				border-radius: 25px;
-				cursor: pointer;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-				transition: background 0.3s ease;
-				z-index: 1000;
-			}
-
-			.print-button:hover {
-				background: var(--ciso-primary);
-			}
-
 			/* Position/size from style.css (centered pair with #coffee-fab) */
 			.back-to-top {
 				background: var(--ciso-secondary);
@@ -285,36 +266,6 @@
 			footer {
 				background-color: var(--bg-secondary);
 				margin-top: 3rem;
-			}
-
-			/* Responsive Design */
-			@media (max-width: 768px) {
-				.hero-section h1 {
-					font-size: 1.8rem;
-				}
-
-				.hero-section p {
-					font-size: 1rem;
-				}
-
-				.dashboard-container {
-					grid-template-columns: 1fr;
-				}
-
-				.metrics-container {
-					flex-direction: column;
-				}
-
-				.metric-box {
-					min-width: 100%;
-				}
-
-				.print-button {
-					bottom: 6rem;
-					right: 1rem;
-					font-size: 0.9rem;
-					padding: 0.6rem 1rem;
-				}
 			}
 		</style>
 	</head>

@@ -390,6 +390,29 @@ body.page-nabla-best-practices .print-button:hover {
 	transform: none;
 }
 
+@media (max-width: 575.98px) {
+	body.page-nabla-best-practices .print-button {
+		width: 2.75rem;
+		height: 2.75rem;
+		min-width: 2.75rem;
+		padding: 0;
+		border-radius: 50%;
+		font-size: 0;
+		bottom: 12px;
+		right: 12px;
+	}
+
+	body.page-nabla-best-practices .print-button__label {
+		display: none;
+	}
+
+	body.page-nabla-best-practices .print-button__icon {
+		margin-right: 0;
+		width: 22px;
+		height: 22px;
+	}
+}
+
 @media (max-width: 768px) {
 	body.page-nabla-best-practices .hero-title {
 		font-size: 2rem;

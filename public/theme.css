@@ -429,25 +429,6 @@ html[data-theme="dark"] .theme-toggle__btn:hover:not(.is-active) {
 		rgba(13, 110, 253, 0.35);
 }
 
-@media (max-width: 380px) {
-	.theme-toggle__text {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
-	}
-
-	.theme-toggle__btn {
-		min-width: 2.75rem;
-		padding: 0.4rem 0.5rem;
-	}
-}
-
 /* ============================================
    Google Translate Widget
    ============================================ */
@@ -622,6 +603,29 @@ body {
 	.theme-toggle {
 		top: 8px;
 		right: 8px;
+	}
+
+	/* Icon-only theme segments (names stay in aria-label / title) */
+	.theme-toggle__text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.theme-toggle__track {
+		padding: 2px;
+	}
+
+	.theme-toggle__btn {
+		gap: 0;
+		min-width: 2.5rem;
+		padding: 0.35rem 0.45rem;
 	}
 
 	/* Card adjustments */

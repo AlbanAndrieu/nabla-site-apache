@@ -465,14 +465,29 @@
 		margin-right: 8px;
 	}
 
-	/* Mobile: keep print button within viewport */
+	/* Mobile: icon-only FAB (full phrase in aria-label / title) */
 	@media (max-width: 575.98px) {
 		.print-button {
 			bottom: 12px;
 			right: 12px;
-			padding: 10px 14px;
-			font-size: 13px;
-			max-width: calc(100vw - 24px);
+			width: 2.75rem;
+			height: 2.75rem;
+			min-width: 2.75rem;
+			padding: 0;
+			border-radius: 50%;
+			font-size: 0;
+			max-width: none;
+			box-sizing: border-box;
+		}
+
+		.print-button__label {
+			display: none;
+		}
+
+		.print-button__icon {
+			margin-right: 0;
+			width: 22px;
+			height: 22px;
 		}
 	}
 
