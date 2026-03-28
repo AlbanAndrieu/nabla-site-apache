@@ -10,6 +10,8 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S61UUL97)
 
+[![Crowdin](https://badges.crowdin.net/nabla/localized.svg)](https://crowdin.com/project/nabla)
+
 [CHANGELOG](./CHANGELOG.html).
 
 ## Project Goal
