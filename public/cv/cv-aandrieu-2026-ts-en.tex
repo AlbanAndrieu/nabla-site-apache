@@ -18,20 +18,27 @@
 
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-% Command for printing skill overview bubbles
+\renewcommand{\cvSidebarTechnicalSkills}{Technical Skills}
+\renewcommand{\cvSidebarOverview}{Overview}
+\renewcommand{\cvskillshublabel}{\textbf{Programming}}
+\renewcommand{\cvSidebarEducation}{Education}
+
 \newcommand\skills{
 ~
+  \cvSkillsBubblesWrap{%
 	\smartdiagram[bubble diagram]{
-        \textbf{Cloud}\\\textbf{Architect},
         \textbf{SDLC}\\\textbf{DevOps},
         \textbf{~~~~~~~~Security~~~~~~~~~},
-        \textbf{~~~~~~Container~~~~~~}\\\textbf{~~(Docker/K8s)~~},
-        \textbf{~~~~~Automation~~~~~}
-    }
+        \textbf{~~~~~~Containers~~~~~~}\\\textbf{~~(Docker/K8s)~~},
+        \textbf{~~~~~Automation~~~~~},
+        \textbf{~~~~~~AI~~~~~~}\\\textbf{\& data},
+        \textbf{~~~~Programming~~~~}\\\textbf{\& Java, C++, Python, Shell}
+    }%
+  }
 }
 
 % Programming skill bars (format: {label / level}; one "/" per item separates label from level 0--6)
-\programming{{Python Shell Java C++ / 5}, { Security Monitoring / 4}, {Docker Kubernetes SDLC / 5}}
+\programming{{Python Shell Java C++ / 3}, { Security Monitoring / 5}, {Docker Kubernetes SDLC / 4}, {AI LLM RAG MLOps / 3}}
 
 % Education
 \education{
@@ -48,13 +55,13 @@ EFREI - École d'Ingénieurs Généralistes \\
 %----------------------------------------------------------------------------------------
 
 \cvname{Alban ANDRIEU}
-\cvjobtitle{DevSecOps Cloud Architect}
+\cvjobtitle{Cloud DevSecOps Architect}
 
 \cvlinkedin{/in/nabla}
-\cvgithub{} % leave empty if not used
+\cvgithub{AlbanAndrieu}
 \cvnumberphone{+33 6 95 43 53 XX}
 \cvsite{dr-alban.com}
-\cvmail{alban.andrieu@dr-alban.com}
+\cvmail{job@dr-alban.com}
 
 %----------------------------------------------------------------------------------------
 
@@ -68,8 +75,8 @@ EFREI - École d'Ingénieurs Généralistes \\
 
 \section{Experience}
 
-\begin{twenty}
-	\twentyitem
+\begin{twentytimeline}
+	\twentyitemtimeline{\faCloud}
 		{2022 -}
 		{Present}
 		{Cloud, Integration Architect (DevSecOps)}
@@ -84,7 +91,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Business continuity, high security standards, support for AI delivery across Engineering and Data Science
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faUsers}
 		{2012 -}
 		{2022}
 		{Cloud Integration Architect}
@@ -98,7 +105,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Collaboration with development, QA, and operations for DevSecOps best practices
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faCode}
 		{2007 -}
 		{2012}
 		{Senior Software Engineer}
@@ -111,18 +118,18 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Performance optimization for high-volume transaction processing
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faBriefcase}
 		{2005 -}
 		{2010}
 		{Software Engineer}
-		{Société Générale Investment Banking (via ESN)}
+		{Société Générale Corporate \& Investment Banking (via ESN)}
 		{Paris, France}
 		{\begin{itemize}
 		\item \textbf{Focus:} Back-office information systems (EOLE, GATE)
 		\item Development and maintenance in C, PL/SQL, Java; Oracle 8i to 10g migration; True64 to Sun Solaris migration
 		\item Level 2 support, production incidents, requirements analysis with business analysts
 		\end{itemize}}
-\end{twenty}
+\end{twentytimeline}
 
 
 %----------------------------------------------------------------------------------------
@@ -130,14 +137,14 @@ EFREI - École d'Ingénieurs Généralistes \\
 %----------------------------------------------------------------------------------------
 \section{Languages}
 
-\textbf{French} — Native | \textbf{English} — Professional (TOEIC 750) | \textbf{German} — Elementary | \textbf{Norwegian} — Elementary
+\textbf{French} — Native | \textbf{English} — Professional (TOEIC 750) | \textbf{German} — Elementary
 
 %----------------------------------------------------------------------------------------
 %	 ADDITIONAL INFORMATION
 %----------------------------------------------------------------------------------------
 \section{Additional Information}
 
-Availability: Open to consulting and contract positions. Work authorization: France and EU. Remote work and distributed teams. Relocation open to discussion (e.g. Frankfurt).
+Availability: Open to consulting and contract positions. Work authorization: France and EU. Remote work and distributed teams.
 
 %----------------------------------------------------------------------------------------
 %	 PROFESSIONAL SUMMARY

@@ -43,17 +43,20 @@
 
 		<!-- Favicon -->
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+		<script src="theme-toggle.js"></script>
 
-		<!-- Custom CSS -->
 		<link rel="stylesheet" href="landing-sections.css" />
 		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
 		<link rel="stylesheet" href="style.css" />
-		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="site-content-page.css" />
 		<link rel="stylesheet" href="arf.css" />
 
-		<!-- Font Awesome -->
+		<!-- Font Awesome (CDN + JS) -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
@@ -65,18 +68,18 @@
 		></script>
 		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/solid.js"></script>
 		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
-		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
-
-		<!-- Theme toggle script - load early to prevent flash -->
-		<script src="theme-toggle.js"></script>
-
 		<!-- Bootstrap -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
 			integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+			integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
@@ -285,7 +288,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body class="site-content-page">
 		<a name="top"></a>
 		<!-- Hero Section -->
 		<header class="hero-section" id="hero">
@@ -746,22 +749,6 @@
 								OWASP ZAP - Web Application Security Scanner
 							</a>
 						</li>
-					</ul>
-				</section>
-
-				<!-- Vulnerability Scanning / DAST / SAST -->
-				<section
-					id="vulnerability-scanning-dast-sast"
-					class="resource-card"
-					aria-labelledby="vulnerability-scanning-dast-sast-heading"
-				>
-					<span class="category-badge">Vulnerability Scanning / DAST / SAST</span>
-					<div class="icon">
-						<i class="fa-solid fa-search"></i>
-					</div>
-					<h3 id="vulnerability-scanning-dast-sast-heading">Vulnerability Scanning / DAST / SAST</h3>
-					<p>Multi-scanner and AI-powered static/dynamic analysis tools.</p>
-					<ul class="resource-list">
 						<li>
 							<a href="https://github.com/OSTEsayed/OSTE-Meta-Scan" target="_blank" rel="noopener noreferrer">
 								<i class="fa-brands fa-github"></i>
@@ -776,6 +763,42 @@
 							>
 								<i class="fa-solid fa-external-link-alt"></i>
 								TheAuditor – AI-powered SAST Security Tool (korben.info)
+							</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- CI Vulnerability Scanning -->
+				<section
+					id="vulnerability-scanning-dast-sast"
+					class="resource-card"
+					aria-labelledby="vulnerability-scanning-dast-sast-heading"
+				>
+					<span class="category-badge">CI Vulnerability Scanning</span>
+					<div class="icon">
+						<i class="fa-solid fa-search"></i>
+					</div>
+					<h3 id="vulnerability-scanning-dast-sast-heading">CI Vulnerability Scanning</h3>
+					<p>Multi-scanner analysis tools.</p>
+					<ul class="resource-list">
+						<li>
+							<a
+								href="https://blog.stephane-robert.info/docs/pipeline-cicd/gitlab/outils/plumber/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								Plumber – GitLab CI/CD Vulnerability Scanning Tool
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://dashboard.infracost.io/org/albanandrieu/dashboard"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								Infracost – FinOps Cost Optimization
 							</a>
 						</li>
 					</ul>

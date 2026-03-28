@@ -23,12 +23,21 @@ export default defineConfig({
 	reporter: [
 		["html", { outputFolder: "playwright-report" }],
 		["list"],
-		...(process.env.CI ? [["github"] as const] : []),
+		...(process.env.CI
+			? [
+					["github"] as const,
+					["junit", { outputFile: "test-results/junit.xml" }] as const,
+				]
+			: []),
 	],
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
-		/* Base URL to use in actions like `await page.goto('/')`. */
-		baseURL: process.env.BASE_URL || "http://localhost:8787",
+		/* Base URL to use in actions like `await page.goto('/')`. Must match webServer url when using webServer. */
+		baseURL: process.env.BASE_URL || "http://localhost:8001",
+
+		/* Heavy pages + parallel tests against python http.server; keep below global `timeout` */
+		navigationTimeout: 30_000,
+
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: "on-first-retry",
 		/* Take screenshot on failure */
@@ -36,7 +45,8 @@ export default defineConfig({
 		actionTimeout: 10000,
 	},
 	expect: { timeout: 5000 },
-	timeout: 15000,
+	/* Per-test cap includes navigation; CI is slower (cold cache, CPU). */
+	timeout: process.env.CI ? 60_000 : 30_000,
 
 	/* Configure projects for major browsers */
 	projects: [

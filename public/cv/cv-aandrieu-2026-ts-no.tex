@@ -18,20 +18,27 @@
 
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-% Command for printing skill overview bubbles
+\renewcommand{\cvSidebarTechnicalSkills}{Tekniske ferdigheter}
+\renewcommand{\cvSidebarOverview}{Oversikt}
+\renewcommand{\cvskillshublabel}{\textbf{Programmering}}
+\renewcommand{\cvSidebarEducation}{Utdanning}
+
 \newcommand\skills{
 ~
+  \cvSkillsBubblesWrap{%
 	\smartdiagram[bubble diagram]{
-        \textbf{Cloud}\\\textbf{Arkitekt},
         \textbf{SDLC}\\\textbf{DevOps},
         \textbf{~~~~~~~~Sikkerhet~~~~~~~~~},
         \textbf{~~~~~~Container~~~~~~}\\\textbf{~~(Docker/K8s)~~},
-        \textbf{~~~~~Automatisering~~~~~}
-    }
+        \textbf{~~~~~Automatisering~~~~~},
+        \textbf{~~~~~~KI~~~~~~}\\\textbf{\& data},
+        \textbf{~~~~Programmering~~~~}\\\textbf{\& Java, C++, Python, Shell}
+    }%
+  }
 }
 
 % Programming skill bars (format: {label / level}; one "/" per item separates label from level 0--6)
-\programming{{Python Shell Java C++ / 5}, { Sikkerhet Overvåking / 4}, {Docker Kubernetes SDLC / 5}}
+\programming{{Python Shell Java C++ / 3}, { Sikkerhet overvåking / 5}, {Docker Kubernetes SDLC / 4}, {KI LLM RAG MLOps / 3}}
 
 % Education
 \education{
@@ -48,13 +55,13 @@ EFREI - École d'Ingénieurs Généralistes \\
 %----------------------------------------------------------------------------------------
 
 \cvname{Alban ANDRIEU}
-\cvjobtitle{DevSecOps skyarkitekt}
+\cvjobtitle{Cloud DevSecOps-arkitekt}
 
 \cvlinkedin{/in/nabla}
-\cvgithub{} % leave empty if not used
+\cvgithub{AlbanAndrieu}
 \cvnumberphone{+33 6 95 43 53 XX}
 \cvsite{dr-alban.com}
-\cvmail{alban.andrieu@dr-alban.com}
+\cvmail{job@dr-alban.com}
 
 %----------------------------------------------------------------------------------------
 
@@ -68,8 +75,8 @@ EFREI - École d'Ingénieurs Généralistes \\
 
 \section{Yrkeserfaring}
 
-\begin{twenty}
-	\twentyitem
+\begin{twentytimeline}
+	\twentyitemtimeline{\faCloud}
 		{2022 -}
 		{Nå}
 		{Cloud-, integrasjonsarkitekt (DevSecOps)}
@@ -84,7 +91,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Forretningskontinuitet, høye sikkerhetsstandarder, støtte for AI-levering på tvers av Engineering og Data Science
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faUsers}
 		{2012 -}
 		{2022}
 		{Skyintegrasjonsarkitekt}
@@ -98,7 +105,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Samarbeid med utvikling, QA og drift for DevSecOps best practice
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faCode}
 		{2007 -}
 		{2012}
 		{Senior programvareingeniør}
@@ -111,18 +118,18 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Ytelsesoptimalisering for høyvolum transaksjonsbehandling
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faBriefcase}
 		{2005 -}
 		{2010}
 		{Softwareingeniør}
-		{Société Générale Investment Banking (via ESN)}
+		{Société Générale Corporate \& Investment Banking (via ESN)}
 		{Paris, Frankrike}
 		{\begin{itemize}
 		\item \textbf{Fokus:} Backoffice-informasjonssystemer (EOLE, GATE)
 		\item Utvikling og vedlikehold i C, PL/SQL, Java; Oracle 8i til 10g migrering; True64 til Sun Solaris migrering
 		\item Nivå 2-support, produksjonshendelser, kravanalyse med forretningsanalytikere
 		\end{itemize}}
-\end{twenty}
+\end{twentytimeline}
 
 
 %----------------------------------------------------------------------------------------

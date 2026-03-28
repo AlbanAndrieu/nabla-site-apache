@@ -18,20 +18,27 @@
 
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-% Command for printing skill overview bubbles
+\renewcommand{\cvSidebarTechnicalSkills}{Technische Kompetenzen}
+\renewcommand{\cvSidebarOverview}{Überblick}
+\renewcommand{\cvskillshublabel}{\textbf{Programmierung}}
+\renewcommand{\cvSidebarEducation}{Ausbildung}
+
 \newcommand\skills{
 ~
+  \cvSkillsBubblesWrap{%
 	\smartdiagram[bubble diagram]{
-        \textbf{Cloud}\\\textbf{Architekt},
         \textbf{SDLC}\\\textbf{DevOps},
         \textbf{~~~~~~~~Sicherheit~~~~~~~~~},
         \textbf{~~~~~~Container~~~~~~}\\\textbf{~~(Docker/K8s)~~},
-        \textbf{~~~~~Automatisierung~~~~~}
-    }
+        \textbf{~~~~~Automatisierung~~~~~},
+        \textbf{~~~~~~KI~~~~~~}\\\textbf{\& Daten},
+        \textbf{~~~~Programmierung~~~~}\\\textbf{\& Java, C++, Python, Shell}
+    }%
+  }
 }
 
 % Programming skill bars (format: {label / level}; one "/" per item separates label from level 0--6)
-\programming{{Python Shell Java C++ / 5}, { Sicherheit Monitoring / 4}, {Docker Kubernetes SDLC / 5}}
+\programming{{Python Shell Java C++ / 3}, { Sicherheit Monitoring / 5}, {Docker Kubernetes SDLC / 4}, {KI LLM RAG MLOps / 3}}
 
 % Education
 \education{
@@ -48,13 +55,13 @@ EFREI - École d'Ingénieurs Généralistes \\
 %----------------------------------------------------------------------------------------
 
 \cvname{Alban ANDRIEU}
-\cvjobtitle{DevSecOps Cloud-Architekt}
+\cvjobtitle{Cloud-DevSecOps-Architekt}
 
 \cvlinkedin{/in/nabla}
-\cvgithub{} % leave empty if not used
+\cvgithub{AlbanAndrieu}
 \cvnumberphone{+33 6 95 43 53 XX}
 \cvsite{dr-alban.com}
-\cvmail{alban.andrieu@dr-alban.com}
+\cvmail{job@dr-alban.com}
 
 %----------------------------------------------------------------------------------------
 
@@ -68,8 +75,8 @@ EFREI - École d'Ingénieurs Généralistes \\
 
 \section{Berufserfahrung}
 
-\begin{twenty}
-	\twentyitem
+\begin{twentytimeline}
+	\twentyitemtimeline{\faCloud}
 		{2022 -}
 		{Heute}
 		{Cloud-, Integrationsarchitekt (DevSecOps)}
@@ -84,7 +91,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Geschäftskontinuität, hohe Sicherheitsstandards, Unterstützung der KI-Auslieferung in Engineering und Data Science
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faUsers}
 		{2012 -}
 		{2022}
 		{Cloud-Integrationsarchitekt}
@@ -98,7 +105,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Zusammenarbeit mit Entwicklung, QA und Betrieb für DevSecOps-Best-Practices
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faCode}
 		{2007 -}
 		{2012}
 		{Senior Software-Ingenieur}
@@ -111,18 +118,18 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Performance-Optimierung für transaktionsintensive Verarbeitung
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faBriefcase}
 		{2005 -}
 		{2010}
 		{Software-Ingenieur}
-		{Société Générale Investment Banking (über ESN)}
+		{Société Générale Corporate \& Investment Banking (über ESN)}
 		{Paris, Frankreich}
 		{\begin{itemize}
 		\item \textbf{Fokus:} Back-Office-Informationssysteme (EOLE, GATE)
 		\item Entwicklung und Wartung in C, PL/SQL, Java; Oracle 8i auf 10g Migration; True64 auf Sun Solaris Migration
 		\item Level-2-Support, Produktionsvorfälle, Anforderungsanalyse mit Business-Analysten
 		\end{itemize}}
-\end{twenty}
+\end{twentytimeline}
 
 
 %----------------------------------------------------------------------------------------

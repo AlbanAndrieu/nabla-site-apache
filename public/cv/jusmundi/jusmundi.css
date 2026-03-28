@@ -292,6 +292,125 @@
 	gap: 1.5rem;
 }
 
+/* AI / Notion source notice (Jusmundi review pages) */
+.jusmundi-source-notice {
+	margin: 0 0 1.75rem;
+	padding: 1rem 1.25rem;
+	border-radius: 10px;
+	border: 1px solid var(--cv-border-light);
+	background: var(--cv-bg-highlight);
+	color: var(--cv-text);
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+
+.jusmundi-source-notice strong {
+	color: var(--cv-heading);
+}
+
+.jusmundi-source-notice a {
+	font-weight: 600;
+}
+
+.jusmundi-source-notice p {
+	margin: 0;
+}
+
+/* Jusmundi HTML pages — index.html-style hero + services/proof sections (excludes cv-*.html CVs) */
+.jusmundi-landing-page .jusmundi-landing-content.services-section,
+.jusmundi-landing-page .jusmundi-landing-content.proof-section {
+	padding: 2.75rem 0;
+	margin-bottom: 0;
+}
+
+.jusmundi-landing-page .jusmundi-landing-content .section-title {
+	font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+	margin-bottom: 1rem;
+}
+
+.jusmundi-landing-page .jusmundi-landing-content .section-subtitle {
+	margin-bottom: 1.5rem;
+}
+
+.jusmundi-landing-page .hero-section.jusmundi-hero-compact {
+	min-height: auto;
+	padding: 3rem 1.25rem;
+	border-radius: 12px;
+	margin-bottom: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.jusmundi-landing-page .jusmundi-hero-compact .hero-content {
+	padding: 0 0.75rem;
+}
+
+.jusmundi-landing-page .jusmundi-hero-compact .hero-title {
+	font-size: clamp(1.65rem, 4vw, 2.65rem);
+	margin-bottom: 1rem;
+	animation: none;
+}
+
+.jusmundi-landing-page .jusmundi-hero-compact .hero-subtitle {
+	font-size: 1.1rem;
+	max-width: 42rem;
+	margin-left: auto;
+	margin-right: auto;
+	animation: none;
+}
+
+.jusmundi-landing-page .jusmundi-service-card-wide {
+	text-align: left;
+}
+
+.jusmundi-landing-page .jusmundi-service-card-wide h3 {
+	text-align: left;
+}
+
+.jusmundi-landing-page .jusmundi-service-card-wide .service-bullets,
+.jusmundi-landing-page .jusmundi-service-card-wide ul.service-bullets {
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.jusmundi-landing-page a.service-card.jusmundi-doc-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+}
+
+.jusmundi-landing-page a.service-card.jusmundi-doc-card:hover {
+	color: inherit;
+}
+
+.jusmundi-landing-page .jusmundi-table-card {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 10px;
+	border: 1px solid var(--border-color, var(--cv-border-light));
+	margin-top: 0.75rem;
+	box-shadow: 0 2px 8px var(--shadow-color, var(--cv-shadow));
+	background: var(--bg-white, var(--cv-bg-card));
+}
+
+.jusmundi-landing-page .jusmundi-table-card .kpi-table {
+	margin: 0;
+}
+
+.jusmundi-landing-page .jusmundi-kpi-section .kpi-grid {
+	margin-top: 0.25rem;
+}
+
+.jusmundi-landing-page .service-card .badge-row {
+	justify-content: center;
+}
+
+.jusmundi-landing-page .jusmundi-service-card-wide .badge-row {
+	justify-content: flex-start;
+}
+
 /* Skip link (accessibility) */
 .skip-link {
 	position: absolute;
@@ -313,6 +432,156 @@
 	outline-offset: 2px;
 }
 
+/* Infrastructure costs page — align with index.html landing sections */
+.infra-costs-page .infra-hero-landing {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	box-shadow: 0 12px 40px rgba(102, 126, 234, 0.35);
+}
+
+.infra-costs-page .infra-costs-section.services-section {
+	padding: 2.5rem 0;
+	margin-bottom: 0;
+}
+
+.infra-costs-page .infra-costs-section.proof-section {
+	padding: 2.5rem 0;
+	margin-bottom: 0;
+}
+
+.infra-costs-page .infra-costs-section .section-title {
+	font-size: 2rem;
+}
+
+.infra-costs-page .infra-costs-section .section-subtitle {
+	margin-bottom: 1.5rem;
+}
+
+.infra-costs-page .infra-costs-note.section-subtitle {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0 1rem 1.5rem;
+	max-width: 40rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.infra-costs-page .infra-table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 12px;
+	border: 1px solid var(--border-color, var(--cv-border-light));
+	box-shadow: 0 2px 10px var(--shadow-color, var(--cv-shadow));
+	background: var(--bg-white, var(--cv-bg-card));
+}
+
+.infra-costs-page .infra-table-wrap .kpi-table {
+	margin: 0;
+}
+
+.infra-migration-band {
+	margin: 0 0 2rem;
+	padding: 2rem 1.25rem;
+	background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 45%, #1e3a8a 100%);
+	border-radius: 12px;
+	color: #fff;
+	box-shadow: 0 8px 28px rgba(37, 99, 235, 0.35);
+}
+
+.infra-migration-band .engagement-block {
+	margin: 0 auto;
+}
+
+.infra-migration-band .engagement-block .infra-migration-lead {
+	font-size: 1.05rem;
+	margin: 0 0 0.75rem;
+	line-height: 1.5;
+	opacity: 0.98;
+	color: #fff;
+}
+
+.infra-migration-band .engagement-block ul {
+	color: rgba(255, 255, 255, 0.95);
+}
+
+/* Featured “Top #1 achievement” band (Jusmundi index + infrastructure-costs) */
+.infra-migration-band-layout {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.25rem;
+}
+
+.infra-migration-band-figure {
+	flex-shrink: 0;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.65rem;
+	line-height: 1;
+	background: rgba(255, 255, 255, 0.16);
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+	color: #fff;
+}
+
+.infra-migration-band-body.engagement-block {
+	flex: 1;
+	min-width: 0;
+}
+
+.infra-top-achievement-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	margin: 0 0 0.65rem;
+	padding: 0.35rem 0.85rem;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	line-height: 1.2;
+	color: #1e3a8a;
+	background: #fff;
+	border-radius: 999px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.infra-top-achievement-pill i {
+	font-size: 0.95rem;
+	color: #1d4ed8;
+	opacity: 0.95;
+}
+
+.infra-migration-band .engagement-block h3 {
+	margin: 0 0 0.65rem;
+	font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+	font-weight: 700;
+	line-height: 1.35;
+	color: #fff;
+}
+
+@media (max-width: 576px) {
+	.infra-migration-band-layout {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.infra-migration-band-body.engagement-block {
+		text-align: center;
+	}
+
+	.infra-top-achievement-pill {
+		margin-inline: auto;
+	}
+
+	.infra-migration-band .engagement-block ul {
+		text-align: left;
+	}
+}
+
 @media (max-width: 768px) {
 	.kpi-grid {
 		grid-template-columns: repeat(2, 1fr);
@@ -329,5 +598,10 @@
 	.kpi-table th,
 	.kpi-table td {
 		padding: 0.4rem;
+	}
+
+	.infra-costs-page .infra-costs-section.services-section,
+	.infra-costs-page .infra-costs-section.proof-section {
+		padding: 1.75rem 0;
 	}
 }

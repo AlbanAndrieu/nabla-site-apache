@@ -4,12 +4,29 @@
 	},
 	"latex-workshop.latex.tools": [
 		{
-			"name": "latexmk",
-			"tools": ["latexmk"]
+			"name": "latexmk-xelatex",
+			"command": "latexmk",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-xelatex",
+				"-outdir=%OUTDIR%",
+				"%DOC%"
+			],
+			"env": {}
 		},
 		{
-			"name": "pdflatex -> bibtex -> pdflatex * 2",
-			"tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": [
+				"-shell-escape",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			],
+			"env": {}
 		},
 		{
 			"name": "pdflatex",
@@ -24,16 +41,19 @@
 			"env": {}
 		}
 	],
-	"latex-workshop.latex.recipe.default": "first",
 	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk (xelatex)",
+			"tools": ["latexmk-xelatex"]
+		},
+		{
+			"name": "xelatex",
+			"tools": ["xelatex"]
+		},
 		{
 			"name": "pdflatex",
 			"tools": ["pdflatex"]
-		},
-		{
-			"name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-			"tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
 		}
 	],
-	"latex-workshop.docker.image.latex": "xelatex"
+	"latex-workshop.latex.recipe.default": "latexmk (xelatex)"
 }

@@ -18,20 +18,27 @@
 
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-% Command for printing skill overview bubbles
+\renewcommand{\cvSidebarTechnicalSkills}{Compétences techniques}
+\renewcommand{\cvSidebarOverview}{Vue d'ensemble}
+\renewcommand{\cvskillshublabel}{\textbf{Programmation}}
+\renewcommand{\cvSidebarEducation}{Formation}
+
 \newcommand\skills{
 ~
+  \cvSkillsBubblesWrap{%
 	\smartdiagram[bubble diagram]{
-        \textbf{Cloud}\\\textbf{Architect},
         \textbf{SDLC}\\\textbf{DevOps},
         \textbf{~~~~~~~~Sécurité~~~~~~~~~},
         \textbf{~~~~~~Conteneurs~~~~~~}\\\textbf{~~(Docker/K8s)~~},
-        \textbf{~~~~~Automatisation~~~~~}
-    }
+        \textbf{~~~~~Automatisation~~~~~},
+        \textbf{~~~~~~IA~~~~~~}\\\textbf{\& données},
+				\textbf{~~~~Programmation~~~~}\\\textbf{\& Java, C++, Python, Shell}
+    }%
+  }
 }
 
-% Barres de compétences (format: {libellé / niveau} ; un "/" par élément)
-\programming{{Python Shell Java C++ / 5}, {Sécurité Monitoring / 4}, {Docker Kubernetes SDLC / 5}}
+% Barres de compétences (niveau 0--6 ; même échelle que la largeur de la barre)
+\programming{{Python Shell Java C++ / 3}, {Sécurité Monitoring / 5}, {Docker Kubernetes SDLC / 4}, {IA LLM RAG MLOps / 3}}
 
 % Formation
 \education{
@@ -51,10 +58,10 @@ EFREI - École d'Ingénieurs Généralistes \\
 \cvjobtitle{Architecte Cloud DevSecOps}
 
 \cvlinkedin{/in/nabla}
-\cvgithub{} % laisser vide si non utilisé
+\cvgithub{AlbanAndrieu} % laisser vide si non utilisé
 \cvnumberphone{+33 6 95 43 53 XX}
 \cvsite{dr-alban.com}
-\cvmail{alban.andrieu@dr-alban.com}
+\cvmail{job@dr-alban.com}
 
 %----------------------------------------------------------------------------------------
 
@@ -68,8 +75,8 @@ EFREI - École d'Ingénieurs Généralistes \\
 
 \section{Expérience}
 
-\begin{twenty}
-	\twentyitem
+\begin{twentytimeline}
+	\twentyitemtimeline{\faCloud}
 		{2022 -}
 		{Présent}
 		{Architecte Cloud, Intégration (DevSecOps)}
@@ -84,7 +91,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Continuité d'activité, exigences de sécurité élevées, accompagnement du déploiement IA (Engineering et Data Science)
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faUsers}
 		{2012 -}
 		{2022}
 		{Architecte Intégration Cloud}
@@ -98,7 +105,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Collaboration avec les équipes développement, QA et opérations pour les bonnes pratiques DevSecOps
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faCode}
 		{2007 -}
 		{2012}
 		{Ingénieur Logiciel Senior}
@@ -111,7 +118,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Optimisation des performances pour le traitement à fort volume
 		\end{itemize}}
 	\\
-	\twentyitem
+	\twentyitemtimeline{\faBriefcase}
 		{2005 -}
 		{2010}
 		{Ingénieur Logiciel}
@@ -122,7 +129,7 @@ EFREI - École d'Ingénieurs Généralistes \\
 		\item Développement et maintenance en C, PL/SQL, Java ; migration Oracle 8i vers 10g ; migration True64 vers Sun Solaris
 		\item Support niveau 2, gestion des incidents de production, analyse des besoins avec les analystes métier
 		\end{itemize}}
-\end{twenty}
+\end{twentytimeline}
 
 
 %----------------------------------------------------------------------------------------

@@ -230,6 +230,173 @@ body {
 	line-height: 1.6;
 }
 
+.service-card .service-lead {
+	margin-bottom: 0.75rem;
+	font-weight: 500;
+	color: var(--text-dark);
+}
+
+.service-card ul.service-bullets {
+	text-align: left;
+	margin: 0 auto;
+	padding-left: 1.25rem;
+	max-width: 26rem;
+	color: var(--text-light);
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+
+.service-card ul.service-bullets li {
+	margin-bottom: 0.35rem;
+}
+
+.hero-name {
+	font-size: 1.15rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	margin-bottom: 0.5rem;
+	opacity: 0.95;
+}
+
+.hero-value-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto 2rem;
+	max-width: 40rem;
+	text-align: left;
+}
+
+.hero-value-list li {
+	position: relative;
+	padding-left: 1.5rem;
+	margin-bottom: 0.65rem;
+	font-size: 1.05rem;
+	line-height: 1.45;
+	opacity: 0.95;
+}
+
+.hero-value-list li::before {
+	content: "\2713";
+	position: absolute;
+	left: 0;
+	color: rgba(255, 255, 255, 0.85);
+	font-weight: 700;
+}
+
+.engagement-block {
+	max-width: 720px;
+	margin: 3rem auto 0;
+	padding: 1.75rem 2rem;
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 12px;
+	text-align: left;
+}
+
+.engagement-block h3 {
+	font-size: 1.25rem;
+	margin-bottom: 0.75rem;
+	color: #fff;
+}
+
+.engagement-block ul {
+	margin: 0;
+	padding-left: 1.25rem;
+	line-height: 1.6;
+	opacity: 0.95;
+}
+
+.engagement-block .engagement-pricing-link {
+	margin-top: 0.75rem;
+	margin-bottom: 0;
+	opacity: 0.95;
+}
+
+.engagement-block .engagement-pricing-link a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.engagement-block .engagement-tjm {
+	font-size: 1.05rem;
+	margin: 0 0 0.75rem;
+	line-height: 1.45;
+	opacity: 0.98;
+}
+
+.engagement-block .engagement-tjm-note {
+	font-weight: 400;
+	opacity: 0.9;
+}
+
+.proof-section {
+	padding: 5rem 2rem;
+	background: var(--bg-white);
+}
+
+.proof-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.proof-card {
+	background: var(--bg-light);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 1.5rem 1.75rem;
+	text-align: left;
+}
+
+.proof-card h3 {
+	font-size: 1.15rem;
+	margin-bottom: 0.5rem;
+	color: var(--text-dark);
+}
+
+.proof-card .proof-context {
+	font-size: 0.9rem;
+	color: var(--text-light);
+	margin-bottom: 0.75rem;
+}
+
+.proof-card ul {
+	margin: 0;
+	padding-left: 1.2rem;
+	color: var(--text-light);
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+
+.services-section.section-tight-top {
+	padding-top: 0;
+}
+
+.ai-mlops-grid {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.ai-mlops-wide-card {
+	grid-column: 1 / -1;
+	max-width: 52rem;
+	margin: 0 auto;
+}
+
+.ai-mlops-wide-card .service-bullets {
+	max-width: none;
+}
+
+.skills-more {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.skills-more a {
+	font-weight: 600;
+}
+
 /* Skills Section */
 .skills-section {
 	padding: 5rem 2rem;
@@ -285,6 +452,21 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+.contact-hero-ctas {
+	margin-bottom: 2rem;
+	justify-content: center;
+}
+
+.contact-logo-wrap {
+	margin-top: 3rem;
+}
+
+.contact-logo {
+	width: 120px;
+	height: auto;
+	opacity: 0.6;
 }
 
 .contact-methods {
@@ -644,6 +826,12 @@ html {
 	box-shadow: 0 10px 30px var(--shadow-hover-color);
 }
 
+.education-card--featured {
+	border: 2px solid var(--accent-color, #3b82f6);
+	box-shadow: 0 4px 20px
+		color-mix(in srgb, var(--accent-color, #3b82f6) 18%, transparent);
+}
+
 .education-icon {
 	font-size: 3rem;
 	color: var(--accent-color);
@@ -776,6 +964,30 @@ html {
 	.opensource-grid {
 		grid-template-columns: 1fr;
 	}
+}
+
+/* Standalone pricing page (pricing.html) */
+.pricing-page .pricing-tier-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.25rem;
+	margin-top: 0.5rem;
+}
+
+.pricing-page .pricing-tier-card .card-title {
+	font-size: 1.1rem;
+	line-height: 1.35;
+}
+
+.pricing-page .pricing-tier-range {
+	font-size: 0.95rem;
+	margin-bottom: 0.5rem;
+	color: var(--text-dark, inherit);
+}
+
+[data-theme="dark"] .pricing-page .pricing-tier-range,
+.page-dark .pricing-page .pricing-tier-range {
+	color: var(--bs-secondary-color, #adb5bd);
 }
 
 /* Print Styles for PDF Export */

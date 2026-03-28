@@ -15,6 +15,7 @@
 
 \usepackage{fontawesome}
 \RequirePackage{tikz}
+\usetikzlibrary{backgrounds}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{ragged2e}
@@ -27,6 +28,9 @@
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*}
+
+\RequirePackage{array}
+\RequirePackage{multirow}
 
 \RequirePackage[hidelinks]{hyperref}
 \hypersetup{
@@ -147,21 +151,24 @@
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+% Optional extra blocks in the left sidebar (e.g. mini timeline); empty by default
+\newcommand{\cvsideextra}{}
+\newcommand{\cvsideextracontent}[1]{\renewcommand{\cvsideextra}{#1}}
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
-% Command for printing skill progress bars
+% Command for printing skill progress bars (row height allows wrapped labels; 4+ rows fit in sidebar)
 \newcommand\programming[1]{
-	\renewcommand{\programming}{
-		\begin{tikzpicture}
-        	\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
+	\renewcommand{\programming}{%
+		\begin{tikzpicture}[x=1cm,y=1cm]
 			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
+				\pgfmathsetmacro{\barbase}{\i*1.12-1.12}
+				\node[anchor=south west,font=\footnotesize\bfseries,text=black!75,text width=5.5cm,align=left,inner sep=0pt] at (0,\barbase+0.5) {\x};
+				\draw[fill=maingray,maingray,rounded corners=1pt] (0,\barbase) rectangle (6,\barbase+0.34);
+				\draw[fill=white,mainblue,rounded corners=1pt](0,\barbase) rectangle (\y,\barbase+0.34);
 			}
-		\end{tikzpicture}
+		\end{tikzpicture}%
 	}
 }
 \newcommand\education[1]{
@@ -241,22 +248,24 @@
 
     %------------------------------------------------
     \vspace{3mm}
-    \profilesection{Technical Skills}{1.2cm}
+    \profilesection{\cvSidebarTechnicalSkills}{1.2cm}
 
-    {\large \textbf{Overview}}
+    {\large \textbf{\cvSidebarOverview}}
 
 	\skills
 
         %------------------------------------------------
 
-        \vspace{3mm}
+        \vspace{7mm}
 
-	 {\large \textbf{Programming}}
+	 {\large \cvskillshublabel}
 
 		 \programming
 
-        \vspace{3mm}
-        \profilesection{Education}{3cm}
+        \cvsideextra
+
+        \vspace{7mm}
+        \profilesection{\cvSidebarEducation}{3cm}
 
         \education
 
@@ -333,6 +342,40 @@
 	}\\
 }
 
+% Experience list with vertical timeline + icons (main column, right of sidebar)
+\newcounter{tlitem}
+\newcommand{\twentytimelinedraw}{%
+	\ifnum\value{tlitem}>1\relax
+	\begin{tikzpicture}[remember picture,overlay]
+		\pgfmathtruncatemacro{\tlmax}{\arabic{tlitem}-1}%
+		\foreach \x in {1,...,\tlmax}{%
+			\pgfmathtruncatemacro{\nexttl}{\x+1}%
+			\draw[mainblue,line width=0.85pt]
+				([yshift=-0.06cm]TL-\x.south) -- ([yshift=0.06cm]TL-\nexttl.north);
+		}
+	\end{tikzpicture}%
+	\fi
+}
+\newenvironment{twentytimeline}{%
+	\setcounter{tlitem}{0}%
+	\begin{tabular*}{\textwidth}{@{}>{\centering\arraybackslash}m{0.82cm}@{\hspace{1.5mm}}m{1.9cm}@{\hspace{2mm}}p{\dimexpr\textwidth-0.82cm-1.9cm-3.5mm\relax}@{}}
+}{%
+	\end{tabular*}%
+	\leavevmode\smash{\twentytimelinedraw}%
+}
+% #1 = FontAwesome icon (e.g. \faCloud); #2–#7 same as \twentyitem date1, date2, title, org, location, body
+\newcommand{\twentyitemtimeline}[7]{%
+	\stepcounter{tlitem}%
+	\multirow{2}{*}[-0.4ex]{%
+		\begin{tikzpicture}[remember picture,baseline=-0.15ex]
+			\node[circle,fill=mainblue,text=white,font=\scriptsize,minimum size=0.40cm,inner sep=0pt]
+				(TL-\arabic{tlitem}) {#1};
+		\end{tikzpicture}%
+	}%
+	& #2 & \parbox[t]{\linewidth}{\textbf{#4}\hfill{\footnotesize #5}}\\%
+	& #3 & \parbox[t]{\linewidth}{\ifblank{#6}{}{#6 \\}#7\vspace{0.35ex}}\\%
+}
+
 %----------------------------------------------------------------------------------------
 %	 SMALL LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
@@ -379,4 +422,20 @@
     bubble fill opacity = 0.6,
     % sets the opacity at which the bubble text is shown
     bubble text opacity = 1,
+}
+
+% Sidebar skill block strings (renew per language in each CV .tex)
+\providecommand{\cvSidebarTechnicalSkills}{Technical Skills}
+\providecommand{\cvSidebarOverview}{Overview}
+\providecommand{\cvSidebarEducation}{Education}
+% Backdrop bubble + “Programming” heading above skill bars (same string)
+\providecommand{\cvskillshublabel}{\textbf{Programming}}
+\newcommand{\cvSkillsBubblesWrap}[1]{%
+  \begin{tikzpicture}[baseline=(cvskillhub)]
+    \coordinate (cvskillhub) at (0,0);
+    \begin{scope}[on background layer]
+      \node[circle, fill=maingray, fill opacity=0.34, draw=maingray!55, draw opacity=0.5, line width=0.35pt, minimum size=2.95cm, font=\footnotesize\bfseries, text=black!50, align=center, inner sep=4pt] at (cvskillhub) {\cvskillshublabel};
+    \end{scope}
+    \node[inner sep=0, anchor=center] at (cvskillhub) {#1};%
+  \end{tikzpicture}%
 }

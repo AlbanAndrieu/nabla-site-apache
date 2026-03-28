@@ -14,7 +14,7 @@
 			name="keywords"
 			content="Contact, DevSecOps Consultant, Alban Andrieu, Email, Phone, LinkedIn, GitHub, CV Download, Consulting Services"
 		/>
-		<meta name="author" content="alban.andrieu@dr-alban.com" />
+		<meta name="author" content="job@dr-alban.com" />
 		<meta name="robots" content="index, follow" />
 
 		<!-- Open Graph / Facebook -->
@@ -41,14 +41,19 @@
 		<!-- Favicon -->
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
 
-		<!-- Custom CSS -->
+		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+		<script src="theme-toggle.js"></script>
+
 		<link rel="stylesheet" href="landing-sections.css" />
+		<link rel="stylesheet" href="wireframe.css" />
 		<link rel="stylesheet" href="theme.css" />
 		<link rel="stylesheet" href="style.css" />
-		<!-- Print Styles for PDF Export -->
 		<link rel="stylesheet" href="print.css" />
+		<link rel="stylesheet" href="site-content-page.css" />
 
-		<!-- Font Awesome -->
+		<!-- Font Awesome (CDN + JS) -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css"
@@ -62,18 +67,18 @@
 		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
 
 		<!-- our project is using icons from Solid, Sharp Thin, Sharp Duotone Thin + Brands -->
-		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
-		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
-
-		<!-- Theme toggle script - load early to prevent flash -->
-		<script src="theme-toggle.js"></script>
-
 		<!-- Bootstrap -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
 			integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+			integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
@@ -90,7 +95,7 @@
 				"jobTitle": "DevSecOps Cloud Architect",
 				"description": "Independent DevSecOps consultant specializing in SDLC, Cloud Infrastructure, and Security",
 				"url": "https://dr-alban.com",
-				"email": "alban.andrieu@dr-alban.com",
+				"email": "job@dr-alban.com",
 				"telephone": "+33695435353",
 				"address": {
 					"@type": "PostalAddress",
@@ -113,7 +118,7 @@
 					"@type": "ContactPoint",
 					"telephone": "+33695435353",
 					"contactType": "Professional Services",
-					"email": "alban.andrieu@dr-alban.com",
+					"email": "job@dr-alban.com",
 					"availableLanguage": ["English", "French"]
 				}
 			}
@@ -453,7 +458,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="site-content-page">
 		<a name="top"></a>
 		<!-- Skip to main content link for accessibility -->
 		<a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -507,9 +512,7 @@
 						<ul class="contact-info-list">
 							<li class="contact-info-item">
 								<i class="fas fa-at"></i>
-								<a href="mailto:alban.andrieu@dr-alban.com?Subject=DevSecOps%20Inquiry" itemprop="email">
-									alban.andrieu@dr-alban.com
-								</a>
+								<a href="mailto:job@dr-alban.com?Subject=DevSecOps%20Inquiry" itemprop="email"> job@dr-alban.com </a>
 							</li>
 						</ul>
 					</article>
