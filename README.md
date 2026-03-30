@@ -44,6 +44,11 @@ This repository contains multiple deployable projects:
 For CV architecture, build workflow, and troubleshooting, see
 [`public/cv/README.md`](public/cv/README.md).
 
+### Frontend Runtime Documentation
+
+For analytics mode selection, shared widget attributes, script integration examples, and troubleshooting, see
+[`docs/frontend-runtime-scripts-runbook.md`](docs/frontend-runtime-scripts-runbook.md).
+
 ## Deployment
 
 ### Root Project (PHP + Static Site)
