@@ -82,6 +82,13 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+			integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 
 		<script src="/site-google-translate.js" defer></script>
 
@@ -99,9 +106,10 @@
 				"telephone": "+33695435353",
 				"address": {
 					"@type": "PostalAddress",
-					"streetAddress": "10 Rue du Chemin Vert",
-					"addressLocality": "Asnières-sur-Seine",
-					"postalCode": "92600",
+					"streetAddress": "La Défense business district",
+					"addressLocality": "Puteaux",
+					"addressRegion": "Île-de-France",
+					"postalCode": "92800",
 					"addressCountry": "FR"
 				},
 				"sameAs": [
@@ -347,6 +355,25 @@
 				border: 0;
 			}
 
+			.map-container .leaflet-container {
+				width: 100%;
+				height: 450px;
+				border-radius: 12px;
+				font-family: inherit;
+			}
+
+			.contact-map-caption {
+				max-width: 42rem;
+				margin: 0.75rem auto 0;
+				font-size: 0.9rem;
+				color: #666;
+				line-height: 1.45;
+			}
+
+			html[data-theme="dark"] .contact-map-caption {
+				color: #94a3b8;
+			}
+
 			/* Contact Info List */
 			.contact-info-list {
 				list-style: none;
@@ -400,6 +427,10 @@
 				}
 
 				.map-container iframe {
+					height: 300px;
+				}
+
+				.map-container .leaflet-container {
 					height: 300px;
 				}
 			}
@@ -635,23 +666,35 @@
 				>
 					<h3 class="section-title" style="font-size: 2rem">Location</h3>
 					<p style="color: #666; margin-bottom: 0.5rem">
-						<i class="fas fa-map-marker-alt"></i>
-						<span itemprop="streetAddress">10 Rue du Chemin Vert</span>,
-						<span itemprop="postalCode">92600</span>
-						<span itemprop="addressLocality">Asnières-sur-Seine</span>,
+						<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+						<span itemprop="streetAddress">La Défense business district</span>
+						<span class="visually-hidden">,</span>
+						<span aria-hidden="true"> · </span>
+						<span itemprop="postalCode">92800</span>
+						<span itemprop="addressLocality">Puteaux</span>
+						<span class="visually-hidden">,</span>
+						<span aria-hidden="true"> · </span>
+						<span itemprop="addressRegion">Île-de-France</span>,
 						<span itemprop="addressCountry">France</span>
 					</p>
-					<p style="color: #666">Based in Paris area, available for remote and on-site consulting</p>
+					<p style="color: #666">
+						Greater Paris — west of the city centre: <strong>La Défense</strong> and <strong>Nanterre</strong> business
+						corridor. Available for remote and on-site consulting across the region.
+					</p>
 
-					<div class="map-container">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.580533921005!2d2.2825235000000017!3d48.9043308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f7dbe862451%3A0xdfea0dc844805762!2s10+Rue+du+Chemin+Vert%2C+92600+Asni%C3%A8res-sur-Seine!5e0!3m2!1sen!2sfr!4v1440190868717"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-							title="Location map - 10 Rue du Chemin Vert, Asnières-sur-Seine, France"
-						></iframe>
+					<div
+						class="map-container"
+						role="region"
+						aria-label="Map of Paris and inner suburbs, west Paris area highlighted"
+					>
+						<div id="contact-paris-map"></div>
 					</div>
+					<p class="contact-map-caption">
+						Overview of Paris and close suburbs. The blue area highlights the west Paris axis including La Défense
+						(Puteaux) and Nanterre; markers name both centres. Map data ©
+						<a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer">OpenStreetMap</a>
+						contributors.
+					</p>
 				</article>
 
 				<!-- GitHub Project Section -->
@@ -778,10 +821,7 @@
 			</div>
 
 			<div class="footer-links">
-				<a href="/pricing.html">Pricing</a>
-				<a href="/policy/service_terms.html">Terms of Use</a>
-				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
-				<a href="/policy/privacy_policy.html">Privacy Policy</a>
+				<a href="/policy/legal.html">Legal notices</a>
 			</div>
 
 			<p class="text-md-center mt-3">
@@ -802,6 +842,53 @@
 			async="async"
 			type="text/javascript"
 		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script>
+			(function () {
+				function initContactParisMap() {
+					var el = document.getElementById("contact-paris-map");
+					if (!el || typeof L === "undefined") return;
+
+					var map = L.map(el, { scrollWheelZoom: false }).setView([48.86, 2.34], 10);
+
+					L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+						attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+						maxZoom: 19,
+					}).addTo(map);
+
+					L.circle([48.894, 2.218], {
+						radius: 4200,
+						color: "#1d4ed8",
+						weight: 2,
+						fillColor: "#3b82f6",
+						fillOpacity: 0.2,
+					})
+						.addTo(map)
+						.bindPopup("West Paris business area: La Défense &amp; Nanterre corridor");
+
+					L.marker([48.8919, 2.238])
+						.addTo(map)
+						.bindPopup("<strong>La Défense</strong><br />Puteaux — major business district");
+
+					L.marker([48.8924, 2.2071])
+						.addTo(map)
+						.bindPopup("<strong>Nanterre</strong><br />Préfecture des Hauts-de-Seine");
+
+					map.attributionControl.setPosition("bottomright");
+				}
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initContactParisMap);
+				} else {
+					initContactParisMap();
+				}
+			})();
+		</script>
 		<script src="./site-widgets.js" defer data-axeptio data-print-pdf data-coffee-fab></script>
 	</body>
 </html>

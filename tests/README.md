@@ -14,8 +14,7 @@ This directory contains end-to-end tests using [Playwright](https://playwright.d
 
 ## Known Coverage Gap
 
-Checkout pages (`/checkout.html`, `/success.html`, `/cancel.html`) are not covered by Playwright in this repository yet.
-The current Stripe server script (`npm run start:stripe`) points to `server.cjs`, which is missing on this branch, so end-to-end payment testing is currently blocked until that backend entry point exists.
+Checkout pages (`/checkout.html`, `/success.html`, `/cancel.html`) are not covered by Playwright yet. The Stripe flow needs `npm run start:stripe` (see `server.cjs` and `docs/checkout-support-runbook.md`) running alongside the site for full end-to-end payment tests.
 
 ## Running Tests
 

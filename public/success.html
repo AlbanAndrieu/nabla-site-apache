@@ -59,14 +59,15 @@
 					<i class="fa-solid fa-circle-check"></i>
 				</div>
 				<h2 class="checkout-title">Thank you for your payment</h2>
+				<p id="checkout-session-ref" class="checkout-message checkout-session-ref" hidden></p>
 				<p class="checkout-message">Your payment was successful. We appreciate your support.</p>
 				<p class="checkout-message">
 					If you have any questions, please contact
-					<a href="mailto:job@dr-alban.com">job@dr-alban.com</a>.
+					<a href="mailto:job@dr-alban.com">invoice@dr-alban.com</a>.
 				</p>
 				<p class="checkout-actions">
 					<a href="checkout.html" class="checkout-button checkout-button-secondary">Make another payment</a>
-					<a href="index.html" class="checkout-button">Back to site</a>
+					<a href="/index.html" class="checkout-button">Back to site</a>
 				</p>
 			</section>
 		</main>
@@ -115,9 +116,8 @@
 			</div>
 			<div class="footer-links">
 				<a href="/pricing.html">Pricing</a>
-				<a href="/policy/service_terms.html">Terms of Use</a>
+				<a href="/policy/legal.html">Legal notices</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
-				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
@@ -126,5 +126,16 @@
 		</footer>
 
 		<script src="/site-widgets.js" defer data-no-print-pdf data-coffee-fab></script>
+		<script>
+			(function () {
+				var params = new URLSearchParams(window.location.search);
+				var sid = params.get("session_id");
+				var el = document.getElementById("checkout-session-ref");
+				if (sid && el) {
+					el.textContent = "Checkout reference: " + sid;
+					el.removeAttribute("hidden");
+				}
+			})();
+		</script>
 	</body>
 </html>

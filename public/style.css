@@ -241,40 +241,42 @@ body.page-nabla-best-practices {
 	background-color: var(--bg-primary);
 }
 
-body.page-nabla-best-practices .hero-section {
+/* Homepage + nabla.html: flat blue→violet band, no grid animation (see landing-sections .hero-section default) */
+body.page-nabla-best-practices .hero-section,
+body.home-page.page-dark .hero-section {
 	text-align: center;
 	padding: 4rem 2rem;
 	min-height: 0;
 	display: block;
-	background: linear-gradient(
-		135deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 100%
-	);
+	background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
 	color: #fff;
 	position: relative;
 	overflow: hidden;
 }
 
-body.page-nabla-best-practices .hero-section::before {
+body.page-nabla-best-practices .hero-section::before,
+body.home-page.page-dark .hero-section::before {
 	display: none;
 }
 
-body.page-nabla-best-practices .hero-title {
+body.page-nabla-best-practices .hero-title,
+body.home-page.page-dark .hero-title {
 	font-size: 3rem;
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 	animation: none;
 }
 
-body.page-nabla-best-practices .hero-subtitle {
+body.page-nabla-best-practices .hero-subtitle,
+body.home-page.page-dark .hero-subtitle {
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	opacity: 0.95;
 	animation: none;
 }
 
-body.page-nabla-best-practices .hero-description {
+body.page-nabla-best-practices .hero-description,
+body.home-page.page-dark .hero-description {
 	font-size: 1.1rem;
 	max-width: 800px;
 	margin: 0 auto 2rem;
@@ -431,11 +433,13 @@ body.page-nabla-best-practices .print-button:hover {
 }
 
 @media (max-width: 768px) {
-	body.page-nabla-best-practices .hero-title {
+	body.page-nabla-best-practices .hero-title,
+	body.home-page.page-dark .hero-title {
 		font-size: 2rem;
 	}
 
-	body.page-nabla-best-practices .hero-subtitle {
+	body.page-nabla-best-practices .hero-subtitle,
+	body.home-page.page-dark .hero-subtitle {
 		font-size: 1.2rem;
 	}
 
@@ -1006,6 +1010,11 @@ html[data-theme="dark"] .contact-me-card {
 	background: rgba(30, 41, 59, 0.65);
 	border: 1px solid rgba(71, 85, 105, 0.45);
 	backdrop-filter: blur(6px);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-page.page-dark .proof-card:hover {
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
 }
 
 .home-page.page-dark .skill-category,

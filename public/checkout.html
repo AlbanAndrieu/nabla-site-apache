@@ -62,13 +62,14 @@
 						<p class="checkout-subtitle">One-time payment via Stripe. Secure checkout.</p>
 					</div>
 				</div>
-				<form action="/create-checkout-session" method="POST" class="checkout-form">
+				<form action="/create-checkout-session" method="POST" class="checkout-form" data-stripe-checkout>
 					<button type="submit" id="checkout-button" class="checkout-button">
 						<i class="fa-solid fa-lock" aria-hidden="true"></i> Proceed to checkout
 					</button>
+					<div id="checkout-error" class="checkout-error" role="alert" aria-live="polite" hidden></div>
 				</form>
 				<p class="checkout-footer">
-					<a href="index.html">Back to site</a>
+					<a href="/index.html">Back to site</a>
 				</p>
 			</section>
 		</main>
@@ -117,9 +118,8 @@
 			</div>
 			<div class="footer-links">
 				<a href="/pricing.html">Pricing</a>
-				<a href="/policy/service_terms.html">Terms of Use</a>
+				<a href="/policy/legal.html">Legal notices</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
-				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
@@ -127,5 +127,6 @@
 			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 		<script src="/site-widgets.js" defer data-no-print-pdf data-no-coffee-fab></script>
+		<script src="checkout-stripe.js" defer></script>
 	</body>
 </html>

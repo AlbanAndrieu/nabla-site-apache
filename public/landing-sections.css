@@ -368,6 +368,13 @@ body {
 	border-radius: 12px;
 	padding: 1.5rem 1.75rem;
 	text-align: left;
+	box-shadow: 0 2px 10px var(--shadow-color);
+	transition: all 0.3s ease;
+}
+
+.proof-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px var(--shadow-hover-color);
 }
 
 .proof-card h3 {
@@ -654,17 +661,34 @@ html {
 	background: var(--bg-white);
 }
 
+/* Date column left of icon; vertical line runs through icon center only */
 .timeline {
+	--timeline-date-col: 5.125rem;
+	--timeline-node-gap: 0.5rem;
+	--timeline-icon-size: 2.75rem;
+	--timeline-icon-half: 1.375rem;
+	--timeline-rail-width: calc(
+		var(--timeline-date-col) +
+		var(--timeline-node-gap) +
+		var(--timeline-icon-size)
+	);
+	/* Icon center from timeline’s left inner edge (line passes through it) */
+	--timeline-line-x: calc(
+		var(--timeline-date-col) +
+		var(--timeline-node-gap) +
+		var(--timeline-icon-half)
+	);
+
 	max-width: 900px;
 	margin: 0 auto;
 	position: relative;
-	padding-left: 5.5rem;
+	padding-left: calc(var(--timeline-rail-width) + 0.875rem);
 }
 
 .timeline::before {
 	content: "";
 	position: absolute;
-	left: 2.125rem;
+	left: calc(var(--timeline-line-x) - 1px);
 	top: 0;
 	bottom: 0;
 	width: 2px;
@@ -677,23 +701,23 @@ html {
 	padding-bottom: 2rem;
 }
 
-/* Icon + date on the spine (left); single vertical line via .timeline::before only */
 .timeline-node {
 	position: absolute;
-	left: -5.5rem;
+	left: calc(-1 * (var(--timeline-rail-width) + 0.875rem));
 	top: 0;
-	width: 4.25rem;
+	width: var(--timeline-rail-width);
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	gap: 0.35rem;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: var(--timeline-node-gap);
 	z-index: 1;
 }
 
 .timeline-node-icon {
-	width: 2.75rem;
-	height: 2.75rem;
+	width: var(--timeline-icon-size);
+	height: var(--timeline-icon-size);
 	border-radius: 50%;
 	background: var(--primary-color);
 	color: var(--bg-white);
@@ -704,14 +728,20 @@ html {
 	justify-content: center;
 	font-size: 1.1rem;
 	flex-shrink: 0;
+	order: 2;
 }
 
 .timeline-node-date {
+	order: 1;
+	flex: 0 1 var(--timeline-date-col);
+	min-width: 0;
+	width: var(--timeline-date-col);
+	max-width: var(--timeline-date-col);
 	font-size: 0.72rem;
 	line-height: 1.25;
 	color: var(--text-light);
-	max-width: 100%;
 	font-weight: 600;
+	text-align: right;
 }
 
 .timeline-content {
@@ -742,6 +772,14 @@ html {
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-right: 1rem;
+}
+
+a.timeline-company {
+	text-decoration: none;
+}
+
+a.timeline-company:hover {
+	text-decoration: underline;
 }
 
 .timeline-description {
@@ -893,21 +931,19 @@ html {
 /* Responsive Adjustments for New Sections */
 @media (max-width: 768px) {
 	.timeline {
-		padding-left: 4.25rem;
-	}
-
-	.timeline::before {
-		left: 1.625rem;
+		--timeline-date-col: 3.75rem;
+		--timeline-node-gap: 0.35rem;
+		--timeline-icon-size: 2.35rem;
+		--timeline-icon-half: 1.175rem;
+		padding-left: calc(var(--timeline-rail-width) + 0.65rem);
 	}
 
 	.timeline-node {
-		left: -4.25rem;
-		width: 3.5rem;
+		left: calc(-1 * (var(--timeline-rail-width) + 0.65rem));
+		width: var(--timeline-rail-width);
 	}
 
 	.timeline-node-icon {
-		width: 2.35rem;
-		height: 2.35rem;
 		font-size: 0.95rem;
 	}
 

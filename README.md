@@ -67,18 +67,28 @@ composer install --ignore-platform-req=ext-mbstring
 php -S localhost:8000 api/index.php
 ```
 
-### Stripe Checkout (current state)
+### Stripe Checkout
 
-The checkout UI exists in:
+Pages:
 
-- `public/checkout.html` (POST form to `/create-checkout-session`)
-- `public/success.html` (successful payment landing page)
-- `public/cancel.html` (canceled checkout landing page)
+- `public/checkout.html` — starts hosted Checkout (`public/checkout-stripe.js` + `POST /create-checkout-session`)
+- `public/success.html` — return URL after payment (`session_id` query param when configured on the server)
+- `public/cancel.html` — return URL if the customer abandons Checkout
 
-The server-side script configured by `npm run start:stripe` is currently `server.cjs` (from `package.json`), but that file is not present in this branch at the moment.
-Running the script currently fails with `MODULE_NOT_FOUND`.
+Backend (local / your own Node host):
 
-For full workflow details, endpoint contract, setup, and troubleshooting, see `docs/checkout-support-runbook.md`.
+```bash
+export STRIPE_SECRET_KEY=sk_test_...
+export STRIPE_PRICE_ID=price_...
+export DOMAIN=http://localhost:4242
+npm run start:stripe
+```
+
+Then open `http://localhost:4242/checkout.html`. The secret key and Price ID come from the [Stripe Dashboard](https://dashboard.stripe.com/); `DOMAIN` must match the origin users use (no trailing slash).
+
+Deployment note: the Vercel config in this repo routes traffic through PHP `api/`; it does not run `server.cjs`. You need a Node (or other) endpoint that implements `POST /create-checkout-session` in production, or proxy that path to this server.
+
+Details: `docs/checkout-support-runbook.md`.
 
 ### Subprojects (my-app and vue-client)
 

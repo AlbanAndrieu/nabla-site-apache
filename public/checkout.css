@@ -200,3 +200,23 @@ body.site-content-page:has(main.checkout-page) #main-content.checkout-page {
 .checkout-page form button#checkout-button {
 	width: 100%;
 }
+
+.checkout-error {
+	margin: 0.75rem 0 0;
+	padding: 0.5rem 0.75rem;
+	border-radius: 8px;
+	font-size: 0.875rem;
+	color: var(--alert-warning-text);
+	background: var(--alert-warning-bg);
+	border: 1px solid var(--alert-warning-border);
+}
+
+.checkout-session-ref {
+	color: var(--text-muted);
+	font-size: 0.8125rem;
+}
+
+.checkout-form button[aria-busy="true"] {
+	opacity: 0.85;
+	cursor: wait;
+}
