@@ -380,59 +380,6 @@
 				color: var(--primary-color);
 			}
 
-			/* Footer */
-			.footer {
-				background: var(--dark-color);
-				color: white;
-				padding: 3rem 2rem 2rem;
-				text-align: center;
-			}
-
-			.social-links {
-				display: flex;
-				justify-content: center;
-				gap: 1.5rem;
-				margin-bottom: 2rem;
-				flex-wrap: wrap;
-			}
-
-			.social-link {
-				width: 50px;
-				height: 50px;
-				border-radius: 50%;
-				background: rgba(255, 255, 255, 0.1);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: white;
-				text-decoration: none;
-				transition: all 0.3s ease;
-				font-size: 1.5rem;
-			}
-
-			.social-link:hover {
-				background: var(--primary-color);
-				transform: translateY(-3px);
-				color: white;
-			}
-
-			.footer-links {
-				display: flex;
-				justify-content: center;
-				gap: 2rem;
-				margin-bottom: 1rem;
-				flex-wrap: wrap;
-			}
-
-			.footer-links a {
-				color: rgba(255, 255, 255, 0.8);
-				text-decoration: none;
-			}
-
-			.footer-links a:hover {
-				color: white;
-			}
-
 			/* Responsive Design */
 			@media (max-width: 768px) {
 				.hero-title {
@@ -831,8 +778,9 @@
 			</div>
 
 			<div class="footer-links">
+				<a href="/pricing.html">Pricing</a>
 				<a href="/policy/service_terms.html">Terms of Use</a>
-				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer">Cookies</a>
+				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
 				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 

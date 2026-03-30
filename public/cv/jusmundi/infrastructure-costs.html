@@ -90,390 +90,389 @@
 			}
 		</style>
 	</head>
-	<body class="site-content-page jusmundi-page infra-costs-page">
+	<body class="site-content-page jusmundi-page infra-costs-page page-dark">
 		<a name="top"></a>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
-		<div class="container py-4">
-			<main id="main-content" role="main">
-				<nav aria-label="Breadcrumb">
-					<a href="index.html" class="back-link" aria-label="Back to Jusmundi index">← Back to Jusmundi</a>
-					<span class="mx-2" aria-hidden="true">·</span>
-					<a href="../index.html" class="back-link" aria-label="Back to CV index">CV index</a>
-				</nav>
 
-				<header class="jusmundi-hero infra-hero-landing" role="banner">
-					<h1>JusMundi — Infrastructure Costs</h1>
-					<p class="subtitle">Monthly cost overview (servers, database, storage, GPU)</p>
-				</header>
+		<nav class="page-nav container py-3 d-flex flex-wrap align-items-center gap-2" aria-label="Breadcrumb">
+			<a href="index.html" class="text-decoration-none" aria-label="Back to Jusmundi index">
+				<span aria-hidden="true">←</span> Jusmundi
+			</a>
+			<span class="opacity-75" aria-hidden="true">·</span>
+			<a href="../index.html" class="text-decoration-none" aria-label="Back to CV index">CV index</a>
+		</nav>
 
-				<section class="infra-migration-band" aria-labelledby="migration-highlight-heading">
-					<div class="infra-migration-band-layout">
-						<div class="infra-migration-band-figure" aria-hidden="true">
-							<i class="fas fa-cloud-arrow-up"></i>
-						</div>
-						<div class="engagement-block infra-migration-band-body">
-							<p class="infra-top-achievement-pill">
-								<i class="fas fa-trophy" aria-hidden="true"></i>
-								<span>Top #1 achievement</span>
-							</p>
-							<h3 id="migration-highlight-heading">Platform migration — OVH Nomad to multi-site Kubernetes on AWS</h3>
-							<p class="infra-migration-lead">
-								Roadmap-level move from Nomad on OVH to a <strong>US + EU</strong> footprint on
-								<strong>Amazon EKS</strong> — modern control plane, cluster add-ons, and operations patterns aligned
-								with current AWS best practice (security groups, IRSA, observability, GitOps-ready delivery).
-							</p>
-							<ul>
-								<li>
-									<strong>From Nomad on OVH</strong> — consolidate orchestration on managed Kubernetes instead of
-									self-run schedulers where it reduces toil and improves standard tooling.
-								</li>
-								<li>
-									<strong>Multi-region by design</strong> — separate clusters (or cell-style layouts) for
-									<strong>United States</strong> and <strong>Europe</strong> to match data residency, latency, and DR
-									expectations.
-								</li>
-								<li>
-									<strong>State-of-the-art baseline</strong> — hardened node groups, ingress and service mesh options as
-									needed, secrets integration, autoscaling, and continuous alignment with AWS Well-Architected and your
-									compliance targets (e.g. ISO / SOC operating model).
-								</li>
-							</ul>
-						</div>
+		<main id="main-content" role="main" class="container py-4 pb-5">
+			<header class="jusmundi-hero infra-hero-landing" role="banner">
+				<h1>JusMundi — Infrastructure Costs</h1>
+				<p class="subtitle">Monthly cost overview (servers, database, storage, GPU)</p>
+			</header>
+
+			<section class="infra-migration-band" aria-labelledby="migration-highlight-heading">
+				<div class="infra-migration-band-layout">
+					<div class="infra-migration-band-figure" aria-hidden="true">
+						<i class="fas fa-cloud-arrow-up"></i>
 					</div>
-				</section>
-
-				<section class="services-section infra-costs-section" aria-labelledby="summary-heading">
-					<h2 class="section-title" id="summary-heading">Total summary</h2>
-					<p class="section-subtitle text-muted-status mb-0">Computed from the cost breakdown by category below.</p>
-					<div class="infra-table-wrap mt-3">
-						<table class="kpi-table" role="table" aria-label="Total cost summary">
-							<thead>
-								<tr>
-									<th scope="col"># Resources</th>
-									<th scope="col">Monthly cost</th>
-									<th scope="col">Annual cost</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td id="summary-resources">—</td>
-									<td id="summary-monthly">—</td>
-									<td id="summary-annual">—</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="engagement-block infra-migration-band-body">
+						<p class="infra-top-achievement-pill">
+							<i class="fas fa-trophy" aria-hidden="true"></i>
+							<span>Top #1 achievement</span>
+						</p>
+						<h3 id="migration-highlight-heading">Platform migration — OVH Nomad to multi-site Kubernetes on AWS</h3>
+						<p class="infra-migration-lead">
+							Roadmap-level move from Nomad on OVH to a <strong>US + EU</strong> footprint on
+							<strong>Amazon EKS</strong> — modern control plane, cluster add-ons, and operations patterns aligned with
+							current AWS best practice (security groups, IRSA, observability, GitOps-ready delivery).
+						</p>
+						<ul>
+							<li>
+								<strong>From Nomad on OVH</strong> — consolidate orchestration on managed Kubernetes instead of self-run
+								schedulers where it reduces toil and improves standard tooling.
+							</li>
+							<li>
+								<strong>Multi-region by design</strong> — separate clusters (or cell-style layouts) for
+								<strong>United States</strong> and <strong>Europe</strong> to match data residency, latency, and DR
+								expectations.
+							</li>
+							<li>
+								<strong>State-of-the-art baseline</strong> — hardened node groups, ingress and service mesh options as
+								needed, secrets integration, autoscaling, and continuous alignment with AWS Well-Architected and your
+								compliance targets (e.g. ISO / SOC operating model).
+							</li>
+						</ul>
 					</div>
-				</section>
+				</div>
+			</section>
 
-				<p class="section-subtitle infra-costs-note">
-					Almost half of the cost is OpenAI tokens, but not yet charged as Startup Program is ongoing.
+			<section class="services-section infra-costs-section" aria-labelledby="summary-heading">
+				<h2 class="section-title" id="summary-heading">Total summary</h2>
+				<p class="section-subtitle text-muted-status mb-0">Computed from the cost breakdown by category below.</p>
+				<div class="infra-table-wrap mt-3">
+					<table class="kpi-table" role="table" aria-label="Total cost summary">
+						<thead>
+							<tr>
+								<th scope="col"># Resources</th>
+								<th scope="col">Monthly cost</th>
+								<th scope="col">Annual cost</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="summary-resources">—</td>
+								<td id="summary-monthly">—</td>
+								<td id="summary-annual">—</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<p class="section-subtitle infra-costs-note">
+				Almost half of the cost is OpenAI tokens, but not yet charged as Startup Program is ongoing.
+			</p>
+
+			<section class="proof-section infra-costs-section" aria-labelledby="category-heading">
+				<h2 class="section-title" id="category-heading">Cost breakdown by category</h2>
+				<div class="infra-table-wrap">
+					<table class="kpi-table" id="cost-by-category-table" role="table" aria-label="Cost by category">
+						<thead>
+							<tr>
+								<th scope="col">Category</th>
+								<th scope="col"># Items</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="category-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="category-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>OVH - Servers</strong></td>
+								<td>74</td>
+								<td>€8,100</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Database</strong></td>
+								<td>6</td>
+								<td>€1,300</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Storage</strong></td>
+								<td>5</td>
+								<td>€3,300</td>
+							</tr>
+							<tr>
+								<td><strong>OVH - Servers GPU</strong></td>
+								<td>1</td>
+								<td><strong>€2,500</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - Load balancer</td>
+								<td>1</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td>OVH - Gateway</td>
+								<td>1</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td><strong>Cloudflare</strong></td>
+								<td>1</td>
+								<td>€5,000</td>
+							</tr>
+							<tr>
+								<td><strong>Weights and Biases</strong></td>
+								<td>1</td>
+								<td>€400</td>
+							</tr>
+							<tr>
+								<td><strong>Datadog</strong></td>
+								<td>1</td>
+								<td>€1,200</td>
+							</tr>
+							<tr>
+								<td><strong>Azure OpenAI</strong></td>
+								<td>1</td>
+								<td>
+									€45,600
+									<span class="text-muted-status"
+										>(Startup Program — no billing), Foundry model training (€29,200 + €16,300 per month)
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td><strong>AWS</strong></td>
+								<td>1</td>
+								<td>~€3,500</td>
+							</tr>
+							<tr>
+								<td><strong>OpenAI</strong></td>
+								<td>1</td>
+								<td>~€45,000</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr id="category-total-row">
+								<td><strong>Total</strong></td>
+								<td id="total-resources">—</td>
+								<td id="total-monthly">—</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</section>
+
+			<section class="services-section infra-costs-section section-tight-top" aria-labelledby="top10-heading">
+				<h2 class="section-title" id="top10-heading">Top 14 most expensive resources</h2>
+				<div class="infra-table-wrap">
+					<table class="kpi-table" id="top14-table" role="table" aria-label="Top 14 expensive resources">
+						<thead>
+							<tr>
+								<th scope="col">Resource</th>
+								<th scope="col">Type</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="top14-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="top14-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Azure OpenAI</td>
+								<td>AI / LLM</td>
+								<td><strong>€45,000</strong> <span class="text-muted-status">(Startup Program — no billing)</span></td>
+							</tr>
+							<tr>
+								<td>Cloudflare</td>
+								<td>CDN / WAF</td>
+								<td><strong>€5,000</strong></td>
+							</tr>
+							<tr>
+								<td>AWS</td>
+								<td>Cloud</td>
+								<td>~€3,500</td>
+							</tr>
+							<tr>
+								<td>OVH - Additional disks</td>
+								<td>Storage</td>
+								<td><strong>€3,200</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - Servers GPU</td>
+								<td>GPU</td>
+								<td><strong>€2,500</strong></td>
+							</tr>
+							<tr>
+								<td>OVH - ES Clusters Prod (×10 @ €270)</td>
+								<td>Prod search</td>
+								<td>€2,700</td>
+							</tr>
+							<tr>
+								<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
+								<td>Prod compute</td>
+								<td>€1,600</td>
+							</tr>
+							<tr>
+								<td>Datadog</td>
+								<td>APM / monitoring</td>
+								<td>€1,200</td>
+							</tr>
+							<tr>
+								<td>OVH - postgresql business DB (x3)</td>
+								<td>Managed DB</td>
+								<td>€1,000</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT Nomad Workers (various)</td>
+								<td>UAT compute</td>
+								<td>€900</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT ES Clusters (×3 @ €270)</td>
+								<td>UAT search</td>
+								<td>€800</td>
+							</tr>
+							<tr>
+								<td>GitLab Premium (26 users)</td>
+								<td>CI/CD</td>
+								<td>~€700 <span class="text-muted-status">(billed annually)</span></td>
+							</tr>
+							<tr>
+								<td>Weights and Biases</td>
+								<td>ML / experiment tracking</td>
+								<td>€400</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="proof-section infra-costs-section" aria-labelledby="platform-heading">
+				<h2 class="section-title" id="platform-heading">Platform team — specific infrastructure</h2>
+				<p class="section-subtitle text-muted-status mb-3">
+					OVH and AWS only (no Datadog, Cloudflare, GitLab, or other SaaS).
 				</p>
+				<div class="infra-table-wrap">
+					<table
+						class="kpi-table"
+						id="platform-infra-table"
+						role="table"
+						aria-label="Platform team infrastructure cost (OVH and AWS)"
+					>
+						<thead>
+							<tr>
+								<th scope="col">Resource</th>
+								<th scope="col">Type</th>
+								<th scope="col">
+									<button
+										type="button"
+										id="platform-sort-btn"
+										class="sortable-col-header"
+										aria-label="Sort by monthly cost descending"
+									>
+										Monthly cost <span id="platform-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
+									</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>OVH - Server mgt - Platform (×2)</td>
+								<td>Management</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td>OVH - Server prod - VPN (×3)</td>
+								<td>VPN / routing</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td>OVH - Server mgt - Zabbix (×2)</td>
+								<td>Monitoring</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td>OVH - Server prod - Graylog (×4)</td>
+								<td>Logging</td>
+								<td>€100</td>
+							</tr>
+							<tr>
+								<td>OVH - Additional disks</td>
+								<td>Storage</td>
+								<td>€3,200</td>
+							</tr>
+							<tr>
+								<td>OVH - Servers GPU</td>
+								<td>GPU</td>
+								<td>€2,500</td>
+							</tr>
+							<tr>
+								<td>OVH - ES Clusters Prod (×10 @ €270)</td>
+								<td>Prod search</td>
+								<td>€2,700</td>
+							</tr>
+							<tr>
+								<td>OVH - postgresql-business-db1-30</td>
+								<td>Managed DB</td>
+								<td>€1,000</td>
+							</tr>
+							<tr>
+								<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
+								<td>Prod compute</td>
+								<td>€1,600</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT Nomad Workers (various)</td>
+								<td>UAT compute</td>
+								<td>€900</td>
+							</tr>
+							<tr>
+								<td>OVH - UAT ES Clusters (×3 @ €270)</td>
+								<td>UAT search</td>
+								<td>€800</td>
+							</tr>
+							<tr>
+								<td>AWS</td>
+								<td>Cloud</td>
+								<td>~€3,500</td>
+							</tr>
+							<tr data-sort-exclude>
+								<td><strong>Platform sub-total</strong></td>
+								<td></td>
+								<td><strong>~€15,500/month</strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
 
-				<section class="proof-section infra-costs-section" aria-labelledby="category-heading">
-					<h2 class="section-title" id="category-heading">Cost breakdown by category</h2>
-					<div class="infra-table-wrap">
-						<table class="kpi-table" id="cost-by-category-table" role="table" aria-label="Cost by category">
-							<thead>
-								<tr>
-									<th scope="col">Category</th>
-									<th scope="col"># Items</th>
-									<th scope="col">
-										<button
-											type="button"
-											id="category-sort-btn"
-											class="sortable-col-header"
-											aria-label="Sort by monthly cost descending"
-										>
-											Monthly cost <span id="category-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
-										</button>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><strong>OVH - Servers</strong></td>
-									<td>74</td>
-									<td>€8,100</td>
-								</tr>
-								<tr>
-									<td><strong>OVH - Database</strong></td>
-									<td>6</td>
-									<td>€1,300</td>
-								</tr>
-								<tr>
-									<td><strong>OVH - Storage</strong></td>
-									<td>5</td>
-									<td>€3,300</td>
-								</tr>
-								<tr>
-									<td><strong>OVH - Servers GPU</strong></td>
-									<td>1</td>
-									<td><strong>€2,500</strong></td>
-								</tr>
-								<tr>
-									<td>OVH - Load balancer</td>
-									<td>1</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td>OVH - Gateway</td>
-									<td>1</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td><strong>Cloudflare</strong></td>
-									<td>1</td>
-									<td>€5,000</td>
-								</tr>
-								<tr>
-									<td><strong>Weights and Biases</strong></td>
-									<td>1</td>
-									<td>€400</td>
-								</tr>
-								<tr>
-									<td><strong>Datadog</strong></td>
-									<td>1</td>
-									<td>€1,200</td>
-								</tr>
-								<tr>
-									<td><strong>Azure OpenAI</strong></td>
-									<td>1</td>
-									<td>
-										€45,600
-										<span class="text-muted-status"
-											>(Startup Program — no billing), Foundry model training (€29,200 + €16,300 per month)
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td><strong>AWS</strong></td>
-									<td>1</td>
-									<td>~€3,500</td>
-								</tr>
-								<tr>
-									<td><strong>OpenAI</strong></td>
-									<td>1</td>
-									<td>~€45,000</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr id="category-total-row">
-									<td><strong>Total</strong></td>
-									<td id="total-resources">—</td>
-									<td id="total-monthly">—</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-				</section>
-
-				<section class="services-section infra-costs-section section-tight-top" aria-labelledby="top10-heading">
-					<h2 class="section-title" id="top10-heading">Top 14 most expensive resources</h2>
-					<div class="infra-table-wrap">
-						<table class="kpi-table" id="top14-table" role="table" aria-label="Top 14 expensive resources">
-							<thead>
-								<tr>
-									<th scope="col">Resource</th>
-									<th scope="col">Type</th>
-									<th scope="col">
-										<button
-											type="button"
-											id="top14-sort-btn"
-											class="sortable-col-header"
-											aria-label="Sort by monthly cost descending"
-										>
-											Monthly cost <span id="top14-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
-										</button>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Azure OpenAI</td>
-									<td>AI / LLM</td>
-									<td>
-										<strong>€45,000</strong> <span class="text-muted-status">(Startup Program — no billing)</span>
-									</td>
-								</tr>
-								<tr>
-									<td>Cloudflare</td>
-									<td>CDN / WAF</td>
-									<td><strong>€5,000</strong></td>
-								</tr>
-								<tr>
-									<td>AWS</td>
-									<td>Cloud</td>
-									<td>~€3,500</td>
-								</tr>
-								<tr>
-									<td>OVH - Additional disks</td>
-									<td>Storage</td>
-									<td><strong>€3,200</strong></td>
-								</tr>
-								<tr>
-									<td>OVH - Servers GPU</td>
-									<td>GPU</td>
-									<td><strong>€2,500</strong></td>
-								</tr>
-								<tr>
-									<td>OVH - ES Clusters Prod (×10 @ €270)</td>
-									<td>Prod search</td>
-									<td>€2,700</td>
-								</tr>
-								<tr>
-									<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
-									<td>Prod compute</td>
-									<td>€1,600</td>
-								</tr>
-								<tr>
-									<td>Datadog</td>
-									<td>APM / monitoring</td>
-									<td>€1,200</td>
-								</tr>
-								<tr>
-									<td>OVH - postgresql business DB (x3)</td>
-									<td>Managed DB</td>
-									<td>€1,000</td>
-								</tr>
-								<tr>
-									<td>OVH - UAT Nomad Workers (various)</td>
-									<td>UAT compute</td>
-									<td>€900</td>
-								</tr>
-								<tr>
-									<td>OVH - UAT ES Clusters (×3 @ €270)</td>
-									<td>UAT search</td>
-									<td>€800</td>
-								</tr>
-								<tr>
-									<td>GitLab Premium (26 users)</td>
-									<td>CI/CD</td>
-									<td>~€700 <span class="text-muted-status">(billed annually)</span></td>
-								</tr>
-								<tr>
-									<td>Weights and Biases</td>
-									<td>ML / experiment tracking</td>
-									<td>€400</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</section>
-
-				<section class="proof-section infra-costs-section" aria-labelledby="platform-heading">
-					<h2 class="section-title" id="platform-heading">Platform team — specific infrastructure</h2>
-					<p class="section-subtitle text-muted-status mb-3">
-						OVH and AWS only (no Datadog, Cloudflare, GitLab, or other SaaS).
-					</p>
-					<div class="infra-table-wrap">
-						<table
-							class="kpi-table"
-							id="platform-infra-table"
-							role="table"
-							aria-label="Platform team infrastructure cost (OVH and AWS)"
-						>
-							<thead>
-								<tr>
-									<th scope="col">Resource</th>
-									<th scope="col">Type</th>
-									<th scope="col">
-										<button
-											type="button"
-											id="platform-sort-btn"
-											class="sortable-col-header"
-											aria-label="Sort by monthly cost descending"
-										>
-											Monthly cost <span id="platform-sort-icon" class="sort-icon" aria-hidden="true">↓</span>
-										</button>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>OVH - Server mgt - Platform (×2)</td>
-									<td>Management</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td>OVH - Server prod - VPN (×3)</td>
-									<td>VPN / routing</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td>OVH - Server mgt - Zabbix (×2)</td>
-									<td>Monitoring</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td>OVH - Server prod - Graylog (×4)</td>
-									<td>Logging</td>
-									<td>€100</td>
-								</tr>
-								<tr>
-									<td>OVH - Additional disks</td>
-									<td>Storage</td>
-									<td>€3,200</td>
-								</tr>
-								<tr>
-									<td>OVH - Servers GPU</td>
-									<td>GPU</td>
-									<td>€2,500</td>
-								</tr>
-								<tr>
-									<td>OVH - ES Clusters Prod (×10 @ €270)</td>
-									<td>Prod search</td>
-									<td>€2,700</td>
-								</tr>
-								<tr>
-									<td>OVH - postgresql-business-db1-30</td>
-									<td>Managed DB</td>
-									<td>€1,000</td>
-								</tr>
-								<tr>
-									<td>OVH - Nomad Workers Prod (×6 @ €270)</td>
-									<td>Prod compute</td>
-									<td>€1,600</td>
-								</tr>
-								<tr>
-									<td>OVH - UAT Nomad Workers (various)</td>
-									<td>UAT compute</td>
-									<td>€900</td>
-								</tr>
-								<tr>
-									<td>OVH - UAT ES Clusters (×3 @ €270)</td>
-									<td>UAT search</td>
-									<td>€800</td>
-								</tr>
-								<tr>
-									<td>AWS</td>
-									<td>Cloud</td>
-									<td>~€3,500</td>
-								</tr>
-								<tr data-sort-exclude>
-									<td><strong>Platform sub-total</strong></td>
-									<td></td>
-									<td><strong>~€15,500/month</strong></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</section>
-
-				<section class="services-section infra-costs-section section-tight-top" aria-labelledby="documents-heading">
-					<h2 class="section-title" id="documents-heading">Related documents</h2>
-					<p class="section-subtitle">Jusmundi index and other pages</p>
-					<p>
-						<a href="index.html" class="back-link">← Back to Jusmundi index</a>
-						<span class="mx-2" aria-hidden="true">·</span>
-						<a href="structure.html" class="back-link">People &amp; structure</a>
-						<span class="mx-2" aria-hidden="true">·</span>
-						<a href="4-years-review-jusmundi.html" class="back-link">JusMundi global achievements</a>
-						<span class="mx-2" aria-hidden="true">·</span>
-						<a href="4-years-review-aandrieu.html" class="back-link">4-year summary — Alban Andrieu</a>
-					</p>
-				</section>
-			</main>
-		</div>
+			<section class="services-section infra-costs-section section-tight-top" aria-labelledby="documents-heading">
+				<h2 class="section-title" id="documents-heading">Related documents</h2>
+				<p class="section-subtitle">Jusmundi index and other pages</p>
+				<p>
+					<a href="index.html" class="back-link">← Back to Jusmundi index</a>
+					<span class="mx-2" aria-hidden="true">·</span>
+					<a href="structure.html" class="back-link">People &amp; structure</a>
+					<span class="mx-2" aria-hidden="true">·</span>
+					<a href="4-years-review-jusmundi.html" class="back-link">JusMundi global achievements</a>
+					<span class="mx-2" aria-hidden="true">·</span>
+					<a href="4-years-review-aandrieu.html" class="back-link">4-year summary — Alban Andrieu</a>
+				</p>
+			</section>
+		</main>
 
 		<footer class="footer" role="contentinfo">
 			<div class="social-links">
@@ -519,6 +518,7 @@
 				></a>
 			</div>
 			<div class="footer-links">
+				<a href="/pricing.html">Pricing</a>
 				<a href="/policy/service_terms.html">Terms of Use</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
 				<a href="/policy/privacy_policy.html">Privacy Policy</a>
@@ -529,7 +529,7 @@
 				<a href="#top" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Back to top of page">Back to top</a>
 			</p>
 			<p class="text-muted small mt-2">JusMundi OVH infrastructure cost overview. Based on internal cost file.</p>
-			<p class="text-muted small mt-3 mb-0">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
 
 		<script src="/site-widgets.js" defer data-print-pdf data-coffee-fab></script>

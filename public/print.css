@@ -408,16 +408,17 @@
 		bottom: 20px;
 		right: 20px;
 		padding: 12px 24px;
-		background-color: #2563eb;
-		color: white;
-		border: none;
+		background-color: var(--site-fab-bg, #2563eb);
+		color: var(--site-fab-fg, #fff);
+		border: var(--site-fab-border, none);
 		border-radius: 8px;
 		font-size: 16px;
 		font-weight: 600;
 		cursor: pointer;
-		box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+		box-shadow: var(--site-fab-shadow, 0 4px 12px rgba(37, 99, 235, 0.3));
 		z-index: 1000;
-		transition: all 0.3s ease;
+		transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s
+			ease, transform 0.3s ease;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -429,9 +430,10 @@
 	}
 
 	.print-button:hover {
-		background-color: #1d4ed8;
+		background-color: var(--site-fab-hover-bg, #1d4ed8);
+		color: var(--site-fab-hover-fg, var(--site-fab-fg, #fff));
 		transform: translateY(-2px);
-		box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+		box-shadow: var(--site-fab-shadow, 0 6px 16px rgba(37, 99, 235, 0.4));
 	}
 
 	.print-button i {

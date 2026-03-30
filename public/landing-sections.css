@@ -26,6 +26,27 @@
 	}
 }
 
+/* Manual theme (align with theme-toggle.js effective theme, not only OS preference) */
+html[data-theme="light"] {
+	--text-dark: #1f2937;
+	--text-light: #6b7280;
+	--bg-light: #f9fafb;
+	--bg-white: #ffffff;
+	--border-color: #e5e7eb;
+	--shadow-color: rgba(0, 0, 0, 0.08);
+	--shadow-hover-color: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] {
+	--text-dark: #f9fafb;
+	--text-light: #d1d5db;
+	--bg-light: #1f2937;
+	--bg-white: #111827;
+	--border-color: #374151;
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--shadow-hover-color: rgba(0, 0, 0, 0.5);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -511,76 +532,7 @@ body {
 	opacity: 0.8;
 }
 
-/* Footer - uniform site footer (excludes C.V. pages) */
-.footer {
-	background: #0f172a;
-	color: white;
-	padding: 2rem;
-	text-align: center;
-}
-
-.footer-copyright {
-	margin-top: 1rem;
-	opacity: 0.7;
-}
-
-@media (prefers-color-scheme: dark) {
-	.footer {
-		background: #020617;
-	}
-}
-
-html[data-theme="dark"] .footer {
-	background: #020617;
-}
-
-html[data-theme="light"] .footer {
-	background: #0f172a;
-}
-
-.footer-links {
-	display: flex;
-	gap: 2rem;
-	justify-content: center;
-	margin-bottom: 1rem;
-	flex-wrap: wrap;
-}
-
-.footer-links a {
-	color: white;
-	text-decoration: none;
-	opacity: 0.8;
-	transition: opacity 0.3s ease;
-}
-
-.footer-links a:hover {
-	opacity: 1;
-}
-
-.social-links {
-	display: flex;
-	gap: 1.5rem;
-	justify-content: center;
-	margin: 1.5rem 0;
-}
-
-.social-link {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.1);
-	color: white;
-	text-decoration: none;
-	transition: all 0.3s ease;
-}
-
-.social-link:hover {
-	background: var(--primary-color);
-	transform: translateY(-3px);
-}
+/* Site footer (.footer, .footer-links, .social-*): single source in theme.css */
 
 /* Tools Section */
 .tools-section {
@@ -628,6 +580,22 @@ html[data-theme="light"] .footer {
 	.tool-item:hover img {
 		filter: grayscale(0%) brightness(0.9);
 	}
+}
+
+html[data-theme="dark"] .tool-item img {
+	filter: grayscale(50%) brightness(0.9);
+}
+
+html[data-theme="dark"] .tool-item:hover img {
+	filter: grayscale(0%) brightness(0.9);
+}
+
+html[data-theme="light"] .tool-item img {
+	filter: grayscale(50%);
+}
+
+html[data-theme="light"] .tool-item:hover img {
+	filter: grayscale(0%);
 }
 
 .tool-item h4 {
