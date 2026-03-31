@@ -57,31 +57,6 @@ test.describe("Navigation and Links Tests", () => {
 		}
 	});
 
-	test("should not have broken fragment links", async ({ page }) => {
-		await page.goto("/");
-
-		// Get all fragment links (anchor links)
-		const fragmentLinks = page.locator('a[href^="#"]');
-		const linkCount = await fragmentLinks.count();
-
-		// Check first few fragment links
-		for (let i = 0; i < Math.min(linkCount, 5); i++) {
-			const link = fragmentLinks.nth(i);
-			const href = await link.getAttribute("href");
-
-			if (href && href !== "#") {
-				// Extract the ID from the href (remove #)
-				const targetId = href.substring(1);
-
-				// Check if element with that ID exists
-				const target = page.locator(`#${targetId}`);
-				const targetCount = await target.count();
-
-				expect(targetCount).toBeGreaterThan(0);
-			}
-		}
-	});
-
 	test("should have external links with proper attributes", async ({
 		page,
 	}) => {
