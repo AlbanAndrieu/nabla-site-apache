@@ -856,8 +856,11 @@
 	function initContactEmailLink() {
 		var container = document.getElementById("contact-email");
 		if (!container) return;
+		while (container.firstChild) {
+			container.removeChild(container.firstChild);
+		}
 		var user = "alban" + "." + "andrieu";
-		var domain = "albandrieu" + "." + "com";
+		var domain = "dr-alban" + "." + "com";
 		var email = user + "@" + domain;
 		var link = document.createElement("a");
 		link.href = "mailto:" + email;
@@ -907,7 +910,22 @@
 		}
 	}
 
+	/** Footer: set `© {year} {COPYRIGHT_ATTRIBUTION}.` on `.footer-copyright`. Optional `data-copyright-tail` appends after the period (e.g. ctid page). */
+	function initSiteCopyright() {
+		var COPYRIGHT_ATTRIBUTION = "Alban Andrieu. Independent DevSecOps Professional";
+		var y = String(new Date().getFullYear());
+		document.querySelectorAll(".footer-copyright").forEach(function (el) {
+			var tail = el.getAttribute("data-copyright-tail");
+			var line = "© " + y + " " + COPYRIGHT_ATTRIBUTION + ".";
+			if (tail) {
+				line += " " + tail.trim();
+			}
+			el.textContent = line;
+		});
+	}
+
 	function initMainWidgets() {
+
 	if (!(root && has("data-no-smooth-scroll")) && !preset.noSmoothScroll) {
 		initSmoothScroll();
 	}
@@ -916,6 +934,7 @@
 	initCoffeeFab();
 	ensurePrintPdfButton();
 	ensureBackToTopFab();
+	initSiteCopyright();
 	initContactEmailLink();
 	initAxeptio();
 

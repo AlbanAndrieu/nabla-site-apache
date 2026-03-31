@@ -75,32 +75,42 @@ Default behavior to remember:
 
 ## Recommended Integration Pattern
 
-For content pages in `public/`:
+Paths below are for `public/*.html` at **site root**. For `public/cv/index.html` use `../theme-toggle.js`, `../site-widgets.js`, etc.; for `public/cv/jusmundi/*.html` use `../../…`. Same rule as shared CSS. Never use `/site-widgets.js`-style root paths for these files.
+
+For content pages in `public/` (root-level HTML):
 
 ```html
 <script src="theme-toggle.js"></script>
-<script src="/site-google-translate.js" defer></script>
+<script src="site-google-translate.js" defer></script>
+<script src="site-analytics.js" data-analytics-mode="vercel"></script>
+```
+
+End of `<body>` (before `</body>`):
+
+```html
 <script
-  src="/site-widgets.js"
+  src="site-widgets.js"
   defer
   data-print-pdf
   data-coffee-fab
   data-axeptio
 ></script>
-<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 ```
 
 For minimal utility pages:
 
 ```html
-<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
-<script src="/site-widgets.js" defer data-no-print-pdf data-no-coffee-fab></script>
+<script src="theme-toggle.js"></script>
+<script src="site-google-translate.js" defer></script>
+<script src="site-analytics.js" data-analytics-mode="vercel"></script>
+<!-- … -->
+<script src="site-widgets.js" defer data-no-print-pdf data-no-coffee-fab></script>
 ```
 
-For 404:
+For root `public/404.html` (minimal chrome):
 
 ```html
-<script src="site-widgets.js" data-minimal-chrome></script>
+<script src="site-widgets.js" defer data-minimal-chrome></script>
 ```
 
 ## Troubleshooting

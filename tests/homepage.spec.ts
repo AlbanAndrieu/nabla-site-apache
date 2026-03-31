@@ -84,4 +84,16 @@ test.describe("Homepage Tests", () => {
 		const viewport = page.locator('meta[name="viewport"]');
 		await expect(viewport).toHaveAttribute("content", /width=device-width/);
 	});
+
+	test("footer copyright line uses current year and site attribution", async ({
+		page,
+	}) => {
+		await page.goto("/");
+		const year = String(new Date().getFullYear());
+		const line = page.locator("footer .footer-copyright");
+		await expect(line).toContainText(year);
+		await expect(line).toContainText(
+			"Alban Andrieu. Independent DevSecOps Professional.",
+		);
+	});
 });

@@ -342,6 +342,7 @@ repos:
               tests/.*|
               api/hello.js|
               vue-client/.*|
+              server.cjs|
           )$
 
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs

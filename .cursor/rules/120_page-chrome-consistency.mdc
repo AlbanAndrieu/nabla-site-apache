@@ -24,7 +24,7 @@ When creating or editing HTML pages in `public/`, follow the rules below. **`pub
 
 ### Standard content pages
 
-**Relative `src` for site-owned scripts:** `theme-toggle.js`, `site-google-translate.js`, `site-analytics.js`, and `site-widgets.js` all live next to `index.html` under `public/`. Resolve them **from the HTML file’s directory** (same rule as CSS), not with a leading `/`, so file and static hosting layouts keep working:
+**Relative `src` for site-owned scripts:** `theme-toggle.js`, `site-google-translate.js`, `site-analytics.js`, and `site-widgets.js` all live next to `index.html` under `public/`. Resolve them **from the HTML file’s directory** (same rule as CSS). **Do not** use root-absolute URLs such as `/site-widgets.js` or `/site-analytics.js`: they fail for pages not served from domain root (e.g. `file://`, path-based previews, mirrors). Use only the basename or `../` / `../../` prefixes per depth:
 
 | Page location | Example `src` for `site-analytics.js` |
 |---------------|----------------------------------------|

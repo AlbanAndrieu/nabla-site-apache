@@ -1,7 +1,7 @@
 /**
  * Google Translate widget: ensures mount node, defines googleTranslateElementInit, loads Google script.
  *
- * Optional on <script src="/site-google-translate.js" defer>: data-no-google-translate — skip entirely.
+ * Optional on <script src="…/site-google-translate.js" defer> (same directory depth as other public-root scripts): data-no-google-translate — skip entirely.
  * If #google_translate_element is missing, a fixed-position wrapper is prepended to <body> (see theme.css).
  */
 (() => {
