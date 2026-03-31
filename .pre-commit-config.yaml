@@ -328,6 +328,7 @@ repos:
               public/assets/fontawesome-free-7.1.0-web/.*|
               public/assets/fontawesome/.*|
               public/assets/.*|
+              public/cv-markdown-export.js|
               public/arf.js|
               public/index.js|
               public/d3.v3.min.js|

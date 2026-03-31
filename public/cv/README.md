@@ -30,8 +30,8 @@ Core files in `public/cv/`:
 
 Cross-directory dependencies:
 
-- `public/assets/js/cv-markdown-export.js`
-- `public/assets/js/print-menu.js`
+- `public/cv-markdown-export.js`
+- `public/print-menu.js`
 - root `Makefile` target `build-pdf`
 - CI workflow `.github/workflows/build-pdf.yml`
 

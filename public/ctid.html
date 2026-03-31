@@ -112,7 +112,6 @@
 		<link rel="stylesheet" href="wireframe.css" />
 
 		<!-- Theme toggle script - load early to prevent flash -->
-		<script src="theme-toggle.js"></script>
 
 		<!-- Bootstrap -->
 		<link
@@ -134,8 +133,9 @@
 		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
 		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
 		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
-
-		<script src="/site-google-translate.js" defer></script>
+		<script src="theme-toggle.js"></script>
+		<script src="site-google-translate.js" defer></script>
+		<script src="site-analytics.js"></script>
 	</head>
 
 	<body class="site-content-page">
@@ -212,8 +212,6 @@
 			</p>
 			<div class="emoji">🚨⚠️</div>
 		</footer>
-
-		<script src="/site-widgets.js" defer data-print-pdf data-coffee-fab></script>
 
 		<script>
 			const feedContainer = document.getElementById("feedContainer");
@@ -400,5 +398,6 @@
 			// Refresh feeds every 10 minutes (600,000 milliseconds)
 			setInterval(fetchFeeds, 600000);
 		</script>
+		<script src="site-widgets.js" defer data-print-pdf data-coffee-fab></script>
 	</body>
 </html>

@@ -4,24 +4,18 @@ test.describe("Navigation and Links Tests", () => {
 	test("should have working internal links", async ({ page }) => {
 		await page.goto("/");
 
-		// Get all internal links (not starting with http/https or #)
+		// Internal links: relative paths only (exclude fragments, mailto, tel, javascript, absolute URLs)
 		const internalLinks = page.locator(
-			'a[href]:not([href^="http"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])',
+			'a[href]:not([href^="http"]):not([href^="//"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"]):not([href^="javascript:"])',
 		);
 		const linkCount = await internalLinks.count();
+		expect(linkCount).toBeGreaterThan(0);
 
-		// Check first few internal links (avoid checking too many)
-		const linksToCheck = Math.min(linkCount, 5);
-
+		const linksToCheck = Math.min(linkCount, 12);
 		for (let i = 0; i < linksToCheck; i++) {
-			const link = internalLinks.nth(i);
-			if (await link.isVisible()) {
-				const href = await link.getAttribute("href");
-				if (href && !href.includes("javascript:")) {
-					// Just verify the href attribute exists
-					expect(href).toBeTruthy();
-				}
-			}
+			const href = await internalLinks.nth(i).getAttribute("href");
+			expect(href).toBeTruthy();
+			expect(href!.trim().length).toBeGreaterThan(0);
 		}
 	});
 
@@ -116,15 +110,22 @@ test.describe("Navigation and Links Tests", () => {
 	test("should handle link hover states", async ({ page }) => {
 		await page.goto("/");
 
-		// Get first visible link
-		const link = page.locator("a[href]").first();
+		// Homepage has one in-main CTA (may use role="button"); keep it in main to avoid fixed chrome
+		const inMain = page.locator("main a[href]");
+		await expect(inMain).toHaveCount(1);
+		const link = inMain.first();
+		await expect(link).toBeVisible();
+		await link.scrollIntoViewIfNeeded();
 
-		if (await link.isVisible()) {
-			// Hover over the link
-			await link.hover();
+		const width = page.viewportSize()?.width ?? 1024;
+		const isCoarsePointer = width < 768;
 
-			// Check that link is still visible after hover
-			await expect(link).toBeVisible();
+		if (isCoarsePointer) {
+			await link.focus();
+		} else {
+			await link.hover({ force: true });
 		}
+
+		await expect(link).toBeVisible();
 	});
 });

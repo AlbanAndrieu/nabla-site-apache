@@ -41,7 +41,6 @@
 		<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
 		<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
 		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
-		<script src="theme-toggle.js"></script>
 
 		<link rel="stylesheet" href="landing-sections.css" />
 		<link rel="stylesheet" href="wireframe.css" />
@@ -71,8 +70,6 @@
 		<!-- Obs.js connection hints: obs-connection.js (https://github.com/csswizardry/Obs.js) -->
 		<script src="obs-connection.js"></script>
 
-		<script src="/site-analytics.js" data-analytics-mode="full"></script>
-
 		<!-- Cloudflare -->
 		<link
 			rel="stylesheet"
@@ -91,10 +88,6 @@
 
 		<link rel="alternate" hreflang="x-default" href="https://dr-alban.com/" />
 		<link rel="canonical" href="https://dr-alban.com/" />
-		<!-- Ahrefs Web Analytics -->
-		<script src="https://analytics.ahrefs.com/analytics.js" data-key="tg3zLMS/bebJFl0LxctiCw" async></script>
-
-		<script src="/site-google-translate.js" defer></script>
 
 		<!-- JSON-LD Structured Data for SEO and Crawlers -->
 		<script type="application/ld+json">
@@ -152,6 +145,9 @@
 				]
 			}
 		</script>
+		<script src="theme-toggle.js"></script>
+		<script src="site-google-translate.js" defer></script>
+		<script src="site-analytics.js" data-analytics-mode="full"></script>
 	</head>
 
 	<body class="site-content-page page-nabla-best-practices">
@@ -571,9 +567,8 @@
 			async="async"
 			type="text/javascript"
 		></script>
-
 		<script
-			src="./site-widgets.js"
+			src="site-widgets.js"
 			defer
 			data-scroll-reveal=".contact-card,.social-card"
 			data-reveal-effect="opacity"

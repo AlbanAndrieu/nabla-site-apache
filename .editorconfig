@@ -22,7 +22,7 @@ trim_trailing_whitespace = false
 # Python files
 [*.py]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Shell scripts
 [*.sh]

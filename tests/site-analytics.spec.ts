@@ -4,7 +4,7 @@ test.describe("Site analytics loader regression tests", () => {
 	test("should load default vercel analytics scripts and expose API", async ({
 		page,
 	}) => {
-		await page.goto("/people-contacted.html");
+		await page.goto("/");
 
 		await expect
 			.poll(async () => {
@@ -14,8 +14,9 @@ test.describe("Site analytics loader regression tests", () => {
 			})
 			.toBe("function");
 
+		// Browsers may normalize script src to an absolute URL; match by path suffix
 		await expect(
-			page.locator('script[src="/_vercel/insights/script.js"]'),
+			page.locator('script[src*="/_vercel/insights/script.js"]'),
 		).toHaveCount(1);
 		await expect(
 			page.locator('script[src="/_vercel/speed-insights/script.js"]'),
@@ -23,7 +24,7 @@ test.describe("Site analytics loader regression tests", () => {
 	});
 
 	test("should keep GTM and gtag init idempotent", async ({ page }) => {
-		await page.goto("/people-contacted.html");
+		await page.goto("/");
 
 		await expect
 			.poll(async () => {

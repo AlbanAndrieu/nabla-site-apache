@@ -1,9 +1,6 @@
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 .direnv/
 .venv/
 .ansible/
@@ -11,6 +8,9 @@ yarn-error.log*
 .wrangler/
 .nuxt/
 .output/
+
+public/cv/cv-*.done
+public/cv/cv-*.out
 
 vendor/
 webalizer

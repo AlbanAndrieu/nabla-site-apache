@@ -67,7 +67,6 @@
 		<script src="https://dr-alban.com/assets/fontawesome-free-7.1.0-web/js/brands.js"></script>
 
 		<!-- Theme toggle script - load early to prevent flash -->
-		<script src="theme-toggle.js"></script>
 
 		<!-- Bootstrap -->
 		<link
@@ -85,10 +84,6 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-
-		<script src="/site-google-translate.js" defer></script>
-
-		<script src="/site-analytics.js" data-analytics-mode="vercel"></script>
 
 		<!-- JSON-LD Structured Data for SEO -->
 		<script type="application/ld+json">
@@ -277,6 +272,9 @@
 				margin-top: 3rem;
 			}
 		</style>
+		<script src="theme-toggle.js"></script>
+		<script src="site-google-translate.js" defer></script>
+		<script src="site-analytics.js" data-analytics-mode="vercel"></script>
 	</head>
 	<body class="site-content-page">
 		<a name="top"></a>
@@ -413,14 +411,6 @@
 			integrity="sha512-1TK5EkM3S/pmOdAMlRjBH+Ja3EAWv5VdxgAV7qXJ8SgZaHvPxOAUAe7hPcPtQ5Gs+XLsUHMgJNhpBUYEOCfV1w=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
-		></script>
-
-		<script
-			src="/site-widgets.js"
-			defer
-			data-print-pdf
-			data-print-pdf-aria="Print or save dashboard as PDF"
-			data-coffee-fab
 		></script>
 
 		<script>
@@ -601,5 +591,12 @@
 			// Refresh threat intelligence every 10 minutes
 			setInterval(fetchThreatIntelligence, 600000);
 		</script>
+		<script
+			src="site-widgets.js"
+			defer
+			data-print-pdf
+			data-print-pdf-aria="Print or save dashboard as PDF"
+			data-coffee-fab
+		></script>
 	</body>
 </html>
