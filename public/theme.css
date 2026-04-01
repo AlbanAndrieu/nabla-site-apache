@@ -208,10 +208,13 @@ html[data-theme="dark"] {
 /* ============================================
    Apply Theme Variables to Elements
    ============================================ */
-body {
+/* html body: higher specificity than Bootstrap's `body` when Bootstrap is linked last. */
+html body {
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
-	line-height: 1.6;
+	/* After wireframe.css: wireframe uses font-weight 200; align with Bootstrap reboot / dr-alban.com */
+	font-weight: 400;
+	line-height: 1.5;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
