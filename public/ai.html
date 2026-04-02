@@ -104,7 +104,7 @@
 					}
 				},
 				"datePublished": "2026-01-28",
-				"dateModified": "2026-03-24",
+				"dateModified": "2026-04-02",
 				"description": "Comprehensive guide to AI best practices, tools, and resources for developers and DevSecOps professionals",
 				"mainEntityOfPage": {
 					"@type": "WebPage",
@@ -525,6 +525,220 @@
 							</ul>
 						</div>
 					</div>
+				</section>
+
+				<!-- FinOps-style visibility & governance for LLM token spend -->
+				<section id="ai-token-finops" class="category-section" aria-labelledby="ai-token-finops-heading">
+					<h2 id="ai-token-finops-heading" class="category-title">
+						<i class="fas fa-chart-pie" aria-hidden="true"></i> Token spend &amp; FinOps control
+					</h2>
+					<p style="margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.65">
+						Treat model usage like cloud spend: see who burns tokens, set budgets, and route traffic through one metered
+						gateway—FinOps discipline applied to LLM inference instead of only to VMs and buckets.
+					</p>
+					<div class="resource-grid">
+						<article class="resource-card">
+							<h3>
+								<img
+									src="assets/logo-cursor-simple.svg"
+									width="32"
+									height="32"
+									class="ai-oss-logo ai-oss-logo--invert"
+									alt=""
+									decoding="async"
+								/>
+								Cursor usage analytics
+							</h3>
+							<p>
+								Cursor’s dashboard analytics view helps you review token and usage patterns for your account so you can
+								see how much you are consuming over time and adjust workflows or plans accordingly.
+							</p>
+							<a
+								href="https://cursor.com/dashboard/analytics"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="resource-link"
+							>
+								<i class="fas fa-external-link-alt" aria-hidden="true"></i>
+								Open Cursor analytics
+							</a>
+						</article>
+						<article class="resource-card">
+							<h3>
+								<img
+									src="assets/logo-litellm-simple.png"
+									width="32"
+									height="32"
+									class="ai-oss-logo"
+									alt=""
+									decoding="async"
+								/>
+								LiteLLM
+							</h3>
+							<p>
+								Open-source AI gateway and Python SDK to access many providers in an OpenAI-compatible format, with
+								routing, fallbacks, budgets, and observability hooks—useful when you want one integration surface for
+								many models. See the project site for features and deployment options.
+							</p>
+							<a href="https://www.litellm.ai/" target="_blank" rel="noopener noreferrer" class="resource-link">
+								<i class="fas fa-external-link-alt" aria-hidden="true"></i>
+								LiteLLM
+							</a>
+						</article>
+					</div>
+				</section>
+
+				<!-- Document ingestion pipeline -->
+				<section id="document-pipeline" class="category-section" aria-labelledby="document-pipeline-heading">
+					<h2 id="document-pipeline-heading" class="category-title">
+						<i class="fas fa-file-pdf" aria-hidden="true"></i> My Document pipeline
+					</h2>
+					<p style="margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.65">
+						One practical PDF-to-knowledge flow: normalize PDFs locally, archive and OCR in Paperless, enrich with
+						Paperless-AI, optionally run summarization and translation through durable Temporal workflows, then work
+						with the corpus in AnythingLLM (with Paperless-ngx wired in for quick checks). Finally, load the
+						consolidated knowledge into
+						<a href="https://github.com/langflow-ai/openrag" target="_blank" rel="noopener noreferrer">OpenRAG</a> and
+						expose it through a home-grown MCP tool so every other agent or chat client can reuse the same retrieval
+						surface.
+					</p>
+					<ol class="ai-doc-pipeline">
+						<li>
+							<img
+								src="assets/logo-stirling-pdf-simple.svg"
+								width="36"
+								height="36"
+								class="ai-oss-logo"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong
+									><a href="https://github.com/Stirling-Tools/Stirling-PDF" target="_blank" rel="noopener noreferrer"
+										>Stirling PDF</a
+									></strong
+								>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Locally split, merge, rotate, or clean PDFs before ingest so uploads are consistent and smaller.
+							</div>
+						</li>
+						<li>
+							<img
+								src="assets/logo-paperless-ngx-simple.svg"
+								width="36"
+								height="36"
+								class="ai-oss-logo ai-oss-logo--invert"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong
+									><a href="https://docs.paperless-ngx.com/" target="_blank" rel="noopener noreferrer"
+										>Paperless-ngx</a
+									></strong
+								>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Upload the prepared PDFs; Paperless-ngx stores, indexes, and runs document consumption (tags,
+								correspondents, searchable archive).
+							</div>
+						</li>
+						<li>
+							<img
+								src="assets/logo-paperless-ai-simple.png"
+								width="36"
+								height="36"
+								class="ai-oss-logo"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong
+									><a href="https://github.com/clusterzx/paperless-ai" target="_blank" rel="noopener noreferrer"
+										>Paperless-AI</a
+									></strong
+								>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Let Paperless-AI process documents after ingest (classification, metadata, RAG-oriented workflows,
+								depending on your setup); wait until processing finishes before relying on extracted text or tags.
+							</div>
+						</li>
+						<li>
+							<img
+								src="assets/logo-temporal-simple.svg"
+								width="36"
+								height="36"
+								class="ai-oss-logo ai-oss-logo--invert"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong><a href="https://temporal.io/" target="_blank" rel="noopener noreferrer">Temporal</a></strong>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Orchestrate a follow-on workflow: summarize long documents, translate content into other languages,
+								chain human-in-the-loop steps, and retry activities reliably. Temporal keeps state and timers for you so
+								these pipelines survive restarts and remain observable.
+								<a href="https://github.com/temporalio/temporal" target="_blank" rel="noopener noreferrer"
+									>temporalio/temporal</a
+								>
+								is the open-source server; pair it with workers that call your LLM or translation APIs.
+							</div>
+						</li>
+						<li>
+							<img
+								src="assets/logo-anythingllm-simple.png"
+								width="36"
+								height="36"
+								class="ai-oss-logo ai-oss-logo--wide"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong
+									><a
+										href="https://github.com/AlbanAndrieu/anything-llm/blob/master/docker/HOW_TO_USE_DOCKER.md"
+										target="_blank"
+										rel="noopener noreferrer"
+										>AnythingLLM (Docker)</a
+									></strong
+								>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Use a self-hosted
+								<a href="https://github.com/mintplex-labs/anything-llm" target="_blank" rel="noopener noreferrer"
+									>AnythingLLM</a
+								>
+								instance (for example via Docker) to pull processed content into a private chat/RAG workspace. As
+								Paperless-ngx is integrated with AnythingLLM, you can browse and question the same document set from the
+								chat UI and quickly verify that OCR, tags, and downstream summaries or translations look right. The
+								linked guide covers storage mounts, environment variables, and reaching host services from the
+								container.
+							</div>
+						</li>
+						<li>
+							<img
+								src="assets/logo-openrag-langflow-simple.svg"
+								width="36"
+								height="36"
+								class="ai-oss-logo ai-oss-logo--invert"
+								alt=""
+								decoding="async"
+							/>
+							<div class="ai-doc-pipeline__body">
+								<strong
+									><a href="https://github.com/langflow-ai/openrag" target="_blank" rel="noopener noreferrer"
+										>OpenRAG</a
+									></strong
+								>
+								<span class="ai-doc-pipeline__sep" aria-hidden="true"></span>
+								Push the full, vetted corpus into OpenRAG—the upstream stack combines Langflow workflows, Docling
+								parsing, and OpenSearch-backed retrieval so you get a single package for ingestion, search, and chat
+								over your documents. From there, connect a
+								<strong>custom MCP server</strong> you own (wrap OpenRAG’s APIs or follow the same Model Context
+								Protocol patterns as the project’s <code>openrag-mcp</code> helper) and register it in Cursor, Claude
+								Desktop, or any other MCP-aware host. Later, every other AI agent or assistant can call those tools
+								instead of re-implementing access to your knowledge base.
+							</div>
+						</li>
+					</ol>
 				</section>
 			</section>
 

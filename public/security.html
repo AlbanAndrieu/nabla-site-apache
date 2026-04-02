@@ -8,11 +8,11 @@
 		<title>Security Resources & Tools - DevSecOps Best Practices by Alban Andrieu</title>
 		<meta
 			name="description"
-			content="Comprehensive collection of security resources, tools, and best practices. OWASP Top Ten, personal security checklists, network scanning tools, CIS benchmarks, and SSH hardening guides."
+			content="Comprehensive collection of security resources, tools, and best practices. OWASP Top Ten, personal security checklists, network scanning tools, CIS benchmarks, SSH hardening, and OpenClaw agent hardening guides."
 		/>
 		<meta
 			name="keywords"
-			content="Security Resources, OWASP, DevSecOps, Security Tools, CIS Benchmarks, SSH Hardening, Network Security, Security Checklist, Vulnerability Scanning, Security Best Practices"
+			content="Security Resources, OWASP, DevSecOps, Security Tools, CIS Benchmarks, SSH Hardening, OpenClaw, Agentic AI, Network Security, Security Checklist, Vulnerability Scanning, Security Best Practices"
 		/>
 		<meta name="author" content="alban.andrieu@dr-alban.com" />
 		<meta name="robots" content="index, follow" />
@@ -23,7 +23,7 @@
 		<meta property="og:title" content="Security Resources & Tools - DevSecOps Best Practices" />
 		<meta
 			property="og:description"
-			content="Comprehensive security resources including OWASP Top Ten, security tools, CIS benchmarks, and hardening guides."
+			content="Comprehensive security resources including OWASP Top Ten, security tools, CIS benchmarks, SSH hardening, and OpenClaw agent hardening."
 		/>
 		<meta property="og:image" content="https://dr-alban.com/assets/nabla/nabla-4.svg" />
 		<meta property="og:site_name" content="Nabla - Alban Andrieu" />
@@ -34,7 +34,7 @@
 		<meta property="twitter:title" content="Security Resources & Tools - DevSecOps Best Practices" />
 		<meta
 			property="twitter:description"
-			content="Comprehensive security resources and tools for DevSecOps professionals"
+			content="Security resources for DevSecOps: OWASP, CIS, SSH hardening, OpenClaw hardening, and more."
 		/>
 		<meta property="twitter:image" content="https://dr-alban.com/assets/nabla/nabla-4.svg" />
 
@@ -622,6 +622,62 @@
 					</ul>
 				</section>
 
+				<!-- OpenClaw / agentic AI hardening -->
+				<section id="openclaw-security" class="resource-card" aria-labelledby="openclaw-security-heading">
+					<span class="category-badge">Agentic AI</span>
+					<div class="icon">
+						<i class="fa-solid fa-robot"></i>
+					</div>
+					<h3 id="openclaw-security-heading">OpenClaw security hardening</h3>
+					<p>
+						OpenClaw (formerly Clawdbot / MoltBot) can reach APIs, files, and linked accounts; default setups have drawn
+						clear warnings from the security community. If you still self-host it, treat hardening as non-optional. The
+						<a
+							href="https://aimaker.substack.com/p/openclaw-security-hardening-guide"
+							target="_blank"
+							rel="noopener noreferrer"
+							>OpenClaw security hardening guide</a
+						>
+						(Aimaker / Substack, with a technical walkthrough by Fernando Lucktemberg of Next Kick Labs) lays out three
+						progressive tiers: Tier 1 minimum viable isolation and gateway configuration, Tier 2 standard protection for
+						typical hobby or lab use, Tier 3 defense-in-depth (for example egress filtering and rootless Podman). It
+						includes copy-paste-style steps, verification commands, an explicit list of accounts and systems you should
+						never attach, and optional full automation via Ansible.
+					</p>
+					<ul class="resource-list">
+						<li>
+							<a
+								href="https://aimaker.substack.com/p/openclaw-security-hardening-guide"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								How to Harden OpenClaw Security — 3-tier implementation guide (Aimaker)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/Next-Kick/openclaw-hardened-ansible"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-brands fa-github"></i>
+								openclaw-hardened-ansible — automated Tier 1–3 deployment (Next Kick Labs)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://nextkicklabs.substack.com/p/openclaw-hardened-deployment-security-with-ansible"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i class="fa-solid fa-external-link-alt"></i>
+								OpenClaw hardened deployment — companion notes (Next Kick Labs)
+							</a>
+						</li>
+					</ul>
+				</section>
+
 				<!-- Security Standards & Compliance -->
 				<section
 					id="security-standards-compliance"
@@ -727,6 +783,12 @@
 							<a href="https://cve.mitre.org/" target="_blank" rel="noopener noreferrer">
 								<i class="fa-solid fa-external-link-alt"></i>
 								CVE - Common Vulnerabilities and Exposures
+							</a>
+						</li>
+						<li>
+							<a href="https://app.opencve.io/org/Nabla-org/projects/" target="_blank" rel="noopener noreferrer">
+								<i class="fa-solid fa-external-link-alt"></i>
+								OpenCVE (Nabla-org) — Be notified on Critical and High CVEs for your product
 							</a>
 						</li>
 						<li>

@@ -126,6 +126,76 @@ body.page-nabla-best-practices .resource-link i {
 	font-size: 1rem;
 }
 
+/* OSS / product logos (ai.html: useful links & document pipeline) */
+body.page-nabla-best-practices .ai-oss-logo {
+	width: 2rem;
+	height: 2rem;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+body.page-nabla-best-practices .ai-oss-logo--wide {
+	width: auto;
+	max-width: 6.5rem;
+	max-height: 2rem;
+}
+
+html[data-theme="dark"] body.page-nabla-best-practices .ai-oss-logo--invert {
+	filter: invert(1) brightness(1.12);
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline > li {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 1.25rem 1.5rem;
+	background: var(--bg-card);
+	border-radius: 12px;
+	border: 1px solid var(--border-color);
+	box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__body {
+	color: var(--text-secondary);
+	line-height: 1.65;
+	flex: 1;
+	min-width: 0;
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__body strong {
+	display: block;
+	margin-bottom: 0.35rem;
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__body strong a {
+	color: var(--primary-color);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__body strong a:hover {
+	text-decoration: underline;
+	color: var(--link-hover);
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__body a:not(strong a) {
+	color: var(--link-color);
+	font-weight: 600;
+}
+
+body.page-nabla-best-practices .ai-doc-pipeline__sep {
+	display: none;
+}
+
 body.page-nabla-best-practices .intro-section {
 	background: var(--bg-secondary);
 	border-radius: 12px;
