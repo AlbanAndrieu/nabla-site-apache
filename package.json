@@ -43,7 +43,7 @@
 		"@astrojs/vercel": "^10.0.2",
 		"@datadog/browser-rum": "^6.24.1",
 		"crypto": "^1.0.1",
-		"lodash-es": "^4.17.23",
+		"lodash-es": "^4.18.1",
 		"stripe": "^20.2.0",
 		"express": "^4.21.0",
 		"vercel": "^50.18.0",
