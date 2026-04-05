@@ -40,13 +40,13 @@
 		"start:stripe": "node server.cjs"
 	},
 	"dependencies": {
-		"@astrojs/vercel": "^10.0.2",
+		"@astrojs/vercel": "^8.0.4",
 		"@datadog/browser-rum": "^6.24.1",
 		"crypto": "^1.0.1",
 		"express": "^4.21.0",
 		"lodash-es": "^4.18.1",
 		"stripe": "^20.4.1",
-		"vercel": "^50.18.0",
+		"vercel": "^32.3.0",
 		"webdriver-manager": "^12.1.9"
 	},
 	"devDependencies": {
@@ -57,7 +57,7 @@
 		"d3": "7.9.0",
 		"eslint": "^9.39.1",
 		"eslint-formatter-gitlab": "^6.0.1",
-		"opencommit": "^3.2.10",
+		"opencommit": "^3.2.7",
 		"playwright": "^1.58.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.47.0",
