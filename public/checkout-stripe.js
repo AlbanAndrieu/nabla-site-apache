@@ -10,6 +10,7 @@
 
 	const button = form.querySelector("#checkout-button, button[type='submit']");
 	const errorEl = document.getElementById("checkout-error");
+	const fallbackNoteEl = document.getElementById("checkout-fallback-note");
 	const endpoint =
 		form.getAttribute("data-checkout-endpoint") || "/create-checkout-session";
 
@@ -17,6 +18,9 @@
 		if (!errorEl) return;
 		errorEl.textContent = message;
 		errorEl.hidden = false;
+		if (fallbackNoteEl) {
+			fallbackNoteEl.classList.add("checkout-fallback-emphasized");
+		}
 	}
 
 	function clearError() {

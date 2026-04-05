@@ -1,5 +1,5 @@
 /**
- * Stripe checkout flow: checkout.html, success.html, cancel.html.
+ * Stripe checkout flow: checkout.html, success.html, cancel.html, payment.html.
  * Pairs with body.site-content-page + main.checkout-page; colors from theme.css / landing-sections.
  */
 
@@ -28,6 +28,28 @@ body.site-content-page:has(main.checkout-page) #main-content.checkout-page {
 	margin: 0;
 	padding: 1.5rem 1rem;
 	box-sizing: border-box;
+}
+
+/* payment.html — stacked cards + intro */
+body.site-content-page:has(main.checkout-page.payment-options)
+	#main-content.checkout-page.payment-options {
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+main.checkout-page.payment-options .payment-options-intro {
+	width: 100%;
+	max-width: 420px;
+	text-align: center;
+	color: var(--text-secondary);
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+
+main.checkout-page.payment-options .payment-options-intro h1 {
+	font-size: 1.35rem;
+	margin: 0 0 0.5rem;
+	color: var(--text-primary);
 }
 
 .checkout-page section {
@@ -209,6 +231,25 @@ body.site-content-page:has(main.checkout-page) #main-content.checkout-page {
 	color: var(--alert-warning-text);
 	background: var(--alert-warning-bg);
 	border: 1px solid var(--alert-warning-border);
+}
+
+.checkout-fallback-note {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	opacity: 0.9;
+}
+
+.checkout-fallback-note .checkout-fallback-link {
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.checkout-fallback-note.checkout-fallback-emphasized {
+	opacity: 1;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--bs-warning, #f59e0b);
+	background: color-mix(in srgb, var(--bs-warning, #f59e0b) 12%, transparent);
 }
 
 .checkout-session-ref {

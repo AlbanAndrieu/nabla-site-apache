@@ -10,7 +10,8 @@ Stripe **hosted Checkout**: the browser gets a Checkout Session URL from your se
 - `public/success.html` — optional `?session_id=` from Stripe (display only unless you add verification)
 - `public/cancel.html`
 - `public/checkout.css`
-- `server.cjs` — Express: static `public/`, `POST /create-checkout-session`
+- `server.cjs` — Express: static `public/`, `POST /create-checkout-session` (local dev)
+- `api/create-checkout-session.js` — Vercel Node function: same `POST` contract; `vercel.json` rewrites `/create-checkout-session` → `/api/create-checkout-session`
 - `package.json` — `start:stripe` → `node server.cjs`
 
 ## Endpoint contract

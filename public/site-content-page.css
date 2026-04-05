@@ -96,3 +96,460 @@ body.site-content-page.policy-legal #main-content ul {
 		filter: brightness(1.15);
 	}
 }
+
+/* --------------------------------------------------------------------------
+   TrueNAS hardware section — theme-aware intro (light/dark toggle + responsive)
+   -------------------------------------------------------------------------- */
+
+body.site-content-page .hardware-section {
+	background: linear-gradient(
+		168deg,
+		var(--bg-secondary) 0%,
+		var(--bg-primary) 55%,
+		var(--bg-secondary) 100%
+	);
+	border-bottom: 1px solid var(--border-color);
+	transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+body.site-content-page .hardware-section .display-4 {
+	color: var(--text-primary);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+body.site-content-page .hardware-heading-with-icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.65rem;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+	body.site-content-page .hardware-heading-with-icon {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0.85rem;
+	}
+}
+
+body.site-content-page .hardware-heading-with-icon__glyph {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.25rem;
+	height: 3.25rem;
+	border-radius: 0.9rem;
+	background: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--primary-color) 35%, transparent),
+		color-mix(in srgb, var(--secondary-color) 22%, transparent)
+	);
+	color: var(--button-text);
+	font-size: 1.35rem;
+	box-shadow: 0 4px 14px var(--shadow-color);
+	border: 1px solid
+		color-mix(in srgb, var(--primary-color) 45%, var(--border-color));
+}
+
+body.site-content-page .hardware-heading-with-icon__text {
+	line-height: 1.15;
+}
+
+body.site-content-page .hardware-platform-band {
+	max-width: 48rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body.site-content-page .hardware-platform-band__tagline {
+	font-size: clamp(1rem, 2.8vw, 1.2rem);
+	line-height: 1.6;
+	color: var(--text-secondary);
+	font-weight: 500;
+	text-wrap: balance;
+	hyphens: auto;
+	margin: 0 auto;
+	max-width: 42rem;
+}
+
+body.site-content-page .hardware-platform-band__tagline strong {
+	color: var(--text-primary);
+	font-weight: 650;
+}
+
+body.site-content-page .hardware-pill-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.65rem;
+	margin: 1.35rem 0 0;
+	padding: 0;
+	list-style: none;
+	text-align: left;
+}
+
+@media (min-width: 480px) {
+	body.site-content-page .hardware-pill-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 992px) {
+	body.site-content-page .hardware-pill-grid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.75rem;
+	}
+}
+
+body.site-content-page .hardware-pill {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.65rem;
+	padding: 0.75rem 0.85rem;
+	border-radius: 0.75rem;
+	background: var(--bg-card);
+	border: 1px solid var(--border-color);
+	box-shadow: 0 1px 3px var(--shadow-color);
+	color: var(--text-primary);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	min-height: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	body.site-content-page .hardware-pill:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 18px var(--shadow-hover);
+		border-color: color-mix(
+			in srgb,
+			var(--primary-color) 35%,
+			var(--border-color)
+		);
+	}
+}
+
+body.site-content-page .hardware-pill:focus-within {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+body.site-content-page .hardware-pill__icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 0.5rem;
+	background: color-mix(in srgb, var(--primary-color) 18%, var(--bg-secondary));
+	color: var(--primary-color);
+	font-size: 1rem;
+}
+
+body.site-content-page .hardware-pill__title {
+	display: block;
+	font-weight: 650;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	color: var(--text-primary);
+}
+
+body.site-content-page .hardware-pill__sub {
+	display: block;
+	font-size: 0.8rem;
+	line-height: 1.35;
+	color: var(--text-muted);
+	margin-top: 0.15rem;
+}
+
+/* Bill of materials — intro blurb + section headings + row icons (theme-aware) */
+
+body.site-content-page .hardware-bom-intro {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.65rem;
+}
+
+body.site-content-page .hardware-bom-intro__icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	margin-top: 0.1rem;
+	border-radius: 0.5rem;
+	background: color-mix(
+		in srgb,
+		var(--accent-color, #f59e0b) 22%,
+		var(--bg-secondary)
+	);
+	color: color-mix(
+		in srgb,
+		var(--accent-color, #d97706) 90%,
+		var(--text-primary)
+	);
+	font-size: 0.95rem;
+}
+
+body.site-content-page .hardware-bom-intro__text {
+	flex: 1;
+	min-width: 0;
+}
+
+body.site-content-page .hardware-bom-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+body.site-content-page .hardware-bom-heading__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.85rem;
+	height: 1.85rem;
+	border-radius: 0.45rem;
+	background: color-mix(in srgb, var(--primary-color) 16%, var(--bg-secondary));
+	color: var(--primary-color);
+	font-size: 0.95rem;
+	flex-shrink: 0;
+}
+
+body.site-content-page .hardware-bom-heading--sub {
+	font-size: inherit;
+	font-weight: 600;
+}
+
+body.site-content-page .hardware-bom-heading--sub .hardware-bom-heading__icon {
+	width: 1.55rem;
+	height: 1.55rem;
+	font-size: 0.82rem;
+}
+
+body.site-content-page .hardware-bom-li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+}
+
+/* Override wireframe Bootstrap #fff list rows — theme-aware surfaces + readable type */
+body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li {
+	background-color: var(--bg-secondary);
+	color: var(--text-primary);
+	border-color: var(--border-color);
+	padding: 0.85rem 1rem;
+	line-height: 1.6;
+	font-size: 1rem;
+	border-radius: 0;
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li:not(:last-child) {
+	margin-bottom: -1px;
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li:nth-child(even) {
+	background-color: color-mix(in srgb, var(--bg-secondary) 65%, var(--bg-card));
+}
+
+body.site-content-page .hardware-section .hardware-bom-list {
+	border: 1px solid var(--border-color);
+	border-radius: 0.65rem;
+	overflow: hidden;
+	box-shadow: inset 0 1px 0
+		color-mix(in srgb, var(--text-primary) 6%, transparent);
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li:first-child {
+	border-top: none;
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+body.site-content-page .hardware-bom-li__icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin-top: 0.05rem;
+	border-radius: 0.5rem;
+	text-align: center;
+	font-size: 0.95rem;
+	color: var(--primary-color);
+	background: color-mix(in srgb, var(--primary-color) 14%, var(--bg-card));
+	border: 1px solid
+		color-mix(in srgb, var(--primary-color) 22%, var(--border-color));
+}
+
+body.site-content-page .hardware-bom-li__body {
+	flex: 1;
+	min-width: 0;
+	color: var(--text-primary);
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+body.site-content-page .hardware-bom-li__body a {
+	font-weight: 600;
+	text-underline-offset: 0.15em;
+}
+
+body.site-content-page .hardware-section .hardware-bom-total {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding: 0.9rem 1rem;
+	border-radius: 0.65rem;
+	border: 1px solid var(--border-color);
+	background: color-mix(in srgb, var(--primary-color) 8%, var(--bg-secondary));
+}
+
+body.site-content-page .hardware-section .hardware-bom-total__label {
+	font-weight: 650;
+	font-size: 0.95rem;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+body.site-content-page .hardware-section .hardware-bom-total__amount {
+	font-size: 1.35rem;
+	font-weight: 700;
+	color: var(--text-primary);
+	font-variant-numeric: tabular-nums;
+}
+
+body.site-content-page .hardware-section .hardware-bom-total__note {
+	font-size: 0.82rem;
+	color: var(--text-muted);
+	line-height: 1.4;
+	margin: 0;
+}
+
+body.site-content-page .hardware-section .hardware-bom-upgrade-note {
+	padding: 0.85rem 1rem;
+	border-radius: 0.65rem;
+	border: 1px dashed var(--border-color);
+	background: color-mix(in srgb, var(--bg-secondary) 92%, var(--primary-color));
+}
+
+body.site-content-page .hardware-section .hardware-bom-upgrade-note__title {
+	font-weight: 650;
+	font-size: 0.9rem;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+body.site-content-page .hardware-section .hardware-bom-upgrade-note__list {
+	padding-left: 1.15rem;
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.55;
+	color: var(--text-secondary);
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-upgrade-note__list
+	li
+	+ li {
+	margin-top: 0.5rem;
+}
+
+body.site-content-page
+	.hardware-section
+	.hardware-bom-upgrade-note__list
+	strong {
+	color: var(--text-primary);
+}
+
+html[data-theme="light"]
+	body.site-content-page
+	.hardware-section
+	.hardware-bom-list.list-group-flush
+	> .list-group-item.hardware-bom-li:nth-child(even) {
+	background-color: color-mix(
+		in srgb,
+		var(--primary-color) 5%,
+		var(--bg-secondary)
+	);
+}
+
+/* --------------------------------------------------------------------------
+   TrueNAS page (truenas.html) — section rhythm, tool row, page-dark alignment
+   -------------------------------------------------------------------------- */
+
+body.site-content-page.truenas-page .truenas-page-apps {
+	border-bottom: 1px solid var(--border-color);
+}
+
+body.site-content-page.truenas-page .truenas-page-apps__lead {
+	max-width: 40rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body.site-content-page.truenas-page
+	.truenas-page-secondary
+	.card.border-secondary,
+body.site-content-page.truenas-page .truenas-page-tools .border-secondary {
+	border-color: var(--border-color) !important;
+}
+
+body.site-content-page.truenas-page .truenas-tool-link {
+	color: inherit;
+	background: var(--bg-card);
+	transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow
+		0.2s ease;
+}
+
+body.site-content-page.truenas-page .truenas-tool-link .text-body {
+	color: var(--text-primary) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	body.site-content-page.truenas-page .truenas-tool-link:hover {
+		background: color-mix(in srgb, var(--primary-color) 8%, var(--bg-card));
+		border-color: color-mix(
+			in srgb,
+			var(--primary-color) 38%,
+			var(--border-color)
+		) !important;
+		box-shadow: 0 4px 14px var(--shadow-color);
+	}
+}
+
+body.site-content-page.truenas-page .truenas-tool-link:focus-visible {
+	outline: 2px solid var(--link-color);
+	outline-offset: 3px;
+}
+
+body.site-content-page.truenas-page .truenas-page-tools__badge img {
+	max-width: 100%;
+	height: auto;
+}

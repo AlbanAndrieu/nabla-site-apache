@@ -91,7 +91,7 @@ npm run start:stripe
 
 Then open `http://localhost:4242/checkout.html`. The secret key and Price ID come from the [Stripe Dashboard](https://dashboard.stripe.com/); `DOMAIN` must match the origin users use (no trailing slash).
 
-Deployment note: the Vercel config in this repo routes traffic through PHP `api/`; it does not run `server.cjs`. You need a Node (or other) endpoint that implements `POST /create-checkout-session` in production, or proxy that path to this server.
+Deployment note: Vercel serves `POST /create-checkout-session` via `api/create-checkout-session.js` (rewritten from the site root per `vercel.json`). Set `STRIPE_SECRET_KEY` and `STRIPE_PRICE_ID` in the Vercel project. Local dev still uses `npm run start:stripe` (`server.cjs`).
 
 Details: `docs/checkout-support-runbook.md`.
 
