@@ -9,7 +9,8 @@
 	},
 	"functions": {
 		"api/create-checkout-session.js": {
-			"maxDuration": 30
+			"maxDuration": 30,
+			"excludeFiles": "{.next,*.cache,.node_cache,.cursor,.ansible,node_modules,.venv,.direnv,public,reports/2025/*,reports/2026/*,index/*.bmp,public/assets/fontawesome-free-7.1.0-web/}/**"
 		},
 		"api/**/*.php": {
 			"runtime": "vercel-php@0.9.0",
