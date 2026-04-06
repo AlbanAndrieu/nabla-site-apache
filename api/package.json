@@ -1,0 +1,12 @@
+{
+	"name": "api",
+	"private": true,
+	"version": "0.0.1",
+	"description": "API for the vercel/vercel repo",
+	"main": "index.js",
+	"scripts": {},
+	"dependencies": {
+		"stripe": "^22.0.0",
+		"@vercel/sdk": "^1.18.5"
+	}
+}
