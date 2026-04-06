@@ -31,6 +31,7 @@
 		<link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 		<!-- Theme toggle script - load early to prevent flash -->
+		<script src="../theme-toggle.js"></script>
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="../landing-sections.css" />
@@ -45,9 +46,6 @@
 		<link rel="stylesheet" href="../site-content-page.css" />
 
 		<link rel="stylesheet" href="checkout.css" />
-		<script src="theme-toggle.js"></script>
-		<script src="site-google-translate.js" defer></script>
-		<script src="site-analytics.js"></script>
 	</head>
 	<body class="site-content-page">
 		<a name="top"></a>
@@ -64,26 +62,13 @@
 						<p class="checkout-subtitle">One-time payment via Stripe. Secure checkout.</p>
 					</div>
 				</div>
-				<form action="/create-checkout-session" method="POST" class="checkout-form" data-stripe-checkout>
+				<form action="/create-checkout-session" method="POST" class="checkout-form">
 					<button type="submit" id="checkout-button" class="checkout-button">
 						<i class="fa-solid fa-lock" aria-hidden="true"></i> Proceed to checkout
 					</button>
-					<div id="checkout-error" class="checkout-error" role="alert" aria-live="polite" hidden></div>
 				</form>
-				<p id="checkout-fallback-note" class="checkout-footer checkout-fallback-note">
-					If the button does not redirect you,
-					<a
-						href="https://buy.stripe.com/9B65kF1Gd8hHcr2d69cV200"
-						rel="noopener noreferrer"
-						class="checkout-fallback-link"
-						>pay on Stripe’s hosted page</a
-					>
-					instead (same provider).
-				</p>
 				<p class="checkout-footer">
-					<a href="payment.html#pay-sepa">Pay by bank transfer (SEPA)</a>
-					<span class="text-muted" aria-hidden="true"> · </span>
-					<a href="/index.html">Back to site</a>
+					<a href="index.html">Back to site</a>
 				</p>
 			</section>
 		</main>
@@ -132,16 +117,15 @@
 			</div>
 			<div class="footer-links">
 				<a href="/pricing.html">Pricing</a>
-				<a href="/policy/legal.html">Legal notices</a>
+				<a href="/policy/service_terms.html">Terms of Use</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
+				<a href="/policy/privacy_policy.html">Privacy Policy</a>
 			</div>
 			<p class="text-md-center mt-3">
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
-			<p class="footer-copyright"></p>
+			<p class="footer-copyright">© 2026 Alban Andrieu. Independent DevSecOps Architect.</p>
 		</footer>
-
-		<script src="create-checkout-session.js" defer></script>
-		<script src="site-widgets.js" defer data-no-print-pdf data-no-coffee-fab></script>
+		<script src="/site-widgets.js" defer data-no-print-pdf data-no-coffee-fab></script>
 	</body>
 </html>

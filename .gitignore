@@ -107,3 +107,4 @@ playwright/.cache/
 /resources/_gen/
 hugo_stats.json
 .hugo_build.lock
+.env*.local
