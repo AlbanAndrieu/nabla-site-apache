@@ -4,6 +4,17 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 
 To view instructions on using the Vercel Speed Insights in your project for your framework, use the **Choose a framework** dropdown on the right (at the bottom in mobile view).
 
+## This repository's implementation
+
+For this static site, Speed Insights is loaded from `public/site-analytics.js` rather than from an npm framework package.
+
+- Script path loaded at runtime: `/_vercel/speed-insights/script.js` (deferred).
+- Default mode is `data-analytics-mode="vercel"`; other modes still call the same Vercel loader.
+- Source of truth for integration patterns and attributes: `docs/frontend-runtime-scripts-runbook.md`.
+- Test coverage for script wiring: `tests/site-analytics.spec.ts`.
+
+Use this page for general Vercel reference, but prefer the runbook above when editing pages in `public/`.
+
 ## Prerequisites
 
 - A Vercel account. If you don't have one, you can [sign up for free](https://vercel.com/signup).
@@ -12,16 +23,16 @@ To view instructions on using the Vercel Speed Insights in your project for your
 
 ```bash
 # pnpm
-pnpm i vercel
+pnpm add vercel
 
 # yarn
-yarn i vercel
+yarn add vercel
 
 # npm
-npm i vercel
+npm install vercel
 
 # bun
-bun i vercel
+bun add vercel
 ```
 
 ## Setup Steps
@@ -38,16 +49,16 @@ Using the package manager of your choice, add the `@vercel/speed-insights` packa
 
 ```bash
 # pnpm
-pnpm i @vercel/speed-insights
+pnpm add @vercel/speed-insights
 
 # yarn
-yarn i @vercel/speed-insights
+yarn add @vercel/speed-insights
 
 # npm
-npm i @vercel/speed-insights
+npm install @vercel/speed-insights
 
 # bun
-bun i @vercel/speed-insights
+bun add @vercel/speed-insights
 ```
 
 ### Add the `SpeedInsights` component to your app

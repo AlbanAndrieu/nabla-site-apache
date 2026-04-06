@@ -19,15 +19,21 @@ This is a simple HTML project for Nabla company that promotes Alban Andrieu as a
 Default nabla files for apache
 
 ### GitHub Actions
-The repository now includes a Hugo build and deployment workflow (`.github/workflows/hugo-deploy.yml`) that:
-1. Builds the Hugo site
-2. Uploads build artifacts
-3. Deploys to Vercel (on push to main/master branch)
+The repository currently includes these workflows:
 
-Required secrets for GitHub Actions:
-- `VERCEL_TOKEN`: Vercel authentication token
-- `VERCEL_ORG_ID`: Your Vercel organization ID
-- `VERCEL_PROJECT_ID`: Your Vercel project ID
+1. Playwright Tests (`.github/workflows/playwright.yml`)
+2. Docker CI (`.github/workflows/docker-build.yml`)
+3. MegaLinter (`.github/workflows/mega-linter.yml`)
+4. Build CV PDFs (`.github/workflows/build-pdf.yml`)
+5. OpenCommit Action (`.github/workflows/opencommit.yml`)
+6. Copilot Setup Steps (`.github/workflows/copilot-setup-steps.yml`)
+
+There is no `.github/workflows/hugo-deploy.yml` file in this repository. Hugo scripts are available for local use via `npm run hugo:build` and `npm run hugo:dev`.
+
+Workflow secrets currently used:
+- `DOCKER_USERNAME`, `DOCKER_PASSWORD` (Docker CI)
+- `OCO_API_KEY` (OpenCommit)
+- Optional `PAT` for MegaLinter auto-commit/PR steps (falls back to `GITHUB_TOKEN` where applicable)
 
 ## Monorepo Structure
 
@@ -91,7 +97,7 @@ npm run start:stripe
 
 Then open `http://localhost:4242/checkout.html`. The secret key and Price ID come from the [Stripe Dashboard](https://dashboard.stripe.com/); `DOMAIN` must match the origin users use (no trailing slash).
 
-Deployment note: Vercel serves `POST /create-checkout-session` via `api/create-checkout-session.js` (rewritten from the site root per `vercel.json`). Set `STRIPE_SECRET_KEY` and `STRIPE_PRICE_ID` in the Vercel project. Local dev still uses `npm run start:stripe` (`server.cjs`).
+Deployment note: Vercel serves `POST /create-checkout-session` via `api/create-checkout-session.js`, routed by the catch-all `vercel.json` route (`/(.*)` → `/api/$1`). Set `STRIPE_SECRET_KEY` and `STRIPE_PRICE_ID` in the Vercel project. Local dev still uses `npm run start:stripe` (`server.cjs`).
 
 Details: `docs/checkout-support-runbook.md`.
 

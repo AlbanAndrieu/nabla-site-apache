@@ -11,6 +11,10 @@ This directory contains end-to-end tests using [Playwright](https://playwright.d
 - `accessibility.spec.ts` - Tests for accessibility features (WCAG compliance, ARIA, keyboard navigation, etc.)
 - `responsive.spec.ts` - Tests for responsive design across different viewports
 - `navigation.spec.ts` - Tests for links, navigation, and routing
+- `site-analytics.spec.ts` - Tests analytics script wiring and mode-based loaders
+- `site-widgets.spec.ts` - Tests shared widget runtime behavior and data-attribute toggles
+- `expertise.spec.ts` - Tests expertise page structure and key content sections
+- `startup.spec.ts` - Tests startup page copy and basic rendering paths
 
 ## Known Coverage Gap
 
@@ -114,10 +118,10 @@ expect(theme).toBe('dark');
 
 Test configuration is in `playwright.config.ts` in the root directory:
 
-- **Base URL**: `http://localhost:8787` (Wrangler dev server)
+- **Base URL**: `http://localhost:8001` (Python static server by default)
 - **Browsers**: Chromium, Firefox, WebKit
 - **Mobile**: Pixel 5, iPhone 12
-- **Auto-start server**: Tests will start Wrangler dev server automatically
+- **Auto-start server**: Tests run `npm run start-python` automatically
 - **Retries on CI**: 2 retries on failure in CI environment
 - **Screenshots**: Captured on failure
 - **Traces**: Captured on first retry
@@ -151,19 +155,21 @@ Opens an interactive UI to run and debug tests with time-travel debugging.
 ## CI/CD Integration
 
 Tests run automatically on GitHub Actions for:
-- Pushes to main branches
-- Pull requests to main branches
-- Manual workflow dispatch
+- Pushes to `main`, `master`, and `develop`
+- Pull requests to `main`, `master`, and `develop`
 
 See `.github/workflows/playwright.yml` for the workflow configuration.
 
 Test reports and results are uploaded as artifacts and retained for 30 days.
 
+Note on Node versions:
+- Local engines in `package.json` target newer Node (`>=24.11.0`), while the Playwright CI workflow currently runs Node `20`. If tests behave differently, reproduce with both versions.
+
 ## Troubleshooting
 
 ### Tests fail locally but pass in CI
 - Ensure browsers are installed: `npx playwright install --with-deps`
-- Check that Wrangler dev server is running properly
+- Check that `npm run start-python` serves `public/` on port `8001`
 
 ### Flaky tests
 - Increase wait times for slow animations
