@@ -61,6 +61,8 @@ For vercel
 
 ```
 vercel deploy
+vercel dev
+# php -S localhost:8000 api/index.php
 vercel --prod
 ```
 
