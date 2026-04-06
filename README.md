@@ -97,27 +97,7 @@ Deployment note: Vercel serves `POST /create-checkout-session` via `api/create-c
 
 Details: `docs/checkout-support-runbook.md`.
 
-### Subprojects (my-app and vue-client)
-
-Each subproject has its own `vercel.json` configuration and should be deployed as separate Vercel projects:
-
-**my-app (Next.js):**
-```bash
-cd my-app
-vercel link  # First time only
-vercel       # Preview deployment
-vercel --prod  # Production deployment
-```
-
-**vue-client (Vue/Vite):**
-```bash
-cd vue-client
-vercel link  # First time only
-vercel       # Preview deployment
-vercel --prod  # Production deployment
-```
-
-See individual README files in each subproject directory for more details.
+### Local Apache deployment
 
 For Apache
 
