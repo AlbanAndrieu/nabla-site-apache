@@ -6,7 +6,17 @@
 	"main": "index.js",
 	"scripts": {},
 	"dependencies": {
+		"@sentry/node": "7.120.1",
+		"got": "11.8.5",
+		"node-fetch": "2.6.7",
+		"parse-github-url": "1.0.2",
 		"stripe": "^22.0.0",
+		"tar-fs": "^2.1.4",
 		"@vercel/sdk": "^1.18.5"
+	},
+	"devDependencies": {
+		"@types/node": ">=18",
+		"@types/node-fetch": "2.5.4",
+		"@types/tar-fs": "1.16.1"
 	}
 }
