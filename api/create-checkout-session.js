@@ -1,5 +1,6 @@
 /**
  * Vercel Node serverless: POST /create-checkout-session (via vercel.json rewrite to /api/...).
+ * Browser client: public/create-checkout-session.js (must stay separate — never put this handler in public/).
  * Env: STRIPE_SECRET_KEY (or STRIPE_KEY), STRIPE_PRICE_ID (or PRICE_ID).
  * Optional DOMAIN — full origin, no trailing slash (defaults to request Host + X-Forwarded-Proto).
  */

@@ -78,7 +78,7 @@ php -S localhost:8000 api/index.php
 
 Pages:
 
-- `public/checkout.html` — starts hosted Checkout (`public/checkout-stripe.js` + `POST /create-checkout-session`)
+- `public/checkout.html` — starts hosted Checkout (`public/create-checkout-session.js` + `POST /create-checkout-session`)
 - `public/success.html` — return URL after payment (`session_id` query param when configured on the server)
 - `public/cancel.html` — return URL if the customer abandons Checkout
 

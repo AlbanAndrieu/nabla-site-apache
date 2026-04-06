@@ -6,7 +6,7 @@ Stripe **hosted Checkout**: the browser gets a Checkout Session URL from your se
 
 ## Code paths
 
-- `public/checkout.html` — form + `public/checkout-stripe.js` (fetch JSON `{ url }`, then `location` to Stripe)
+- `public/checkout.html` — form + `public/create-checkout-session.js` (fetch JSON `{ url }`, then `location` to Stripe)
 - `public/success.html` — optional `?session_id=` from Stripe (display only unless you add verification)
 - `public/cancel.html`
 - `public/checkout.css`
@@ -18,7 +18,7 @@ Stripe **hosted Checkout**: the browser gets a Checkout Session URL from your se
 
 **`POST /create-checkout-session`**
 
-- With **`Accept: application/json`** (the default from `checkout-stripe.js`): response **`200`** and body **`{ "url": "https://checkout.stripe.com/..." }`**, or **`500`** and **`{ "error": "message" }`**.
+- With **`Accept: application/json`** (the default from `create-checkout-session.js`): response **`200`** and body **`{ "url": "https://checkout.stripe.com/..." }`**, or **`500`** and **`{ "error": "message" }`**.
 - With a plain HTML form POST (no JS / noscript): **`303`** redirect to Stripe Checkout, or **`500`** text body on error.
 
 ## Environment

@@ -1,6 +1,6 @@
 /**
- * Hosted Stripe Checkout: POST /create-checkout-session, then redirect to session.url.
- * Expects JSON { url } when Accept: application/json (see server.cjs).
+ * Browser: POST /create-checkout-session (Vercel: api/create-checkout-session.js; local: server.cjs),
+ * then redirect to session.url. Expects JSON { url } when Accept: application/json.
  */
 (() => {
 	const form = document.querySelector(
