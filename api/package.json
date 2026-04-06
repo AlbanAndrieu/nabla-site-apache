@@ -4,6 +4,11 @@
 	"version": "0.0.1",
 	"description": "Vercel serverless API (Stripe checkout)",
 	"dependencies": {
+		"@sentry/node": "7.120.1",
+		"got": "11.8.5",
+		"node-fetch": "2.6.7",
+		"parse-github-url": "1.0.2",
+		"tar-fs": "^2.1.4",
 		"stripe": "^22.0.0"
 	}
 }
