@@ -2,22 +2,17 @@
 	"$schema": "https://openapi.vercel.sh/vercel.json",
 	"version": 2,
 	"regions": ["fra1"],
-	"outputDirectory": "public",
 	"github": {
 		"silent": true,
 		"autoJobCancelation": true
 	},
-	"builds": [{ "src": "api/**/*.js", "use": "@vercel/node" }],
-	"routes": [
-		{ "src": "/api/(.*)", "dest": "/api/$1.js" },
-		{ "src": "/(.*)", "dest": "/api/$1" }
-	],
+	"functions": {
+		"api/**/*.js": {
+			"excludeFiles": "{.next,*.cache,.node_cache,.cursor,.ansible,node_modules,.venv,.direnv,public,reports/2025/*,reports/2026/*,index/*.bmp,public/assets/fontawesome-free-7.1.0-web/}/**"
+		}
+	},
+	"routes": [{ "src": "/api/(.*)", "dest": "/api/$1.js" }],
 	"env": {
 		"STRIPE_PRICE_ID": "price_1TIuNgQR8aaUqJtoydBY5Fmw"
-	},
-	"build": {
-		"env": {
-			"NOW_PHP_DEBUG": "1"
-		}
 	}
 }

@@ -1,9 +1,0 @@
-# Ignore everything (folders and files) on root only
-/*
-# vercel do not like .python-version
-.python-version
-node_modules/
-!public
-!package.json
-!package-lock.json
-!README.md

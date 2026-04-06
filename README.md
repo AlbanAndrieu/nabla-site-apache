@@ -60,8 +60,10 @@ npm run start
 For vercel
 
 ```
-vercel deploy
+vc build
 vercel dev
+
+vercel deploy
 # php -S localhost:8000 api/index.php
 vercel --prod
 ```

@@ -3,10 +3,8 @@
 # vercel do not like .python-version
 .python-version
 !api
-# api/node_modules/
+node_modules
 !public
-!my-app
-!vue-client
 !cv
 !html
 !vercel.json
