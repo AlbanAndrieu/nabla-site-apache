@@ -3,6 +3,7 @@
 # vercel do not like .python-version
 .python-version
 !api
+# api/node_modules/
 !public
 !my-app
 !vue-client
