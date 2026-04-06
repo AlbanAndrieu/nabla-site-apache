@@ -1,8 +1,0 @@
-{
-	"name": "api",
-	"private": true,
-	"version": "0.0.1",
-	"description": "Vercel serverless API (Stripe checkout)",
-	"dependencies": {},
-	"devDependencies": {}
-}

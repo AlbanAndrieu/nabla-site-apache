@@ -7,18 +7,13 @@
 		"silent": true,
 		"autoJobCancelation": true
 	},
-	"functions": {
-		"api/**/*.php": {
-			"runtime": "vercel-php@0.9.0",
-			"excludeFiles": "{.next,*.cache,.node_cache,.cursor,.ansible,node_modules,.venv,.direnv,public,reports/2025/*,reports/2026/*,index/*.bmp,public/assets/fontawesome-free-7.1.0-web/}/**"
-		}
-	},
+	"builds": [{ "src": "api/**/*.js", "use": "@vercel/node" }],
 	"routes": [
-		{ "src": "/api/honeypot/(.*)", "dest": "/api/login/$1" },
+		{ "src": "/api/(.*)", "dest": "/api/$1.js" },
 		{ "src": "/(.*)", "dest": "/api/$1" }
 	],
 	"env": {
-		"NOW_PHP_FOO": "bar3"
+		"STRIPE_PRICE_ID": "price_1TIuNgQR8aaUqJtoydBY5Fmw"
 	},
 	"build": {
 		"env": {
