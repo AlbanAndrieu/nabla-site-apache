@@ -553,3 +553,84 @@ body.site-content-page.truenas-page .truenas-page-tools__badge img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* --------------------------------------------------------------------------
+   Workstation page (workstation.html) — sections, elevated cards
+   -------------------------------------------------------------------------- */
+
+body.site-content-page.workstation-page .workstation-service-card {
+	box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08), 0 0.12rem 0.35rem
+		rgba(0, 0, 0, 0.06);
+	transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+	background: var(--bg-card);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	body.site-content-page.workstation-page .workstation-service-card:hover {
+		box-shadow: 0 0.55rem 1.35rem rgba(0, 0, 0, 0.12), 0 0.2rem 0.5rem
+			rgba(0, 0, 0, 0.08);
+		transform: translateY(-2px);
+		border-color: color-mix(
+			in srgb,
+			var(--primary-color) 28%,
+			var(--border-color)
+		) !important;
+	}
+}
+
+body.site-content-page.workstation-page .workstation-section-title {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	flex-wrap: wrap;
+	color: var(--text-primary);
+}
+
+body.site-content-page.workstation-page .workstation-section-title__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--primary-color) 14%, var(--bg-secondary));
+	color: var(--primary-color);
+	font-size: 1.15rem;
+}
+
+body.site-content-page.workstation-page .workstation-section--alt {
+	background: color-mix(
+		in srgb,
+		var(--bg-secondary) 88%,
+		var(--primary-color) 12%
+	);
+	border-top: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+}
+
+body.site-content-page.workstation-page .workstation-section--apps {
+	background: var(--bg-primary);
+}
+
+body.site-content-page.workstation-page .workstation-repo-list {
+	columns: 1;
+}
+
+@media (min-width: 576px) {
+	body.site-content-page.workstation-page .workstation-repo-list {
+		columns: 2;
+		column-gap: 1.5rem;
+	}
+}
+
+body.site-content-page.workstation-page .workstation-repo-list li {
+	break-inside: avoid;
+	margin-bottom: 0.35rem;
+}
+
+html[data-theme="light"]
+	body.site-content-page.workstation-page
+	.workstation-service-card {
+	box-shadow: 0 0.4rem 1.1rem rgba(15, 23, 42, 0.07), 0 0.15rem 0.4rem
+		rgba(15, 23, 42, 0.05);
+}

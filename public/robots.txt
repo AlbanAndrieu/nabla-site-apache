@@ -17,6 +17,10 @@ Disallow: /*/decision/pdf/*
 Disallow: /*/other/pdf/*
 # deny dynamic URLs which contain a '?'
 Disallow: /*?*
+Disallow: /payment.html
+Disallow: /checkout.html
+Disallow: /success.html
+Disallow: /cancel.html
 
 User-agent: Google Mobile
 Allow: /
@@ -34,6 +38,10 @@ Allow: /
 # BING & Ecosia
 User-agent: bingbot
 Allow: /
+Disallow: /payment.html
+Disallow: /checkout.html
+Disallow: /success.html
+Disallow: /cancel.html
 
 # Yahoo
 User-agent: Yahoo! Slurp
@@ -173,6 +181,12 @@ Disallow: /cv/jusmundi/yearly-review-2025-aandrieu.html
 # Disallow test and login pages (noindex/nofollow)
 Disallow: /test.html
 Disallow: /login.html
+
+# Payment / Stripe checkout flow (noindex/nofollow)
+Disallow: /payment.html
+Disallow: /checkout.html
+Disallow: /success.html
+Disallow: /cancel.html
 
 # Disallow technical signup pages
 Allow: /login/$
