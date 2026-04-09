@@ -1,7 +1,0 @@
-out/
-megalinter-reports/
-output/
-path/to/large-asset.zip
-**/*.jpg
-*-SAV
-*-TODELETE

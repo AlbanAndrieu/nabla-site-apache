@@ -1,3 +1,0 @@
-[codespell]
-skip = .git,node_modules,*.lock,*.min.js,*.min.css,package-lock.json,composer.lock,Pipfile.lock
-ignore-words-list = asert,jus

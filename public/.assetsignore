@@ -1,7 +1,0 @@
-_worker.js
-_routes.json
-_redirects
-_headers
-node_modules/
-.vercel
-others/
