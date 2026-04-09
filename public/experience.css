@@ -1,0 +1,110 @@
+/* Experience Section */
+.experience-section {
+	padding: 5rem 2rem;
+	background: var(--bg-white);
+}
+
+/* Experience Section */
+.experience-section {
+	padding: 5rem 2rem;
+	background: var(--bg-primary);
+}
+
+/*
+ * CV / NRE year timeline — scoped under .experience-section so Bootstrap/legal
+ * .timeline-item blocks (e.g. central-authorities.html) are not affected.
+ */
+.experience-section .timeline {
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative;
+	padding-left: 50px;
+}
+
+.experience-section .timeline::before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--primary-color);
+}
+
+.experience-section .timeline-item {
+	position: relative;
+	margin-bottom: 3rem;
+	padding-bottom: 2rem;
+	/* Override theme.css prose .timeline-item (legal pages) */
+	border-left: none;
+	padding-left: 0;
+}
+
+.experience-section .timeline-marker {
+	position: absolute;
+	left: -35px;
+	top: 0;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--primary-color);
+	border: 3px solid var(--bg-primary);
+	box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.experience-section .timeline-content {
+	background: var(--bg-secondary);
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 2px 10px var(--shadow-color);
+	transition: all 0.3s ease;
+}
+
+.experience-section .timeline-content:hover {
+	transform: translateX(5px);
+	box-shadow: 0 5px 20px var(--shadow-hover);
+}
+
+.experience-section .timeline-header {
+	margin-bottom: 1rem;
+}
+
+.experience-section .timeline-header h3 {
+	font-size: 1.5rem;
+	color: var(--text-primary);
+	margin-bottom: 0.5rem;
+}
+
+.experience-section .timeline-company {
+	display: inline-block;
+	font-weight: 600;
+	color: var(--primary-color);
+	margin-right: 1rem;
+}
+
+.experience-section .timeline-date {
+	color: var(--text-secondary);
+	font-size: 0.95rem;
+}
+
+.experience-section .timeline-description {
+	color: var(--text-secondary);
+	line-height: 1.7;
+	margin-bottom: 1rem;
+}
+
+.experience-section .timeline-achievements {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.experience-section .achievement-tag {
+	background: var(--bg-primary);
+	padding: 0.4rem 0.8rem;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	color: var(--primary-color);
+	border: 1px solid var(--border-color);
+}
