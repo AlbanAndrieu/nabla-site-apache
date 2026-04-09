@@ -164,6 +164,24 @@ main.checkout-page.payment-options .payment-options-intro h1 {
 	gap: 1rem;
 }
 
+/* Stripe Payment Link / Buy Button embed (e.g. checkout-tjm.html) */
+.checkout-page .checkout-stripe-buy {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0.25rem 0 0;
+	box-sizing: border-box;
+}
+
+.checkout-page .checkout-stripe-buy stripe-buy-button {
+	display: block;
+	width: 100%;
+	max-width: min(100%, 400px);
+	margin-inline: auto;
+}
+
 .checkout-page .description {
 	display: flex;
 	flex-direction: column;
