@@ -182,6 +182,28 @@ main.checkout-page.payment-options .payment-options-intro h1 {
 	margin-inline: auto;
 }
 
+/* QR (assets/stripe/tjm-stripe.png) on checkout pages */
+.checkout-page .checkout-qr {
+	margin: 1.25rem 0 0;
+	text-align: center;
+}
+
+.checkout-page .checkout-qr img {
+	display: block;
+	max-width: min(100%, 280px);
+	width: 100%;
+	height: auto;
+	margin-inline: auto;
+	border-radius: 8px;
+}
+
+.checkout-page .checkout-qr .checkout-qr-caption {
+	margin: 0.5rem 0 0;
+	font-size: 0.8125rem;
+	color: var(--text-secondary);
+	line-height: 1.4;
+}
+
 .checkout-page .description {
 	display: flex;
 	flex-direction: column;

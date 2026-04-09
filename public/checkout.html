@@ -63,6 +63,16 @@
 						<p class="checkout-subtitle">One-time payment via Stripe. Secure checkout.</p>
 					</div>
 				</div>
+				<figure class="checkout-qr">
+					<img
+						src="assets/stripe/tjm-stripe.png"
+						alt="QR code to open this Stripe payment on your phone"
+						width="880"
+						height="1055"
+						decoding="async"
+					/>
+					<figcaption class="checkout-qr-caption">Or scan this QR code to pay on your phone</figcaption>
+				</figure>
 				<form action="/api/create-checkout-session" method="POST" class="checkout-form">
 					<button type="submit" id="checkout-button" class="checkout-button">
 						<i class="fa-solid fa-lock" aria-hidden="true"></i> Proceed to checkout

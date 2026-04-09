@@ -56,7 +56,7 @@
 		<!-- Main Content -->
 		<main id="main-content" class="checkout-page">
 			<section class="checkout-card">
-				<div class="checkout-stripe-buy">
+				<div class="checkout-stripe-buy text-md-center">
 					<stripe-buy-button
 						buy-button-id="buy_btn_1TKIFWQR8aaUqJtoH4ydCPmb"
 						publishable-key="pk_live_51SroMlQR8aaUqJto9xB53Tw9vYdZEY1iusi56ELysrzeCIT1S65WDS2vKTeGIUemT6m4tTqFDiQG74atw93HabaD00IwZxhQar"
@@ -64,8 +64,19 @@
 				</div>
 				<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
+				<figure class="checkout-qr">
+					<img
+						src="assets/stripe/tjm-stripe.png"
+						alt="QR code to open this Stripe payment on your phone"
+						width="880"
+						height="1055"
+						decoding="async"
+					/>
+					<figcaption class="checkout-qr-caption">Or scan this QR code to pay on your phone</figcaption>
+				</figure>
+
 				<p class="checkout-footer">
-					<a href="index.html">Back to site</a>
+					<a href="index.html">Back to Home</a>
 				</p>
 			</section>
 		</main>
