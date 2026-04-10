@@ -1,5 +1,5 @@
-import path from "path";
-import { readFile } from "fs/promises";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import type { Metadata } from "next";
 
 export type HtmlExtractMode = "main" | "headerMain" | "mainOuter";
@@ -25,7 +25,7 @@ export function rewriteLegacyHtmlHrefs(fragment: string): string {
 		}
 
 		const ref = href.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
-		const pathPart = ref?.[1] ?? href;
+		let pathPart = ref?.[1] ?? href;
 		const query = ref?.[2] ?? "";
 		const hash = ref?.[3] ?? "";
 

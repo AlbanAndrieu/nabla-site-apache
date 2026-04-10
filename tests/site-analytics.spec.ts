@@ -24,7 +24,8 @@ test.describe("Site analytics loader regression tests", () => {
 	});
 
 	test("should keep GTM and gtag init idempotent", async ({ page }) => {
-		await page.goto("/");
+		// Home uses data-analytics-mode="home" and already injects GTM/gtag; use vercel-only page
+		await page.goto("/expertise.html");
 
 		await expect
 			.poll(async () => {

@@ -28,7 +28,7 @@ export default async function MarketingSlugPage({ params }: Props) {
 
 	return (
 		<>
-			<a name="top" />
+			<div id="top" />
 			<a href="#main-content" className="skip-to-main">
 				Skip to main content
 			</a>

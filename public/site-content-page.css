@@ -526,9 +526,11 @@ body.site-content-page.truenas-page .truenas-app-actions .btn-group .btn {
 }
 
 /* HTTPS service buttons: padlock (Font Awesome 7 solid U+F023) */
-body.site-content-page.truenas-page .truenas-app-actions a.btn[href^="https://"]::before {
+body.site-content-page.truenas-page
+	.truenas-app-actions
+	a.btn[href^="https://"]::before {
 	display: inline-block;
-	font-family: "Font Awesome 7 Free";
+	font-family: "Font Awesome 7 Free", sans-serif;
 	font-weight: 900;
 	font-style: normal;
 	content: "\f023";

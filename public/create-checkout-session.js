@@ -6,7 +6,7 @@
  * Pattern matches Stripe’s hosted Checkout sample: create session → redirect to session.url.
  * POST with Accept: application/json returns { url } for fetch-based clients; otherwise 303 redirect.
  */
-const path = require("path");
+const path = require("node:path");
 const express = require("express");
 const stripeSecret = process.env.STRIPE_SECRET_KEY || process.env.STRIPE_KEY;
 const stripe = stripeSecret ? require("stripe")(stripeSecret) : null;
