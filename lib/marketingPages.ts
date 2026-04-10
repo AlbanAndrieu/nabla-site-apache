@@ -71,7 +71,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	nabla: {
 		file: "nabla.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page page-nabla-best-practices",
+		bodyClass: "site-content-page page-dark page-nabla-best-practices",
 	},
 	login: {
 		file: "login.html",
@@ -91,7 +91,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	freenas: {
 		file: "freenas.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-dark",
 	},
 	truenas: {
 		file: "truenas.html",

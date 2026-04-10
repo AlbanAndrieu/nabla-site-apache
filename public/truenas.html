@@ -110,12 +110,12 @@
 		<!-- Header / Hero Section -->
 		<header>
 			<!-- TrueNAS apps & services -->
-			<section class="py-5 bg-light truenas-page-apps" aria-labelledby="truenas-heading">
+			<section class="stack-page-hero py-5 truenas-page-apps" aria-labelledby="truenas-heading">
 				<div class="container">
 					<div class="row mb-4">
 						<div class="col-12 text-center">
 							<h2 id="truenas-heading" class="display-4 mb-3">TrueNAS Services</h2>
-							<p class="lead text-secondary mb-0 truenas-page-apps__lead">Self-hosted applications on TrueNAS Scale.</p>
+							<p class="lead mb-0 stack-page-hero__lead">Self-hosted applications on TrueNAS Scale.</p>
 						</div>
 					</div>
 					<div
@@ -347,7 +347,7 @@
 					<div class="row align-items-center g-4">
 						<div class="col-md-6">
 							<a
-								class="truenas-tool-link d-flex align-items-center gap-3 text-decoration-none p-3 rounded border border-secondary"
+								class="stack-tool-link d-flex align-items-center gap-3 text-decoration-none p-3 rounded border border-secondary"
 								href="https://truenas.albandrieu.com"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -366,7 +366,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="truenas-page-tools__badge text-center mt-5 pt-4 border-top border-secondary">
+					<div class="stack-exchange-badge">
 						<a href="https://stackexchange.com/users/4652074/albanandrieu" target="_blank" rel="noopener noreferrer">
 							<img
 								src="https://stackexchange.com/users/flair/4652074.png"
@@ -454,8 +454,8 @@
 			async="async"
 			type="text/javascript"
 		></script>
-		<script src="truenas-health.js"></script>
-		<script src="homelab-services-render.js"></script>
+		<script src="nabla-service-status.js" defer></script>
+		<script src="homelab-services-render.js" defer></script>
 		<script
 			src="site-widgets.js"
 			defer

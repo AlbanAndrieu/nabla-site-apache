@@ -1,7 +1,7 @@
 /**
- * nabla.html — optional reachability hint per HTTP(S) service link.
- * Uses a favicon image probe (no CORS read); false negatives are possible (no favicon, CSP, LAN-only URLs).
- * Homelab cards may be injected after load (homelab-services-render.js); see initNablaHomelabServicePings.
+ * Reachability hints via favicon image probe (no CORS read); false negatives are possible.
+ * Used on nabla.html (tool tags, opensource links) and on homelab service cards (truenas.html + nabla.html).
+ * Homelab cards: initHomelabServiceCardPings (alias initNablaHomelabServicePings), called from homelab-services-render.js.
  */
 (() => {
 	var CONCURRENCY = 5;
@@ -182,25 +182,24 @@
 		runQueue(jobs).catch(() => {});
 	}
 
-	window.initNablaHomelabServicePings =
-		function initNablaHomelabServicePings() {
-			if (!document.body.classList.contains("page-nabla-best-practices")) {
-				return;
-			}
-			var seen = Object.create(null);
-			document
-				.querySelectorAll(
-					".nabla-homelab-services .nabla-homelab-card a.btn[href]",
-				)
-				.forEach((a) => {
-					registerAnchor(a, seen);
-				});
-			var jobs = seenToJobs(seen);
-			if (!jobs.length) {
-				return;
-			}
-			runQueue(jobs).catch(() => {});
-		};
+	function initHomelabServiceCardPings() {
+		var seen = Object.create(null);
+		document
+			.querySelectorAll(
+				".truenas-page-apps .homelab-service-card a.btn[href], .nabla-homelab-services .homelab-service-card a.btn[href]",
+			)
+			.forEach((a) => {
+				registerAnchor(a, seen);
+			});
+		var jobs = seenToJobs(seen);
+		if (!jobs.length) {
+			return;
+		}
+		runQueue(jobs).catch(() => {});
+	}
+
+	window.initHomelabServiceCardPings = initHomelabServiceCardPings;
+	window.initNablaHomelabServicePings = initHomelabServiceCardPings;
 
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", init);

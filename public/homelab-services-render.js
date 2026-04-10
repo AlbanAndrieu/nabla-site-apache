@@ -20,12 +20,12 @@
 
 	function iconsHtml(icons) {
 		if (!icons || !icons.length) {
-			return '<i class="fas fa-circle text-primary" aria-hidden="true"></i>';
+			return '<i class="fas fa-circle homelab-service-card__icon" aria-hidden="true"></i>';
 		}
 		return icons
 			.map(
 				(c) =>
-					`<i class="${safeIconClass(c)} text-primary" aria-hidden="true"></i>`,
+					`<i class="${safeIconClass(c)} homelab-service-card__icon" aria-hidden="true"></i>`,
 			)
 			.join("");
 	}
@@ -106,8 +106,7 @@
 			? `<small class="text-muted d-block mt-2 mb-0">${s.portHtml}</small>`
 			: `<small class="text-muted d-block mt-2 mb-0">Port: ${esc(String(s.internalPort))}</small>`;
 
-		const descBlockTruenas = desc ? `<p class="card-text">${desc}</p>` : "";
-		const descBlockNabla = desc
+		const descBlock = desc
 			? `<p class="card-text text-muted small mb-2 flex-grow-0">${desc}</p>`
 			: "";
 
@@ -122,24 +121,12 @@
 			</div>
 		</div>`;
 
-		if (variant === "nabla") {
-			return `<div class="col">
-				<div class="card h-100 nabla-homelab-card border-secondary shadow-sm">
-					<div class="card-body py-3 px-3 d-flex flex-column">
-						<h4 class="h6 card-title mb-2 d-flex align-items-center gap-2">${icons}<span>${name}</span></h4>
-						${descBlockNabla}
-						${group}
-						${portSmall}
-					</div>
-				</div>
-			</div>`;
-		}
-
-		return `<div class="col-md-4 p-3">
-			<div class="card box-shadow">
-				<div class="card-body">
-					<h5 class="card-title d-flex align-items-center gap-2 flex-wrap">${icons}<b>${name}</b></h5>
-					${descBlockTruenas}
+		/* Same card chrome on TrueNAS and Nabla (responsive grid + compact title row). */
+		return `<div class="col">
+			<div class="card h-100 homelab-service-card">
+				<div class="card-body py-3 px-3 d-flex flex-column">
+					<h4 class="h6 card-title mb-2 d-flex align-items-center gap-2">${icons}<span>${name}</span></h4>
+					${descBlock}
 					${group}
 					${portSmall}
 				</div>
@@ -169,25 +156,16 @@
 		if (!Array.isArray(services)) {
 			return;
 		}
-		let needHealth = false;
 		for (const root of roots) {
 			const variant = root.getAttribute("data-homelab-variant") || "truenas";
-			if (variant === "truenas") {
-				needHealth = true;
-			}
-			if (variant === "nabla") {
-				root.className = "row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3";
-			} else {
-				root.className = "row";
-			}
+			root.className = "row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3";
 			root.innerHTML = services
 				.map((s) => renderServiceCard(s, variant))
 				.join("");
 		}
-		if (needHealth && typeof window.initTruenasPageHealth === "function") {
-			window.initTruenasPageHealth();
-		}
-		if (typeof window.initNablaHomelabServicePings === "function") {
+		if (typeof window.initHomelabServiceCardPings === "function") {
+			window.initHomelabServiceCardPings();
+		} else if (typeof window.initNablaHomelabServicePings === "function") {
 			window.initNablaHomelabServicePings();
 		}
 	}
