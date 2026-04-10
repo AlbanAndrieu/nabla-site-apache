@@ -11,7 +11,7 @@ Stripe **hosted Checkout**: the browser gets a Checkout Session URL from your se
 - `public/cancel.html`
 - `public/checkout.css`
 - `server.cjs` — Express: static `public/`, `POST /create-checkout-session` (local dev)
-- `api/create-checkout-session.js` — Vercel Node function: same `POST` contract; `vercel.json` rewrites `/create-checkout-session` → `/api/create-checkout-session`
+- `api/create-checkout-session.js` — Vercel Node function: same `POST` contract; routed by `vercel.json` catch-all (`/(.*)` → `/api/$1`)
 - `package.json` — `start:stripe` → `node server.cjs`
 
 ## Endpoint contract
@@ -59,10 +59,14 @@ Stripe replaces the placeholder when redirecting. The success page shows the id 
 
 ## Production / Vercel
 
-This repository’s root `vercel.json` sends requests under `/api/` to PHP. It does **not** execute `server.cjs`. You must either:
+`server.cjs` is for local Node development only and does not run on Vercel.
 
-- Run the Node server (or another implementation of the same POST contract) behind your domain and reverse-proxy `/create-checkout-session`, or  
-- Add a separate serverless function (Node, etc.) that creates the session with the same JSON/redirect behaviour.
+In production, `POST /create-checkout-session` is handled by `api/create-checkout-session.js` through the root `vercel.json` catch-all route (`/(.*)` → `/api/$1`).
+
+Origin behavior:
+
+- If `DOMAIN` is set, the function uses it for `success_url` and `cancel_url`.
+- If `DOMAIN` is not set, the function derives origin from `x-forwarded-proto` + `x-forwarded-host` (or `host`) and falls back to `https://www.dr-alban.com` only when headers are missing.
 
 ## Troubleshooting
 

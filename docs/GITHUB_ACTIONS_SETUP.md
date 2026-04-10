@@ -1,104 +1,54 @@
-# GitHub Actions Setup for Hugo Deployment
+# GitHub Actions Workflow Setup
 
-This document describes the GitHub Actions secrets required for the Hugo build and Vercel deployment workflow.
+This document tracks the workflows currently present in `.github/workflows/` and the secrets they depend on.
 
-## Required GitHub Secrets
+## Current workflow inventory
 
-The Hugo deployment workflow (`.github/workflows/hugo-deploy.yml`) requires the following secrets to be configured in your GitHub repository:
+The repository currently includes:
 
-### 1. VERCEL_TOKEN
+1. `playwright.yml` — browser end-to-end tests.
+2. `docker-build.yml` — Docker build/push + Trivy scan.
+3. `mega-linter.yml` — linting and optional auto-fix commit/PR behavior.
+4. `build-pdf.yml` — CV PDF generation via TeX Live.
+5. `opencommit.yml` — automated commit message helper.
+6. `copilot-setup-steps.yml` — setup flow for Copilot coding agent runs.
 
-**Description**: Your Vercel authentication token for CLI deployments.
+There is no `hugo-deploy.yml` workflow in the repository.
 
-**How to get it**:
-1. Log in to your Vercel account at https://vercel.com
-2. Go to Settings > Tokens
-3. Click "Create Token"
-4. Give it a name (e.g., "GitHub Actions Hugo Deploy")
-5. Copy the generated token
+## Required GitHub secrets
 
-**How to add to GitHub**:
-1. Go to your repository on GitHub
-2. Navigate to Settings > Secrets and variables > Actions
-3. Click "New repository secret"
-4. Name: `VERCEL_TOKEN`
-5. Value: Paste the token from Vercel
-6. Click "Add secret"
+### 1. `DOCKER_USERNAME`
 
-### 2. VERCEL_ORG_ID
+Used by `docker-build.yml` for Docker Hub login.
 
-**Description**: Your Vercel organization ID (or team ID).
+### 2. `DOCKER_PASSWORD`
 
-**How to get it**:
-1. Install Vercel CLI: `npm install -g vercel`
-2. Run: `vercel link` in your project directory
-3. Follow the prompts to link to your Vercel project
-4. After linking, run: `cat .vercel/project.json`
-5. Copy the `orgId` value
+Used by `docker-build.yml` for Docker Hub login.
 
-**How to add to GitHub**:
-1. Follow the same steps as VERCEL_TOKEN
-2. Name: `VERCEL_ORG_ID`
-3. Value: Paste the orgId value
+### 3. `OCO_API_KEY`
 
-### 3. VERCEL_PROJECT_ID
+Used by `opencommit.yml` (`di-sukharev/opencommit`) for model access.
 
-**Description**: Your Vercel project ID for this specific project.
+### Optional secret: `PAT`
 
-**How to get it**:
-1. After running `vercel link` (from step 2 above)
-2. Run: `cat .vercel/project.json`
-3. Copy the `projectId` value
+`mega-linter.yml` can use `PAT` for checkout/PR operations and falls back to `GITHUB_TOKEN` when `PAT` is not set.
 
-**How to add to GitHub**:
-1. Follow the same steps as VERCEL_TOKEN
-2. Name: `VERCEL_PROJECT_ID`
-3. Value: Paste the projectId value
+## Adding or updating secrets
 
-## Workflow Behavior
+1. Open the repository on GitHub.
+2. Go to `Settings` -> `Secrets and variables` -> `Actions`.
+3. Select `New repository secret`.
+4. Add each secret key/value pair above.
 
-Once these secrets are configured:
+## Behavior notes
 
-1. **On push to `main` or `master` branch**:
-   - Hugo site is built
-   - Artifacts are uploaded
-   - Site is automatically deployed to Vercel production
+- Playwright tests run on push and pull request for `main`, `master`, and `develop`.
+- Docker CI and MegaLinter skip markdown-only changes because of `paths-ignore`.
+- CV PDF build runs on push and pull request.
+- OpenCommit runs on push for non-protected branches (`branches-ignore` includes `main`, `master`, `dev`, `development`, `release`).
 
-2. **On pull requests**:
-   - Hugo site is built
-   - Artifacts are uploaded for review
-   - No deployment occurs (preview only)
+## Security notes
 
-3. **Manual trigger**:
-   - You can manually trigger the workflow from the Actions tab
-
-## Testing the Workflow
-
-After setting up the secrets:
-
-1. Make a small change to a content file or layout
-2. Commit and push to a feature branch
-3. Create a pull request
-4. Check the Actions tab to see the build status
-5. Once merged to main/master, check for automatic deployment
-
-## Troubleshooting
-
-### "Error: No token found"
-- Make sure `VERCEL_TOKEN` is correctly set in GitHub secrets
-- Verify the token hasn't expired in Vercel
-
-### "Error: Project not found"
-- Verify `VERCEL_PROJECT_ID` matches your actual project
-- Make sure the project exists in your Vercel account
-
-### "Error: Unauthorized"
-- Check that `VERCEL_ORG_ID` is correct
-- Verify your Vercel token has access to the organization/team
-
-## Security Notes
-
-- Never commit these secrets to the repository
-- Rotate tokens periodically for security
-- Use different tokens for different environments if needed
-- Keep `.vercel/` directory in `.gitignore` (already configured)
+- Do not commit secret values to the repository.
+- Rotate long-lived tokens periodically.
+- Scope tokens to minimum required permissions.
