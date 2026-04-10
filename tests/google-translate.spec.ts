@@ -70,7 +70,11 @@ test.describe("Google Translate Widget Tests", () => {
 			const translateElement = page.locator("#google_translate_element");
 
 			if ((await translateElement.count()) > 0) {
-				// Widget should still be visible on mobile
+				const vw = viewport.width;
+				// Below 576px the panel is closed until the toggle opens (see theme.css)
+				if (vw <= 575) {
+					await page.locator(".google-translate-widget__toggle").click();
+				}
 				await expect(translateElement).toBeInViewport();
 			}
 		}

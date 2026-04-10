@@ -127,15 +127,11 @@ export default async function HomePage() {
 				strategy="lazyOnload"
 				data-id="150620"
 			/>
-			<a name="top" />
+			<div id="top" />
 			<a href="#main-content" className="skip-to-main">
 				Skip to main content
 			</a>
-			<main
-				id="main-content"
-				role="main"
-				dangerouslySetInnerHTML={{ __html: inner }}
-			/>
+			<main id="main-content" dangerouslySetInnerHTML={{ __html: inner }} />
 		</div>
 	);
 }

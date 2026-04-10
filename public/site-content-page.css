@@ -514,6 +514,65 @@ body.site-content-page.truenas-page .truenas-page-apps__lead {
 	margin-right: auto;
 }
 
+body.site-content-page.truenas-page .truenas-app-actions .btn-group {
+	width: 100%;
+}
+
+body.site-content-page.truenas-page .truenas-app-actions .btn-group .btn {
+	flex: 1 1 0;
+	min-width: 0;
+	white-space: normal;
+	line-height: 1.25;
+}
+
+/* HTTPS service buttons: padlock (Font Awesome 7 solid U+F023) */
+body.site-content-page.truenas-page
+	.truenas-app-actions
+	a.btn[href^="https://"]::before {
+	display: inline-block;
+	font-family: "Font Awesome 7 Free", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	content: "\f023";
+	margin-right: 0.28em;
+	font-size: 0.82em;
+	line-height: 1;
+	color: var(--bs-success, #198754);
+	-webkit-font-smoothing: antialiased;
+	vertical-align: -0.05em;
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.1rem;
+	min-height: 1.1rem;
+	line-height: 1;
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator__icon {
+	font-size: 0.7rem;
+	vertical-align: middle;
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator__icon--pending {
+	color: var(--text-muted, #6c757d);
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator__icon--up {
+	color: var(--bs-success, #198754);
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator__icon--down {
+	color: var(--bs-danger, #dc3545);
+}
+
+body.site-content-page.truenas-page .truenas-health-indicator__icon--na {
+	font-size: 0.85rem;
+	color: var(--text-muted, #6c757d);
+}
+
 body.site-content-page.truenas-page
 	.truenas-page-secondary
 	.card.border-secondary,

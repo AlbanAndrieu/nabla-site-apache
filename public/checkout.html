@@ -63,13 +63,23 @@
 						<p class="checkout-subtitle">One-time payment via Stripe. Secure checkout.</p>
 					</div>
 				</div>
+				<figure class="checkout-qr">
+					<img
+						src="assets/stripe/tjm-stripe.png"
+						alt="QR code to open this Stripe payment on your phone"
+						width="880"
+						height="1055"
+						decoding="async"
+					/>
+					<figcaption class="checkout-qr-caption">Or scan this QR code to pay on your phone</figcaption>
+				</figure>
 				<form action="/api/create-checkout-session" method="POST" class="checkout-form">
 					<button type="submit" id="checkout-button" class="checkout-button">
 						<i class="fa-solid fa-lock" aria-hidden="true"></i> Proceed to checkout
 					</button>
 				</form>
 				<p class="checkout-footer">
-					<a href="index.html">Back to site</a>
+					<a href="/">Back to site</a>
 				</p>
 			</section>
 		</main>
@@ -117,11 +127,11 @@
 				></a>
 			</div>
 			<div class="footer-links">
-				<a href="/policy/legal.html">Legal notices</a>
+				<a href="/policy/legal">Legal notices</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer" class="text-muted">Cookies</a>
 			</div>
 			<p class="text-md-center mt-3">
-				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+				<a href="/" class="btn btn-sm btn-outline-secondary">Back to Home</a>
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
 			<p class="footer-copyright"></p>

@@ -1,0 +1,39 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"organizeImports": { "enabled": true },
+	"linter": { "enabled": true, "rules": { "recommended": true } },
+	"formatter": { "enabled": true, "indentStyle": "tab" },
+	"json": { "parser": { "allowComments": true, "allowTrailingCommas": true } },
+	"files": {
+		"ignore": [
+			".next",
+			"node_modules",
+			"vendor",
+			"public/assets",
+			"public/checklist",
+			"tsconfig.tsbuildinfo"
+		]
+	},
+	"overrides": [
+		{
+			"include": ["app/**/*.tsx"],
+			"linter": {
+				"rules": {
+					"security": {
+						"noDangerouslySetInnerHtml": "off"
+					}
+				}
+			}
+		},
+		{
+			"include": ["public/**/*.js"],
+			"linter": {
+				"rules": {
+					"style": { "noVar": "off", "useTemplate": "off" },
+					"complexity": { "noForEach": "off" },
+					"correctness": { "noInnerDeclarations": "off" }
+				}
+			}
+		}
+	]
+}

@@ -23,7 +23,7 @@ test.describe("404 Error Page Tests", () => {
 		await page.goto("/404.html");
 
 		// Check for link to home page
-		const homeLink = page.locator('a[href="/"], a[href="index.html"]');
+		const homeLink = page.locator('a[href="/"]');
 		if ((await homeLink.count()) > 0) {
 			await expect(homeLink).toBeVisible();
 		}

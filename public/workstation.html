@@ -27,10 +27,7 @@
 		<meta property="og:locale" content="en_US" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="Workstation Docker Compose" />
-		<meta
-			name="twitter:description"
-			content="Docker Compose on the workstation: stacks, repos, and localhost links."
-		/>
+		<meta name="twitter:description" content="Docker Compose on the workstation: stacks, repos, and localhost links." />
 		<meta name="twitter:image" content="https://dr-alban.com/assets/nabla/nabla-4.svg" />
 		<link rel="canonical" href="https://dr-alban.com/workstation.html" />
 		<link rel="icon" href="assets/nabla/nabla-4.svg" />
@@ -73,9 +70,9 @@
 		<a href="#main-content" class="skip-to-main">Skip to main content</a>
 
 		<nav class="page-nav container py-3" aria-label="Breadcrumb">
-			<a href="index.html" class="text-decoration-none"><i class="fas fa-home" aria-hidden="true"></i> Back to home</a>
+			<a href="/" class="text-decoration-none"><i class="fas fa-home" aria-hidden="true"></i> Back to home</a>
 			<span class="text-muted mx-2" aria-hidden="true">·</span>
-			<a href="truenas.html" class="text-decoration-none">TrueNAS Scale</a>
+			<a href="/truenas" class="text-decoration-none">TrueNAS Scale</a>
 			<span class="text-muted mx-2" aria-hidden="true">·</span>
 			<span class="text-muted">Workstation</span>
 		</nav>
@@ -92,7 +89,7 @@
 							</p>
 							<p class="text-secondary mb-0 mt-3">
 								For the NAS-side catalog, see
-								<a href="truenas.html">TrueNAS Scale services</a>.
+								<a href="/truenas">TrueNAS Scale services</a>.
 							</p>
 						</div>
 					</div>
@@ -104,9 +101,7 @@
 									<h3 class="h5 card-title">
 										<i class="fab fa-github me-2 text-primary" aria-hidden="true"></i>nabla-compose
 									</h3>
-									<p class="card-text flex-grow-1">
-										Docker Compose files for workstation and related deployments.
-									</p>
+									<p class="card-text flex-grow-1">Docker Compose files for workstation and related deployments.</p>
 
 									<a
 										href="https://github.com/AlbanAndrieu/nabla-compose"
@@ -126,7 +121,8 @@
 										<i class="fab fa-github me-2 text-primary" aria-hidden="true"></i>ansible-workstation
 									</h3>
 									<p class="card-text flex-grow-1">
-										Ansible role and playbooks to provision this Ubuntu workstation (packages, optional desktop tooling).
+										Ansible role and playbooks to provision this Ubuntu workstation (packages, optional desktop
+										tooling).
 									</p>
 									<a
 										href="https://github.com/AlbanAndrieu/ansible-workstation"
@@ -660,8 +656,8 @@
 								<div class="card-body">
 									<h3 class="h5 card-title"><b>Sentry web</b></h3>
 									<p class="card-text">
-										Error tracking UI — host port from your Sentry compose (often <code class="text-body">:9000</code> when
-										Graylog is not using it).
+										Error tracking UI — host port from your Sentry compose (often
+										<code class="text-body">:9000</code> when Graylog is not using it).
 									</p>
 									<div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
 										<a href="http://localhost:9000" class="btn btn-sm btn-outline-primary">
@@ -674,15 +670,19 @@
 						</div>
 					</div>
 					<p class="text-secondary small mt-3 mb-0">
-						Workers, Snuba, ClickHouse, Kafka, and other Sentry containers usually sit on the Docker network only; use the
-						web UI or Traefik routes for day-to-day access. Graylog is listed above on
-						<code class="text-body">:9000</code> — if both stacks publish that port, remap one in Compose or use Traefik.
+						Workers, Snuba, ClickHouse, Kafka, and other Sentry containers usually sit on the Docker network only; use
+						the web UI or Traefik routes for day-to-day access. Graylog is listed above on
+						<code class="text-body">:9000</code> — if both stacks publish that port, remap one in Compose or use
+						Traefik.
 					</p>
 				</div>
 			</section>
 
 			<!-- Related -->
-			<section class="workstation-section workstation-section--alt py-5 border-top border-secondary" aria-labelledby="workstation-related-heading">
+			<section
+				class="workstation-section workstation-section--alt py-5 border-top border-secondary"
+				aria-labelledby="workstation-related-heading"
+			>
 				<div class="container">
 					<h2 id="workstation-related-heading" class="workstation-section-title h3 mb-4">
 						<span class="workstation-section-title__icon" aria-hidden="true"><i class="fas fa-link"></i></span>
@@ -694,7 +694,7 @@
 								<div class="card-body">
 									<h3 class="h6 card-title">TrueNAS Scale</h3>
 									<p class="card-text text-muted small mb-0">Homelab apps and hardware on the NAS.</p>
-									<a href="truenas.html" class="btn btn-sm btn-outline-primary mt-3">Open TrueNAS page</a>
+									<a href="/truenas" class="btn btn-sm btn-outline-primary mt-3">Open TrueNAS page</a>
 								</div>
 							</div>
 						</div>
@@ -703,7 +703,7 @@
 								<div class="card-body">
 									<h3 class="h6 card-title">Nabla</h3>
 									<p class="card-text text-muted small mb-0">Project context on this site.</p>
-									<a href="nabla.html" class="btn btn-sm btn-outline-primary mt-3">Open Nabla</a>
+									<a href="/nabla" class="btn btn-sm btn-outline-primary mt-3">Open Nabla</a>
 								</div>
 							</div>
 						</div>
@@ -761,12 +761,12 @@
 				</a>
 			</div>
 			<div class="footer-links">
-				<a href="pricing.html">Pricing</a>
-				<a href="policy/legal.html">Legal notices</a>
+				<a href="/pricing">Pricing</a>
+				<a href="/policy/legal">Legal notices</a>
 				<a href="javascript:openAxeptioCookies()" rel="noopener noreferrer">Cookies</a>
 			</div>
 			<p class="text-md-center mt-3">
-				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+				<a href="/" class="btn btn-sm btn-outline-secondary">Back to Home</a>
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
 			<p class="footer-copyright"></p>

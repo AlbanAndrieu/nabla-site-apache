@@ -6,8 +6,13 @@ export type MarketingPageSpec = {
 	bodyClass?: string;
 };
 
-/** Root-level HTML pages (slug → source under public/). Excludes index, contact, 404. */
+/** Root-level HTML pages (slug → source under public/). Excludes index and 404. */
 export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
+	contact: {
+		file: "contact.html",
+		mode: "mainOuter",
+		bodyClass: "site-content-page",
+	},
 	ai: {
 		file: "ai.html",
 		mode: "mainOuter",
