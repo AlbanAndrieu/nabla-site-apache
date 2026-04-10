@@ -13,42 +13,50 @@ function decodeBasicEntities(text: string): string {
 		.replace(/&gt;/g, ">");
 }
 
+function rewriteOneHref(quote: '"' | "'", raw: string): string {
+	const href = raw.trim();
+	if (
+		/^(https?:|mailto:|tel:|#|javascript:|data:)/i.test(href) ||
+		href.length === 0
+	) {
+		return `href=${quote}${raw}${quote}`;
+	}
+
+	const ref = href.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
+	let pathPart = ref?.[1] ?? href;
+	const query = ref?.[2] ?? "";
+	const hash = ref?.[3] ?? "";
+
+	while (pathPart.startsWith("../")) pathPart = pathPart.slice(3);
+	while (pathPart.startsWith("./")) pathPart = pathPart.slice(2);
+
+	if (!pathPart.endsWith(".html")) {
+		return `href=${quote}${raw}${quote}`;
+	}
+
+	const noExt = pathPart.slice(0, -5);
+	const segments = noExt.split("/").filter(Boolean);
+	const last = segments[segments.length - 1];
+	let out: string;
+	if (last === "index") {
+		segments.pop();
+		out = segments.length ? `/${segments.join("/")}` : "/";
+	} else {
+		out = `/${noExt.replace(/^\/+/, "")}`;
+	}
+
+	return `href=${quote}${out}${query}${hash}${quote}`;
+}
+
 /** Rewrite internal *.html links to clean paths for the Next.js app. */
 export function rewriteLegacyHtmlHrefs(fragment: string): string {
-	return fragment.replace(/\bhref="([^"]*)"/gi, (full, raw: string) => {
-		const href = raw.trim();
-		if (
-			/^(https?:|mailto:|tel:|#|javascript:|data:)/i.test(href) ||
-			href.length === 0
-		) {
-			return full;
-		}
-
-		const ref = href.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
-		let pathPart = ref?.[1] ?? href;
-		const query = ref?.[2] ?? "";
-		const hash = ref?.[3] ?? "";
-
-		while (pathPart.startsWith("../")) pathPart = pathPart.slice(3);
-		while (pathPart.startsWith("./")) pathPart = pathPart.slice(2);
-
-		if (!pathPart.endsWith(".html")) {
-			return full;
-		}
-
-		const noExt = pathPart.slice(0, -5);
-		const segments = noExt.split("/").filter(Boolean);
-		const last = segments[segments.length - 1];
-		let out: string;
-		if (last === "index") {
-			segments.pop();
-			out = segments.length ? `/${segments.join("/")}` : "/";
-		} else {
-			out = `/${noExt.replace(/^\/+/, "")}`;
-		}
-
-		return `href="${out}${query}${hash}"`;
-	});
+	let out = fragment.replace(/\bhref="([^"]*)"/gi, (_full, raw: string) =>
+		rewriteOneHref('"', raw),
+	);
+	out = out.replace(/\bhref='([^']*)'/gi, (_full, raw: string) =>
+		rewriteOneHref("'", raw),
+	);
+	return out;
 }
 
 export async function loadPublicHtmlFragment(

@@ -2,9 +2,7 @@
  * Renders homelab service cards from homelab-services.json into elements marked with
  * data-homelab-services-root and data-homelab-variant (truenas | nabla).
  */
-(function () {
-	"use strict";
-
+(() => {
 	function esc(s) {
 		return String(s ?? "")
 			.replace(/&/g, "&amp;")
@@ -182,14 +180,14 @@
 			} else {
 				root.className = "row";
 			}
-			root.innerHTML = services.map((s) => renderServiceCard(s, variant)).join("");
+			root.innerHTML = services
+				.map((s) => renderServiceCard(s, variant))
+				.join("");
 		}
 		if (needHealth && typeof window.initTruenasPageHealth === "function") {
 			window.initTruenasPageHealth();
 		}
-		if (
-			typeof window.initNablaHomelabServicePings === "function"
-		) {
+		if (typeof window.initNablaHomelabServicePings === "function") {
 			window.initNablaHomelabServicePings();
 		}
 	}

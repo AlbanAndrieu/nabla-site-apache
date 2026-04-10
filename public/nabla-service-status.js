@@ -81,11 +81,7 @@
 
 	function registerAnchor(a, seen) {
 		var href = a.getAttribute("href");
-		if (
-			!href ||
-			href.charAt(0) === "#" ||
-			href.indexOf("javascript:") === 0
-		) {
+		if (!href || href.charAt(0) === "#" || href.indexOf("javascript:") === 0) {
 			return;
 		}
 		if (/^mailto:/i.test(href)) {
@@ -186,24 +182,25 @@
 		runQueue(jobs).catch(() => {});
 	}
 
-	window.initNablaHomelabServicePings = function initNablaHomelabServicePings() {
-		if (!document.body.classList.contains("page-nabla-best-practices")) {
-			return;
-		}
-		var seen = Object.create(null);
-		document
-			.querySelectorAll(
-				".nabla-homelab-services .nabla-homelab-card a.btn[href]",
-			)
-			.forEach((a) => {
-				registerAnchor(a, seen);
-			});
-		var jobs = seenToJobs(seen);
-		if (!jobs.length) {
-			return;
-		}
-		runQueue(jobs).catch(() => {});
-	};
+	window.initNablaHomelabServicePings =
+		function initNablaHomelabServicePings() {
+			if (!document.body.classList.contains("page-nabla-best-practices")) {
+				return;
+			}
+			var seen = Object.create(null);
+			document
+				.querySelectorAll(
+					".nabla-homelab-services .nabla-homelab-card a.btn[href]",
+				)
+				.forEach((a) => {
+					registerAnchor(a, seen);
+				});
+			var jobs = seenToJobs(seen);
+			if (!jobs.length) {
+				return;
+			}
+			runQueue(jobs).catch(() => {});
+		};
 
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", init);

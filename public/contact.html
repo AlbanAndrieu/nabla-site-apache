@@ -116,7 +116,9 @@
 					"https://stackexchange.com/users/4652074/albanandrieu",
 					"https://www.xing.com/profile/Alban_Andrieu",
 					"https://www.facebook.com/alban.andrieu",
-					"https://www.instagram.com/alban.andrieu/"
+					"https://www.instagram.com/alban.andrieu/",
+					"https://nabla-siege.slack.com/",
+					"https://discord.com/channels/985573491606691840/985573491606691845"
 				],
 				"contactPoint": {
 					"@type": "ContactPoint",
@@ -368,6 +370,26 @@
 
 			html[data-theme="dark"] .contact-map-caption {
 				color: #94a3b8;
+			}
+
+			.contact-discord-widget-wrap {
+				max-width: 380px;
+				margin: 0 auto 2rem;
+				border-radius: 12px;
+				overflow: hidden;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				min-height: 400px;
+			}
+
+			.contact-discord-widget-wrap iframe {
+				display: block;
+				width: 100%;
+				height: 420px;
+				border: 0;
+			}
+
+			html[data-theme="dark"] .contact-discord-widget-wrap {
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 			}
 
 			/* Contact Info List */
@@ -664,6 +686,70 @@
 					</div>
 				</article>
 
+				</br>
+
+				<!-- Nabla team channels (Slack + Discord) -->
+				<article class="social-links-section" id="nabla-channels" aria-labelledby="nabla-channels-heading">
+					<h3 id="nabla-channels-heading" class="section-title" style="font-size: 2rem">Nabla team channels</h3>
+					<p class="section-subtitle">
+						Slack for Nabla team collaboration; Discord to reach the bot in the linked channel; RSS for site updates.
+					</p>
+
+					<div class="social-grid" style="max-width: 960px; margin: 0 auto 1.5rem">
+						<a
+							href="https://nabla-siege.slack.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="social-card contact-channel-card"
+							data-channel="slack"
+							aria-label="Open Nabla Slack workspace (new tab)"
+						>
+							<i class="fab fa-slack" aria-hidden="true"></i>
+							<span class="social-name">Slack</span>
+							<small>Nabla team collaboration</small>
+						</a>
+
+						<a
+							href="https://discord.com/channels/985573491606691840/985573491606691845"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="social-card contact-channel-card"
+							data-channel="discord"
+							aria-label="Open Discord channel to talk to the bot (new tab)"
+						>
+							<i class="fab fa-discord" aria-hidden="true"></i>
+							<span class="social-name">Discord</span>
+							<small>Talk to the bot</small>
+						</a>
+
+						<a
+							href="/feed.xml"
+							class="social-card contact-channel-card"
+							data-channel="rss"
+							aria-label="Open RSS feed for this site (XML)"
+						>
+							<i class="fas fa-rss" aria-hidden="true"></i>
+							<span class="social-name">RSS feed</span>
+							<small>Site updates (XML)</small>
+						</a>
+					</div>
+
+					<p class="section-subtitle" style="margin-bottom: 1rem; font-size: 1rem">
+						Live Discord server preview.
+					</p>
+					<div class="contact-discord-widget-wrap">
+						<iframe
+							id="contact-discord-widget"
+							title="Discord server widget — online members and invite"
+							data-src="https://discord.com/widget?id=985573491606691840&amp;theme=dark"
+							allowtransparency="true"
+							sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+						></iframe>
+					</div>
+
+					<div id="contact-channel-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+				</article>
+
 				<!-- Location Section -->
 				<article
 					class="location-section"
@@ -829,11 +915,11 @@
 			</div>
 
 			<div class="footer-links">
-				<a href="/policy/legal.html">Legal notices</a>
+				<a href="/policy/legal">Legal notices</a>
 			</div>
 
 			<p class="text-md-center mt-3">
-				<a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+				<a href="/" class="btn btn-sm btn-outline-secondary">Back to Home</a>
 				<a href="#top" class="btn btn-sm btn-outline-secondary" aria-label="Back to top of page">Back to top</a>
 			</p>
 			<p class="footer-copyright"></p>
@@ -897,6 +983,7 @@
 				}
 			})();
 		</script>
+		<script src="contact-channels.js" defer></script>
 		<script src="site-widgets.js" defer data-axeptio data-print-pdf data-coffee-fab></script>
 	</body>
 </html>
