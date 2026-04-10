@@ -3,16 +3,55 @@ import Stripe from "stripe";
 
 export const runtime = "nodejs";
 
-function getOrigin(req: NextRequest): string {
-	const configured = (process.env.DOMAIN || "").replace(/\/$/, "");
-	if (configured) return configured;
-	const proto =
-		req.headers.get("x-forwarded-proto")?.split(",")[0].trim() || "https";
-	const host =
-		req.headers.get("x-forwarded-host")?.split(",")[0].trim() ||
-		req.headers.get("host")?.split(",")[0].trim();
-	if (!host) return "https://www.dr-alban.com";
-	return `${proto}://${host}`;
+/** Parse env DOMAIN into a safe origin (scheme + host only). Never use request Host headers — open redirect risk. */
+function originFromDomainEnv(raw: string): string | null {
+	const trimmed = raw.replace(/\/$/, "").trim();
+	if (!trimmed) return null;
+	try {
+		const u = new URL(trimmed);
+		if (u.protocol !== "http:" && u.protocol !== "https:") return null;
+		if (u.username || u.password) return null;
+		return `${u.protocol}//${u.host}`;
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Trusted origin for Stripe success/cancel URLs only from server-controlled config:
+ * DOMAIN (allowlisted format), or VERCEL_URL (set by Vercel), or localhost in non-production.
+ */
+function getTrustedOrigin():
+	| { ok: true; origin: string }
+	| { ok: false; error: string } {
+	const domainRaw = (process.env.DOMAIN || "").trim();
+	if (domainRaw) {
+		const origin = originFromDomainEnv(domainRaw);
+		if (!origin) {
+			return {
+				ok: false,
+				error:
+					"Invalid DOMAIN: use a full http(s) origin with no trailing slash, path, or credentials (e.g. https://www.dr-alban.com).",
+			};
+		}
+		return { ok: true, origin };
+	}
+
+	const vercel = process.env.VERCEL_URL?.replace(/\/$/, "").trim();
+	if (vercel) {
+		const host = vercel.replace(/^https?:\/\//i, "");
+		if (host) return { ok: true, origin: `https://${host}` };
+	}
+
+	if (process.env.NODE_ENV !== "production") {
+		return { ok: true, origin: "http://localhost:3000" };
+	}
+
+	return {
+		ok: false,
+		error:
+			"Set DOMAIN to your public https origin (no trailing slash), or deploy on Vercel so VERCEL_URL is available.",
+	};
 }
 
 function wantsJson(req: NextRequest): boolean {
@@ -40,13 +79,20 @@ export async function POST(req: NextRequest) {
 			: new NextResponse(msg, { status: 500 });
 	}
 
+	const trusted = getTrustedOrigin();
+	if (!trusted.ok) {
+		return wantsJson(req)
+			? NextResponse.json({ error: trusted.error }, { status: 500 })
+			: new NextResponse(trusted.error, { status: 500 });
+	}
+	const origin = trusted.origin;
+
 	try {
 		await req.json();
 	} catch {
 		// Form POST or empty body
 	}
 
-	const origin = getOrigin(req);
 	const stripe = new Stripe(stripeSecret);
 
 	try {

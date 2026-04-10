@@ -461,6 +461,141 @@ body.page-nabla-best-practices .print-button:hover {
 	line-height: 1.3;
 }
 
+/* Homelab entry points (Cloudflare Tunnel); port in title only */
+.nabla-tool-tags li.nabla-tool-tag-li-link {
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+.nabla-tool-tags .nabla-tool-tag-link {
+	display: inline-block;
+	font-size: inherit;
+	padding: 0.38rem 0.72rem;
+	border-radius: 999px;
+	background: var(--bg-secondary);
+	color: var(--text-secondary);
+	border: 1px solid var(--border-color);
+	line-height: 1.3;
+	text-decoration: none;
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.nabla-tool-tags .nabla-tool-tag-link:hover {
+	color: var(--pillar-accent, var(--primary-color));
+	border-color: var(--pillar-accent, var(--primary-color));
+}
+
+.nabla-tool-tags .nabla-tool-tag-link:focus-visible {
+	outline: 2px solid var(--pillar-accent, var(--primary-color));
+	outline-offset: 2px;
+}
+
+/* HTTPS links: padlock (Font Awesome 7 solid U+F023) */
+body.page-nabla-best-practices a.nabla-tool-tag-link[href^="https://"]::before,
+body.page-nabla-best-practices .nabla-homelab-card a:not(.btn)[href^="https://"]::before {
+	display: inline-block;
+	font-family: "Font Awesome 7 Free";
+	font-weight: 900;
+	font-style: normal;
+	content: "\f023";
+	margin-right: 0.32em;
+	font-size: 0.88em;
+	line-height: 1;
+	color: var(--success-color, #28a745);
+	-webkit-font-smoothing: antialiased;
+	vertical-align: -0.06em;
+}
+
+/* TrueNAS / homelab service cards (nabla.html) */
+.page-nabla-best-practices .nabla-homelab-services__lead {
+	max-width: 48rem;
+}
+
+.page-nabla-best-practices .nabla-homelab-card {
+	background: var(--bg-card);
+	border-color: var(--border-color) !important;
+}
+
+.page-nabla-best-practices .nabla-homelab-card .card-title {
+	color: var(--text-primary);
+}
+
+.page-nabla-best-practices .nabla-homelab-card a.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.28rem;
+}
+
+/* Reachability hint (nabla-service-status.js) — favicon probe; not authoritative */
+.page-nabla-best-practices .nabla-tool-tags li.nabla-tool-tag-li-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	flex-wrap: wrap;
+	max-width: 100%;
+}
+
+.page-nabla-best-practices .nabla-svc-ping {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 0.55rem;
+	height: 0.55rem;
+	vertical-align: middle;
+}
+
+.page-nabla-best-practices .nabla-svc-ping::before {
+	content: "";
+	display: block;
+	width: 0.45rem;
+	height: 0.45rem;
+	border-radius: 50%;
+	background: currentColor;
+	opacity: 0.95;
+}
+
+.page-nabla-best-practices .nabla-svc-ping--pending {
+	color: #94a3b8;
+}
+
+.page-nabla-best-practices .nabla-svc-ping--pending::before {
+	opacity: 0.55;
+	animation: nabla-svc-ping-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes nabla-svc-ping-pulse {
+	50% {
+		opacity: 0.2;
+		transform: scale(0.92);
+	}
+}
+
+.page-nabla-best-practices .nabla-svc-ping--ok {
+	color: #22c55e;
+}
+
+.page-nabla-best-practices .nabla-svc-ping--fail {
+	color: #ef4444;
+}
+
+.page-nabla-best-practices .nabla-svc-ping--unknown {
+	color: #64748b;
+}
+
+html[data-theme="light"] .page-nabla-best-practices .nabla-svc-ping--ok {
+	color: #16a34a;
+}
+
+html[data-theme="light"] .page-nabla-best-practices .nabla-svc-ping--fail {
+	color: #dc2626;
+}
+
 @media (max-width: 768px) {
 	.nabla-platforms-hero {
 		grid-template-columns: 1fr;

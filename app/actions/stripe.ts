@@ -1,10 +1,27 @@
 "use server";
 
 import { stripe } from "@/lib/stripe";
-import { headers } from "next/headers";
+
+type CatalogProduct = {
+	name: string;
+	description: string;
+	priceInCents: number;
+};
+
+/** Replace or extend with a real catalog (DB, CMS, Stripe Products API). */
+async function getProduct(productId: string): Promise<CatalogProduct> {
+	const catalog: Record<string, CatalogProduct> = {
+		default: {
+			name: "Purchase",
+			description: "",
+			priceInCents: 750,
+		},
+	};
+	const product = catalog[productId] ?? catalog.default;
+	return { ...product, description: product.description || product.name };
+}
 
 export async function startCheckoutSession(productId: string) {
-	// Implement your product catalog lookup.
 	const product = await getProduct(productId);
 
 	// Create Checkout Sessions from body params.
