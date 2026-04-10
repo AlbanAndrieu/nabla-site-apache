@@ -40,7 +40,7 @@
 		"build:includes": "node scripts/build-html-includes.js"
 	},
 	"dependencies": {
-		"@astrojs/vercel": "^8.0.4",
+		"@astrojs/vercel": "^10.0.2",
 		"@datadog/browser-rum": "^6.24.1",
 		"@stripe/react-stripe-js": "^6.1.0",
 		"@stripe/stripe-js": "^9.1.0",
