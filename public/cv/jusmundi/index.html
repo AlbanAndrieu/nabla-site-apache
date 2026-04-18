@@ -99,82 +99,90 @@
 			</section>
 
 			<section class="services-section jusmundi-landing-content" aria-labelledby="team-heading">
-				<h2 class="section-title" id="team-heading">2) Team context as a DevOps architect</h2>
-				<p class="section-subtitle">Public team data, with size and percentages only</p>
+				<h2 class="section-title" id="team-heading">2) Team context and operating model (aggregated)</h2>
+				<p class="section-subtitle">Structure + infrastructure context consolidated on this page</p>
 				<div class="service-card jusmundi-service-card-wide">
 					<div class="jusmundi-table-card">
-						<table class="kpi-table" role="table" aria-label="Public team composition">
+						<table class="kpi-table" role="table" aria-label="Company and team context">
 							<thead>
 								<tr>
-									<th scope="col">Team (public pages)</th>
+									<th scope="col">Scope</th>
 									<th scope="col">Approx. size</th>
-									<th scope="col">Share of featured teams</th>
+									<th scope="col">Notes</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>Tech</td>
-									<td>~25</td>
-									<td>~38%</td>
+									<td>Total company</td>
+									<td>~100 to ~115 people</td>
+									<td>Cross-functional global organization</td>
 								</tr>
 								<tr>
-									<td>Global Sales</td>
-									<td>~21</td>
-									<td>~32%</td>
+									<td>Tech organization (EPD)</td>
+									<td>~26 engineers</td>
+									<td>Platform, Search, Core AI, Growth, Legal Data Collection</td>
 								</tr>
 								<tr>
-									<td>Product</td>
-									<td>~10</td>
-									<td>~15%</td>
-								</tr>
-								<tr>
-									<td>Customer Success / Care</td>
-									<td>~10</td>
-									<td>~15%</td>
+									<td>Infrastructure and Security &amp; IT team</td>
+									<td>~2 people on average</td>
+									<td>Supporting the whole company, including all ~26 tech profiles</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<p>
-						My DevOps and platform work sat at the intersection of these groups: enabling engineering throughput,
-						protecting reliability for customer-facing teams, and keeping platform foundations aligned with product
-						evolution.
+					<p class="mt-3 mb-0">
+						<strong>Highlight:</strong> a lean infrastructure team of 2 supported a full-scale platform operation for the
+						entire company, including ~26 tech members, with a high degree of automation and reliability ownership.
 					</p>
 				</div>
 			</section>
 
 			<section class="proof-section jusmundi-landing-content" aria-labelledby="infra-heading">
-				<h2 class="section-title" id="infra-heading">3) Global infrastructure scope (high-level)</h2>
-				<div class="services-grid">
-					<div class="service-card">
-						<div class="service-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
-						<h3>Multi-environment platform operations</h3>
-						<p class="service-lead">
-							Production and non-production environments operated with consistent controls for reliability, security, and
-							recoverability.
-						</p>
+				<h2 class="section-title" id="infra-heading">3) Global infrastructure architecture and footprint</h2>
+				<div class="service-card jusmundi-service-card-wide">
+					<p>
+						The platform evolved from OVH/Nomad foundations toward multi-site Kubernetes-oriented operations across
+						<strong>EU and US</strong>, with a strong focus on AI workloads and secure, observable service delivery.
+					</p>
+					<div class="jusmundi-table-card">
+						<table class="kpi-table" role="table" aria-label="Infrastructure providers and focus areas">
+							<thead>
+								<tr>
+									<th scope="col">Provider / stack</th>
+									<th scope="col">Primary role</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>OVH</td>
+									<td>Core compute, storage, and databases</td>
+								</tr>
+								<tr>
+									<td>AWS</td>
+									<td>US expansion and Kubernetes-oriented cloud footprint</td>
+								</tr>
+								<tr>
+									<td>Azure OpenAI and OpenAI</td>
+									<td>AI/LLM capabilities and document intelligence acceleration</td>
+								</tr>
+								<tr>
+									<td>Cloudflare</td>
+									<td>WAF, anti-scraping, traffic protection, edge controls</td>
+								</tr>
+								<tr>
+									<td>Datadog + observability stack</td>
+									<td>Monitoring, APM, tracing, and operational visibility</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="service-card">
-						<div class="service-icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-						<h3>Security by default</h3>
-						<p class="service-lead">
-							Identity, access management, network protection, and vulnerability remediation integrated into day-to-day
-							delivery.
-						</p>
-					</div>
-					<div class="service-card">
-						<div class="service-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-						<h3>Observability and reliability engineering</h3>
-						<p class="service-lead">
-							Metrics, logs, traces, and incident runbooks used to cut time-to-detect and time-to-recover.
-						</p>
-					</div>
-					<div class="service-card">
-						<div class="service-icon" aria-hidden="true"><i class="fas fa-code-branch"></i></div>
-						<h3>Automation and delivery excellence</h3>
-						<p class="service-lead">
-							Infrastructure as code and CI/CD standards reduced manual drift and improved release confidence.
-						</p>
+					<div class="badge-row mt-3">
+						<span class="badge">Nomad to Kubernetes migration path</span>
+						<span class="badge">EU + US deployments</span>
+						<span class="badge">AI-focused infrastructure</span>
+						<span class="badge">Elasticsearch and GPU workloads</span>
+						<span class="badge">Keycloak identity platform</span>
+						<span class="badge">Terraform and Ansible automation</span>
 					</div>
 				</div>
 			</section>
