@@ -29,7 +29,7 @@
 		"deploy": "wrangler deploy",
 		"dev:cf": "wrangler dev",
 		"start:wrangler": "wrangler dev",
-		"start:python": "python3 -m http.server 8001 --directory public",
+		"start:python": "npx http-server public -p 8001",
 		"start:php:": "php -S localhost:8000 api/index.php",
 		"start:stripe": "node server.cjs",
 		"test": "playwright test",
