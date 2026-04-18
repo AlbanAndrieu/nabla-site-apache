@@ -106,13 +106,6 @@
 			<description><![CDATA[Terms of service for the site.]]></description>
 		</item>
 		<item>
-			<title><![CDATA[System Monitoring Report]]></title>
-			<link>https://dr-alban.com/reports/monitoring_report.html</link>
-			<guid isPermaLink="true">https://dr-alban.com/reports/monitoring_report.html</guid>
-			<pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
-			<description><![CDATA[Public monitoring report page.]]></description>
-		</item>
-		<item>
 			<title><![CDATA[Curriculum vitae — formats and downloads]]></title>
 			<link>https://dr-alban.com/cv</link>
 			<guid isPermaLink="true">https://dr-alban.com/cv</guid>
