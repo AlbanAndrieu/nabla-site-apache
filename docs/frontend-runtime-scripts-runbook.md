@@ -11,6 +11,14 @@ This runbook documents the shared frontend runtime scripts that were consolidate
 - `public/site-google-translate.js`
 - `public/analytics-stubs.js` (legacy compatibility shim)
 - `public/theme-toggle.js`
+- `public/homelab-services-render.js`
+- `public/homelab-services.json`
+- `public/nabla-service-status.js`
+- `public/site-content-page.css` (homelab card + ping indicator styles)
+- `lib/marketingPages.ts`
+- `app/[slug]/page.tsx`
+- `lib/htmlFromPublic.ts`
+- `scripts/normalize-public-html-hrefs.mjs`
 - `public/*.html` pages that load these scripts (for integration examples)
 
 ## Runtime Architecture
@@ -72,6 +80,106 @@ Default behavior to remember:
 - Standard page with print/coffee/consent: `public/index.html`, `public/contact.html`
 - Checkout pages suppressing print/coffee: `public/checkout.html`, `public/cancel.html`
 - Minimal chrome mode: `public/404.html`
+
+## Homelab Service Cards Runtime
+
+`public/truenas.html` and `public/nabla.html` now render service cards from JSON at runtime instead of hardcoding each card in HTML.
+
+### Runtime flow
+
+1. Page defines one or more roots using `data-homelab-services-root`.
+2. `public/homelab-services-render.js` fetches JSON (`homelab-services.json` by default, or `data-homelab-json` override).
+3. Script renders a responsive card grid with Internal and Tunnel actions for each service.
+4. After render, script calls `window.initHomelabServiceCardPings()` when available.
+5. `public/nabla-service-status.js` probes each card origin and appends status dots.
+
+### Root attributes (public interface)
+
+- `data-homelab-services-root`: required mount point.
+- `data-homelab-variant`: optional, `truenas` or `nabla` (`truenas` default). Controls default internal link tooltip text.
+- `data-homelab-json`: optional JSON path, default `homelab-services.json`.
+
+Example:
+
+```html
+<div
+	data-homelab-services-root
+	data-homelab-variant="truenas"
+	data-homelab-json="homelab-services.json"
+></div>
+```
+
+### `homelab-services.json` contract
+
+Top-level payload:
+
+```json
+{
+	"version": 1,
+	"services": []
+}
+```
+
+Per-service fields used by renderer:
+
+- `name` (required): card title.
+- `icons` (optional): list of Font Awesome classes; validated against `^[\\w.\\- ]+$`. Invalid class falls back to `fas fa-circle`.
+- `description` (optional): short summary text.
+- `internalHost` + `internalPort` (required for usable internal button): compose internal URL.
+- `internalSecure` (optional boolean): `https` when true, `http` when false.
+- `internalPath` (optional): appended path; if present and missing leading slash, renderer adds it.
+- `tunnelUrl` (required for tunnel button): external URL, can be `https://...` or `postgres://...`.
+- `newTabInternal` and `newTabTunnel` (optional booleans): default open in new tab unless explicitly `false`.
+- `internalTitle` and `tunnelTitle` (optional): override button tooltip text.
+- `portHtml` (optional): custom HTML rendered in card footer (used for protocol-specific hints like Postgres).
+
+### URL-building constraints
+
+- Internal URL falls back to `#` when host/port is missing.
+- If `tunnelUrl` starts with `postgres:`, internal URL is generated as `postgres://<host>:<port>/`.
+- Internal scheme is selected from `internalSecure`.
+- `safeHref()` blocks unsafe values containing `"` or `<` (returns `#`).
+
+### Reachability probe behavior (`nabla-service-status.js`)
+
+- Scope:
+  - `.nabla-platforms-section a.nabla-tool-tag-link`
+  - `#services a.opensource-link`
+  - `.opensource-section a.opensource-link`
+  - Homelab card action links in `.truenas-page-apps` and `.nabla-homelab-services`
+- Probe method: tries `origin + /favicon.ico`, then `/favicon.png`, then `/apple-touch-icon.png`.
+- Concurrency: 5 origins in parallel.
+- Timeout: 6500 ms per image probe.
+- States:
+  - `pending`: gray pulse while probing.
+  - `ok`: green dot when favicon load succeeds.
+  - `fail`: red dot on timeout/error.
+  - `unknown`: non-HTTP targets such as `postgres://`.
+
+Important limitations:
+
+- Probes are best-effort hints only.
+- False negatives happen when a service is up but does not expose a favicon or blocks hotlinking.
+- LAN-only addresses can fail for remote users even if service is healthy internally.
+
+## Next.js Marketing Slug Bridge
+
+`lib/marketingPages.ts` is the source-of-truth map for root marketing pages exposed as extensionless routes in Next.js.
+
+Workflow:
+
+1. Add or update entry in `MARKETING_PAGES` (slug, `public/*.html` file, extract mode, body class).
+2. `app/[slug]/page.tsx` generates static params from this map and loads the fragment via `loadPublicHtmlFragment()`.
+3. `lib/htmlFromPublic.ts` rewrites internal `.html` links to extensionless paths for runtime navigation.
+4. `scripts/normalize-public-html-hrefs.mjs` can bulk-normalize legacy links in `public/` (keep its `FILE_TO_PATH` map in sync with `MARKETING_PAGES` and key root pages).
+
+### Practical constraints
+
+- Keep slugs stable when possible to avoid breaking existing URLs.
+- Add both mapping points when introducing a new root page:
+  - `lib/marketingPages.ts` (`MARKETING_PAGES`)
+  - `scripts/normalize-public-html-hrefs.mjs` (`FILE_TO_PATH`)
+- Use relative script paths in `public/*.html`; rewrite tooling is for links, not script `src`.
 
 ## Recommended Integration Pattern
 
@@ -139,8 +247,28 @@ Analytics mode mismatch:
 - Verify the exact `data-analytics-mode` value on the page script tag.
 - Use page examples above to keep mode selection consistent.
 
+Homelab cards not showing:
+
+- Confirm page contains `data-homelab-services-root`.
+- Confirm `homelab-services.json` path resolves (or set `data-homelab-json` explicitly).
+- Check browser console for `[homelab-services] Failed to load ...`.
+- Validate JSON root includes `services` array.
+
+Homelab service has broken Internal URL:
+
+- Ensure `internalHost` and `internalPort` are present.
+- Ensure `internalPath` is a valid path fragment.
+- For Postgres services, keep `tunnelUrl` scheme as `postgres://` to get protocol-specific handling.
+
+Status dots missing or stuck pending:
+
+- Confirm `nabla-service-status.js` is loaded on the page.
+- Confirm `homelab-services-render.js` runs after DOM is ready and calls ping init.
+- If all dots are `fail`, verify browser network access to target origins and favicon availability.
+
 ## Migration and Compatibility Notes
 
 - `public/analytics-stubs.js` is deprecated and only exists so legacy pages keep loading `site-analytics.js` in `vercel` mode.
 - If you touch an old page, replace `analytics-stubs.js` with direct `site-analytics.js` usage.
 - Prefer script attributes over inline third-party snippets to keep runtime behavior centralized.
+- `public/truenas-health.js` has been removed; use `public/nabla-service-status.js` as the shared reachability indicator script.
