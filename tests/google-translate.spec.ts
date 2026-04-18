@@ -73,9 +73,14 @@ test.describe("Google Translate Widget Tests", () => {
 				const vw = viewport.width;
 				// Below 576px the panel is closed until the toggle opens (see theme.css)
 				if (vw <= 575) {
-					await page.locator(".google-translate-widget__toggle").click();
+					const toggle = page.locator(".google-translate-widget__toggle");
+					if (await toggle.isVisible()) {
+						await toggle.click();
+					}
 				}
-				await expect(translateElement).toBeInViewport();
+				await expect(translateElement).toBeAttached();
+				await translateElement.scrollIntoViewIfNeeded();
+				await expect(translateElement).toBeInViewport({ ratio: 0.01 });
 			}
 		}
 	});

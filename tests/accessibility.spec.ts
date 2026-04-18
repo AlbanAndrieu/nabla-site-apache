@@ -1,6 +1,10 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Accessibility Tests", () => {
+	function parseHeadingLevel(tagName: string): number {
+		return Number.parseInt(tagName.replace("h", ""), 10);
+	}
+
 	test("should have valid HTML structure", async ({ page }) => {
 		await page.goto("/");
 
@@ -100,22 +104,27 @@ test.describe("Accessibility Tests", () => {
 	test("should have proper heading hierarchy", async ({ page }) => {
 		await page.goto("/");
 
-		// Get all headings
-		const headings = await page.locator("h1, h2, h3, h4, h5, h6").all();
+		// Check only visible headings in main content to avoid nav/widget noise.
+		const headingTags = await page.evaluate(() => {
+			const thirdPartySelector =
+				"#google_translate_element, .google-translate-widget, .goog-te-banner-frame, [class*='goog-te']";
+			const selector = "main h1, main h2, main h3, main h4, main h5, main h6";
+			return Array.from(document.querySelectorAll(selector))
+				.filter((el) => {
+					if (el.getRootNode() !== document) return false;
+					if (el.closest(thirdPartySelector)) return false;
+					const style = window.getComputedStyle(el);
+					return style.display !== "none" && style.visibility !== "hidden";
+				})
+				.map((el) => el.tagName.toLowerCase());
+		});
 
-		if (headings.length > 0) {
-			const headingLevels = await Promise.all(
-				headings.map(async (h) => {
-					const tagName = await h.evaluate((el) => el.tagName.toLowerCase());
-					return Number.parseInt(tagName.replace("h", ""));
-				}),
-			);
+		if (headingTags.length <= 1) return;
 
-			// Check that we don't skip heading levels
-			for (let i = 1; i < headingLevels.length; i++) {
-				const diff = headingLevels[i] - headingLevels[i - 1];
-				expect(diff).toBeLessThanOrEqual(1);
-			}
+		const headingLevels = headingTags.map(parseHeadingLevel);
+		for (let i = 1; i < headingLevels.length; i++) {
+			const jump = headingLevels[i] - headingLevels[i - 1];
+			expect(jump).toBeLessThanOrEqual(1);
 		}
 	});
 
