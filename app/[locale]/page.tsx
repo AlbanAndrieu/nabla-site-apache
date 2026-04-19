@@ -1,5 +1,11 @@
-import { loadPublicHtmlFragment } from "@/lib/htmlFromPublic";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import {
+	loadPublicHtmlFragment,
+	type SiteLocale,
+} from "@/lib/htmlFromPublic";
+import { hasLocale } from "next-intl";
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Script from "next/script";
 
 const HOME_JSON_LD = {
@@ -59,7 +65,12 @@ const HOME_JSON_LD = {
 	],
 };
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+	params: Promise<{ locale: SiteLocale }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params;
 	return {
 		title:
 			"Alban Andrieu — Freelance DevSecOps & Cloud Architect (AWS, Azure, OVH)",
@@ -93,14 +104,25 @@ export async function generateMetadata(): Promise<Metadata> {
 			images: ["https://dr-alban.com/assets/nabla/nabla-4.svg"],
 		},
 		alternates: {
-			canonical: "https://dr-alban.com/",
-			languages: { "x-default": "https://dr-alban.com/" },
+			canonical:
+				locale === "fr" ? "https://dr-alban.com/fr" : "https://dr-alban.com/",
+			languages: {
+				en: "https://dr-alban.com/",
+				fr: "https://dr-alban.com/fr",
+				"x-default": "https://dr-alban.com/",
+			},
 		},
 	};
 }
 
-export default async function HomePage() {
-	const inner = await loadPublicHtmlFragment("index.html", "main");
+export default async function HomePage({ params }: Props) {
+	const { locale: requestedLocale } = await params;
+	const locale = hasLocale(["en", "fr"], requestedLocale)
+		? (requestedLocale as SiteLocale)
+		: "en";
+	setRequestLocale(locale);
+	const t = await getTranslations("site");
+	const inner = await loadPublicHtmlFragment("index.html", "main", locale);
 
 	return (
 		<div className="home-page">
@@ -129,8 +151,9 @@ export default async function HomePage() {
 			/>
 			<div id="top" />
 			<a href="#main-content" className="skip-to-main">
-				Skip to main content
+				{t("skipToMainContent")}
 			</a>
+			<LocaleSwitcher />
 			<main id="main-content" dangerouslySetInnerHTML={{ __html: inner }} />
 		</div>
 	);

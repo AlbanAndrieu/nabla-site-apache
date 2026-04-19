@@ -1,10 +1,10 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "@/i18n/routing";
 
-export function middleware(_request: NextRequest) {
-	return NextResponse.next();
-}
+const intlMiddleware = createMiddleware(routing);
+
+export default intlMiddleware;
 
 export const config = {
-	matcher: "/about/:path*",
+	matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

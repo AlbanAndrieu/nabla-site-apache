@@ -6,12 +6,14 @@ import {
 	EmbeddedCheckoutProvider,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { useTranslations } from "next-intl";
 import { useCallback, useMemo } from "react";
 
 const publishableKey =
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?.trim() ?? "";
 
 export default function Checkout({ productId }: { productId: string }) {
+	const t = useTranslations("checkout");
 	const stripePromise = useMemo(
 		() => (publishableKey ? loadStripe(publishableKey) : null),
 		[],
@@ -20,15 +22,15 @@ export default function Checkout({ productId }: { productId: string }) {
 	const fetchClientSecret = useCallback(async () => {
 		const clientSecret = await startCheckoutSession(productId);
 		if (!clientSecret) {
-			throw new Error("Could not create checkout session.");
+			throw new Error(t("sessionCreateError"));
 		}
 		return clientSecret;
-	}, [productId]);
+	}, [productId, t]);
 
 	if (!stripePromise) {
 		return (
 			<div id="checkout" role="alert">
-				Checkout is unavailable: set NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY.
+				{t("missingPublishableKey")}
 			</div>
 		);
 	}

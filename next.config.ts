@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
+const localePrefixes = ["en", "fr"] as const;
 
 const policyRewrites = [
 	"legal",
@@ -12,11 +17,18 @@ const policyRewrites = [
 	destination: `/policy/${name}.html`,
 }));
 
+const localizedPolicyRewrites = localePrefixes.flatMap((locale) =>
+	policyRewrites.map((rewrite) => ({
+		source: `/${locale}${rewrite.source}`,
+		destination: rewrite.destination,
+	})),
+);
+
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	async rewrites() {
-		return policyRewrites;
+		return [...localizedPolicyRewrites, ...policyRewrites];
 	},
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
