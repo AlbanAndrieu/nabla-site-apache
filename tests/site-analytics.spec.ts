@@ -65,8 +65,9 @@ test.describe("Site analytics loader regression tests", () => {
 			};
 		});
 
-		expect(after.gtm - before.gtm).toBe(1);
-		expect(after.gtag - before.gtag).toBe(1);
+		// init* can be a no-op if scripts are already loaded; idempotence means never duplicating.
+		expect(after.gtm).toBe(Math.max(1, before.gtm));
+		expect(after.gtag).toBe(Math.max(1, before.gtag));
 	});
 
 	test("should load Ahrefs script when key is provided", async ({ page }) => {
