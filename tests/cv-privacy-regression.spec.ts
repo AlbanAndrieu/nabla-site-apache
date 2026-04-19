@@ -5,7 +5,7 @@ test.describe("CV privacy and stale-link regression checks", () => {
 		await page.goto("/");
 
 		await expect(page.locator('a[href*="cv/jusmundi"]')).toHaveCount(0);
-		await expect(page.locator('a[href="/expertise"]')).toBeVisible();
+		await expect(page.locator('a[href="/expertise"]').first()).toBeVisible();
 	});
 
 	test("cv landing should keep private summary text without legacy page link", async ({
