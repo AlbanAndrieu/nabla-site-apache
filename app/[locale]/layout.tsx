@@ -1,17 +1,31 @@
 import SiteFooter from "@/components/SiteFooter";
+import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import Script from "next/script";
 import type { ReactNode } from "react";
-
-import "./globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://dr-alban.com"),
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+type Props = {
+	children: ReactNode;
+	params: Promise<{ locale: string }>;
+};
+
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({ children, params }: Props) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+	const messages = await getMessages();
+
 	return (
-		<html lang="en">
+		<html lang={locale}>
 			<head>
 				<link rel="icon" href="/assets/nabla/nabla-4.svg" />
 				<link
@@ -50,8 +64,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 				<div className="google-translate-widget">
 					<div id="google_translate_element" />
 				</div>
-				{children}
-				<SiteFooter />
+				<NextIntlClientProvider messages={messages}>
+					{children}
+					<SiteFooter />
+				</NextIntlClientProvider>
 				<Script
 					src="/site-widgets.js"
 					strategy="afterInteractive"

@@ -1,4 +1,9 @@
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+
 export default function SiteFooter() {
+	const t = useTranslations("site");
+
 	return (
 		<footer className="footer">
 			<div className="social-links">
@@ -49,15 +54,15 @@ export default function SiteFooter() {
 				</a>
 			</div>
 			<div className="footer-links">
-				<a href="/policy/legal">Legal notices</a>
+				<Link href="/policy/legal">{t("legalNotices")}</Link>
 			</div>
 			<p className="text-md-center mt-3">
 				<a
 					href="#top"
 					className="btn btn-sm btn-outline-secondary"
-					aria-label="Back to top of page"
+					aria-label={t("backToTopAria")}
 				>
-					Back to top
+					{t("backToTop")}
 				</a>
 			</p>
 			<p className="footer-copyright" />
