@@ -53,6 +53,8 @@
 		<link rel="stylesheet" href="print.css" />
 
 		<link rel="stylesheet" href="site-content-page.css" />
+		<link rel="stylesheet" href="page-layouts.css" />
+		<link rel="stylesheet" href="arf.css" />
 		<!-- Font Awesome -->
 		<link
 			rel="stylesheet"
@@ -106,177 +108,11 @@
 			}
 		</script>
 
-		<style>
-			/* CISO Dashboard Specific Styles */
-			:root {
-				--ciso-primary: #29b6f6;
-				--ciso-secondary: #ff7043;
-				--ciso-success: #66bb6a;
-				--ciso-danger: #ef5350;
-				--ciso-warning: #ffa726;
-			}
-
-			.hero-section {
-				text-align: center;
-				padding: 3rem 2rem;
-				background: linear-gradient(135deg, var(--ciso-primary) 0%, var(--ciso-secondary) 100%);
-				color: white;
-			}
-
-			.hero-section h1 {
-				font-size: 2.5rem;
-				font-weight: bold;
-				margin-bottom: 0.5rem;
-			}
-
-			.hero-section p {
-				font-size: 1.1rem;
-				margin-bottom: 1rem;
-			}
-
-			.dashboard-container {
-				width: 90%;
-				max-width: 1400px;
-				margin: 2rem auto;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 20px;
-				padding: 0 1rem;
-			}
-
-			.dashboard-section {
-				background-color: var(--bg-card);
-				padding: 20px;
-				border-radius: 8px;
-				border: 1px solid var(--border-color);
-				box-shadow: 0 2px 4px var(--shadow-color);
-				text-align: left;
-				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
-			}
-
-			.dashboard-section:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 4px 8px var(--shadow-hover);
-			}
-
-			.dashboard-section h2 {
-				color: var(--ciso-secondary);
-				margin-top: 0;
-				font-size: 1.5rem;
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-			}
-
-			.dashboard-section p,
-			.dashboard-section ul {
-				font-size: 1em;
-				color: var(--text-secondary);
-				line-height: 1.6;
-			}
-
-			.dashboard-section a {
-				color: var(--ciso-primary);
-				text-decoration: none;
-				font-weight: bold;
-			}
-
-			.dashboard-section a:hover {
-				text-decoration: underline;
-				color: var(--link-hover);
-			}
-
-			.metrics-container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				gap: 15px;
-				margin-top: 20px;
-			}
-
-			.metric-box {
-				background-color: var(--bg-secondary);
-				border: 1px solid var(--border-color);
-				padding: 20px;
-				border-radius: 8px;
-				flex: 1;
-				min-width: 150px;
-				text-align: center;
-				box-shadow: 0 2px 4px var(--shadow-color);
-			}
-
-			.metric-box h3 {
-				margin: 0;
-				font-size: 1.2rem;
-				color: #4caf50;
-			}
-
-			.metric-box p {
-				font-size: 2rem;
-				font-weight: bold;
-				margin: 10px 0;
-				color: var(--text-primary);
-			}
-
-			.feed-item {
-				padding: 1rem 0;
-				border-bottom: 1px solid var(--border-color);
-			}
-
-			.feed-item:last-child {
-				border-bottom: none;
-			}
-
-			.feed-item h3 {
-				font-size: 1rem;
-				margin: 0 0 0.5rem 0;
-				color: var(--text-primary);
-			}
-
-			.feed-item p {
-				font-size: 0.9rem;
-				color: var(--text-secondary);
-				margin: 0.5rem 0;
-			}
-
-			.feed-item a {
-				color: var(--ciso-primary);
-				text-decoration: none;
-				font-size: 0.9rem;
-			}
-
-			/* Position/size from style.css (centered pair with #coffee-fab) */
-			.back-to-top {
-				background: var(--ciso-secondary);
-				color: white;
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-decoration: none;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-				transition: background 0.3s ease;
-				z-index: 1000;
-			}
-
-			.back-to-top:hover {
-				background: var(--ciso-primary);
-				color: white;
-			}
-
-			/* Footer Styles */
-			footer {
-				background-color: var(--bg-secondary);
-				margin-top: 3rem;
-			}
-		</style>
 		<script src="theme-toggle.js"></script>
 		<script src="site-google-translate.js" defer></script>
 		<script src="site-analytics.js" data-analytics-mode="vercel"></script>
 	</head>
-	<body class="site-content-page">
+	<body class="site-content-page page-ciso page-dark">
 		<a name="top"></a>
 		<!-- Hero Section -->
 		<header class="hero-section">

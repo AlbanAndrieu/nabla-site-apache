@@ -11,7 +11,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	contact: {
 		file: "contact.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-contact",
 	},
 	ai: {
 		file: "ai.html",
@@ -21,12 +21,12 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	security: {
 		file: "security.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-security page-dark",
 	},
 	expertise: {
 		file: "expertise.html",
 		mode: "mainOuter",
-		bodyClass: "page-dark",
+		bodyClass: "site-content-page page-dark",
 	},
 	workstation: {
 		file: "workstation.html",
@@ -66,7 +66,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	ciso: {
 		file: "ciso.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-ciso page-dark",
 	},
 	nabla: {
 		file: "nabla.html",
@@ -76,7 +76,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	login: {
 		file: "login.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-login page-dark",
 	},
 	link: {
 		file: "link.html",
@@ -86,7 +86,7 @@ export const MARKETING_PAGES: Record<string, MarketingPageSpec> = {
 	ctid: {
 		file: "ctid.html",
 		mode: "mainOuter",
-		bodyClass: "site-content-page",
+		bodyClass: "site-content-page page-ctid page-dark",
 	},
 	freenas: {
 		file: "freenas.html",
