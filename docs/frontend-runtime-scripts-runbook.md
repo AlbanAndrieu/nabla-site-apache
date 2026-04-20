@@ -16,7 +16,8 @@ This runbook documents the shared frontend runtime scripts that were consolidate
 - `public/nabla-service-status.js`
 - `public/site-content-page.css` (homelab card + ping indicator styles)
 - `lib/marketingPages.ts`
-- `app/[slug]/page.tsx`
+- `app/[locale]/page.tsx`
+- `app/[locale]/[slug]/page.tsx`
 - `lib/htmlFromPublic.ts`
 - `scripts/normalize-public-html-hrefs.mjs`
 - `public/*.html` pages that load these scripts (for integration examples)
@@ -169,7 +170,7 @@ Important limitations:
 Workflow:
 
 1. Add or update entry in `MARKETING_PAGES` (slug, `public/*.html` file, extract mode, body class).
-2. `app/[slug]/page.tsx` generates static params from this map and loads the fragment via `loadPublicHtmlFragment()`.
+2. `app/[locale]/[slug]/page.tsx` generates static params from this map and loads the fragment via `loadPublicHtmlFragment()`.
 3. `lib/htmlFromPublic.ts` rewrites internal `.html` links to extensionless paths for runtime navigation.
 4. `scripts/normalize-public-html-hrefs.mjs` can bulk-normalize legacy links in `public/` (keep its `FILE_TO_PATH` map in sync with `MARKETING_PAGES` and key root pages).
 
