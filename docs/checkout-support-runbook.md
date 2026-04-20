@@ -2,74 +2,107 @@
 
 ## Scope
 
-Stripe **hosted Checkout**: the browser gets a Checkout Session URL from your server and redirects to Stripe; after pay or cancel, Stripe sends the customer back to your `success` or `cancel` page.
+The repository currently has two checkout implementations:
+
+- Static HTML hosted checkout flow (`public/checkout.html` + server endpoint)
+- Next.js embedded checkout flow (`app/components/checkout.tsx` + server action)
+
+This runbook documents both so support and dev teams can quickly identify which path is active in a deployment.
 
 ## Code paths
 
-- `public/checkout.html` — form + `public/create-checkout-session.js` (fetch JSON `{ url }`, then `location` to Stripe)
-- `public/success.html` — optional `?session_id=` from Stripe (display only unless you add verification)
+### Static hosted checkout (legacy/public flow)
+
+- `public/checkout.html` (form posts to `/api/create-checkout-session`)
+- `public/success.html`
 - `public/cancel.html`
 - `public/checkout.css`
-- `server.cjs` — Express: static `public/`, `POST /create-checkout-session` (local dev)
-- `api/create-checkout-session.js` — Vercel Node function: same `POST` contract; routed by `vercel.json` catch-all (`/(.*)` → `/api/$1`)
-- `package.json` — `start:stripe` → `node server.cjs`
+- `api/create-checkout-session.js` (Vercel serverless handler)
+- `server.cjs` (local Express server with `/create-checkout-session`)
 
-## Endpoint contract
+### Next.js checkout (app router flow)
 
-**`POST /create-checkout-session`**
+- `app/components/checkout.tsx` (Stripe `EmbeddedCheckoutProvider`)
+- `app/actions/stripe.ts` (`startCheckoutSession(productId)`, server action)
+- `app/[locale]/checkout/page.tsx` (localized route wrapper)
+- `app/[locale]/checkout/layout.tsx` (checkout-specific CSS)
+- `app/api/create-checkout-session/route.ts` (Next.js API route, currently separate from server action path)
 
-- With **`Accept: application/json`** (the default from `create-checkout-session.js`): response **`200`** and body **`{ "url": "https://checkout.stripe.com/..." }`**, or **`500`** and **`{ "error": "message" }`**.
-- With a plain HTML form POST (no JS / noscript): **`303`** redirect to Stripe Checkout, or **`500`** text body on error.
+## Endpoint contracts
+
+### `POST /api/create-checkout-session` (`api/create-checkout-session.js`)
+
+- `Accept: application/json` -> `200 { "url": "https://checkout.stripe.com/..." }`
+- non-JSON form POST -> `303` redirect to Stripe Checkout URL
+- error -> `500` JSON or text depending on `Accept`
+
+### `POST /create-checkout-session` (`server.cjs`, local only)
+
+- Same response contract as above, but mounted on Express local server and used when running `npm run start:stripe`
+
+### Embedded checkout session creation (`app/actions/stripe.ts`)
+
+- Returns `session.client_secret` for Stripe embedded checkout (`ui_mode: "embedded"`)
+- Uses inline `price_data` from a local catalog map (currently `default` only, USD 750 cents)
+- Does not use `STRIPE_PRICE_ID`
 
 ## Environment
+
+### Hosted checkout endpoints (`server.cjs`, `api/create-checkout-session.js`, `app/api/create-checkout-session/route.ts`)
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `STRIPE_SECRET_KEY` or `STRIPE_KEY` | Yes | Server-side Stripe API key |
-| `STRIPE_PRICE_ID` or `PRICE_ID` | Yes | One-time **Price** ID (`price_...`) |
-| `DOMAIN` | Optional | Site origin for success/cancel URLs (default `http://localhost:4242`), **no trailing slash** |
-| `PORT` | Optional | Listen port (default `4242`) |
+| `STRIPE_PRICE_ID` or `PRICE_ID` | Yes | Stripe Price ID for hosted checkout |
+| `DOMAIN` | Optional, recommended | Public origin for success/cancel URLs |
+| `PORT` | Local only | Express listen port (`server.cjs`, default `4242`) |
 
-Example:
+### Embedded checkout UI (`app/components/checkout.tsx`)
 
-```bash
-export STRIPE_SECRET_KEY=sk_test_...
-export STRIPE_PRICE_ID=price_...
-export DOMAIN=http://localhost:4242
-npm run start:stripe
-```
-
-See also `.env.example` (load with your shell or a tool of your choice; this repo does not auto-load `.env` in `server.cjs`).
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Yes | Browser Stripe key for embedded checkout |
+| `STRIPE_SECRET_KEY` or `STRIPE_KEY` | Yes | Needed server-side by `app/actions/stripe.ts` |
 
 ## Local testing
 
-1. Start the Stripe server: `npm run start:stripe`
-2. Open `http://localhost:4242/checkout.html`
-3. Use [Stripe test cards](https://docs.stripe.com/testing)
+### Static hosted checkout
 
-`python -m http.server` **without** the Node server will not implement `/create-checkout-session`; the checkout button will error or (noscript) hit a missing endpoint.
+1. Export hosted-checkout env vars
+2. Run `npm run start:stripe`
+3. Open `http://localhost:4242/checkout.html`
+4. Use [Stripe test cards](https://docs.stripe.com/testing)
 
-## Success URL and `session_id`
+`npm run start:python` (or any static-only server) does not provide `/create-checkout-session`, so checkout submission fails unless an API endpoint is separately running.
 
-`server.cjs` sets:
+### Next.js localized checkout route
 
-`success_url: ${DOMAIN}/success.html?session_id={CHECKOUT_SESSION_ID}`
+1. Export `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` and Stripe secret key
+2. Run `npm run dev`
+3. Open `/checkout` and `/fr/checkout`
+4. Confirm embedded checkout mounts (or explicit missing-key alert appears)
 
-Stripe replaces the placeholder when redirecting. The success page shows the id for support reference only. To **verify** payment server-side, add a small authenticated route that calls `stripe.checkout.sessions.retrieve(session_id)` and checks `payment_status`.
+## Redirect URLs and support references
 
-## Production / Vercel
+Hosted endpoints currently set:
 
-`server.cjs` is for local Node development only and does not run on Vercel.
+- success: `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}` (or `/success` in `app/api/create-checkout-session/route.ts`)
+- cancel: `${origin}/cancel.html` (or `/cancel` in `app/api/create-checkout-session/route.ts`)
 
-In production, `POST /create-checkout-session` is handled by `api/create-checkout-session.js` through the root `vercel.json` catch-all route (`/(.*)` → `/api/$1`).
+`public/success.html` displays `session_id` for support reference only. It does not verify payment status server-side.
 
-Origin behavior:
+To verify payment state, add an authenticated backend check with `stripe.checkout.sessions.retrieve(session_id)` and validate `payment_status`.
 
-- If `DOMAIN` is set, the function uses it for `success_url` and `cancel_url`.
-- If `DOMAIN` is not set, the function derives origin from `x-forwarded-proto` + `x-forwarded-host` (or `host`) and falls back to `https://www.dr-alban.com` only when headers are missing.
+## Current operational pitfalls
+
+- `public/create-checkout-session.js` contains server-side Express code instead of browser fetch logic; treat it as stale/non-runtime until corrected.
+- `vercel.json` currently routes `/api/(.*)` to `api/$1.js`, while `public/checkout.html` posts to `/api/create-checkout-session`; keep those aligned when changing endpoint paths.
+- There are two server checkout endpoints (`api/create-checkout-session.js` and `app/api/create-checkout-session/route.ts`) with different origin rules and redirect targets; choose one canonical path before extending checkout behavior.
 
 ## Troubleshooting
 
-- **500 “Missing STRIPE_PRICE_ID”** — create a Product/Price in the Dashboard and export the Price id.
-- **500 “No such price”** — key mode (test vs live) must match the price mode.
-- **CORS** — keep checkout page and API on the **same origin**, or add CORS + absolute `fetch` URL.
+- `500 Missing STRIPE_PRICE_ID`: set a valid Stripe Price ID for hosted checkout endpoints.
+- `500 Missing STRIPE_SECRET_KEY`: missing secret key in runtime environment.
+- `500 No such price`: test/live key mismatch with the configured price.
+- Embedded checkout shows unavailable message: set `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`.
+- Redirect path mismatch (`/success` vs `/success.html`): verify which server endpoint handled the request and align links/pages accordingly.
