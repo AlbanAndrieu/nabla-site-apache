@@ -1,11 +1,11 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import {
 	loadPublicHtmlFragment,
 	metadataFromPublicHtml,
 	type SiteLocale,
 } from "@/lib/htmlFromPublic";
-import { routing } from "@/i18n/routing";
-import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 
 type Props = { params: Promise<{ locale: string }> };
 

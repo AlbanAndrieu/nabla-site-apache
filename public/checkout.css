@@ -32,7 +32,7 @@ body.site-content-page:has(main.checkout-page) #main-content.checkout-page {
 
 /* payment.html — stacked cards + intro */
 body.site-content-page:has(main.checkout-page.payment-options)
-	#main-content.checkout-page.payment-options {
+#main-content.checkout-page.payment-options {
 	flex-direction: column;
 	gap: 1.25rem;
 }
@@ -225,8 +225,10 @@ main.checkout-page.payment-options .payment-options-intro h1 {
 	border: 2px solid transparent;
 	background: var(--button-bg);
 	color: var(--button-text);
-	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s
-		ease;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease;
 	box-sizing: border-box;
 }
 

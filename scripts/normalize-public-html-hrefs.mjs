@@ -101,7 +101,9 @@ function rewriteIndexByLocation(content, fileRel) {
 function rewriteRootSiblingPages(content, fileRel) {
 	if (!/^[^/]+\.html$/.test(fileRel)) return content;
 	let c = content;
-	const entries = Object.entries(FILE_TO_PATH).sort((a, b) => b[0].length - a[0].length);
+	const entries = Object.entries(FILE_TO_PATH).sort(
+		(a, b) => b[0].length - a[0].length,
+	);
 	for (const [file, slug] of entries) {
 		const esc = file.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 		const reD = new RegExp(`\\bhref="${esc}([#?][^"]*)?"`, "gi");
@@ -134,18 +136,14 @@ function rewriteAbsoluteSiteHtml(content) {
 		c = c.replaceAll(`href='policy/${name}.html'`, `href='/policy/${name}'`);
 	}
 
-	const entries = Object.entries(FILE_TO_PATH).sort((a, b) => b[0].length - a[0].length);
+	const entries = Object.entries(FILE_TO_PATH).sort(
+		(a, b) => b[0].length - a[0].length,
+	);
 	for (const [file, slug] of entries) {
 		const base = file.replace(/\.html$/i, "");
-		const reD = new RegExp(
-			`\\bhref="\\/${base}\\.html([#?][^"]*)?"`,
-			"gi",
-		);
+		const reD = new RegExp(`\\bhref="\\/${base}\\.html([#?][^"]*)?"`, "gi");
 		c = c.replace(reD, (_, suf = "") => `href="/${slug}${suf}"`);
-		const reS = new RegExp(
-			`\\bhref='\\/${base}\\.html([#?][^']*)?'`,
-			"gi",
-		);
+		const reS = new RegExp(`\\bhref='\\/${base}\\.html([#?][^']*)?'`, "gi");
 		c = c.replace(reS, (_, suf = "") => `href='/${slug}${suf}'`);
 	}
 
@@ -155,7 +153,10 @@ function rewriteAbsoluteSiteHtml(content) {
 function rewriteDrAlbanCanonicalUrls(content) {
 	return content
 		.replaceAll("https://dr-alban.com/index.html", "https://dr-alban.com/")
-		.replaceAll("https://dr-alban.com/cv/index.html", "https://dr-alban.com/cv");
+		.replaceAll(
+			"https://dr-alban.com/cv/index.html",
+			"https://dr-alban.com/cv",
+		);
 }
 
 function transform(content, fileRel) {

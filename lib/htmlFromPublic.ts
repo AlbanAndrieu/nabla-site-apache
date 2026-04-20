@@ -40,7 +40,11 @@ function withLocalePrefix(pathname: string, locale?: string): string {
 	return pathname === "/" ? prefix : `${prefix}${pathname}`;
 }
 
-function rewriteOneHref(quote: '"' | "'", raw: string, locale?: string): string {
+function rewriteOneHref(
+	quote: '"' | "'",
+	raw: string,
+	locale?: string,
+): string {
 	const href = raw.trim();
 	if (
 		/^(https?:|mailto:|tel:|#|javascript:|data:)/i.test(href) ||
@@ -77,7 +81,10 @@ function rewriteOneHref(quote: '"' | "'", raw: string, locale?: string): string 
 }
 
 /** Rewrite internal *.html links to clean paths for the Next.js app. */
-export function rewriteLegacyHtmlHrefs(fragment: string, locale?: string): string {
+export function rewriteLegacyHtmlHrefs(
+	fragment: string,
+	locale?: string,
+): string {
 	let out = fragment.replace(/\bhref="([^"]*)"/gi, (_full, raw: string) =>
 		rewriteOneHref('"', raw, locale),
 	);
@@ -87,7 +94,10 @@ export function rewriteLegacyHtmlHrefs(fragment: string, locale?: string): strin
 	return out;
 }
 
-async function resolvePublicFilePath(file: string, locale?: string): Promise<string> {
+async function resolvePublicFilePath(
+	file: string,
+	locale?: string,
+): Promise<string> {
 	const normalizedLocale = normalizeLocale(locale);
 	if (normalizedLocale !== DEFAULT_LOCALE) {
 		const localized = path.join(

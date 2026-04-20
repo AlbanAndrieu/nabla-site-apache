@@ -15,7 +15,7 @@ test.describe("Navigation and Links Tests", () => {
 		for (let i = 0; i < linksToCheck; i++) {
 			const href = await internalLinks.nth(i).getAttribute("href");
 			expect(href).toBeTruthy();
-			expect(href!.trim().length).toBeGreaterThan(0);
+			expect(href?.trim().length).toBeGreaterThan(0);
 		}
 	});
 

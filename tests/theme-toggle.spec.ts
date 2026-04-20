@@ -33,18 +33,9 @@ test.describe("Theme Toggle Tests", () => {
 		await expect(darkBtn).toHaveCount(1);
 		await expect(autoBtn).toHaveCount(1);
 
-		await expect(lightBtn).toHaveAttribute(
-			"aria-label",
-			"Light",
-		);
-		await expect(darkBtn).toHaveAttribute(
-			"aria-label",
-			"Dark",
-		);
-		await expect(autoBtn).toHaveAttribute(
-			"aria-label",
-			"Auto (system)",
-		);
+		await expect(lightBtn).toHaveAttribute("aria-label", "Light");
+		await expect(darkBtn).toHaveAttribute("aria-label", "Dark");
+		await expect(autoBtn).toHaveAttribute("aria-label", "Auto (system)");
 
 		const pressedCount = await root
 			.locator('.theme-toggle__btn[aria-pressed="true"]')
@@ -59,10 +50,9 @@ test.describe("Theme Toggle Tests", () => {
 
 		await page.goto("/");
 
-		await expect(page.locator('#theme-toggle-root [data-theme="auto"]')).toHaveAttribute(
-			"aria-pressed",
-			"true",
-		);
+		await expect(
+			page.locator('#theme-toggle-root [data-theme="auto"]'),
+		).toHaveAttribute("aria-pressed", "true");
 
 		const resolvedPreference = await page.evaluate(() => {
 			return window.themeToggle?.get();
@@ -73,8 +63,12 @@ test.describe("Theme Toggle Tests", () => {
 	test("should toggle between light and dark theme", async ({ page }) => {
 		await page.goto("/");
 
-		const lightBtn = page.locator('#theme-toggle-root .theme-toggle__btn[data-theme="light"]');
-		const darkBtn = page.locator('#theme-toggle-root .theme-toggle__btn[data-theme="dark"]');
+		const lightBtn = page.locator(
+			'#theme-toggle-root .theme-toggle__btn[data-theme="light"]',
+		);
+		const darkBtn = page.locator(
+			'#theme-toggle-root .theme-toggle__btn[data-theme="dark"]',
+		);
 
 		await expect(lightBtn).toHaveCount(1);
 		await expect(darkBtn).toHaveCount(1);
@@ -84,7 +78,9 @@ test.describe("Theme Toggle Tests", () => {
 		await expect
 			.poll(
 				async () =>
-					page.evaluate(() => localStorage.getItem("site-theme-preference") ?? ""),
+					page.evaluate(
+						() => localStorage.getItem("site-theme-preference") ?? "",
+					),
 				{ timeout: 15_000 },
 			)
 			.toBe("light");
@@ -94,7 +90,9 @@ test.describe("Theme Toggle Tests", () => {
 		await expect
 			.poll(
 				async () =>
-					page.evaluate(() => localStorage.getItem("site-theme-preference") ?? ""),
+					page.evaluate(
+						() => localStorage.getItem("site-theme-preference") ?? "",
+					),
 				{ timeout: 15_000 },
 			)
 			.toBe("dark");
@@ -113,7 +111,9 @@ test.describe("Theme Toggle Tests", () => {
 		await expect
 			.poll(
 				async () =>
-					page.evaluate(() => localStorage.getItem("site-theme-preference") ?? ""),
+					page.evaluate(
+						() => localStorage.getItem("site-theme-preference") ?? "",
+					),
 				{ timeout: 15_000 },
 			)
 			.toBe("dark");
@@ -124,7 +124,9 @@ test.describe("Theme Toggle Tests", () => {
 		await page.reload();
 
 		await expect
-			.poll(async () => htmlElement.getAttribute("data-theme"), { timeout: 15_000 })
+			.poll(async () => htmlElement.getAttribute("data-theme"), {
+				timeout: 15_000,
+			})
 			.toBe(darkEffective);
 		expect(
 			await page.evaluate(() => localStorage.getItem("site-theme-preference")),
@@ -144,7 +146,9 @@ test.describe("Theme Toggle Tests", () => {
 		await lightBtn.scrollIntoViewIfNeeded();
 		await lightBtn.click({ force: true });
 		await expect
-			.poll(async () => htmlElement.getAttribute("data-theme"), { timeout: 15_000 })
+			.poll(async () => htmlElement.getAttribute("data-theme"), {
+				timeout: 15_000,
+			})
 			.toBe("light");
 		const readTextPrimary = () =>
 			page.evaluate(() =>
@@ -157,7 +161,9 @@ test.describe("Theme Toggle Tests", () => {
 		await darkBtn.scrollIntoViewIfNeeded();
 		await darkBtn.click({ force: true });
 		await expect
-			.poll(async () => htmlElement.getAttribute("data-theme"), { timeout: 15_000 })
+			.poll(async () => htmlElement.getAttribute("data-theme"), {
+				timeout: 15_000,
+			})
 			.toBe("dark");
 		const darkTextPrimary = await readTextPrimary();
 

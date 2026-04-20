@@ -215,7 +215,9 @@ html body {
 	/* After wireframe.css: wireframe uses font-weight 200; align with Bootstrap reboot / dr-alban.com */
 	font-weight: 400;
 	line-height: 1.5;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 /* Override container backgrounds */
@@ -232,7 +234,10 @@ html body {
 	color: var(--text-primary);
 	border-color: var(--border-color);
 	box-shadow: 0 2px 4px var(--shadow-color);
-	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -294,7 +299,9 @@ a:focus {
 /* Alerts - Keep Bootstrap colors but adjust for theme */
 .alert {
 	border-width: 1px;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 .alert-info {
@@ -331,7 +338,7 @@ a:focus {
 .bg-warning h2,
 .bg-warning .text-light,
 .bg-white .text-light {
-	color: #212529 !important;
+	color: #212529;
 }
 
 /* Navigation */
@@ -358,7 +365,9 @@ select {
 	background-color: var(--bg-secondary);
 	color: var(--text-primary);
 	border-color: var(--border-color);
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 input:focus,
@@ -399,8 +408,9 @@ select:focus {
 	border-radius: 50rem;
 	background-color: var(--toggle-track-bg);
 	border: 1px solid var(--toggle-border);
-	box-shadow: 0 0.125rem 0.25rem var(--shadow-color), inset 0 1px 0
-		rgba(255, 255, 255, 0.06);
+	box-shadow:
+		0 0.125rem 0.25rem var(--shadow-color),
+		inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .theme-toggle__btn {
@@ -421,7 +431,10 @@ select:focus {
 	font-weight: 500;
 	line-height: 1;
 	cursor: pointer;
-	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		box-shadow 0.2s ease;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -459,8 +472,9 @@ html[data-theme="dark"] .theme-toggle__btn:hover:not(.is-active) {
 }
 
 .theme-toggle__btn.is-active:focus-visible {
-	box-shadow: 0 0.125rem 0.35rem var(--shadow-color), 0 0 0 0.2rem
-		rgba(13, 110, 253, 0.35);
+	box-shadow:
+		0 0.125rem 0.35rem var(--shadow-color),
+		0 0 0 0.2rem rgba(13, 110, 253, 0.35);
 }
 
 /* ============================================
@@ -797,7 +811,8 @@ button:focus-visible {
 .page-dark {
 	background: #0f172a;
 	color: #e2e8f0;
-	background-image: radial-gradient(
+	background-image:
+		radial-gradient(
 			ellipse 80% 50% at 50% -20%,
 			rgba(59, 130, 246, 0.15),
 			transparent
@@ -818,7 +833,8 @@ button:focus-visible {
 html[data-theme="light"] .page-dark {
 	background: #f8fafc;
 	color: #0f172a;
-	background-image: radial-gradient(
+	background-image:
+		radial-gradient(
 			ellipse 80% 50% at 50% -20%,
 			rgba(59, 130, 246, 0.08),
 			transparent
@@ -869,22 +885,22 @@ html[data-theme="light"] .page-dark .card-header {
 
 .page-dark .bg-light.card,
 .page-dark .card.border-0.shadow-sm.bg-light {
-	background: rgba(30, 41, 59, 0.5) !important;
+	background: rgba(30, 41, 59, 0.5);
 }
 
 html[data-theme="light"] .page-dark .bg-light.card,
 html[data-theme="light"] .page-dark .card.border-0.shadow-sm.bg-light {
-	background: rgba(248, 250, 252, 0.9) !important;
+	background: rgba(248, 250, 252, 0.9);
 }
 
 .page-dark .association-section .jumbotron,
 .page-dark .association-section {
-	background: rgba(15, 23, 42, 0.4) !important;
+	background: rgba(15, 23, 42, 0.4);
 }
 
 html[data-theme="light"] .page-dark .association-section .jumbotron,
 html[data-theme="light"] .page-dark .association-section {
-	background: var(--bg-secondary, #f1f5f9) !important;
+	background: var(--bg-secondary, #f1f5f9);
 }
 
 .page-dark .legal-quote {
@@ -1028,7 +1044,9 @@ html[data-theme="light"] .page-dark .email {
 	position: relative;
 	z-index: 1;
 	min-width: 5rem;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
 }
 
 .journey-step:focus-within,
@@ -1119,7 +1137,10 @@ html[data-theme="light"] .page-dark .email {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease,
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease,
+		background 0.2s ease,
 		color 0.2s ease;
 }
 
@@ -1251,12 +1272,12 @@ html[data-theme="light"] .social-link:hover {
 	.theme-toggle,
 	.google-translate-widget,
 	.print-button {
-		display: none !important;
+		display: none;
 	}
 
 	.coffee-fab-btn,
 	#coffeeModal {
-		display: none !important;
+		display: none;
 	}
 
 	body {

@@ -66,7 +66,7 @@ function htmlToMarkdown(container) {
 			case "i":
 				markdown += "*" + node.textContent.trim() + "*";
 				break;
-			case "a":
+			case "a": {
 				const href = node.getAttribute("href");
 				const text = node.textContent.trim();
 				if (href && !href.startsWith("#")) {
@@ -75,6 +75,7 @@ function htmlToMarkdown(container) {
 					markdown += text;
 				}
 				break;
+			}
 			case "ul":
 				markdown += "\n";
 				Array.from(node.children).forEach((child) => {
@@ -139,7 +140,7 @@ function htmlToMarkdown(container) {
 /**
  * Downloads the CV as a markdown file
  */
-function downloadAsMarkdown() {
+function _downloadAsMarkdown() {
 	try {
 		// Get the CV container
 		const cvContainer = document.querySelector(".cv-container");

@@ -48,7 +48,9 @@ test.describe("404 Error Page Tests", () => {
 		await expect(page.locator("#nabla-print-pdf-btn")).toHaveCount(0);
 		await expect(page.locator("#nabla-back-to-top")).toHaveCount(0);
 		await expect(
-			page.locator('script[src*="translate.google.com/translate_a/element.js"]'),
+			page.locator(
+				'script[src*="translate.google.com/translate_a/element.js"]',
+			),
 		).toHaveCount(0);
 	});
 

@@ -6,7 +6,7 @@
 /**
  * Toggles the dropdown menu visibility
  */
-function togglePrintMenu(event) {
+function _togglePrintMenu(event) {
 	event.stopPropagation();
 	const menu = document.getElementById("print-menu-dropdown");
 	const button = event.currentTarget;
@@ -36,7 +36,7 @@ function togglePrintMenu(event) {
 /**
  * Handles the print as PDF action
  */
-function handlePrintPDF() {
+function _handlePrintPDF() {
 	window.print();
 	closePrintMenu();
 }
@@ -44,7 +44,7 @@ function handlePrintPDF() {
 /**
  * Handles the export as markdown action
  */
-function handleExportMarkdown() {
+function _handleExportMarkdown() {
 	downloadAsMarkdown();
 	closePrintMenu();
 }

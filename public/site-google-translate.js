@@ -6,7 +6,7 @@
  */
 (() => {
 	var root = document.currentScript;
-	if (root && root.hasAttribute("data-no-google-translate")) return;
+	if (root?.hasAttribute("data-no-google-translate")) return;
 	if (window.__NABLA_GOOGLE_TRANSLATE_STARTED) return;
 	window.__NABLA_GOOGLE_TRANSLATE_STARTED = true;
 
@@ -20,15 +20,15 @@
 			wrap.classList.toggle("is-open", open);
 			toggle.setAttribute("aria-expanded", open ? "true" : "false");
 		}
-		toggle.addEventListener("click", function (e) {
+		toggle.addEventListener("click", (e) => {
 			e.stopPropagation();
 			setOpen(!wrap.classList.contains("is-open"));
 		});
-		document.addEventListener("click", function (e) {
+		document.addEventListener("click", (e) => {
 			var t = e.target;
 			if (t instanceof Node && !wrap.contains(t)) setOpen(false);
 		});
-		document.addEventListener("keydown", function (e) {
+		document.addEventListener("keydown", (e) => {
 			if (e.key === "Escape") setOpen(false);
 		});
 	}

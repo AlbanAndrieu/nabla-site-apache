@@ -45,10 +45,7 @@ test("metadataFromPublicHtml decodes entities and builds canonical url", async (
 		metadata.title,
 		"Alban Andrieu — Freelance DevSecOps & Cloud Architect (AWS, Azure, OVH)",
 	);
-	assert.equal(
-		metadata.alternates?.canonical,
-		"https://dr-alban.com/",
-	);
+	assert.equal(metadata.alternates?.canonical, "https://dr-alban.com/");
 	assert.equal(metadata.openGraph?.url, "https://dr-alban.com/");
 });
 
@@ -61,9 +58,16 @@ test("metadataFromPublicHtml uses locale-specific source when available", async 
 });
 
 test("metadataFromPublicHtml falls back to english source and normalizes locale", async () => {
-	const metadata = await metadataFromPublicHtml("contact.html", "contact", "de");
+	const metadata = await metadataFromPublicHtml(
+		"contact.html",
+		"contact",
+		"de",
+	);
 
-	assert.equal(metadata.title, "Contact Alban Andrieu - DevSecOps Professional");
+	assert.equal(
+		metadata.title,
+		"Contact Alban Andrieu - DevSecOps Professional",
+	);
 	assert.equal(metadata.alternates?.canonical, "https://dr-alban.com/contact");
 });
 

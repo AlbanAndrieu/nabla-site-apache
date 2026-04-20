@@ -29,7 +29,7 @@
 	var gtagInjected = false;
 
 	function loadAhrefsFromAttr() {
-		var key = root && root.getAttribute("data-ahrefs-key");
+		var key = root?.getAttribute("data-ahrefs-key");
 		if (!key) return;
 		var s = document.createElement("script");
 		s.src = "https://analytics.ahrefs.com/analytics.js";
@@ -47,7 +47,7 @@
 				b.init = (e, f, c) => {
 					function g(a, d) {
 						var b = d.split(".");
-						2 == b.length && ((a = a[b[0]]), (d = b[1]));
+						2 === b.length && ((a = a[b[0]]), (d = b[1]));
 						a[d] = () => {
 							a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
 						};
@@ -78,7 +78,7 @@
 						}
 						for (
 							var d = {},
-								e = ["get_group"].concat(
+								_e = ["get_group"].concat(
 									Array.prototype.slice.call(arguments, 0),
 								),
 								c = 0;
@@ -132,10 +132,10 @@
 		gtmInjected = true;
 		((w, d, s, l, i) => {
 			w[l] = w[l] || [];
-			w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+			w[l].push({ "gtm.start": Date.now(), event: "gtm.js" });
 			var f = d.getElementsByTagName(s)[0],
 				j = d.createElement(s),
-				dl = l != "dataLayer" ? "&l=" + l : "";
+				dl = l !== "dataLayer" ? "&l=" + l : "";
 			j.async = true;
 			j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
 			f.parentNode.insertBefore(j, f);
@@ -226,10 +226,10 @@
 					localStorage.getItem("_vwo_" + account_id + "_config"),
 				);
 				cc = c && typeof c === "object" ? c : {};
-			} catch (e) {}
+			} catch (_e) {}
 			var stT = cc.stT === "session" ? w.sessionStorage : w.localStorage;
 			code = {
-				nonce: v && v.nonce,
+				nonce: v?.nonce,
 				use_existing_jquery: () =>
 					typeof use_existing_jquery !== "undefined"
 						? use_existing_jquery
@@ -318,7 +318,7 @@
 							return;
 						}
 						return e.s;
-					} catch (e) {
+					} catch (_e) {
 						return;
 					}
 				},
@@ -378,7 +378,7 @@
 			(e.init = (i, s, a) => {
 				function g(t, e) {
 					var o = e.split(".");
-					2 == o.length && ((t = t[o[0]]), (e = o[1])),
+					2 === o.length && ((t = t[o[0]]), (e = o[1])),
 						(t[e] = () => {
 							t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
 						});
@@ -464,7 +464,7 @@
 					window.heapReadyCb.push({
 						name: e,
 						fn: () => {
-							heap[e] && heap[e].apply(heap, t);
+							heap[e]?.apply(heap, t);
 						},
 					});
 				};

@@ -5,8 +5,9 @@
  */
 
 body.site-content-page {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+		Arial, sans-serif;
 	color: var(--text-dark);
 	line-height: 1.6;
 	overflow-x: hidden;
@@ -109,7 +110,9 @@ body.site-content-page .hardware-section {
 		var(--bg-secondary) 100%
 	);
 	border-bottom: 1px solid var(--border-color);
-	transition: background 0.35s ease, border-color 0.35s ease;
+	transition:
+		background 0.35s ease,
+		border-color 0.35s ease;
 }
 
 body.site-content-page .hardware-section .display-4 {
@@ -214,7 +217,10 @@ body.site-content-page .hardware-pill {
 	border: 1px solid var(--border-color);
 	box-shadow: 0 1px 3px var(--shadow-color);
 	color: var(--text-primary);
-	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		border-color 0.2s ease;
 	min-height: 100%;
 }
 
@@ -337,8 +343,7 @@ body.site-content-page .hardware-bom-li {
 }
 
 /* Override wireframe Bootstrap #fff list rows — theme-aware surfaces + readable type */
-body.site-content-page
-	.hardware-section
+body.site-content-page .hardware-section
 	.hardware-bom-list.list-group-flush
 	> .list-group-item.hardware-bom-li {
 	background-color: var(--bg-secondary);
@@ -590,12 +595,14 @@ body.site-content-page.page-dark .stack-page-legacy-banner .h2 {
 body.site-content-page.page-dark .stack-tool-link {
 	color: inherit;
 	background: var(--bg-card);
-	transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow
-		0.2s ease;
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
 }
 
 body.site-content-page.page-dark .stack-tool-link .text-body {
-	color: var(--text-primary) !important;
+	color: var(--text-primary);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -605,7 +612,7 @@ body.site-content-page.page-dark .stack-tool-link .text-body {
 			in srgb,
 			var(--primary-color) 38%,
 			var(--border-color)
-		) !important;
+		);
 		box-shadow: 0 4px 14px var(--shadow-color);
 	}
 }
@@ -743,8 +750,7 @@ body.site-content-page
 }
 
 /* HTTPS homelab buttons: padlock (Font Awesome 7 solid U+F023) */
-body.site-content-page
-	.homelab-service-card
+body.site-content-page .homelab-service-card
 	.truenas-app-actions
 	a.btn[href^="https://"]::before {
 	display: inline-block;
@@ -764,7 +770,7 @@ body.site-content-page.truenas-page
 	.truenas-page-secondary
 	.card.border-secondary,
 body.site-content-page.truenas-page .truenas-page-tools .border-secondary {
-	border-color: var(--border-color) !important;
+	border-color: var(--border-color);
 }
 
 /* --------------------------------------------------------------------------
@@ -772,22 +778,27 @@ body.site-content-page.truenas-page .truenas-page-tools .border-secondary {
    -------------------------------------------------------------------------- */
 
 body.site-content-page.workstation-page .workstation-service-card {
-	box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08), 0 0.12rem 0.35rem
-		rgba(0, 0, 0, 0.06);
-	transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+	box-shadow:
+		0 0.35rem 1rem rgba(0, 0, 0, 0.08),
+		0 0.12rem 0.35rem rgba(0, 0, 0, 0.06);
+	transition:
+		box-shadow 0.2s ease,
+		transform 0.2s ease,
+		border-color 0.2s ease;
 	background: var(--bg-card);
 }
 
 @media (hover: hover) and (pointer: fine) {
 	body.site-content-page.workstation-page .workstation-service-card:hover {
-		box-shadow: 0 0.55rem 1.35rem rgba(0, 0, 0, 0.12), 0 0.2rem 0.5rem
-			rgba(0, 0, 0, 0.08);
+		box-shadow:
+			0 0.55rem 1.35rem rgba(0, 0, 0, 0.12),
+			0 0.2rem 0.5rem rgba(0, 0, 0, 0.08);
 		transform: translateY(-2px);
 		border-color: color-mix(
 			in srgb,
 			var(--primary-color) 28%,
 			var(--border-color)
-		) !important;
+		);
 	}
 }
 
@@ -844,6 +855,7 @@ body.site-content-page.workstation-page .workstation-repo-list li {
 html[data-theme="light"]
 	body.site-content-page.workstation-page
 	.workstation-service-card {
-	box-shadow: 0 0.4rem 1.1rem rgba(15, 23, 42, 0.07), 0 0.15rem 0.4rem
-		rgba(15, 23, 42, 0.05);
+	box-shadow:
+		0 0.4rem 1.1rem rgba(15, 23, 42, 0.07),
+		0 0.15rem 0.4rem rgba(15, 23, 42, 0.05);
 }

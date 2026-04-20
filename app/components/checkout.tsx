@@ -1,6 +1,5 @@
 "use client";
 
-import { startCheckoutSession } from "@/app/actions/stripe";
 import {
 	EmbeddedCheckout,
 	EmbeddedCheckoutProvider,
@@ -8,6 +7,7 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 import { useTranslations } from "next-intl";
 import { useCallback, useMemo } from "react";
+import { startCheckoutSession } from "@/app/actions/stripe";
 
 const publishableKey =
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?.trim() ?? "";

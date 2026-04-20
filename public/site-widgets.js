@@ -45,7 +45,7 @@
 
 	function minimalChrome() {
 		return (
-			(root && root.hasAttribute("data-minimal-chrome")) ||
+			root?.hasAttribute("data-minimal-chrome") ||
 			preset.minimalChrome === true ||
 			String(preset.minimalChrome || "").toLowerCase() === "true"
 		);
@@ -270,13 +270,13 @@
 			var i = p.lastIndexOf("/");
 			u.pathname = p.slice(0, i + 1);
 			return u.href;
-		} catch (e) {
+		} catch (_e) {
 			return "";
 		}
 	}
 
 	function injectFontAwesome() {
-		if (root && root.hasAttribute("data-no-font-awesome")) return;
+		if (root?.hasAttribute("data-no-font-awesome")) return;
 		if (preset.noFontAwesome) return;
 		var base = siteOriginFromScript();
 		if (!base) return;
@@ -323,13 +323,12 @@
 
 	function initGoogleTranslate() {
 		if (minimalChrome()) return;
-		if (root && root.hasAttribute("data-no-google-translate")) return;
+		if (root?.hasAttribute("data-no-google-translate")) return;
 		if (preset.noGoogleTranslate) return;
 		if (window.__NABLA_GOOGLE_TRANSLATE_STARTED) return;
 		window.__NABLA_GOOGLE_TRANSLATE_STARTED = true;
 
-		var INCLUDED_LANGS =
-			"en,fr,no,de";
+		var INCLUDED_LANGS = "en,fr,no,de";
 
 		var TOGGLE_SVG =
 			'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
@@ -339,15 +338,15 @@
 				wrap.classList.toggle("is-open", open);
 				toggle.setAttribute("aria-expanded", open ? "true" : "false");
 			}
-			toggle.addEventListener("click", function (e) {
+			toggle.addEventListener("click", (e) => {
 				e.stopPropagation();
 				setOpen(!wrap.classList.contains("is-open"));
 			});
-			document.addEventListener("click", function (e) {
+			document.addEventListener("click", (e) => {
 				var t = e.target;
 				if (t instanceof Node && !wrap.contains(t)) setOpen(false);
 			});
-			document.addEventListener("keydown", function (e) {
+			document.addEventListener("keydown", (e) => {
 				if (e.key === "Escape") setOpen(false);
 			});
 		}
@@ -438,11 +437,11 @@
 	injectFontAwesome();
 	initGoogleTranslate();
 	function has(name) {
-		return !!(root && root.hasAttribute(name));
+		return !!root?.hasAttribute(name);
 	}
 
-	function attr(name, fallback) {
-		if (root && root.hasAttribute(name)) {
+	function _attr(name, fallback) {
+		if (root?.hasAttribute(name)) {
 			var v = root.getAttribute(name);
 			return v === "" ? true : v;
 		}
@@ -458,12 +457,9 @@
 		/* Delegation: catches footer / late links; one listener vs every anchor */
 		document.addEventListener(
 			"click",
-			function (e) {
+			(e) => {
 				if (e.defaultPrevented) return;
-				var anchor =
-					e.target &&
-					e.target.closest &&
-					e.target.closest('a[href^="#"]');
+				var anchor = e.target?.closest?.('a[href^="#"]');
 				if (!anchor) return;
 				var href = anchor.getAttribute("href");
 				if (!href || href === "#" || href.length <= 1) return;
@@ -477,15 +473,12 @@
 				var target;
 				try {
 					target = document.querySelector(href);
-				} catch (err) {
+				} catch (_err) {
 					return;
 				}
 				if (target) {
 					e.preventDefault();
-					if (
-						target === document.body ||
-						target === document.documentElement
-					) {
+					if (target === document.body || target === document.documentElement) {
 						scrollToTopOfPage();
 					} else {
 						target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -501,21 +494,19 @@
 		if (has("data-no-scroll-reveal") || preset.noScrollReveal) return;
 
 		var explicit =
-			(root && root.getAttribute("data-scroll-reveal")) ||
-			preset.scrollReveal ||
-			null;
+			root?.getAttribute("data-scroll-reveal") || preset.scrollReveal || null;
 		var selectors = explicit
 			? String(explicit).trim()
 			: DEFAULT_REVEAL_SELECTORS;
 		if (!selectors) return;
 
 		var effect = String(
-			(root && root.getAttribute("data-reveal-effect")) ||
+			root?.getAttribute("data-reveal-effect") ||
 				preset.revealEffect ||
 				"opacity",
 		).toLowerCase();
 		var anim = String(
-			(root && root.getAttribute("data-reveal-animation")) ||
+			root?.getAttribute("data-reveal-animation") ||
 				preset.revealAnimation ||
 				"fadeInUp 0.6s ease forwards",
 		);
@@ -556,7 +547,7 @@
 	}
 
 	function kofiUserFromConfig() {
-		var fromAttr = root && root.getAttribute("data-coffee-kofi-user");
+		var fromAttr = root?.getAttribute("data-coffee-kofi-user");
 		if (fromAttr != null && String(fromAttr).trim() !== "") {
 			return sanitizeKofiUser(fromAttr);
 		}
@@ -675,7 +666,7 @@
 		'<svg class="print-button__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M19 8h-1V3H6v5H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zM8 5h8v3H8V5zm8 14H8v-4h8v4zm3-6v-2H5v2H3v-4c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v4h-2z"/></svg>';
 
 	function printPdfLangCode() {
-		var o = root && root.getAttribute("data-print-pdf-lang");
+		var o = root?.getAttribute("data-print-pdf-lang");
 		if (o != null && String(o).trim() !== "") {
 			return String(o).trim().toLowerCase().slice(0, 2);
 		}
@@ -686,8 +677,8 @@
 	}
 
 	function printPdfLabels() {
-		var custom = root && root.getAttribute("data-print-pdf-label");
-		var customAria = root && root.getAttribute("data-print-pdf-aria");
+		var custom = root?.getAttribute("data-print-pdf-label");
+		var customAria = root?.getAttribute("data-print-pdf-aria");
 		var ariaTrim =
 			customAria != null && String(customAria).trim() !== ""
 				? String(customAria).trim()
@@ -752,8 +743,8 @@
 	var BACK_TO_TOP_BTN_ID = "nabla-back-to-top";
 
 	function backToTopLabels() {
-		var custom = root && root.getAttribute("data-back-to-top-label");
-		var customAria = root && root.getAttribute("data-back-to-top-aria");
+		var custom = root?.getAttribute("data-back-to-top-label");
+		var customAria = root?.getAttribute("data-back-to-top-aria");
 		var ariaTrim =
 			customAria != null && String(customAria).trim() !== ""
 				? String(customAria).trim()
@@ -780,7 +771,7 @@
 		   html leave scrollingElement.scrollTo(smooth) ineffective in common WebKit/Chromium cases. */
 		try {
 			window.scrollTo(0, 0);
-		} catch (e) {
+		} catch (_e) {
 			/* ignore */
 		}
 		if (document.documentElement) {
@@ -834,12 +825,12 @@
 			preset.axeptio;
 		if (!force) return;
 		var clientId = String(
-			(root && root.getAttribute("data-axeptio-client-id")) ||
+			root?.getAttribute("data-axeptio-client-id") ||
 				preset.axeptioClientId ||
 				DEFAULT_AXEPTIO_CLIENT,
 		);
 		var ver = String(
-			(root && root.getAttribute("data-axeptio-cookies-version")) ||
+			root?.getAttribute("data-axeptio-cookies-version") ||
 				preset.axeptioCookiesVersion ||
 				DEFAULT_AXEPTIO_VER,
 		);
@@ -912,9 +903,10 @@
 
 	/** Footer: set `© {year} {COPYRIGHT_ATTRIBUTION}.` on `.footer-copyright`. Optional `data-copyright-tail` appends after the period (e.g. ctid page). */
 	function initSiteCopyright() {
-		var COPYRIGHT_ATTRIBUTION = "Alban Andrieu. Independent DevSecOps Professional";
+		var COPYRIGHT_ATTRIBUTION =
+			"Alban Andrieu. Independent DevSecOps Professional";
 		var y = String(new Date().getFullYear());
-		document.querySelectorAll(".footer-copyright").forEach(function (el) {
+		document.querySelectorAll(".footer-copyright").forEach((el) => {
 			var tail = el.getAttribute("data-copyright-tail");
 			var line = "© " + y + " " + COPYRIGHT_ATTRIBUTION + ".";
 			if (tail) {
@@ -925,25 +917,24 @@
 	}
 
 	function initMainWidgets() {
+		if (!(root && has("data-no-smooth-scroll")) && !preset.noSmoothScroll) {
+			initSmoothScroll();
+		}
 
-	if (!(root && has("data-no-smooth-scroll")) && !preset.noSmoothScroll) {
-		initSmoothScroll();
-	}
+		initScrollReveal();
+		initCoffeeFab();
+		ensurePrintPdfButton();
+		ensureBackToTopFab();
+		initSiteCopyright();
+		initContactEmailLink();
+		initAxeptio();
 
-	initScrollReveal();
-	initCoffeeFab();
-	ensurePrintPdfButton();
-	ensureBackToTopFab();
-	initSiteCopyright();
-	initContactEmailLink();
-	initAxeptio();
-
-	var intercomId =
-		(root && root.getAttribute("data-intercom-app-id")) ||
-		preset.intercomAppId ||
-		preset.intercomAppID;
-	if (intercomId) {
-		initIntercom(String(intercomId));
+		var intercomId =
+			root?.getAttribute("data-intercom-app-id") ||
+			preset.intercomAppId ||
+			preset.intercomAppID;
+		if (intercomId) {
+			initIntercom(String(intercomId));
 		}
 	}
 

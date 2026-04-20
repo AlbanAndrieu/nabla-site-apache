@@ -1,12 +1,9 @@
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import {
-	loadPublicHtmlFragment,
-	type SiteLocale,
-} from "@/lib/htmlFromPublic";
-import { hasLocale } from "next-intl";
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import Script from "next/script";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { loadPublicHtmlFragment, type SiteLocale } from "@/lib/htmlFromPublic";
 
 const HOME_JSON_LD = {
 	"@context": "https://schema.org",

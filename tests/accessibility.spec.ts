@@ -128,7 +128,7 @@ test.describe("Accessibility Tests", () => {
 		}
 	});
 
-  test("should have alt text on all images", async ({ page }) => {
+	test("should have alt text on all images", async ({ page }) => {
 		await page.goto("/");
 
 		// Only check images in main content (exclude third-party widgets e.g. Google Translate)
@@ -334,7 +334,6 @@ test.describe("Accessibility Tests", () => {
 		// Check for main landmark
 		const main = await page.locator('main, [role="main"]').count();
 		expect(main).toBeGreaterThan(0);
-
 	});
 
 	test("should have focus indicators", async ({ page }) => {

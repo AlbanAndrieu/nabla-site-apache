@@ -1,10 +1,10 @@
-import SiteFooter from "@/components/SiteFooter";
-import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import Script from "next/script";
 import type { ReactNode } from "react";
+import SiteFooter from "@/components/SiteFooter";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://dr-alban.com"),

@@ -60,8 +60,11 @@ html[data-theme="dark"] {
 	cursor: pointer;
 	z-index: 1040;
 	transition:
-		transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-		color 0.2s ease, border-color 0.2s ease;
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		background 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease;
 	text-decoration: none;
 }
 #coffee-fab:hover {
@@ -163,7 +166,7 @@ html[data-theme="dark"] {
 	.back-to-top,
 	#coffee-fab,
 	#coffeeModal {
-		display: none !important;
+		display: none;
 	}
 }
 
@@ -189,8 +192,11 @@ html[data-theme="dark"] {
 	cursor: pointer;
 	z-index: 1040;
 	transition:
-		transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
-		color 0.2s ease, border-color 0.2s ease;
+		transform 0.2s ease,
+		box-shadow 0.2s ease,
+		background 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease;
 	text-decoration: none;
 }
 .back-to-top:hover {

@@ -7,7 +7,8 @@ const SOURCE_FILE = path.join(process.cwd(), "messages", "en.json");
 const TARGET_FILE = path.join(process.cwd(), "messages", "fr.json");
 
 const apiUrl =
-	process.env.LIBRETRANSLATE_URL?.trim() || "https://libretranslate.com/translate";
+	process.env.LIBRETRANSLATE_URL?.trim() ||
+	"https://libretranslate.com/translate";
 const apiKey = process.env.LIBRETRANSLATE_API_KEY?.trim();
 
 function flattenObject(input, prefix = "", output = {}) {
@@ -73,7 +74,9 @@ async function main() {
 
 	await mkdir(path.dirname(TARGET_FILE), { recursive: true });
 	await writeFile(TARGET_FILE, `${JSON.stringify(out, null, 2)}\n`, "utf8");
-	console.log(`Updated ${path.relative(process.cwd(), TARGET_FILE)} with LibreTranslate.`);
+	console.log(
+		`Updated ${path.relative(process.cwd(), TARGET_FILE)} with LibreTranslate.`,
+	);
 }
 
 main().catch((error) => {

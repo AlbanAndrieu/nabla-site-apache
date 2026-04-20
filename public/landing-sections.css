@@ -54,8 +54,9 @@ html[data-theme="dark"] {
 }
 
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+		Arial, sans-serif;
 	color: var(--text-dark);
 	line-height: 1.6;
 	overflow-x: hidden;
@@ -655,34 +656,34 @@ html {
 	.social-links,
 	.footer-links,
 	button {
-		display: none !important;
+		display: none;
 	}
 
 	/* Reset backgrounds and colors for print */
 	body {
-		background: white !important;
-		color: black !important;
+		background: white;
+		color: black;
 	}
 
 	.hero-section {
-		background: white !important;
-		color: black !important;
-		min-height: auto !important;
-		padding: 20pt 0 !important;
+		background: white;
+		color: black;
+		min-height: auto;
+		padding: 20pt 0;
 	}
 
 	.services-section,
 	.skills-section,
 	.tools-section,
 	.contact-section {
-		background: white !important;
+		background: white;
 		page-break-inside: avoid;
 	}
 
 	.service-card,
 	.skill-category {
-		box-shadow: none !important;
-		border: 1px solid #ddd !important;
+		box-shadow: none;
+		border: 1px solid #ddd;
 	}
 }
 
