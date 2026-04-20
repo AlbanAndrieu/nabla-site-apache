@@ -53,6 +53,7 @@
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="print.css" />
 		<link rel="stylesheet" href="site-content-page.css" />
+		<link rel="stylesheet" href="page-layouts.css" />
 		<link rel="stylesheet" href="arf.css" />
 
 		<!-- Font Awesome (CDN + JS) -->
@@ -104,189 +105,12 @@
 			}
 		</script>
 
-		<style>
-			/* Security Page Specific Styles */
-			:root {
-				--security-primary: #dc3545;
-				--security-secondary: #6c757d;
-				--security-success: #28a745;
-				--security-info: #17a2b8;
-				--security-warning: #ffc107;
-				--security-danger: #dc3545;
-			}
-
-			/* Hero Section */
-			.hero-section {
-				text-align: center;
-				padding: 4rem 2rem;
-				background: linear-gradient(135deg, var(--security-danger) 0%, var(--security-info) 100%);
-				color: white;
-			}
-
-			.hero-section h1 {
-				font-size: 3rem;
-				font-weight: bold;
-				margin-bottom: 1rem;
-			}
-
-			.hero-section p {
-				font-size: 1.25rem;
-				margin-bottom: 2rem;
-			}
-
-			/* Security Resources Section */
-			.security-resources {
-				padding: 3rem 0;
-			}
-
-			.resource-card {
-				background: white;
-				border: 1px solid #ddd;
-				border-radius: 8px;
-				padding: 2rem;
-				margin-bottom: 2rem;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
-			}
-
-			.resource-card:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			}
-
-			.resource-card h3 {
-				color: var(--security-danger);
-				margin-bottom: 1rem;
-				font-size: 1.5rem;
-			}
-
-			.resource-card .icon {
-				font-size: 2rem;
-				color: var(--security-info);
-				margin-bottom: 1rem;
-			}
-
-			.resource-list {
-				list-style: none;
-				padding-left: 0;
-			}
-
-			.resource-list li {
-				padding: 0.5rem 0;
-				border-bottom: 1px solid #eee;
-			}
-
-			.resource-list li:last-child {
-				border-bottom: none;
-			}
-
-			.resource-list a {
-				color: var(--security-info);
-				text-decoration: none;
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-			}
-
-			.resource-list a:hover {
-				color: var(--security-danger);
-				text-decoration: underline;
-			}
-
-			.resource-list i {
-				font-size: 1.2rem;
-			}
-
-			/* Commercial vendor rows: logo aside + “sticker” crest */
-			.resource-list-link--commercial {
-				justify-content: space-between;
-				align-items: center;
-				gap: 1rem;
-			}
-
-			.resource-list-link__lead {
-				display: flex;
-				align-items: flex-start;
-				gap: 0.5rem;
-				min-width: 0;
-				flex: 1 1 auto;
-			}
-
-			.resource-vendor-crest {
-				flex-shrink: 0;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 0.3rem;
-				margin-left: 0.5rem;
-				padding: 0.45rem 0.6rem 0.35rem;
-				border-radius: 14px;
-				background: linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94));
-				border: 1px solid rgba(180, 83, 9, 0.22);
-				box-shadow:
-					0 5px 18px rgba(15, 23, 42, 0.07),
-					inset 0 1px 0 rgba(255, 255, 255, 0.95);
-				transform: rotate(-2.5deg);
-				transition:
-					transform 0.2s ease,
-					box-shadow 0.2s ease;
-			}
-
-			.resource-list a:hover .resource-vendor-crest {
-				transform: rotate(0deg) scale(1.04);
-				box-shadow:
-					0 8px 24px rgba(15, 23, 42, 0.11),
-					inset 0 1px 0 rgba(255, 255, 255, 0.95);
-			}
-
-			.resource-vendor-crest img {
-				display: block;
-				width: 38px;
-				height: 38px;
-				object-fit: contain;
-			}
-
-			.resource-vendor-crest__tag {
-				font-size: 0.58rem;
-				font-weight: 700;
-				letter-spacing: 0.08em;
-				text-transform: uppercase;
-				color: #b45309;
-				line-height: 1;
-				white-space: nowrap;
-			}
-
-			@media (max-width: 520px) {
-				.resource-list-link--commercial {
-					flex-wrap: wrap;
-				}
-
-				.resource-vendor-crest {
-					margin-left: auto;
-					flex-direction: row;
-					transform: rotate(-1deg);
-				}
-			}
-
-			/* Category Badge */
-			.category-badge {
-				display: inline-block;
-				padding: 0.25rem 0.75rem;
-				background: var(--security-info);
-				color: white;
-				border-radius: 15px;
-				font-size: 0.875rem;
-				margin-bottom: 1rem;
-			}
-		</style>
 		<script src="theme-toggle.js"></script>
 		<script src="site-google-translate.js" defer></script>
 		<script src="site-analytics.js" data-analytics-mode="vercel"></script>
 	</head>
 
-	<body class="site-content-page">
+	<body class="site-content-page page-security page-dark">
 		<a name="top"></a>
 		<!-- Hero Section -->
 		<header class="hero-section" id="hero">
