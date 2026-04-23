@@ -25,7 +25,7 @@
 		"audit": "npm audit --audit-level=moderate",
 		"dev": "next dev",
 		"dev:cf": "wrangler dev",
-		"dev:v": "vercel",		
+		"dev:v": "vercel",
 		"build": "next build",
 		"start": "next start",
 		"deploy": "wrangler deploy",
