@@ -17,9 +17,8 @@ This document provides comprehensive guidelines for deploying the Nabla site to 
 ## Overview
 
 The Nabla site is deployed to Vercel with the following architecture:
-- **Root Project**: PHP API + Static HTML site (Hugo-generated or static)
-- **my-app**: Next.js application (separate deployment)
-- **vue-client**: Vue/Vite application (separate deployment)
+- **Root project** (this repository): Next.js (`npm run build` / `next build`), serverless handlers under `api/`, and static assets under `public/` (see root `vercel.json`).
+- **app**: Next.js application (separate deployment), if present in your fork or layout.
 
 ## Prerequisites
 
@@ -77,7 +76,7 @@ Access your project settings at: `https://vercel.com/[your-account]/[project-nam
 
 #### General Settings
 - **Build & Development Settings**:
-  - Build Command: Leave empty (using prebuilt Hugo artifacts)
+  - Build Command: Leave empty for a static `public/` root, or set to your framework command (for example `npm run build` in `app/`)
   - Output Directory: `public`
   - Install Command: `npm install`
 
@@ -196,7 +195,8 @@ Current environment variables in `vercel.json`:
 ```json
 {
   "env": {
-    "NOW_PHP_FOO": "bar3"
+    "NOW_PHP_FOO": "bar3",
+    "STRIPE_PRICE_ID": "price_..."
   },
   "build": {
     "env": {
@@ -229,8 +229,10 @@ vercel --prod
 
 **Configuration**: `vercel.json` in root
 - PHP runtime for API
+- Node.js serverless functions under `api/**/*.js`
 - Static files from `public/`
 - Routes configuration for PHP API
+- Routes map `/api/*` to the matching serverless handlers
 
 ### my-app (Next.js) Deployment
 
@@ -268,74 +270,39 @@ vercel --prod --cwd ./vue-client
 
 ## SDLC Integration
 
-### GitHub Actions Workflow
+### Deployments from GitHub
 
-The repository includes `.github/workflows/hugo-deploy.yml` for automated deployments.
+There is **no** Vercel deploy workflow in `.github/workflows/` for the root static site. Production and preview deployments are expected from the **Vercel Git integration** (connect the repo in the Vercel dashboard) or from the **CLI** (`vercel`, `vercel --prod`) as described above.
 
-#### Required GitHub Secrets
+CI in this repository covers tests and tooling (for example Playwright, Docker build, MegaLinter, PDF build). See [docs/GITHUB_ACTIONS_SETUP.md](../docs/GITHUB_ACTIONS_SETUP.md) for the workflow list and required secrets.
 
-Add these secrets in: `GitHub Repository Settings → Secrets and variables → Actions`
+### Optional: Vercel CLI from your own workflow
 
-1. **VERCEL_TOKEN**: Your Vercel authentication token
-2. **VERCEL_ORG_ID**: Your Vercel organization/team ID
-3. **VERCEL_PROJECT_ID**: Your Vercel project ID
+If you add a custom workflow later, typical secrets are:
 
-See [docs/GITHUB_ACTIONS_SETUP.md](../docs/GITHUB_ACTIONS_SETUP.md) for detailed setup instructions.
+1. **VERCEL_TOKEN**: Vercel authentication token
+2. **VERCEL_ORG_ID**: Organization or team ID
+3. **VERCEL_PROJECT_ID**: Project ID
 
-#### Workflow Overview
+You can deploy a prebuilt output with:
 
-```yaml
-# .github/workflows/hugo-deploy.yml
-jobs:
-  build:
-    # 1. Build Hugo site
-    # 2. Upload artifacts
-
-  deploy:
-    # 1. Download artifacts
-    # 2. Install Vercel CLI
-    # 3. Pull Vercel config
-    # 4. Deploy to production (main/master only)
+```bash
+vercel build
+vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
 ```
 
-#### Prebuilt Deployment Strategy
+Adjust commands to match your build output directory and Vercel project settings.
 
-This project uses a **prebuilt deployment** strategy:
+### Triggering deployments
 
-1. **Build Phase**: Hugo builds the site in GitHub Actions
-2. **Artifact Upload**: Built files are uploaded as artifacts
-3. **Deploy Phase**: Vercel deploys the prebuilt files using `--prebuilt` flag
+#### Automatic triggers (Vercel + Git)
 
-**Advantages**:
-- Faster deployments (no build on Vercel)
-- Build happens in controlled CI environment
-- Consistent builds across environments
-- Better caching with GitHub Actions
-- Detailed build logs in GitHub
+When the repository is linked in Vercel: pushes and pull requests create preview deployments; merges to the production branch deploy to production according to your Vercel project settings.
 
-**Implementation**:
+#### Manual triggers (CLI)
 ```bash
-# Build locally or in CI
-hugo --minify
-
-# Deploy prebuilt files
-vercel --prebuilt --prod --token=$VERCEL_TOKEN
-```
-
-### Triggering Deployments
-
-#### Automatic Triggers
-- **Push to any branch**: Creates preview deployment
-- **Pull request**: Creates preview deployment with comment
-- **Push to main/master**: Creates production deployment
-
-#### Manual Triggers
-```bash
-# Trigger workflow manually via GitHub UI
-# Go to: Actions → Hugo Build and Deploy → Run workflow
-
-# Or use GitHub CLI
-gh workflow run hugo-deploy.yml
+vercel        # preview
+vercel --prod # production
 ```
 
 ### Deployment Status
@@ -369,33 +336,20 @@ Monitor deployments:
 
 #### Issue: "Build failed" in GitHub Actions
 
-**Cause**: Hugo build errors or missing dependencies
+**Cause**: Failing test or build step (Node, Playwright, TeX, Docker, and so on).
 
 **Solution**:
-1. Check Hugo version: Ensure using compatible Hugo version
-2. Review build logs in GitHub Actions
-3. Test locally: `hugo --minify`
-4. Check for missing content or broken templates
+1. Open the failed workflow run and read the job log for the first red step.
+2. Reproduce locally with the same command (for example `npm ci`, `npm run build`, `npm test`).
+3. For Playwright, ensure browsers are installed (`npx playwright install`) and `baseURL` matches your app.
 
 #### Issue: "404 Not Found" after deployment
 
-**Cause**: Output directory misconfiguration
+**Cause**: Output directory or routing misconfiguration.
 
 **Solution**:
-1. Verify `vercel.json`: `"outputDirectory": "public"`
-2. Check Hugo config: `publishDir = 'public'`
-3. Ensure Hugo build creates files in `public/` directory
-4. Verify routes configuration in `vercel.json`
-
-#### Issue: "Function execution timed out"
-
-**Cause**: PHP serverless function exceeds time limit
-
-**Solution**:
-1. Optimize PHP code performance
-2. Consider increasing timeout (paid plans)
-3. Review function logs in Vercel dashboard
-4. Check for infinite loops or slow database queries
+1. Confirm the Vercel project **Framework Preset** and **Output Directory** match how this app builds (Next.js defaults differ from a plain `public/` static root).
+2. Review `vercel.json` routes (for example `/api/*`) and that static files exist under `public/` where you expect them.
 
 #### Issue: Preview deployments not created for PRs
 
@@ -466,13 +420,13 @@ vercel logs [deployment-url]
 ### Performance
 
 1. **Optimize build times**:
-   - Use `--prebuilt` flag to avoid rebuilding on Vercel
-   - Cache dependencies in GitHub Actions
-   - Minimize Hugo build time with targeted builds
+   - Use `--prebuilt` when deploying a CI-built artifact from the CLI
+   - Cache dependencies in GitHub Actions where you run builds
+   - Keep static roots lean; put heavy frameworks in separate app directories
 
 2. **Optimize assets**:
    - Compress images before deployment
-   - Use Hugo's `--minify` flag
+   - Minify HTML/CSS/JS in your build pipeline when applicable
    - Enable Vercel's automatic image optimization
    - Configure appropriate cache headers
 
@@ -519,10 +473,8 @@ vercel logs [deployment-url]
 
 - **Vercel Documentation**: https://vercel.com/docs
 - **Vercel CLI Reference**: https://vercel.com/docs/cli
-- **Hugo Documentation**: https://gohugo.io/documentation/
 - **GitHub Actions Documentation**: https://docs.github.com/en/actions
 - **Project-specific docs**:
-  - [HUGO_MIGRATION.md](../HUGO_MIGRATION.md)
   - [GITHUB_ACTIONS_SETUP.md](../docs/GITHUB_ACTIONS_SETUP.md)
   - [README.md](../README.md)
 

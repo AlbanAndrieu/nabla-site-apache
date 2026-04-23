@@ -1,3 +1,5 @@
+# vi: ft=yaml.ansible.jinja2
+---
 fail_fast: true
 minimum_pre_commit_version: 4.2.0
 exclude: |
@@ -165,6 +167,13 @@ repos:
             public/assets/fontawesome/.*|
             public/assets/.*.png|
             public/other/.*.png|
+            public/other/nabla-build-architecture.jpg|
+            public/checklist/article/index.html|
+            public/cv/alban-andrieu-19-12-2017.png|
+            public/arf.json|
+            public/assets/mushroom.webp|
+            public/d3.v3.min.js|
+            public/assets/cover-geek.jpg|
           )$
         # ----------------------------- 🔒 Security Tools ---------------------------- #
     -   id: detect-private-key
@@ -320,7 +329,7 @@ repos:
     hooks:
     -   id: biome-check
         name: "🟨 javascript · Lint, format, and safe fixes with Biome"
-        additional_dependencies: ["@biomejs/biome@1.9.4"]
+        additional_dependencies: ["@biomejs/biome@2.4.12"]
         exclude: >
           (?x)^(
               trivy-sbom.json|

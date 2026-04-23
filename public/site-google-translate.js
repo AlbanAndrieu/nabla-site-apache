@@ -1,11 +1,13 @@
 /**
  * Google Translate widget: ensures mount node, defines googleTranslateElementInit, loads Google script.
  *
- * Optional on <script src="…/site-google-translate.js" defer> (same directory depth as other public-root scripts): data-no-google-translate — skip entirely.
+ * Skips when <html data-nabla-app="next-intl"> (Next.js + next-intl). Optional on this script tag: data-no-google-translate — skip entirely.
  * If #google_translate_element is missing, a fixed-position wrapper is prepended to <body> (see theme.css).
  */
 (() => {
 	var root = document.currentScript;
+	/* Next.js app uses next-intl (see app/[locale]/layout.tsx data-nabla-app). */
+	if (document.documentElement.getAttribute("data-nabla-app") === "next-intl") return;
 	if (root?.hasAttribute("data-no-google-translate")) return;
 	if (window.__NABLA_GOOGLE_TRANSLATE_STARTED) return;
 	window.__NABLA_GOOGLE_TRANSLATE_STARTED = true;
@@ -35,7 +37,34 @@
 
 	function ensureMount() {
 		var el = document.getElementById("google_translate_element");
-		if (el) return el;
+		if (el) {
+			var existingWrap = el.closest(".google-translate-widget");
+			if (
+				existingWrap &&
+				existingWrap.querySelector(".google-translate-widget__toggle")
+			) {
+				return el;
+			}
+			if (existingWrap) {
+				var upToggle = document.createElement("button");
+				upToggle.type = "button";
+				upToggle.className = "google-translate-widget__toggle";
+				upToggle.setAttribute("aria-expanded", "false");
+				upToggle.setAttribute("aria-controls", "google_translate_element");
+				upToggle.setAttribute("aria-label", "Choose translation language");
+				upToggle.innerHTML = TOGGLE_SVG;
+
+				var upPanel = document.createElement("div");
+				upPanel.className = "google-translate-widget__panel";
+
+				existingWrap.insertBefore(upToggle, el);
+				upPanel.appendChild(el);
+				existingWrap.appendChild(upPanel);
+				bindMobileToggle(existingWrap, upToggle);
+				return el;
+			}
+			return el;
+		}
 		var wrap = document.createElement("div");
 		wrap.className = "google-translate-widget";
 		wrap.setAttribute("aria-label", "Language translation options");

@@ -28,8 +28,6 @@ The repository currently includes these workflows:
 5. OpenCommit Action (`.github/workflows/opencommit.yml`)
 6. Copilot Setup Steps (`.github/workflows/copilot-setup-steps.yml`)
 
-There is no `.github/workflows/hugo-deploy.yml` file in this repository. Hugo scripts are available for local use via `npm run hugo:build` and `npm run hugo:dev`.
-
 Workflow secrets currently used:
 - `DOCKER_USERNAME`, `DOCKER_PASSWORD` (Docker CI)
 - `OCO_API_KEY` (OpenCommit)
@@ -58,12 +56,12 @@ For analytics mode selection, shared widget attributes, script integration examp
 ### Root Project (PHP + Static Site)
 
 ```bash
-npm run start-python
+npm run start:python
 # Cloudflare wrangler
 npm run start
 ```
 
-For vercel
+For Vercel:
 
 ```
 vc build

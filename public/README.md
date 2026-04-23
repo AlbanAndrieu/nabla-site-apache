@@ -1,29 +1,7 @@
-# Static Directory
+# `public/` — static web root
 
-This directory contains static assets that Hugo copies directly to the output without processing.
+This directory is the static asset and HTML root for the site: pages, shared CSS/JS, images, CV files, and other files served as-is (for example via `npm run start:python`, Apache, or your host’s web root mapping).
 
-## Usage
+## Layout
 
-Files in this directory are copied to the root of the generated site:
-
-```
-static/
-├── css/
-├── js/
-├── images/
-└── favicon.ico
-```
-
-Becomes:
-
-```
-public/
-├── css/
-├── js/
-├── images/
-└── favicon.ico
-```
-
-## Migration Note
-
-During migration, assets from `public/assets/` will be moved here to be managed by Hugo's build process.
+Keep site-wide assets organized under paths such as `assets/`, `cv/`, and top-level HTML entry points (`index.html`, and so on) so deployments and Playwright tests stay predictable.

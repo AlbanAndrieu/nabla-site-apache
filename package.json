@@ -24,10 +24,11 @@
 		"lint": "eslint --format gitlab .",
 		"audit": "npm audit --audit-level=moderate",
 		"dev": "next dev",
+		"dev:cf": "wrangler dev",
+		"dev:v": "vercel",		
 		"build": "next build",
 		"start": "next start",
 		"deploy": "wrangler deploy",
-		"dev:cf": "wrangler dev",
 		"start:wrangler": "wrangler dev",
 		"start:python": "npx http-server public -p 8001",
 		"start:php:": "php -S localhost:8000 api/index.php",
@@ -56,7 +57,7 @@
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4",
 		"stripe": "^20.4.1",
-		"vercel": "^50.42.0",
+		"vercel": "^51.8.0",
 		"webdriver-manager": "^12.1.9"
 	},
 	"devDependencies": {

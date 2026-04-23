@@ -77,6 +77,7 @@ build/
 .turbo/
 .cache/
 .pnpm/
+tsconfig.tsbuildinfo
 
 # Temporary files
 tmp/
@@ -103,8 +104,4 @@ playwright/.cache/
 *.backup
 *-old.html
 
-# Hugo
-/resources/_gen/
-hugo_stats.json
-.hugo_build.lock
 .env*.local

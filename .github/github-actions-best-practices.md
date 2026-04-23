@@ -215,15 +215,15 @@ For repository operations, prefer `GITHUB_TOKEN` over personal access tokens:
     cache: 'npm'  # Automatically caches npm dependencies
 ```
 
-**Manual caching**:
+**Manual caching** (example: Playwright browser binaries):
 ```yaml
-- name: Cache Hugo
+- name: Cache Playwright browsers
   uses: actions/cache@v4
   with:
-    path: ~/.cache/hugo
-    key: ${{ runner.os }}-hugo-${{ hashFiles('hugo.toml') }}
+    path: ~/.cache/ms-playwright
+    key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
     restore-keys: |
-      ${{ runner.os }}-hugo-
+      ${{ runner.os }}-playwright-
 ```
 
 **Cache Best Practices**:
@@ -269,11 +269,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - run: hugo --minify
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build  # replace with your site/app build command
       - uses: actions/upload-artifact@v4
         with:
           name: site-build
-          path: public/
+          path: dist/  # adjust to your build output directory
           retention-days: 7
 
   deploy:
@@ -283,7 +288,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: site-build
-          path: public/
+          path: dist/
       - run: ./deploy.sh
 ```
 
@@ -692,7 +697,7 @@ updates:
 ### 3. Workflow Naming and Documentation
 
 ```yaml
-name: Hugo Build and Deploy  # Clear, descriptive name
+name: CI — Build and test  # Clear, descriptive name
 
 on:
   push:
@@ -702,13 +707,13 @@ on:
 
 # Document workflow purpose at the top
 # This workflow:
-# 1. Builds the Hugo site
-# 2. Runs tests
-# 3. Deploys to Vercel (main/master only)
+# 1. Installs dependencies
+# 2. Runs the build and/or tests
+# 3. Optionally uploads artifacts or deploys
 
 jobs:
   build:
-    name: Build Hugo Site  # Clear job name
+    name: Build and verify  # Clear job name
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout code  # Clear step name
@@ -733,17 +738,16 @@ jobs:
 
 ## Examples and Templates
 
-### Example 1: Hugo Build and Deploy (Current Project)
+### Example 1: Playwright end-to-end tests (this repository)
 
-See `.github/workflows/hugo-deploy.yml` for a complete example following these best practices.
+See `.github/workflows/playwright.yml` for a workflow that follows these practices (checkout, Node setup with npm cache, Playwright install, test run, artifact upload on failure).
 
 Key features:
 - ✅ Pinned action versions
 - ✅ Minimal permissions
-- ✅ Caching (npm)
-- ✅ Build-deploy separation
-- ✅ Conditional production deployment
-- ✅ Artifact management
+- ✅ npm caching via `actions/setup-node`
+- ✅ Clear job and step names
+- ✅ Test reports as artifacts
 
 ### Example 2: Linting Workflow
 

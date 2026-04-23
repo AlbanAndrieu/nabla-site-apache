@@ -12,6 +12,11 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ## Project Goal
 
+
+Node.js handlers for [Vercel serverless functions](https://vercel.com/docs/functions). Routes are defined in root `vercel.json` (for example `/api/*` → `api/*.js`).
+
+Includes Stripe Checkout (`create-checkout-session.js`) and other small endpoints. Install dependencies from the repository root (`npm install`); Vercel bundles `api/` for deployment.
+
 This is a simple Honeypot.
 
 [info](https://dr-alban.com/info)
